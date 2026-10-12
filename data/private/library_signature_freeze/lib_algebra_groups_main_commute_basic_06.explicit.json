@@ -1,0 +1,387 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {G : Type u_1} [inst : DivisionMonoid.{u_1} G] {a b : G},\n  Commute.{u_1} (Inv.inv.{u_1} a) (Inv.inv.{u_1} b) ↔ Commute.{u_1} a b",
+  "trusted_type_expression": "forall {G : Type.{u_1}} [inst : DivisionMonoid.{u_1} G] {a : G} {b : G}, Iff (Commute.{u_1} G (MulOne.toMul.{u_1} G (MulOneClass.toMulOne.{u_1} G (Monoid.toMulOneClass.{u_1} G (DivInvMonoid.toMonoid.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst))))) (Inv.inv.{u_1} G (InvOneClass.toInv.{u_1} G (DivInvOneMonoid.toInvOneClass.{u_1} G (DivisionMonoid.toDivInvOneMonoid.{u_1} G inst))) a) (Inv.inv.{u_1} G (InvOneClass.toInv.{u_1} G (DivInvOneMonoid.toInvOneClass.{u_1} G (DivisionMonoid.toDivInvOneMonoid.{u_1} G inst))) b)) (Commute.{u_1} G (MulOne.toMul.{u_1} G (MulOneClass.toMulOne.{u_1} G (Monoid.toMulOneClass.{u_1} G (DivInvMonoid.toMonoid.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst))))) a b)",
+  "trusted_telescope": {
+    "proposition": "Commute.{u_1} (Inv.inv.{u_1} a) (Inv.inv.{u_1} b) ↔ Commute.{u_1} a b",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "G",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "DivisionMonoid.{u_1} G",
+        "name": "inst",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "G",
+        "name": "a",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "G",
+        "name": "b",
+        "binder_info": "implicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_algebra_groups_main_commute_basic_06 {«G» : Type u_1} [«inst» : DivisionMonoid.{u_1} G] {«a» : G} {«b» : G} :\n  Commute a⁻¹ b⁻¹ ↔ Commute a b :=\nSemiconjBy.inv_inv_symm_iff",
+    "signature_spans": [
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 73,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 89
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 92,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 117
+      },
+      {
+        "start": 117,
+        "end": 119
+      },
+      {
+        "start": 119,
+        "end": 122
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 140,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 149,
+        "end": 150
+      },
+      {
+        "start": 155,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 164,
+        "end": 169
+      },
+      {
+        "start": 170,
+        "end": 171
+      },
+      {
+        "start": 171,
+        "end": 176
+      },
+      {
+        "start": 177,
+        "end": 180
+      },
+      {
+        "start": 181,
+        "end": 188
+      },
+      {
+        "start": 189,
+        "end": 190
+      },
+      {
+        "start": 191,
+        "end": 192
+      }
+    ],
+    "proof_offset": 196,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 71
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 73,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 89
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 92,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 117
+      },
+      {
+        "start": 117,
+        "end": 119
+      },
+      {
+        "start": 119,
+        "end": 122
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 140,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 149,
+        "end": 150
+      },
+      {
+        "start": 151,
+        "end": 152
+      },
+      {
+        "start": 155,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 164,
+        "end": 169
+      },
+      {
+        "start": 170,
+        "end": 171
+      },
+      {
+        "start": 171,
+        "end": 176
+      },
+      {
+        "start": 177,
+        "end": 180
+      },
+      {
+        "start": 181,
+        "end": 188
+      },
+      {
+        "start": 189,
+        "end": 190
+      },
+      {
+        "start": 191,
+        "end": 192
+      },
+      {
+        "start": 193,
+        "end": 195
+      },
+      {
+        "start": 196,
+        "end": 223
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 196,
+        "end": 223
+      }
+    ],
+    "W_full": 39,
+    "W_S": 34,
+    "W_B": 1
+  },
+  "root": "CompressionEval.lib_algebra_groups_main_commute_basic_06",
+  "proved_type_fingerprint": "780128099",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 459,
+    "syntax_kinds": [],
+    "proof_nodes": 21,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_algebra_groups_main_commute_basic_06"
+  ],
+  "axioms": [
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "f3911b7fcb8e0af70e3ea524b34a234354d59fefbd5be119b712ad4063dfbade",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.9322584588080645
+  },
+  "request_fingerprint": "138ebf0f9e0e0d88b62c64a589809986dabd251a2ff49860322cec492c34912d"
+}

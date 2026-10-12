@@ -1,0 +1,1478 @@
+{
+  "boundary_policy": "expand_mathlib_and_evaluator_v1",
+  "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
+  "engine_hash": "3c093c02b7d907faad45ede5ed175e3527aeaa9dbb9ca2141293075aaeeaa343",
+  "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+  "evaluated_at": "2026-10-12T03:50:56.061935+00:00",
+  "extraction": {
+    "axioms": [
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.fresh_number_theory_09"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 735,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.simp",
+        "Lean.Parser.Tactic.optConfig",
+        "Lean.Parser.Tactic.simpLemma",
+        "Lean.Parser.Term.app"
+      ],
+      "transitive_dependency_count": 305
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "available",
+    "nodes": [
+      {
+        "body": {
+          "@Sort": 12,
+          "And": 6,
+          "Eq": 17,
+          "Eq.trans": 4,
+          "HAdd.hAdd": 7,
+          "HDiv.hDiv": 7,
+          "HMod.hMod": 8,
+          "LT.lt": 2,
+          "Nat": 130,
+          "Nat.add_mod_right": 1,
+          "Nat.div_eq_of_lt": 1,
+          "Nat.instDiv": 7,
+          "Nat.instMod": 8,
+          "Nat.mod_eq_of_lt": 1,
+          "OfNat.ofNat": 12,
+          "True": 9,
+          "and_self": 1,
+          "congr": 1,
+          "congrArg": 3,
+          "congrFun'": 2,
+          "eq_self": 2,
+          "instAddNat": 7,
+          "instHAdd": 7,
+          "instHDiv": 7,
+          "instHMod": 8,
+          "instLTNat": 2,
+          "instOfNatNat": 12,
+          "of_eq_true": 1
+        },
+        "body_nodes": 735,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 28,
+        "name": "CompressionEval.fresh_number_theory_09",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "And": 1,
+          "Eq": 2,
+          "HAdd.hAdd": 1,
+          "HDiv.hDiv": 1,
+          "HMod.hMod": 1,
+          "LT.lt": 2,
+          "Nat": 20,
+          "Nat.instDiv": 1,
+          "Nat.instMod": 1,
+          "OfNat.ofNat": 2,
+          "instAddNat": 1,
+          "instHAdd": 1,
+          "instHDiv": 1,
+          "instHMod": 1,
+          "instLTNat": 2,
+          "instOfNatNat": 2
+        },
+        "source_counts": null,
+        "type_hash": "1241815102",
+        "type_nodes": 105,
+        "value_hash": "3541866570"
+      },
+      {
+        "body": null,
+        "name": "@Sort",
+        "owner_module": "@builtin",
+        "primitive": true,
+        "signature": {},
+        "type_hash": "@Sort",
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3931117990",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "LT.lt",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "438589096",
+        "type_nodes": null,
+        "value_hash": "3248470211"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instLTNat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1827018848",
+        "type_nodes": null,
+        "value_hash": "639945372"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "OfNat.ofNat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3494724834",
+        "type_nodes": null,
+        "value_hash": "2265622595"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instOfNatNat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3464002136",
+        "type_nodes": null,
+        "value_hash": "2633726084"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "And",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2232915537",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3970007004",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "HDiv.hDiv",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3511878171",
+        "type_nodes": null,
+        "value_hash": "2471649093"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instHDiv",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3336929548",
+        "type_nodes": null,
+        "value_hash": "4078084632"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.instDiv",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2325189867",
+        "type_nodes": null,
+        "value_hash": "3583808039"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "HMod.hMod",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2625509634",
+        "type_nodes": null,
+        "value_hash": "1541642116"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instHMod",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2556434599",
+        "type_nodes": null,
+        "value_hash": "2491946270"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.instMod",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1959516017",
+        "type_nodes": null,
+        "value_hash": "371081327"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "HAdd.hAdd",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "813641309",
+        "type_nodes": null,
+        "value_hash": "1075339295"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instHAdd",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1158045503",
+        "type_nodes": null,
+        "value_hash": "3048504239"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instAddNat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "4203868631",
+        "type_nodes": null,
+        "value_hash": "1231050804"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "of_eq_true",
+        "owner_module": "Init.SimpLemmas",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "846120182",
+        "type_nodes": null,
+        "value_hash": "2847551586"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.trans",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2833799593",
+        "type_nodes": null,
+        "value_hash": "1736612116"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "True",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3944470172",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "congr",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1876132096",
+        "type_nodes": null,
+        "value_hash": "227469821"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "congrArg",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2722762766",
+        "type_nodes": null,
+        "value_hash": "2643130269"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "congrFun'",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1463103787",
+        "type_nodes": null,
+        "value_hash": "3906667881"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.div_eq_of_lt",
+        "owner_module": "Init.Data.Nat.Div.Basic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3628990599",
+        "type_nodes": null,
+        "value_hash": "3383553990"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "eq_self",
+        "owner_module": "Init.SimpLemmas",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2707248190",
+        "type_nodes": null,
+        "value_hash": "1138976229"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.add_mod_right",
+        "owner_module": "Init.Data.Nat.Div.Basic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "4269634360",
+        "type_nodes": null,
+        "value_hash": "450475748"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.mod_eq_of_lt",
+        "owner_module": "Init.Data.Nat.Div.Basic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "44499370",
+        "type_nodes": null,
+        "value_hash": "653616807"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "and_self",
+        "owner_module": "Init.SimpLemmas",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "4278387167",
+        "type_nodes": null,
+        "value_hash": "121300962"
+      }
+    ],
+    "process_returncode": 0,
+    "proved_type_fingerprint": "1241815102",
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 9.223424541763961,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "43540fac2bdae24bc2eb9720123af76d4f77aa5199ceeeb180cdea029ba56f24",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.fresh_number_theory_09",
+    "source_tokens": {
+      "W_B": 9,
+      "W_S": 35,
+      "W_full": 48,
+      "body_spans": [
+        {
+          "end": 131,
+          "start": 129
+        },
+        {
+          "end": 136,
+          "start": 132
+        },
+        {
+          "end": 138,
+          "start": 137
+        },
+        {
+          "end": 154,
+          "start": 138
+        },
+        {
+          "end": 157,
+          "start": 155
+        },
+        {
+          "end": 158,
+          "start": 157
+        },
+        {
+          "end": 175,
+          "start": 159
+        },
+        {
+          "end": 178,
+          "start": 176
+        },
+        {
+          "end": 179,
+          "start": 178
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 53,
+          "start": 8
+        },
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 56,
+          "start": 55
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 64,
+          "start": 61
+        },
+        {
+          "end": 65,
+          "start": 64
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 69,
+          "start": 67
+        },
+        {
+          "end": 71,
+          "start": 70
+        },
+        {
+          "end": 73,
+          "start": 72
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 77,
+          "start": 76
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 82,
+          "start": 80
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 86,
+          "start": 85
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 91,
+          "start": 90
+        },
+        {
+          "end": 93,
+          "start": 92
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 101,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 111,
+          "start": 110
+        },
+        {
+          "end": 112,
+          "start": 111
+        },
+        {
+          "end": 114,
+          "start": 113
+        },
+        {
+          "end": 116,
+          "start": 115
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 123,
+          "start": 122
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 128,
+          "start": 126
+        },
+        {
+          "end": 131,
+          "start": 129
+        },
+        {
+          "end": 136,
+          "start": 132
+        },
+        {
+          "end": 138,
+          "start": 137
+        },
+        {
+          "end": 154,
+          "start": 138
+        },
+        {
+          "end": 157,
+          "start": 155
+        },
+        {
+          "end": 158,
+          "start": 157
+        },
+        {
+          "end": 175,
+          "start": 159
+        },
+        {
+          "end": 178,
+          "start": 176
+        },
+        {
+          "end": 179,
+          "start": 178
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 129,
+      "signature_spans": [
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 56,
+          "start": 55
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 64,
+          "start": 61
+        },
+        {
+          "end": 65,
+          "start": 64
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 69,
+          "start": 67
+        },
+        {
+          "end": 71,
+          "start": 70
+        },
+        {
+          "end": 73,
+          "start": 72
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 77,
+          "start": 76
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 82,
+          "start": 80
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 86,
+          "start": 85
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 91,
+          "start": 90
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 101,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 111,
+          "start": 110
+        },
+        {
+          "end": 112,
+          "start": 111
+        },
+        {
+          "end": 114,
+          "start": 113
+        },
+        {
+          "end": 116,
+          "start": 115
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 123,
+          "start": 122
+        },
+        {
+          "end": 125,
+          "start": 124
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.fresh_number_theory_09 (n k : ℕ) (hk : 0 < k) (hn : n < k) :\n  n / k = 0 ∧ (n + k) % k = n :=\nby simp [Nat.div_eq_of_lt hn, Nat.mod_eq_of_lt hn]",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "explicit",
+          "name": "n",
+          "type_source": "ℕ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "k",
+          "type_source": "ℕ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hk",
+          "type_source": "LT.lt.{0} 0 k"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hn",
+          "type_source": "LT.lt.{0} n k"
+        }
+      ],
+      "proposition": "Eq.{1} (HDiv.hDiv.{0, 0, 0} n k) 0 ∧ Eq.{1} (HMod.hMod.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} n k) k) n"
+    },
+    "trusted_type_expression": "forall (n : Nat) (k : Nat), (LT.lt.{0} Nat instLTNat (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0)) k) -> (LT.lt.{0} Nat instLTNat n k) -> (And (Eq.{1} Nat (HDiv.hDiv.{0, 0, 0} Nat Nat Nat (instHDiv.{0} Nat Nat.instDiv) n k) (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0))) (Eq.{1} Nat (HMod.hMod.{0, 0, 0} Nat Nat Nat (instHMod.{0} Nat Nat.instMod) (HAdd.hAdd.{0, 0, 0} Nat Nat Nat (instHAdd.{0} Nat instAddNat) n k) k) n))",
+    "trusted_type_source": "∀ (n k : ℕ),\n  LT.lt.{0} 0 k →\n    LT.lt.{0} n k → Eq.{1} (HDiv.hDiv.{0, 0, 0} n k) 0 ∧ Eq.{1} (HMod.hMod.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} n k) k) n",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "graph_hash": "f5722a501486c76b1a8ee46fda6f61ee30b22c604dd580c68d85bc5010700ec0",
+  "metric_status": "available",
+  "metrics": {
+    "D": 1,
+    "I0": {
+      "denominator_decimal": "35",
+      "log2": -1.9593580155026542,
+      "numerator_decimal": "9"
+    },
+    "T0": {
+      "denominator_decimal": "44",
+      "log2": 2.884864289278519,
+      "numerator_decimal": "325"
+    },
+    "U_B_decimal": "285",
+    "U_S_decimal": "40",
+    "U_decimal": "325",
+    "W_B": 9,
+    "W_S": 35,
+    "body_state": "present",
+    "distinct_dependency_count": 28,
+    "log2_I0": -1.9593580155026542,
+    "log2_T0": 2.884864289278519,
+    "log2_U": 8.344295907915816,
+    "log2_U_B": 8.154818109052105,
+    "log2_U_S": 5.321928094887363,
+    "log2_W": 5.459431618637297,
+    "metric_profile": "paper_aligned_v1",
+    "metric_status": "available",
+    "primitive_count": 28,
+    "reachable_node_count": 29,
+    "reasons": []
+  },
+  "primitive_manifest": [
+    "@Sort",
+    "And",
+    "Eq",
+    "Eq.trans",
+    "HAdd.hAdd",
+    "HDiv.hDiv",
+    "HMod.hMod",
+    "LT.lt",
+    "Nat",
+    "Nat.add_mod_right",
+    "Nat.div_eq_of_lt",
+    "Nat.instDiv",
+    "Nat.instMod",
+    "Nat.mod_eq_of_lt",
+    "OfNat.ofNat",
+    "True",
+    "and_self",
+    "congr",
+    "congrArg",
+    "congrFun'",
+    "eq_self",
+    "instAddNat",
+    "instHAdd",
+    "instHDiv",
+    "instHMod",
+    "instLTNat",
+    "instOfNatNat",
+    "of_eq_true"
+  ],
+  "primitive_manifest_hash": "558a0be94d138e7d2e55d5d5a2c45fafdf8196ecd737938e5312055ad62cc4ff",
+  "primitive_manifest_scope": "reachable closure; boundary policy and environment define shared corpus boundary",
+  "reference_proof_sha256": "347a5aec68e6b73a01cd913fe903cab1339cc85bb03d27d8c192e1fd9207ec35",
+  "source_hash": "a062ef857d771f8498d96e5336600b4a9ab4b4e1a69898a90c5b355256a72143",
+  "source_token_policy_hash": "82278aac4f6faa62bcbabe626b0ca3c486cb3f2a6e213f12c9587341b3dbed61",
+  "task_hash": "4787372bc66c5a45440c3a5bbc48eb55b8c295e2d5bda0aecf7c22a53becb845",
+  "task_id": "fresh_number_theory_09",
+  "task_input_hash": "b90e91dd4d1d3424a129a0f07db9b98a213f48e43c55b2aec226f4d50ba5af3f",
+  "validation": {
+    "axioms": [
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.fresh_number_theory_09"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 735,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.simp",
+        "Lean.Parser.Tactic.optConfig",
+        "Lean.Parser.Tactic.simpLemma",
+        "Lean.Parser.Term.app"
+      ],
+      "transitive_dependency_count": 305
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "1241815102",
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 10.075651625171304,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "9aa709162029d6154a19c2296ec47080b9fe96b312b0d7a054d5bf5733bef8cc",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.fresh_number_theory_09",
+    "source_tokens": {
+      "W_B": 9,
+      "W_S": 35,
+      "W_full": 48,
+      "body_spans": [
+        {
+          "end": 131,
+          "start": 129
+        },
+        {
+          "end": 136,
+          "start": 132
+        },
+        {
+          "end": 138,
+          "start": 137
+        },
+        {
+          "end": 154,
+          "start": 138
+        },
+        {
+          "end": 157,
+          "start": 155
+        },
+        {
+          "end": 158,
+          "start": 157
+        },
+        {
+          "end": 175,
+          "start": 159
+        },
+        {
+          "end": 178,
+          "start": 176
+        },
+        {
+          "end": 179,
+          "start": 178
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 53,
+          "start": 8
+        },
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 56,
+          "start": 55
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 64,
+          "start": 61
+        },
+        {
+          "end": 65,
+          "start": 64
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 69,
+          "start": 67
+        },
+        {
+          "end": 71,
+          "start": 70
+        },
+        {
+          "end": 73,
+          "start": 72
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 77,
+          "start": 76
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 82,
+          "start": 80
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 86,
+          "start": 85
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 91,
+          "start": 90
+        },
+        {
+          "end": 93,
+          "start": 92
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 101,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 111,
+          "start": 110
+        },
+        {
+          "end": 112,
+          "start": 111
+        },
+        {
+          "end": 114,
+          "start": 113
+        },
+        {
+          "end": 116,
+          "start": 115
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 123,
+          "start": 122
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 128,
+          "start": 126
+        },
+        {
+          "end": 131,
+          "start": 129
+        },
+        {
+          "end": 136,
+          "start": 132
+        },
+        {
+          "end": 138,
+          "start": 137
+        },
+        {
+          "end": 154,
+          "start": 138
+        },
+        {
+          "end": 157,
+          "start": 155
+        },
+        {
+          "end": 158,
+          "start": 157
+        },
+        {
+          "end": 175,
+          "start": 159
+        },
+        {
+          "end": 178,
+          "start": 176
+        },
+        {
+          "end": 179,
+          "start": 178
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 129,
+      "signature_spans": [
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 56,
+          "start": 55
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 64,
+          "start": 61
+        },
+        {
+          "end": 65,
+          "start": 64
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 69,
+          "start": 67
+        },
+        {
+          "end": 71,
+          "start": 70
+        },
+        {
+          "end": 73,
+          "start": 72
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 77,
+          "start": 76
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 82,
+          "start": 80
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 86,
+          "start": 85
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 91,
+          "start": 90
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 101,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 111,
+          "start": 110
+        },
+        {
+          "end": 112,
+          "start": 111
+        },
+        {
+          "end": 114,
+          "start": 113
+        },
+        {
+          "end": 116,
+          "start": 115
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 123,
+          "start": 122
+        },
+        {
+          "end": 125,
+          "start": 124
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.fresh_number_theory_09 (n k : ℕ) (hk : 0 < k) (hn : n < k) :\n  n / k = 0 ∧ (n + k) % k = n :=\nby simp [Nat.div_eq_of_lt hn, Nat.mod_eq_of_lt hn]",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "explicit",
+          "name": "n",
+          "type_source": "ℕ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "k",
+          "type_source": "ℕ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hk",
+          "type_source": "LT.lt.{0} 0 k"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hn",
+          "type_source": "LT.lt.{0} n k"
+        }
+      ],
+      "proposition": "Eq.{1} (HDiv.hDiv.{0, 0, 0} n k) 0 ∧ Eq.{1} (HMod.hMod.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} n k) k) n"
+    },
+    "trusted_type_expression": "forall (n : Nat) (k : Nat), (LT.lt.{0} Nat instLTNat (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0)) k) -> (LT.lt.{0} Nat instLTNat n k) -> (And (Eq.{1} Nat (HDiv.hDiv.{0, 0, 0} Nat Nat Nat (instHDiv.{0} Nat Nat.instDiv) n k) (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0))) (Eq.{1} Nat (HMod.hMod.{0, 0, 0} Nat Nat Nat (instHMod.{0} Nat Nat.instMod) (HAdd.hAdd.{0, 0, 0} Nat Nat Nat (instHAdd.{0} Nat instAddNat) n k) k) n))",
+    "trusted_type_source": "∀ (n k : ℕ),\n  LT.lt.{0} 0 k →\n    LT.lt.{0} n k → Eq.{1} (HDiv.hDiv.{0, 0, 0} n k) 0 ∧ Eq.{1} (HMod.hMod.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} n k) k) n",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "validity_status": "success"
+}

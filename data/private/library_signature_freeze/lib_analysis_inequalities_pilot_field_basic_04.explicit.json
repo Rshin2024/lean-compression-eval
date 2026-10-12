@@ -1,0 +1,376 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_2"
+  ],
+  "trusted_type_source": "∀ {α : Type u_2} [inst : NormedDivisionRing.{u_2} α] (a : α),\n  Eq.{1} (NNNorm.nnnorm.{u_2} (Inv.inv.{u_2} a)) (Inv.inv.{0} (NNNorm.nnnorm.{u_2} a))",
+  "trusted_type_expression": "forall {α : Type.{u_2}} [inst : NormedDivisionRing.{u_2} α] (a : α), Eq.{1} NNReal (NNNorm.nnnorm.{u_2} α (SeminormedAddGroup.toNNNorm.{u_2} α (SeminormedAddCommGroup.toSeminormedAddGroup.{u_2} α (NonUnitalSeminormedRing.toSeminormedAddCommGroup.{u_2} α (NonUnitalNormedRing.toNonUnitalSeminormedRing.{u_2} α (NormedRing.toNonUnitalNormedRing.{u_2} α (NormedDivisionRing.toNormedRing.{u_2} α inst)))))) (Inv.inv.{u_2} α (InvOneClass.toInv.{u_2} α (DivInvOneMonoid.toInvOneClass.{u_2} α (DivisionMonoid.toDivInvOneMonoid.{u_2} α (GroupWithZero.toDivisionMonoid.{u_2} α (DivisionSemiring.toGroupWithZero.{u_2} α (DivisionRing.toDivisionSemiring.{u_2} α (NormedDivisionRing.toDivisionRing.{u_2} α inst))))))) a)) (Inv.inv.{0} NNReal NNReal.instInv (NNNorm.nnnorm.{u_2} α (SeminormedAddGroup.toNNNorm.{u_2} α (SeminormedAddCommGroup.toSeminormedAddGroup.{u_2} α (NonUnitalSeminormedRing.toSeminormedAddCommGroup.{u_2} α (NonUnitalNormedRing.toNonUnitalSeminormedRing.{u_2} α (NormedRing.toNonUnitalNormedRing.{u_2} α (NormedDivisionRing.toNormedRing.{u_2} α inst)))))) a))",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} (NNNorm.nnnorm.{u_2} (Inv.inv.{u_2} a)) (Inv.inv.{0} (NNNorm.nnnorm.{u_2} a))",
+    "binders": [
+      {
+        "type_source": "Type u_2",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "NormedDivisionRing.{u_2} α",
+        "name": "inst",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "α",
+        "name": "a",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_analysis_inequalities_pilot_field_basic_04 {«α» : Type u_2} [«inst» : NormedDivisionRing.{u_2} α] (a : α) :\n  ‖a⁻¹‖₊ = ‖a‖₊⁻¹ :=\nNNReal.eq <| by simp",
+    "signature_spans": [
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 79,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 99,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 130
+      },
+      {
+        "start": 130,
+        "end": 133
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 137
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 140,
+        "end": 141
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 146
+      },
+      {
+        "start": 146,
+        "end": 147
+      },
+      {
+        "start": 152,
+        "end": 155
+      },
+      {
+        "start": 155,
+        "end": 156
+      },
+      {
+        "start": 156,
+        "end": 161
+      },
+      {
+        "start": 161,
+        "end": 167
+      },
+      {
+        "start": 168,
+        "end": 169
+      },
+      {
+        "start": 170,
+        "end": 173
+      },
+      {
+        "start": 173,
+        "end": 174
+      },
+      {
+        "start": 174,
+        "end": 180
+      },
+      {
+        "start": 180,
+        "end": 185
+      }
+    ],
+    "proof_offset": 189,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 77
+      },
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 79,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 99,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 130
+      },
+      {
+        "start": 130,
+        "end": 133
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 137
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 140,
+        "end": 141
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 146
+      },
+      {
+        "start": 146,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 152,
+        "end": 155
+      },
+      {
+        "start": 155,
+        "end": 156
+      },
+      {
+        "start": 156,
+        "end": 161
+      },
+      {
+        "start": 161,
+        "end": 167
+      },
+      {
+        "start": 168,
+        "end": 169
+      },
+      {
+        "start": 170,
+        "end": 173
+      },
+      {
+        "start": 173,
+        "end": 174
+      },
+      {
+        "start": 174,
+        "end": 180
+      },
+      {
+        "start": 180,
+        "end": 185
+      },
+      {
+        "start": 186,
+        "end": 188
+      },
+      {
+        "start": 189,
+        "end": 198
+      },
+      {
+        "start": 199,
+        "end": 201
+      },
+      {
+        "start": 202,
+        "end": 204
+      },
+      {
+        "start": 205,
+        "end": 209
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 189,
+        "end": 198
+      },
+      {
+        "start": 199,
+        "end": 201
+      },
+      {
+        "start": 202,
+        "end": 204
+      },
+      {
+        "start": 205,
+        "end": 209
+      }
+    ],
+    "W_full": 37,
+    "W_S": 29,
+    "W_B": 4
+  },
+  "root": "CompressionEval.lib_analysis_inequalities_pilot_field_basic_04",
+  "proved_type_fingerprint": "4249668902",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 8108,
+    "syntax_kinds": [
+      "«term_<|_»",
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.simp",
+      "Lean.Parser.Tactic.optConfig"
+    ],
+    "proof_nodes": 667,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_analysis_inequalities_pilot_field_basic_04"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "79874505a8b049a9320e50c4cc85cda7ef48016e5a082af1ccd7c01074773537",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 4.551969291176647
+  },
+  "request_fingerprint": "db4d4be6db79cadb00403ad319a42928e2b4afa9a1a1da04befef7c30c653b5c"
+}

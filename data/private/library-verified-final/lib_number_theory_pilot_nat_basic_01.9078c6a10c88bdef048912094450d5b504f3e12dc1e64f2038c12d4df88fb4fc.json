@@ -1,0 +1,433 @@
+{
+  "boundary_policy": "expand_mathlib_and_evaluator_v1",
+  "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+  "evaluated_at": "2026-10-12T04:03:34.362597+00:00",
+  "extraction": {
+    "axioms": [],
+    "candidate_declarations": [
+      "CompressionEval.lib_number_theory_pilot_nat_basic_01"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 1,
+      "syntax_kinds": [
+        "Lean.Parser.Term.explicit"
+      ],
+      "transitive_dependency_count": 15
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "available",
+    "nodes": [
+      {
+        "body": {
+          "Nat.succ.inj": 1
+        },
+        "body_nodes": 1,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "CompressionEval.lib_number_theory_pilot_nat_basic_01",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "Function.Injective": 1,
+          "Nat": 2,
+          "Nat.succ": 1
+        },
+        "source_counts": null,
+        "type_hash": "3568725967",
+        "type_nodes": 7,
+        "value_hash": "1433803522"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Function.Injective",
+        "owner_module": "Init.Data.Function",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "360156075",
+        "type_nodes": null,
+        "value_hash": "2657691358"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3931117990",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.succ",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2546708756",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.succ.inj",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1850630151",
+        "type_nodes": null,
+        "value_hash": "3429025526"
+      }
+    ],
+    "process_returncode": 0,
+    "proved_type_fingerprint": "3568725967",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Data.Nat.Init"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Basic"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Nontrivial.Defs"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.Defs.LinearOrder"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.GCongr.Core"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 2.4559985832311213,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "5f88359a7f3489f00a5c6100ae6e074bf78446a45fc49594469f0de99c9b9976",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_number_theory_pilot_nat_basic_01",
+    "source_tokens": {
+      "W_B": 2,
+      "W_S": 2,
+      "W_full": 8,
+      "body_spans": [
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 104,
+          "start": 96
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 67,
+          "start": 8
+        },
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 82,
+          "start": 73
+        },
+        {
+          "end": 91,
+          "start": 83
+        },
+        {
+          "end": 94,
+          "start": 92
+        },
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 104,
+          "start": 96
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 95,
+      "signature_spans": [
+        {
+          "end": 82,
+          "start": 73
+        },
+        {
+          "end": 91,
+          "start": 83
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_number_theory_pilot_nat_basic_01  :\n  Injective Nat.succ :=\n@succ.inj",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [],
+      "proposition": "Function.Injective.{1, 1} Nat.succ"
+    },
+    "trusted_type_expression": "Function.Injective.{1, 1} Nat Nat Nat.succ",
+    "trusted_type_source": "Function.Injective.{1, 1} Nat.succ",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "graph_hash": "a838a3e8abd311e9497abdc9bd7aeba9508d9164ed7ed7417d4c0b94df349c7d",
+  "metric_status": "available",
+  "metrics": {
+    "D": 1,
+    "I0": {
+      "denominator_decimal": "2",
+      "log2": 0.0,
+      "numerator_decimal": "2"
+    },
+    "T0": {
+      "denominator_decimal": "4",
+      "log2": 0.3219280948873622,
+      "numerator_decimal": "5"
+    },
+    "U_B_decimal": "1",
+    "U_S_decimal": "4",
+    "U_decimal": "5",
+    "W_B": 2,
+    "W_S": 2,
+    "body_state": "present",
+    "distinct_dependency_count": 4,
+    "log2_I0": 0.0,
+    "log2_T0": 0.3219280948873622,
+    "log2_U": 2.321928094887362,
+    "log2_U_B": 0.0,
+    "log2_U_S": 2.0,
+    "log2_W": 2.0,
+    "metric_profile": "paper_aligned_v1",
+    "metric_status": "available",
+    "primitive_count": 4,
+    "reachable_node_count": 5,
+    "reasons": []
+  },
+  "primitive_manifest": [
+    "Function.Injective",
+    "Nat",
+    "Nat.succ",
+    "Nat.succ.inj"
+  ],
+  "primitive_manifest_hash": "38210ceba2a0186cdd6fda071635f3f9d19f169aaccebe3fd4ff6bfdb86dcf4c",
+  "primitive_manifest_scope": "reachable closure; boundary policy and environment define shared corpus boundary",
+  "reference_cache_key": "9078c6a10c88bdef048912094450d5b504f3e12dc1e64f2038c12d4df88fb4fc",
+  "reference_proof_sha256": "4bd92e0d7eb4d51f0cc63d3eedf908b2b05ac0527411becf931bd932938f5e80",
+  "source_hash": "2b79d9801839e0734bec7be691cb3091bee95344755886aee7d675e53e780a16",
+  "source_token_policy_hash": "878ab5fb5aa65e79973e4577203e29b9e6d67de66b91ff97b86ad021f5f229c9",
+  "task_hash": "bac69fcfb13acda90257e3fc8d3346b83bd46a7952addebc6a33e6c5765bdc3f",
+  "task_id": "lib_number_theory_pilot_nat_basic_01",
+  "task_input_hash": "03f2eb54225a0acbbd1c00acf60819cd1939189ed1bc2b470ca84bd4917f4d91",
+  "validation": {
+    "axioms": [],
+    "candidate_declarations": [
+      "CompressionEval.lib_number_theory_pilot_nat_basic_01"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 1,
+      "syntax_kinds": [
+        "Lean.Parser.Term.explicit"
+      ],
+      "transitive_dependency_count": 15
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "3568725967",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Data.Nat.Init"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Basic"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Nontrivial.Defs"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.Defs.LinearOrder"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.GCongr.Core"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 3.090747999958694,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "325b83aca2356efb8a2f52369b25df775be1ff680eeeb1a9fd30255259232bdb",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_number_theory_pilot_nat_basic_01",
+    "source_tokens": {
+      "W_B": 2,
+      "W_S": 2,
+      "W_full": 8,
+      "body_spans": [
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 104,
+          "start": 96
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 67,
+          "start": 8
+        },
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 82,
+          "start": 73
+        },
+        {
+          "end": 91,
+          "start": 83
+        },
+        {
+          "end": 94,
+          "start": 92
+        },
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 104,
+          "start": 96
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 95,
+      "signature_spans": [
+        {
+          "end": 82,
+          "start": 73
+        },
+        {
+          "end": 91,
+          "start": 83
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_number_theory_pilot_nat_basic_01  :\n  Injective Nat.succ :=\n@succ.inj",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [],
+      "proposition": "Function.Injective.{1, 1} Nat.succ"
+    },
+    "trusted_type_expression": "Function.Injective.{1, 1} Nat Nat Nat.succ",
+    "trusted_type_source": "Function.Injective.{1, 1} Nat.succ",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "validity_status": "success"
+}

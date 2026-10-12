@@ -1,0 +1,179 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "∀ {n : ℕ}, Membership.mem.{0, 0} n.divisors 1 ↔ Ne.{1} n 0",
+  "trusted_type_expression": "forall {n : Nat}, Iff (Membership.mem.{0, 0} Nat (Finset.{0} Nat) (SetLike.instMembership.{0, 0} (Finset.{0} Nat) Nat (Finset.instSetLike.{0} Nat)) (Nat.divisors n) (OfNat.ofNat.{0} Nat 1 (instOfNatNat 1))) (Ne.{1} Nat n (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0)))",
+  "trusted_telescope": {
+    "proposition": "Membership.mem.{0, 0} n.divisors 1 ↔ Ne.{1} n 0",
+    "binders": [
+      {
+        "type_source": "ℕ",
+        "name": "n",
+        "binder_info": "implicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_number_theory_main_numbertheory_divisors_10  :\n  1 ∈ divisors n ↔ n ≠ 0 :=\nby simp",
+    "signature_spans": [
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 89
+      },
+      {
+        "start": 90,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 104
+      },
+      {
+        "start": 105,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 112
+      }
+    ],
+    "proof_offset": 116,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 78
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 89
+      },
+      {
+        "start": 90,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 104
+      },
+      {
+        "start": 105,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 123
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 116,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 123
+      }
+    ],
+    "W_full": 14,
+    "W_S": 8,
+    "W_B": 2
+  },
+  "root": "CompressionEval.lib_number_theory_main_numbertheory_divisors_10",
+  "proved_type_fingerprint": "3289918367",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 3025,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.simp",
+      "Lean.Parser.Tactic.optConfig"
+    ],
+    "proof_nodes": 739,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_number_theory_main_numbertheory_divisors_10"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "6a43d17e81f98408182a72127ca582c63cb5fcb631cc345adb3f6398e6e93b26",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.323499832767993
+  },
+  "request_fingerprint": "7a9f5c39b2fc89c135bf34ea4e860aa6f83eeefe2bb80656ad4c504fdc5efb4a"
+}

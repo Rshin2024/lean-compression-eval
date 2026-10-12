@@ -1,0 +1,1240 @@
+{
+  "boundary_policy": "expand_mathlib_and_evaluator_v1",
+  "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
+  "engine_hash": "3c093c02b7d907faad45ede5ed175e3527aeaa9dbb9ca2141293075aaeeaa343",
+  "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+  "evaluated_at": "2026-10-12T03:49:46.609842+00:00",
+  "extraction": {
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.fresh_number_theory_01"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 73,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.exact",
+        "Lean.Parser.Term.app",
+        "Lean.Parser.Term.paren",
+        "Lean.Parser.Term.hygienicLParen",
+        "hygieneInfo"
+      ],
+      "transitive_dependency_count": 475
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "available",
+    "nodes": [
+      {
+        "body": {
+          "LT.lt": 2,
+          "Nat": 6,
+          "Nat.gcd": 2,
+          "Nat.gcd_le_left": 1,
+          "Nat.gcd_le_right": 1,
+          "Nat.mul_le_mul": 1,
+          "OfNat.ofNat": 2,
+          "instLTNat": 2,
+          "instOfNatNat": 2
+        },
+        "body_nodes": 73,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 8,
+        "name": "CompressionEval.fresh_number_theory_01",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "HMul.hMul": 2,
+          "LE.le": 1,
+          "LT.lt": 2,
+          "Nat": 15,
+          "Nat.gcd": 2,
+          "OfNat.ofNat": 2,
+          "instHMul": 2,
+          "instLENat": 1,
+          "instLTNat": 2,
+          "instMulNat": 2,
+          "instOfNatNat": 2
+        },
+        "source_counts": null,
+        "type_hash": "3849853345",
+        "type_nodes": 89,
+        "value_hash": "3887533745"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3931117990",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "LT.lt",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "438589096",
+        "type_nodes": null,
+        "value_hash": "3248470211"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instLTNat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1827018848",
+        "type_nodes": null,
+        "value_hash": "639945372"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "OfNat.ofNat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3494724834",
+        "type_nodes": null,
+        "value_hash": "2265622595"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instOfNatNat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3464002136",
+        "type_nodes": null,
+        "value_hash": "2633726084"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "LE.le",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1191225326",
+        "type_nodes": null,
+        "value_hash": "3524454254"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instLENat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2454140966",
+        "type_nodes": null,
+        "value_hash": "679523573"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "HMul.hMul",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "998999565",
+        "type_nodes": null,
+        "value_hash": "2438139686"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instHMul",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2597214157",
+        "type_nodes": null,
+        "value_hash": "3745602868"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instMulNat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1367565911",
+        "type_nodes": null,
+        "value_hash": "2459009923"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.gcd",
+        "owner_module": "Init.Data.Nat.Gcd",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "4163592787",
+        "type_nodes": null,
+        "value_hash": "3884579149"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.mul_le_mul",
+        "owner_module": "Init.Data.Nat.Basic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "223125432",
+        "type_nodes": null,
+        "value_hash": "3586011412"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.gcd_le_left",
+        "owner_module": "Init.Data.Nat.Gcd",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "133249914",
+        "type_nodes": null,
+        "value_hash": "3757922582"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.gcd_le_right",
+        "owner_module": "Init.Data.Nat.Gcd",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1233354531",
+        "type_nodes": null,
+        "value_hash": "1682681114"
+      }
+    ],
+    "process_returncode": 0,
+    "proved_type_fingerprint": "3849853345",
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 6.899975375272334,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "bfec8e84c1ff34fba5cf126ae9fd61a31db497397977306a3b09343aad9698a6",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.fresh_number_theory_01",
+    "source_tokens": {
+      "W_B": 13,
+      "W_S": 31,
+      "W_full": 48,
+      "body_spans": [
+        {
+          "end": 137,
+          "start": 135
+        },
+        {
+          "end": 143,
+          "start": 138
+        },
+        {
+          "end": 158,
+          "start": 144
+        },
+        {
+          "end": 160,
+          "start": 159
+        },
+        {
+          "end": 175,
+          "start": 160
+        },
+        {
+          "end": 177,
+          "start": 176
+        },
+        {
+          "end": 180,
+          "start": 178
+        },
+        {
+          "end": 181,
+          "start": 180
+        },
+        {
+          "end": 183,
+          "start": 182
+        },
+        {
+          "end": 199,
+          "start": 183
+        },
+        {
+          "end": 201,
+          "start": 200
+        },
+        {
+          "end": 204,
+          "start": 202
+        },
+        {
+          "end": 205,
+          "start": 204
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 53,
+          "start": 8
+        },
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 56,
+          "start": 55
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 64,
+          "start": 61
+        },
+        {
+          "end": 65,
+          "start": 64
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 69,
+          "start": 67
+        },
+        {
+          "end": 71,
+          "start": 70
+        },
+        {
+          "end": 73,
+          "start": 72
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 77,
+          "start": 76
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 82,
+          "start": 80
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 86,
+          "start": 85
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 91,
+          "start": 90
+        },
+        {
+          "end": 93,
+          "start": 92
+        },
+        {
+          "end": 103,
+          "start": 96
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 107,
+          "start": 106
+        },
+        {
+          "end": 109,
+          "start": 108
+        },
+        {
+          "end": 117,
+          "start": 110
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 125,
+          "start": 122
+        },
+        {
+          "end": 127,
+          "start": 126
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 131,
+          "start": 130
+        },
+        {
+          "end": 134,
+          "start": 132
+        },
+        {
+          "end": 137,
+          "start": 135
+        },
+        {
+          "end": 143,
+          "start": 138
+        },
+        {
+          "end": 158,
+          "start": 144
+        },
+        {
+          "end": 160,
+          "start": 159
+        },
+        {
+          "end": 175,
+          "start": 160
+        },
+        {
+          "end": 177,
+          "start": 176
+        },
+        {
+          "end": 180,
+          "start": 178
+        },
+        {
+          "end": 181,
+          "start": 180
+        },
+        {
+          "end": 183,
+          "start": 182
+        },
+        {
+          "end": 199,
+          "start": 183
+        },
+        {
+          "end": 201,
+          "start": 200
+        },
+        {
+          "end": 204,
+          "start": 202
+        },
+        {
+          "end": 205,
+          "start": 204
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 135,
+      "signature_spans": [
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 56,
+          "start": 55
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 64,
+          "start": 61
+        },
+        {
+          "end": 65,
+          "start": 64
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 69,
+          "start": 67
+        },
+        {
+          "end": 71,
+          "start": 70
+        },
+        {
+          "end": 73,
+          "start": 72
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 77,
+          "start": 76
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 82,
+          "start": 80
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 86,
+          "start": 85
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 91,
+          "start": 90
+        },
+        {
+          "end": 103,
+          "start": 96
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 107,
+          "start": 106
+        },
+        {
+          "end": 109,
+          "start": 108
+        },
+        {
+          "end": 117,
+          "start": 110
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 125,
+          "start": 122
+        },
+        {
+          "end": 127,
+          "start": 126
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 131,
+          "start": 130
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.fresh_number_theory_01 (a b : ℕ) (ha : 0 < a) (hb : 0 < b) :\n  Nat.gcd a b * Nat.gcd a b ≤ a * b :=\nby exact Nat.mul_le_mul (Nat.gcd_le_left b ha) (Nat.gcd_le_right a hb)",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "explicit",
+          "name": "a",
+          "type_source": "ℕ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "b",
+          "type_source": "ℕ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "ha",
+          "type_source": "LT.lt.{0} 0 a"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hb",
+          "type_source": "LT.lt.{0} 0 b"
+        }
+      ],
+      "proposition": "LE.le.{0} (HMul.hMul.{0, 0, 0} (a.gcd b) (a.gcd b)) (HMul.hMul.{0, 0, 0} a b)"
+    },
+    "trusted_type_expression": "forall (a : Nat) (b : Nat), (LT.lt.{0} Nat instLTNat (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0)) a) -> (LT.lt.{0} Nat instLTNat (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0)) b) -> (LE.le.{0} Nat instLENat (HMul.hMul.{0, 0, 0} Nat Nat Nat (instHMul.{0} Nat instMulNat) (Nat.gcd a b) (Nat.gcd a b)) (HMul.hMul.{0, 0, 0} Nat Nat Nat (instHMul.{0} Nat instMulNat) a b))",
+    "trusted_type_source": "∀ (a b : ℕ),\n  LT.lt.{0} 0 a → LT.lt.{0} 0 b → LE.le.{0} (HMul.hMul.{0, 0, 0} (a.gcd b) (a.gcd b)) (HMul.hMul.{0, 0, 0} a b)",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "graph_hash": "1aa480a45211f8c6d42bbb3ed4cdd5bd4ed6e52057ceb8e9cf54474bd7de19ec",
+  "metric_status": "available",
+  "metrics": {
+    "D": 1,
+    "I0": {
+      "denominator_decimal": "31",
+      "log2": -1.2537565922457827,
+      "numerator_decimal": "13"
+    },
+    "T0": {
+      "denominator_decimal": "44",
+      "log2": 0.24100809950379443,
+      "numerator_decimal": "52"
+    },
+    "U_B_decimal": "19",
+    "U_S_decimal": "33",
+    "U_decimal": "52",
+    "W_B": 13,
+    "W_S": 31,
+    "body_state": "present",
+    "distinct_dependency_count": 14,
+    "log2_I0": -1.2537565922457827,
+    "log2_T0": 0.24100809950379443,
+    "log2_U": 5.700439718141092,
+    "log2_U_B": 4.247927513443585,
+    "log2_U_S": 5.044394119358453,
+    "log2_W": 5.459431618637297,
+    "metric_profile": "paper_aligned_v1",
+    "metric_status": "available",
+    "primitive_count": 14,
+    "reachable_node_count": 15,
+    "reasons": []
+  },
+  "primitive_manifest": [
+    "HMul.hMul",
+    "LE.le",
+    "LT.lt",
+    "Nat",
+    "Nat.gcd",
+    "Nat.gcd_le_left",
+    "Nat.gcd_le_right",
+    "Nat.mul_le_mul",
+    "OfNat.ofNat",
+    "instHMul",
+    "instLENat",
+    "instLTNat",
+    "instMulNat",
+    "instOfNatNat"
+  ],
+  "primitive_manifest_hash": "4b8d3f74435757b5982778c86929b8a717b6ea9ebce3e75d6a004afac6bfca9a",
+  "primitive_manifest_scope": "reachable closure; boundary policy and environment define shared corpus boundary",
+  "reference_proof_sha256": "765681f011b6b0b9dda07756c83569a265e1869baea8e3096e978d0eab7cdaef",
+  "source_hash": "c9a9408f3d8e5538f9a62260dd2733fe09efea340ec152e9337e0b72981b0020",
+  "source_token_policy_hash": "82278aac4f6faa62bcbabe626b0ca3c486cb3f2a6e213f12c9587341b3dbed61",
+  "task_hash": "239ee2b8932fa4bfaa98f12f71e9682e6e8c83f5fe5d23695e44d2813375e9be",
+  "task_id": "fresh_number_theory_01",
+  "task_input_hash": "d184d5f4128f7354bb696b25e89aef43203e453e43c612b0ae7c2fe64a66825d",
+  "validation": {
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.fresh_number_theory_01"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 73,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.exact",
+        "Lean.Parser.Term.app",
+        "Lean.Parser.Term.paren",
+        "Lean.Parser.Term.hygienicLParen",
+        "hygieneInfo"
+      ],
+      "transitive_dependency_count": 475
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "3849853345",
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 6.409114208072424,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "538a0d5a1d6abeecf500305dbefcfd1ba58f2da41fea2a671701423e3151b063",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.fresh_number_theory_01",
+    "source_tokens": {
+      "W_B": 13,
+      "W_S": 31,
+      "W_full": 48,
+      "body_spans": [
+        {
+          "end": 137,
+          "start": 135
+        },
+        {
+          "end": 143,
+          "start": 138
+        },
+        {
+          "end": 158,
+          "start": 144
+        },
+        {
+          "end": 160,
+          "start": 159
+        },
+        {
+          "end": 175,
+          "start": 160
+        },
+        {
+          "end": 177,
+          "start": 176
+        },
+        {
+          "end": 180,
+          "start": 178
+        },
+        {
+          "end": 181,
+          "start": 180
+        },
+        {
+          "end": 183,
+          "start": 182
+        },
+        {
+          "end": 199,
+          "start": 183
+        },
+        {
+          "end": 201,
+          "start": 200
+        },
+        {
+          "end": 204,
+          "start": 202
+        },
+        {
+          "end": 205,
+          "start": 204
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 53,
+          "start": 8
+        },
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 56,
+          "start": 55
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 64,
+          "start": 61
+        },
+        {
+          "end": 65,
+          "start": 64
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 69,
+          "start": 67
+        },
+        {
+          "end": 71,
+          "start": 70
+        },
+        {
+          "end": 73,
+          "start": 72
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 77,
+          "start": 76
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 82,
+          "start": 80
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 86,
+          "start": 85
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 91,
+          "start": 90
+        },
+        {
+          "end": 93,
+          "start": 92
+        },
+        {
+          "end": 103,
+          "start": 96
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 107,
+          "start": 106
+        },
+        {
+          "end": 109,
+          "start": 108
+        },
+        {
+          "end": 117,
+          "start": 110
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 125,
+          "start": 122
+        },
+        {
+          "end": 127,
+          "start": 126
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 131,
+          "start": 130
+        },
+        {
+          "end": 134,
+          "start": 132
+        },
+        {
+          "end": 137,
+          "start": 135
+        },
+        {
+          "end": 143,
+          "start": 138
+        },
+        {
+          "end": 158,
+          "start": 144
+        },
+        {
+          "end": 160,
+          "start": 159
+        },
+        {
+          "end": 175,
+          "start": 160
+        },
+        {
+          "end": 177,
+          "start": 176
+        },
+        {
+          "end": 180,
+          "start": 178
+        },
+        {
+          "end": 181,
+          "start": 180
+        },
+        {
+          "end": 183,
+          "start": 182
+        },
+        {
+          "end": 199,
+          "start": 183
+        },
+        {
+          "end": 201,
+          "start": 200
+        },
+        {
+          "end": 204,
+          "start": 202
+        },
+        {
+          "end": 205,
+          "start": 204
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 135,
+      "signature_spans": [
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 56,
+          "start": 55
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 64,
+          "start": 61
+        },
+        {
+          "end": 65,
+          "start": 64
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 69,
+          "start": 67
+        },
+        {
+          "end": 71,
+          "start": 70
+        },
+        {
+          "end": 73,
+          "start": 72
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 77,
+          "start": 76
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 82,
+          "start": 80
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 86,
+          "start": 85
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 91,
+          "start": 90
+        },
+        {
+          "end": 103,
+          "start": 96
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 107,
+          "start": 106
+        },
+        {
+          "end": 109,
+          "start": 108
+        },
+        {
+          "end": 117,
+          "start": 110
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 125,
+          "start": 122
+        },
+        {
+          "end": 127,
+          "start": 126
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 131,
+          "start": 130
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.fresh_number_theory_01 (a b : ℕ) (ha : 0 < a) (hb : 0 < b) :\n  Nat.gcd a b * Nat.gcd a b ≤ a * b :=\nby exact Nat.mul_le_mul (Nat.gcd_le_left b ha) (Nat.gcd_le_right a hb)",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "explicit",
+          "name": "a",
+          "type_source": "ℕ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "b",
+          "type_source": "ℕ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "ha",
+          "type_source": "LT.lt.{0} 0 a"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hb",
+          "type_source": "LT.lt.{0} 0 b"
+        }
+      ],
+      "proposition": "LE.le.{0} (HMul.hMul.{0, 0, 0} (a.gcd b) (a.gcd b)) (HMul.hMul.{0, 0, 0} a b)"
+    },
+    "trusted_type_expression": "forall (a : Nat) (b : Nat), (LT.lt.{0} Nat instLTNat (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0)) a) -> (LT.lt.{0} Nat instLTNat (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0)) b) -> (LE.le.{0} Nat instLENat (HMul.hMul.{0, 0, 0} Nat Nat Nat (instHMul.{0} Nat instMulNat) (Nat.gcd a b) (Nat.gcd a b)) (HMul.hMul.{0, 0, 0} Nat Nat Nat (instHMul.{0} Nat instMulNat) a b))",
+    "trusted_type_source": "∀ (a b : ℕ),\n  LT.lt.{0} 0 a → LT.lt.{0} 0 b → LE.le.{0} (HMul.hMul.{0, 0, 0} (a.gcd b) (a.gcd b)) (HMul.hMul.{0, 0, 0} a b)",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "validity_status": "success"
+}

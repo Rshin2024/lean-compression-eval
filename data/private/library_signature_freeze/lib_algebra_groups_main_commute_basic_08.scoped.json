@@ -1,0 +1,450 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {G : Type u_1} [inst : DivisionMonoid.{u_1} G] {a b c d : G},\n  Commute.{u_1} c d →\n    Commute.{u_1} b (Inv.inv.{u_1} c) →\n      Eq.{u_1 + 1} (HDiv.hDiv.{u_1, u_1, u_1} (HMul.hMul.{u_1, u_1, u_1} a b) (HMul.hMul.{u_1, u_1, u_1} c d))\n        (HMul.hMul.{u_1, u_1, u_1} (HDiv.hDiv.{u_1, u_1, u_1} a c) (HDiv.hDiv.{u_1, u_1, u_1} b d))",
+  "trusted_type_expression": "forall {G : Type.{u_1}} [inst._@.EvaluatorCandidate.4196739541._hygCtx._hyg.3 : DivisionMonoid.{u_1} G] {a : G} {b : G} {c : G} {d : G}, (Commute.{u_1} G (MulOne.toMul.{u_1} G (MulOneClass.toMulOne.{u_1} G (Monoid.toMulOneClass.{u_1} G (DivInvMonoid.toMonoid.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst._@.EvaluatorCandidate.4196739541._hygCtx._hyg.3))))) c d) -> (Commute.{u_1} G (MulOne.toMul.{u_1} G (MulOneClass.toMulOne.{u_1} G (Monoid.toMulOneClass.{u_1} G (DivInvMonoid.toMonoid.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst._@.EvaluatorCandidate.4196739541._hygCtx._hyg.3))))) b (Inv.inv.{u_1} G (InvOneClass.toInv.{u_1} G (DivInvOneMonoid.toInvOneClass.{u_1} G (DivisionMonoid.toDivInvOneMonoid.{u_1} G inst._@.EvaluatorCandidate.4196739541._hygCtx._hyg.3))) c)) -> (Eq.{succ u_1} G (HDiv.hDiv.{u_1, u_1, u_1} G G G (instHDiv.{u_1} G (DivInvMonoid.toDiv.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst._@.EvaluatorCandidate.4196739541._hygCtx._hyg.3))) (HMul.hMul.{u_1, u_1, u_1} G G G (instHMul.{u_1} G (MulOne.toMul.{u_1} G (MulOneClass.toMulOne.{u_1} G (Monoid.toMulOneClass.{u_1} G (DivInvMonoid.toMonoid.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst._@.EvaluatorCandidate.4196739541._hygCtx._hyg.3)))))) a b) (HMul.hMul.{u_1, u_1, u_1} G G G (instHMul.{u_1} G (MulOne.toMul.{u_1} G (MulOneClass.toMulOne.{u_1} G (Monoid.toMulOneClass.{u_1} G (DivInvMonoid.toMonoid.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst._@.EvaluatorCandidate.4196739541._hygCtx._hyg.3)))))) c d)) (HMul.hMul.{u_1, u_1, u_1} G G G (instHMul.{u_1} G (MulOne.toMul.{u_1} G (MulOneClass.toMulOne.{u_1} G (Monoid.toMulOneClass.{u_1} G (DivInvMonoid.toMonoid.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst._@.EvaluatorCandidate.4196739541._hygCtx._hyg.3)))))) (HDiv.hDiv.{u_1, u_1, u_1} G G G (instHDiv.{u_1} G (DivInvMonoid.toDiv.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst._@.EvaluatorCandidate.4196739541._hygCtx._hyg.3))) a c) (HDiv.hDiv.{u_1, u_1, u_1} G G G (instHDiv.{u_1} G (DivInvMonoid.toDiv.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst._@.EvaluatorCandidate.4196739541._hygCtx._hyg.3))) b d)))",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_1 + 1} (HDiv.hDiv.{u_1, u_1, u_1} (HMul.hMul.{u_1, u_1, u_1} a b) (HMul.hMul.{u_1, u_1, u_1} c d))\n  (HMul.hMul.{u_1, u_1, u_1} (HDiv.hDiv.{u_1, u_1, u_1} a c) (HDiv.hDiv.{u_1, u_1, u_1} b d))",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "G",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "DivisionMonoid.{u_1} G",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.3",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "G",
+        "name": "a",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "G",
+        "name": "b",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "G",
+        "name": "c",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "G",
+        "name": "d",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Commute.{u_1} c d",
+        "name": "hcd",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Commute.{u_1} b (Inv.inv.{u_1} c)",
+        "name": "hbc",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_algebra_groups_main_commute_basic_08 (hcd : Commute c d) (hbc : Commute b c⁻¹) :\n  a * b / (c * d) = a / c * (b / d) :=\n(hcd.div_mul_div_comm hbc.symm).symm",
+    "signature_spans": [
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 73,
+        "end": 76
+      },
+      {
+        "start": 77,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 90,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 93,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 108
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 110,
+        "end": 115
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 121,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 135
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 144
+      },
+      {
+        "start": 145,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 148
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 153
+      },
+      {
+        "start": 153,
+        "end": 154
+      }
+    ],
+    "proof_offset": 158,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 71
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 73,
+        "end": 76
+      },
+      {
+        "start": 77,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 90,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 93,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 108
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 110,
+        "end": 115
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 121,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 135
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 144
+      },
+      {
+        "start": 145,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 148
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 153
+      },
+      {
+        "start": 153,
+        "end": 154
+      },
+      {
+        "start": 155,
+        "end": 157
+      },
+      {
+        "start": 158,
+        "end": 159
+      },
+      {
+        "start": 159,
+        "end": 179
+      },
+      {
+        "start": 180,
+        "end": 188
+      },
+      {
+        "start": 188,
+        "end": 189
+      },
+      {
+        "start": 189,
+        "end": 190
+      },
+      {
+        "start": 190,
+        "end": 194
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 158,
+        "end": 159
+      },
+      {
+        "start": 159,
+        "end": 179
+      },
+      {
+        "start": 180,
+        "end": 188
+      },
+      {
+        "start": 188,
+        "end": 189
+      },
+      {
+        "start": 189,
+        "end": 190
+      },
+      {
+        "start": 190,
+        "end": 194
+      }
+    ],
+    "W_full": 44,
+    "W_S": 34,
+    "W_B": 6
+  },
+  "root": "CompressionEval.lib_algebra_groups_main_commute_basic_08",
+  "proved_type_fingerprint": "4160186503",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 470,
+    "syntax_kinds": [
+      "Lean.Parser.Term.proj",
+      "Lean.Parser.Term.paren",
+      "Lean.Parser.Term.hygienicLParen",
+      "hygieneInfo",
+      "Lean.Parser.Term.app",
+      "null"
+    ],
+    "proof_nodes": 345,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_algebra_groups_main_commute_basic_08"
+  ],
+  "axioms": [
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "7cdf3dccea4575c06d293ac1150b1be6f0fee2c6da7c6aea4a690a49c40aa799",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 3.290725000202656
+  },
+  "request_fingerprint": "4d836fd5e799fb8e3f0bf3f5ef252f029dfb986d7c27c065e74dd02ce38f3daa"
+}

@@ -1,0 +1,79 @@
+{
+  "task": {
+    "task_id": "lib_analysis_inequalities_main_convex_function_07",
+    "family_id": "source_module_Mathlib.Analysis.Convex.Function",
+    "domain": "analysis_inequalities",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_medium",
+    "imports": [
+      "Mathlib.Analysis.Convex.Basic",
+      "Mathlib.Order.Filter.Extr",
+      "Mathlib.Tactic.NormNum"
+    ],
+    "context": "/-\nCopyright (c) 2019 Alexander Bentkamp. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Alexander Bentkamp, François Dupuis\n-/\n/-!\n# Convex and concave functions\n\nThis file defines convex and concave functions in vector spaces and proves the finite Jensen\ninequality. The integral version can be found in `Analysis.Convex.Integral`.\n\nA function `f : E → β` is `ConvexOn` a set `s` if `s` is itself a convex set, and for any two\npoints `x y ∈ s`, the segment joining `(x, f x)` to `(y, f y)` is above the graph of `f`.\nEquivalently, `ConvexOn 𝕜 f s` means that the epigraph `{p : E × β | p.1 ∈ s ∧ f p.1 ≤ p.2}` is\na convex set.\n\n## Main declarations\n\n* `ConvexOn 𝕜 s f`: The function `f` is convex on `s` with scalars `𝕜`.\n* `ConcaveOn 𝕜 s f`: The function `f` is concave on `s` with scalars `𝕜`.\n* `StrictConvexOn 𝕜 s f`: The function `f` is strictly convex on `s` with scalars `𝕜`.\n* `StrictConcaveOn 𝕜 s f`: The function `f` is strictly concave on `s` with scalars `𝕜`.\n-/\n\n@[expose] public section\n\nopen LinearMap Set Convex\n\nvariable {𝕜 E F α β ι : Type*}\n\nsection OrderedSemiring\n\nvariable [Semiring 𝕜] [PartialOrder 𝕜]\n\nsection AddCommMonoid\n\nvariable [AddCommMonoid E] [AddCommMonoid F]\n\nsection OrderedAddCommMonoid\n\nvariable [AddCommMonoid α] [PartialOrder α] [AddCommMonoid β] [PartialOrder β]\n\nsection SMul\n\nvariable (𝕜) [SMul 𝕜 E] [SMul 𝕜 α] [SMul 𝕜 β] (s : Set E) (f : E → β) {g : β → α}\n\n/-- Convexity of functions -/\ndef ConvexOn : Prop :=\n  Convex 𝕜 s ∧ ∀ ⦃x⦄, x ∈ s → ∀ ⦃y⦄, y ∈ s → ∀ ⦃a b : 𝕜⦄, 0 ≤ a → 0 ≤ b → a + b = 1 →\n    f (a • x + b • y) ≤ a • f x + b • f y\n\n/-- Concavity of functions -/\ndef ConcaveOn : Prop :=\n  Convex 𝕜 s ∧ ∀ ⦃x⦄, x ∈ s → ∀ ⦃y⦄, y ∈ s → ∀ ⦃a b : 𝕜⦄, 0 ≤ a → 0 ≤ b → a + b = 1 →\n    a • f x + b • f y ≤ f (a • x + b • y)\n\n/-- Strict convexity of functions -/\ndef StrictConvexOn : Prop :=\n  Convex 𝕜 s ∧ ∀ ⦃x⦄, x ∈ s → ∀ ⦃y⦄, y ∈ s → x ≠ y → ∀ ⦃a b : 𝕜⦄, 0 < a → 0 < b → a + b = 1 →\n    f (a • x + b • y) < a • f x + b • f y\n\n/-- Strict concavity of functions -/\ndef StrictConcaveOn : Prop :=\n  Convex 𝕜 s ∧ ∀ ⦃x⦄, x ∈ s → ∀ ⦃y⦄, y ∈ s → x ≠ y → ∀ ⦃a b : 𝕜⦄, 0 < a → 0 < b → a + b = 1 →\n    a • f x + b • f y < f (a • x + b • y)\n\nvariable {𝕜 s f}\n\nopen OrderDual (toDual ofDual)\n\ntheorem ConvexOn.dual (hf : ConvexOn 𝕜 s f) : ConcaveOn 𝕜 s (toDual ∘ f) := hf\n\ntheorem ConcaveOn.dual (hf : ConcaveOn 𝕜 s f) : ConvexOn 𝕜 s (toDual ∘ f) := hf\n\ntheorem StrictConvexOn.dual (hf : StrictConvexOn 𝕜 s f) : StrictConcaveOn 𝕜 s (toDual ∘ f) := hf\n\ntheorem StrictConcaveOn.dual (hf : StrictConcaveOn 𝕜 s f) : StrictConvexOn 𝕜 s (toDual ∘ f) := hf\n\ntheorem convexOn_id {s : Set β} (hs : Convex 𝕜 s) : ConvexOn 𝕜 s _root_.id :=\n  ⟨hs, by\n    intros\n    rfl⟩\n\ntheorem concaveOn_id {s : Set β} (hs : Convex 𝕜 s) : ConcaveOn 𝕜 s _root_.id :=\n  ⟨hs, by\n    intros\n    rfl⟩\n\nsection congr\n\nvariable {g : E → β}\n\nuniverse «u_1» «u_2» «u_5»\n\nassert_not_exists _root_.ConvexOn.congr\n",
+    "binders": "{«𝕜» : Type u_1} {«E» : Type u_2} {«β» : Type u_5} [«inst» : Semiring.{u_1} 𝕜] [«inst_1» : PartialOrder.{u_1} 𝕜] [«inst_2» : AddCommMonoid.{u_2} E] [«inst_3» : AddCommMonoid.{u_5} β] [«inst_4» : PartialOrder.{u_5} β] [«inst_5» : SMul.{u_1, u_2} 𝕜 E] [«inst_6» : SMul.{u_1, u_5} 𝕜 β] {«s» : Set.{u_2} E} {«f» : E → β} {«g» : E → β} (hf : ConvexOn 𝕜 s f) (hfg : EqOn f g s)",
+    "proposition": "ConvexOn 𝕜 s g",
+    "target_name": "_root_.CompressionEval.lib_analysis_inequalities_main_convex_function_07",
+    "premise_context": "open LinearMap Set Convex\nvariable {𝕜 E F α β ι : Type*}\nsection OrderedSemiring\nvariable [Semiring 𝕜] [PartialOrder 𝕜]\nsection AddCommMonoid\nvariable [AddCommMonoid E] [AddCommMonoid F]\nsection OrderedAddCommMonoid\nvariable [AddCommMonoid α] [PartialOrder α] [AddCommMonoid β] [PartialOrder β]\nsection SMul\nvariable (𝕜) [SMul 𝕜 E] [SMul 𝕜 α] [SMul 𝕜 β] (s : Set E) (f : E → β) {g : β → α}\nvariable {𝕜 s f}\nopen OrderDual (toDual ofDual)\nsection congr\nvariable {g : E → β}\n\nAvailable preceding statements (within the shown source scopes):\ntheorem ConvexOn.dual (hf : ConvexOn 𝕜 s f) : ConcaveOn 𝕜 s (toDual ∘ f)\n\ntheorem ConcaveOn.dual (hf : ConcaveOn 𝕜 s f) : ConvexOn 𝕜 s (toDual ∘ f)\n\ntheorem StrictConvexOn.dual (hf : StrictConvexOn 𝕜 s f) : StrictConcaveOn 𝕜 s (toDual ∘ f)\n\ntheorem StrictConcaveOn.dual (hf : StrictConcaveOn 𝕜 s f) : StrictConvexOn 𝕜 s (toDual ∘ f)\n\ntheorem convexOn_id {s : Set β} (hs : Convex 𝕜 s) : ConvexOn 𝕜 s _root_.id\n\ntheorem concaveOn_id {s : Set β} (hs : Convex 𝕜 s) : ConcaveOn 𝕜 s _root_.id",
+    "forbidden_declarations": [
+      "ConvexOn.congr"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Analysis.Convex.Function",
+      "source_path": "Mathlib/Analysis/Convex/Function.lean",
+      "declaration": "ConvexOn.congr",
+      "source_line": 99,
+      "source_sha256": "dc9c6469ffab18ed02a31bec9f28338fca72ce095699b7a95b1a9abdbbc97e17",
+      "prefix_end_character": 3022,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "d07ca97919d57100d257d5c4b820eae52f900583abe9f15b444bf87cf4ff3f37",
+      "premise_context": "71a133d01f8f423a8d602a6eda42b0a51d505c452fc19652cb5995c32eb900a1",
+      "binders": "401a073bc0b29b08915f2ffdb568a094f72b3c08db66a9a302f13dbb3a1615cb",
+      "proposition": "341ebe658e1e7506aa73d897ad427da145467b076767691ec94381fa4b686aec"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Analysis.Convex.Basic",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Order.Filter.Extr",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.NormNum",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

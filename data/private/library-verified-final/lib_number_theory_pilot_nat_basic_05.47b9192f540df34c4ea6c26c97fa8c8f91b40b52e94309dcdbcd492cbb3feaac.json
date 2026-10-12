@@ -1,0 +1,1672 @@
+{
+  "boundary_policy": "expand_mathlib_and_evaluator_v1",
+  "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+  "evaluated_at": "2026-10-12T04:03:43.512652+00:00",
+  "extraction": {
+    "axioms": [
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.lib_number_theory_pilot_nat_basic_05"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 1427,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.rwSeq",
+        "Lean.Parser.Tactic.optConfig",
+        "Lean.Parser.Tactic.rwRuleSeq",
+        "Lean.Parser.Tactic.rwRule",
+        "Lean.Parser.Term.app",
+        "Lean.Parser.Term.paren",
+        "Lean.Parser.Term.hygienicLParen",
+        "hygieneInfo"
+      ],
+      "transitive_dependency_count": 429
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "available",
+    "nodes": [
+      {
+        "body": {
+          "@Sort": 4,
+          "Eq": 12,
+          "Eq.mpr": 2,
+          "Eq.refl": 1,
+          "Eq.symm": 1,
+          "HDiv.hDiv": 20,
+          "HPow.hPow": 31,
+          "HSub.hSub": 4,
+          "Iff.mpr": 2,
+          "LE.le": 1,
+          "LT.lt": 1,
+          "Nat": 324,
+          "Nat.instDiv": 20,
+          "Nat.one_le_iff_ne_zero": 1,
+          "Nat.pos_iff_ne_zero": 1,
+          "Nat.pow_div": 1,
+          "Nat.pow_one": 1,
+          "Ne": 4,
+          "OfNat.ofNat": 18,
+          "congrArg": 2,
+          "id": 2,
+          "instHDiv": 20,
+          "instHPow": 31,
+          "instHSub": 4,
+          "instLENat": 1,
+          "instLTNat": 1,
+          "instNatPowNat": 31,
+          "instOfNatNat": 18,
+          "instPowNat": 31,
+          "instSubNat": 4
+        },
+        "body_nodes": 1427,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 42,
+        "name": "CompressionEval.lib_number_theory_pilot_nat_basic_05",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "Eq": 1,
+          "HDiv.hDiv": 1,
+          "HPow.hPow": 2,
+          "HSub.hSub": 1,
+          "Nat": 28,
+          "Nat.instDiv": 1,
+          "Ne": 2,
+          "OfNat.ofNat": 3,
+          "instHDiv": 1,
+          "instHPow": 2,
+          "instHSub": 1,
+          "instNatPowNat": 2,
+          "instOfNatNat": 3,
+          "instPowNat": 2,
+          "instSubNat": 1
+        },
+        "source_counts": null,
+        "type_hash": "1594217047",
+        "type_nodes": 127,
+        "value_hash": "2568521865"
+      },
+      {
+        "body": null,
+        "name": "@Sort",
+        "owner_module": "@builtin",
+        "primitive": true,
+        "signature": {},
+        "type_hash": "@Sort",
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3931117990",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Ne",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2885572531",
+        "type_nodes": null,
+        "value_hash": "2381600780"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "OfNat.ofNat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3494724834",
+        "type_nodes": null,
+        "value_hash": "2265622595"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instOfNatNat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3464002136",
+        "type_nodes": null,
+        "value_hash": "2633726084"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3970007004",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "HPow.hPow",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1206077899",
+        "type_nodes": null,
+        "value_hash": "3889254115"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instHPow",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "572985902",
+        "type_nodes": null,
+        "value_hash": "3415853709"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instPowNat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "493145897",
+        "type_nodes": null,
+        "value_hash": "33729244"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instNatPowNat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2930520895",
+        "type_nodes": null,
+        "value_hash": "2534830807"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "HSub.hSub",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "4055278727",
+        "type_nodes": null,
+        "value_hash": "1160971187"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instHSub",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1715639830",
+        "type_nodes": null,
+        "value_hash": "1916426727"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instSubNat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "834816778",
+        "type_nodes": null,
+        "value_hash": "3087512524"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "HDiv.hDiv",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3511878171",
+        "type_nodes": null,
+        "value_hash": "2471649093"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instHDiv",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3336929548",
+        "type_nodes": null,
+        "value_hash": "4078084632"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.instDiv",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2325189867",
+        "type_nodes": null,
+        "value_hash": "3583808039"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.mpr",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "4214998329",
+        "type_nodes": null,
+        "value_hash": "136866614"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "id",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1324171196",
+        "type_nodes": null,
+        "value_hash": "2317393034"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "congrArg",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2722762766",
+        "type_nodes": null,
+        "value_hash": "2643130269"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.symm",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3416241219",
+        "type_nodes": null,
+        "value_hash": "2819966993"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.pow_div",
+        "owner_module": "Init.Data.Nat.Lemmas",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3035482941",
+        "type_nodes": null,
+        "value_hash": "3085246107"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Iff.mpr",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3087891951",
+        "type_nodes": null,
+        "value_hash": "1869400830"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "LE.le",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1191225326",
+        "type_nodes": null,
+        "value_hash": "3524454254"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instLENat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2454140966",
+        "type_nodes": null,
+        "value_hash": "679523573"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.one_le_iff_ne_zero",
+        "owner_module": "Init.Data.Nat.Lemmas",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "7006768",
+        "type_nodes": null,
+        "value_hash": "3309632557"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "LT.lt",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "438589096",
+        "type_nodes": null,
+        "value_hash": "3248470211"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instLTNat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1827018848",
+        "type_nodes": null,
+        "value_hash": "639945372"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.pos_iff_ne_zero",
+        "owner_module": "Init.Data.Nat.Basic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1104898969",
+        "type_nodes": null,
+        "value_hash": "1526897573"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.pow_one",
+        "owner_module": "Init.Data.Nat.Basic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1318346675",
+        "type_nodes": null,
+        "value_hash": "352167045"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.refl",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3843735716",
+        "type_nodes": null,
+        "value_hash": null
+      }
+    ],
+    "process_returncode": 0,
+    "proved_type_fingerprint": "1594217047",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Data.Nat.Init"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Basic"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Nontrivial.Defs"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.Defs.LinearOrder"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.GCongr.Core"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 2.48843862535432,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "34648916adb002c54152b6551b5a9ba14c13a4bc3c2e99e8d16f1dd272c3c588",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_number_theory_pilot_nat_basic_05",
+    "source_tokens": {
+      "W_B": 16,
+      "W_S": 33,
+      "W_full": 53,
+      "body_spans": [
+        {
+          "end": 143,
+          "start": 141
+        },
+        {
+          "end": 148,
+          "start": 146
+        },
+        {
+          "end": 150,
+          "start": 149
+        },
+        {
+          "end": 153,
+          "start": 150
+        },
+        {
+          "end": 165,
+          "start": 154
+        },
+        {
+          "end": 167,
+          "start": 166
+        },
+        {
+          "end": 189,
+          "start": 167
+        },
+        {
+          "end": 192,
+          "start": 190
+        },
+        {
+          "end": 193,
+          "start": 192
+        },
+        {
+          "end": 195,
+          "start": 194
+        },
+        {
+          "end": 218,
+          "start": 195
+        },
+        {
+          "end": 221,
+          "start": 219
+        },
+        {
+          "end": 222,
+          "start": 221
+        },
+        {
+          "end": 223,
+          "start": 222
+        },
+        {
+          "end": 235,
+          "start": 224
+        },
+        {
+          "end": 236,
+          "start": 235
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 67,
+          "start": 8
+        },
+        {
+          "end": 69,
+          "start": 68
+        },
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 78,
+          "start": 75
+        },
+        {
+          "end": 79,
+          "start": 78
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 81
+        },
+        {
+          "end": 85,
+          "start": 84
+        },
+        {
+          "end": 87,
+          "start": 86
+        },
+        {
+          "end": 91,
+          "start": 88
+        },
+        {
+          "end": 93,
+          "start": 92
+        },
+        {
+          "end": 94,
+          "start": 93
+        },
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 98,
+          "start": 96
+        },
+        {
+          "end": 100,
+          "start": 99
+        },
+        {
+          "end": 102,
+          "start": 101
+        },
+        {
+          "end": 106,
+          "start": 103
+        },
+        {
+          "end": 108,
+          "start": 107
+        },
+        {
+          "end": 109,
+          "start": 108
+        },
+        {
+          "end": 111,
+          "start": 110
+        },
+        {
+          "end": 115,
+          "start": 114
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 120,
+          "start": 119
+        },
+        {
+          "end": 122,
+          "start": 121
+        },
+        {
+          "end": 124,
+          "start": 123
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 127,
+          "start": 126
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 131,
+          "start": 130
+        },
+        {
+          "end": 133,
+          "start": 132
+        },
+        {
+          "end": 135,
+          "start": 134
+        },
+        {
+          "end": 137,
+          "start": 136
+        },
+        {
+          "end": 140,
+          "start": 138
+        },
+        {
+          "end": 143,
+          "start": 141
+        },
+        {
+          "end": 148,
+          "start": 146
+        },
+        {
+          "end": 150,
+          "start": 149
+        },
+        {
+          "end": 153,
+          "start": 150
+        },
+        {
+          "end": 165,
+          "start": 154
+        },
+        {
+          "end": 167,
+          "start": 166
+        },
+        {
+          "end": 189,
+          "start": 167
+        },
+        {
+          "end": 192,
+          "start": 190
+        },
+        {
+          "end": 193,
+          "start": 192
+        },
+        {
+          "end": 195,
+          "start": 194
+        },
+        {
+          "end": 218,
+          "start": 195
+        },
+        {
+          "end": 221,
+          "start": 219
+        },
+        {
+          "end": 222,
+          "start": 221
+        },
+        {
+          "end": 223,
+          "start": 222
+        },
+        {
+          "end": 235,
+          "start": 224
+        },
+        {
+          "end": 236,
+          "start": 235
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 141,
+      "signature_spans": [
+        {
+          "end": 69,
+          "start": 68
+        },
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 78,
+          "start": 75
+        },
+        {
+          "end": 79,
+          "start": 78
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 81
+        },
+        {
+          "end": 85,
+          "start": 84
+        },
+        {
+          "end": 87,
+          "start": 86
+        },
+        {
+          "end": 91,
+          "start": 88
+        },
+        {
+          "end": 93,
+          "start": 92
+        },
+        {
+          "end": 94,
+          "start": 93
+        },
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 98,
+          "start": 96
+        },
+        {
+          "end": 100,
+          "start": 99
+        },
+        {
+          "end": 102,
+          "start": 101
+        },
+        {
+          "end": 106,
+          "start": 103
+        },
+        {
+          "end": 108,
+          "start": 107
+        },
+        {
+          "end": 109,
+          "start": 108
+        },
+        {
+          "end": 115,
+          "start": 114
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 120,
+          "start": 119
+        },
+        {
+          "end": 122,
+          "start": 121
+        },
+        {
+          "end": 124,
+          "start": 123
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 127,
+          "start": 126
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 131,
+          "start": 130
+        },
+        {
+          "end": 133,
+          "start": 132
+        },
+        {
+          "end": 135,
+          "start": 134
+        },
+        {
+          "end": 137,
+          "start": 136
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_number_theory_pilot_nat_basic_05 {x a : ℕ} (hx : x ≠ 0) (ha : a ≠ 0) :\n  x ^ (a - 1) = x ^ a / x :=\nby\n  rw [← Nat.pow_div (one_le_iff_ne_zero.mpr ha) (Nat.pos_iff_ne_zero.mpr hx), Nat.pow_one]",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "x",
+          "type_source": "ℕ"
+        },
+        {
+          "binder_info": "implicit",
+          "name": "a",
+          "type_source": "ℕ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hx",
+          "type_source": "Ne.{1} x 0"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "ha",
+          "type_source": "Ne.{1} a 0"
+        }
+      ],
+      "proposition": "Eq.{1} (HPow.hPow.{0, 0, 0} x (HSub.hSub.{0, 0, 0} a 1)) (HDiv.hDiv.{0, 0, 0} (HPow.hPow.{0, 0, 0} x a) x)"
+    },
+    "trusted_type_expression": "forall {x : Nat} {a : Nat}, (Ne.{1} Nat x (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0))) -> (Ne.{1} Nat a (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0))) -> (Eq.{1} Nat (HPow.hPow.{0, 0, 0} Nat Nat Nat (instHPow.{0, 0} Nat Nat (instPowNat.{0} Nat instNatPowNat)) x (HSub.hSub.{0, 0, 0} Nat Nat Nat (instHSub.{0} Nat instSubNat) a (OfNat.ofNat.{0} Nat 1 (instOfNatNat 1)))) (HDiv.hDiv.{0, 0, 0} Nat Nat Nat (instHDiv.{0} Nat Nat.instDiv) (HPow.hPow.{0, 0, 0} Nat Nat Nat (instHPow.{0, 0} Nat Nat (instPowNat.{0} Nat instNatPowNat)) x a) x))",
+    "trusted_type_source": "∀ {x a : ℕ},\n  Ne.{1} x 0 →\n    Ne.{1} a 0 →\n      Eq.{1} (HPow.hPow.{0, 0, 0} x (HSub.hSub.{0, 0, 0} a 1)) (HDiv.hDiv.{0, 0, 0} (HPow.hPow.{0, 0, 0} x a) x)",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "graph_hash": "a7490f31138993e0d07160c1ad16512243ceb11945f78ce61638fa8dba65d15b",
+  "metric_status": "available",
+  "metrics": {
+    "D": 1,
+    "I0": {
+      "denominator_decimal": "33",
+      "log2": -1.0443941193584534,
+      "numerator_decimal": "16"
+    },
+    "T0": {
+      "denominator_decimal": "49",
+      "log2": 3.7184455061954074,
+      "numerator_decimal": "645"
+    },
+    "U_B_decimal": "594",
+    "U_S_decimal": "51",
+    "U_decimal": "645",
+    "W_B": 16,
+    "W_S": 33,
+    "body_state": "present",
+    "distinct_dependency_count": 30,
+    "log2_I0": -1.0443941193584534,
+    "log2_T0": 3.7184455061954074,
+    "log2_U": 9.333155350310616,
+    "log2_U_B": 9.214319120800766,
+    "log2_U_S": 5.672425341971495,
+    "log2_W": 5.614709844115208,
+    "metric_profile": "paper_aligned_v1",
+    "metric_status": "available",
+    "primitive_count": 30,
+    "reachable_node_count": 31,
+    "reasons": []
+  },
+  "primitive_manifest": [
+    "@Sort",
+    "Eq",
+    "Eq.mpr",
+    "Eq.refl",
+    "Eq.symm",
+    "HDiv.hDiv",
+    "HPow.hPow",
+    "HSub.hSub",
+    "Iff.mpr",
+    "LE.le",
+    "LT.lt",
+    "Nat",
+    "Nat.instDiv",
+    "Nat.one_le_iff_ne_zero",
+    "Nat.pos_iff_ne_zero",
+    "Nat.pow_div",
+    "Nat.pow_one",
+    "Ne",
+    "OfNat.ofNat",
+    "congrArg",
+    "id",
+    "instHDiv",
+    "instHPow",
+    "instHSub",
+    "instLENat",
+    "instLTNat",
+    "instNatPowNat",
+    "instOfNatNat",
+    "instPowNat",
+    "instSubNat"
+  ],
+  "primitive_manifest_hash": "34e8cd8da2931cb84d3d5bbee7da18185181a40c82f460f94fed4da27ec5e10d",
+  "primitive_manifest_scope": "reachable closure; boundary policy and environment define shared corpus boundary",
+  "reference_cache_key": "47b9192f540df34c4ea6c26c97fa8c8f91b40b52e94309dcdbcd492cbb3feaac",
+  "reference_proof_sha256": "a15d322262ae35738320de8be1720aa6ac06789ad1b6d34bce2c495918ed9429",
+  "source_hash": "2c898ff03a05abcad26d2953d6ad6847247b6c8e90d0e2162793bc900b7ccf6c",
+  "source_token_policy_hash": "878ab5fb5aa65e79973e4577203e29b9e6d67de66b91ff97b86ad021f5f229c9",
+  "task_hash": "632e0fb3108b14285c0859d8d6f9a1725ad3eeeda28888a692e97f34fccb52c0",
+  "task_id": "lib_number_theory_pilot_nat_basic_05",
+  "task_input_hash": "17f666b4ed78e4ecc0cf8570a05feee3de9fc70a2c94e961ec8a47e9f83919b5",
+  "validation": {
+    "axioms": [
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.lib_number_theory_pilot_nat_basic_05"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 1427,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.rwSeq",
+        "Lean.Parser.Tactic.optConfig",
+        "Lean.Parser.Tactic.rwRuleSeq",
+        "Lean.Parser.Tactic.rwRule",
+        "Lean.Parser.Term.app",
+        "Lean.Parser.Term.paren",
+        "Lean.Parser.Term.hygienicLParen",
+        "hygieneInfo"
+      ],
+      "transitive_dependency_count": 429
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "1594217047",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Data.Nat.Init"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Basic"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Nontrivial.Defs"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.Defs.LinearOrder"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.GCongr.Core"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 2.1943945419043303,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "94348df4517633fa9e259026e0f8d0fa5c6995fcacf45b0d77c3ada6455dbc92",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_number_theory_pilot_nat_basic_05",
+    "source_tokens": {
+      "W_B": 16,
+      "W_S": 33,
+      "W_full": 53,
+      "body_spans": [
+        {
+          "end": 143,
+          "start": 141
+        },
+        {
+          "end": 148,
+          "start": 146
+        },
+        {
+          "end": 150,
+          "start": 149
+        },
+        {
+          "end": 153,
+          "start": 150
+        },
+        {
+          "end": 165,
+          "start": 154
+        },
+        {
+          "end": 167,
+          "start": 166
+        },
+        {
+          "end": 189,
+          "start": 167
+        },
+        {
+          "end": 192,
+          "start": 190
+        },
+        {
+          "end": 193,
+          "start": 192
+        },
+        {
+          "end": 195,
+          "start": 194
+        },
+        {
+          "end": 218,
+          "start": 195
+        },
+        {
+          "end": 221,
+          "start": 219
+        },
+        {
+          "end": 222,
+          "start": 221
+        },
+        {
+          "end": 223,
+          "start": 222
+        },
+        {
+          "end": 235,
+          "start": 224
+        },
+        {
+          "end": 236,
+          "start": 235
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 67,
+          "start": 8
+        },
+        {
+          "end": 69,
+          "start": 68
+        },
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 78,
+          "start": 75
+        },
+        {
+          "end": 79,
+          "start": 78
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 81
+        },
+        {
+          "end": 85,
+          "start": 84
+        },
+        {
+          "end": 87,
+          "start": 86
+        },
+        {
+          "end": 91,
+          "start": 88
+        },
+        {
+          "end": 93,
+          "start": 92
+        },
+        {
+          "end": 94,
+          "start": 93
+        },
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 98,
+          "start": 96
+        },
+        {
+          "end": 100,
+          "start": 99
+        },
+        {
+          "end": 102,
+          "start": 101
+        },
+        {
+          "end": 106,
+          "start": 103
+        },
+        {
+          "end": 108,
+          "start": 107
+        },
+        {
+          "end": 109,
+          "start": 108
+        },
+        {
+          "end": 111,
+          "start": 110
+        },
+        {
+          "end": 115,
+          "start": 114
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 120,
+          "start": 119
+        },
+        {
+          "end": 122,
+          "start": 121
+        },
+        {
+          "end": 124,
+          "start": 123
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 127,
+          "start": 126
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 131,
+          "start": 130
+        },
+        {
+          "end": 133,
+          "start": 132
+        },
+        {
+          "end": 135,
+          "start": 134
+        },
+        {
+          "end": 137,
+          "start": 136
+        },
+        {
+          "end": 140,
+          "start": 138
+        },
+        {
+          "end": 143,
+          "start": 141
+        },
+        {
+          "end": 148,
+          "start": 146
+        },
+        {
+          "end": 150,
+          "start": 149
+        },
+        {
+          "end": 153,
+          "start": 150
+        },
+        {
+          "end": 165,
+          "start": 154
+        },
+        {
+          "end": 167,
+          "start": 166
+        },
+        {
+          "end": 189,
+          "start": 167
+        },
+        {
+          "end": 192,
+          "start": 190
+        },
+        {
+          "end": 193,
+          "start": 192
+        },
+        {
+          "end": 195,
+          "start": 194
+        },
+        {
+          "end": 218,
+          "start": 195
+        },
+        {
+          "end": 221,
+          "start": 219
+        },
+        {
+          "end": 222,
+          "start": 221
+        },
+        {
+          "end": 223,
+          "start": 222
+        },
+        {
+          "end": 235,
+          "start": 224
+        },
+        {
+          "end": 236,
+          "start": 235
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 141,
+      "signature_spans": [
+        {
+          "end": 69,
+          "start": 68
+        },
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 78,
+          "start": 75
+        },
+        {
+          "end": 79,
+          "start": 78
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 81
+        },
+        {
+          "end": 85,
+          "start": 84
+        },
+        {
+          "end": 87,
+          "start": 86
+        },
+        {
+          "end": 91,
+          "start": 88
+        },
+        {
+          "end": 93,
+          "start": 92
+        },
+        {
+          "end": 94,
+          "start": 93
+        },
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 98,
+          "start": 96
+        },
+        {
+          "end": 100,
+          "start": 99
+        },
+        {
+          "end": 102,
+          "start": 101
+        },
+        {
+          "end": 106,
+          "start": 103
+        },
+        {
+          "end": 108,
+          "start": 107
+        },
+        {
+          "end": 109,
+          "start": 108
+        },
+        {
+          "end": 115,
+          "start": 114
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 120,
+          "start": 119
+        },
+        {
+          "end": 122,
+          "start": 121
+        },
+        {
+          "end": 124,
+          "start": 123
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 127,
+          "start": 126
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 131,
+          "start": 130
+        },
+        {
+          "end": 133,
+          "start": 132
+        },
+        {
+          "end": 135,
+          "start": 134
+        },
+        {
+          "end": 137,
+          "start": 136
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_number_theory_pilot_nat_basic_05 {x a : ℕ} (hx : x ≠ 0) (ha : a ≠ 0) :\n  x ^ (a - 1) = x ^ a / x :=\nby\n  rw [← Nat.pow_div (one_le_iff_ne_zero.mpr ha) (Nat.pos_iff_ne_zero.mpr hx), Nat.pow_one]",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "x",
+          "type_source": "ℕ"
+        },
+        {
+          "binder_info": "implicit",
+          "name": "a",
+          "type_source": "ℕ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hx",
+          "type_source": "Ne.{1} x 0"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "ha",
+          "type_source": "Ne.{1} a 0"
+        }
+      ],
+      "proposition": "Eq.{1} (HPow.hPow.{0, 0, 0} x (HSub.hSub.{0, 0, 0} a 1)) (HDiv.hDiv.{0, 0, 0} (HPow.hPow.{0, 0, 0} x a) x)"
+    },
+    "trusted_type_expression": "forall {x : Nat} {a : Nat}, (Ne.{1} Nat x (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0))) -> (Ne.{1} Nat a (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0))) -> (Eq.{1} Nat (HPow.hPow.{0, 0, 0} Nat Nat Nat (instHPow.{0, 0} Nat Nat (instPowNat.{0} Nat instNatPowNat)) x (HSub.hSub.{0, 0, 0} Nat Nat Nat (instHSub.{0} Nat instSubNat) a (OfNat.ofNat.{0} Nat 1 (instOfNatNat 1)))) (HDiv.hDiv.{0, 0, 0} Nat Nat Nat (instHDiv.{0} Nat Nat.instDiv) (HPow.hPow.{0, 0, 0} Nat Nat Nat (instHPow.{0, 0} Nat Nat (instPowNat.{0} Nat instNatPowNat)) x a) x))",
+    "trusted_type_source": "∀ {x a : ℕ},\n  Ne.{1} x 0 →\n    Ne.{1} a 0 →\n      Eq.{1} (HPow.hPow.{0, 0, 0} x (HSub.hSub.{0, 0, 0} a 1)) (HDiv.hDiv.{0, 0, 0} (HPow.hPow.{0, 0, 0} x a) x)",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "validity_status": "success"
+}

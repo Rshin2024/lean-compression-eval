@@ -1,0 +1,79 @@
+{
+  "task": {
+    "task_id": "lib_number_theory_main_gcd_basic_05",
+    "family_id": "source_module_Mathlib.Data.Nat.GCD.Basic",
+    "domain": "number_theory",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Algebra.Group.Nat.Units",
+      "Mathlib.Algebra.GroupWithZero.Divisibility",
+      "Mathlib.Algebra.GroupWithZero.Nat"
+    ],
+    "context": "/-\nCopyright (c) 2014 Jeremy Avigad. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Jeremy Avigad, Leonardo de Moura\n-/\n/-!\n# Properties of `Nat.gcd`, `Nat.lcm`, and `Nat.Coprime`\n\nDefinitions are provided in batteries.\n\nGeneralizations of these are provided in a later file as `GCDMonoid.gcd` and\n`GCDMonoid.lcm`.\n\nNote that the global `IsCoprime` is not a straightforward generalization of `Nat.Coprime`, see\n`Nat.isCoprime_iff_coprime` for the connection between the two.\n\nMost of this file could be moved to batteries as well.\n-/\n\npublic section\n\nassert_not_exists IsOrderedMonoid\n\nnamespace Nat\nvariable {a a₁ a₂ b b₁ b₂ c : ℕ}\n\n/-! ### `gcd` -/\n\ntheorem gcd_greatest {a b d : ℕ} (hda : d ∣ a) (hdb : d ∣ b) (hd : ∀ e : ℕ, e ∣ a → e ∣ b → e ∣ d) :\n    d = a.gcd b :=\n  (dvd_antisymm (hd _ (gcd_dvd_left a b) (gcd_dvd_right a b)) (dvd_gcd hda hdb)).symm\n\ntheorem gcd_right_comm (a b c : ℕ) : gcd (gcd a b) c = gcd (gcd a c) b := by\n  rw [gcd_assoc, gcd_assoc, gcd_comm b c]\n\n/-! Lemmas where one argument consists of addition of a multiple of the other -/\n\n@[simp]\ntheorem pow_sub_one_mod_pow_sub_one (a b c : ℕ) : (a ^ c - 1) % (a ^ b - 1) = a ^ (c % b) - 1 := by\n  rcases eq_zero_or_pos a with rfl | ha0\n  · simp [zero_pow_eq]; split_ifs <;> simp\n  rcases Nat.eq_or_lt_of_le ha0 with rfl | ha1\n  · simp\n  rcases eq_zero_or_pos b with rfl | hb0\n  · simp\n  rcases lt_or_ge c b with h | h\n  · rw [mod_eq_of_lt, mod_eq_of_lt h]\n    rwa [Nat.sub_lt_sub_iff_right (one_le_pow c a ha0), Nat.pow_lt_pow_iff_right ha1]\n  · suffices a ^ (c - b + b) - 1 = a ^ (c - b) * (a ^ b - 1) + (a ^ (c - b) - 1) by\n      rw [← Nat.sub_add_cancel h, add_mod_right, this, add_mod, mul_mod, mod_self,\n        mul_zero, zero_mod, zero_add, mod_mod, pow_sub_one_mod_pow_sub_one]\n    rw [← Nat.add_sub_assoc (one_le_pow (c - b) a ha0), ← mul_add_one, pow_add,\n      Nat.sub_add_cancel (one_le_pow b a ha0)]\n\n@[simp]\ntheorem pow_sub_one_gcd_pow_sub_one (a b c : ℕ) :\n    gcd (a ^ b - 1) (a ^ c - 1) = a ^ gcd b c - 1 := by\n  rcases eq_zero_or_pos b with rfl | hb\n  · simp\n  replace hb : c % b < b := mod_lt c hb\n  rw [gcd_rec, pow_sub_one_mod_pow_sub_one, pow_sub_one_gcd_pow_sub_one, ← gcd_rec]\n\n/-! ### `lcm` and divisibility -/\n\ntheorem dvd_lcm_of_dvd_left (h : a ∣ b) (c : ℕ) : a ∣ lcm b c :=\n  h.trans (dvd_lcm_left b c)\n\nalias Dvd.dvd.nat_lcm_right := dvd_lcm_of_dvd_left\n\ntheorem dvd_of_lcm_right_dvd {a b c : ℕ} (h : lcm a b ∣ c) : a ∣ c :=\n  (dvd_lcm_left a b).trans h\nassert_not_exists _root_.Nat.dvd_lcm_of_dvd_right\n",
+    "binders": "{a b : ℕ} (h : a ∣ b) (c : ℕ)",
+    "proposition": "a ∣ lcm c b",
+    "target_name": "_root_.CompressionEval.lib_number_theory_main_gcd_basic_05",
+    "premise_context": "namespace Nat\nvariable {a a₁ a₂ b b₁ b₂ c : ℕ}\n\nAvailable preceding statements (within the shown source scopes):\ntheorem gcd_greatest {a b d : ℕ} (hda : d ∣ a) (hdb : d ∣ b) (hd : ∀ e : ℕ, e ∣ a → e ∣ b → e ∣ d) :\n    d = a.gcd b\n\ntheorem gcd_right_comm (a b c : ℕ) : gcd (gcd a b) c = gcd (gcd a c) b\n\ntheorem pow_sub_one_mod_pow_sub_one (a b c : ℕ) : (a ^ c - 1) % (a ^ b - 1) = a ^ (c % b) - 1\n\ntheorem pow_sub_one_gcd_pow_sub_one (a b c : ℕ) :\n    gcd (a ^ b - 1) (a ^ c - 1) = a ^ gcd b c - 1\n\ntheorem dvd_lcm_of_dvd_left (h : a ∣ b) (c : ℕ) : a ∣ lcm b c\n\ntheorem dvd_of_lcm_right_dvd {a b c : ℕ} (h : lcm a b ∣ c) : a ∣ c",
+    "forbidden_declarations": [
+      "Nat.dvd_lcm_of_dvd_right"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Data.Nat.GCD.Basic",
+      "source_path": "Mathlib/Data/Nat/GCD/Basic.lean",
+      "declaration": "Nat.dvd_lcm_of_dvd_right",
+      "source_line": 79,
+      "source_sha256": "1529c2035e01f5ff0392dc77cbe41b48d998968381578e74063fa99327d512b2",
+      "prefix_end_character": 2668,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "8c03b22ed961bb57622391c92c4dbecfc4c7c3eb04b192bf743d83449d9bab72",
+      "premise_context": "19565a8eac21d83d593aa690bf9e02b84734ae89083f698dea16a391c2c3c392",
+      "binders": "db9a73f30955cb143440d3a4b262b94be7b0661ce5cc75cbc343feb7bbdc37e4",
+      "proposition": "a0b3ead98da6fb3e362d0411d720765db1592a92d5d54870c5994b62b1ba68df"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Algebra.Group.Nat.Units",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.GroupWithZero.Divisibility",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.GroupWithZero.Nat",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

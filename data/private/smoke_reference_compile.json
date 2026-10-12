@@ -1,0 +1,19 @@
+{
+  "exit_code": 0,
+  "toolchain": "leanprover/lean4:v4.34.0-rc1",
+  "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+  "tasks": [
+    "smoke_ag_01",
+    "smoke_ag_02",
+    "smoke_nt_01",
+    "smoke_nt_02",
+    "smoke_an_01",
+    "smoke_an_02",
+    "smoke_sl_01",
+    "smoke_sl_02",
+    "smoke_la_01",
+    "smoke_la_02"
+  ],
+  "compiler_output": "One unused simp argument warning; no errors.",
+  "limitation": "Compile verified; independent engine replay, axioms, absence and metric audits pending."
+}

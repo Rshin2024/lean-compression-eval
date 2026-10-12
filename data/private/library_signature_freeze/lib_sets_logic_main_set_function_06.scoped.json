@@ -1,0 +1,222 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1",
+    "u_2"
+  ],
+  "trusted_type_source": "∀ {α : Type u_1} {β : Type u_2} {s : Set.{u_1} α} {f₁ f₂ : α → β},\n  Set.EqOn.{u_1, u_2} f₁ f₂ s ↔ Set.EqOn.{u_1, u_2} f₂ f₁ s",
+  "trusted_type_expression": "forall {α : Type.{u_1}} {β : Type.{u_2}} {s : Set.{u_1} α} {f₁ : α -> β} {f₂ : α -> β}, Iff (Set.EqOn.{u_1, u_2} α β f₁ f₂ s) (Set.EqOn.{u_1, u_2} α β f₂ f₁ s)",
+  "trusted_telescope": {
+    "proposition": "Set.EqOn.{u_1, u_2} f₁ f₂ s ↔ Set.EqOn.{u_1, u_2} f₂ f₁ s",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_2",
+        "name": "β",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Set.{u_1} α",
+        "name": "s",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "α → β",
+        "name": "f₁",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "α → β",
+        "name": "f₂",
+        "binder_info": "implicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_sets_logic_main_set_function_06  :\n  EqOn f₁ f₂ s ↔ EqOn f₂ f₁ s :=\n⟨EqOn.symm, EqOn.symm⟩",
+    "signature_spans": [
+      {
+        "start": 72,
+        "end": 76
+      },
+      {
+        "start": 77,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      }
+    ],
+    "proof_offset": 113,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 66
+      },
+      {
+        "start": 68,
+        "end": 69
+      },
+      {
+        "start": 72,
+        "end": 76
+      },
+      {
+        "start": 77,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 116
+      },
+      {
+        "start": 116,
+        "end": 125
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 136
+      },
+      {
+        "start": 136,
+        "end": 139
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 113,
+        "end": 116
+      },
+      {
+        "start": 116,
+        "end": 125
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 136
+      },
+      {
+        "start": 136,
+        "end": 139
+      }
+    ],
+    "W_full": 18,
+    "W_S": 9,
+    "W_B": 5
+  },
+  "root": "CompressionEval.lib_sets_logic_main_set_function_06",
+  "proved_type_fingerprint": "1863715540",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 17,
+    "syntax_kinds": [
+      "Lean.Parser.Term.anonymousCtor",
+      "null"
+    ],
+    "proof_nodes": 65,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_sets_logic_main_set_function_06"
+  ],
+  "axioms": [],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "8f8d57275bfce821a51b10622146ae7eaa39b2c14364196a99522400646ec6db",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 2.8686912078410387
+  },
+  "request_fingerprint": "4d564a6aed76635ad15b4715e19c59f246feb1103e44b23c40761c963f52fd6e"
+}

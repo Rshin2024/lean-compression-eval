@@ -1,0 +1,1738 @@
+{
+  "engine_hash": "275337fac98a2f578de803319ead6ac14eb47c14bd9d8b3b1d766a4472ede55d",
+  "environment_hash": "b3a47e1977f7a71d5906459df606c0a9dc983c02f13ad732590a3322cc5e6ae3",
+  "evaluated_at": "2026-10-12T03:41:35.252738+00:00",
+  "extraction": {
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.smoke_an_02"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 1597,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.constructor",
+        "Lean.cdot",
+        "Lean.cdotTk",
+        "Lean.Parser.Tactic.exact",
+        "Lean.Parser.Term.app",
+        "Lean.Parser.Term.proj",
+        "Lean.Parser.Term.paren",
+        "Lean.Parser.Term.hygienicLParen",
+        "hygieneInfo",
+        "Lean.Parser.Tactic.simpa",
+        "Lean.Parser.Tactic.simpaArgsRest",
+        "Lean.Parser.Tactic.optConfig",
+        "Lean.Parser.Tactic.simpArgs",
+        "Lean.Parser.Tactic.simpLemma",
+        "«term-_»"
+      ],
+      "transitive_dependency_count": 6377
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_error": "unindexed dependency: [anonymous]",
+    "metric_status": "unavailable",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "1452348472",
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 51.88273870898411,
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "network": "disabled",
+      "profile_hash": "9d055cef0f87d67a2d37397dc8fac20da78049370c8bca3c9275ccaa02a1e7cc",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.smoke_an_02",
+    "source_tokens": {
+      "W_B": 47,
+      "W_S": 45,
+      "W_full": 96,
+      "body_spans": [
+        {
+          "end": 142,
+          "start": 140
+        },
+        {
+          "end": 156,
+          "start": 145
+        },
+        {
+          "end": 161,
+          "start": 159
+        },
+        {
+          "end": 167,
+          "start": 162
+        },
+        {
+          "end": 169,
+          "start": 168
+        },
+        {
+          "end": 179,
+          "start": 169
+        },
+        {
+          "end": 181,
+          "start": 180
+        },
+        {
+          "end": 183,
+          "start": 182
+        },
+        {
+          "end": 184,
+          "start": 183
+        },
+        {
+          "end": 185,
+          "start": 184
+        },
+        {
+          "end": 190,
+          "start": 185
+        },
+        {
+          "end": 192,
+          "start": 191
+        },
+        {
+          "end": 202,
+          "start": 192
+        },
+        {
+          "end": 205,
+          "start": 203
+        },
+        {
+          "end": 208,
+          "start": 206
+        },
+        {
+          "end": 209,
+          "start": 208
+        },
+        {
+          "end": 214,
+          "start": 212
+        },
+        {
+          "end": 220,
+          "start": 215
+        },
+        {
+          "end": 223,
+          "start": 221
+        },
+        {
+          "end": 229,
+          "start": 224
+        },
+        {
+          "end": 234,
+          "start": 230
+        },
+        {
+          "end": 236,
+          "start": 235
+        },
+        {
+          "end": 250,
+          "start": 236
+        },
+        {
+          "end": 251,
+          "start": 250
+        },
+        {
+          "end": 259,
+          "start": 252
+        },
+        {
+          "end": 260,
+          "start": 259
+        },
+        {
+          "end": 266,
+          "start": 261
+        },
+        {
+          "end": 268,
+          "start": 267
+        },
+        {
+          "end": 278,
+          "start": 268
+        },
+        {
+          "end": 280,
+          "start": 279
+        },
+        {
+          "end": 282,
+          "start": 281
+        },
+        {
+          "end": 283,
+          "start": 282
+        },
+        {
+          "end": 284,
+          "start": 283
+        },
+        {
+          "end": 285,
+          "start": 284
+        },
+        {
+          "end": 286,
+          "start": 285
+        },
+        {
+          "end": 287,
+          "start": 286
+        },
+        {
+          "end": 292,
+          "start": 287
+        },
+        {
+          "end": 294,
+          "start": 293
+        },
+        {
+          "end": 304,
+          "start": 294
+        },
+        {
+          "end": 307,
+          "start": 305
+        },
+        {
+          "end": 309,
+          "start": 308
+        },
+        {
+          "end": 311,
+          "start": 309
+        },
+        {
+          "end": 317,
+          "start": 312
+        },
+        {
+          "end": 323,
+          "start": 318
+        },
+        {
+          "end": 326,
+          "start": 324
+        },
+        {
+          "end": 327,
+          "start": 326
+        },
+        {
+          "end": 328,
+          "start": 327
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 42,
+          "start": 8
+        },
+        {
+          "end": 44,
+          "start": 43
+        },
+        {
+          "end": 45,
+          "start": 44
+        },
+        {
+          "end": 47,
+          "start": 46
+        },
+        {
+          "end": 49,
+          "start": 48
+        },
+        {
+          "end": 51,
+          "start": 50
+        },
+        {
+          "end": 53,
+          "start": 52
+        },
+        {
+          "end": 57,
+          "start": 54
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 62,
+          "start": 60
+        },
+        {
+          "end": 64,
+          "start": 63
+        },
+        {
+          "end": 66,
+          "start": 65
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 68,
+          "start": 67
+        },
+        {
+          "end": 72,
+          "start": 69
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 77,
+          "start": 76
+        },
+        {
+          "end": 79,
+          "start": 77
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 85,
+          "start": 84
+        },
+        {
+          "end": 89,
+          "start": 86
+        },
+        {
+          "end": 91,
+          "start": 90
+        },
+        {
+          "end": 92,
+          "start": 91
+        },
+        {
+          "end": 94,
+          "start": 93
+        },
+        {
+          "end": 98,
+          "start": 97
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 101,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 104,
+          "start": 103
+        },
+        {
+          "end": 108,
+          "start": 105
+        },
+        {
+          "end": 110,
+          "start": 109
+        },
+        {
+          "end": 112,
+          "start": 111
+        },
+        {
+          "end": 114,
+          "start": 113
+        },
+        {
+          "end": 118,
+          "start": 115
+        },
+        {
+          "end": 120,
+          "start": 119
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 123,
+          "start": 122
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 126,
+          "start": 125
+        },
+        {
+          "end": 130,
+          "start": 127
+        },
+        {
+          "end": 132,
+          "start": 131
+        },
+        {
+          "end": 134,
+          "start": 133
+        },
+        {
+          "end": 136,
+          "start": 135
+        },
+        {
+          "end": 139,
+          "start": 137
+        },
+        {
+          "end": 142,
+          "start": 140
+        },
+        {
+          "end": 156,
+          "start": 145
+        },
+        {
+          "end": 161,
+          "start": 159
+        },
+        {
+          "end": 167,
+          "start": 162
+        },
+        {
+          "end": 169,
+          "start": 168
+        },
+        {
+          "end": 179,
+          "start": 169
+        },
+        {
+          "end": 181,
+          "start": 180
+        },
+        {
+          "end": 183,
+          "start": 182
+        },
+        {
+          "end": 184,
+          "start": 183
+        },
+        {
+          "end": 185,
+          "start": 184
+        },
+        {
+          "end": 190,
+          "start": 185
+        },
+        {
+          "end": 192,
+          "start": 191
+        },
+        {
+          "end": 202,
+          "start": 192
+        },
+        {
+          "end": 205,
+          "start": 203
+        },
+        {
+          "end": 208,
+          "start": 206
+        },
+        {
+          "end": 209,
+          "start": 208
+        },
+        {
+          "end": 214,
+          "start": 212
+        },
+        {
+          "end": 220,
+          "start": 215
+        },
+        {
+          "end": 223,
+          "start": 221
+        },
+        {
+          "end": 229,
+          "start": 224
+        },
+        {
+          "end": 234,
+          "start": 230
+        },
+        {
+          "end": 236,
+          "start": 235
+        },
+        {
+          "end": 250,
+          "start": 236
+        },
+        {
+          "end": 251,
+          "start": 250
+        },
+        {
+          "end": 259,
+          "start": 252
+        },
+        {
+          "end": 260,
+          "start": 259
+        },
+        {
+          "end": 266,
+          "start": 261
+        },
+        {
+          "end": 268,
+          "start": 267
+        },
+        {
+          "end": 278,
+          "start": 268
+        },
+        {
+          "end": 280,
+          "start": 279
+        },
+        {
+          "end": 282,
+          "start": 281
+        },
+        {
+          "end": 283,
+          "start": 282
+        },
+        {
+          "end": 284,
+          "start": 283
+        },
+        {
+          "end": 285,
+          "start": 284
+        },
+        {
+          "end": 286,
+          "start": 285
+        },
+        {
+          "end": 287,
+          "start": 286
+        },
+        {
+          "end": 292,
+          "start": 287
+        },
+        {
+          "end": 294,
+          "start": 293
+        },
+        {
+          "end": 304,
+          "start": 294
+        },
+        {
+          "end": 307,
+          "start": 305
+        },
+        {
+          "end": 309,
+          "start": 308
+        },
+        {
+          "end": 311,
+          "start": 309
+        },
+        {
+          "end": 317,
+          "start": 312
+        },
+        {
+          "end": 323,
+          "start": 318
+        },
+        {
+          "end": 326,
+          "start": 324
+        },
+        {
+          "end": 327,
+          "start": 326
+        },
+        {
+          "end": 328,
+          "start": 327
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 140,
+      "signature_spans": [
+        {
+          "end": 44,
+          "start": 43
+        },
+        {
+          "end": 45,
+          "start": 44
+        },
+        {
+          "end": 47,
+          "start": 46
+        },
+        {
+          "end": 49,
+          "start": 48
+        },
+        {
+          "end": 51,
+          "start": 50
+        },
+        {
+          "end": 53,
+          "start": 52
+        },
+        {
+          "end": 57,
+          "start": 54
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 62,
+          "start": 60
+        },
+        {
+          "end": 64,
+          "start": 63
+        },
+        {
+          "end": 66,
+          "start": 65
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 68,
+          "start": 67
+        },
+        {
+          "end": 72,
+          "start": 69
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 77,
+          "start": 76
+        },
+        {
+          "end": 79,
+          "start": 77
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 85,
+          "start": 84
+        },
+        {
+          "end": 89,
+          "start": 86
+        },
+        {
+          "end": 91,
+          "start": 90
+        },
+        {
+          "end": 92,
+          "start": 91
+        },
+        {
+          "end": 98,
+          "start": 97
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 101,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 104,
+          "start": 103
+        },
+        {
+          "end": 108,
+          "start": 105
+        },
+        {
+          "end": 110,
+          "start": 109
+        },
+        {
+          "end": 112,
+          "start": 111
+        },
+        {
+          "end": 114,
+          "start": 113
+        },
+        {
+          "end": 118,
+          "start": 115
+        },
+        {
+          "end": 120,
+          "start": 119
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 123,
+          "start": 122
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 126,
+          "start": 125
+        },
+        {
+          "end": 130,
+          "start": 127
+        },
+        {
+          "end": 132,
+          "start": 131
+        },
+        {
+          "end": 134,
+          "start": 133
+        },
+        {
+          "end": 136,
+          "start": 135
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.smoke_an_02 (x y a b : ℝ) (hx : |x| ≤ a) (hy : |y| ≤ b) :\n  |x + y| ≤ a + b ∧ |x - y| ≤ a + b :=\nby\n  constructor\n  · exact (abs_add_le x y).trans (add_le_add hx hy)\n  · exact by simpa only [sub_eq_add_neg, abs_neg] using (abs_add_le x (-y)).trans (add_le_add hx (by simpa using hy))",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "explicit",
+          "name": "x",
+          "type_source": "ℝ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "y",
+          "type_source": "ℝ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "a",
+          "type_source": "ℝ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "b",
+          "type_source": "ℝ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hx",
+          "type_source": "LE.le.{0} (abs.{0} x) a"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hy",
+          "type_source": "LE.le.{0} (abs.{0} y) b"
+        }
+      ],
+      "proposition": "LE.le.{0} (abs.{0} (HAdd.hAdd.{0, 0, 0} x y)) (HAdd.hAdd.{0, 0, 0} a b) ∧\n  LE.le.{0} (abs.{0} (HSub.hSub.{0, 0, 0} x y)) (HAdd.hAdd.{0, 0, 0} a b)"
+    },
+    "trusted_type_expression": "forall (x : Real) (y : Real) (a : Real) (b : Real), (LE.le.{0} Real Real.instLE (abs.{0} Real Real.lattice Real.instAddGroup x) a) -> (LE.le.{0} Real Real.instLE (abs.{0} Real Real.lattice Real.instAddGroup y) b) -> (And (LE.le.{0} Real Real.instLE (abs.{0} Real Real.lattice Real.instAddGroup (HAdd.hAdd.{0, 0, 0} Real Real Real (instHAdd.{0} Real Real.instAdd) x y)) (HAdd.hAdd.{0, 0, 0} Real Real Real (instHAdd.{0} Real Real.instAdd) a b)) (LE.le.{0} Real Real.instLE (abs.{0} Real Real.lattice Real.instAddGroup (HSub.hSub.{0, 0, 0} Real Real Real (instHSub.{0} Real Real.instSub) x y)) (HAdd.hAdd.{0, 0, 0} Real Real Real (instHAdd.{0} Real Real.instAdd) a b)))",
+    "trusted_type_source": "∀ (x y a b : ℝ),\n  LE.le.{0} (abs.{0} x) a →\n    LE.le.{0} (abs.{0} y) b →\n      LE.le.{0} (abs.{0} (HAdd.hAdd.{0, 0, 0} x y)) (HAdd.hAdd.{0, 0, 0} a b) ∧\n        LE.le.{0} (abs.{0} (HSub.hSub.{0, 0, 0} x y)) (HAdd.hAdd.{0, 0, 0} a b)",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "metric_status": "unavailable",
+  "metric_unavailable_reason": "success",
+  "metrics": null,
+  "proof": "by\n  constructor\n  · exact (abs_add_le x y).trans (add_le_add hx hy)\n  · exact by simpa only [sub_eq_add_neg, abs_neg] using (abs_add_le x (-y)).trans (add_le_add hx (by simpa using hy))",
+  "record_kind": "verified_reference",
+  "source_hash": "9f30298a638221f39b6549db96679dab0138062b796bcba7e02d7c15e8f53bff",
+  "task_id": "smoke_an_02",
+  "validation": {
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.smoke_an_02"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 1597,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.constructor",
+        "Lean.cdot",
+        "Lean.cdotTk",
+        "Lean.Parser.Tactic.exact",
+        "Lean.Parser.Term.app",
+        "Lean.Parser.Term.proj",
+        "Lean.Parser.Term.paren",
+        "Lean.Parser.Term.hygienicLParen",
+        "hygieneInfo",
+        "Lean.Parser.Tactic.simpa",
+        "Lean.Parser.Tactic.simpaArgsRest",
+        "Lean.Parser.Tactic.optConfig",
+        "Lean.Parser.Tactic.simpArgs",
+        "Lean.Parser.Tactic.simpLemma",
+        "«term-_»"
+      ],
+      "transitive_dependency_count": 6377
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "1452348472",
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 37.47632075008005,
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "network": "disabled",
+      "profile_hash": "5895e73f16b24de8ff116f12368fb9be4267783e98019a6cf4671d352fcd8c4d",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.smoke_an_02",
+    "source_tokens": {
+      "W_B": 47,
+      "W_S": 45,
+      "W_full": 96,
+      "body_spans": [
+        {
+          "end": 142,
+          "start": 140
+        },
+        {
+          "end": 156,
+          "start": 145
+        },
+        {
+          "end": 161,
+          "start": 159
+        },
+        {
+          "end": 167,
+          "start": 162
+        },
+        {
+          "end": 169,
+          "start": 168
+        },
+        {
+          "end": 179,
+          "start": 169
+        },
+        {
+          "end": 181,
+          "start": 180
+        },
+        {
+          "end": 183,
+          "start": 182
+        },
+        {
+          "end": 184,
+          "start": 183
+        },
+        {
+          "end": 185,
+          "start": 184
+        },
+        {
+          "end": 190,
+          "start": 185
+        },
+        {
+          "end": 192,
+          "start": 191
+        },
+        {
+          "end": 202,
+          "start": 192
+        },
+        {
+          "end": 205,
+          "start": 203
+        },
+        {
+          "end": 208,
+          "start": 206
+        },
+        {
+          "end": 209,
+          "start": 208
+        },
+        {
+          "end": 214,
+          "start": 212
+        },
+        {
+          "end": 220,
+          "start": 215
+        },
+        {
+          "end": 223,
+          "start": 221
+        },
+        {
+          "end": 229,
+          "start": 224
+        },
+        {
+          "end": 234,
+          "start": 230
+        },
+        {
+          "end": 236,
+          "start": 235
+        },
+        {
+          "end": 250,
+          "start": 236
+        },
+        {
+          "end": 251,
+          "start": 250
+        },
+        {
+          "end": 259,
+          "start": 252
+        },
+        {
+          "end": 260,
+          "start": 259
+        },
+        {
+          "end": 266,
+          "start": 261
+        },
+        {
+          "end": 268,
+          "start": 267
+        },
+        {
+          "end": 278,
+          "start": 268
+        },
+        {
+          "end": 280,
+          "start": 279
+        },
+        {
+          "end": 282,
+          "start": 281
+        },
+        {
+          "end": 283,
+          "start": 282
+        },
+        {
+          "end": 284,
+          "start": 283
+        },
+        {
+          "end": 285,
+          "start": 284
+        },
+        {
+          "end": 286,
+          "start": 285
+        },
+        {
+          "end": 287,
+          "start": 286
+        },
+        {
+          "end": 292,
+          "start": 287
+        },
+        {
+          "end": 294,
+          "start": 293
+        },
+        {
+          "end": 304,
+          "start": 294
+        },
+        {
+          "end": 307,
+          "start": 305
+        },
+        {
+          "end": 309,
+          "start": 308
+        },
+        {
+          "end": 311,
+          "start": 309
+        },
+        {
+          "end": 317,
+          "start": 312
+        },
+        {
+          "end": 323,
+          "start": 318
+        },
+        {
+          "end": 326,
+          "start": 324
+        },
+        {
+          "end": 327,
+          "start": 326
+        },
+        {
+          "end": 328,
+          "start": 327
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 42,
+          "start": 8
+        },
+        {
+          "end": 44,
+          "start": 43
+        },
+        {
+          "end": 45,
+          "start": 44
+        },
+        {
+          "end": 47,
+          "start": 46
+        },
+        {
+          "end": 49,
+          "start": 48
+        },
+        {
+          "end": 51,
+          "start": 50
+        },
+        {
+          "end": 53,
+          "start": 52
+        },
+        {
+          "end": 57,
+          "start": 54
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 62,
+          "start": 60
+        },
+        {
+          "end": 64,
+          "start": 63
+        },
+        {
+          "end": 66,
+          "start": 65
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 68,
+          "start": 67
+        },
+        {
+          "end": 72,
+          "start": 69
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 77,
+          "start": 76
+        },
+        {
+          "end": 79,
+          "start": 77
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 85,
+          "start": 84
+        },
+        {
+          "end": 89,
+          "start": 86
+        },
+        {
+          "end": 91,
+          "start": 90
+        },
+        {
+          "end": 92,
+          "start": 91
+        },
+        {
+          "end": 94,
+          "start": 93
+        },
+        {
+          "end": 98,
+          "start": 97
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 101,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 104,
+          "start": 103
+        },
+        {
+          "end": 108,
+          "start": 105
+        },
+        {
+          "end": 110,
+          "start": 109
+        },
+        {
+          "end": 112,
+          "start": 111
+        },
+        {
+          "end": 114,
+          "start": 113
+        },
+        {
+          "end": 118,
+          "start": 115
+        },
+        {
+          "end": 120,
+          "start": 119
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 123,
+          "start": 122
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 126,
+          "start": 125
+        },
+        {
+          "end": 130,
+          "start": 127
+        },
+        {
+          "end": 132,
+          "start": 131
+        },
+        {
+          "end": 134,
+          "start": 133
+        },
+        {
+          "end": 136,
+          "start": 135
+        },
+        {
+          "end": 139,
+          "start": 137
+        },
+        {
+          "end": 142,
+          "start": 140
+        },
+        {
+          "end": 156,
+          "start": 145
+        },
+        {
+          "end": 161,
+          "start": 159
+        },
+        {
+          "end": 167,
+          "start": 162
+        },
+        {
+          "end": 169,
+          "start": 168
+        },
+        {
+          "end": 179,
+          "start": 169
+        },
+        {
+          "end": 181,
+          "start": 180
+        },
+        {
+          "end": 183,
+          "start": 182
+        },
+        {
+          "end": 184,
+          "start": 183
+        },
+        {
+          "end": 185,
+          "start": 184
+        },
+        {
+          "end": 190,
+          "start": 185
+        },
+        {
+          "end": 192,
+          "start": 191
+        },
+        {
+          "end": 202,
+          "start": 192
+        },
+        {
+          "end": 205,
+          "start": 203
+        },
+        {
+          "end": 208,
+          "start": 206
+        },
+        {
+          "end": 209,
+          "start": 208
+        },
+        {
+          "end": 214,
+          "start": 212
+        },
+        {
+          "end": 220,
+          "start": 215
+        },
+        {
+          "end": 223,
+          "start": 221
+        },
+        {
+          "end": 229,
+          "start": 224
+        },
+        {
+          "end": 234,
+          "start": 230
+        },
+        {
+          "end": 236,
+          "start": 235
+        },
+        {
+          "end": 250,
+          "start": 236
+        },
+        {
+          "end": 251,
+          "start": 250
+        },
+        {
+          "end": 259,
+          "start": 252
+        },
+        {
+          "end": 260,
+          "start": 259
+        },
+        {
+          "end": 266,
+          "start": 261
+        },
+        {
+          "end": 268,
+          "start": 267
+        },
+        {
+          "end": 278,
+          "start": 268
+        },
+        {
+          "end": 280,
+          "start": 279
+        },
+        {
+          "end": 282,
+          "start": 281
+        },
+        {
+          "end": 283,
+          "start": 282
+        },
+        {
+          "end": 284,
+          "start": 283
+        },
+        {
+          "end": 285,
+          "start": 284
+        },
+        {
+          "end": 286,
+          "start": 285
+        },
+        {
+          "end": 287,
+          "start": 286
+        },
+        {
+          "end": 292,
+          "start": 287
+        },
+        {
+          "end": 294,
+          "start": 293
+        },
+        {
+          "end": 304,
+          "start": 294
+        },
+        {
+          "end": 307,
+          "start": 305
+        },
+        {
+          "end": 309,
+          "start": 308
+        },
+        {
+          "end": 311,
+          "start": 309
+        },
+        {
+          "end": 317,
+          "start": 312
+        },
+        {
+          "end": 323,
+          "start": 318
+        },
+        {
+          "end": 326,
+          "start": 324
+        },
+        {
+          "end": 327,
+          "start": 326
+        },
+        {
+          "end": 328,
+          "start": 327
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 140,
+      "signature_spans": [
+        {
+          "end": 44,
+          "start": 43
+        },
+        {
+          "end": 45,
+          "start": 44
+        },
+        {
+          "end": 47,
+          "start": 46
+        },
+        {
+          "end": 49,
+          "start": 48
+        },
+        {
+          "end": 51,
+          "start": 50
+        },
+        {
+          "end": 53,
+          "start": 52
+        },
+        {
+          "end": 57,
+          "start": 54
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 62,
+          "start": 60
+        },
+        {
+          "end": 64,
+          "start": 63
+        },
+        {
+          "end": 66,
+          "start": 65
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 68,
+          "start": 67
+        },
+        {
+          "end": 72,
+          "start": 69
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 77,
+          "start": 76
+        },
+        {
+          "end": 79,
+          "start": 77
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 85,
+          "start": 84
+        },
+        {
+          "end": 89,
+          "start": 86
+        },
+        {
+          "end": 91,
+          "start": 90
+        },
+        {
+          "end": 92,
+          "start": 91
+        },
+        {
+          "end": 98,
+          "start": 97
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 101,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 104,
+          "start": 103
+        },
+        {
+          "end": 108,
+          "start": 105
+        },
+        {
+          "end": 110,
+          "start": 109
+        },
+        {
+          "end": 112,
+          "start": 111
+        },
+        {
+          "end": 114,
+          "start": 113
+        },
+        {
+          "end": 118,
+          "start": 115
+        },
+        {
+          "end": 120,
+          "start": 119
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 123,
+          "start": 122
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 126,
+          "start": 125
+        },
+        {
+          "end": 130,
+          "start": 127
+        },
+        {
+          "end": 132,
+          "start": 131
+        },
+        {
+          "end": 134,
+          "start": 133
+        },
+        {
+          "end": 136,
+          "start": 135
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.smoke_an_02 (x y a b : ℝ) (hx : |x| ≤ a) (hy : |y| ≤ b) :\n  |x + y| ≤ a + b ∧ |x - y| ≤ a + b :=\nby\n  constructor\n  · exact (abs_add_le x y).trans (add_le_add hx hy)\n  · exact by simpa only [sub_eq_add_neg, abs_neg] using (abs_add_le x (-y)).trans (add_le_add hx (by simpa using hy))",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "explicit",
+          "name": "x",
+          "type_source": "ℝ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "y",
+          "type_source": "ℝ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "a",
+          "type_source": "ℝ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "b",
+          "type_source": "ℝ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hx",
+          "type_source": "LE.le.{0} (abs.{0} x) a"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hy",
+          "type_source": "LE.le.{0} (abs.{0} y) b"
+        }
+      ],
+      "proposition": "LE.le.{0} (abs.{0} (HAdd.hAdd.{0, 0, 0} x y)) (HAdd.hAdd.{0, 0, 0} a b) ∧\n  LE.le.{0} (abs.{0} (HSub.hSub.{0, 0, 0} x y)) (HAdd.hAdd.{0, 0, 0} a b)"
+    },
+    "trusted_type_expression": "forall (x : Real) (y : Real) (a : Real) (b : Real), (LE.le.{0} Real Real.instLE (abs.{0} Real Real.lattice Real.instAddGroup x) a) -> (LE.le.{0} Real Real.instLE (abs.{0} Real Real.lattice Real.instAddGroup y) b) -> (And (LE.le.{0} Real Real.instLE (abs.{0} Real Real.lattice Real.instAddGroup (HAdd.hAdd.{0, 0, 0} Real Real Real (instHAdd.{0} Real Real.instAdd) x y)) (HAdd.hAdd.{0, 0, 0} Real Real Real (instHAdd.{0} Real Real.instAdd) a b)) (LE.le.{0} Real Real.instLE (abs.{0} Real Real.lattice Real.instAddGroup (HSub.hSub.{0, 0, 0} Real Real Real (instHSub.{0} Real Real.instSub) x y)) (HAdd.hAdd.{0, 0, 0} Real Real Real (instHAdd.{0} Real Real.instAdd) a b)))",
+    "trusted_type_source": "∀ (x y a b : ℝ),\n  LE.le.{0} (abs.{0} x) a →\n    LE.le.{0} (abs.{0} y) b →\n      LE.le.{0} (abs.{0} (HAdd.hAdd.{0, 0, 0} x y)) (HAdd.hAdd.{0, 0, 0} a b) ∧\n        LE.le.{0} (abs.{0} (HSub.hSub.{0, 0, 0} x y)) (HAdd.hAdd.{0, 0, 0} a b)",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "validity_status": "success"
+}

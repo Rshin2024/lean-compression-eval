@@ -1,0 +1,466 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u"
+  ],
+  "trusted_type_source": "∀ {α : Type u} [inst : Monoid.{u} α] (a : α) (b : Units.{u} α),\n  Eq.{u + 1} (HMul.hMul.{u, u, u} (HMul.hMul.{u, u, u} a ↑b) ↑(Inv.inv.{u} b)) a",
+  "trusted_type_expression": "forall {α : Type.{u}} [inst : Monoid.{u} α] (a : α) (b : Units.{u} α inst), Eq.{succ u} α (HMul.hMul.{u, u, u} α α α (instHMul.{u} α (MulOne.toMul.{u} α (MulOneClass.toMulOne.{u} α (Monoid.toMulOneClass.{u} α inst)))) (HMul.hMul.{u, u, u} α α α (instHMul.{u} α (MulOne.toMul.{u} α (MulOneClass.toMulOne.{u} α (Monoid.toMulOneClass.{u} α inst)))) a (Units.val.{u} α inst b)) (Units.val.{u} α inst (Inv.inv.{u} (Units.{u} α inst) (Units.instInv.{u} α inst) b))) a",
+  "trusted_telescope": {
+    "proposition": "Eq.{u + 1} (HMul.hMul.{u, u, u} (HMul.hMul.{u, u, u} a ↑b) ↑(Inv.inv.{u} b)) a",
+    "binders": [
+      {
+        "type_source": "Type u",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Monoid.{u} α",
+        "name": "inst",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "α",
+        "name": "a",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Units.{u} α",
+        "name": "b",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_algebra_groups_main_units_basic_02 {«α» : Type u} [«inst» : Monoid.{u} α] (a : α) (b : αˣ) :\n  a * b * ↑b⁻¹ = a :=\nby\n  rw [mul_assoc, mul_inv, mul_one]",
+    "signature_spans": [
+      {
+        "start": 70,
+        "end": 71
+      },
+      {
+        "start": 71,
+        "end": 77
+      },
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 80,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 89
+      },
+      {
+        "start": 89,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 106
+      },
+      {
+        "start": 106,
+        "end": 108
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 113
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 122
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 131
+      },
+      {
+        "start": 131,
+        "end": 133
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 144
+      },
+      {
+        "start": 145,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 150
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 151,
+        "end": 156
+      },
+      {
+        "start": 157,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 160
+      }
+    ],
+    "proof_offset": 164,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 69
+      },
+      {
+        "start": 70,
+        "end": 71
+      },
+      {
+        "start": 71,
+        "end": 77
+      },
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 80,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 89
+      },
+      {
+        "start": 89,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 106
+      },
+      {
+        "start": 106,
+        "end": 108
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 113
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 122
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 131
+      },
+      {
+        "start": 131,
+        "end": 133
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 144
+      },
+      {
+        "start": 145,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 150
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 151,
+        "end": 156
+      },
+      {
+        "start": 157,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 160
+      },
+      {
+        "start": 161,
+        "end": 163
+      },
+      {
+        "start": 164,
+        "end": 166
+      },
+      {
+        "start": 169,
+        "end": 171
+      },
+      {
+        "start": 172,
+        "end": 173
+      },
+      {
+        "start": 173,
+        "end": 182
+      },
+      {
+        "start": 182,
+        "end": 183
+      },
+      {
+        "start": 184,
+        "end": 191
+      },
+      {
+        "start": 191,
+        "end": 192
+      },
+      {
+        "start": 193,
+        "end": 200
+      },
+      {
+        "start": 200,
+        "end": 201
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 164,
+        "end": 166
+      },
+      {
+        "start": 169,
+        "end": 171
+      },
+      {
+        "start": 172,
+        "end": 173
+      },
+      {
+        "start": 173,
+        "end": 182
+      },
+      {
+        "start": 182,
+        "end": 183
+      },
+      {
+        "start": 184,
+        "end": 191
+      },
+      {
+        "start": 191,
+        "end": 192
+      },
+      {
+        "start": 193,
+        "end": 200
+      },
+      {
+        "start": 200,
+        "end": 201
+      }
+    ],
+    "W_full": 48,
+    "W_S": 35,
+    "W_B": 9
+  },
+  "root": "CompressionEval.lib_algebra_groups_main_units_basic_02",
+  "proved_type_fingerprint": "2055426506",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 388,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.rwSeq",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.rwRuleSeq",
+      "Lean.Parser.Tactic.rwRule"
+    ],
+    "proof_nodes": 1203,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_algebra_groups_main_units_basic_02"
+  ],
+  "axioms": [],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "dd81ac3748846365ac6dfdb7b79e08df4991079a60ec82ad5ab08c3c7b979221",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.343229291960597
+  },
+  "request_fingerprint": "765811c6e2feb1225ec9e012f8f3482c6bc8736a9ad687a8d251bc9239db3567"
+}

@@ -1,0 +1,366 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u'",
+    "u_2",
+    "u_4"
+  ],
+  "trusted_type_source": "∀ {ι : Type u'} {R : Type u_2} {M : Type u_4} {v : ι → M} [inst : Semiring.{u_2} R] [inst_1 : AddCommMonoid.{u_4} M]\n  [inst_2 : Module.{u_2, u_4} R M] {s : Set.{u'} ι},\n  LinearIndepOn.{u', u_2, u_4} R v s → LinearIndependent.{u', u_2, u_4} R fun (x : ↑s) => v ↑x",
+  "trusted_type_expression": "forall {ι : Type.{u'}} {R : Type.{u_2}} {M : Type.{u_4}} {v : ι -> M} [inst._@.EvaluatorCandidate.2739148748._hygCtx._hyg.14 : Semiring.{u_2} R] [inst._@.EvaluatorCandidate.2739148748._hygCtx._hyg.17 : AddCommMonoid.{u_4} M] [inst._@.EvaluatorCandidate.2739148748._hygCtx._hyg.23 : Module.{u_2, u_4} R M inst._@.EvaluatorCandidate.2739148748._hygCtx._hyg.14 inst._@.EvaluatorCandidate.2739148748._hygCtx._hyg.17] {s : Set.{u'} ι}, (LinearIndepOn.{u', u_2, u_4} ι R M v inst._@.EvaluatorCandidate.2739148748._hygCtx._hyg.14 inst._@.EvaluatorCandidate.2739148748._hygCtx._hyg.17 inst._@.EvaluatorCandidate.2739148748._hygCtx._hyg.23 s) -> (LinearIndependent.{u', u_2, u_4} (Set.Elem.{u'} ι s) R M (fun (x : Set.Elem.{u'} ι s) => v (Subtype.val.{succ u'} ι (fun (x : ι) => Membership.mem.{u', u'} ι (Set.{u'} ι) (Set.instMembership.{u'} ι) s x) x)) inst._@.EvaluatorCandidate.2739148748._hygCtx._hyg.14 inst._@.EvaluatorCandidate.2739148748._hygCtx._hyg.17 inst._@.EvaluatorCandidate.2739148748._hygCtx._hyg.23)",
+  "trusted_telescope": {
+    "proposition": "LinearIndependent.{u', u_2, u_4} R fun (x : ↑s) => v ↑x",
+    "binders": [
+      {
+        "type_source": "Type u'",
+        "name": "ι",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_2",
+        "name": "R",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_4",
+        "name": "M",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "ι → M",
+        "name": "v",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Semiring.{u_2} R",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.14",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "AddCommMonoid.{u_4} M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.17",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Module.{u_2, u_4} R M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.23",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Set.{u'} ι",
+        "name": "s",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "LinearIndepOn.{u', u_2, u_4} R v s",
+        "name": "h",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_linear_algebra_combinatorics_main_linearindependent_defs_01 {s : Set ι} (h : LinearIndepOn R v s) :\n  LinearIndependent R (fun x : s ↦ v x) :=\nh",
+    "signature_spans": [
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 106
+      },
+      {
+        "start": 106,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 132
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 138,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 157
+      },
+      {
+        "start": 158,
+        "end": 159
+      },
+      {
+        "start": 159,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 166
+      },
+      {
+        "start": 167,
+        "end": 168
+      },
+      {
+        "start": 169,
+        "end": 172
+      },
+      {
+        "start": 173,
+        "end": 174
+      },
+      {
+        "start": 175,
+        "end": 176
+      },
+      {
+        "start": 176,
+        "end": 177
+      }
+    ],
+    "proof_offset": 181,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 106
+      },
+      {
+        "start": 106,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 132
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 135
+      },
+      {
+        "start": 138,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 157
+      },
+      {
+        "start": 158,
+        "end": 159
+      },
+      {
+        "start": 159,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 166
+      },
+      {
+        "start": 167,
+        "end": 168
+      },
+      {
+        "start": 169,
+        "end": 172
+      },
+      {
+        "start": 173,
+        "end": 174
+      },
+      {
+        "start": 175,
+        "end": 176
+      },
+      {
+        "start": 176,
+        "end": 177
+      },
+      {
+        "start": 178,
+        "end": 180
+      },
+      {
+        "start": 181,
+        "end": 182
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 181,
+        "end": 182
+      }
+    ],
+    "W_full": 30,
+    "W_S": 25,
+    "W_B": 1
+  },
+  "root": "CompressionEval.lib_linear_algebra_combinatorics_main_linearindependent_defs_01",
+  "resolved_imports": [
+    {
+      "module": "Mathlib.Algebra.Order.Sub.Basic",
+      "is_meta": false,
+      "is_exported": true,
+      "import_all": false
+    },
+    {
+      "module": "Mathlib.LinearAlgebra.Finsupp.LinearCombination",
+      "is_meta": false,
+      "is_exported": true,
+      "import_all": false
+    },
+    {
+      "module": "Mathlib.Lean.Expr.ExtraRecognizers",
+      "is_meta": true,
+      "is_exported": true,
+      "import_all": false
+    }
+  ],
+  "proved_type_fingerprint": "2715084761",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 4744,
+    "syntax_kinds": [],
+    "proof_nodes": 51,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_linear_algebra_combinatorics_main_linearindependent_defs_01"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "d9e954f06f2c3f14aa247aa3baa892b71584f4fa1363088ccf4b1344873eb2ac",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.1003279997967184
+  },
+  "request_fingerprint": "c8367bc5bc94a9cd1d8a6b8b210959972b4528b978100a380918200eb8f289a5",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "engine_path": "lean/versions/Evaluator-83da0074.lean"
+}

@@ -1,0 +1,1146 @@
+{
+  "boundary_policy": "expand_mathlib_and_evaluator_v1",
+  "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+  "evaluated_at": "2026-10-12T04:12:12.832487+00:00",
+  "extraction": {
+    "axioms": [],
+    "candidate_declarations": [
+      "CompressionEval.lib_sets_logic_main_logic_relation_06"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 55,
+      "syntax_kinds": [
+        "Lean.Parser.Term.anonymousCtor",
+        "null",
+        "Lean.Parser.Term.app"
+      ],
+      "transitive_dependency_count": 8
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "available",
+    "nodes": [
+      {
+        "body": {
+          "@Sort": 2,
+          "Iff.intro": 1,
+          "Std.Symm": 1,
+          "symm_of": 2
+        },
+        "body_nodes": 55,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "CompressionEval.lib_sets_logic_main_logic_relation_06",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2,
+          "Iff": 1,
+          "Std.Symm": 1
+        },
+        "source_counts": null,
+        "type_hash": "1234147329",
+        "type_nodes": 31,
+        "value_hash": "747062602"
+      },
+      {
+        "body": null,
+        "name": "@Sort",
+        "owner_module": "@builtin",
+        "primitive": true,
+        "signature": {},
+        "type_hash": "@Sort",
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Std.Symm",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3074319351",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Iff",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2232915537",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Iff.intro",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1289877537",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 2,
+          "Std.Symm": 1,
+          "symm": 1
+        },
+        "body_nodes": 29,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "symm_of",
+        "owner_module": "Mathlib.Order.Defs.Unbundled",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2,
+          "Std.Symm": 1
+        },
+        "source_counts": null,
+        "type_hash": "2280312031",
+        "type_nodes": 29,
+        "value_hash": "3867022707"
+      },
+      {
+        "body": {
+          "@Sort": 2,
+          "Std.Symm": 1,
+          "Std.Symm.symm": 1
+        },
+        "body_nodes": 29,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "symm",
+        "owner_module": "Mathlib.Order.Defs.Unbundled",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2,
+          "Std.Symm": 1
+        },
+        "source_counts": null,
+        "type_hash": "2280312031",
+        "type_nodes": 29,
+        "value_hash": "4113301599"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Std.Symm.symm",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "296503795",
+        "type_nodes": null,
+        "value_hash": "251014526"
+      }
+    ],
+    "process_returncode": 0,
+    "proved_type_fingerprint": "1234147329",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Relator"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.Use"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.MkIffOfInductiveProp"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.SimpRw"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.Defs.Prop"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.Defs.Unbundled"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Batteries.Logic"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Batteries.Tactic.Trans"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 2.3009527497924864,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "933654a250dc1a235679b0a83999e984f12dae74dc35cc0659c5658693fbcb03",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_sets_logic_main_logic_relation_06",
+    "source_tokens": {
+      "W_B": 7,
+      "W_S": 32,
+      "W_full": 43,
+      "body_spans": [
+        {
+          "end": 168,
+          "start": 165
+        },
+        {
+          "end": 175,
+          "start": 168
+        },
+        {
+          "end": 177,
+          "start": 176
+        },
+        {
+          "end": 178,
+          "start": 177
+        },
+        {
+          "end": 186,
+          "start": 179
+        },
+        {
+          "end": 188,
+          "start": 187
+        },
+        {
+          "end": 191,
+          "start": 188
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 68,
+          "start": 8
+        },
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 76,
+          "start": 70
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 83,
+          "start": 79
+        },
+        {
+          "end": 87,
+          "start": 84
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 95,
+          "start": 90
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 100,
+          "start": 98
+        },
+        {
+          "end": 104,
+          "start": 101
+        },
+        {
+          "end": 107,
+          "start": 105
+        },
+        {
+          "end": 111,
+          "start": 108
+        },
+        {
+          "end": 116,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 127,
+          "start": 119
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 130,
+          "start": 129
+        },
+        {
+          "end": 132,
+          "start": 131
+        },
+        {
+          "end": 133,
+          "start": 132
+        },
+        {
+          "end": 135,
+          "start": 134
+        },
+        {
+          "end": 137,
+          "start": 136
+        },
+        {
+          "end": 140,
+          "start": 138
+        },
+        {
+          "end": 141,
+          "start": 140
+        },
+        {
+          "end": 143,
+          "start": 142
+        },
+        {
+          "end": 147,
+          "start": 146
+        },
+        {
+          "end": 149,
+          "start": 148
+        },
+        {
+          "end": 151,
+          "start": 150
+        },
+        {
+          "end": 155,
+          "start": 152
+        },
+        {
+          "end": 157,
+          "start": 156
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 161,
+          "start": 160
+        },
+        {
+          "end": 164,
+          "start": 162
+        },
+        {
+          "end": 168,
+          "start": 165
+        },
+        {
+          "end": 175,
+          "start": 168
+        },
+        {
+          "end": 177,
+          "start": 176
+        },
+        {
+          "end": 178,
+          "start": 177
+        },
+        {
+          "end": 186,
+          "start": 179
+        },
+        {
+          "end": 188,
+          "start": 187
+        },
+        {
+          "end": 191,
+          "start": 188
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 165,
+      "signature_spans": [
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 76,
+          "start": 70
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 83,
+          "start": 79
+        },
+        {
+          "end": 87,
+          "start": 84
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 95,
+          "start": 90
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 100,
+          "start": 98
+        },
+        {
+          "end": 104,
+          "start": 101
+        },
+        {
+          "end": 107,
+          "start": 105
+        },
+        {
+          "end": 111,
+          "start": 108
+        },
+        {
+          "end": 116,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 127,
+          "start": 119
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 130,
+          "start": 129
+        },
+        {
+          "end": 132,
+          "start": 131
+        },
+        {
+          "end": 133,
+          "start": 132
+        },
+        {
+          "end": 135,
+          "start": 134
+        },
+        {
+          "end": 137,
+          "start": 136
+        },
+        {
+          "end": 140,
+          "start": 138
+        },
+        {
+          "end": 141,
+          "start": 140
+        },
+        {
+          "end": 147,
+          "start": 146
+        },
+        {
+          "end": 149,
+          "start": 148
+        },
+        {
+          "end": 151,
+          "start": 150
+        },
+        {
+          "end": 155,
+          "start": 152
+        },
+        {
+          "end": 157,
+          "start": 156
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 161,
+          "start": 160
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_sets_logic_main_logic_relation_06 {«α» : Type u_1} {«r» : α → α → Prop} [Std.Symm r] (x y : α) :\n  r x y ↔ r y x :=\n⟨symm_of r, symm_of r⟩",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "α",
+          "type_source": "Type u_1"
+        },
+        {
+          "binder_info": "implicit",
+          "name": "r",
+          "type_source": "α → α → Prop"
+        },
+        {
+          "binder_info": "instance",
+          "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.19",
+          "type_source": "Std.Symm.{u_1 + 1} r"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "x",
+          "type_source": "α"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "y",
+          "type_source": "α"
+        }
+      ],
+      "proposition": "r x y ↔ r y x"
+    },
+    "trusted_type_expression": "forall {α : Type.{u_1}} {r : α -> α -> Prop} [inst._@.EvaluatorCandidate.368050410._hygCtx._hyg.19 : Std.Symm.{succ u_1} α r] (x : α) (y : α), Iff (r x y) (r y x)",
+    "trusted_type_source": "∀ {α : Type u_1} {r : α → α → Prop} [Std.Symm.{u_1 + 1} r] (x y : α), r x y ↔ r y x",
+    "universe_parameters": [
+      "u_1"
+    ],
+    "validity_status": "success"
+  },
+  "graph_hash": "3927e9e69ee25707df843edddbbbe2ffe179a238aac7f92e0acd70a3d5871a1f",
+  "metric_status": "available",
+  "metrics": {
+    "D": 3,
+    "I0": {
+      "denominator_decimal": "32",
+      "log2": -2.192645077942396,
+      "numerator_decimal": "7"
+    },
+    "T0": {
+      "denominator_decimal": "39",
+      "log2": -0.1979393776119096,
+      "numerator_decimal": "34"
+    },
+    "U_B_decimal": "30",
+    "U_S_decimal": "4",
+    "U_decimal": "34",
+    "W_B": 7,
+    "W_S": 32,
+    "body_state": "present",
+    "distinct_dependency_count": 7,
+    "log2_I0": -2.192645077942396,
+    "log2_T0": -0.1979393776119096,
+    "log2_U": 5.087462841250339,
+    "log2_U_B": 4.906890595608519,
+    "log2_U_S": 2.0,
+    "log2_W": 5.285402218862249,
+    "metric_profile": "paper_aligned_v1",
+    "metric_status": "available",
+    "primitive_count": 5,
+    "reachable_node_count": 8,
+    "reasons": []
+  },
+  "primitive_manifest": [
+    "@Sort",
+    "Iff",
+    "Iff.intro",
+    "Std.Symm",
+    "Std.Symm.symm"
+  ],
+  "primitive_manifest_hash": "a1d1c169029ffd0d502feba5809f43e29349f65347cd3765e4d1cf8c55aff184",
+  "primitive_manifest_scope": "reachable closure; boundary policy and environment define shared corpus boundary",
+  "reference_cache_key": "0c1a969ebe0b0d2702df7d9d1a0dba094b3213d6e2b0299c19a9c7d0bb1ba89d",
+  "reference_proof_sha256": "7f901d595f376c4a1064138236688ad2a3c2971356d9f8770d47a77047e27c34",
+  "source_hash": "7c67b3815fb39146137c2d56cc82aaa237b34704f1e6714a2fceaf9da7177d43",
+  "source_token_policy_hash": "878ab5fb5aa65e79973e4577203e29b9e6d67de66b91ff97b86ad021f5f229c9",
+  "task_hash": "04736ace199246f8aea2506795cfddfd03d3d642f2e373e6dae006fb43f90d2b",
+  "task_id": "lib_sets_logic_main_logic_relation_06",
+  "task_input_hash": "b331c08748f30535c7dff4d202da4f14730cc3a2b3c9a208f946b978a56a4944",
+  "validation": {
+    "axioms": [],
+    "candidate_declarations": [
+      "CompressionEval.lib_sets_logic_main_logic_relation_06"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 55,
+      "syntax_kinds": [
+        "Lean.Parser.Term.anonymousCtor",
+        "null",
+        "Lean.Parser.Term.app"
+      ],
+      "transitive_dependency_count": 8
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "1234147329",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Relator"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.Use"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.MkIffOfInductiveProp"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.SimpRw"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.Defs.Prop"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.Defs.Unbundled"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Batteries.Logic"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Batteries.Tactic.Trans"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 2.1331345830112696,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "8d25fc992007b192dd4ebdd0509bbacddd2b3cd34a07ed51c109accadfe2c29c",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_sets_logic_main_logic_relation_06",
+    "source_tokens": {
+      "W_B": 7,
+      "W_S": 32,
+      "W_full": 43,
+      "body_spans": [
+        {
+          "end": 168,
+          "start": 165
+        },
+        {
+          "end": 175,
+          "start": 168
+        },
+        {
+          "end": 177,
+          "start": 176
+        },
+        {
+          "end": 178,
+          "start": 177
+        },
+        {
+          "end": 186,
+          "start": 179
+        },
+        {
+          "end": 188,
+          "start": 187
+        },
+        {
+          "end": 191,
+          "start": 188
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 68,
+          "start": 8
+        },
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 76,
+          "start": 70
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 83,
+          "start": 79
+        },
+        {
+          "end": 87,
+          "start": 84
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 95,
+          "start": 90
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 100,
+          "start": 98
+        },
+        {
+          "end": 104,
+          "start": 101
+        },
+        {
+          "end": 107,
+          "start": 105
+        },
+        {
+          "end": 111,
+          "start": 108
+        },
+        {
+          "end": 116,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 127,
+          "start": 119
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 130,
+          "start": 129
+        },
+        {
+          "end": 132,
+          "start": 131
+        },
+        {
+          "end": 133,
+          "start": 132
+        },
+        {
+          "end": 135,
+          "start": 134
+        },
+        {
+          "end": 137,
+          "start": 136
+        },
+        {
+          "end": 140,
+          "start": 138
+        },
+        {
+          "end": 141,
+          "start": 140
+        },
+        {
+          "end": 143,
+          "start": 142
+        },
+        {
+          "end": 147,
+          "start": 146
+        },
+        {
+          "end": 149,
+          "start": 148
+        },
+        {
+          "end": 151,
+          "start": 150
+        },
+        {
+          "end": 155,
+          "start": 152
+        },
+        {
+          "end": 157,
+          "start": 156
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 161,
+          "start": 160
+        },
+        {
+          "end": 164,
+          "start": 162
+        },
+        {
+          "end": 168,
+          "start": 165
+        },
+        {
+          "end": 175,
+          "start": 168
+        },
+        {
+          "end": 177,
+          "start": 176
+        },
+        {
+          "end": 178,
+          "start": 177
+        },
+        {
+          "end": 186,
+          "start": 179
+        },
+        {
+          "end": 188,
+          "start": 187
+        },
+        {
+          "end": 191,
+          "start": 188
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 165,
+      "signature_spans": [
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 76,
+          "start": 70
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 83,
+          "start": 79
+        },
+        {
+          "end": 87,
+          "start": 84
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 95,
+          "start": 90
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 100,
+          "start": 98
+        },
+        {
+          "end": 104,
+          "start": 101
+        },
+        {
+          "end": 107,
+          "start": 105
+        },
+        {
+          "end": 111,
+          "start": 108
+        },
+        {
+          "end": 116,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 127,
+          "start": 119
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 130,
+          "start": 129
+        },
+        {
+          "end": 132,
+          "start": 131
+        },
+        {
+          "end": 133,
+          "start": 132
+        },
+        {
+          "end": 135,
+          "start": 134
+        },
+        {
+          "end": 137,
+          "start": 136
+        },
+        {
+          "end": 140,
+          "start": 138
+        },
+        {
+          "end": 141,
+          "start": 140
+        },
+        {
+          "end": 147,
+          "start": 146
+        },
+        {
+          "end": 149,
+          "start": 148
+        },
+        {
+          "end": 151,
+          "start": 150
+        },
+        {
+          "end": 155,
+          "start": 152
+        },
+        {
+          "end": 157,
+          "start": 156
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 161,
+          "start": 160
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_sets_logic_main_logic_relation_06 {«α» : Type u_1} {«r» : α → α → Prop} [Std.Symm r] (x y : α) :\n  r x y ↔ r y x :=\n⟨symm_of r, symm_of r⟩",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "α",
+          "type_source": "Type u_1"
+        },
+        {
+          "binder_info": "implicit",
+          "name": "r",
+          "type_source": "α → α → Prop"
+        },
+        {
+          "binder_info": "instance",
+          "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.19",
+          "type_source": "Std.Symm.{u_1 + 1} r"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "x",
+          "type_source": "α"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "y",
+          "type_source": "α"
+        }
+      ],
+      "proposition": "r x y ↔ r y x"
+    },
+    "trusted_type_expression": "forall {α : Type.{u_1}} {r : α -> α -> Prop} [inst._@.EvaluatorCandidate.368050410._hygCtx._hyg.19 : Std.Symm.{succ u_1} α r] (x : α) (y : α), Iff (r x y) (r y x)",
+    "trusted_type_source": "∀ {α : Type u_1} {r : α → α → Prop} [Std.Symm.{u_1 + 1} r] (x y : α), r x y ↔ r y x",
+    "universe_parameters": [
+      "u_1"
+    ],
+    "validity_status": "success"
+  },
+  "validity_status": "success"
+}

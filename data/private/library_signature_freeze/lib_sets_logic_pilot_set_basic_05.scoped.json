@@ -1,0 +1,158 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u"
+  ],
+  "trusted_type_source": "∀ {α : Type u}, Eq.{u + 1} Bot.bot.{u} EmptyCollection.emptyCollection.{u}",
+  "trusted_type_expression": "forall {α : Type.{u}}, Eq.{succ u} (Set.{u} α) (Bot.bot.{u} (Set.{u} α) (OrderBot.toBot.{u} (Set.{u} α) (Set.instLE.{u} α) (BoundedOrder.toOrderBot.{u} (Set.{u} α) (Set.instLE.{u} α) (Set.instBoundedOrder.{u} α)))) (EmptyCollection.emptyCollection.{u} (Set.{u} α) (Set.instEmptyCollection.{u} α))",
+  "trusted_telescope": {
+    "proposition": "Eq.{u + 1} Bot.bot.{u} EmptyCollection.emptyCollection.{u}",
+    "binders": [
+      {
+        "type_source": "Type u",
+        "name": "α",
+        "binder_info": "implicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_sets_logic_pilot_set_basic_05  :\n  (⊥ : Set α) = ∅ :=\nrfl",
+    "signature_spans": [
+      {
+        "start": 70,
+        "end": 71
+      },
+      {
+        "start": 71,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 76
+      },
+      {
+        "start": 77,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 83
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 90
+      }
+    ],
+    "proof_offset": 94,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 64
+      },
+      {
+        "start": 66,
+        "end": 67
+      },
+      {
+        "start": 70,
+        "end": 71
+      },
+      {
+        "start": 71,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 76
+      },
+      {
+        "start": 77,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 83
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 97
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 94,
+        "end": 97
+      }
+    ],
+    "W_full": 13,
+    "W_S": 8,
+    "W_B": 1
+  },
+  "root": "CompressionEval.lib_sets_logic_pilot_set_basic_05",
+  "proved_type_fingerprint": "1660295084",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 61,
+    "syntax_kinds": [],
+    "proof_nodes": 37,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_sets_logic_pilot_set_basic_05"
+  ],
+  "axioms": [],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "dc39cfd1dfd2bc8025eaa4bac9bf1dd65daf2e0c548220d4229ee6d91cdd92a9",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 3.1209090421907604
+  },
+  "request_fingerprint": "4405945e12d34960a26773829c6f8d648526b8abc1fba4261ff140588b2cb77f"
+}

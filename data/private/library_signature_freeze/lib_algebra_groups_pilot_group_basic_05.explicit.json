@@ -1,0 +1,495 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {α : Type u_1} [inst : Semigroup.{u_1} α] (x y : α),\n  Eq.{u_1 + 1}\n    (Function.comp.{u_1 + 1, u_1 + 1, u_1 + 1} (fun (x_1 : α) => HMul.hMul.{u_1, u_1, u_1} x x_1) fun (x : α) =>\n      HMul.hMul.{u_1, u_1, u_1} y x)\n    fun (x_1 : α) => HMul.hMul.{u_1, u_1, u_1} (HMul.hMul.{u_1, u_1, u_1} x y) x_1",
+  "trusted_type_expression": "forall {α : Type.{u_1}} [inst : Semigroup.{u_1} α] (x : α) (y : α), Eq.{succ u_1} (α -> α) (Function.comp.{succ u_1, succ u_1, succ u_1} α α α (fun (x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.21 : α) => HMul.hMul.{u_1, u_1, u_1} α α α (instHMul.{u_1} α (Semigroup.toMul.{u_1} α inst)) x x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.21) (fun (x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.32 : α) => HMul.hMul.{u_1, u_1, u_1} α α α (instHMul.{u_1} α (Semigroup.toMul.{u_1} α inst)) y x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.32)) (fun (x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.43 : α) => HMul.hMul.{u_1, u_1, u_1} α α α (instHMul.{u_1} α (Semigroup.toMul.{u_1} α inst)) (HMul.hMul.{u_1, u_1, u_1} α α α (instHMul.{u_1} α (Semigroup.toMul.{u_1} α inst)) x y) x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.43)",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_1 + 1}\n  (Function.comp.{u_1 + 1, u_1 + 1, u_1 + 1} (fun (x_1 : α) => HMul.hMul.{u_1, u_1, u_1} x x_1) fun (x : α) =>\n    HMul.hMul.{u_1, u_1, u_1} y x)\n  fun (x_1 : α) => HMul.hMul.{u_1, u_1, u_1} (HMul.hMul.{u_1, u_1, u_1} x y) x_1",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Semigroup.{u_1} α",
+        "name": "inst",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "α",
+        "name": "x",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "α",
+        "name": "y",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_algebra_groups_pilot_group_basic_05 {«α» : Type u_1} [«inst» : Semigroup.{u_1} α] (x y : α) :\n  (x * ·) ∘ (y * ·) = (x * y * ·) :=\nby\n  ext z\n  simp [mul_assoc]",
+    "signature_spans": [
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 72,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 89
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 92,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 112
+      },
+      {
+        "start": 112,
+        "end": 114
+      },
+      {
+        "start": 114,
+        "end": 117
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 128,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 132
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 145
+      },
+      {
+        "start": 145,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 150
+      },
+      {
+        "start": 151,
+        "end": 152
+      },
+      {
+        "start": 152,
+        "end": 153
+      },
+      {
+        "start": 154,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 158
+      },
+      {
+        "start": 158,
+        "end": 159
+      },
+      {
+        "start": 160,
+        "end": 161
+      },
+      {
+        "start": 162,
+        "end": 163
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 166
+      },
+      {
+        "start": 167,
+        "end": 168
+      },
+      {
+        "start": 169,
+        "end": 170
+      },
+      {
+        "start": 171,
+        "end": 173
+      },
+      {
+        "start": 173,
+        "end": 174
+      }
+    ],
+    "proof_offset": 178,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 70
+      },
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 72,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 89
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 92,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 112
+      },
+      {
+        "start": 112,
+        "end": 114
+      },
+      {
+        "start": 114,
+        "end": 117
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 128,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 132
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 135
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 145
+      },
+      {
+        "start": 145,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 150
+      },
+      {
+        "start": 151,
+        "end": 152
+      },
+      {
+        "start": 152,
+        "end": 153
+      },
+      {
+        "start": 154,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 158
+      },
+      {
+        "start": 158,
+        "end": 159
+      },
+      {
+        "start": 160,
+        "end": 161
+      },
+      {
+        "start": 162,
+        "end": 163
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 166
+      },
+      {
+        "start": 167,
+        "end": 168
+      },
+      {
+        "start": 169,
+        "end": 170
+      },
+      {
+        "start": 171,
+        "end": 173
+      },
+      {
+        "start": 173,
+        "end": 174
+      },
+      {
+        "start": 175,
+        "end": 177
+      },
+      {
+        "start": 178,
+        "end": 180
+      },
+      {
+        "start": 183,
+        "end": 186
+      },
+      {
+        "start": 187,
+        "end": 188
+      },
+      {
+        "start": 191,
+        "end": 195
+      },
+      {
+        "start": 196,
+        "end": 197
+      },
+      {
+        "start": 197,
+        "end": 206
+      },
+      {
+        "start": 206,
+        "end": 207
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 178,
+        "end": 180
+      },
+      {
+        "start": 183,
+        "end": 186
+      },
+      {
+        "start": 187,
+        "end": 188
+      },
+      {
+        "start": 191,
+        "end": 195
+      },
+      {
+        "start": 196,
+        "end": 197
+      },
+      {
+        "start": 197,
+        "end": 206
+      },
+      {
+        "start": 206,
+        "end": 207
+      }
+    ],
+    "W_full": 51,
+    "W_S": 40,
+    "W_B": 7
+  },
+  "root": "CompressionEval.lib_algebra_groups_pilot_group_basic_05",
+  "proved_type_fingerprint": "1384117838",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 38,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Elab.Tactic.Ext.ext",
+      "Lean.Parser.Tactic.rintroPat.one",
+      "Lean.Parser.Tactic.rcasesPat.one",
+      "Lean.Parser.Tactic.simp",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.simpLemma"
+    ],
+    "proof_nodes": 585,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_algebra_groups_pilot_group_basic_05"
+  ],
+  "axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "09a79ef8bcc8828289b6eb57ba456e3cf025b6c7276c412342a8405c28cbb620",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.826226874720305
+  },
+  "request_fingerprint": "0738cd25bcb009aa549436d4ce85ac2074cd298543e0c278095e7de9b77009cf"
+}

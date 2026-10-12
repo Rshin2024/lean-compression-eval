@@ -1,0 +1,212 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "∀ {n : ℕ}, n ∉ n.properDivisors",
+  "trusted_type_expression": "forall {n : Nat}, Not (Membership.mem.{0, 0} Nat (Finset.{0} Nat) (SetLike.instMembership.{0, 0} (Finset.{0} Nat) Nat (Finset.instSetLike.{0} Nat)) (Nat.properDivisors n) n)",
+  "trusted_telescope": {
+    "proposition": "n ∉ n.properDivisors",
+    "binders": [
+      {
+        "type_source": "ℕ",
+        "name": "n",
+        "binder_info": "implicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_number_theory_main_numbertheory_divisors_03 {«n» : ℕ} :\n  n ∉ properDivisors n :=\nby simp [properDivisors]",
+    "signature_spans": [
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 91
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 119
+      }
+    ],
+    "proof_offset": 123,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 91
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 132
+      },
+      {
+        "start": 132,
+        "end": 146
+      },
+      {
+        "start": 146,
+        "end": 147
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 123,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 132
+      },
+      {
+        "start": 132,
+        "end": 146
+      },
+      {
+        "start": 146,
+        "end": 147
+      }
+    ],
+    "W_full": 18,
+    "W_S": 9,
+    "W_B": 5
+  },
+  "root": "CompressionEval.lib_number_theory_main_numbertheory_divisors_03",
+  "proved_type_fingerprint": "1152567062",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 2712,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.simp",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.simpLemma"
+    ],
+    "proof_nodes": 733,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_number_theory_main_numbertheory_divisors_03"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "00309530fdeecf5ad9afd861f22f91242df822c7805eb2fce6d0da4dfacd235b",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 4.007453125435859
+  },
+  "request_fingerprint": "c8ac8647cf8d789021793edc1ad5221fd659bc339d7f749dc25389a7360a73e4"
+}

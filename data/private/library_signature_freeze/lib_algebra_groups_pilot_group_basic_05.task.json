@@ -1,0 +1,100 @@
+{
+  "task": {
+    "task_id": "lib_algebra_groups_pilot_group_basic_05",
+    "family_id": "source_module_Mathlib.Algebra.Group.Basic",
+    "domain": "algebra_groups",
+    "split": "pilot",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Aesop",
+      "Mathlib.Algebra.Group.Defs",
+      "Mathlib.Data.Int.Init",
+      "Mathlib.Logic.Function.Iterate",
+      "Mathlib.Tactic.SimpRw",
+      "Mathlib.Tactic.SplitIfs"
+    ],
+    "context": "/-\nCopyright (c) 2014 Jeremy Avigad. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Jeremy Avigad, Leonardo de Moura, Simon Hudon, Mario Carneiro\n-/\n/-!\n# Basic lemmas about semigroups, monoids, and groups\n\nThis file lists various basic lemmas about semigroups, monoids, and groups. Most proofs are\none-liners from the corresponding axioms. For the definitions of semigroups, monoids and groups, see\n`Mathlib/Algebra/Group/Defs.lean`.\n-/\n\npublic section\n\nassert_not_exists MonoidWithZero DenselyOrdered\n\nopen Function\n\nvariable {α β G M : Type*}\n\nsection ite\nvariable [Pow α β]\n\n@[to_additive (attr := simp, to_additive) dite_smul]\nlemma pow_dite (p : Prop) [Decidable p] (a : α) (b : p → β) (c : ¬ p → β) :\n    a ^ (if h : p then b h else c h) = if h : p then a ^ b h else a ^ c h := by split_ifs <;> rfl\n\n@[to_additive (attr := simp, to_additive) smul_dite]\nlemma dite_pow (p : Prop) [Decidable p] (a : p → α) (b : ¬ p → α) (c : β) :\n    (if h : p then a h else b h) ^ c = if h : p then a h ^ c else b h ^ c := by split_ifs <;> rfl\n\n@[to_additive (attr := simp, to_additive) ite_smul]\nlemma pow_ite (p : Prop) [Decidable p] (a : α) (b c : β) :\n    a ^ (if p then b else c) = if p then a ^ b else a ^ c := pow_dite _ _ _ _\n\n@[to_additive (attr := simp, to_additive) smul_ite]\nlemma ite_pow (p : Prop) [Decidable p] (a b : α) (c : β) :\n    (if p then a else b) ^ c = if p then a ^ c else b ^ c := dite_pow _ _ _ _\n\nend ite\n\nsection Semigroup\nvariable [Semigroup α]\n\n@[to_additive]\ninstance Semigroup.to_isAssociative : Std.Associative (α := α) (· * ·) := ⟨mul_assoc⟩\n\nuniverse «u_1»\n\nassert_not_exists _root_.comp_mul_left\n",
+    "binders": "{«α» : Type u_1} [«inst» : Semigroup.{u_1} α] (x y : α)",
+    "proposition": "(x * ·) ∘ (y * ·) = (x * y * ·)",
+    "target_name": "_root_.CompressionEval.lib_algebra_groups_pilot_group_basic_05",
+    "premise_context": "open Function\nvariable {α β G M : Type*}\nsection ite\nvariable [Pow α β]\nend ite\nsection Semigroup\nvariable [Semigroup α]\n\nAvailable preceding statements (within the shown source scopes):\nlemma pow_dite (p : Prop) [Decidable p] (a : α) (b : p → β) (c : ¬ p → β) :\n    a ^ (if h : p then b h else c h) = if h : p then a ^ b h else a ^ c h\n\nlemma dite_pow (p : Prop) [Decidable p] (a : p → α) (b : ¬ p → α) (c : β) :\n    (if h : p then a h else b h) ^ c = if h : p then a h ^ c else b h ^ c\n\nlemma pow_ite (p : Prop) [Decidable p] (a : α) (b c : β) :\n    a ^ (if p then b else c) = if p then a ^ b else a ^ c\n\nlemma ite_pow (p : Prop) [Decidable p] (a b : α) (c : β) :\n    (if p then a else b) ^ c = if p then a ^ c else b ^ c",
+    "forbidden_declarations": [
+      "comp_mul_left"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Algebra.Group.Basic",
+      "source_path": "Mathlib/Algebra/Group/Basic.lean",
+      "declaration": "comp_mul_left",
+      "source_line": 63,
+      "source_sha256": "011d1608e18a67f2543f090af14167e4be67efacec994b9f824ccca773a166bc",
+      "prefix_end_character": 2099,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "0270db4096e8ff5c952f2e91cacf276455a3603f451befec4e0ed6f5b8b5d6ec",
+      "premise_context": "e14cf1371309cf812decf8d5dc8ff1722415c4e8db4863bc7221a147c6d520af",
+      "binders": "0dd4f4ce025a84d51ffe9071b79e1b03e5a4d9b8a67fd4e0f123aa69997a5711",
+      "proposition": "42f96822b7a24667f58704b078d5dfd3cf5ce7ea2dd770861493e7f117ae736a"
+    },
+    "import_specs": [
+      {
+        "module": "Aesop",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Group.Defs",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Int.Init",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Logic.Function.Iterate",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.SimpRw",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.SplitIfs",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

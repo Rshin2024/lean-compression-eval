@@ -1,0 +1,79 @@
+{
+  "task": {
+    "task_id": "lib_analysis_inequalities_pilot_field_basic_05",
+    "family_id": "source_module_Mathlib.Analysis.Normed.Field.Basic",
+    "domain": "analysis_inequalities",
+    "split": "pilot",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Algebra.Field.Subfield.Defs",
+      "Mathlib.Algebra.Order.Group.Pointwise.Interval",
+      "Mathlib.Analysis.Normed.Ring.Basic"
+    ],
+    "context": "/-\nCopyright (c) 2018 Patrick Massot. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Patrick Massot, Johannes Hölzl\n-/\n/-!\n# Normed division rings and fields\n\nIn this file we define normed fields, and (more generally) normed division rings. We also prove\nsome theorems about these definitions.\n\nSome useful results that relate the topology of the normed field to the discrete topology include:\n* `norm_eq_one_iff_ne_zero_of_discrete`\n\nMethods for constructing a normed field instance from a given real absolute value on a field are\ngiven in:\n* AbsoluteValue.toNormedField\n-/\n\n@[expose] public section\n\n-- Guard against import creep.\nassert_not_exists AddChar comap_norm_atTop DilationEquiv Finset.sup_mul_le_mul_sup_of_nonneg\n  IsOfFinOrder Isometry.norm_map_of_map_one NNReal.isOpen_Ico_zero Rat.norm_cast_real\n  RestrictScalars\n\nvariable {G α β ι : Type*}\n\nopen Filter\nopen scoped Topology NNReal ENNReal\n\n/-- A normed division ring is a division ring endowed with a seminorm which satisfies the equality\n`‖x y‖ = ‖x‖ ‖y‖`. -/\nclass NormedDivisionRing (α : Type*) extends Norm α, DivisionRing α, MetricSpace α where\n  /-- The distance is induced by the norm. -/\n  dist_eq : ∀ x y, dist x y = norm (-x + y)\n  /-- The norm is multiplicative. -/\n  protected norm_mul : ∀ a b, norm (a * b) = norm a * norm b\n\n-- see Note [lower instance priority]\nattribute [instance 10] NormedDivisionRing.toDivisionRing\n\n-- see Note [lower instance priority]\n/-- A normed division ring is a normed ring. -/\ninstance (priority := 100) NormedDivisionRing.toNormedRing [β : NormedDivisionRing α] :\n    NormedRing α :=\n  { β with norm_mul_le a b := (NormedDivisionRing.norm_mul a b).le }\n\n-- see Note [lower instance priority]\n/-- The norm on a normed division ring is strictly multiplicative. -/\ninstance (priority := 100) NormedDivisionRing.toNormMulClass [NormedDivisionRing α] :\n    NormMulClass α where\n  norm_mul := NormedDivisionRing.norm_mul\n\nsection NormedDivisionRing\n\nvariable [NormedDivisionRing α] {a b : α}\n\ninstance (priority := 900) NormedDivisionRing.to_normOneClass : NormOneClass α :=\n  ⟨mul_left_cancel₀ (mt norm_eq_zero.1 (one_ne_zero' α)) <| by rw [← norm_mul, mul_one, mul_one]⟩\n\n@[simp]\ntheorem norm_div (a b : α) : ‖a / b‖ = ‖a‖ / ‖b‖ :=\n  map_div₀ (normHom : α →*₀ ℝ) a b\n\n@[simp]\ntheorem nnnorm_div (a b : α) : ‖a / b‖₊ = ‖a‖₊ / ‖b‖₊ :=\n  map_div₀ (nnnormHom : α →*₀ ℝ≥0) a b\n\n@[simp]\ntheorem norm_inv (a : α) : ‖a⁻¹‖ = ‖a‖⁻¹ :=\n  map_inv₀ (normHom : α →*₀ ℝ) a\n\n@[simp]\ntheorem nnnorm_inv (a : α) : ‖a⁻¹‖₊ = ‖a‖₊⁻¹ :=\n  NNReal.eq <| by simp\n\nuniverse «u_2»\n\nassert_not_exists _root_.enorm_inv\n",
+    "binders": "{«α» : Type u_2} [«inst» : NormedDivisionRing.{u_2} α] {a : α} (ha : a ≠ 0)",
+    "proposition": "‖a⁻¹‖ₑ = ‖a‖ₑ⁻¹",
+    "target_name": "_root_.CompressionEval.lib_analysis_inequalities_pilot_field_basic_05",
+    "premise_context": "variable {G α β ι : Type*}\nopen Filter\nopen scoped Topology NNReal ENNReal\nsection NormedDivisionRing\nvariable [NormedDivisionRing α] {a b : α}\n\nAvailable preceding statements (within the shown source scopes):\ntheorem norm_div (a b : α) : ‖a / b‖ = ‖a‖ / ‖b‖\n\ntheorem nnnorm_div (a b : α) : ‖a / b‖₊ = ‖a‖₊ / ‖b‖₊\n\ntheorem norm_inv (a : α) : ‖a⁻¹‖ = ‖a‖⁻¹\n\ntheorem nnnorm_inv (a : α) : ‖a⁻¹‖₊ = ‖a‖₊⁻¹",
+    "forbidden_declarations": [
+      "enorm_inv"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Analysis.Normed.Field.Basic",
+      "source_path": "Mathlib/Analysis/Normed/Field/Basic.lean",
+      "declaration": "enorm_inv",
+      "source_line": 85,
+      "source_sha256": "26727e95ad0114dc479d15f9361584c70f868da4ded1b13b7a4bb4f40cd7df53",
+      "prefix_end_character": 2777,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "988988444083455cbd1d020659faf63666ee7cae715e050df2c7b16cf6c1ec8d",
+      "premise_context": "87fd25832a28bd985d4e1f66b6402d9c6c2ddedd031f394a495e96b923b50bc8",
+      "binders": "f9bc06b3d98993d0bf1684bcf4cfc6173492a4f966ec06245a774deb56250a42",
+      "proposition": "5f4e094fca736831710d48395c78822109f9ad85bfad92b928dfc3cf6184064d"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Algebra.Field.Subfield.Defs",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Order.Group.Pointwise.Interval",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Analysis.Normed.Ring.Basic",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

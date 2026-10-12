@@ -1,0 +1,340 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u'",
+    "u_2",
+    "u_4"
+  ],
+  "trusted_type_source": "∀ {ι : Type u'} {R : Type u_2} {M : Type u_4} {v : ι → M} [inst : Semiring.{u_2} R] [inst_1 : AddCommMonoid.{u_4} M]\n  [inst_2 : Module.{u_2, u_4} R M] [inst_3 : Fintype.{u'} ι],\n  LinearIndependent.{u', u_2, u_4} R v ↔\n    Function.Injective.{max (u' + 1) (u_2 + 1), u_4 + 1} ⇑(Fintype.linearCombination.{u', u_4, u_2} R v)",
+  "trusted_type_expression": "forall {ι : Type.{u'}} {R : Type.{u_2}} {M : Type.{u_4}} {v : ι -> M} [inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.14 : Semiring.{u_2} R] [inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.17 : AddCommMonoid.{u_4} M] [inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.23 : Module.{u_2, u_4} R M inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.14 inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.17] [inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.31 : Fintype.{u'} ι], Iff (LinearIndependent.{u', u_2, u_4} ι R M v inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.14 inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.17 inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.23) (Function.Injective.{max (succ u') (succ u_2), succ u_4} (ι -> R) M (DFunLike.coe.{max (max (succ u') (succ u_2)) (succ u_4), max (succ u') (succ u_2), succ u_4} (LinearMap.{u_2, u_2, max u' u_2, u_4} R R inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.14 inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.14 (RingHom.id.{u_2} R (Semiring.toNonAssocSemiring.{u_2} R inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.14)) (ι -> R) M (Pi.addCommMonoid.{u', u_2} ι (fun (a._@._internal._hyg.0 : ι) => R) (fun (i : ι) => Semiring.toAddCommMonoid.{u_2} R inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.14)) inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.17 (Pi.Function.module.{u', u_2, u_2} ι R R inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.14 (Semiring.toAddCommMonoid.{u_2} R inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.14) (Semiring.toModule.{u_2} R inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.14)) inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.23) (ι -> R) (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : ι -> R) => M) (LinearMap.instFunLike.{u_2, u_2, max u' u_2, u_4} R R (ι -> R) M inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.14 inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.14 (Pi.addCommMonoid.{u', u_2} ι (fun (a._@._internal._hyg.0 : ι) => R) (fun (i : ι) => Semiring.toAddCommMonoid.{u_2} R inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.14)) inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.17 (Pi.Function.module.{u', u_2, u_2} ι R R inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.14 (Semiring.toAddCommMonoid.{u_2} R inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.14) (Semiring.toModule.{u_2} R inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.14)) inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.23 (RingHom.id.{u_2} R (Semiring.toNonAssocSemiring.{u_2} R inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.14))) (Fintype.linearCombination.{u', u_4, u_2} ι M R inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.31 inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.14 inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.17 inst._@.EvaluatorCandidate.1355662003._hygCtx._hyg.23 v)))",
+  "trusted_telescope": {
+    "proposition": "LinearIndependent.{u', u_2, u_4} R v ↔\n  Function.Injective.{max (u' + 1) (u_2 + 1), u_4 + 1} ⇑(Fintype.linearCombination.{u', u_4, u_2} R v)",
+    "binders": [
+      {
+        "type_source": "Type u'",
+        "name": "ι",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_2",
+        "name": "R",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_4",
+        "name": "M",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "ι → M",
+        "name": "v",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Semiring.{u_2} R",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.14",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "AddCommMonoid.{u_4} M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.17",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Module.{u_2, u_4} R M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.23",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Fintype.{u'} ι",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.31",
+        "binder_info": "instance"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_linear_algebra_combinatorics_main_linearindependent_defs_03 [Fintype ι] :\n  LinearIndependent R v ↔ Injective (Fintype.linearCombination R v) :=\nby\n  simp [← Finsupp.linearCombination_eq_fintype_linearCombination, LinearIndependent]",
+    "signature_spans": [
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 106
+      },
+      {
+        "start": 106,
+        "end": 107
+      },
+      {
+        "start": 112,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 149,
+        "end": 174
+      },
+      {
+        "start": 175,
+        "end": 176
+      },
+      {
+        "start": 177,
+        "end": 178
+      },
+      {
+        "start": 178,
+        "end": 179
+      }
+    ],
+    "proof_offset": 183,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 106
+      },
+      {
+        "start": 106,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 112,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 149,
+        "end": 174
+      },
+      {
+        "start": 175,
+        "end": 176
+      },
+      {
+        "start": 177,
+        "end": 178
+      },
+      {
+        "start": 178,
+        "end": 179
+      },
+      {
+        "start": 180,
+        "end": 182
+      },
+      {
+        "start": 183,
+        "end": 185
+      },
+      {
+        "start": 188,
+        "end": 192
+      },
+      {
+        "start": 193,
+        "end": 194
+      },
+      {
+        "start": 194,
+        "end": 197
+      },
+      {
+        "start": 198,
+        "end": 252
+      },
+      {
+        "start": 252,
+        "end": 253
+      },
+      {
+        "start": 254,
+        "end": 271
+      },
+      {
+        "start": 271,
+        "end": 272
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 183,
+        "end": 185
+      },
+      {
+        "start": 188,
+        "end": 192
+      },
+      {
+        "start": 193,
+        "end": 194
+      },
+      {
+        "start": 194,
+        "end": 197
+      },
+      {
+        "start": 198,
+        "end": 252
+      },
+      {
+        "start": 252,
+        "end": 253
+      },
+      {
+        "start": 254,
+        "end": 271
+      },
+      {
+        "start": 271,
+        "end": 272
+      }
+    ],
+    "W_full": 26,
+    "W_S": 14,
+    "W_B": 8
+  },
+  "root": "CompressionEval.lib_linear_algebra_combinatorics_main_linearindependent_defs_03",
+  "resolved_imports": [
+    {
+      "module": "Mathlib.Algebra.Order.Sub.Basic",
+      "is_meta": false,
+      "is_exported": true,
+      "import_all": false
+    },
+    {
+      "module": "Mathlib.LinearAlgebra.Finsupp.LinearCombination",
+      "is_meta": false,
+      "is_exported": true,
+      "import_all": false
+    },
+    {
+      "module": "Mathlib.Lean.Expr.ExtraRecognizers",
+      "is_meta": true,
+      "is_exported": true,
+      "import_all": false
+    }
+  ],
+  "proved_type_fingerprint": "1929053058",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 5116,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.simp",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.simpLemma"
+    ],
+    "proof_nodes": 6015,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "Finsupp.linearEquivFunOnFinite.congr_simp",
+    "LinearIndependent.eq_1",
+    "CompressionEval.lib_linear_algebra_combinatorics_main_linearindependent_defs_03._simp_1",
+    "CompressionEval.lib_linear_algebra_combinatorics_main_linearindependent_defs_03"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "f3e41ff45fcf57a125fdf405f4552abcb79b91e1058a293f1b61de498ad33a4a",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.974203041754663
+  },
+  "request_fingerprint": "320581be0992df0c26e230e997c0b24e61f981fa3fdf173d6f6e5f3fb663d10c",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "engine_path": "lean/versions/Evaluator-83da0074.lean"
+}

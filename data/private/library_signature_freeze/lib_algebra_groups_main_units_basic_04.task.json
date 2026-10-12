@@ -1,0 +1,107 @@
+{
+  "task": {
+    "task_id": "lib_algebra_groups_main_units_basic_04",
+    "family_id": "source_module_Mathlib.Algebra.Group.Units.Basic",
+    "domain": "algebra_groups",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Algebra.Group.Basic",
+      "Mathlib.Algebra.Group.Commute.Defs",
+      "Mathlib.Algebra.Group.Units.Defs",
+      "Mathlib.Logic.Unique",
+      "Mathlib.Tactic.Lift",
+      "Mathlib.Tactic.Subsingleton",
+      "Mathlib.Tactic.Attr.Core"
+    ],
+    "context": "/-\nCopyright (c) 2017 Kenny Lau. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Kenny Lau, Mario Carneiro, Johannes Hölzl, Chris Hughes, Jens Wagemaker, Jon Eugster\n-/\n/-!\n# Units (i.e., invertible elements) of a monoid\n\nAn element of a `Monoid` is a unit if it has a two-sided inverse.\nThis file contains the basic lemmas on units in a monoid, especially focusing on singleton types\nand unique types.\n\n## TODO\n\nThe results here should be used to golf the basic `Group` lemmas.\n-/\n\npublic section\n\nassert_not_exists Multiplicative MonoidWithZero DenselyOrdered\n\nopen Function\n\nuniverse u\n\nvariable {α : Type u}\n\nsection HasElem\n\n@[to_additive]\ntheorem unique_one {α : Type*} [Unique α] [One α] : default = (1 : α) :=\n  Unique.default_eq 1\n\nend HasElem\n\nnamespace Units\nsection Monoid\nvariable [Monoid α]\n\nvariable (b c : αˣ) {u : αˣ}\n\n@[to_additive (attr := simp)]\ntheorem mul_inv_cancel_right (a : α) (b : αˣ) : a * b * ↑b⁻¹ = a := by\n  rw [mul_assoc, mul_inv, mul_one]\n\n@[to_additive (attr := simp)]\ntheorem inv_mul_cancel_right (a : α) (b : αˣ) : a * ↑b⁻¹ * b = a := by\n  rw [mul_assoc, inv_mul, mul_one]\nassert_not_exists _root_.Units.mul_right_inj\n",
+    "binders": "{«α» : Type u} [«inst» : Monoid.{u} α] (a : αˣ) {b c : α}",
+    "proposition": "(a : α) * b = a * c ↔ b = c",
+    "target_name": "_root_.CompressionEval.lib_algebra_groups_main_units_basic_04",
+    "premise_context": "open Function\nuniverse u\nvariable {α : Type u}\nsection HasElem\nend HasElem\nnamespace Units\nsection Monoid\nvariable [Monoid α]\nvariable (b c : αˣ) {u : αˣ}\n\nAvailable preceding statements (within the shown source scopes):\ntheorem unique_one {α : Type*} [Unique α] [One α] : default = (1 : α)\n\ntheorem mul_inv_cancel_right (a : α) (b : αˣ) : a * b * ↑b⁻¹ = a\n\ntheorem inv_mul_cancel_right (a : α) (b : αˣ) : a * ↑b⁻¹ * b = a",
+    "forbidden_declarations": [
+      "Units.mul_right_inj"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Algebra.Group.Units.Basic",
+      "source_path": "Mathlib/Algebra/Group/Units/Basic.lean",
+      "declaration": "Units.mul_right_inj",
+      "source_line": 62,
+      "source_sha256": "0e3286162096477f406b6affa27fac2c3c84ee6e620df878222b53206f7eb05b",
+      "prefix_end_character": 1488,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "6c3cc785191664fcd93322eb579ce6e1639e94653b89b6c85fc9d187d903c1ea",
+      "premise_context": "6cad41b5dcd615a92edc9bc56a5c881f5555d6b6ddfa9587d71849e7c4caa189",
+      "binders": "87955383b915e977c035b3ae05c115226cc51ce47193834e6f937e4f4dd8d2b4",
+      "proposition": "fec09a91b22e1bd34e84a0501819e63ea24bf16234f64970005fadb5a4836cde"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Algebra.Group.Basic",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Group.Commute.Defs",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Group.Units.Defs",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Logic.Unique",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.Lift",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.Subsingleton",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.Attr.Core",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

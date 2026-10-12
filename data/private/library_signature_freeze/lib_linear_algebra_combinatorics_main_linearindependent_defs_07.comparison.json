@@ -1,0 +1,120 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "True",
+  "trusted_type_expression": "True",
+  "trusted_telescope": {
+    "proposition": "True",
+    "binders": []
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEvalSignatureCheck  :\n  True :=\nTrue.intro",
+    "signature_spans": [
+      {
+        "start": 50,
+        "end": 54
+      }
+    ],
+    "proof_offset": 58,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 44
+      },
+      {
+        "start": 46,
+        "end": 47
+      },
+      {
+        "start": 50,
+        "end": 54
+      },
+      {
+        "start": 55,
+        "end": 57
+      },
+      {
+        "start": 58,
+        "end": 68
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 58,
+        "end": 68
+      }
+    ],
+    "W_full": 6,
+    "W_S": 1,
+    "W_B": 1
+  },
+  "root": "CompressionEvalSignatureCheck",
+  "resolved_imports": [
+    {
+      "module": "Mathlib.Algebra.Order.Sub.Basic",
+      "is_meta": false,
+      "is_exported": true,
+      "import_all": false
+    },
+    {
+      "module": "Mathlib.LinearAlgebra.Finsupp.LinearCombination",
+      "is_meta": false,
+      "is_exported": true,
+      "import_all": false
+    },
+    {
+      "module": "Mathlib.Lean.Expr.ExtraRecognizers",
+      "is_meta": true,
+      "is_exported": true,
+      "import_all": false
+    }
+  ],
+  "proved_type_fingerprint": "3270818714",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 3,
+    "syntax_kinds": [],
+    "proof_nodes": 1,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEvalSignatureCheck"
+  ],
+  "axioms": [],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "3395bf993af2150f52abb5bf70a51265d7982e54e65ca73146621e02b93f1fec",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.9737462499178946
+  },
+  "request_fingerprint": "a7f9141e70b67fbb8c0b73b15110ba5dd12142643160e7e47eb8ecb162b4d459",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "engine_path": "lean/versions/Evaluator-83da0074.lean"
+}

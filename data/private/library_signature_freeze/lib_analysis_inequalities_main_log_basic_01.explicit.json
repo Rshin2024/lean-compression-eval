@@ -1,0 +1,324 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "∀ {x : ℝ} (hx : Ne.{1} x 0),\n  Eq.{1} (Real.log x) ((OrderIso.symm.{0, 0} Real.expOrderIso) (Subtype.mk.{1} (abs.{0} x) ⋯))",
+  "trusted_type_expression": "forall {x : Real} (hx : Ne.{1} Real x (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero))), Eq.{1} Real (Real.log x) (DFunLike.coe.{1, 1, 1} (OrderIso.{0, 0} (Set.Elem.{0} Real (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero)))) Real (Subtype.instLE.{0} Real Real.instLE (fun (x : Real) => Membership.mem.{0, 0} Real (Set.{0} Real) (Set.instMembership.{0} Real) (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero))) x)) Real.instLE) (Set.Elem.{0} Real (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero)))) (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : Set.Elem.{0} Real (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero)))) => Real) (instFunLikeOrderIso.{0, 0} (Set.Elem.{0} Real (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero)))) Real (Subtype.instLE.{0} Real Real.instLE (fun (x : Real) => Membership.mem.{0, 0} Real (Set.{0} Real) (Set.instMembership.{0} Real) (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero))) x)) Real.instLE) (OrderIso.symm.{0, 0} Real (Set.Elem.{0} Real (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero)))) Real.instLE (Subtype.instLE.{0} Real Real.instLE (fun (x : Real) => Membership.mem.{0, 0} Real (Set.{0} Real) (Set.instMembership.{0} Real) (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero))) x)) Real.expOrderIso) (Subtype.mk.{1} Real (fun (x : Real) => Membership.mem.{0, 0} Real (Set.{0} Real) (Set.instMembership.{0} Real) (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero))) x) (abs.{0} Real Real.lattice Real.instAddGroup x) (Iff.mpr (LT.lt.{0} Real (Preorder.toLT.{0} Real (PartialOrder.toPreorder.{0} Real (SemilatticeInf.toPartialOrder.{0} Real (Lattice.toSemilatticeInf.{0} Real (DistribLattice.toLattice.{0} Real (instDistribLatticeOfLinearOrder.{0} Real Real.linearOrder)))))) (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real (NegZeroClass.toZero.{0} Real (SubNegZeroMonoid.toNegZeroClass.{0} Real (SubtractionMonoid.toSubNegZeroMonoid.{0} Real (AddGroup.toSubtractionMonoid.{0} Real Real.instAddGroup)))))) (abs.{0} Real (DistribLattice.toLattice.{0} Real (instDistribLatticeOfLinearOrder.{0} Real Real.linearOrder)) Real.instAddGroup x)) (Ne.{1} Real x (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real (NegZeroClass.toZero.{0} Real (SubNegZeroMonoid.toNegZeroClass.{0} Real (SubtractionMonoid.toSubNegZeroMonoid.{0} Real (AddGroup.toSubtractionMonoid.{0} Real Real.instAddGroup))))))) (abs_pos.{0} Real Real.instAddGroup Real.linearOrder (IsOrderedAddMonoid.toAddLeftMono.{0} Real Real.instAddCommMonoid Real.instPreorder Real.instIsOrderedAddMonoid) x) hx)))",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} (Real.log x) ((OrderIso.symm.{0, 0} Real.expOrderIso) (Subtype.mk.{1} (abs.{0} x) ⋯))",
+    "binders": [
+      {
+        "type_source": "ℝ",
+        "name": "x",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Ne.{1} x 0",
+        "name": "hx",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_analysis_inequalities_main_log_basic_01 {«x» : ℝ} (hx : x ≠ 0) :\n  log x = expOrderIso.symm ⟨|x|, abs_pos.2 hx⟩ :=\ndite_eq_right hx",
+    "signature_spans": [
+      {
+        "start": 75,
+        "end": 76
+      },
+      {
+        "start": 76,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 87
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 90,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 108,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 132
+      },
+      {
+        "start": 133,
+        "end": 136
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 148
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 149,
+        "end": 150
+      },
+      {
+        "start": 151,
+        "end": 153
+      },
+      {
+        "start": 153,
+        "end": 156
+      }
+    ],
+    "proof_offset": 160,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 76
+      },
+      {
+        "start": 76,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 87
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 90,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 108,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 132
+      },
+      {
+        "start": 133,
+        "end": 136
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 148
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 149,
+        "end": 150
+      },
+      {
+        "start": 151,
+        "end": 153
+      },
+      {
+        "start": 153,
+        "end": 156
+      },
+      {
+        "start": 157,
+        "end": 159
+      },
+      {
+        "start": 160,
+        "end": 173
+      },
+      {
+        "start": 174,
+        "end": 176
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 160,
+        "end": 173
+      },
+      {
+        "start": 174,
+        "end": 176
+      }
+    ],
+    "W_full": 32,
+    "W_S": 26,
+    "W_B": 2
+  },
+  "root": "CompressionEval.lib_analysis_inequalities_main_log_basic_01",
+  "proved_type_fingerprint": "3166786635",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 15788,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "null"
+    ],
+    "proof_nodes": 417,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_analysis_inequalities_main_log_basic_01"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "59919ba5a77d1ab5ed48da333a701f5fc0312048c5cd4dd69d7e93b9ad127590",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 4.1242114580236375
+  },
+  "request_fingerprint": "05a9e0abf631d56d219eb202966e0750fb6b0bdf7db47652026ef97a0259ed0c"
+}

@@ -1,0 +1,255 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {α : Type u_1} {m : Multiset.{u_1} α} {nodup : Multiset.Nodup.{u_1} m},\n  Eq.{1} (Finset.card.{u_1} (Finset.mk.{u_1} m nodup)) (Multiset.card.{u_1} m)",
+  "trusted_type_expression": "forall {α : Type.{u_1}} {m : Multiset.{u_1} α} {nodup : Multiset.Nodup.{u_1} α m}, Eq.{1} Nat (Finset.card.{u_1} α (Finset.mk.{u_1} α m nodup)) (Multiset.card.{u_1} α m)",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} (Finset.card.{u_1} (Finset.mk.{u_1} m nodup)) (Multiset.card.{u_1} m)",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Multiset.{u_1} α",
+        "name": "m",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Multiset.Nodup.{u_1} m",
+        "name": "nodup",
+        "binder_info": "implicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_linear_algebra_combinatorics_main_finset_card_02 {m nodup} :\n  #(⟨m, nodup⟩ : Finset α) = Multiset.card m :=\nrfl",
+    "signature_spans": [
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 92
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 100,
+        "end": 103
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 106,
+        "end": 111
+      },
+      {
+        "start": 111,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 126
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 128,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      }
+    ],
+    "proof_offset": 149,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 92
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 100,
+        "end": 103
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 106,
+        "end": 111
+      },
+      {
+        "start": 111,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 126
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 128,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 148
+      },
+      {
+        "start": 149,
+        "end": 152
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 149,
+        "end": 152
+      }
+    ],
+    "W_full": 23,
+    "W_S": 18,
+    "W_B": 1
+  },
+  "root": "CompressionEval.lib_linear_algebra_combinatorics_main_finset_card_02",
+  "proved_type_fingerprint": "2301161131",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 275,
+    "syntax_kinds": [],
+    "proof_nodes": 27,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_linear_algebra_combinatorics_main_finset_card_02"
+  ],
+  "axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "6e10d7ab88585e5c0a56241cead60756a8fef4d338c794765334e3d79ef2ab16",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.2882682499475777
+  },
+  "request_fingerprint": "09802460a05139e5a49693a75e4852b0a51ae2b33ceb9a06846f9ef5a62febf4"
+}

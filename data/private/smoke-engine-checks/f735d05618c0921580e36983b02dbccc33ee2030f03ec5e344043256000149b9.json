@@ -1,0 +1,1293 @@
+{
+  "engine_hash": "46217c8f9d4317cf07b34b5867b8aed1cd37acc29b38c4ecdd5d0c4690982642",
+  "environment_hash": "b3a47e1977f7a71d5906459df606c0a9dc983c02f13ad732590a3322cc5e6ae3",
+  "evaluated_at": "2026-10-12T03:42:53.562578+00:00",
+  "extraction": {
+    "axioms": [],
+    "candidate_declarations": [
+      "CompressionEval.smoke_sl_02"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 95,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.rintro",
+        "Lean.Parser.Tactic.rintroPat.one",
+        "Lean.Parser.Tactic.rcasesPat.tuple",
+        "Lean.Parser.Tactic.rcasesPatLo",
+        "Lean.Parser.Tactic.rcasesPatMed",
+        "Lean.Parser.Tactic.rcasesPat.one",
+        "Lean.cdot",
+        "Lean.cdotTk",
+        "Lean.Parser.Tactic.exact",
+        "Lean.Parser.Term.app",
+        "Lean.Parser.Term.paren",
+        "Lean.Parser.Term.hygienicLParen",
+        "hygieneInfo"
+      ],
+      "transitive_dependency_count": 10
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "available",
+    "nodes": [
+      {
+        "body": {
+          "@Sort": 4,
+          "And": 2,
+          "And.casesOn": 1,
+          "Or": 5,
+          "Or.casesOn": 1
+        },
+        "body_nodes": 95,
+        "literal_bytes": 0,
+        "name": "CompressionEval.smoke_sl_02",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "@Sort": 4,
+          "And": 1,
+          "Or": 1
+        },
+        "source_counts": null,
+        "type_hash": "2636890830",
+        "type_nodes": 29,
+        "value_hash": "3167114043"
+      },
+      {
+        "body": null,
+        "name": "@Sort",
+        "owner_module": "@builtin",
+        "primitive": true,
+        "signature": {},
+        "type_hash": "@Sort",
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "literal_bytes": 0,
+        "name": "And",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {
+          "@Sort": 3
+        },
+        "source_counts": null,
+        "type_hash": "2232915537",
+        "type_nodes": 5,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "literal_bytes": 0,
+        "name": "Or",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {
+          "@Sort": 3
+        },
+        "source_counts": null,
+        "type_hash": "2232915537",
+        "type_nodes": 5,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 3,
+          "And": 2,
+          "And.intro": 1,
+          "And.rec": 1
+        },
+        "body_nodes": 53,
+        "literal_bytes": 0,
+        "name": "And.casesOn",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {
+          "@Sort": 3,
+          "And": 2,
+          "And.intro": 1
+        },
+        "source_counts": null,
+        "type_hash": "2627528888",
+        "type_nodes": 37,
+        "value_hash": "3322414018"
+      },
+      {
+        "body": {
+          "@Sort": 3,
+          "Or": 2,
+          "Or.inl": 1,
+          "Or.inr": 1,
+          "Or.rec": 1
+        },
+        "body_nodes": 63,
+        "literal_bytes": 0,
+        "name": "Or.casesOn",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {
+          "@Sort": 3,
+          "Or": 2,
+          "Or.inl": 1,
+          "Or.inr": 1
+        },
+        "source_counts": null,
+        "type_hash": "407668636",
+        "type_nodes": 45,
+        "value_hash": "3320664077"
+      }
+    ],
+    "process_returncode": 0,
+    "proved_type_fingerprint": "2636890830",
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 9.900126749649644,
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "network": "disabled",
+      "profile_hash": "4ab46584b95910e94c6f041d24512437fa4cff3db60e9a3490cb87b5d8fa7b07",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.smoke_sl_02",
+    "source_tokens": {
+      "W_B": 20,
+      "W_S": 35,
+      "W_full": 59,
+      "body_spans": [
+        {
+          "end": 131,
+          "start": 129
+        },
+        {
+          "end": 140,
+          "start": 134
+        },
+        {
+          "end": 144,
+          "start": 141
+        },
+        {
+          "end": 146,
+          "start": 144
+        },
+        {
+          "end": 148,
+          "start": 147
+        },
+        {
+          "end": 151,
+          "start": 149
+        },
+        {
+          "end": 152,
+          "start": 151
+        },
+        {
+          "end": 156,
+          "start": 153
+        },
+        {
+          "end": 159,
+          "start": 156
+        },
+        {
+          "end": 164,
+          "start": 162
+        },
+        {
+          "end": 170,
+          "start": 165
+        },
+        {
+          "end": 174,
+          "start": 171
+        },
+        {
+          "end": 176,
+          "start": 175
+        },
+        {
+          "end": 179,
+          "start": 176
+        },
+        {
+          "end": 182,
+          "start": 180
+        },
+        {
+          "end": 183,
+          "start": 182
+        },
+        {
+          "end": 188,
+          "start": 186
+        },
+        {
+          "end": 194,
+          "start": 189
+        },
+        {
+          "end": 198,
+          "start": 195
+        },
+        {
+          "end": 201,
+          "start": 199
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 42,
+          "start": 8
+        },
+        {
+          "end": 44,
+          "start": 43
+        },
+        {
+          "end": 45,
+          "start": 44
+        },
+        {
+          "end": 47,
+          "start": 46
+        },
+        {
+          "end": 49,
+          "start": 48
+        },
+        {
+          "end": 51,
+          "start": 50
+        },
+        {
+          "end": 53,
+          "start": 52
+        },
+        {
+          "end": 58,
+          "start": 54
+        },
+        {
+          "end": 59,
+          "start": 58
+        },
+        {
+          "end": 61,
+          "start": 60
+        },
+        {
+          "end": 64,
+          "start": 61
+        },
+        {
+          "end": 66,
+          "start": 65
+        },
+        {
+          "end": 68,
+          "start": 67
+        },
+        {
+          "end": 72,
+          "start": 69
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 77,
+          "start": 76
+        },
+        {
+          "end": 80,
+          "start": 77
+        },
+        {
+          "end": 82,
+          "start": 81
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 88,
+          "start": 85
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 91,
+          "start": 90
+        },
+        {
+          "end": 93,
+          "start": 92
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 98,
+          "start": 97
+        },
+        {
+          "end": 102,
+          "start": 99
+        },
+        {
+          "end": 104,
+          "start": 103
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 111,
+          "start": 110
+        },
+        {
+          "end": 112,
+          "start": 111
+        },
+        {
+          "end": 116,
+          "start": 113
+        },
+        {
+          "end": 118,
+          "start": 117
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 123,
+          "start": 120
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 128,
+          "start": 126
+        },
+        {
+          "end": 131,
+          "start": 129
+        },
+        {
+          "end": 140,
+          "start": 134
+        },
+        {
+          "end": 144,
+          "start": 141
+        },
+        {
+          "end": 146,
+          "start": 144
+        },
+        {
+          "end": 148,
+          "start": 147
+        },
+        {
+          "end": 151,
+          "start": 149
+        },
+        {
+          "end": 152,
+          "start": 151
+        },
+        {
+          "end": 156,
+          "start": 153
+        },
+        {
+          "end": 159,
+          "start": 156
+        },
+        {
+          "end": 164,
+          "start": 162
+        },
+        {
+          "end": 170,
+          "start": 165
+        },
+        {
+          "end": 174,
+          "start": 171
+        },
+        {
+          "end": 176,
+          "start": 175
+        },
+        {
+          "end": 179,
+          "start": 176
+        },
+        {
+          "end": 182,
+          "start": 180
+        },
+        {
+          "end": 183,
+          "start": 182
+        },
+        {
+          "end": 188,
+          "start": 186
+        },
+        {
+          "end": 194,
+          "start": 189
+        },
+        {
+          "end": 198,
+          "start": 195
+        },
+        {
+          "end": 201,
+          "start": 199
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 129,
+      "signature_spans": [
+        {
+          "end": 44,
+          "start": 43
+        },
+        {
+          "end": 45,
+          "start": 44
+        },
+        {
+          "end": 47,
+          "start": 46
+        },
+        {
+          "end": 49,
+          "start": 48
+        },
+        {
+          "end": 51,
+          "start": 50
+        },
+        {
+          "end": 53,
+          "start": 52
+        },
+        {
+          "end": 58,
+          "start": 54
+        },
+        {
+          "end": 59,
+          "start": 58
+        },
+        {
+          "end": 61,
+          "start": 60
+        },
+        {
+          "end": 64,
+          "start": 61
+        },
+        {
+          "end": 66,
+          "start": 65
+        },
+        {
+          "end": 68,
+          "start": 67
+        },
+        {
+          "end": 72,
+          "start": 69
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 77,
+          "start": 76
+        },
+        {
+          "end": 80,
+          "start": 77
+        },
+        {
+          "end": 82,
+          "start": 81
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 88,
+          "start": 85
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 91,
+          "start": 90
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 98,
+          "start": 97
+        },
+        {
+          "end": 102,
+          "start": 99
+        },
+        {
+          "end": 104,
+          "start": 103
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 111,
+          "start": 110
+        },
+        {
+          "end": 112,
+          "start": 111
+        },
+        {
+          "end": 116,
+          "start": 113
+        },
+        {
+          "end": 118,
+          "start": 117
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 123,
+          "start": 120
+        },
+        {
+          "end": 125,
+          "start": 124
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.smoke_sl_02 (P Q R S : Prop) (hpq : P → Q) (hrs : R → S) :\n  (P ∨ R) ∧ (Q → S) → S :=\nby\n  rintro ⟨hp | hr, hqs⟩\n  · exact hqs (hpq hp)\n  · exact hrs hr",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "explicit",
+          "name": "P",
+          "type_source": "Prop"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "Q",
+          "type_source": "Prop"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "R",
+          "type_source": "Prop"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "S",
+          "type_source": "Prop"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hpq",
+          "type_source": "P → Q"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hrs",
+          "type_source": "R → S"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "a._@._internal._hyg.0",
+          "type_source": "(P ∨ R) ∧ (Q → S)"
+        }
+      ],
+      "proposition": "S"
+    },
+    "trusted_type_expression": "forall (P : Prop) (Q : Prop) (R : Prop) (S : Prop), (P -> Q) -> (R -> S) -> (And (Or P R) (Q -> S)) -> S",
+    "trusted_type_source": "∀ (P Q R S : Prop), (P → Q) → (R → S) → (P ∨ R) ∧ (Q → S) → S",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "graph_hash": "d21fbe4feaf01dcb44a1ba11e98fd7d30b49585c229401237563d6262fbe2991",
+  "metric_status": "available",
+  "metrics": {
+    "D": 1,
+    "I0": {
+      "denominator_decimal": "35",
+      "log2": -0.8073549220576037,
+      "numerator_decimal": "20"
+    },
+    "T0": {
+      "denominator_decimal": "55",
+      "log2": -1.5334322000810747,
+      "numerator_decimal": "19"
+    },
+    "U_B_decimal": "13",
+    "U_S_decimal": "6",
+    "U_decimal": "19",
+    "W_B": 20,
+    "W_S": 35,
+    "body_state": "present",
+    "distinct_dependency_count": 5,
+    "log2_I0": -0.8073549220576037,
+    "log2_T0": -1.5334322000810747,
+    "log2_U": 4.247927513443585,
+    "log2_U_B": 3.700439718141092,
+    "log2_U_S": 2.584962500721156,
+    "log2_W": 5.78135971352466,
+    "metric_profile": "paper_aligned_v1",
+    "metric_status": "available",
+    "primitive_count": 5,
+    "reachable_node_count": 6,
+    "reasons": []
+  },
+  "primitive_manifest": [
+    "@Sort",
+    "And",
+    "And.casesOn",
+    "Or",
+    "Or.casesOn"
+  ],
+  "primitive_manifest_hash": "3aa199621a3380364a2533e6ee5cc38fbe4faaff5fdddf5e6b136bbd86a278e6",
+  "primitive_manifest_scope": "reachable closure; boundary policy and environment define shared corpus boundary",
+  "proof": "by\n  rintro ⟨hp | hr, hqs⟩\n  · exact hqs (hpq hp)\n  · exact hrs hr",
+  "record_kind": "verified_reference",
+  "source_hash": "ea561f65826d30ea86c8f812deb0be3fb4937ff5c3235e0d4bb3b58345fdba9b",
+  "source_token_policy_hash": "8d6411eca401619c277a23ac8b0dea2466ff22443faf50d9b4636d3ea1958e78",
+  "task_id": "smoke_sl_02",
+  "validation": {
+    "axioms": [],
+    "candidate_declarations": [
+      "CompressionEval.smoke_sl_02"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 95,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.rintro",
+        "Lean.Parser.Tactic.rintroPat.one",
+        "Lean.Parser.Tactic.rcasesPat.tuple",
+        "Lean.Parser.Tactic.rcasesPatLo",
+        "Lean.Parser.Tactic.rcasesPatMed",
+        "Lean.Parser.Tactic.rcasesPat.one",
+        "Lean.cdot",
+        "Lean.cdotTk",
+        "Lean.Parser.Tactic.exact",
+        "Lean.Parser.Term.app",
+        "Lean.Parser.Term.paren",
+        "Lean.Parser.Term.hygienicLParen",
+        "hygieneInfo"
+      ],
+      "transitive_dependency_count": 10
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "2636890830",
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 8.235841208137572,
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "network": "disabled",
+      "profile_hash": "ca9eee0ae6cd8d857c2c124325043d0388caea6473a3f9764bc85edbd7517958",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.smoke_sl_02",
+    "source_tokens": {
+      "W_B": 20,
+      "W_S": 35,
+      "W_full": 59,
+      "body_spans": [
+        {
+          "end": 131,
+          "start": 129
+        },
+        {
+          "end": 140,
+          "start": 134
+        },
+        {
+          "end": 144,
+          "start": 141
+        },
+        {
+          "end": 146,
+          "start": 144
+        },
+        {
+          "end": 148,
+          "start": 147
+        },
+        {
+          "end": 151,
+          "start": 149
+        },
+        {
+          "end": 152,
+          "start": 151
+        },
+        {
+          "end": 156,
+          "start": 153
+        },
+        {
+          "end": 159,
+          "start": 156
+        },
+        {
+          "end": 164,
+          "start": 162
+        },
+        {
+          "end": 170,
+          "start": 165
+        },
+        {
+          "end": 174,
+          "start": 171
+        },
+        {
+          "end": 176,
+          "start": 175
+        },
+        {
+          "end": 179,
+          "start": 176
+        },
+        {
+          "end": 182,
+          "start": 180
+        },
+        {
+          "end": 183,
+          "start": 182
+        },
+        {
+          "end": 188,
+          "start": 186
+        },
+        {
+          "end": 194,
+          "start": 189
+        },
+        {
+          "end": 198,
+          "start": 195
+        },
+        {
+          "end": 201,
+          "start": 199
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 42,
+          "start": 8
+        },
+        {
+          "end": 44,
+          "start": 43
+        },
+        {
+          "end": 45,
+          "start": 44
+        },
+        {
+          "end": 47,
+          "start": 46
+        },
+        {
+          "end": 49,
+          "start": 48
+        },
+        {
+          "end": 51,
+          "start": 50
+        },
+        {
+          "end": 53,
+          "start": 52
+        },
+        {
+          "end": 58,
+          "start": 54
+        },
+        {
+          "end": 59,
+          "start": 58
+        },
+        {
+          "end": 61,
+          "start": 60
+        },
+        {
+          "end": 64,
+          "start": 61
+        },
+        {
+          "end": 66,
+          "start": 65
+        },
+        {
+          "end": 68,
+          "start": 67
+        },
+        {
+          "end": 72,
+          "start": 69
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 77,
+          "start": 76
+        },
+        {
+          "end": 80,
+          "start": 77
+        },
+        {
+          "end": 82,
+          "start": 81
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 88,
+          "start": 85
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 91,
+          "start": 90
+        },
+        {
+          "end": 93,
+          "start": 92
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 98,
+          "start": 97
+        },
+        {
+          "end": 102,
+          "start": 99
+        },
+        {
+          "end": 104,
+          "start": 103
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 111,
+          "start": 110
+        },
+        {
+          "end": 112,
+          "start": 111
+        },
+        {
+          "end": 116,
+          "start": 113
+        },
+        {
+          "end": 118,
+          "start": 117
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 123,
+          "start": 120
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 128,
+          "start": 126
+        },
+        {
+          "end": 131,
+          "start": 129
+        },
+        {
+          "end": 140,
+          "start": 134
+        },
+        {
+          "end": 144,
+          "start": 141
+        },
+        {
+          "end": 146,
+          "start": 144
+        },
+        {
+          "end": 148,
+          "start": 147
+        },
+        {
+          "end": 151,
+          "start": 149
+        },
+        {
+          "end": 152,
+          "start": 151
+        },
+        {
+          "end": 156,
+          "start": 153
+        },
+        {
+          "end": 159,
+          "start": 156
+        },
+        {
+          "end": 164,
+          "start": 162
+        },
+        {
+          "end": 170,
+          "start": 165
+        },
+        {
+          "end": 174,
+          "start": 171
+        },
+        {
+          "end": 176,
+          "start": 175
+        },
+        {
+          "end": 179,
+          "start": 176
+        },
+        {
+          "end": 182,
+          "start": 180
+        },
+        {
+          "end": 183,
+          "start": 182
+        },
+        {
+          "end": 188,
+          "start": 186
+        },
+        {
+          "end": 194,
+          "start": 189
+        },
+        {
+          "end": 198,
+          "start": 195
+        },
+        {
+          "end": 201,
+          "start": 199
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 129,
+      "signature_spans": [
+        {
+          "end": 44,
+          "start": 43
+        },
+        {
+          "end": 45,
+          "start": 44
+        },
+        {
+          "end": 47,
+          "start": 46
+        },
+        {
+          "end": 49,
+          "start": 48
+        },
+        {
+          "end": 51,
+          "start": 50
+        },
+        {
+          "end": 53,
+          "start": 52
+        },
+        {
+          "end": 58,
+          "start": 54
+        },
+        {
+          "end": 59,
+          "start": 58
+        },
+        {
+          "end": 61,
+          "start": 60
+        },
+        {
+          "end": 64,
+          "start": 61
+        },
+        {
+          "end": 66,
+          "start": 65
+        },
+        {
+          "end": 68,
+          "start": 67
+        },
+        {
+          "end": 72,
+          "start": 69
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 77,
+          "start": 76
+        },
+        {
+          "end": 80,
+          "start": 77
+        },
+        {
+          "end": 82,
+          "start": 81
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 88,
+          "start": 85
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 91,
+          "start": 90
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 98,
+          "start": 97
+        },
+        {
+          "end": 102,
+          "start": 99
+        },
+        {
+          "end": 104,
+          "start": 103
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 111,
+          "start": 110
+        },
+        {
+          "end": 112,
+          "start": 111
+        },
+        {
+          "end": 116,
+          "start": 113
+        },
+        {
+          "end": 118,
+          "start": 117
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 123,
+          "start": 120
+        },
+        {
+          "end": 125,
+          "start": 124
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.smoke_sl_02 (P Q R S : Prop) (hpq : P → Q) (hrs : R → S) :\n  (P ∨ R) ∧ (Q → S) → S :=\nby\n  rintro ⟨hp | hr, hqs⟩\n  · exact hqs (hpq hp)\n  · exact hrs hr",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "explicit",
+          "name": "P",
+          "type_source": "Prop"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "Q",
+          "type_source": "Prop"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "R",
+          "type_source": "Prop"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "S",
+          "type_source": "Prop"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hpq",
+          "type_source": "P → Q"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hrs",
+          "type_source": "R → S"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "a._@._internal._hyg.0",
+          "type_source": "(P ∨ R) ∧ (Q → S)"
+        }
+      ],
+      "proposition": "S"
+    },
+    "trusted_type_expression": "forall (P : Prop) (Q : Prop) (R : Prop) (S : Prop), (P -> Q) -> (R -> S) -> (And (Or P R) (Q -> S)) -> S",
+    "trusted_type_source": "∀ (P Q R S : Prop), (P → Q) → (R → S) → (P ∨ R) ∧ (Q → S) → S",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "validity_status": "success"
+}

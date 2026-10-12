@@ -1,0 +1,332 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "∀ {x : ℝ}, LT.lt.{0} 0 x → Eq.{1} (rexp (Real.log x)) x",
+  "trusted_type_expression": "forall {x : Real}, (LT.lt.{0} Real Real.instLT (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero)) x) -> (Eq.{1} Real (Real.exp (Real.log x)) x)",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} (rexp (Real.log x)) x",
+    "binders": [
+      {
+        "type_source": "ℝ",
+        "name": "x",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "LT.lt.{0} 0 x",
+        "name": "hx",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_analysis_inequalities_main_log_basic_03 {«x» : ℝ} (hx : 0 < x) :\n  exp (log x) = x :=\nby\n  rw [exp_log_eq_abs hx.ne']\n  exact abs_of_pos hx",
+    "signature_spans": [
+      {
+        "start": 75,
+        "end": 76
+      },
+      {
+        "start": 76,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 87
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 90,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 100,
+        "end": 101
+      },
+      {
+        "start": 106,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 111,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 121
+      }
+    ],
+    "proof_offset": 125,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 76
+      },
+      {
+        "start": 76,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 87
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 90,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 100,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 106,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 111,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 127
+      },
+      {
+        "start": 130,
+        "end": 132
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 134,
+        "end": 148
+      },
+      {
+        "start": 149,
+        "end": 155
+      },
+      {
+        "start": 155,
+        "end": 156
+      },
+      {
+        "start": 159,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 175
+      },
+      {
+        "start": 176,
+        "end": 178
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 125,
+        "end": 127
+      },
+      {
+        "start": 130,
+        "end": 132
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 134,
+        "end": 148
+      },
+      {
+        "start": 149,
+        "end": 155
+      },
+      {
+        "start": 155,
+        "end": 156
+      },
+      {
+        "start": 159,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 175
+      },
+      {
+        "start": 176,
+        "end": 178
+      }
+    ],
+    "W_full": 32,
+    "W_S": 19,
+    "W_B": 9
+  },
+  "root": "CompressionEval.lib_analysis_inequalities_main_log_basic_03",
+  "proved_type_fingerprint": "124570228",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 15792,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.rwSeq",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.rwRuleSeq",
+      "Lean.Parser.Tactic.rwRule",
+      "Lean.Parser.Term.app",
+      "Lean.Parser.Tactic.exact"
+    ],
+    "proof_nodes": 165,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_analysis_inequalities_main_log_basic_03"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "07d71a02bd77f2416fab7b94c65639a25850dfffef464e6d40f64ad521d21b39",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.712144291959703
+  },
+  "request_fingerprint": "f5036718f11873f66584785b7c9d2aace1cbf82ba26f7979dd48905da38b923c"
+}

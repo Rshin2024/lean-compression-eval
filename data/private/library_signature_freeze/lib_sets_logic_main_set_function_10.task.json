@@ -1,0 +1,72 @@
+{
+  "task": {
+    "task_id": "lib_sets_logic_main_set_function_10",
+    "family_id": "source_module_Mathlib.Data.Set.Function",
+    "domain": "sets_logic",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Data.Set.Prod",
+      "Mathlib.Data.Set.Restrict"
+    ],
+    "context": "/-\nCopyright (c) 2014 Jeremy Avigad. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Jeremy Avigad, Andrew Zipperer, Haitao Zhang, Minchao Wu, Yury Kudryashov\n-/\n/-!\n# Functions over sets\n\nThis file contains basic results on the following predicates of functions and sets:\n\n* `Set.EqOn f₁ f₂ s` : functions `f₁` and `f₂` are equal at every point of `s`;\n* `Set.MapsTo f s t` : `f` sends every point of `s` to a point of `t`;\n* `Set.InjOn f s` : restriction of `f` to `s` is injective;\n* `Set.SurjOn f s t` : every point in `s` has a preimage in `s`;\n* `Set.BijOn f s t` : `f` is a bijection between `s` and `t`;\n* `Set.LeftInvOn f' f s` : for every `x ∈ s` we have `f' (f x) = x`;\n* `Set.RightInvOn f' f t` : for every `y ∈ t` we have `f (f' y) = y`;\n* `Set.InvOn f' f s t` : `f'` is a two-side inverse of `f` on `s` and `t`, i.e.\n  we have `Set.LeftInvOn f' f s` and `Set.RightInvOn f' f t`.\n-/\n\n@[expose] public section\n\nvariable {α β γ δ : Type*} {ι : Sort*} {π : α → Type*}\n\nopen Equiv Equiv.Perm Function\n\nnamespace Set\n\n/-! ### Equality on a set -/\nsection equality\n\nvariable {s s₁ s₂ : Set α} {f₁ f₂ f₃ : α → β} {g : β → γ} {a : α}\n\n/-- This lemma exists for use by `grind`/`aesop` as a forward rule. -/\n@[aesop safe forward, grind →]\nlemma EqOn.eq_of_mem (h : s.EqOn f₁ f₂) (ha : a ∈ s) : f₁ a = f₂ a :=\n  h ha\n\n@[simp]\ntheorem eqOn_empty (f₁ f₂ : α → β) : EqOn f₁ f₂ ∅ := fun _ => False.elim\n\n@[simp]\ntheorem eqOn_singleton : Set.EqOn f₁ f₂ {a} ↔ f₁ a = f₂ a := by\n  simp [Set.EqOn]\n\n@[simp]\ntheorem eqOn_univ (f₁ f₂ : α → β) : EqOn f₁ f₂ univ ↔ f₁ = f₂ := by\n  simp [EqOn, funext_iff]\n\n@[symm]\ntheorem EqOn.symm (h : EqOn f₁ f₂ s) : EqOn f₂ f₁ s := fun _ hx => (h hx).symm\n\ntheorem eqOn_comm : EqOn f₁ f₂ s ↔ EqOn f₂ f₁ s :=\n  ⟨EqOn.symm, EqOn.symm⟩\n\n-- This cannot be tagged as `@[refl]` with the current argument order.\n-- See note below at `EqOn.trans`.\ntheorem eqOn_refl (f : α → β) (s : Set α) : EqOn f f s := fun _ _ => rfl\n\n-- Note: this was formerly tagged with `@[trans]`, and although the `trans` attribute accepted it\n-- the `trans` tactic could not use it.\n-- An update to the trans tactic coming in https://github.com/leanprover-community/mathlib4/pull/7014 will reject this attribute.\n-- It can be restored by changing the argument order from `EqOn f₁ f₂ s` to `EqOn s f₁ f₂`.\n-- This change will be made separately: [zulip](https://leanprover.zulipchat.com/#narrow/stream/287929-mathlib4/topic/Reordering.20arguments.20of.20.60Set.2EEqOn.60/near/390467581).\ntheorem EqOn.trans (h₁ : EqOn f₁ f₂ s) (h₂ : EqOn f₂ f₃ s) : EqOn f₁ f₃ s := fun _ hx =>\n  (h₁ hx).trans (h₂ hx)\n\ntheorem EqOn.image_eq (heq : EqOn f₁ f₂ s) : f₁ '' s = f₂ '' s := by grind\n\nuniverse «u_1»\n\nassert_not_exists _root_.Set.EqOn.image_eq_self\n",
+    "binders": "{«α» : Type u_1} {«s» : Set.{u_1} α} {f : α → α} (h : Set.EqOn f id s)",
+    "proposition": "f '' s = s",
+    "target_name": "_root_.CompressionEval.lib_sets_logic_main_set_function_10",
+    "premise_context": "variable {α β γ δ : Type*} {ι : Sort*} {π : α → Type*}\nopen Equiv Equiv.Perm Function\nnamespace Set\nsection equality\nvariable {s s₁ s₂ : Set α} {f₁ f₂ f₃ : α → β} {g : β → γ} {a : α}\n\nAvailable preceding statements (within the shown source scopes):\ntheorem eqOn_empty (f₁ f₂ : α → β) : EqOn f₁ f₂ ∅\n\ntheorem eqOn_singleton : Set.EqOn f₁ f₂ {a} ↔ f₁ a = f₂ a\n\ntheorem eqOn_univ (f₁ f₂ : α → β) : EqOn f₁ f₂ univ ↔ f₁ = f₂\n\ntheorem EqOn.symm (h : EqOn f₁ f₂ s) : EqOn f₂ f₁ s\n\ntheorem eqOn_comm : EqOn f₁ f₂ s ↔ EqOn f₂ f₁ s\n\ntheorem eqOn_refl (f : α → β) (s : Set α) : EqOn f f s\n\ntheorem EqOn.trans (h₁ : EqOn f₁ f₂ s) (h₂ : EqOn f₂ f₃ s) : EqOn f₁ f₃ s\n\ntheorem EqOn.image_eq (heq : EqOn f₁ f₂ s) : f₁ '' s = f₂ '' s",
+    "forbidden_declarations": [
+      "Set.EqOn.image_eq_self"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Data.Set.Function",
+      "source_path": "Mathlib/Data/Set/Function.lean",
+      "declaration": "Set.EqOn.image_eq_self",
+      "source_line": 77,
+      "source_sha256": "cc2a361b5b82b08611dea07a180661f9bfb13ac846d5d2c77547da9c63513d15",
+      "prefix_end_character": 2880,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "8d81f1e0ce28c0c4a36ef67a97a019f7d9a51c058bc6d8907efeb50663751027",
+      "premise_context": "ac0a183064a5681e85ae2d69270d460621f56a7d0de0d5e57cb6a37793d2eeb7",
+      "binders": "f407a1ca33b7790cf6c91d0d7ea2544667bff0d92d7d0a061c332731e1fad4e4",
+      "proposition": "d97f2b1bab159cf0fa90e6e1b309ff58ce6d3e77f053db36e6a1d899035d994a"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Data.Set.Prod",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Set.Restrict",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

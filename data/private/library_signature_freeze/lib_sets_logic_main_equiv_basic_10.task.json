@@ -1,0 +1,93 @@
+{
+  "task": {
+    "task_id": "lib_sets_logic_main_equiv_basic_10",
+    "family_id": "source_module_Mathlib.Logic.Equiv.Basic",
+    "domain": "sets_logic",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Logic.Equiv.Option",
+      "Mathlib.Logic.Equiv.Sum",
+      "Mathlib.Logic.Function.Conjugate",
+      "Mathlib.Tactic.Lift",
+      "Mathlib.Data.Int.Notation"
+    ],
+    "context": "/-\nCopyright (c) 2015 Microsoft Corporation. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Leonardo de Moura, Mario Carneiro\n-/\n/-!\n# Equivalence between types\n\nIn this file we continue the work on equivalences begun in `Mathlib/Logic/Equiv/Defs.lean`, defining\na lot of equivalences between various types and operations on these equivalences.\n\nMore definitions of this kind can be found in other files.\nE.g., `Mathlib/Algebra/Group/TransferInstance.lean` does it for `Group`,\n`Mathlib/Algebra/Module/TransferInstance.lean` does it for `Module`, and similar files exist for\nother algebraic type classes.\n\n## Tags\n\nequivalence, congruence, bijective map\n-/\n\n@[expose] public section\n\nuniverse u v w z\n\nopen Function\n\n-- Unless required to be `Type*`, all variables in this file are `Sort*`\nvariable {α α₁ α₂ β β₁ β₂ γ δ : Sort*}\n\nnamespace Equiv\n\n/-- The product over `Option α` of `β a` is the binary product of the\nproduct over `α` of `β (some α)` and `β none` -/\n@[simps]\ndef piOptionEquivProd {α} {β : Option α → Type*} :\n    (∀ a : Option α, β a) ≃ β none × ∀ a : α, β (some a) where\n  toFun f := (f none, fun a => f (some a))\n  invFun x a := Option.casesOn a x.fst x.snd\n  left_inv f := funext fun a => by cases a <;> rfl\n\nsection subtypeCongr\n\n/-- Combines an `Equiv` between two subtypes with an `Equiv` between their complements to form a\n  permutation. -/\ndef subtypeCongr {α} {p q : α → Prop} [DecidablePred p] [DecidablePred q]\n    (e : { x // p x } ≃ { x // q x }) (f : { x // ¬p x } ≃ { x // ¬q x }) : Perm α :=\n  (sumCompl p).symm.trans ((sumCongr e f).trans (sumCompl q))\n\nvariable {ε : Type*} {p : ε → Prop} [DecidablePred p]\nvariable (ep ep' : Perm { a // p a }) (en en' : Perm { a // ¬p a })\n\n/-- Combining permutations on `ε` that permute only inside or outside the subtype\nsplit induced by `p : ε → Prop` constructs a permutation on `ε`. -/\ndef Perm.subtypeCongr : Equiv.Perm ε :=\n  permCongr (sumCompl p) (sumCongr ep en)\n\ntheorem Perm.subtypeCongr.apply (a : ε) : ep.subtypeCongr en a =\n    if h : p a then (ep ⟨a, h⟩ : ε) else en ⟨a, h⟩ := by\n  by_cases h : p a <;> simp [Perm.subtypeCongr, h]\n\n@[simp]\ntheorem Perm.subtypeCongr.left_apply {a : ε} (h : p a) : ep.subtypeCongr en a = ep ⟨a, h⟩ := by\n  simp [Perm.subtypeCongr.apply, h]\n\n@[simp]\ntheorem Perm.subtypeCongr.left_apply_subtype (a : { a // p a }) : ep.subtypeCongr en a = ep a :=\n    Perm.subtypeCongr.left_apply ep en a.property\n\n@[simp]\ntheorem Perm.subtypeCongr.right_apply {a : ε} (h : ¬p a) : ep.subtypeCongr en a = en ⟨a, h⟩ := by\n  simp [Perm.subtypeCongr.apply, h]\n\n@[simp]\ntheorem Perm.subtypeCongr.right_apply_subtype (a : { a // ¬p a }) : ep.subtypeCongr en a = en a :=\n  Perm.subtypeCongr.right_apply ep en a.property\n\n@[simp]\ntheorem Perm.subtypeCongr.refl :\n    Perm.subtypeCongr (Equiv.refl { a // p a }) (Equiv.refl { a // ¬p a }) = Equiv.refl ε := by\n  ext x\n  by_cases h : p x <;> simp [h]\n\n@[simp]\ntheorem Perm.subtypeCongr.symm : (ep.subtypeCongr en).symm = Perm.subtypeCongr ep.symm en.symm :=\n  rfl\n\n@[simp]\ntheorem Perm.subtypeCongr.trans :\n    (ep.subtypeCongr en).trans (ep'.subtypeCongr en')\n    = Perm.subtypeCongr (ep.trans ep') (en.trans en') := by\n  grind [eq_def, coe_trans]\n\nend subtypeCongr\n\nsection subtypePreimage\n\nvariable (p : α → Prop) [DecidablePred p] (x₀ : { a // p a } → β)\n\n/-- For a fixed function `x₀ : {a // p a} → β` defined on a subtype of `α`,\nthe subtype of functions `x : α → β` that agree with `x₀` on the subtype `{a // p a}`\nis naturally equivalent to the type of functions `{a // ¬ p a} → β`. -/\n@[simps]\ndef subtypePreimage : { x : α → β // x ∘ Subtype.val = x₀ } ≃ ({ a // ¬p a } → β) where\n  toFun (x : { x : α → β // x ∘ Subtype.val = x₀ }) a := (x : α → β) a\n  invFun x :=\n    ⟨fun a => if h : p a then x₀ ⟨a, h⟩ else x ⟨a, h⟩, funext fun ⟨_, h⟩ => dite_eq_left h⟩\n  left_inv := fun ⟨x, hx⟩ =>\n    Subtype.val_injective <|\n      funext fun a => by\n        dsimp only\n        split_ifs\n        · rw [← hx]; rfl\n        · rfl\n  right_inv x :=\n    funext fun ⟨a, h⟩ =>\n      show dite (p a) _ _ = _ by\n        dsimp only\n        rw [dite_eq_right h]\n\ntheorem subtypePreimage_symm_apply_coe_pos (x : { a // ¬p a } → β) (a : α) (h : p a) :\n    ((subtypePreimage p x₀).symm x : α → β) a = x₀ ⟨a, h⟩ :=\n  dite_eq_left h\n\nuniverse «u_1» «u_4»\n\nassert_not_exists _root_.Equiv.subtypePreimage_symm_apply_coe_neg\n",
+    "binders": "{«α» : Sort u_1} {«β» : Sort u_4} («p» : α → Prop) [«inst» : DecidablePred.{u_1} p] («x₀» : (Subtype.{u_1} fun (a : α) => p a) → β) (x : { a // ¬p a } → β) (a : α) (h : ¬p a)",
+    "proposition": "((subtypePreimage p x₀).symm x : α → β) a = x ⟨a, h⟩",
+    "target_name": "_root_.CompressionEval.lib_sets_logic_main_equiv_basic_10",
+    "premise_context": "universe u v w z\nopen Function\nvariable {α α₁ α₂ β β₁ β₂ γ δ : Sort*}\nnamespace Equiv\nsection subtypeCongr\nvariable {ε : Type*} {p : ε → Prop} [DecidablePred p]\nvariable (ep ep' : Perm { a // p a }) (en en' : Perm { a // ¬p a })\nend subtypeCongr\nsection subtypePreimage\nvariable (p : α → Prop) [DecidablePred p] (x₀ : { a // p a } → β)\n\nAvailable preceding statements (within the shown source scopes):\ntheorem Perm.subtypeCongr.left_apply {a : ε} (h : p a) : ep.subtypeCongr en a = ep ⟨a, h⟩\n\ntheorem Perm.subtypeCongr.left_apply_subtype (a : { a // p a }) : ep.subtypeCongr en a = ep a\n\ntheorem Perm.subtypeCongr.right_apply {a : ε} (h : ¬p a) : ep.subtypeCongr en a = en ⟨a, h⟩\n\ntheorem Perm.subtypeCongr.right_apply_subtype (a : { a // ¬p a }) : ep.subtypeCongr en a = en a\n\ntheorem Perm.subtypeCongr.refl :\n    Perm.subtypeCongr (Equiv.refl { a // p a }) (Equiv.refl { a // ¬p a }) = Equiv.refl ε\n\ntheorem Perm.subtypeCongr.symm : (ep.subtypeCongr en).symm = Perm.subtypeCongr ep.symm en.symm\n\ntheorem Perm.subtypeCongr.trans :\n    (ep.subtypeCongr en).trans (ep'.subtypeCongr en')\n    = Perm.subtypeCongr (ep.trans ep') (en.trans en')\n\ntheorem subtypePreimage_symm_apply_coe_pos (x : { a // ¬p a } → β) (a : α) (h : p a) :\n    ((subtypePreimage p x₀).symm x : α → β) a = x₀ ⟨a, h⟩",
+    "forbidden_declarations": [
+      "Equiv.subtypePreimage_symm_apply_coe_neg"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Logic.Equiv.Basic",
+      "source_path": "Mathlib/Logic/Equiv/Basic.lean",
+      "declaration": "Equiv.subtypePreimage_symm_apply_coe_neg",
+      "source_line": 133,
+      "source_sha256": "22f27604e617b21a03e7a65fe8ea335bc70487de5a9fe7adf2b51d424c21a4d0",
+      "prefix_end_character": 4519,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "57d30cd20aef77cb249d4db67e364088d3eb0ffb32e5c18903003aa52941a2f0",
+      "premise_context": "ff270a6385c736236603afeb8e358ab98c902a4bd43c3e13b30e35fa6673cdbc",
+      "binders": "c37045ad7006f96108008650b81f0bc27a14316b07aa0f8cb8e2b2fe6ea4c27a",
+      "proposition": "c57bf544733fb23aea5222ab2d2aafd81d2de64cc34350519c9dd99d739db819"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Logic.Equiv.Option",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Logic.Equiv.Sum",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Logic.Function.Conjugate",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.Lift",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Int.Notation",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

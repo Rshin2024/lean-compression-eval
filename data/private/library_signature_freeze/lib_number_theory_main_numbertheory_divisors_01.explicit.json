@@ -1,0 +1,536 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "∀ {n : ℕ}, Ne.{1} n 0 → Eq.{1} ({d ∈ Finset.range n.succ | Dvd.dvd.{0} d n}) n.divisors",
+  "trusted_type_expression": "forall {n : Nat}, (Ne.{1} Nat n (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0))) -> (Eq.{1} (Finset.{0} Nat) (Finset.filter.{0} Nat (fun (d : Nat) => Dvd.dvd.{0} Nat Nat.instDvd d n) (fun (a : Nat) => Nat.decidable_dvd a n) (Finset.range (Nat.succ n))) (Nat.divisors n))",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} ({d ∈ Finset.range n.succ | Dvd.dvd.{0} d n}) n.divisors",
+    "binders": [
+      {
+        "type_source": "ℕ",
+        "name": "n",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Ne.{1} n 0",
+        "name": "h",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_number_theory_main_numbertheory_divisors_01 {«n» : ℕ} (h : n ≠ 0) :\n  {d ∈ range n.succ | d ∣ n} = n.divisors :=\nby\n  ext\n  simp only [divisors, mem_filter, mem_range, mem_Ico, and_congr_left_iff, iff_and_self]\n  exact fun ha _ => succ_le_iff.mpr (pos_of_dvd_of_pos ha h.bot_lt)",
+    "signature_spans": [
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 91
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 105,
+        "end": 106
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 112,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 132
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 140,
+        "end": 141
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 154
+      }
+    ],
+    "proof_offset": 158,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 91
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 105,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 108
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 112,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 132
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 140,
+        "end": 141
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 154
+      },
+      {
+        "start": 155,
+        "end": 157
+      },
+      {
+        "start": 158,
+        "end": 160
+      },
+      {
+        "start": 163,
+        "end": 166
+      },
+      {
+        "start": 169,
+        "end": 173
+      },
+      {
+        "start": 174,
+        "end": 178
+      },
+      {
+        "start": 179,
+        "end": 180
+      },
+      {
+        "start": 180,
+        "end": 188
+      },
+      {
+        "start": 188,
+        "end": 189
+      },
+      {
+        "start": 190,
+        "end": 200
+      },
+      {
+        "start": 200,
+        "end": 201
+      },
+      {
+        "start": 202,
+        "end": 211
+      },
+      {
+        "start": 211,
+        "end": 212
+      },
+      {
+        "start": 213,
+        "end": 220
+      },
+      {
+        "start": 220,
+        "end": 221
+      },
+      {
+        "start": 222,
+        "end": 240
+      },
+      {
+        "start": 240,
+        "end": 241
+      },
+      {
+        "start": 242,
+        "end": 254
+      },
+      {
+        "start": 254,
+        "end": 255
+      },
+      {
+        "start": 258,
+        "end": 263
+      },
+      {
+        "start": 264,
+        "end": 267
+      },
+      {
+        "start": 268,
+        "end": 270
+      },
+      {
+        "start": 271,
+        "end": 272
+      },
+      {
+        "start": 273,
+        "end": 275
+      },
+      {
+        "start": 276,
+        "end": 291
+      },
+      {
+        "start": 292,
+        "end": 293
+      },
+      {
+        "start": 293,
+        "end": 310
+      },
+      {
+        "start": 311,
+        "end": 313
+      },
+      {
+        "start": 314,
+        "end": 322
+      },
+      {
+        "start": 322,
+        "end": 323
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 158,
+        "end": 160
+      },
+      {
+        "start": 163,
+        "end": 166
+      },
+      {
+        "start": 169,
+        "end": 173
+      },
+      {
+        "start": 174,
+        "end": 178
+      },
+      {
+        "start": 179,
+        "end": 180
+      },
+      {
+        "start": 180,
+        "end": 188
+      },
+      {
+        "start": 188,
+        "end": 189
+      },
+      {
+        "start": 190,
+        "end": 200
+      },
+      {
+        "start": 200,
+        "end": 201
+      },
+      {
+        "start": 202,
+        "end": 211
+      },
+      {
+        "start": 211,
+        "end": 212
+      },
+      {
+        "start": 213,
+        "end": 220
+      },
+      {
+        "start": 220,
+        "end": 221
+      },
+      {
+        "start": 222,
+        "end": 240
+      },
+      {
+        "start": 240,
+        "end": 241
+      },
+      {
+        "start": 242,
+        "end": 254
+      },
+      {
+        "start": 254,
+        "end": 255
+      },
+      {
+        "start": 258,
+        "end": 263
+      },
+      {
+        "start": 264,
+        "end": 267
+      },
+      {
+        "start": 268,
+        "end": 270
+      },
+      {
+        "start": 271,
+        "end": 272
+      },
+      {
+        "start": 273,
+        "end": 275
+      },
+      {
+        "start": 276,
+        "end": 291
+      },
+      {
+        "start": 292,
+        "end": 293
+      },
+      {
+        "start": 293,
+        "end": 310
+      },
+      {
+        "start": 311,
+        "end": 313
+      },
+      {
+        "start": 314,
+        "end": 322
+      },
+      {
+        "start": 322,
+        "end": 323
+      }
+    ],
+    "W_full": 56,
+    "W_S": 24,
+    "W_B": 28
+  },
+  "root": "CompressionEval.lib_number_theory_main_numbertheory_divisors_01",
+  "proved_type_fingerprint": "3793113922",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 2728,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Elab.Tactic.Ext.ext",
+      "Lean.Parser.Tactic.simp",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.simpLemma",
+      "Lean.Parser.Tactic.exact",
+      "Lean.Parser.Term.fun",
+      "Lean.Parser.Term.basicFun",
+      "Lean.Parser.Term.hole",
+      "Lean.Parser.Term.app",
+      "Lean.Parser.Term.paren",
+      "Lean.Parser.Term.hygienicLParen",
+      "hygieneInfo"
+    ],
+    "proof_nodes": 2325,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "Nat.divisors.eq_1",
+    "CompressionEval.lib_number_theory_main_numbertheory_divisors_01._simp_2",
+    "CompressionEval.lib_number_theory_main_numbertheory_divisors_01",
+    "CompressionEval.lib_number_theory_main_numbertheory_divisors_01._simp_3",
+    "CompressionEval.lib_number_theory_main_numbertheory_divisors_01._simp_5",
+    "CompressionEval.lib_number_theory_main_numbertheory_divisors_01._simp_4",
+    "CompressionEval.lib_number_theory_main_numbertheory_divisors_01._simp_6"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "3b7cb20c15220f9f1e87f57abfeb467369855a1351b2abf9b280304d0dce3867",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.7889182083308697
+  },
+  "request_fingerprint": "3b566c1bb892f1a769559dffeb445e29e3f86774e1240f18ae496277e44f553e"
+}

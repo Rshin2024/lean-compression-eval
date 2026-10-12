@@ -1,0 +1,182 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u"
+  ],
+  "trusted_type_source": "∀ {α : Type u}, Function.Surjective.{u + 1, u + 1} Membership.mem.{u, u}",
+  "trusted_type_expression": "forall {α : Type.{u}}, Function.Surjective.{succ u, succ u} (Set.{u} α) (α -> Prop) (Membership.mem.{u, u} α (Set.{u} α) (Set.instMembership.{u} α))",
+  "trusted_telescope": {
+    "proposition": "Function.Surjective.{u + 1, u + 1} Membership.mem.{u, u}",
+    "binders": [
+      {
+        "type_source": "Type u",
+        "name": "α",
+        "binder_info": "implicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_sets_logic_pilot_set_basic_02  :\n  Surjective (Membership.mem : Set α → α → Prop) :=\nsurjective_id",
+    "signature_spans": [
+      {
+        "start": 70,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 82,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 105
+      },
+      {
+        "start": 106,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 122
+      }
+    ],
+    "proof_offset": 126,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 64
+      },
+      {
+        "start": 66,
+        "end": 67
+      },
+      {
+        "start": 70,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 82,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 105
+      },
+      {
+        "start": 106,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 139
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 126,
+        "end": 139
+      }
+    ],
+    "W_full": 16,
+    "W_S": 11,
+    "W_B": 1
+  },
+  "root": "CompressionEval.lib_sets_logic_pilot_set_basic_02",
+  "proved_type_fingerprint": "3913954969",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 16,
+    "syntax_kinds": [],
+    "proof_nodes": 7,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_sets_logic_pilot_set_basic_02"
+  ],
+  "axioms": [],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "341a99487af4340efc7d560c784b63cf13569e2746c9ca5f227cd6077a42780c",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 2.50372004089877
+  },
+  "request_fingerprint": "9951d0088f298e5be0d9a13c0f6dcef3a7b2427a171a5ca4be677c998f2f2803"
+}

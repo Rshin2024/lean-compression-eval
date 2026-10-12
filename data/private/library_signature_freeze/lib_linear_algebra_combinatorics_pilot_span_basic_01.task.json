@@ -1,0 +1,128 @@
+{
+  "task": {
+    "task_id": "lib_linear_algebra_combinatorics_pilot_span_basic_01",
+    "family_id": "source_module_Mathlib.LinearAlgebra.Span.Basic",
+    "domain": "linear_algebra_combinatorics",
+    "split": "pilot",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Algebra.GroupWithZero.NonZeroDivisors",
+      "Mathlib.Algebra.Module.Prod",
+      "Mathlib.Algebra.Module.Submodule.Equiv",
+      "Mathlib.Algebra.Module.Submodule.Pointwise",
+      "Mathlib.LinearAlgebra.Span.Defs",
+      "Mathlib.Order.CompactlyGenerated.Basic",
+      "Mathlib.Order.BourbakiWitt",
+      "Mathlib.Algebra.Field.Basic",
+      "Mathlib.Algebra.Module.Submodule.EqLocus",
+      "Mathlib.Algebra.Module.Torsion.Field"
+    ],
+    "context": "/-\nCopyright (c) 2017 Johannes Hölzl. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Johannes Hölzl, Mario Carneiro, Kevin Buzzard, Yury Kudryashov, Frédéric Dupuis,\n  Heather Macbeth\n-/\n/-!\n# The span of a set of vectors, as a submodule\n\n* `Submodule.span s` is defined to be the smallest submodule containing the set `s`.\n\n## Notation\n\n* We introduce the notation `R ∙ v` for the span of a singleton, `Submodule.span R {v}`.  This is\n  `\\span`, not the same as the scalar multiplication `•`/`\\bub`.\n\n-/\n\n@[expose] public section\n\nvariable {R R₂ K M M₂ V S : Type*}\n\nnamespace Submodule\n\nopen Function Set\n\nopen scoped Pointwise\n\nsection AddCommMonoid\n\nvariable [Semiring R] [AddCommMonoid M] [Module R M]\nvariable {x : M} (p p' : Submodule R M)\nvariable [Semiring R₂] {σ₁₂ : R →+* R₂}\nvariable [AddCommMonoid M₂] [Module R₂ M₂]\n\nvariable {s t : Set M}\n\nuniverse «u_4»\n\nassert_not_exists _root_.AddSubmonoid.toNatSubmodule_closure\n",
+    "binders": "{«M» : Type u_4} [«inst» : AddCommMonoid.{u_4} M] (s : Set M)",
+    "proposition": "(AddSubmonoid.closure s).toNatSubmodule = .span ℕ s",
+    "target_name": "_root_.CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_01",
+    "premise_context": "variable {R R₂ K M M₂ V S : Type*}\nnamespace Submodule\nopen Function Set\nopen scoped Pointwise\nsection AddCommMonoid\nvariable [Semiring R] [AddCommMonoid M] [Module R M]\nvariable {x : M} (p p' : Submodule R M)\nvariable [Semiring R₂] {σ₁₂ : R →+* R₂}\nvariable [AddCommMonoid M₂] [Module R₂ M₂]\nvariable {s t : Set M}\n\nAvailable preceding statements (within the shown source scopes):\n",
+    "forbidden_declarations": [
+      "AddSubmonoid.toNatSubmodule_closure"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.LinearAlgebra.Span.Basic",
+      "source_path": "Mathlib/LinearAlgebra/Span/Basic.lean",
+      "declaration": "AddSubmonoid.toNatSubmodule_closure",
+      "source_line": 52,
+      "source_sha256": "030186742b5758bcfeed49623129d424943c18a58cdce1fae62228309527b70c",
+      "prefix_end_character": 1395,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "b8eeee65cff99f38b5bfb9e11f9830f804880f60d0883ef7449c2af1928778f2",
+      "premise_context": "cb179bb56a146c6c520cddf2ec46e1d437bad49babd96ac319e865ebadb19472",
+      "binders": "85ba7d4ee3ec771467f0e50102017c9a12f9810bc906e59ac94bbabfb151914e",
+      "proposition": "2901b327ef49c3bc161719d8e3fd45ce785fea9b44e19c7763e661fbf7c4f30e"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Algebra.GroupWithZero.NonZeroDivisors",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Module.Prod",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Module.Submodule.Equiv",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Module.Submodule.Pointwise",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.LinearAlgebra.Span.Defs",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Order.CompactlyGenerated.Basic",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Order.BourbakiWitt",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Field.Basic",
+        "import_all": false,
+        "is_exported": false,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Module.Submodule.EqLocus",
+        "import_all": false,
+        "is_exported": false,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Module.Torsion.Field",
+        "import_all": false,
+        "is_exported": false,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

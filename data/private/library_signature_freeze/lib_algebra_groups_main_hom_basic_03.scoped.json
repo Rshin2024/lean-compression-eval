@@ -1,0 +1,254 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {α : Type u_1} [inst : DivisionCommMonoid.{u_1} α],\n  Eq.{u_1 + 1} (MonoidHom.comp.{u_1, u_1, u_1} invMonoidHom.{u_1} invMonoidHom.{u_1}) (MonoidHom.id.{u_1} α)",
+  "trusted_type_expression": "forall {α : Type.{u_1}} [inst._@.EvaluatorCandidate.2193805499._hygCtx._hyg.9 : DivisionCommMonoid.{u_1} α], Eq.{succ u_1} (MonoidHom.{u_1, u_1} α α (MulOneClass.toMulOne.{u_1} α (Monoid.toMulOneClass.{u_1} α (DivInvMonoid.toMonoid.{u_1} α (DivisionMonoid.toDivInvMonoid.{u_1} α (DivisionCommMonoid.toDivisionMonoid.{u_1} α inst._@.EvaluatorCandidate.2193805499._hygCtx._hyg.9))))) (MulOneClass.toMulOne.{u_1} α (Monoid.toMulOneClass.{u_1} α (DivInvMonoid.toMonoid.{u_1} α (DivisionMonoid.toDivInvMonoid.{u_1} α (DivisionCommMonoid.toDivisionMonoid.{u_1} α inst._@.EvaluatorCandidate.2193805499._hygCtx._hyg.9)))))) (MonoidHom.comp.{u_1, u_1, u_1} α α α (MulOneClass.toMulOne.{u_1} α (Monoid.toMulOneClass.{u_1} α (DivInvMonoid.toMonoid.{u_1} α (DivisionMonoid.toDivInvMonoid.{u_1} α (DivisionCommMonoid.toDivisionMonoid.{u_1} α inst._@.EvaluatorCandidate.2193805499._hygCtx._hyg.9))))) (MulOneClass.toMulOne.{u_1} α (Monoid.toMulOneClass.{u_1} α (DivInvMonoid.toMonoid.{u_1} α (DivisionMonoid.toDivInvMonoid.{u_1} α (DivisionCommMonoid.toDivisionMonoid.{u_1} α inst._@.EvaluatorCandidate.2193805499._hygCtx._hyg.9))))) (MulOneClass.toMulOne.{u_1} α (Monoid.toMulOneClass.{u_1} α (DivInvMonoid.toMonoid.{u_1} α (DivisionMonoid.toDivInvMonoid.{u_1} α (DivisionCommMonoid.toDivisionMonoid.{u_1} α inst._@.EvaluatorCandidate.2193805499._hygCtx._hyg.9))))) (invMonoidHom.{u_1} α inst._@.EvaluatorCandidate.2193805499._hygCtx._hyg.9) (invMonoidHom.{u_1} α inst._@.EvaluatorCandidate.2193805499._hygCtx._hyg.9)) (MonoidHom.id.{u_1} α (MulOneClass.toMulOne.{u_1} α (Monoid.toMulOneClass.{u_1} α (DivInvMonoid.toMonoid.{u_1} α (DivisionMonoid.toDivInvMonoid.{u_1} α (DivisionCommMonoid.toDivisionMonoid.{u_1} α inst._@.EvaluatorCandidate.2193805499._hygCtx._hyg.9))))))",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_1 + 1} (MonoidHom.comp.{u_1, u_1, u_1} invMonoidHom.{u_1} invMonoidHom.{u_1}) (MonoidHom.id.{u_1} α)",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "DivisionCommMonoid.{u_1} α",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.9",
+        "binder_info": "instance"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_algebra_groups_main_hom_basic_03  :\n  (invMonoidHom (α := α)).comp invMonoidHom = .id _ :=\nby\n  ext; simp",
+    "signature_spans": [
+      {
+        "start": 73,
+        "end": 74
+      },
+      {
+        "start": 74,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 88,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 99,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 120
+      },
+      {
+        "start": 120,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 124
+      }
+    ],
+    "proof_offset": 128,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 67
+      },
+      {
+        "start": 69,
+        "end": 70
+      },
+      {
+        "start": 73,
+        "end": 74
+      },
+      {
+        "start": 74,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 88,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 99,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 120
+      },
+      {
+        "start": 120,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 127
+      },
+      {
+        "start": 128,
+        "end": 130
+      },
+      {
+        "start": 133,
+        "end": 136
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 142
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 128,
+        "end": 130
+      },
+      {
+        "start": 133,
+        "end": 136
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 142
+      }
+    ],
+    "W_full": 23,
+    "W_S": 15,
+    "W_B": 4
+  },
+  "root": "CompressionEval.lib_algebra_groups_main_hom_basic_03",
+  "proved_type_fingerprint": "351590945",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 516,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Elab.Tactic.Ext.ext",
+      "Lean.Parser.Tactic.simp",
+      "Lean.Parser.Tactic.optConfig"
+    ],
+    "proof_nodes": 1467,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_algebra_groups_main_hom_basic_03"
+  ],
+  "axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "ba1c412d68403414746bf72603335d4ef735a030ba17ead3606a60faf804338b",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 3.5656817499548197
+  },
+  "request_fingerprint": "413135e009730ce2c00847f00713807927b213932df7eef9d0e435e86f0ec487"
+}

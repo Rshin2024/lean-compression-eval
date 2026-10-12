@@ -1,0 +1,2174 @@
+{
+  "boundary_policy": "expand_mathlib_and_evaluator_v1",
+  "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+  "evaluated_at": "2026-10-12T04:30:18.968921+00:00",
+  "extraction": {
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.fresh_number_theory_06._proof_1",
+      "CompressionEval.fresh_number_theory_06"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 221,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.omega",
+        "Lean.Parser.Tactic.optConfig"
+      ],
+      "transitive_dependency_count": 1478
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "available",
+    "nodes": [
+      {
+        "body": {
+          "And": 2,
+          "CompressionEval.fresh_number_theory_06._proof_1": 1,
+          "Decidable.byContradiction": 1,
+          "Eq": 1,
+          "HAdd.hAdd": 4,
+          "Int": 32,
+          "Int.decLe": 1,
+          "Int.instAdd": 4,
+          "Int.instDecidableEq": 1,
+          "Int.instLEInt": 3,
+          "Int.instLTInt": 2,
+          "LE.le": 3,
+          "LT.lt": 2,
+          "Ne": 3,
+          "Not": 1,
+          "OfNat.ofNat": 4,
+          "instDecidableAnd": 1,
+          "instDecidableNot": 1,
+          "instHAdd": 4,
+          "instOfNat": 4
+        },
+        "body_nodes": 221,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 10,
+        "name": "CompressionEval.fresh_number_theory_06",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "And": 1,
+          "HAdd.hAdd": 1,
+          "Int": 12,
+          "Int.instAdd": 1,
+          "Int.instLEInt": 1,
+          "Int.instLTInt": 2,
+          "LE.le": 1,
+          "LT.lt": 2,
+          "Ne": 1,
+          "OfNat.ofNat": 1,
+          "instHAdd": 1,
+          "instOfNat": 1
+        },
+        "source_counts": null,
+        "type_hash": "329675444",
+        "type_nodes": 69,
+        "value_hash": "3031517738"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Int",
+        "owner_module": "Init.Data.Int.Basic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3931117990",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "LT.lt",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "438589096",
+        "type_nodes": null,
+        "value_hash": "3248470211"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Int.instLTInt",
+        "owner_module": "Init.Data.Int.Basic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3895551095",
+        "type_nodes": null,
+        "value_hash": "1288192718"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "And",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2232915537",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "LE.le",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1191225326",
+        "type_nodes": null,
+        "value_hash": "3524454254"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Int.instLEInt",
+        "owner_module": "Init.Data.Int.Basic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "779219417",
+        "type_nodes": null,
+        "value_hash": "3588448297"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "HAdd.hAdd",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "813641309",
+        "type_nodes": null,
+        "value_hash": "1075339295"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instHAdd",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1158045503",
+        "type_nodes": null,
+        "value_hash": "3048504239"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Int.instAdd",
+        "owner_module": "Init.Data.Int.Basic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3177988224",
+        "type_nodes": null,
+        "value_hash": "1631774939"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "OfNat.ofNat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3494724834",
+        "type_nodes": null,
+        "value_hash": "2265622595"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instOfNat",
+        "owner_module": "Init.Data.Int.Basic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "157758620",
+        "type_nodes": null,
+        "value_hash": "3330765976"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Ne",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2885572531",
+        "type_nodes": null,
+        "value_hash": "2381600780"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Decidable.byContradiction",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "4192603243",
+        "type_nodes": null,
+        "value_hash": "540608162"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instDecidableAnd",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1067765414",
+        "type_nodes": null,
+        "value_hash": "3798238261"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Int.decLe",
+        "owner_module": "Init.Data.Int.Basic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2777427548",
+        "type_nodes": null,
+        "value_hash": "856460131"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instDecidableNot",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1674337081",
+        "type_nodes": null,
+        "value_hash": "61923267"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3970007004",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Int.instDecidableEq",
+        "owner_module": "Init.Data.Int.Basic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3857945085",
+        "type_nodes": null,
+        "value_hash": "916495689"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Not",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3536219763",
+        "type_nodes": null,
+        "value_hash": "147715320"
+      },
+      {
+        "body": {
+          "And": 1,
+          "Bool": 8,
+          "Bool.true": 12,
+          "Classical.propDecidable": 3,
+          "Decidable.decide": 2,
+          "Decidable.of_not_not": 1,
+          "Eq": 14,
+          "Eq.refl": 8,
+          "Eq.symm": 25,
+          "Eq.trans": 13,
+          "False": 1,
+          "HAdd.hAdd": 73,
+          "HSub.hSub": 44,
+          "Int": 1967,
+          "Int.add_one_le_of_lt": 5,
+          "Int.instAdd": 49,
+          "Int.instLEInt": 10,
+          "Int.instLTInt": 2,
+          "Int.instNegInt": 41,
+          "Int.instSub": 25,
+          "Int.sub_eq_zero_of_eq": 1,
+          "Int.sub_nonneg_of_le": 5,
+          "LE.le": 5,
+          "LT.lt": 2,
+          "Lean.Omega.Coeffs.ofList": 148,
+          "Lean.Omega.Constraint.addEquality_sat": 1,
+          "Lean.Omega.Constraint.addInequality_sat": 5,
+          "Lean.Omega.Constraint.combine_sat'": 2,
+          "Lean.Omega.Constraint.isImpossible": 8,
+          "Lean.Omega.Constraint.mk": 21,
+          "Lean.Omega.Constraint.not_sat'_of_isImpossible": 2,
+          "Lean.Omega.Decidable.or_not_not_of_not_and": 1,
+          "Lean.Omega.Int.add_congr": 6,
+          "Lean.Omega.Int.lt_of_not_le": 1,
+          "Lean.Omega.Int.sub_congr": 6,
+          "Lean.Omega.LinearCombo": 172,
+          "Lean.Omega.LinearCombo.add_eval": 6,
+          "Lean.Omega.LinearCombo.coordinate": 36,
+          "Lean.Omega.LinearCombo.coordinate_eval_0": 4,
+          "Lean.Omega.LinearCombo.coordinate_eval_1": 4,
+          "Lean.Omega.LinearCombo.coordinate_eval_2": 4,
+          "Lean.Omega.LinearCombo.eval": 121,
+          "Lean.Omega.LinearCombo.instAdd": 24,
+          "Lean.Omega.LinearCombo.instSub": 19,
+          "Lean.Omega.LinearCombo.mk": 152,
+          "Lean.Omega.LinearCombo.sub_eval": 6,
+          "Lean.Omega.combo_sat'": 2,
+          "Lean.Omega.tidy_sat": 3,
+          "List.cons": 694,
+          "List.nil": 329,
+          "Nat": 36,
+          "Ne": 5,
+          "Neg.neg": 41,
+          "Not": 5,
+          "OfNat.ofNat": 529,
+          "Option.none": 10,
+          "Option.some": 32,
+          "Or.elim": 1,
+          "id": 8,
+          "instDecidableEqBool": 4,
+          "instHAdd": 73,
+          "instHSub": 44,
+          "instOfNat": 493,
+          "instOfNatNat": 36,
+          "le_of_le_of_eq": 5,
+          "of_decide_eq_true": 2
+        },
+        "body_nodes": 14153,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 1060,
+        "name": "CompressionEval.fresh_number_theory_06._proof_1",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "And": 1,
+          "False": 1,
+          "HAdd.hAdd": 1,
+          "Int": 12,
+          "Int.instAdd": 1,
+          "Int.instLEInt": 1,
+          "Int.instLTInt": 2,
+          "LE.le": 1,
+          "LT.lt": 2,
+          "Ne": 1,
+          "Not": 1,
+          "OfNat.ofNat": 1,
+          "instHAdd": 1,
+          "instOfNat": 1
+        },
+        "source_counts": null,
+        "type_hash": "682104943",
+        "type_nodes": 73,
+        "value_hash": "1919474478"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "False",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3944470172",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Or.elim",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3321543901",
+        "type_nodes": null,
+        "value_hash": "1689865680"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.Decidable.or_not_not_of_not_and",
+        "owner_module": "Init.Omega.Logic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1996633179",
+        "type_nodes": null,
+        "value_hash": "1247925478"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Classical.propDecidable",
+        "owner_module": "Init.Classical",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1208147282",
+        "type_nodes": null,
+        "value_hash": "2348968908"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.Constraint.not_sat'_of_isImpossible",
+        "owner_module": "Init.Omega.Constraint",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1980759051",
+        "type_nodes": null,
+        "value_hash": "4120172934"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.Constraint.mk",
+        "owner_module": "Init.Omega.Constraint",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "4086908341",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Option.some",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2578950590",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Neg.neg",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3821557737",
+        "type_nodes": null,
+        "value_hash": "1118750435"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Int.instNegInt",
+        "owner_module": "Init.Data.Int.Basic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3847708043",
+        "type_nodes": null,
+        "value_hash": "4076607555"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "of_decide_eq_true",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3146536309",
+        "type_nodes": null,
+        "value_hash": "690261902"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Bool",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3931117990",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.Constraint.isImpossible",
+        "owner_module": "Init.Omega.Constraint",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2157277163",
+        "type_nodes": null,
+        "value_hash": "234049377"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Bool.true",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "183048209",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instDecidableEqBool",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3162134388",
+        "type_nodes": null,
+        "value_hash": "2588102336"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "id",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1324171196",
+        "type_nodes": null,
+        "value_hash": "2317393034"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Decidable.decide",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1407023449",
+        "type_nodes": null,
+        "value_hash": "3184905195"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.refl",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3843735716",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "List.cons",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "584724244",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "List.nil",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2923400836",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.Coeffs.ofList",
+        "owner_module": "Init.Omega.Coeffs",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3964349741",
+        "type_nodes": null,
+        "value_hash": "2550996369"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.Constraint.combine_sat'",
+        "owner_module": "Init.Omega.Constraint",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "370839410",
+        "type_nodes": null,
+        "value_hash": "3722824413"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Option.none",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3003011967",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.tidy_sat",
+        "owner_module": "Init.Omega.Constraint",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3364787827",
+        "type_nodes": null,
+        "value_hash": "380877838"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.combo_sat'",
+        "owner_module": "Init.Omega.Constraint",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1710302150",
+        "type_nodes": null,
+        "value_hash": "698434281"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.Constraint.addInequality_sat",
+        "owner_module": "Init.Omega.Constraint",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1082347632",
+        "type_nodes": null,
+        "value_hash": "3587826323"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "le_of_le_of_eq",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3836159742",
+        "type_nodes": null,
+        "value_hash": "339140157"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "HSub.hSub",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "4055278727",
+        "type_nodes": null,
+        "value_hash": "1160971187"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instHSub",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1715639830",
+        "type_nodes": null,
+        "value_hash": "1916426727"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Int.instSub",
+        "owner_module": "Init.Data.Int.Basic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2593208525",
+        "type_nodes": null,
+        "value_hash": "85257402"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.LinearCombo.eval",
+        "owner_module": "Init.Omega.LinearCombo",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "4281173412",
+        "type_nodes": null,
+        "value_hash": "855398422"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.LinearCombo",
+        "owner_module": "Init.Omega.LinearCombo",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3931117990",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.LinearCombo.instSub",
+        "owner_module": "Init.Omega.LinearCombo",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3788852867",
+        "type_nodes": null,
+        "value_hash": "3228450137"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.LinearCombo.mk",
+        "owner_module": "Init.Omega.LinearCombo",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2154748202",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Int.sub_nonneg_of_le",
+        "owner_module": "Init.Data.Int.Order",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "402117584",
+        "type_nodes": null,
+        "value_hash": "3083732960"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Int.add_one_le_of_lt",
+        "owner_module": "Init.Data.Int.Order",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3269649861",
+        "type_nodes": null,
+        "value_hash": "3716567351"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.trans",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2833799593",
+        "type_nodes": null,
+        "value_hash": "1736612116"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.LinearCombo.coordinate",
+        "owner_module": "Init.Omega.LinearCombo",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1745845719",
+        "type_nodes": null,
+        "value_hash": "1033566762"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3931117990",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instOfNatNat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3464002136",
+        "type_nodes": null,
+        "value_hash": "2633726084"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.LinearCombo.instAdd",
+        "owner_module": "Init.Omega.LinearCombo",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1942578438",
+        "type_nodes": null,
+        "value_hash": "669727814"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.Int.sub_congr",
+        "owner_module": "Init.Omega.Int",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2911792496",
+        "type_nodes": null,
+        "value_hash": "148307392"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.symm",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3416241219",
+        "type_nodes": null,
+        "value_hash": "2819966993"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.LinearCombo.coordinate_eval_0",
+        "owner_module": "Init.Omega.LinearCombo",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1462855692",
+        "type_nodes": null,
+        "value_hash": "1697149274"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.Int.add_congr",
+        "owner_module": "Init.Omega.Int",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "367986951",
+        "type_nodes": null,
+        "value_hash": "1389965470"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.LinearCombo.coordinate_eval_1",
+        "owner_module": "Init.Omega.LinearCombo",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "4010365083",
+        "type_nodes": null,
+        "value_hash": "2089443658"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.LinearCombo.add_eval",
+        "owner_module": "Init.Omega.LinearCombo",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "486581259",
+        "type_nodes": null,
+        "value_hash": "2446838506"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.LinearCombo.sub_eval",
+        "owner_module": "Init.Omega.LinearCombo",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1124651696",
+        "type_nodes": null,
+        "value_hash": "855156977"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.LinearCombo.coordinate_eval_2",
+        "owner_module": "Init.Omega.LinearCombo",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1688351048",
+        "type_nodes": null,
+        "value_hash": "4213434162"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.Int.lt_of_not_le",
+        "owner_module": "Init.Omega.Int",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3337317037",
+        "type_nodes": null,
+        "value_hash": "4114282408"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Lean.Omega.Constraint.addEquality_sat",
+        "owner_module": "Init.Omega.Constraint",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "13497875",
+        "type_nodes": null,
+        "value_hash": "258596432"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Int.sub_eq_zero_of_eq",
+        "owner_module": "Init.Data.Int.Lemmas",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3936375254",
+        "type_nodes": null,
+        "value_hash": "4175035703"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Decidable.of_not_not",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1229941059",
+        "type_nodes": null,
+        "value_hash": "1668055163"
+      }
+    ],
+    "process_returncode": 0,
+    "proved_type_fingerprint": "329675444",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 7.561475709080696,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "37d7133ae64276a269184ce19d7c0a9ab2eacca8e946562c21405368b4c3df53",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.fresh_number_theory_06",
+    "source_tokens": {
+      "W_B": 2,
+      "W_S": 30,
+      "W_full": 36,
+      "body_spans": [
+        {
+          "end": 129,
+          "start": 127
+        },
+        {
+          "end": 135,
+          "start": 130
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 53,
+          "start": 8
+        },
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 56,
+          "start": 55
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 62,
+          "start": 61
+        },
+        {
+          "end": 66,
+          "start": 63
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 69,
+          "start": 68
+        },
+        {
+          "end": 72,
+          "start": 69
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 76,
+          "start": 75
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 86,
+          "start": 83
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 92,
+          "start": 91
+        },
+        {
+          "end": 94,
+          "start": 93
+        },
+        {
+          "end": 95,
+          "start": 94
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 101,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 111,
+          "start": 110
+        },
+        {
+          "end": 115,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 121,
+          "start": 118
+        },
+        {
+          "end": 123,
+          "start": 122
+        },
+        {
+          "end": 126,
+          "start": 124
+        },
+        {
+          "end": 129,
+          "start": 127
+        },
+        {
+          "end": 135,
+          "start": 130
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 127,
+      "signature_spans": [
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 56,
+          "start": 55
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 62,
+          "start": 61
+        },
+        {
+          "end": 66,
+          "start": 63
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 69,
+          "start": 68
+        },
+        {
+          "end": 72,
+          "start": 69
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 76,
+          "start": 75
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 86,
+          "start": 83
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 92,
+          "start": 91
+        },
+        {
+          "end": 94,
+          "start": 93
+        },
+        {
+          "end": 95,
+          "start": 94
+        },
+        {
+          "end": 101,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 111,
+          "start": 110
+        },
+        {
+          "end": 115,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 121,
+          "start": 118
+        },
+        {
+          "end": 123,
+          "start": 122
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.fresh_number_theory_06 (a b c : ℤ) (hab : a < b) (hbc : b < c) :\n  a + 2 ≤ c ∧ a ≠ c :=\nby omega",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "explicit",
+          "name": "a",
+          "type_source": "ℤ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "b",
+          "type_source": "ℤ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "c",
+          "type_source": "ℤ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hab",
+          "type_source": "LT.lt.{0} a b"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hbc",
+          "type_source": "LT.lt.{0} b c"
+        }
+      ],
+      "proposition": "LE.le.{0} (HAdd.hAdd.{0, 0, 0} a 2) c ∧ Ne.{1} a c"
+    },
+    "trusted_type_expression": "forall (a : Int) (b : Int) (c : Int), (LT.lt.{0} Int Int.instLTInt a b) -> (LT.lt.{0} Int Int.instLTInt b c) -> (And (LE.le.{0} Int Int.instLEInt (HAdd.hAdd.{0, 0, 0} Int Int Int (instHAdd.{0} Int Int.instAdd) a (OfNat.ofNat.{0} Int 2 (instOfNat 2))) c) (Ne.{1} Int a c))",
+    "trusted_type_source": "∀ (a b c : ℤ), LT.lt.{0} a b → LT.lt.{0} b c → LE.le.{0} (HAdd.hAdd.{0, 0, 0} a 2) c ∧ Ne.{1} a c",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "graph_hash": "35811bb4dd5dfd9dbeb28b38258b8cf982d3b2b024cc91341a800be96b28b2e1",
+  "historical_record_sha256": "510bfd8fa0ae19fa323856fe2e95a0ca76224ec45bae52f7496602c3c473621b",
+  "metric_status": "available",
+  "metrics": {
+    "D": 2,
+    "I0": {
+      "denominator_decimal": "30",
+      "log2": -3.9068905956085187,
+      "numerator_decimal": "2"
+    },
+    "T0": {
+      "denominator_decimal": "32",
+      "log2": 7.436711542137214,
+      "numerator_decimal": "5544"
+    },
+    "U_B_decimal": "5519",
+    "U_S_decimal": "25",
+    "U_decimal": "5544",
+    "W_B": 2,
+    "W_S": 30,
+    "body_state": "present",
+    "distinct_dependency_count": 72,
+    "log2_I0": -3.9068905956085187,
+    "log2_T0": 7.436711542137214,
+    "log2_U": 12.436711542137214,
+    "log2_U_B": 12.430191170191696,
+    "log2_U_S": 4.643856189774724,
+    "log2_W": 5.0,
+    "metric_profile": "paper_aligned_v1",
+    "metric_status": "available",
+    "primitive_count": 71,
+    "reachable_node_count": 73,
+    "reasons": []
+  },
+  "normalization_cache_key": "1d2f8da3ce4e169a8efbf9b583680ecbbba91f74c2c4acdd183f66817c9d5879",
+  "primitive_manifest": [
+    "And",
+    "Bool",
+    "Bool.true",
+    "Classical.propDecidable",
+    "Decidable.byContradiction",
+    "Decidable.decide",
+    "Decidable.of_not_not",
+    "Eq",
+    "Eq.refl",
+    "Eq.symm",
+    "Eq.trans",
+    "False",
+    "HAdd.hAdd",
+    "HSub.hSub",
+    "Int",
+    "Int.add_one_le_of_lt",
+    "Int.decLe",
+    "Int.instAdd",
+    "Int.instDecidableEq",
+    "Int.instLEInt",
+    "Int.instLTInt",
+    "Int.instNegInt",
+    "Int.instSub",
+    "Int.sub_eq_zero_of_eq",
+    "Int.sub_nonneg_of_le",
+    "LE.le",
+    "LT.lt",
+    "Lean.Omega.Coeffs.ofList",
+    "Lean.Omega.Constraint.addEquality_sat",
+    "Lean.Omega.Constraint.addInequality_sat",
+    "Lean.Omega.Constraint.combine_sat'",
+    "Lean.Omega.Constraint.isImpossible",
+    "Lean.Omega.Constraint.mk",
+    "Lean.Omega.Constraint.not_sat'_of_isImpossible",
+    "Lean.Omega.Decidable.or_not_not_of_not_and",
+    "Lean.Omega.Int.add_congr",
+    "Lean.Omega.Int.lt_of_not_le",
+    "Lean.Omega.Int.sub_congr",
+    "Lean.Omega.LinearCombo",
+    "Lean.Omega.LinearCombo.add_eval",
+    "Lean.Omega.LinearCombo.coordinate",
+    "Lean.Omega.LinearCombo.coordinate_eval_0",
+    "Lean.Omega.LinearCombo.coordinate_eval_1",
+    "Lean.Omega.LinearCombo.coordinate_eval_2",
+    "Lean.Omega.LinearCombo.eval",
+    "Lean.Omega.LinearCombo.instAdd",
+    "Lean.Omega.LinearCombo.instSub",
+    "Lean.Omega.LinearCombo.mk",
+    "Lean.Omega.LinearCombo.sub_eval",
+    "Lean.Omega.combo_sat'",
+    "Lean.Omega.tidy_sat",
+    "List.cons",
+    "List.nil",
+    "Nat",
+    "Ne",
+    "Neg.neg",
+    "Not",
+    "OfNat.ofNat",
+    "Option.none",
+    "Option.some",
+    "Or.elim",
+    "id",
+    "instDecidableAnd",
+    "instDecidableEqBool",
+    "instDecidableNot",
+    "instHAdd",
+    "instHSub",
+    "instOfNat",
+    "instOfNatNat",
+    "le_of_le_of_eq",
+    "of_decide_eq_true"
+  ],
+  "primitive_manifest_hash": "173ada386586050fe9fdb1e0038a765babcb2e0db8dc8d2f7d5befb0feac9af0",
+  "primitive_manifest_scope": "reachable closure; boundary policy and environment define shared corpus boundary",
+  "reference_proof_sha256": "35b2da511289555b8de0feebe4c8f43050edea216835addb9603a584149b4905",
+  "replaces_engine_hash": "3c093c02b7d907faad45ede5ed175e3527aeaa9dbb9ca2141293075aaeeaa343",
+  "source_hash": "d79b71fc57a24f9e1d91432c5ed3f13454f1753ff00723749360f8e85ab91bfa",
+  "source_token_policy_hash": "878ab5fb5aa65e79973e4577203e29b9e6d67de66b91ff97b86ad021f5f229c9",
+  "submitted_proof": "by omega",
+  "supporting_diagnostics": {
+    "helper_count": 1,
+    "helper_count_scope": "generated auxiliary declarations; local have/let source remains included in W_B",
+    "proof_nodes": 221,
+    "tactic_syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "Lean.Parser.Tactic.omega",
+      "Lean.Parser.Tactic.optConfig"
+    ]
+  },
+  "task_hash": "4435684fb87a0b90f9c883a0222165df843dcd9ab9e7314848bc71fa0c273d38",
+  "task_id": "fresh_number_theory_06",
+  "task_input_hash": "821b4f62fc4cd5225d6ae861260e437edca8b5e090370280c5703c9ea0a5a236",
+  "task_snapshot": {
+    "audit": {
+      "answer_access_audited": false,
+      "explicit_signature_frozen": true,
+      "family_reviewed": false,
+      "metric_closure_verified": true,
+      "reference_verification_method": "Lean compiler, batch source; engine replay/axiom audit pending",
+      "reference_verified": true
+    },
+    "binders": "(a b c : ℤ) (hab : a < b) (hbc : b < c)",
+    "context": "",
+    "domain": "number_theory",
+    "environment": {
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1",
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11"
+    },
+    "family_id": "main_two_step_discrete_gap",
+    "forbidden_declarations": [],
+    "hashes": {
+      "binders": "5b68dbed275a537e0dcfe8db66b26c582d84b3a881e4d2fa0df6cee3d825f3ed",
+      "context": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "premise_context": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proposition": "c1091c01c06fa961f7085be4b04ce55b3532c33427766ed1b4e4afb0b9c7b455"
+    },
+    "imports": [
+      "Mathlib"
+    ],
+    "origin": "fresh",
+    "premise_context": "",
+    "proposition": "a + 2 ≤ c ∧ a ≠ c",
+    "provenance": {
+      "authorship_date": "2026-10-11",
+      "kind": "authored_composition",
+      "rationale": "Uses integer discreteness twice to obtain both a two-unit gap and inequality.",
+      "training_novelty": "not_established"
+    },
+    "reference_measurements": {
+      "D": 2,
+      "T0": {
+        "denominator_decimal": "32",
+        "log2": 7.436711542137214,
+        "numerator_decimal": "5544"
+      },
+      "U_B_decimal": "5519",
+      "U_S_decimal": "25",
+      "W_B": 2,
+      "W_S": 30,
+      "engine_hash": "3c093c02b7d907faad45ede5ed175e3527aeaa9dbb9ca2141293075aaeeaa343",
+      "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f"
+    },
+    "smoke": false,
+    "split": "main",
+    "stratum": "provisional_easy",
+    "target_name": "_root_.CompressionEval.fresh_number_theory_06",
+    "task_id": "fresh_number_theory_06"
+  },
+  "validation": {
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.fresh_number_theory_06._proof_1",
+      "CompressionEval.fresh_number_theory_06"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 221,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.omega",
+        "Lean.Parser.Tactic.optConfig"
+      ],
+      "transitive_dependency_count": 1478
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "329675444",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 7.2863936251960695,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "daea338545c017155bbbbcf50f57c3b1676c7474c7420d08860cf5a064e116c4",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.fresh_number_theory_06",
+    "source_tokens": {
+      "W_B": 2,
+      "W_S": 30,
+      "W_full": 36,
+      "body_spans": [
+        {
+          "end": 129,
+          "start": 127
+        },
+        {
+          "end": 135,
+          "start": 130
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 53,
+          "start": 8
+        },
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 56,
+          "start": 55
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 62,
+          "start": 61
+        },
+        {
+          "end": 66,
+          "start": 63
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 69,
+          "start": 68
+        },
+        {
+          "end": 72,
+          "start": 69
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 76,
+          "start": 75
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 86,
+          "start": 83
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 92,
+          "start": 91
+        },
+        {
+          "end": 94,
+          "start": 93
+        },
+        {
+          "end": 95,
+          "start": 94
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 101,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 111,
+          "start": 110
+        },
+        {
+          "end": 115,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 121,
+          "start": 118
+        },
+        {
+          "end": 123,
+          "start": 122
+        },
+        {
+          "end": 126,
+          "start": 124
+        },
+        {
+          "end": 129,
+          "start": 127
+        },
+        {
+          "end": 135,
+          "start": 130
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 127,
+      "signature_spans": [
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 56,
+          "start": 55
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 62,
+          "start": 61
+        },
+        {
+          "end": 66,
+          "start": 63
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 69,
+          "start": 68
+        },
+        {
+          "end": 72,
+          "start": 69
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 76,
+          "start": 75
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 86,
+          "start": 83
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 92,
+          "start": 91
+        },
+        {
+          "end": 94,
+          "start": 93
+        },
+        {
+          "end": 95,
+          "start": 94
+        },
+        {
+          "end": 101,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 111,
+          "start": 110
+        },
+        {
+          "end": 115,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 121,
+          "start": 118
+        },
+        {
+          "end": 123,
+          "start": 122
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.fresh_number_theory_06 (a b c : ℤ) (hab : a < b) (hbc : b < c) :\n  a + 2 ≤ c ∧ a ≠ c :=\nby omega",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "explicit",
+          "name": "a",
+          "type_source": "ℤ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "b",
+          "type_source": "ℤ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "c",
+          "type_source": "ℤ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hab",
+          "type_source": "LT.lt.{0} a b"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hbc",
+          "type_source": "LT.lt.{0} b c"
+        }
+      ],
+      "proposition": "LE.le.{0} (HAdd.hAdd.{0, 0, 0} a 2) c ∧ Ne.{1} a c"
+    },
+    "trusted_type_expression": "forall (a : Int) (b : Int) (c : Int), (LT.lt.{0} Int Int.instLTInt a b) -> (LT.lt.{0} Int Int.instLTInt b c) -> (And (LE.le.{0} Int Int.instLEInt (HAdd.hAdd.{0, 0, 0} Int Int Int (instHAdd.{0} Int Int.instAdd) a (OfNat.ofNat.{0} Int 2 (instOfNat 2))) c) (Ne.{1} Int a c))",
+    "trusted_type_source": "∀ (a b c : ℤ), LT.lt.{0} a b → LT.lt.{0} b c → LE.le.{0} (HAdd.hAdd.{0, 0, 0} a 2) c ∧ Ne.{1} a c",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "validity_status": "success",
+  "verification_request_hash": "251efcb1cf31bf9b8a4101464c82de4e3389f6f198eb1bcba57c1e749069da47"
+}

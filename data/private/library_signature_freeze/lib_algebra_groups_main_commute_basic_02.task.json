@@ -1,0 +1,72 @@
+{
+  "task": {
+    "task_id": "lib_algebra_groups_main_commute_basic_02",
+    "family_id": "source_module_Mathlib.Algebra.Group.Commute.Basic",
+    "domain": "algebra_groups",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Algebra.Group.Commute.Defs",
+      "Mathlib.Algebra.Group.Semiconj.Basic"
+    ],
+    "context": "/-\nCopyright (c) 2019 Neil Strickland. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Neil Strickland, Yury Kudryashov\n-/\n/-!\n# Additional lemmas about commuting pairs of elements in monoids\n\n-/\n\npublic section\n\nassert_not_exists MonoidWithZero DenselyOrdered\n\nvariable {G : Type*}\n\nsection Semigroup\nvariable [Semigroup G] {a b c : G}\n\nopen Function\n\n@[to_additive]\nlemma SemiconjBy.function_semiconj_mul_left (h : SemiconjBy a b c) :\n    Semiconj (a * ·) (b * ·) (c * ·) := fun j ↦ by simp only [← mul_assoc, h.eq]\n\nuniverse «u_1»\n\nassert_not_exists _root_.Commute.function_commute_mul_left\n",
+    "binders": "{«G» : Type u_1} [«inst» : Semigroup.{u_1} G] {«a» : G} {«b» : G} (h : Commute a b)",
+    "proposition": "Function.Commute (a * ·) (b * ·)",
+    "target_name": "_root_.CompressionEval.lib_algebra_groups_main_commute_basic_02",
+    "premise_context": "variable {G : Type*}\nsection Semigroup\nvariable [Semigroup G] {a b c : G}\nopen Function\n\nAvailable preceding statements (within the shown source scopes):\nlemma SemiconjBy.function_semiconj_mul_left (h : SemiconjBy a b c) :\n    Semiconj (a * ·) (b * ·) (c * ·)",
+    "forbidden_declarations": [
+      "Commute.function_commute_mul_left"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Algebra.Group.Commute.Basic",
+      "source_path": "Mathlib/Algebra/Group/Commute/Basic.lean",
+      "declaration": "Commute.function_commute_mul_left",
+      "source_line": 32,
+      "source_sha256": "25164de3ccbb6554365e45fb0bc04dcfa7cff307d8dc2fa7327b1fa137ae45b1",
+      "prefix_end_character": 693,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "eaef46c2a909b6a0b119836d668bb575caf400bedd411b6ccb2677281b7e6768",
+      "premise_context": "aca19ed154fd59b203ff5ba7ff1aaac45df93898b118afe0aec44bcc02a409eb",
+      "binders": "ac357f2a182315f4ed9c5f01d1a764773e0cc497cf40e2b63e28116ec75ed70d",
+      "proposition": "ca3ed17afb986b5f4d8b7a78959dc822bbbe143bdad0f7d252f7ca3eea60cbbc"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Algebra.Group.Commute.Defs",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Group.Semiconj.Basic",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

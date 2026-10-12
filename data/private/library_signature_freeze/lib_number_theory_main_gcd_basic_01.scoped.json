@@ -1,0 +1,673 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "∀ {a b d : ℕ},\n  Dvd.dvd.{0} d a →\n    Dvd.dvd.{0} d b → (∀ (e : ℕ), Dvd.dvd.{0} e a → Dvd.dvd.{0} e b → Dvd.dvd.{0} e d) → Eq.{1} d (a.gcd b)",
+  "trusted_type_expression": "forall {a : Nat} {b : Nat} {d : Nat}, (Dvd.dvd.{0} Nat Nat.instDvd d a) -> (Dvd.dvd.{0} Nat Nat.instDvd d b) -> (forall (e : Nat), (Dvd.dvd.{0} Nat Nat.instDvd e a) -> (Dvd.dvd.{0} Nat Nat.instDvd e b) -> (Dvd.dvd.{0} Nat Nat.instDvd e d)) -> (Eq.{1} Nat d (Nat.gcd a b))",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} d (a.gcd b)",
+    "binders": [
+      {
+        "type_source": "ℕ",
+        "name": "a",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "ℕ",
+        "name": "b",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "ℕ",
+        "name": "d",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Dvd.dvd.{0} d a",
+        "name": "hda",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Dvd.dvd.{0} d b",
+        "name": "hdb",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "∀ (e : ℕ), Dvd.dvd.{0} e a → Dvd.dvd.{0} e b → Dvd.dvd.{0} e d",
+        "name": "hd",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_number_theory_main_gcd_basic_01 {a b d : ℕ} (hda : d ∣ a) (hdb : d ∣ b) (hd : ∀ e : ℕ, e ∣ a → e ∣ b → e ∣ d) :\n  d = a.gcd b :=\n(dvd_antisymm (hd _ (gcd_dvd_left a b) (gcd_dvd_right a b)) (dvd_gcd hda hdb)).symm",
+    "signature_spans": [
+      {
+        "start": 67,
+        "end": 68
+      },
+      {
+        "start": 68,
+        "end": 69
+      },
+      {
+        "start": 70,
+        "end": 71
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 74,
+        "end": 75
+      },
+      {
+        "start": 76,
+        "end": 79
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 82,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 89
+      },
+      {
+        "start": 90,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 106,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 114,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 130
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 140,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 157
+      },
+      {
+        "start": 158,
+        "end": 161
+      },
+      {
+        "start": 162,
+        "end": 163
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 169,
+        "end": 170
+      },
+      {
+        "start": 171,
+        "end": 172
+      },
+      {
+        "start": 173,
+        "end": 178
+      },
+      {
+        "start": 179,
+        "end": 180
+      }
+    ],
+    "proof_offset": 184,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 66
+      },
+      {
+        "start": 67,
+        "end": 68
+      },
+      {
+        "start": 68,
+        "end": 69
+      },
+      {
+        "start": 70,
+        "end": 71
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 74,
+        "end": 75
+      },
+      {
+        "start": 76,
+        "end": 79
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 82,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 89
+      },
+      {
+        "start": 90,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 106,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 114,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 130
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 140,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 157
+      },
+      {
+        "start": 158,
+        "end": 161
+      },
+      {
+        "start": 162,
+        "end": 163
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 166
+      },
+      {
+        "start": 169,
+        "end": 170
+      },
+      {
+        "start": 171,
+        "end": 172
+      },
+      {
+        "start": 173,
+        "end": 178
+      },
+      {
+        "start": 179,
+        "end": 180
+      },
+      {
+        "start": 181,
+        "end": 183
+      },
+      {
+        "start": 184,
+        "end": 185
+      },
+      {
+        "start": 185,
+        "end": 197
+      },
+      {
+        "start": 198,
+        "end": 199
+      },
+      {
+        "start": 199,
+        "end": 201
+      },
+      {
+        "start": 202,
+        "end": 203
+      },
+      {
+        "start": 204,
+        "end": 205
+      },
+      {
+        "start": 205,
+        "end": 217
+      },
+      {
+        "start": 218,
+        "end": 219
+      },
+      {
+        "start": 220,
+        "end": 221
+      },
+      {
+        "start": 221,
+        "end": 222
+      },
+      {
+        "start": 223,
+        "end": 224
+      },
+      {
+        "start": 224,
+        "end": 237
+      },
+      {
+        "start": 238,
+        "end": 239
+      },
+      {
+        "start": 240,
+        "end": 241
+      },
+      {
+        "start": 241,
+        "end": 242
+      },
+      {
+        "start": 242,
+        "end": 243
+      },
+      {
+        "start": 244,
+        "end": 245
+      },
+      {
+        "start": 245,
+        "end": 252
+      },
+      {
+        "start": 253,
+        "end": 256
+      },
+      {
+        "start": 257,
+        "end": 260
+      },
+      {
+        "start": 260,
+        "end": 261
+      },
+      {
+        "start": 261,
+        "end": 262
+      },
+      {
+        "start": 262,
+        "end": 263
+      },
+      {
+        "start": 263,
+        "end": 267
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 184,
+        "end": 185
+      },
+      {
+        "start": 185,
+        "end": 197
+      },
+      {
+        "start": 198,
+        "end": 199
+      },
+      {
+        "start": 199,
+        "end": 201
+      },
+      {
+        "start": 202,
+        "end": 203
+      },
+      {
+        "start": 204,
+        "end": 205
+      },
+      {
+        "start": 205,
+        "end": 217
+      },
+      {
+        "start": 218,
+        "end": 219
+      },
+      {
+        "start": 220,
+        "end": 221
+      },
+      {
+        "start": 221,
+        "end": 222
+      },
+      {
+        "start": 223,
+        "end": 224
+      },
+      {
+        "start": 224,
+        "end": 237
+      },
+      {
+        "start": 238,
+        "end": 239
+      },
+      {
+        "start": 240,
+        "end": 241
+      },
+      {
+        "start": 241,
+        "end": 242
+      },
+      {
+        "start": 242,
+        "end": 243
+      },
+      {
+        "start": 244,
+        "end": 245
+      },
+      {
+        "start": 245,
+        "end": 252
+      },
+      {
+        "start": 253,
+        "end": 256
+      },
+      {
+        "start": 257,
+        "end": 260
+      },
+      {
+        "start": 260,
+        "end": 261
+      },
+      {
+        "start": 261,
+        "end": 262
+      },
+      {
+        "start": 262,
+        "end": 263
+      },
+      {
+        "start": 263,
+        "end": 267
+      }
+    ],
+    "W_full": 73,
+    "W_S": 45,
+    "W_B": 24
+  },
+  "root": "CompressionEval.lib_number_theory_main_gcd_basic_01",
+  "proved_type_fingerprint": "616696844",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 867,
+    "syntax_kinds": [
+      "Lean.Parser.Term.proj",
+      "Lean.Parser.Term.paren",
+      "Lean.Parser.Term.hygienicLParen",
+      "hygieneInfo",
+      "Lean.Parser.Term.app",
+      "null",
+      "Lean.Parser.Term.hole"
+    ],
+    "proof_nodes": 135,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_number_theory_main_gcd_basic_01"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "93c9296397412e6b129c4efbead38ac7661793f37b196633298479c5e4f7150e",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 2.62557474989444
+  },
+  "request_fingerprint": "a15469f8daa9babb41a038f84ae39f4336f5c55389f1357f9515fbfad9aa2972"
+}

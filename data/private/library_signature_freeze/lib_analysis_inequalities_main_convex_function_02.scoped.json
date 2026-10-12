@@ -1,0 +1,286 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1",
+    "u_2",
+    "u_5"
+  ],
+  "trusted_type_source": "∀ {𝕜 : Type u_1} {E : Type u_2} {β : Type u_5} [inst : Semiring.{u_1} 𝕜] [inst_1 : PartialOrder.{u_1} 𝕜]\n  [inst_2 : AddCommMonoid.{u_2} E] [inst_3 : AddCommMonoid.{u_5} β] [inst_4 : PartialOrder.{u_5} β]\n  [inst_5 : SMul.{u_1, u_2} 𝕜 E] [inst_6 : SMul.{u_1, u_5} 𝕜 β] {s : Set.{u_2} E} {f : E → β},\n  ConcaveOn.{u_1, u_2, u_5} 𝕜 s f →\n    ConvexOn.{u_1, u_2, u_5} 𝕜 s (Function.comp.{u_2 + 1, u_5 + 1, u_5 + 1} (⇑OrderDual.toDual.{u_5}) f)",
+  "trusted_type_expression": "forall {𝕜 : Type.{u_1}} {E : Type.{u_2}} {β : Type.{u_5}} [inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.8 : Semiring.{u_1} 𝕜] [inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.11 : PartialOrder.{u_1} 𝕜] [inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.14 : AddCommMonoid.{u_2} E] [inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.26 : AddCommMonoid.{u_5} β] [inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.29 : PartialOrder.{u_5} β] [inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.32 : SMul.{u_1, u_2} 𝕜 E] [inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.40 : SMul.{u_1, u_5} 𝕜 β] {s : Set.{u_2} E} {f : E -> β}, (ConcaveOn.{u_1, u_2, u_5} 𝕜 E β inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.8 inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.11 inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.14 inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.26 inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.29 inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.32 inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.40 s f) -> (ConvexOn.{u_1, u_2, u_5} 𝕜 E (OrderDual.{u_5} β) inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.8 inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.11 inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.14 (OrderDual.instAddCommMonoid.{u_5} β inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.26) (OrderDual.instPartialOrder.{u_5} β inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.29) inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.32 (OrderDual.instSMul.{u_5, u_1} 𝕜 β inst._@.EvaluatorCandidate.1670061606._hygCtx._hyg.40) s (Function.comp.{succ u_2, succ u_5, succ u_5} E β (OrderDual.{u_5} β) (DFunLike.coe.{succ u_5, succ u_5, succ u_5} (Equiv.{succ u_5, succ u_5} β (OrderDual.{u_5} β)) β (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : β) => OrderDual.{u_5} β) (EquivLike.toFunLike.{succ u_5, succ u_5, succ u_5} (Equiv.{succ u_5, succ u_5} β (OrderDual.{u_5} β)) β (OrderDual.{u_5} β) (Equiv.instEquivLike.{succ u_5, succ u_5} β (OrderDual.{u_5} β))) (OrderDual.toDual.{u_5} β)) f))",
+  "trusted_telescope": {
+    "proposition": "ConvexOn.{u_1, u_2, u_5} 𝕜 s (Function.comp.{u_2 + 1, u_5 + 1, u_5 + 1} (⇑OrderDual.toDual.{u_5}) f)",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "𝕜",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_2",
+        "name": "E",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_5",
+        "name": "β",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Semiring.{u_1} 𝕜",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.8",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "PartialOrder.{u_1} 𝕜",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.11",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "AddCommMonoid.{u_2} E",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.14",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "AddCommMonoid.{u_5} β",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.26",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "PartialOrder.{u_5} β",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.29",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "SMul.{u_1, u_2} 𝕜 E",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.32",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "SMul.{u_1, u_5} 𝕜 β",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.40",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Set.{u_2} E",
+        "name": "s",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "E → β",
+        "name": "f",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "ConcaveOn.{u_1, u_2, u_5} 𝕜 s f",
+        "name": "hf",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_analysis_inequalities_main_convex_function_02 (hf : ConcaveOn 𝕜 s f) :\n  ConvexOn 𝕜 s (toDual ∘ f) :=\nhf",
+    "signature_spans": [
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 82,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 105,
+        "end": 106
+      },
+      {
+        "start": 111,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 140,
+        "end": 141
+      }
+    ],
+    "proof_offset": 145,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 82,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 105,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 108
+      },
+      {
+        "start": 111,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 140,
+        "end": 141
+      },
+      {
+        "start": 142,
+        "end": 144
+      },
+      {
+        "start": 145,
+        "end": 147
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 145,
+        "end": 147
+      }
+    ],
+    "W_full": 21,
+    "W_S": 16,
+    "W_B": 1
+  },
+  "root": "CompressionEval.lib_analysis_inequalities_main_convex_function_02",
+  "proved_type_fingerprint": "684325221",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 563,
+    "syntax_kinds": [],
+    "proof_nodes": 73,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_analysis_inequalities_main_convex_function_02"
+  ],
+  "axioms": [
+    "Quot.sound"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "abced600d90040a297df2ce96e0484a61f7d4ef10aa8fb036a700963342cd87b",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 3.450831458903849
+  },
+  "request_fingerprint": "cbe637146ca901b3f765856e474c382b053bed7103211f0ea69bcc5526956cb6"
+}

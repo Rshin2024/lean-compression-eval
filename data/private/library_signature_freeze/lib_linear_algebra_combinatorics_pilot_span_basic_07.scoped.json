@@ -1,0 +1,798 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1",
+    "u_4",
+    "u_8"
+  ],
+  "trusted_type_source": "∀ {R : Type u_1} {M : Type u_4} [inst : Semiring.{u_1} R] [inst_1 : AddCommMonoid.{u_4} M]\n  [inst_2 : Module.{u_1, u_4} R M] {N : Type u_8} [inst_3 : AddCommMonoid.{u_8} N] [inst_4 : Module.{u_1, u_8} R N]\n  (f g : LinearMap.{u_1, u_1, u_4, u_8} (RingHom.id.{u_1} R) M N) {S : Set.{u_4} M},\n  Eq.{u_4 + 1} (Submodule.span.{u_1, u_4} R S) Top.top.{u_4} →\n    (Eq.{max (u_4 + 1) (u_8 + 1)} f g ↔ ∀ (s : ↑S), Eq.{u_8 + 1} (f ↑s) (g ↑s))",
+  "trusted_type_expression": "forall {R : Type.{u_1}} {M : Type.{u_4}} [inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 : Semiring.{u_1} R] [inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.12 : AddCommMonoid.{u_4} M] [inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.15 : Module.{u_1, u_4} R M inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.12] {N : Type.{u_8}} [inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.46 : AddCommMonoid.{u_8} N] [inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.49 : Module.{u_1, u_8} R N inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.46] (f : LinearMap.{u_1, u_1, u_4, u_8} R R inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9)) M N inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.12 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.46 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.15 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.49) (g : LinearMap.{u_1, u_1, u_4, u_8} R R inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9)) M N inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.12 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.46 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.15 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.49) {S : Set.{u_4} M}, (Eq.{succ u_4} (Submodule.{u_1, u_4} R M inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.12 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.15) (Submodule.span.{u_1, u_4} R M inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.12 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.15 S) (Top.top.{u_4} (Submodule.{u_1, u_4} R M inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.12 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.15) (Submodule.instTop.{u_1, u_4} R M inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.12 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.15))) -> (Iff (Eq.{max (succ u_4) (succ u_8)} (LinearMap.{u_1, u_1, u_4, u_8} R R inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9)) M N inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.12 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.46 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.15 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.49) f g) (forall (s : Set.Elem.{u_4} M S), Eq.{succ u_8} N (DFunLike.coe.{max (succ u_4) (succ u_8), succ u_4, succ u_8} (LinearMap.{u_1, u_1, u_4, u_8} R R inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9)) M N inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.12 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.46 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.15 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.49) M (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : M) => N) (LinearMap.instFunLike.{u_1, u_1, u_4, u_8} R R M N inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.12 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.46 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.15 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.49 (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9))) f (Subtype.val.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S x) s)) (DFunLike.coe.{max (succ u_4) (succ u_8), succ u_4, succ u_8} (LinearMap.{u_1, u_1, u_4, u_8} R R inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9)) M N inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.12 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.46 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.15 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.49) M (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : M) => N) (LinearMap.instFunLike.{u_1, u_1, u_4, u_8} R R M N inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.12 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.46 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.15 inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.49 (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst._@.EvaluatorCandidate.1622251861._hygCtx._hyg.9))) g (Subtype.val.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S x) s))))",
+  "trusted_telescope": {
+    "proposition": "Eq.{max (u_4 + 1) (u_8 + 1)} f g ↔ ∀ (s : ↑S), Eq.{u_8 + 1} (f ↑s) (g ↑s)",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "R",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_4",
+        "name": "M",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Semiring.{u_1} R",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.9",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "AddCommMonoid.{u_4} M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.12",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Module.{u_1, u_4} R M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.15",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Type u_8",
+        "name": "N",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "AddCommMonoid.{u_8} N",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.46",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Module.{u_1, u_8} R N",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.49",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "LinearMap.{u_1, u_1, u_4, u_8} (RingHom.id.{u_1} R) M N",
+        "name": "f",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "LinearMap.{u_1, u_1, u_4, u_8} (RingHom.id.{u_1} R) M N",
+        "name": "g",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Set.{u_4} M",
+        "name": "S",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Eq.{u_4 + 1} (Submodule.span.{u_1, u_4} R S) Top.top.{u_4}",
+        "name": "hM",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_07 (f g : M →ₗ[R] N)\n    {S : Set M} (hM : span R S = ⊤) :\n  f = g ↔ ∀ (s : S), f s = g s :=\nby\n  convert!\n    linearMap_eq_iff_of_eq_span (f.comp (Submodule.subtype _)) (g.comp (Submodule.subtype _))\n      hM.symm\n  constructor\n  · rintro rfl\n    rfl\n  · intro h\n    ext x\n    exact DFunLike.congr_fun h ⟨x, by simp⟩",
+    "signature_spans": [
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 100
+      },
+      {
+        "start": 100,
+        "end": 101
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 120
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 123,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 128,
+        "end": 132
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 142
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 153
+      },
+      {
+        "start": 154,
+        "end": 157
+      },
+      {
+        "start": 158,
+        "end": 161
+      },
+      {
+        "start": 162,
+        "end": 163
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 166
+      },
+      {
+        "start": 167,
+        "end": 168
+      },
+      {
+        "start": 168,
+        "end": 169
+      },
+      {
+        "start": 169,
+        "end": 170
+      },
+      {
+        "start": 171,
+        "end": 172
+      },
+      {
+        "start": 173,
+        "end": 174
+      },
+      {
+        "start": 175,
+        "end": 176
+      },
+      {
+        "start": 177,
+        "end": 178
+      },
+      {
+        "start": 179,
+        "end": 180
+      }
+    ],
+    "proof_offset": 184,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 100
+      },
+      {
+        "start": 100,
+        "end": 101
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 120
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 123,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 128,
+        "end": 132
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 142
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 153
+      },
+      {
+        "start": 154,
+        "end": 157
+      },
+      {
+        "start": 158,
+        "end": 161
+      },
+      {
+        "start": 162,
+        "end": 163
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 166
+      },
+      {
+        "start": 167,
+        "end": 168
+      },
+      {
+        "start": 168,
+        "end": 169
+      },
+      {
+        "start": 169,
+        "end": 170
+      },
+      {
+        "start": 171,
+        "end": 172
+      },
+      {
+        "start": 173,
+        "end": 174
+      },
+      {
+        "start": 175,
+        "end": 176
+      },
+      {
+        "start": 177,
+        "end": 178
+      },
+      {
+        "start": 179,
+        "end": 180
+      },
+      {
+        "start": 181,
+        "end": 183
+      },
+      {
+        "start": 184,
+        "end": 186
+      },
+      {
+        "start": 189,
+        "end": 197
+      },
+      {
+        "start": 202,
+        "end": 229
+      },
+      {
+        "start": 230,
+        "end": 231
+      },
+      {
+        "start": 231,
+        "end": 237
+      },
+      {
+        "start": 238,
+        "end": 239
+      },
+      {
+        "start": 239,
+        "end": 256
+      },
+      {
+        "start": 257,
+        "end": 258
+      },
+      {
+        "start": 258,
+        "end": 259
+      },
+      {
+        "start": 259,
+        "end": 260
+      },
+      {
+        "start": 261,
+        "end": 262
+      },
+      {
+        "start": 262,
+        "end": 268
+      },
+      {
+        "start": 269,
+        "end": 270
+      },
+      {
+        "start": 270,
+        "end": 287
+      },
+      {
+        "start": 288,
+        "end": 289
+      },
+      {
+        "start": 289,
+        "end": 290
+      },
+      {
+        "start": 290,
+        "end": 291
+      },
+      {
+        "start": 298,
+        "end": 305
+      },
+      {
+        "start": 308,
+        "end": 319
+      },
+      {
+        "start": 322,
+        "end": 324
+      },
+      {
+        "start": 325,
+        "end": 331
+      },
+      {
+        "start": 332,
+        "end": 335
+      },
+      {
+        "start": 340,
+        "end": 343
+      },
+      {
+        "start": 346,
+        "end": 348
+      },
+      {
+        "start": 349,
+        "end": 354
+      },
+      {
+        "start": 355,
+        "end": 356
+      },
+      {
+        "start": 361,
+        "end": 364
+      },
+      {
+        "start": 365,
+        "end": 366
+      },
+      {
+        "start": 371,
+        "end": 376
+      },
+      {
+        "start": 377,
+        "end": 395
+      },
+      {
+        "start": 396,
+        "end": 397
+      },
+      {
+        "start": 398,
+        "end": 401
+      },
+      {
+        "start": 401,
+        "end": 402
+      },
+      {
+        "start": 402,
+        "end": 403
+      },
+      {
+        "start": 404,
+        "end": 406
+      },
+      {
+        "start": 407,
+        "end": 411
+      },
+      {
+        "start": 411,
+        "end": 414
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 184,
+        "end": 186
+      },
+      {
+        "start": 189,
+        "end": 197
+      },
+      {
+        "start": 202,
+        "end": 229
+      },
+      {
+        "start": 230,
+        "end": 231
+      },
+      {
+        "start": 231,
+        "end": 237
+      },
+      {
+        "start": 238,
+        "end": 239
+      },
+      {
+        "start": 239,
+        "end": 256
+      },
+      {
+        "start": 257,
+        "end": 258
+      },
+      {
+        "start": 258,
+        "end": 259
+      },
+      {
+        "start": 259,
+        "end": 260
+      },
+      {
+        "start": 261,
+        "end": 262
+      },
+      {
+        "start": 262,
+        "end": 268
+      },
+      {
+        "start": 269,
+        "end": 270
+      },
+      {
+        "start": 270,
+        "end": 287
+      },
+      {
+        "start": 288,
+        "end": 289
+      },
+      {
+        "start": 289,
+        "end": 290
+      },
+      {
+        "start": 290,
+        "end": 291
+      },
+      {
+        "start": 298,
+        "end": 305
+      },
+      {
+        "start": 308,
+        "end": 319
+      },
+      {
+        "start": 322,
+        "end": 324
+      },
+      {
+        "start": 325,
+        "end": 331
+      },
+      {
+        "start": 332,
+        "end": 335
+      },
+      {
+        "start": 340,
+        "end": 343
+      },
+      {
+        "start": 346,
+        "end": 348
+      },
+      {
+        "start": 349,
+        "end": 354
+      },
+      {
+        "start": 355,
+        "end": 356
+      },
+      {
+        "start": 361,
+        "end": 364
+      },
+      {
+        "start": 365,
+        "end": 366
+      },
+      {
+        "start": 371,
+        "end": 376
+      },
+      {
+        "start": 377,
+        "end": 395
+      },
+      {
+        "start": 396,
+        "end": 397
+      },
+      {
+        "start": 398,
+        "end": 401
+      },
+      {
+        "start": 401,
+        "end": 402
+      },
+      {
+        "start": 402,
+        "end": 403
+      },
+      {
+        "start": 404,
+        "end": 406
+      },
+      {
+        "start": 407,
+        "end": 411
+      },
+      {
+        "start": 411,
+        "end": 414
+      }
+    ],
+    "W_full": 82,
+    "W_S": 41,
+    "W_B": 37
+  },
+  "root": "CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_07",
+  "proved_type_fingerprint": "1808044435",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 1079,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Mathlib.Tactic.convert!",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Term.app",
+      "Lean.Parser.Term.paren",
+      "Lean.Parser.Term.hygienicLParen",
+      "hygieneInfo",
+      "Lean.Parser.Term.hole",
+      "Lean.Parser.Tactic.constructor",
+      "Lean.cdot",
+      "Lean.cdotTk",
+      "Lean.Parser.Tactic.rintro",
+      "Lean.Parser.Tactic.rintroPat.one",
+      "Lean.Parser.Tactic.rcasesPat.one",
+      "Lean.Parser.Tactic.tacticRfl",
+      "Lean.Parser.Tactic.intro",
+      "Lean.Elab.Tactic.Ext.ext",
+      "Lean.Parser.Tactic.exact",
+      "Lean.Parser.Term.anonymousCtor",
+      "Lean.Parser.Tactic.simp"
+    ],
+    "proof_nodes": 30125,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_07"
+  ],
+  "axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "957863b3ea06545baa9b770ec20a2e842523a95b0ce489c27630a1c206116881",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.8263445836491883
+  },
+  "request_fingerprint": "3918e86a9efa5a1d1de68427577050439f804d997d4d2b1f22fee849aedb1d3b"
+}

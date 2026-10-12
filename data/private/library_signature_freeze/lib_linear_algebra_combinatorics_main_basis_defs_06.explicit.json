@@ -1,0 +1,974 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1",
+    "u_3",
+    "u_6"
+  ],
+  "trusted_type_source": "∀ {ι : Type u_1} {R : Type u_3} {M : Type u_6} [inst : Semiring.{u_3} R] [inst_1 : AddCommMonoid.{u_6} M]\n  [inst_2 : Module.{u_3, u_6} R M] (b : Module.Basis.{u_1, u_3, u_6} ι R M) (i j : ι)\n  [inst_3 : Decidable (Eq.{u_1 + 1} i j)],\n  Eq.{u_3 + 1} (((Module.Basis.repr.{u_1, u_3, u_6} b) (b i)) j) (ite.{u_3 + 1} (Eq.{u_1 + 1} i j) 1 0)",
+  "trusted_type_expression": "forall {ι : Type.{u_1}} {R : Type.{u_3}} {M : Type.{u_6}} [inst : Semiring.{u_3} R] [inst_1 : AddCommMonoid.{u_6} M] [inst_2 : Module.{u_3, u_6} R M inst inst_1] (b : Module.Basis.{u_1, u_3, u_6} ι R M inst inst_1 inst_2) (i : ι) (j : ι) [inst._@.EvaluatorCandidate.1579128551._hygCtx._hyg.56 : Decidable (Eq.{succ u_1} ι i j)], Eq.{succ u_3} R (DFunLike.coe.{max (succ u_1) (succ u_3), succ u_1, succ u_3} (Finsupp.{u_1, u_3} ι R (MulZeroClass.toZero.{u_3} R (instMulZeroClassOfSemiring.{u_3} R inst))) ι (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : ι) => R) (Finsupp.instFunLike.{u_1, u_3} ι R (MulZeroClass.toZero.{u_3} R (instMulZeroClassOfSemiring.{u_3} R inst))) (DFunLike.coe.{max (max (succ u_1) (succ u_3)) (succ u_6), succ u_6, max (succ u_1) (succ u_3)} (LinearEquiv.{u_3, u_3, u_6, max u_3 u_1} R R inst inst (RingHom.id.{u_3} R (Semiring.toNonAssocSemiring.{u_3} R inst)) (RingHom.id.{u_3} R (Semiring.toNonAssocSemiring.{u_3} R inst)) (RingHomInvPair.ids.{u_3} R inst) (RingHomInvPair.ids.{u_3} R inst) M (Finsupp.{u_1, u_3} ι R (MulZeroClass.toZero.{u_3} R (instMulZeroClassOfSemiring.{u_3} R inst))) inst_1 (Finsupp.instAddCommMonoid.{u_1, u_3} ι R (Semiring.toAddCommMonoid.{u_3} R inst)) inst_2 (Finsupp.module.{u_1, u_3, u_3} ι R R inst (Semiring.toAddCommMonoid.{u_3} R inst) (Semiring.toModule.{u_3} R inst))) M (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : M) => Finsupp.{u_1, u_3} ι R (MulZeroClass.toZero.{u_3} R (instMulZeroClassOfSemiring.{u_3} R inst))) (EquivLike.toFunLike.{max (max (succ u_1) (succ u_3)) (succ u_6), succ u_6, max (succ u_1) (succ u_3)} (LinearEquiv.{u_3, u_3, u_6, max u_3 u_1} R R inst inst (RingHom.id.{u_3} R (Semiring.toNonAssocSemiring.{u_3} R inst)) (RingHom.id.{u_3} R (Semiring.toNonAssocSemiring.{u_3} R inst)) (RingHomInvPair.ids.{u_3} R inst) (RingHomInvPair.ids.{u_3} R inst) M (Finsupp.{u_1, u_3} ι R (MulZeroClass.toZero.{u_3} R (instMulZeroClassOfSemiring.{u_3} R inst))) inst_1 (Finsupp.instAddCommMonoid.{u_1, u_3} ι R (Semiring.toAddCommMonoid.{u_3} R inst)) inst_2 (Finsupp.module.{u_1, u_3, u_3} ι R R inst (Semiring.toAddCommMonoid.{u_3} R inst) (Semiring.toModule.{u_3} R inst))) M (Finsupp.{u_1, u_3} ι R (MulZeroClass.toZero.{u_3} R (instMulZeroClassOfSemiring.{u_3} R inst))) (LinearEquiv.instEquivLike.{u_3, u_3, u_6, max u_1 u_3} R R M (Finsupp.{u_1, u_3} ι R (MulZeroClass.toZero.{u_3} R (instMulZeroClassOfSemiring.{u_3} R inst))) inst inst inst_1 (Finsupp.instAddCommMonoid.{u_1, u_3} ι R (Semiring.toAddCommMonoid.{u_3} R inst)) inst_2 (Finsupp.module.{u_1, u_3, u_3} ι R R inst (Semiring.toAddCommMonoid.{u_3} R inst) (Semiring.toModule.{u_3} R inst)) (RingHom.id.{u_3} R (Semiring.toNonAssocSemiring.{u_3} R inst)) (RingHom.id.{u_3} R (Semiring.toNonAssocSemiring.{u_3} R inst)) (RingHomInvPair.ids.{u_3} R inst) (RingHomInvPair.ids.{u_3} R inst))) (Module.Basis.repr.{u_1, u_3, u_6} ι R M inst inst_1 inst_2 b) (DFunLike.coe.{max (max (succ u_1) (succ u_3)) (succ u_6), succ u_1, succ u_6} (Module.Basis.{u_1, u_3, u_6} ι R M inst inst_1 inst_2) ι (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : ι) => M) (Module.Basis.instFunLike.{u_1, u_3, u_6} ι R M inst inst_1 inst_2) b i)) j) (ite.{succ u_3} R (Eq.{succ u_1} ι i j) inst._@.EvaluatorCandidate.1579128551._hygCtx._hyg.56 (OfNat.ofNat.{u_3} R 1 (One.toOfNat1.{u_3} R (AddMonoidWithOne.toOne.{u_3} R (AddCommMonoidWithOne.toAddMonoidWithOne.{u_3} R (NonAssocSemiring.toAddCommMonoidWithOne.{u_3} R (Semiring.toNonAssocSemiring.{u_3} R inst)))))) (OfNat.ofNat.{u_3} R 0 (Zero.toOfNat0.{u_3} R (MulZeroClass.toZero.{u_3} R (instMulZeroClassOfSemiring.{u_3} R inst)))))",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_3 + 1} (((Module.Basis.repr.{u_1, u_3, u_6} b) (b i)) j) (ite.{u_3 + 1} (Eq.{u_1 + 1} i j) 1 0)",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "ι",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_3",
+        "name": "R",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_6",
+        "name": "M",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Semiring.{u_3} R",
+        "name": "inst",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "AddCommMonoid.{u_6} M",
+        "name": "inst_1",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Module.{u_3, u_6} R M",
+        "name": "inst_2",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Module.Basis.{u_1, u_3, u_6} ι R M",
+        "name": "b",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "ι",
+        "name": "i",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "ι",
+        "name": "j",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Decidable (Eq.{u_1 + 1} i j)",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.56",
+        "binder_info": "instance"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_linear_algebra_combinatorics_main_basis_defs_06 {«ι» : Type u_1} {«R» : Type u_3} {«M» : Type u_6} [«inst» : Semiring.{u_3} R] [«inst_1» : AddCommMonoid.{u_6} M] [«inst_2» : Module.{u_3, u_6} R M] («b» : Module.Basis.{u_1, u_3, u_6} ι R M) («i» : ι) (j) [Decidable (i = j)] :\n  b.repr (b i) j = if i = j then 1 else 0 :=\nby\n  rw [repr_self, Finsupp.single_apply]",
+    "signature_spans": [
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 84,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 104,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 120
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 123,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 139
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 142,
+        "end": 150
+      },
+      {
+        "start": 151,
+        "end": 152
+      },
+      {
+        "start": 153,
+        "end": 161
+      },
+      {
+        "start": 161,
+        "end": 163
+      },
+      {
+        "start": 163,
+        "end": 166
+      },
+      {
+        "start": 166,
+        "end": 167
+      },
+      {
+        "start": 168,
+        "end": 169
+      },
+      {
+        "start": 169,
+        "end": 170
+      },
+      {
+        "start": 171,
+        "end": 172
+      },
+      {
+        "start": 172,
+        "end": 182
+      },
+      {
+        "start": 183,
+        "end": 184
+      },
+      {
+        "start": 185,
+        "end": 198
+      },
+      {
+        "start": 198,
+        "end": 200
+      },
+      {
+        "start": 200,
+        "end": 203
+      },
+      {
+        "start": 203,
+        "end": 204
+      },
+      {
+        "start": 205,
+        "end": 206
+      },
+      {
+        "start": 206,
+        "end": 207
+      },
+      {
+        "start": 208,
+        "end": 209
+      },
+      {
+        "start": 209,
+        "end": 219
+      },
+      {
+        "start": 220,
+        "end": 221
+      },
+      {
+        "start": 222,
+        "end": 228
+      },
+      {
+        "start": 228,
+        "end": 230
+      },
+      {
+        "start": 230,
+        "end": 233
+      },
+      {
+        "start": 233,
+        "end": 234
+      },
+      {
+        "start": 235,
+        "end": 238
+      },
+      {
+        "start": 238,
+        "end": 239
+      },
+      {
+        "start": 240,
+        "end": 241
+      },
+      {
+        "start": 242,
+        "end": 243
+      },
+      {
+        "start": 243,
+        "end": 244
+      },
+      {
+        "start": 245,
+        "end": 246
+      },
+      {
+        "start": 246,
+        "end": 251
+      },
+      {
+        "start": 252,
+        "end": 253
+      },
+      {
+        "start": 254,
+        "end": 266
+      },
+      {
+        "start": 266,
+        "end": 268
+      },
+      {
+        "start": 268,
+        "end": 271
+      },
+      {
+        "start": 271,
+        "end": 272
+      },
+      {
+        "start": 273,
+        "end": 276
+      },
+      {
+        "start": 276,
+        "end": 277
+      },
+      {
+        "start": 278,
+        "end": 281
+      },
+      {
+        "start": 281,
+        "end": 282
+      },
+      {
+        "start": 283,
+        "end": 285
+      },
+      {
+        "start": 286,
+        "end": 287
+      },
+      {
+        "start": 288,
+        "end": 289
+      },
+      {
+        "start": 289,
+        "end": 290
+      },
+      {
+        "start": 291,
+        "end": 292
+      },
+      {
+        "start": 292,
+        "end": 297
+      },
+      {
+        "start": 298,
+        "end": 299
+      },
+      {
+        "start": 300,
+        "end": 302
+      },
+      {
+        "start": 302,
+        "end": 303
+      },
+      {
+        "start": 304,
+        "end": 305
+      },
+      {
+        "start": 305,
+        "end": 306
+      },
+      {
+        "start": 306,
+        "end": 307
+      },
+      {
+        "start": 308,
+        "end": 309
+      },
+      {
+        "start": 309,
+        "end": 318
+      },
+      {
+        "start": 319,
+        "end": 320
+      },
+      {
+        "start": 320,
+        "end": 321
+      },
+      {
+        "start": 322,
+        "end": 323
+      },
+      {
+        "start": 324,
+        "end": 325
+      },
+      {
+        "start": 325,
+        "end": 326
+      },
+      {
+        "start": 326,
+        "end": 327
+      },
+      {
+        "start": 332,
+        "end": 338
+      },
+      {
+        "start": 339,
+        "end": 340
+      },
+      {
+        "start": 340,
+        "end": 341
+      },
+      {
+        "start": 342,
+        "end": 343
+      },
+      {
+        "start": 343,
+        "end": 344
+      },
+      {
+        "start": 345,
+        "end": 346
+      },
+      {
+        "start": 347,
+        "end": 348
+      },
+      {
+        "start": 349,
+        "end": 351
+      },
+      {
+        "start": 352,
+        "end": 353
+      },
+      {
+        "start": 354,
+        "end": 355
+      },
+      {
+        "start": 356,
+        "end": 357
+      },
+      {
+        "start": 358,
+        "end": 362
+      },
+      {
+        "start": 363,
+        "end": 364
+      },
+      {
+        "start": 365,
+        "end": 369
+      },
+      {
+        "start": 370,
+        "end": 371
+      }
+    ],
+    "proof_offset": 375,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 84,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 104,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 120
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 123,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 139
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 142,
+        "end": 150
+      },
+      {
+        "start": 151,
+        "end": 152
+      },
+      {
+        "start": 153,
+        "end": 161
+      },
+      {
+        "start": 161,
+        "end": 163
+      },
+      {
+        "start": 163,
+        "end": 166
+      },
+      {
+        "start": 166,
+        "end": 167
+      },
+      {
+        "start": 168,
+        "end": 169
+      },
+      {
+        "start": 169,
+        "end": 170
+      },
+      {
+        "start": 171,
+        "end": 172
+      },
+      {
+        "start": 172,
+        "end": 182
+      },
+      {
+        "start": 183,
+        "end": 184
+      },
+      {
+        "start": 185,
+        "end": 198
+      },
+      {
+        "start": 198,
+        "end": 200
+      },
+      {
+        "start": 200,
+        "end": 203
+      },
+      {
+        "start": 203,
+        "end": 204
+      },
+      {
+        "start": 205,
+        "end": 206
+      },
+      {
+        "start": 206,
+        "end": 207
+      },
+      {
+        "start": 208,
+        "end": 209
+      },
+      {
+        "start": 209,
+        "end": 219
+      },
+      {
+        "start": 220,
+        "end": 221
+      },
+      {
+        "start": 222,
+        "end": 228
+      },
+      {
+        "start": 228,
+        "end": 230
+      },
+      {
+        "start": 230,
+        "end": 233
+      },
+      {
+        "start": 233,
+        "end": 234
+      },
+      {
+        "start": 235,
+        "end": 238
+      },
+      {
+        "start": 238,
+        "end": 239
+      },
+      {
+        "start": 240,
+        "end": 241
+      },
+      {
+        "start": 242,
+        "end": 243
+      },
+      {
+        "start": 243,
+        "end": 244
+      },
+      {
+        "start": 245,
+        "end": 246
+      },
+      {
+        "start": 246,
+        "end": 251
+      },
+      {
+        "start": 252,
+        "end": 253
+      },
+      {
+        "start": 254,
+        "end": 266
+      },
+      {
+        "start": 266,
+        "end": 268
+      },
+      {
+        "start": 268,
+        "end": 271
+      },
+      {
+        "start": 271,
+        "end": 272
+      },
+      {
+        "start": 273,
+        "end": 276
+      },
+      {
+        "start": 276,
+        "end": 277
+      },
+      {
+        "start": 278,
+        "end": 281
+      },
+      {
+        "start": 281,
+        "end": 282
+      },
+      {
+        "start": 283,
+        "end": 285
+      },
+      {
+        "start": 286,
+        "end": 287
+      },
+      {
+        "start": 288,
+        "end": 289
+      },
+      {
+        "start": 289,
+        "end": 290
+      },
+      {
+        "start": 291,
+        "end": 292
+      },
+      {
+        "start": 292,
+        "end": 297
+      },
+      {
+        "start": 298,
+        "end": 299
+      },
+      {
+        "start": 300,
+        "end": 302
+      },
+      {
+        "start": 302,
+        "end": 303
+      },
+      {
+        "start": 304,
+        "end": 305
+      },
+      {
+        "start": 305,
+        "end": 306
+      },
+      {
+        "start": 306,
+        "end": 307
+      },
+      {
+        "start": 308,
+        "end": 309
+      },
+      {
+        "start": 309,
+        "end": 318
+      },
+      {
+        "start": 319,
+        "end": 320
+      },
+      {
+        "start": 320,
+        "end": 321
+      },
+      {
+        "start": 322,
+        "end": 323
+      },
+      {
+        "start": 324,
+        "end": 325
+      },
+      {
+        "start": 325,
+        "end": 326
+      },
+      {
+        "start": 326,
+        "end": 327
+      },
+      {
+        "start": 328,
+        "end": 329
+      },
+      {
+        "start": 332,
+        "end": 338
+      },
+      {
+        "start": 339,
+        "end": 340
+      },
+      {
+        "start": 340,
+        "end": 341
+      },
+      {
+        "start": 342,
+        "end": 343
+      },
+      {
+        "start": 343,
+        "end": 344
+      },
+      {
+        "start": 345,
+        "end": 346
+      },
+      {
+        "start": 347,
+        "end": 348
+      },
+      {
+        "start": 349,
+        "end": 351
+      },
+      {
+        "start": 352,
+        "end": 353
+      },
+      {
+        "start": 354,
+        "end": 355
+      },
+      {
+        "start": 356,
+        "end": 357
+      },
+      {
+        "start": 358,
+        "end": 362
+      },
+      {
+        "start": 363,
+        "end": 364
+      },
+      {
+        "start": 365,
+        "end": 369
+      },
+      {
+        "start": 370,
+        "end": 371
+      },
+      {
+        "start": 372,
+        "end": 374
+      },
+      {
+        "start": 375,
+        "end": 377
+      },
+      {
+        "start": 380,
+        "end": 382
+      },
+      {
+        "start": 383,
+        "end": 384
+      },
+      {
+        "start": 384,
+        "end": 393
+      },
+      {
+        "start": 393,
+        "end": 394
+      },
+      {
+        "start": 395,
+        "end": 415
+      },
+      {
+        "start": 415,
+        "end": 416
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 375,
+        "end": 377
+      },
+      {
+        "start": 380,
+        "end": 382
+      },
+      {
+        "start": 383,
+        "end": 384
+      },
+      {
+        "start": 384,
+        "end": 393
+      },
+      {
+        "start": 393,
+        "end": 394
+      },
+      {
+        "start": 395,
+        "end": 415
+      },
+      {
+        "start": 415,
+        "end": 416
+      }
+    ],
+    "W_full": 105,
+    "W_S": 94,
+    "W_B": 7
+  },
+  "root": "CompressionEval.lib_linear_algebra_combinatorics_main_basis_defs_06",
+  "resolved_imports": [
+    {
+      "module": "Mathlib.LinearAlgebra.Finsupp.LinearCombination",
+      "is_meta": false,
+      "is_exported": true,
+      "import_all": false
+    },
+    {
+      "module": "Mathlib.Tactic.CrossRefAttribute",
+      "is_meta": false,
+      "is_exported": true,
+      "import_all": false
+    }
+  ],
+  "proved_type_fingerprint": "4246078496",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 3658,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.rwSeq",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.rwRuleSeq",
+      "Lean.Parser.Tactic.rwRule"
+    ],
+    "proof_nodes": 2883,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_linear_algebra_combinatorics_main_basis_defs_06"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "ad129c827eee054c15e37a168e2f0d9a70d39b270424ee4e73f9d190afbe072d",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.2159032919444144
+  },
+  "request_fingerprint": "94a6208c3fdd2ad0995a5c30d0e29e75aef1c0492ecf5e410f7cc28a9dd20b0a",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "engine_path": "lean/versions/Evaluator-83da0074.lean"
+}

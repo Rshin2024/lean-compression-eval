@@ -1,0 +1,598 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_9"
+  ],
+  "trusted_type_source": "∀ {ε : Type u_9} {p : ε → Prop} [inst : DecidablePred.{u_9 + 1} p],\n  Eq.{u_9 + 1}\n    (Equiv.Perm.subtypeCongr.{u_9} (Equiv.refl.{max 1 (u_9 + 1)} (Subtype.{u_9 + 1} fun (a : ε) => p a))\n      (Equiv.refl.{max 1 (u_9 + 1)} (Subtype.{u_9 + 1} fun (a : ε) => ¬p a)))\n    (Equiv.refl.{u_9 + 1} ε)",
+  "trusted_type_expression": "forall {ε : Type.{u_9}} {p : ε -> Prop} [inst : DecidablePred.{succ u_9} ε p], Eq.{succ u_9} (Equiv.Perm.{succ u_9} ε) (Equiv.Perm.subtypeCongr.{u_9} ε p inst (Equiv.refl.{max 1 (succ u_9)} (Subtype.{succ u_9} ε (fun (a : ε) => p a))) (Equiv.refl.{max 1 (succ u_9)} (Subtype.{succ u_9} ε (fun (a : ε) => Not (p a))))) (Equiv.refl.{succ u_9} ε)",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_9 + 1}\n  (Equiv.Perm.subtypeCongr.{u_9} (Equiv.refl.{max 1 (u_9 + 1)} (Subtype.{u_9 + 1} fun (a : ε) => p a))\n    (Equiv.refl.{max 1 (u_9 + 1)} (Subtype.{u_9 + 1} fun (a : ε) => ¬p a)))\n  (Equiv.refl.{u_9 + 1} ε)",
+    "binders": [
+      {
+        "type_source": "Type u_9",
+        "name": "ε",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "ε → Prop",
+        "name": "p",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "DecidablePred.{u_9 + 1} p",
+        "name": "inst",
+        "binder_info": "instance"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_sets_logic_main_equiv_basic_06 {«ε» : Type u_9} {«p» : ε → Prop} [«inst» : DecidablePred.{u_9 + 1} p] :\n  Perm.subtypeCongr (Equiv.refl { a // p a }) (Equiv.refl { a // ¬p a }) = Equiv.refl ε :=\nby\n  ext x\n  by_cases h : p x <;> simp [h]",
+    "signature_spans": [
+      {
+        "start": 66,
+        "end": 67
+      },
+      {
+        "start": 67,
+        "end": 73
+      },
+      {
+        "start": 74,
+        "end": 75
+      },
+      {
+        "start": 76,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 84
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 87,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 106
+      },
+      {
+        "start": 106,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 133
+      },
+      {
+        "start": 133,
+        "end": 135
+      },
+      {
+        "start": 135,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 145,
+        "end": 146
+      },
+      {
+        "start": 151,
+        "end": 168
+      },
+      {
+        "start": 169,
+        "end": 170
+      },
+      {
+        "start": 170,
+        "end": 180
+      },
+      {
+        "start": 181,
+        "end": 182
+      },
+      {
+        "start": 183,
+        "end": 184
+      },
+      {
+        "start": 185,
+        "end": 187
+      },
+      {
+        "start": 188,
+        "end": 189
+      },
+      {
+        "start": 190,
+        "end": 191
+      },
+      {
+        "start": 192,
+        "end": 193
+      },
+      {
+        "start": 193,
+        "end": 194
+      },
+      {
+        "start": 195,
+        "end": 196
+      },
+      {
+        "start": 196,
+        "end": 206
+      },
+      {
+        "start": 207,
+        "end": 208
+      },
+      {
+        "start": 209,
+        "end": 210
+      },
+      {
+        "start": 211,
+        "end": 213
+      },
+      {
+        "start": 214,
+        "end": 216
+      },
+      {
+        "start": 216,
+        "end": 217
+      },
+      {
+        "start": 218,
+        "end": 219
+      },
+      {
+        "start": 220,
+        "end": 221
+      },
+      {
+        "start": 221,
+        "end": 222
+      },
+      {
+        "start": 223,
+        "end": 224
+      },
+      {
+        "start": 225,
+        "end": 235
+      },
+      {
+        "start": 236,
+        "end": 238
+      }
+    ],
+    "proof_offset": 242,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 65
+      },
+      {
+        "start": 66,
+        "end": 67
+      },
+      {
+        "start": 67,
+        "end": 73
+      },
+      {
+        "start": 74,
+        "end": 75
+      },
+      {
+        "start": 76,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 84
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 87,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 106
+      },
+      {
+        "start": 106,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 133
+      },
+      {
+        "start": 133,
+        "end": 135
+      },
+      {
+        "start": 135,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 145,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 148
+      },
+      {
+        "start": 151,
+        "end": 168
+      },
+      {
+        "start": 169,
+        "end": 170
+      },
+      {
+        "start": 170,
+        "end": 180
+      },
+      {
+        "start": 181,
+        "end": 182
+      },
+      {
+        "start": 183,
+        "end": 184
+      },
+      {
+        "start": 185,
+        "end": 187
+      },
+      {
+        "start": 188,
+        "end": 189
+      },
+      {
+        "start": 190,
+        "end": 191
+      },
+      {
+        "start": 192,
+        "end": 193
+      },
+      {
+        "start": 193,
+        "end": 194
+      },
+      {
+        "start": 195,
+        "end": 196
+      },
+      {
+        "start": 196,
+        "end": 206
+      },
+      {
+        "start": 207,
+        "end": 208
+      },
+      {
+        "start": 209,
+        "end": 210
+      },
+      {
+        "start": 211,
+        "end": 213
+      },
+      {
+        "start": 214,
+        "end": 216
+      },
+      {
+        "start": 216,
+        "end": 217
+      },
+      {
+        "start": 218,
+        "end": 219
+      },
+      {
+        "start": 220,
+        "end": 221
+      },
+      {
+        "start": 221,
+        "end": 222
+      },
+      {
+        "start": 223,
+        "end": 224
+      },
+      {
+        "start": 225,
+        "end": 235
+      },
+      {
+        "start": 236,
+        "end": 238
+      },
+      {
+        "start": 239,
+        "end": 241
+      },
+      {
+        "start": 242,
+        "end": 244
+      },
+      {
+        "start": 247,
+        "end": 250
+      },
+      {
+        "start": 251,
+        "end": 252
+      },
+      {
+        "start": 255,
+        "end": 263
+      },
+      {
+        "start": 264,
+        "end": 265
+      },
+      {
+        "start": 266,
+        "end": 267
+      },
+      {
+        "start": 268,
+        "end": 269
+      },
+      {
+        "start": 270,
+        "end": 271
+      },
+      {
+        "start": 272,
+        "end": 275
+      },
+      {
+        "start": 276,
+        "end": 280
+      },
+      {
+        "start": 281,
+        "end": 282
+      },
+      {
+        "start": 282,
+        "end": 283
+      },
+      {
+        "start": 283,
+        "end": 284
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 242,
+        "end": 244
+      },
+      {
+        "start": 247,
+        "end": 250
+      },
+      {
+        "start": 251,
+        "end": 252
+      },
+      {
+        "start": 255,
+        "end": 263
+      },
+      {
+        "start": 264,
+        "end": 265
+      },
+      {
+        "start": 266,
+        "end": 267
+      },
+      {
+        "start": 268,
+        "end": 269
+      },
+      {
+        "start": 270,
+        "end": 271
+      },
+      {
+        "start": 272,
+        "end": 275
+      },
+      {
+        "start": 276,
+        "end": 280
+      },
+      {
+        "start": 281,
+        "end": 282
+      },
+      {
+        "start": 282,
+        "end": 283
+      },
+      {
+        "start": 283,
+        "end": 284
+      }
+    ],
+    "W_full": 64,
+    "W_S": 47,
+    "W_B": 13
+  },
+  "root": "CompressionEval.lib_sets_logic_main_equiv_basic_06",
+  "proved_type_fingerprint": "3200126613",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 555,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Elab.Tactic.Ext.ext",
+      "Lean.Parser.Tactic.rintroPat.one",
+      "Lean.Parser.Tactic.rcasesPat.one",
+      "Lean.Parser.Tactic.«tactic_<;>_»",
+      "«tacticBy_cases_:_»",
+      "Lean.Parser.Term.app",
+      "Lean.Parser.Tactic.simp",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.simpLemma"
+    ],
+    "proof_nodes": 943,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_sets_logic_main_equiv_basic_06"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "01bdf59fc450985bb007f35f45bdc197c6cba6bd94abc4271ab69a7e2e6c8ab7",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.186419792007655
+  },
+  "request_fingerprint": "9f6f7ef95da324c3d2d0d978123b5320dfef5aabf60dc3a3646772fe92de3bda"
+}

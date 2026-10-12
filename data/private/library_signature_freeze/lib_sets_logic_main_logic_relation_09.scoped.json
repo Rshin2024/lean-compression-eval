@@ -1,0 +1,327 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {α : Type u_1} {r : α → α → Prop}, Eq.{u_1 + 1} (flip.{u_1 + 1, u_1 + 1, 1} r) r ↔ Std.Symm.{u_1 + 1} r",
+  "trusted_type_expression": "forall {α : Type.{u_1}} {r : α -> α -> Prop}, Iff (Eq.{succ u_1} (α -> α -> Prop) (flip.{succ u_1, succ u_1, 1} α α Prop r) r) (Std.Symm.{succ u_1} α r)",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_1 + 1} (flip.{u_1 + 1, u_1 + 1, 1} r) r ↔ Std.Symm.{u_1 + 1} r",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "α → α → Prop",
+        "name": "r",
+        "binder_info": "implicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_sets_logic_main_logic_relation_09  :\n  flip r = r ↔ Std.Symm r :=\n⟨fun h ↦ ⟨fun _ _ ↦ congr_fun₂ h .. |>.mp⟩, fun _ ↦ Std.Symm.flip_eq⟩",
+    "signature_spans": [
+      {
+        "start": 74,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      }
+    ],
+    "proof_offset": 103,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 68
+      },
+      {
+        "start": 70,
+        "end": 71
+      },
+      {
+        "start": 74,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 106
+      },
+      {
+        "start": 106,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 119
+      },
+      {
+        "start": 119,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 148
+      },
+      {
+        "start": 149,
+        "end": 152
+      },
+      {
+        "start": 152,
+        "end": 154
+      },
+      {
+        "start": 154,
+        "end": 157
+      },
+      {
+        "start": 157,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 168
+      },
+      {
+        "start": 169,
+        "end": 185
+      },
+      {
+        "start": 185,
+        "end": 188
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 103,
+        "end": 106
+      },
+      {
+        "start": 106,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 119
+      },
+      {
+        "start": 119,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 148
+      },
+      {
+        "start": 149,
+        "end": 152
+      },
+      {
+        "start": 152,
+        "end": 154
+      },
+      {
+        "start": 154,
+        "end": 157
+      },
+      {
+        "start": 157,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 168
+      },
+      {
+        "start": 169,
+        "end": 185
+      },
+      {
+        "start": 185,
+        "end": 188
+      }
+    ],
+    "W_full": 32,
+    "W_S": 7,
+    "W_B": 21
+  },
+  "root": "CompressionEval.lib_sets_logic_main_logic_relation_09",
+  "proved_type_fingerprint": "1591728164",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 29,
+    "syntax_kinds": [
+      "Lean.Parser.Term.anonymousCtor",
+      "null",
+      "Lean.Parser.Term.fun",
+      "Lean.Parser.Term.basicFun",
+      "Lean.Parser.Term.hole",
+      "Lean.Parser.Term.pipeProj",
+      "Lean.Parser.Term.app",
+      "Lean.Parser.Term.ellipsis"
+    ],
+    "proof_nodes": 133,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_sets_logic_main_logic_relation_09"
+  ],
+  "axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "355b9c92eecdc447898f55894dd143b935b371ce28a446c0dfc6f829ca88fdc5",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 2.5293055828660727
+  },
+  "request_fingerprint": "52781db2702fdcfdc6ab420433346e587a1fb0ecb1fa1de89a7e7f44dd72ad34"
+}

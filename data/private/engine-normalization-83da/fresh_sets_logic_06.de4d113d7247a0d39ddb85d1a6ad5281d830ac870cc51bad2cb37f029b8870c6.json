@@ -1,0 +1,1378 @@
+{
+  "boundary_policy": "expand_mathlib_and_evaluator_v1",
+  "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+  "evaluated_at": "2026-10-12T04:32:00.618234+00:00",
+  "extraction": {
+    "axioms": [],
+    "candidate_declarations": [
+      "CompressionEval.fresh_sets_logic_06"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 129,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.intro",
+        "Lean.Parser.Tactic.exact",
+        "Lean.Parser.Term.app",
+        "Lean.Parser.Term.paren",
+        "Lean.Parser.Term.hygienicLParen",
+        "hygieneInfo"
+      ],
+      "transitive_dependency_count": 10
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "available",
+    "nodes": [
+      {
+        "body": {
+          "@Sort": 3,
+          "Eq": 1,
+          "Function.Injective": 1,
+          "Prod": 2,
+          "Prod.fst": 1,
+          "Prod.mk": 4,
+          "congrArg": 1
+        },
+        "body_nodes": 129,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "CompressionEval.fresh_sets_logic_06",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "@Sort": 3,
+          "Function.Injective": 2,
+          "Prod": 1,
+          "Prod.mk": 1
+        },
+        "source_counts": null,
+        "type_hash": "3326761080",
+        "type_nodes": 47,
+        "value_hash": "1270138687"
+      },
+      {
+        "body": null,
+        "name": "@Sort",
+        "owner_module": "@builtin",
+        "primitive": true,
+        "signature": {},
+        "type_hash": "@Sort",
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Function.Injective",
+        "owner_module": "Init.Data.Function",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "360156075",
+        "type_nodes": null,
+        "value_hash": "2657691358"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Prod",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3173088088",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Prod.mk",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3669391139",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3970007004",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "congrArg",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2722762766",
+        "type_nodes": null,
+        "value_hash": "2643130269"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Prod.fst",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1427615629",
+        "type_nodes": null,
+        "value_hash": "11466416"
+      }
+    ],
+    "process_returncode": 0,
+    "proved_type_fingerprint": "3326761080",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 17.485695166978985,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "a582496ab14b6eb8a4274c01cfcd3a0977b7fd35cf43316e5b9743c2a172f219",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.fresh_sets_logic_06",
+    "source_tokens": {
+      "W_B": 13,
+      "W_S": 40,
+      "W_full": 57,
+      "body_spans": [
+        {
+          "end": 180,
+          "start": 178
+        },
+        {
+          "end": 186,
+          "start": 181
+        },
+        {
+          "end": 188,
+          "start": 187
+        },
+        {
+          "end": 190,
+          "start": 189
+        },
+        {
+          "end": 192,
+          "start": 191
+        },
+        {
+          "end": 193,
+          "start": 192
+        },
+        {
+          "end": 199,
+          "start": 194
+        },
+        {
+          "end": 202,
+          "start": 200
+        },
+        {
+          "end": 204,
+          "start": 203
+        },
+        {
+          "end": 212,
+          "start": 204
+        },
+        {
+          "end": 221,
+          "start": 213
+        },
+        {
+          "end": 223,
+          "start": 222
+        },
+        {
+          "end": 224,
+          "start": 223
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 50,
+          "start": 8
+        },
+        {
+          "end": 52,
+          "start": 51
+        },
+        {
+          "end": 54,
+          "start": 52
+        },
+        {
+          "end": 57,
+          "start": 55
+        },
+        {
+          "end": 60,
+          "start": 58
+        },
+        {
+          "end": 62,
+          "start": 61
+        },
+        {
+          "end": 68,
+          "start": 63
+        },
+        {
+          "end": 69,
+          "start": 68
+        },
+        {
+          "end": 71,
+          "start": 70
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 77,
+          "start": 75
+        },
+        {
+          "end": 81,
+          "start": 78
+        },
+        {
+          "end": 84,
+          "start": 82
+        },
+        {
+          "end": 85,
+          "start": 84
+        },
+        {
+          "end": 87,
+          "start": 86
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 93,
+          "start": 91
+        },
+        {
+          "end": 97,
+          "start": 94
+        },
+        {
+          "end": 100,
+          "start": 98
+        },
+        {
+          "end": 101,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 103
+        },
+        {
+          "end": 107,
+          "start": 106
+        },
+        {
+          "end": 126,
+          "start": 108
+        },
+        {
+          "end": 128,
+          "start": 127
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 131,
+          "start": 130
+        },
+        {
+          "end": 152,
+          "start": 134
+        },
+        {
+          "end": 154,
+          "start": 153
+        },
+        {
+          "end": 157,
+          "start": 154
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 162,
+          "start": 160
+        },
+        {
+          "end": 164,
+          "start": 163
+        },
+        {
+          "end": 165,
+          "start": 164
+        },
+        {
+          "end": 167,
+          "start": 166
+        },
+        {
+          "end": 168,
+          "start": 167
+        },
+        {
+          "end": 170,
+          "start": 169
+        },
+        {
+          "end": 172,
+          "start": 171
+        },
+        {
+          "end": 173,
+          "start": 172
+        },
+        {
+          "end": 174,
+          "start": 173
+        },
+        {
+          "end": 177,
+          "start": 175
+        },
+        {
+          "end": 180,
+          "start": 178
+        },
+        {
+          "end": 186,
+          "start": 181
+        },
+        {
+          "end": 188,
+          "start": 187
+        },
+        {
+          "end": 190,
+          "start": 189
+        },
+        {
+          "end": 192,
+          "start": 191
+        },
+        {
+          "end": 193,
+          "start": 192
+        },
+        {
+          "end": 199,
+          "start": 194
+        },
+        {
+          "end": 202,
+          "start": 200
+        },
+        {
+          "end": 204,
+          "start": 203
+        },
+        {
+          "end": 212,
+          "start": 204
+        },
+        {
+          "end": 221,
+          "start": 213
+        },
+        {
+          "end": 223,
+          "start": 222
+        },
+        {
+          "end": 224,
+          "start": 223
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 178,
+      "signature_spans": [
+        {
+          "end": 52,
+          "start": 51
+        },
+        {
+          "end": 54,
+          "start": 52
+        },
+        {
+          "end": 57,
+          "start": 55
+        },
+        {
+          "end": 60,
+          "start": 58
+        },
+        {
+          "end": 62,
+          "start": 61
+        },
+        {
+          "end": 68,
+          "start": 63
+        },
+        {
+          "end": 69,
+          "start": 68
+        },
+        {
+          "end": 71,
+          "start": 70
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 77,
+          "start": 75
+        },
+        {
+          "end": 81,
+          "start": 78
+        },
+        {
+          "end": 84,
+          "start": 82
+        },
+        {
+          "end": 85,
+          "start": 84
+        },
+        {
+          "end": 87,
+          "start": 86
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 93,
+          "start": 91
+        },
+        {
+          "end": 97,
+          "start": 94
+        },
+        {
+          "end": 100,
+          "start": 98
+        },
+        {
+          "end": 101,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 103
+        },
+        {
+          "end": 107,
+          "start": 106
+        },
+        {
+          "end": 126,
+          "start": 108
+        },
+        {
+          "end": 128,
+          "start": 127
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 152,
+          "start": 134
+        },
+        {
+          "end": 154,
+          "start": 153
+        },
+        {
+          "end": 157,
+          "start": 154
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 162,
+          "start": 160
+        },
+        {
+          "end": 164,
+          "start": 163
+        },
+        {
+          "end": 165,
+          "start": 164
+        },
+        {
+          "end": 167,
+          "start": 166
+        },
+        {
+          "end": 168,
+          "start": 167
+        },
+        {
+          "end": 170,
+          "start": 169
+        },
+        {
+          "end": 172,
+          "start": 171
+        },
+        {
+          "end": 173,
+          "start": 172
+        },
+        {
+          "end": 174,
+          "start": 173
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.fresh_sets_logic_06 {α β γ : Type*} (f : α → β) (g : α → γ) (hf : Function.Injective f) :\n  Function.Injective (fun x => (f x, g x)) :=\nby intro x y h; exact hf (congrArg Prod.fst h)",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "α",
+          "type_source": "Type u_1"
+        },
+        {
+          "binder_info": "implicit",
+          "name": "β",
+          "type_source": "Type u_2"
+        },
+        {
+          "binder_info": "implicit",
+          "name": "γ",
+          "type_source": "Type u_3"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "f",
+          "type_source": "α → β"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "g",
+          "type_source": "α → γ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hf",
+          "type_source": "Function.Injective.{u_1 + 1, u_2 + 1} f"
+        }
+      ],
+      "proposition": "Function.Injective.{u_1 + 1, max (u_3 + 1) (u_2 + 1)} fun (x : α) => Prod.mk.{u_2, u_3} (f x) (g x)"
+    },
+    "trusted_type_expression": "forall {α : Type.{u_1}} {β : Type.{u_2}} {γ : Type.{u_3}} (f : α -> β) (g : α -> γ), (Function.Injective.{succ u_1, succ u_2} α β f) -> (Function.Injective.{succ u_1, max (succ u_3) (succ u_2)} α (Prod.{u_2, u_3} β γ) (fun (x : α) => Prod.mk.{u_2, u_3} β γ (f x) (g x)))",
+    "trusted_type_source": "∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} (f : α → β) (g : α → γ),\n  Function.Injective.{u_1 + 1, u_2 + 1} f →\n    Function.Injective.{u_1 + 1, max (u_3 + 1) (u_2 + 1)} fun (x : α) => Prod.mk.{u_2, u_3} (f x) (g x)",
+    "universe_parameters": [
+      "u_1",
+      "u_2",
+      "u_3"
+    ],
+    "validity_status": "success"
+  },
+  "graph_hash": "6c55998d416b0fa9da3c8ddd255bac14af902317a88838153c729a51319151a5",
+  "historical_record_sha256": "758105d246c4774460c5669184f44dcc63b4220636fc22735605e2805a4c1892",
+  "metric_status": "available",
+  "metrics": {
+    "D": 1,
+    "I0": {
+      "denominator_decimal": "40",
+      "log2": -1.6214883767462704,
+      "numerator_decimal": "13"
+    },
+    "T0": {
+      "denominator_decimal": "53",
+      "log2": -1.4059923596758361,
+      "numerator_decimal": "20"
+    },
+    "U_B_decimal": "13",
+    "U_S_decimal": "7",
+    "U_decimal": "20",
+    "W_B": 13,
+    "W_S": 40,
+    "body_state": "present",
+    "distinct_dependency_count": 7,
+    "log2_I0": -1.6214883767462704,
+    "log2_T0": -1.4059923596758361,
+    "log2_U": 4.321928094887363,
+    "log2_U_B": 3.700439718141092,
+    "log2_U_S": 2.807354922057604,
+    "log2_W": 5.727920454563199,
+    "metric_profile": "paper_aligned_v1",
+    "metric_status": "available",
+    "primitive_count": 7,
+    "reachable_node_count": 8,
+    "reasons": []
+  },
+  "normalization_cache_key": "de4d113d7247a0d39ddb85d1a6ad5281d830ac870cc51bad2cb37f029b8870c6",
+  "primitive_manifest": [
+    "@Sort",
+    "Eq",
+    "Function.Injective",
+    "Prod",
+    "Prod.fst",
+    "Prod.mk",
+    "congrArg"
+  ],
+  "primitive_manifest_hash": "0b66ff371dd11a312f97b7f3b00eecd54337809213969dcbf8ac51b862221726",
+  "primitive_manifest_scope": "reachable closure; boundary policy and environment define shared corpus boundary",
+  "reference_proof_sha256": "b6359c49a0962e918d78f92327c2c31455ee434208a4e81ca0ebbe767fc8a0e0",
+  "replaces_engine_hash": "3c093c02b7d907faad45ede5ed175e3527aeaa9dbb9ca2141293075aaeeaa343",
+  "source_hash": "8648c9972651971f5ff1a9376c92f43c670cd42fe44331906c8810280e5dbe0f",
+  "source_token_policy_hash": "878ab5fb5aa65e79973e4577203e29b9e6d67de66b91ff97b86ad021f5f229c9",
+  "submitted_proof": "by intro x y h; exact hf (congrArg Prod.fst h)",
+  "supporting_diagnostics": {
+    "helper_count": 0,
+    "helper_count_scope": "generated auxiliary declarations; local have/let source remains included in W_B",
+    "proof_nodes": 129,
+    "tactic_syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "Lean.Parser.Tactic.intro",
+      "Lean.Parser.Tactic.exact"
+    ]
+  },
+  "task_hash": "e8141657bd8180a14da3bbd80b9793c179195b7eaf4be70c2c58ef8ccc75d9cf",
+  "task_id": "fresh_sets_logic_06",
+  "task_input_hash": "f3c00d8bcf8eb5bca4c45e4837249e9989fb0ca1d1e418a4ea15ad7483fe4240",
+  "task_snapshot": {
+    "audit": {
+      "answer_access_audited": false,
+      "explicit_signature_frozen": true,
+      "family_reviewed": false,
+      "metric_closure_verified": true,
+      "reference_verification_method": "Lean compiler, batch source; engine replay/axiom audit pending",
+      "reference_verified": true
+    },
+    "binders": "{α β γ : Type*} (f : α → β) (g : α → γ) (hf : Function.Injective f)",
+    "context": "",
+    "domain": "sets_logic",
+    "environment": {
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1",
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11"
+    },
+    "family_id": "main_injective_first_coordinate",
+    "forbidden_declarations": [],
+    "hashes": {
+      "binders": "0a0efcd5d669c2badf759b34a5553044cbb33f13d44cb54c625c6abf9ca6fa31",
+      "context": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "premise_context": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proposition": "38c6da01b54a1bbfe3d8364acb9b019b672501ccea0144bd73febec387803325"
+    },
+    "imports": [
+      "Mathlib"
+    ],
+    "origin": "fresh",
+    "premise_context": "",
+    "proposition": "Function.Injective (fun x => (f x, g x))",
+    "provenance": {
+      "authorship_date": "2026-10-11",
+      "kind": "authored_composition",
+      "rationale": "Adds an arbitrary second component to an injective first-coordinate map.",
+      "training_novelty": "not_established"
+    },
+    "reference_measurements": {
+      "D": 1,
+      "T0": {
+        "denominator_decimal": "53",
+        "log2": -1.4059923596758361,
+        "numerator_decimal": "20"
+      },
+      "U_B_decimal": "13",
+      "U_S_decimal": "7",
+      "W_B": 13,
+      "W_S": 40,
+      "engine_hash": "3c093c02b7d907faad45ede5ed175e3527aeaa9dbb9ca2141293075aaeeaa343",
+      "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f"
+    },
+    "smoke": false,
+    "split": "main",
+    "stratum": "provisional_easy",
+    "target_name": "_root_.CompressionEval.fresh_sets_logic_06",
+    "task_id": "fresh_sets_logic_06"
+  },
+  "validation": {
+    "axioms": [],
+    "candidate_declarations": [
+      "CompressionEval.fresh_sets_logic_06"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 129,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.intro",
+        "Lean.Parser.Tactic.exact",
+        "Lean.Parser.Term.app",
+        "Lean.Parser.Term.paren",
+        "Lean.Parser.Term.hygienicLParen",
+        "hygieneInfo"
+      ],
+      "transitive_dependency_count": 10
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "3326761080",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 25.807018666993827,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "89559230e07040734c6c9e4e1b466154ef2f16ab176a5778fde33bd02fae7cbb",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.fresh_sets_logic_06",
+    "source_tokens": {
+      "W_B": 13,
+      "W_S": 40,
+      "W_full": 57,
+      "body_spans": [
+        {
+          "end": 180,
+          "start": 178
+        },
+        {
+          "end": 186,
+          "start": 181
+        },
+        {
+          "end": 188,
+          "start": 187
+        },
+        {
+          "end": 190,
+          "start": 189
+        },
+        {
+          "end": 192,
+          "start": 191
+        },
+        {
+          "end": 193,
+          "start": 192
+        },
+        {
+          "end": 199,
+          "start": 194
+        },
+        {
+          "end": 202,
+          "start": 200
+        },
+        {
+          "end": 204,
+          "start": 203
+        },
+        {
+          "end": 212,
+          "start": 204
+        },
+        {
+          "end": 221,
+          "start": 213
+        },
+        {
+          "end": 223,
+          "start": 222
+        },
+        {
+          "end": 224,
+          "start": 223
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 50,
+          "start": 8
+        },
+        {
+          "end": 52,
+          "start": 51
+        },
+        {
+          "end": 54,
+          "start": 52
+        },
+        {
+          "end": 57,
+          "start": 55
+        },
+        {
+          "end": 60,
+          "start": 58
+        },
+        {
+          "end": 62,
+          "start": 61
+        },
+        {
+          "end": 68,
+          "start": 63
+        },
+        {
+          "end": 69,
+          "start": 68
+        },
+        {
+          "end": 71,
+          "start": 70
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 77,
+          "start": 75
+        },
+        {
+          "end": 81,
+          "start": 78
+        },
+        {
+          "end": 84,
+          "start": 82
+        },
+        {
+          "end": 85,
+          "start": 84
+        },
+        {
+          "end": 87,
+          "start": 86
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 93,
+          "start": 91
+        },
+        {
+          "end": 97,
+          "start": 94
+        },
+        {
+          "end": 100,
+          "start": 98
+        },
+        {
+          "end": 101,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 103
+        },
+        {
+          "end": 107,
+          "start": 106
+        },
+        {
+          "end": 126,
+          "start": 108
+        },
+        {
+          "end": 128,
+          "start": 127
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 131,
+          "start": 130
+        },
+        {
+          "end": 152,
+          "start": 134
+        },
+        {
+          "end": 154,
+          "start": 153
+        },
+        {
+          "end": 157,
+          "start": 154
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 162,
+          "start": 160
+        },
+        {
+          "end": 164,
+          "start": 163
+        },
+        {
+          "end": 165,
+          "start": 164
+        },
+        {
+          "end": 167,
+          "start": 166
+        },
+        {
+          "end": 168,
+          "start": 167
+        },
+        {
+          "end": 170,
+          "start": 169
+        },
+        {
+          "end": 172,
+          "start": 171
+        },
+        {
+          "end": 173,
+          "start": 172
+        },
+        {
+          "end": 174,
+          "start": 173
+        },
+        {
+          "end": 177,
+          "start": 175
+        },
+        {
+          "end": 180,
+          "start": 178
+        },
+        {
+          "end": 186,
+          "start": 181
+        },
+        {
+          "end": 188,
+          "start": 187
+        },
+        {
+          "end": 190,
+          "start": 189
+        },
+        {
+          "end": 192,
+          "start": 191
+        },
+        {
+          "end": 193,
+          "start": 192
+        },
+        {
+          "end": 199,
+          "start": 194
+        },
+        {
+          "end": 202,
+          "start": 200
+        },
+        {
+          "end": 204,
+          "start": 203
+        },
+        {
+          "end": 212,
+          "start": 204
+        },
+        {
+          "end": 221,
+          "start": 213
+        },
+        {
+          "end": 223,
+          "start": 222
+        },
+        {
+          "end": 224,
+          "start": 223
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 178,
+      "signature_spans": [
+        {
+          "end": 52,
+          "start": 51
+        },
+        {
+          "end": 54,
+          "start": 52
+        },
+        {
+          "end": 57,
+          "start": 55
+        },
+        {
+          "end": 60,
+          "start": 58
+        },
+        {
+          "end": 62,
+          "start": 61
+        },
+        {
+          "end": 68,
+          "start": 63
+        },
+        {
+          "end": 69,
+          "start": 68
+        },
+        {
+          "end": 71,
+          "start": 70
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 77,
+          "start": 75
+        },
+        {
+          "end": 81,
+          "start": 78
+        },
+        {
+          "end": 84,
+          "start": 82
+        },
+        {
+          "end": 85,
+          "start": 84
+        },
+        {
+          "end": 87,
+          "start": 86
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 93,
+          "start": 91
+        },
+        {
+          "end": 97,
+          "start": 94
+        },
+        {
+          "end": 100,
+          "start": 98
+        },
+        {
+          "end": 101,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 103
+        },
+        {
+          "end": 107,
+          "start": 106
+        },
+        {
+          "end": 126,
+          "start": 108
+        },
+        {
+          "end": 128,
+          "start": 127
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 152,
+          "start": 134
+        },
+        {
+          "end": 154,
+          "start": 153
+        },
+        {
+          "end": 157,
+          "start": 154
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 162,
+          "start": 160
+        },
+        {
+          "end": 164,
+          "start": 163
+        },
+        {
+          "end": 165,
+          "start": 164
+        },
+        {
+          "end": 167,
+          "start": 166
+        },
+        {
+          "end": 168,
+          "start": 167
+        },
+        {
+          "end": 170,
+          "start": 169
+        },
+        {
+          "end": 172,
+          "start": 171
+        },
+        {
+          "end": 173,
+          "start": 172
+        },
+        {
+          "end": 174,
+          "start": 173
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.fresh_sets_logic_06 {α β γ : Type*} (f : α → β) (g : α → γ) (hf : Function.Injective f) :\n  Function.Injective (fun x => (f x, g x)) :=\nby intro x y h; exact hf (congrArg Prod.fst h)",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "α",
+          "type_source": "Type u_1"
+        },
+        {
+          "binder_info": "implicit",
+          "name": "β",
+          "type_source": "Type u_2"
+        },
+        {
+          "binder_info": "implicit",
+          "name": "γ",
+          "type_source": "Type u_3"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "f",
+          "type_source": "α → β"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "g",
+          "type_source": "α → γ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hf",
+          "type_source": "Function.Injective.{u_1 + 1, u_2 + 1} f"
+        }
+      ],
+      "proposition": "Function.Injective.{u_1 + 1, max (u_3 + 1) (u_2 + 1)} fun (x : α) => Prod.mk.{u_2, u_3} (f x) (g x)"
+    },
+    "trusted_type_expression": "forall {α : Type.{u_1}} {β : Type.{u_2}} {γ : Type.{u_3}} (f : α -> β) (g : α -> γ), (Function.Injective.{succ u_1, succ u_2} α β f) -> (Function.Injective.{succ u_1, max (succ u_3) (succ u_2)} α (Prod.{u_2, u_3} β γ) (fun (x : α) => Prod.mk.{u_2, u_3} β γ (f x) (g x)))",
+    "trusted_type_source": "∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} (f : α → β) (g : α → γ),\n  Function.Injective.{u_1 + 1, u_2 + 1} f →\n    Function.Injective.{u_1 + 1, max (u_3 + 1) (u_2 + 1)} fun (x : α) => Prod.mk.{u_2, u_3} (f x) (g x)",
+    "universe_parameters": [
+      "u_1",
+      "u_2",
+      "u_3"
+    ],
+    "validity_status": "success"
+  },
+  "validity_status": "success",
+  "verification_request_hash": "5e9851cd268d5ad18d8f77897b0f3379bf3666b9589e6c5f3a9d49a70104905e"
+}

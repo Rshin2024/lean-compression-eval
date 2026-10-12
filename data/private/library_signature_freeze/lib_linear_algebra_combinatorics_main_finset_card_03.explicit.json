@@ -1,0 +1,221 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {α : Type u_1}, Eq.{1} (Finset.card.{u_1} EmptyCollection.emptyCollection.{u_1}) 0",
+  "trusted_type_expression": "forall {α : Type.{u_1}}, Eq.{1} Nat (Finset.card.{u_1} α (EmptyCollection.emptyCollection.{u_1} (Finset.{u_1} α) (Finset.instEmptyCollection.{u_1} α))) (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0))",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} (Finset.card.{u_1} EmptyCollection.emptyCollection.{u_1}) 0",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "α",
+        "binder_info": "implicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_linear_algebra_combinatorics_main_finset_card_03 {«α» : Type u_1} :\n  #(∅ : Finset α) = 0 :=\nrfl",
+    "signature_spans": [
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 102
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 110,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 125
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 130
+      }
+    ],
+    "proof_offset": 134,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 102
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 110,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 125
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 137
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 134,
+        "end": 137
+      }
+    ],
+    "W_full": 20,
+    "W_S": 15,
+    "W_B": 1
+  },
+  "root": "CompressionEval.lib_linear_algebra_combinatorics_main_finset_card_03",
+  "proved_type_fingerprint": "4190726604",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 288,
+    "syntax_kinds": [],
+    "proof_nodes": 19,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_linear_algebra_combinatorics_main_finset_card_03"
+  ],
+  "axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "3599cd8e301526d52a84a5e4ffbf64c61111d7fba0bc4944fdf747d5935305f6",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.449159916024655
+  },
+  "request_fingerprint": "f6f0cf7b6546926499910cc6ed8fd5a0545a669400f056c4e235db5fa1498cc9"
+}

@@ -1,0 +1,286 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {α : Type u_1} {s : Finset.{u_1} α}, Ne.{1} (Finset.card.{u_1} s) 0 ↔ Finset.Nonempty.{u_1} s",
+  "trusted_type_expression": "forall {α : Type.{u_1}} {s : Finset.{u_1} α}, Iff (Ne.{1} Nat (Finset.card.{u_1} α s) (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0))) (Finset.Nonempty.{u_1} α s)",
+  "trusted_telescope": {
+    "proposition": "Ne.{1} (Finset.card.{u_1} s) 0 ↔ Finset.Nonempty.{u_1} s",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Finset.{u_1} α",
+        "name": "s",
+        "binder_info": "implicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_linear_algebra_combinatorics_main_finset_card_05 {«α» : Type u_1} {«s» : Finset.{u_1} α} :\n  #s ≠ 0 ↔ s.Nonempty :=\ncard_eq_zero.ne.trans nonempty_iff_ne_empty.symm",
+    "signature_spans": [
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 102
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 105,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 119
+      },
+      {
+        "start": 119,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 124
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 129
+      },
+      {
+        "start": 134,
+        "end": 135
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 157
+      }
+    ],
+    "proof_offset": 161,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 102
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 105,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 119
+      },
+      {
+        "start": 119,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 124
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 134,
+        "end": 135
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 157
+      },
+      {
+        "start": 158,
+        "end": 160
+      },
+      {
+        "start": 161,
+        "end": 182
+      },
+      {
+        "start": 183,
+        "end": 209
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 161,
+        "end": 182
+      },
+      {
+        "start": 183,
+        "end": 209
+      }
+    ],
+    "W_full": 27,
+    "W_S": 21,
+    "W_B": 2
+  },
+  "root": "CompressionEval.lib_linear_algebra_combinatorics_main_finset_card_05",
+  "proved_type_fingerprint": "3376242047",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 1978,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "null"
+    ],
+    "proof_nodes": 125,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_linear_algebra_combinatorics_main_finset_card_05"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "59222032aa50945310e87a0dfd05fbb9da84acdb763ea0e4f02771a8ae6d3505",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.8805392920039594
+  },
+  "request_fingerprint": "906e3d4e8cfd015cd9fb8b3ced2e14da5f7837192ea0a6728722dbace948b9f2"
+}

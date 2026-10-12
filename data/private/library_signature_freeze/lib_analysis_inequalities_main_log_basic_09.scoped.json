@@ -1,0 +1,257 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "Set.SurjOn.{0, 0} Real.log (Set.Ioi.{0} 0) Set.univ.{0}",
+  "trusted_type_expression": "Set.SurjOn.{0, 0} Real Real Real.log (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero))) (Set.univ.{0} Real)",
+  "trusted_telescope": {
+    "proposition": "Set.SurjOn.{0, 0} Real.log (Set.Ioi.{0} 0) Set.univ.{0}",
+    "binders": []
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_analysis_inequalities_main_log_basic_09  :\n  SurjOn log (Ioi 0) univ :=\nfun x _ => ⟨exp x, exp_pos x, log_exp x⟩",
+    "signature_spans": [
+      {
+        "start": 80,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 92,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 103
+      }
+    ],
+    "proof_offset": 107,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 74
+      },
+      {
+        "start": 76,
+        "end": 77
+      },
+      {
+        "start": 80,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 92,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 128,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 148
+      },
+      {
+        "start": 148,
+        "end": 151
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 107,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 128,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 148
+      },
+      {
+        "start": 148,
+        "end": 151
+      }
+    ],
+    "W_full": 25,
+    "W_S": 7,
+    "W_B": 14
+  },
+  "root": "CompressionEval.lib_analysis_inequalities_main_log_basic_09",
+  "proved_type_fingerprint": "1319849725",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 15795,
+    "syntax_kinds": [
+      "Lean.Parser.Term.fun",
+      "Lean.Parser.Term.basicFun",
+      "null",
+      "Lean.Parser.Term.hole",
+      "Lean.Parser.Term.anonymousCtor",
+      "Lean.Parser.Term.app"
+    ],
+    "proof_nodes": 129,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_analysis_inequalities_main_log_basic_09"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "c1e40bc3f7a0ac3cbc6c294e8ea56d1faf71b8bc5d59237acc41a62d98b089e9",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 3.4771673339419067
+  },
+  "request_fingerprint": "9babef812ec9fc71c2b055881e075004c88ea062e01c7447bad29249441738e4"
+}

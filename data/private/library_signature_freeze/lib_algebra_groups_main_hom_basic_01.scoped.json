@@ -1,0 +1,173 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {α : Type u_1} [inst : DivisionCommMonoid.{u_1} α], Eq.{u_1 + 1} (⇑invMonoidHom.{u_1}) Inv.inv.{u_1}",
+  "trusted_type_expression": "forall {α : Type.{u_1}} [inst._@.EvaluatorCandidate.3199546789._hygCtx._hyg.9 : DivisionCommMonoid.{u_1} α], Eq.{succ u_1} (α -> α) (DFunLike.coe.{succ u_1, succ u_1, succ u_1} (MonoidHom.{u_1, u_1} α α (MulOneClass.toMulOne.{u_1} α (Monoid.toMulOneClass.{u_1} α (DivInvMonoid.toMonoid.{u_1} α (DivisionMonoid.toDivInvMonoid.{u_1} α (DivisionCommMonoid.toDivisionMonoid.{u_1} α inst._@.EvaluatorCandidate.3199546789._hygCtx._hyg.9))))) (MulOneClass.toMulOne.{u_1} α (Monoid.toMulOneClass.{u_1} α (DivInvMonoid.toMonoid.{u_1} α (DivisionMonoid.toDivInvMonoid.{u_1} α (DivisionCommMonoid.toDivisionMonoid.{u_1} α inst._@.EvaluatorCandidate.3199546789._hygCtx._hyg.9)))))) α (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : α) => α) (MonoidHom.instFunLike.{u_1, u_1} α α (MulOneClass.toMulOne.{u_1} α (Monoid.toMulOneClass.{u_1} α (DivInvMonoid.toMonoid.{u_1} α (DivisionMonoid.toDivInvMonoid.{u_1} α (DivisionCommMonoid.toDivisionMonoid.{u_1} α inst._@.EvaluatorCandidate.3199546789._hygCtx._hyg.9))))) (MulOneClass.toMulOne.{u_1} α (Monoid.toMulOneClass.{u_1} α (DivInvMonoid.toMonoid.{u_1} α (DivisionMonoid.toDivInvMonoid.{u_1} α (DivisionCommMonoid.toDivisionMonoid.{u_1} α inst._@.EvaluatorCandidate.3199546789._hygCtx._hyg.9)))))) (invMonoidHom.{u_1} α inst._@.EvaluatorCandidate.3199546789._hygCtx._hyg.9)) (Inv.inv.{u_1} α (InvOneClass.toInv.{u_1} α (DivInvOneMonoid.toInvOneClass.{u_1} α (DivisionMonoid.toDivInvOneMonoid.{u_1} α (DivisionCommMonoid.toDivisionMonoid.{u_1} α inst._@.EvaluatorCandidate.3199546789._hygCtx._hyg.9)))))",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_1 + 1} (⇑invMonoidHom.{u_1}) Inv.inv.{u_1}",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "DivisionCommMonoid.{u_1} α",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.9",
+        "binder_info": "instance"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_algebra_groups_main_hom_basic_01  :\n  (invMonoidHom : α → α) = Inv.inv :=\nrfl",
+    "signature_spans": [
+      {
+        "start": 73,
+        "end": 74
+      },
+      {
+        "start": 74,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 98
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 109
+      }
+    ],
+    "proof_offset": 113,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 67
+      },
+      {
+        "start": 69,
+        "end": 70
+      },
+      {
+        "start": 73,
+        "end": 74
+      },
+      {
+        "start": 74,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 98
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 116
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 113,
+        "end": 116
+      }
+    ],
+    "W_full": 14,
+    "W_S": 9,
+    "W_B": 1
+  },
+  "root": "CompressionEval.lib_algebra_groups_main_hom_basic_01",
+  "proved_type_fingerprint": "2520191669",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 484,
+    "syntax_kinds": [],
+    "proof_nodes": 125,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_algebra_groups_main_hom_basic_01"
+  ],
+  "axioms": [
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "5a743971fec9cd2bc8c3cfd6cc870bc89dcd3b8184b9278cbf1edae5ab2c1af3",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 3.563554707914591
+  },
+  "request_fingerprint": "f88396d50b9dbf38e2fb799063df63c45b3d4df0ff21dc7f93ba14f827d22dc1"
+}

@@ -1,0 +1,515 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1",
+    "u_4"
+  ],
+  "trusted_type_source": "∀ {α : Sort u_1} {β : Sort u_4} (p : α → Prop) [inst : DecidablePred.{u_1} p]\n  (x₀ : (Subtype.{u_1} fun (a : α) => p a) → β) (x : (Subtype.{u_1} fun (a : α) => ¬p a) → β) (a : α) (h : p a),\n  Eq.{u_4} (↑((Equiv.symm.{max 1 (imax u_1 u_4), imax (max 1 u_1) u_4} (Equiv.subtypePreimage.{u_1, u_4} p x₀)) x) a)\n    (x₀ (Subtype.mk.{u_1} a h))",
+  "trusted_type_expression": "forall {α : Sort.{u_1}} {β : Sort.{u_4}} (p : α -> Prop) [inst._@.EvaluatorCandidate.2376916631._hygCtx._hyg.13 : DecidablePred.{u_1} α p] (x₀ : (Subtype.{u_1} α (fun (a : α) => p a)) -> β) (x : (Subtype.{u_1} α (fun (a : α) => Not (p a))) -> β) (a : α) (h : p a), Eq.{u_4} β (Subtype.val.{imax u_1 u_4} (α -> β) (fun (x : α -> β) => Eq.{imax (max 1 u_1) u_4} ((Subtype.{u_1} α (fun (a : α) => p a)) -> β) (Function.comp.{max 1 u_1, u_1, u_4} (Subtype.{u_1} α (fun (a : α) => p a)) α β x (Subtype.val.{u_1} α (fun (a : α) => p a))) x₀) (DFunLike.coe.{max (max 1 (imax u_1 u_4)) (imax (max 1 u_1) u_4), imax (max 1 u_1) u_4, max 1 (imax u_1 u_4)} (Equiv.{imax (max 1 u_1) u_4, max 1 (imax u_1 u_4)} ((Subtype.{u_1} α (fun (a : α) => Not (p a))) -> β) (Subtype.{imax u_1 u_4} (α -> β) (fun (x : α -> β) => Eq.{imax (max 1 u_1) u_4} ((Subtype.{u_1} α (fun (a : α) => p a)) -> β) (Function.comp.{max 1 u_1, u_1, u_4} (Subtype.{u_1} α (fun (a : α) => p a)) α β x (Subtype.val.{u_1} α (fun (a : α) => p a))) x₀))) ((Subtype.{u_1} α (fun (a : α) => Not (p a))) -> β) (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : (Subtype.{u_1} α (fun (a : α) => Not (p a))) -> β) => Subtype.{imax u_1 u_4} (α -> β) (fun (x : α -> β) => Eq.{imax (max 1 u_1) u_4} ((Subtype.{u_1} α (fun (a : α) => p a)) -> β) (Function.comp.{max 1 u_1, u_1, u_4} (Subtype.{u_1} α (fun (a : α) => p a)) α β x (Subtype.val.{u_1} α (fun (a : α) => p a))) x₀)) (EquivLike.toFunLike.{max (max 1 (imax u_1 u_4)) (imax (max 1 u_1) u_4), imax (max 1 u_1) u_4, max 1 (imax u_1 u_4)} (Equiv.{imax (max 1 u_1) u_4, max 1 (imax u_1 u_4)} ((Subtype.{u_1} α (fun (a : α) => Not (p a))) -> β) (Subtype.{imax u_1 u_4} (α -> β) (fun (x : α -> β) => Eq.{imax (max 1 u_1) u_4} ((Subtype.{u_1} α (fun (a : α) => p a)) -> β) (Function.comp.{max 1 u_1, u_1, u_4} (Subtype.{u_1} α (fun (a : α) => p a)) α β x (Subtype.val.{u_1} α (fun (a : α) => p a))) x₀))) ((Subtype.{u_1} α (fun (a : α) => Not (p a))) -> β) (Subtype.{imax u_1 u_4} (α -> β) (fun (x : α -> β) => Eq.{imax (max 1 u_1) u_4} ((Subtype.{u_1} α (fun (a : α) => p a)) -> β) (Function.comp.{max 1 u_1, u_1, u_4} (Subtype.{u_1} α (fun (a : α) => p a)) α β x (Subtype.val.{u_1} α (fun (a : α) => p a))) x₀)) (Equiv.instEquivLike.{imax (max 1 u_1) u_4, max 1 (imax u_1 u_4)} ((Subtype.{u_1} α (fun (a : α) => Not (p a))) -> β) (Subtype.{imax u_1 u_4} (α -> β) (fun (x : α -> β) => Eq.{imax (max 1 u_1) u_4} ((Subtype.{u_1} α (fun (a : α) => p a)) -> β) (Function.comp.{max 1 u_1, u_1, u_4} (Subtype.{u_1} α (fun (a : α) => p a)) α β x (Subtype.val.{u_1} α (fun (a : α) => p a))) x₀)))) (Equiv.symm.{max 1 (imax u_1 u_4), imax (max 1 u_1) u_4} (Subtype.{imax u_1 u_4} (α -> β) (fun (x : α -> β) => Eq.{imax (max 1 u_1) u_4} ((Subtype.{u_1} α (fun (a : α) => p a)) -> β) (Function.comp.{max 1 u_1, u_1, u_4} (Subtype.{u_1} α (fun (a : α) => p a)) α β x (Subtype.val.{u_1} α (fun (a : α) => p a))) x₀)) ((Subtype.{u_1} α (fun (a : α) => Not (p a))) -> β) (Equiv.subtypePreimage.{u_1, u_4} α β p inst._@.EvaluatorCandidate.2376916631._hygCtx._hyg.13 x₀)) x) a) (x₀ (Subtype.mk.{u_1} α (fun (a : α) => p a) a h))",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_4} (↑((Equiv.symm.{max 1 (imax u_1 u_4), imax (max 1 u_1) u_4} (Equiv.subtypePreimage.{u_1, u_4} p x₀)) x) a)\n  (x₀ (Subtype.mk.{u_1} a h))",
+    "binders": [
+      {
+        "type_source": "Sort u_1",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Sort u_4",
+        "name": "β",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "α → Prop",
+        "name": "p",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "DecidablePred.{u_1} p",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.13",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "(Subtype.{u_1} fun (a : α) => p a) → β",
+        "name": "x₀",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "(Subtype.{u_1} fun (a : α) => ¬p a) → β",
+        "name": "x",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "α",
+        "name": "a",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "p a",
+        "name": "h",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_sets_logic_main_equiv_basic_09 (x : { a // ¬p a } → β) (a : α) (h : p a) :\n  ((subtypePreimage p x₀).symm x : α → β) a = x₀ ⟨a, h⟩ :=\ndite_eq_left h",
+    "signature_spans": [
+      {
+        "start": 66,
+        "end": 67
+      },
+      {
+        "start": 67,
+        "end": 68
+      },
+      {
+        "start": 69,
+        "end": 70
+      },
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 73,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 77
+      },
+      {
+        "start": 78,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 89
+      },
+      {
+        "start": 90,
+        "end": 92
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 101
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 106,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 119,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 141
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 143,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 154
+      },
+      {
+        "start": 155,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 161
+      },
+      {
+        "start": 161,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 166
+      },
+      {
+        "start": 167,
+        "end": 171
+      },
+      {
+        "start": 172,
+        "end": 175
+      },
+      {
+        "start": 175,
+        "end": 176
+      },
+      {
+        "start": 176,
+        "end": 177
+      },
+      {
+        "start": 178,
+        "end": 179
+      },
+      {
+        "start": 179,
+        "end": 182
+      }
+    ],
+    "proof_offset": 186,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 65
+      },
+      {
+        "start": 66,
+        "end": 67
+      },
+      {
+        "start": 67,
+        "end": 68
+      },
+      {
+        "start": 69,
+        "end": 70
+      },
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 73,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 77
+      },
+      {
+        "start": 78,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 89
+      },
+      {
+        "start": 90,
+        "end": 92
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 101
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 106,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 119,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 141
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 143,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 154
+      },
+      {
+        "start": 155,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 161
+      },
+      {
+        "start": 161,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 166
+      },
+      {
+        "start": 167,
+        "end": 171
+      },
+      {
+        "start": 172,
+        "end": 175
+      },
+      {
+        "start": 175,
+        "end": 176
+      },
+      {
+        "start": 176,
+        "end": 177
+      },
+      {
+        "start": 178,
+        "end": 179
+      },
+      {
+        "start": 179,
+        "end": 182
+      },
+      {
+        "start": 183,
+        "end": 185
+      },
+      {
+        "start": 186,
+        "end": 198
+      },
+      {
+        "start": 199,
+        "end": 200
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 186,
+        "end": 198
+      },
+      {
+        "start": 199,
+        "end": 200
+      }
+    ],
+    "W_full": 52,
+    "W_S": 46,
+    "W_B": 2
+  },
+  "root": "CompressionEval.lib_sets_logic_main_equiv_basic_09",
+  "proved_type_fingerprint": "3669343752",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 416,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "null"
+    ],
+    "proof_nodes": 103,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_sets_logic_main_equiv_basic_09"
+  ],
+  "axioms": [
+    "Quot.sound"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "b3e29b1954a388b95e506566684d613d671c62a74f0d773515f31cb612ad4a17",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.3344774590805173
+  },
+  "request_fingerprint": "d5554e3eabb4f36bf659f44fddfad0c3a6465947c4a516e2d6e7858fdf6b56fd"
+}

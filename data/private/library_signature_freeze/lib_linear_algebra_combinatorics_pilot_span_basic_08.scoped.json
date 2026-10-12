@@ -1,0 +1,493 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1",
+    "u_4",
+    "u_8"
+  ],
+  "trusted_type_source": "∀ {R : Type u_1} {M : Type u_4} [inst : Semiring.{u_1} R] [inst_1 : AddCommMonoid.{u_4} M]\n  [inst_2 : Module.{u_1, u_4} R M] {N : Type u_8} [inst_3 : AddCommMonoid.{u_8} N] [inst_4 : Module.{u_1, u_8} R N]\n  (f : LinearMap.{u_1, u_1, u_4, u_8} (RingHom.id.{u_1} R) M N) {S : Set.{u_4} M},\n  Eq.{u_4 + 1} (Submodule.span.{u_1, u_4} R S) Top.top.{u_4} →\n    (Eq.{max (u_4 + 1) (u_8 + 1)} f 0 ↔ ∀ (s : ↑S), Eq.{u_8 + 1} (f ↑s) 0)",
+  "trusted_type_expression": "forall {R : Type.{u_1}} {M : Type.{u_4}} [inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 : Semiring.{u_1} R] [inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.12 : AddCommMonoid.{u_4} M] [inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.15 : Module.{u_1, u_4} R M inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.12] {N : Type.{u_8}} [inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.46 : AddCommMonoid.{u_8} N] [inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.49 : Module.{u_1, u_8} R N inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.46] (f : LinearMap.{u_1, u_1, u_4, u_8} R R inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9)) M N inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.12 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.46 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.15 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.49) {S : Set.{u_4} M}, (Eq.{succ u_4} (Submodule.{u_1, u_4} R M inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.12 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.15) (Submodule.span.{u_1, u_4} R M inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.12 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.15 S) (Top.top.{u_4} (Submodule.{u_1, u_4} R M inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.12 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.15) (Submodule.instTop.{u_1, u_4} R M inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.12 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.15))) -> (Iff (Eq.{max (succ u_4) (succ u_8)} (LinearMap.{u_1, u_1, u_4, u_8} R R inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9)) M N inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.12 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.46 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.15 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.49) f (OfNat.ofNat.{max u_4 u_8} (LinearMap.{u_1, u_1, u_4, u_8} R R inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9)) M N inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.12 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.46 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.15 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.49) 0 (Zero.toOfNat0.{max u_4 u_8} (LinearMap.{u_1, u_1, u_4, u_8} R R inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9)) M N inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.12 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.46 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.15 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.49) (LinearMap.instZero.{u_1, u_1, u_4, u_8} R R M N inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.12 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.46 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.15 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.49 (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9)))))) (forall (s : Set.Elem.{u_4} M S), Eq.{succ u_8} N (DFunLike.coe.{max (succ u_4) (succ u_8), succ u_4, succ u_8} (LinearMap.{u_1, u_1, u_4, u_8} R R inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9)) M N inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.12 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.46 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.15 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.49) M (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : M) => N) (LinearMap.instFunLike.{u_1, u_1, u_4, u_8} R R M N inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.12 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.46 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.15 inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.49 (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.9))) f (Subtype.val.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S x) s)) (OfNat.ofNat.{u_8} N 0 (Zero.toOfNat0.{u_8} N (AddZero.toZero.{u_8} N (AddZeroClass.toAddZero.{u_8} N (AddMonoid.toAddZeroClass.{u_8} N (AddCommMonoid.toAddMonoid.{u_8} N inst._@.EvaluatorCandidate.4176122347._hygCtx._hyg.46))))))))",
+  "trusted_telescope": {
+    "proposition": "Eq.{max (u_4 + 1) (u_8 + 1)} f 0 ↔ ∀ (s : ↑S), Eq.{u_8 + 1} (f ↑s) 0",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "R",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_4",
+        "name": "M",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Semiring.{u_1} R",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.9",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "AddCommMonoid.{u_4} M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.12",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Module.{u_1, u_4} R M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.15",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Type u_8",
+        "name": "N",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "AddCommMonoid.{u_8} N",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.46",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Module.{u_1, u_8} R N",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.49",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "LinearMap.{u_1, u_1, u_4, u_8} (RingHom.id.{u_1} R) M N",
+        "name": "f",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Set.{u_4} M",
+        "name": "S",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Eq.{u_4 + 1} (Submodule.span.{u_1, u_4} R S) Top.top.{u_4}",
+        "name": "hM",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_08 (f : M →ₗ[R] N)\n    {S : Set M} (hM : span R S = ⊤) :\n  f = 0 ↔ ∀ (s : S), f s = 0 :=\nlinearMap_eq_iff_of_span_eq_top f 0 hM",
+    "signature_spans": [
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 98
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 132
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 140
+      },
+      {
+        "start": 140,
+        "end": 141
+      },
+      {
+        "start": 146,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 159
+      },
+      {
+        "start": 160,
+        "end": 161
+      },
+      {
+        "start": 161,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 166
+      },
+      {
+        "start": 166,
+        "end": 167
+      },
+      {
+        "start": 167,
+        "end": 168
+      },
+      {
+        "start": 169,
+        "end": 170
+      },
+      {
+        "start": 171,
+        "end": 172
+      },
+      {
+        "start": 173,
+        "end": 174
+      },
+      {
+        "start": 175,
+        "end": 176
+      }
+    ],
+    "proof_offset": 180,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 98
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 132
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 140
+      },
+      {
+        "start": 140,
+        "end": 141
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 146,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 159
+      },
+      {
+        "start": 160,
+        "end": 161
+      },
+      {
+        "start": 161,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 166
+      },
+      {
+        "start": 166,
+        "end": 167
+      },
+      {
+        "start": 167,
+        "end": 168
+      },
+      {
+        "start": 169,
+        "end": 170
+      },
+      {
+        "start": 171,
+        "end": 172
+      },
+      {
+        "start": 173,
+        "end": 174
+      },
+      {
+        "start": 175,
+        "end": 176
+      },
+      {
+        "start": 177,
+        "end": 179
+      },
+      {
+        "start": 180,
+        "end": 211
+      },
+      {
+        "start": 212,
+        "end": 213
+      },
+      {
+        "start": 214,
+        "end": 215
+      },
+      {
+        "start": 216,
+        "end": 218
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 180,
+        "end": 211
+      },
+      {
+        "start": 212,
+        "end": 213
+      },
+      {
+        "start": 214,
+        "end": 215
+      },
+      {
+        "start": 216,
+        "end": 218
+      }
+    ],
+    "W_full": 47,
+    "W_S": 39,
+    "W_B": 4
+  },
+  "root": "CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_08",
+  "proved_type_fingerprint": "1973275795",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 1084,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "null",
+      "num"
+    ],
+    "proof_nodes": 253,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_08"
+  ],
+  "axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "8135dbfcc206eb995de5cc63fd370319d0a40f39ded84354142a775e2d4f1d2f",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.704695667140186
+  },
+  "request_fingerprint": "2ff45767c179d6ef012fd4fd68506e746a77d79d42e7172d0872e8a4ca0aa8b6"
+}

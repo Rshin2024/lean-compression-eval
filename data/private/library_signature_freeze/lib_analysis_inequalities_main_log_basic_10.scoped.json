@@ -1,0 +1,184 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "Function.Surjective.{1, 1} Real.log",
+  "trusted_type_expression": "Function.Surjective.{1, 1} Real Real Real.log",
+  "trusted_telescope": {
+    "proposition": "Function.Surjective.{1, 1} Real.log",
+    "binders": []
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_analysis_inequalities_main_log_basic_10  :\n  Surjective log :=\nfun x => ⟨exp x, log_exp x⟩",
+    "signature_spans": [
+      {
+        "start": 80,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 94
+      }
+    ],
+    "proof_offset": 98,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 74
+      },
+      {
+        "start": 76,
+        "end": 77
+      },
+      {
+        "start": 80,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 110
+      },
+      {
+        "start": 110,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 126,
+        "end": 129
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 110
+      },
+      {
+        "start": 110,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 126,
+        "end": 129
+      }
+    ],
+    "W_full": 16,
+    "W_S": 2,
+    "W_B": 10
+  },
+  "root": "CompressionEval.lib_analysis_inequalities_main_log_basic_10",
+  "proved_type_fingerprint": "2395144156",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 15795,
+    "syntax_kinds": [
+      "Lean.Parser.Term.fun",
+      "Lean.Parser.Term.basicFun",
+      "null",
+      "Lean.Parser.Term.anonymousCtor",
+      "Lean.Parser.Term.app"
+    ],
+    "proof_nodes": 25,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_analysis_inequalities_main_log_basic_10"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "212e0914de41fe89305c052c8b6db7846f88d3d29a672eec5486f26ef2c7fdc9",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 3.771452999673784
+  },
+  "request_fingerprint": "0c8d496852f64c610a43b4994670958db3de62ec859a8627e041bc8dfa126874"
+}

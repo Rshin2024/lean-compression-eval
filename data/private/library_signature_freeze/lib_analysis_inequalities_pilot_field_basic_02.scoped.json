@@ -1,0 +1,349 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_2"
+  ],
+  "trusted_type_source": "∀ {α : Type u_2} [inst : NormedDivisionRing.{u_2} α] (a b : α),\n  Eq.{1} (NNNorm.nnnorm.{u_2} (HDiv.hDiv.{u_2, u_2, u_2} a b))\n    (HDiv.hDiv.{0, 0, 0} (NNNorm.nnnorm.{u_2} a) (NNNorm.nnnorm.{u_2} b))",
+  "trusted_type_expression": "forall {α : Type.{u_2}} [inst._@.EvaluatorCandidate.2434103787._hygCtx._hyg.6 : NormedDivisionRing.{u_2} α] (a : α) (b : α), Eq.{1} NNReal (NNNorm.nnnorm.{u_2} α (SeminormedAddGroup.toNNNorm.{u_2} α (SeminormedAddCommGroup.toSeminormedAddGroup.{u_2} α (NonUnitalSeminormedRing.toSeminormedAddCommGroup.{u_2} α (NonUnitalNormedRing.toNonUnitalSeminormedRing.{u_2} α (NormedRing.toNonUnitalNormedRing.{u_2} α (NormedDivisionRing.toNormedRing.{u_2} α inst._@.EvaluatorCandidate.2434103787._hygCtx._hyg.6)))))) (HDiv.hDiv.{u_2, u_2, u_2} α α α (instHDiv.{u_2} α (DivInvMonoid.toDiv.{u_2} α (DivisionRing.toDivInvMonoid.{u_2} α (NormedDivisionRing.toDivisionRing.{u_2} α inst._@.EvaluatorCandidate.2434103787._hygCtx._hyg.6)))) a b)) (HDiv.hDiv.{0, 0, 0} NNReal NNReal NNReal (instHDiv.{0} NNReal NNReal.instDiv) (NNNorm.nnnorm.{u_2} α (SeminormedAddGroup.toNNNorm.{u_2} α (SeminormedAddCommGroup.toSeminormedAddGroup.{u_2} α (NonUnitalSeminormedRing.toSeminormedAddCommGroup.{u_2} α (NonUnitalNormedRing.toNonUnitalSeminormedRing.{u_2} α (NormedRing.toNonUnitalNormedRing.{u_2} α (NormedDivisionRing.toNormedRing.{u_2} α inst._@.EvaluatorCandidate.2434103787._hygCtx._hyg.6)))))) a) (NNNorm.nnnorm.{u_2} α (SeminormedAddGroup.toNNNorm.{u_2} α (SeminormedAddCommGroup.toSeminormedAddGroup.{u_2} α (NonUnitalSeminormedRing.toSeminormedAddCommGroup.{u_2} α (NonUnitalNormedRing.toNonUnitalSeminormedRing.{u_2} α (NormedRing.toNonUnitalNormedRing.{u_2} α (NormedDivisionRing.toNormedRing.{u_2} α inst._@.EvaluatorCandidate.2434103787._hygCtx._hyg.6)))))) b))",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} (NNNorm.nnnorm.{u_2} (HDiv.hDiv.{u_2, u_2, u_2} a b))\n  (HDiv.hDiv.{0, 0, 0} (NNNorm.nnnorm.{u_2} a) (NNNorm.nnnorm.{u_2} b))",
+    "binders": [
+      {
+        "type_source": "Type u_2",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "NormedDivisionRing.{u_2} α",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.6",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "α",
+        "name": "a",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "α",
+        "name": "b",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_analysis_inequalities_pilot_field_basic_02 (a b : α) :\n  ‖a / b‖₊ = ‖a‖₊ / ‖b‖₊ :=\nmap_div₀ (nnnormHom : α →*₀ ℝ≥0) a b",
+    "signature_spans": [
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 87
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 93,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 101
+      },
+      {
+        "start": 101,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 113
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 114,
+        "end": 120
+      },
+      {
+        "start": 121,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 126
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 127,
+        "end": 133
+      }
+    ],
+    "proof_offset": 137,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 77
+      },
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 87
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 93,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 101
+      },
+      {
+        "start": 101,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 113
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 114,
+        "end": 120
+      },
+      {
+        "start": 121,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 126
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 127,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 149,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 160
+      },
+      {
+        "start": 161,
+        "end": 163
+      },
+      {
+        "start": 164,
+        "end": 171
+      },
+      {
+        "start": 172,
+        "end": 179
+      },
+      {
+        "start": 179,
+        "end": 180
+      },
+      {
+        "start": 181,
+        "end": 182
+      },
+      {
+        "start": 183,
+        "end": 184
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 137,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 149,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 160
+      },
+      {
+        "start": 161,
+        "end": 163
+      },
+      {
+        "start": 164,
+        "end": 171
+      },
+      {
+        "start": 172,
+        "end": 179
+      },
+      {
+        "start": 179,
+        "end": 180
+      },
+      {
+        "start": 181,
+        "end": 182
+      },
+      {
+        "start": 183,
+        "end": 184
+      }
+    ],
+    "W_full": 33,
+    "W_S": 19,
+    "W_B": 10
+  },
+  "root": "CompressionEval.lib_analysis_inequalities_pilot_field_basic_02",
+  "proved_type_fingerprint": "2939767066",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 8247,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "null",
+      "Lean.Parser.Term.typeAscription",
+      "Lean.Parser.Term.hygienicLParen",
+      "hygieneInfo",
+      "«term_→*₀_»",
+      "NNReal.«termℝ≥0»"
+    ],
+    "proof_nodes": 171,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_analysis_inequalities_pilot_field_basic_02"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "21df1971861348e4633d40d4165155e5264e2450332f95d4d3418021c2897e21",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 4.000591124873608
+  },
+  "request_fingerprint": "6548497ba05e70aabff1e8dc23117e94f0e47d001bf62262ce7394aad34869a4"
+}

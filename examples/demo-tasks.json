@@ -1,0 +1,44 @@
+[
+  {
+    "audit": {
+      "answer_access_audited": false,
+      "explicit_signature_frozen": true,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "reference_verification_method": "Lean compiler, batch source; engine replay/axiom audit pending",
+      "reference_verified": true
+    },
+    "binders": "{R : Type*} [CommRing R] (a b : R)",
+    "context": "",
+    "domain": "algebra_groups",
+    "environment": {
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1",
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11"
+    },
+    "family_id": "pilot_ring_difference_square",
+    "forbidden_declarations": [],
+    "hashes": {
+      "binders": "c831a45ab1b666f0eaf02595b8ac724b970e7447ad858c9b1088c367d5f3557c",
+      "context": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "premise_context": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proposition": "f220b1de2cfb7ee0a392b876992bf7441f6e4289a02288bce6a1f23caf47d75b"
+    },
+    "imports": [
+      "Mathlib"
+    ],
+    "origin": "fresh",
+    "premise_context": "",
+    "proposition": "(a + b) * (a - b) + b * b = a * a",
+    "provenance": {
+      "authorship_date": "2026-10-11",
+      "kind": "authored_composition",
+      "rationale": "Combines difference-of-squares factorization with an additive cancellation target.",
+      "training_novelty": "not_established"
+    },
+    "smoke": true,
+    "split": "pilot",
+    "stratum": "provisional_easy",
+    "target_name": "_root_.CompressionEval.smoke_ag_01",
+    "task_id": "smoke_ag_01"
+  }
+]

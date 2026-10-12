@@ -1,0 +1,376 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "∀ {m n k : ℕ}, k.Coprime m → (Dvd.dvd.{0} k (HMul.hMul.{0, 0, 0} m n) ↔ Dvd.dvd.{0} k n)",
+  "trusted_type_expression": "forall {m : Nat} {n : Nat} {k : Nat}, (Nat.Coprime k m) -> (Iff (Dvd.dvd.{0} Nat Nat.instDvd k (HMul.hMul.{0, 0, 0} Nat Nat Nat (instHMul.{0} Nat instMulNat) m n)) (Dvd.dvd.{0} Nat Nat.instDvd k n))",
+  "trusted_telescope": {
+    "proposition": "Dvd.dvd.{0} k (HMul.hMul.{0, 0, 0} m n) ↔ Dvd.dvd.{0} k n",
+    "binders": [
+      {
+        "type_source": "ℕ",
+        "name": "m",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "ℕ",
+        "name": "n",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "ℕ",
+        "name": "k",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "k.Coprime m",
+        "name": "H",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_number_theory_main_gcd_basic_09 {m n k : ℕ} (H : Coprime k m) :\n  k ∣ m * n ↔ k ∣ n :=\n⟨H.dvd_of_dvd_mul_left, fun h => dvd_mul_of_dvd_right h m⟩",
+    "signature_spans": [
+      {
+        "start": 67,
+        "end": 68
+      },
+      {
+        "start": 68,
+        "end": 69
+      },
+      {
+        "start": 70,
+        "end": 71
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 74,
+        "end": 75
+      },
+      {
+        "start": 76,
+        "end": 79
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 105,
+        "end": 108
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 120
+      },
+      {
+        "start": 121,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 126
+      }
+    ],
+    "proof_offset": 130,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 66
+      },
+      {
+        "start": 67,
+        "end": 68
+      },
+      {
+        "start": 68,
+        "end": 69
+      },
+      {
+        "start": 70,
+        "end": 71
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 74,
+        "end": 75
+      },
+      {
+        "start": 76,
+        "end": 79
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 105,
+        "end": 108
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 120
+      },
+      {
+        "start": 121,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 133
+      },
+      {
+        "start": 133,
+        "end": 154
+      },
+      {
+        "start": 154,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 159
+      },
+      {
+        "start": 160,
+        "end": 161
+      },
+      {
+        "start": 162,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 185
+      },
+      {
+        "start": 186,
+        "end": 187
+      },
+      {
+        "start": 188,
+        "end": 189
+      },
+      {
+        "start": 189,
+        "end": 192
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 130,
+        "end": 133
+      },
+      {
+        "start": 133,
+        "end": 154
+      },
+      {
+        "start": 154,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 159
+      },
+      {
+        "start": 160,
+        "end": 161
+      },
+      {
+        "start": 162,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 185
+      },
+      {
+        "start": 186,
+        "end": 187
+      },
+      {
+        "start": 188,
+        "end": 189
+      },
+      {
+        "start": 189,
+        "end": 192
+      }
+    ],
+    "W_full": 37,
+    "W_S": 23,
+    "W_B": 10
+  },
+  "root": "CompressionEval.lib_number_theory_main_gcd_basic_09",
+  "proved_type_fingerprint": "2682263725",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 654,
+    "syntax_kinds": [
+      "Lean.Parser.Term.anonymousCtor",
+      "null",
+      "Lean.Parser.Term.fun",
+      "Lean.Parser.Term.basicFun",
+      "Lean.Parser.Term.app"
+    ],
+    "proof_nodes": 83,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_number_theory_main_gcd_basic_09"
+  ],
+  "axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "61e18905b894f4939ec82200b27c8c15653ee9ca12c7cf8377259c41aa5ffcae",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.0807555406354368
+  },
+  "request_fingerprint": "67384d3e2066942d748e098606eba46b9139e4838a9aa450a697f7debfe7be07"
+}

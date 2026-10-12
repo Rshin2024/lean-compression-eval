@@ -1,0 +1,107 @@
+{
+  "task": {
+    "task_id": "lib_algebra_groups_main_units_basic_01",
+    "family_id": "source_module_Mathlib.Algebra.Group.Units.Basic",
+    "domain": "algebra_groups",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Algebra.Group.Basic",
+      "Mathlib.Algebra.Group.Commute.Defs",
+      "Mathlib.Algebra.Group.Units.Defs",
+      "Mathlib.Logic.Unique",
+      "Mathlib.Tactic.Lift",
+      "Mathlib.Tactic.Subsingleton",
+      "Mathlib.Tactic.Attr.Core"
+    ],
+    "context": "/-\nCopyright (c) 2017 Kenny Lau. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Kenny Lau, Mario Carneiro, Johannes Hölzl, Chris Hughes, Jens Wagemaker, Jon Eugster\n-/\n/-!\n# Units (i.e., invertible elements) of a monoid\n\nAn element of a `Monoid` is a unit if it has a two-sided inverse.\nThis file contains the basic lemmas on units in a monoid, especially focusing on singleton types\nand unique types.\n\n## TODO\n\nThe results here should be used to golf the basic `Group` lemmas.\n-/\n\npublic section\n\nassert_not_exists Multiplicative MonoidWithZero DenselyOrdered\n\nopen Function\n\nuniverse u\n\nvariable {α : Type u}\n\nsection HasElem\nassert_not_exists _root_.unique_one\n",
+    "binders": "{α : Type*} [Unique α] [One α]",
+    "proposition": "default = (1 : α)",
+    "target_name": "_root_.CompressionEval.lib_algebra_groups_main_units_basic_01",
+    "premise_context": "open Function\nuniverse u\nvariable {α : Type u}\nsection HasElem\n\nAvailable preceding statements (within the shown source scopes):\n",
+    "forbidden_declarations": [
+      "unique_one"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Algebra.Group.Units.Basic",
+      "source_path": "Mathlib/Algebra/Group/Units/Basic.lean",
+      "declaration": "unique_one",
+      "source_line": 42,
+      "source_sha256": "0e3286162096477f406b6affa27fac2c3c84ee6e620df878222b53206f7eb05b",
+      "prefix_end_character": 993,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "ef4dcd917fcb260bf352f95145fa5142179ab585018993740bf2082da06d1b98",
+      "premise_context": "578367d79e45ba6e4d3ad64bd9190c3995ec055f00377c61c5502b586511dd32",
+      "binders": "f230663a7bc36af98fd46357c7d179325c2a0324899b47cea6dfda44f6493749",
+      "proposition": "e049af02b28a5a73e7aa4d509f88f23a5d60382b7b0f78785aed41954f5ff5a2"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Algebra.Group.Basic",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Group.Commute.Defs",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Group.Units.Defs",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Logic.Unique",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.Lift",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.Subsingleton",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.Attr.Core",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

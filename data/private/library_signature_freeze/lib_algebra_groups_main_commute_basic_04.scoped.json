@@ -1,0 +1,271 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {G : Type u_1} [inst : Semigroup.{u_1} G] {a b : G},\n  Commute.{u_1} a b →\n    Function.Commute.{u_1} (fun (x : G) => HMul.hMul.{u_1, u_1, u_1} x a) fun (x : G) => HMul.hMul.{u_1, u_1, u_1} x b",
+  "trusted_type_expression": "forall {G : Type.{u_1}} [inst._@.EvaluatorCandidate.3262741907._hygCtx._hyg.3 : Semigroup.{u_1} G] {a : G} {b : G}, (Commute.{u_1} G (Semigroup.toMul.{u_1} G inst._@.EvaluatorCandidate.3262741907._hygCtx._hyg.3) a b) -> (Function.Commute.{u_1} G (fun (x._@.EvaluatorCandidate.3262741907._hygCtx._hyg.15 : G) => HMul.hMul.{u_1, u_1, u_1} G G G (instHMul.{u_1} G (Semigroup.toMul.{u_1} G inst._@.EvaluatorCandidate.3262741907._hygCtx._hyg.3)) x._@.EvaluatorCandidate.3262741907._hygCtx._hyg.15 a) (fun (x._@.EvaluatorCandidate.3262741907._hygCtx._hyg.26 : G) => HMul.hMul.{u_1, u_1, u_1} G G G (instHMul.{u_1} G (Semigroup.toMul.{u_1} G inst._@.EvaluatorCandidate.3262741907._hygCtx._hyg.3)) x._@.EvaluatorCandidate.3262741907._hygCtx._hyg.26 b))",
+  "trusted_telescope": {
+    "proposition": "Function.Commute.{u_1} (fun (x : G) => HMul.hMul.{u_1, u_1, u_1} x a) fun (x : G) => HMul.hMul.{u_1, u_1, u_1} x b",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "G",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Semigroup.{u_1} G",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.3",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "G",
+        "name": "a",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "G",
+        "name": "b",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Commute.{u_1} a b",
+        "name": "h",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_algebra_groups_main_commute_basic_04 (h : Commute a b) :\n  Function.Commute (· * a) (· * b) :=\nSemiconjBy.function_semiconj_mul_right_swap h",
+    "signature_spans": [
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 73,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 76
+      },
+      {
+        "start": 77,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 88,
+        "end": 89
+      },
+      {
+        "start": 94,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 112,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 127,
+        "end": 128
+      }
+    ],
+    "proof_offset": 132,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 71
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 73,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 76
+      },
+      {
+        "start": 77,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 88,
+        "end": 89
+      },
+      {
+        "start": 90,
+        "end": 91
+      },
+      {
+        "start": 94,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 112,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 175
+      },
+      {
+        "start": 176,
+        "end": 177
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 132,
+        "end": 175
+      },
+      {
+        "start": 176,
+        "end": 177
+      }
+    ],
+    "W_full": 24,
+    "W_S": 18,
+    "W_B": 2
+  },
+  "root": "CompressionEval.lib_algebra_groups_main_commute_basic_04",
+  "proved_type_fingerprint": "1836483438",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 37,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "null"
+    ],
+    "proof_nodes": 37,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_algebra_groups_main_commute_basic_04"
+  ],
+  "axioms": [
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "c688729089822c748dc8999207da8ab68e3dc14f1561763b0f950bdff15f388f",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 2.95373808266595
+  },
+  "request_fingerprint": "22eb3729966cd34ece8dc2ef956148ddb859f1334b7a1e9d1fd477fc389ebf9e"
+}

@@ -1,0 +1,79 @@
+{
+  "task": {
+    "task_id": "lib_number_theory_main_prime_basic_06",
+    "family_id": "source_module_Mathlib.Data.Nat.Prime.Basic",
+    "domain": "number_theory",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Algebra.GroupWithZero.Associated",
+      "Mathlib.Algebra.Ring.Parity",
+      "Mathlib.Data.Nat.Prime.Defs"
+    ],
+    "context": "/-\nCopyright (c) 2015 Microsoft Corporation. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Leonardo de Moura, Jeremy Avigad, Mario Carneiro\n-/\n/-!\n# Prime numbers\n\nThis file develops the theory of prime numbers: natural numbers `p ≥ 2` whose only divisors are\n`p` and `1`.\n\n-/\n\npublic section\n\nnamespace Nat\nvariable {n : ℕ}\n\ntheorem prime_mul_iff {a b : ℕ} : Nat.Prime (a * b) ↔ a.Prime ∧ b = 1 ∨ b.Prime ∧ a = 1 := by\n  simp only [irreducible_mul_iff, ← irreducible_iff_nat_prime, Nat.isUnit_iff]\n\ntheorem not_prime_mul {a b : ℕ} (a1 : a ≠ 1) (b1 : b ≠ 1) : ¬Prime (a * b) := by\n  simp [prime_mul_iff, *]\n\ntheorem not_prime_of_mul_eq {a b n : ℕ} (h : a * b = n) (h₁ : a ≠ 1) (h₂ : b ≠ 1) : ¬Prime n :=\n  h ▸ not_prime_mul h₁ h₂\n\ntheorem Prime.dvd_iff_eq {p a : ℕ} (hp : p.Prime) (a1 : a ≠ 1) : a ∣ p ↔ p = a := by\n  refine ⟨?_, by rintro rfl; rfl⟩\n  rintro ⟨j, rfl⟩\n  rcases prime_mul_iff.mp hp with (⟨_, rfl⟩ | ⟨_, rfl⟩)\n  · exact mul_one _\n  · exact (a1 rfl).elim\n\ntheorem Prime.eq_two_or_odd {p : ℕ} (hp : Prime p) : p = 2 ∨ p % 2 = 1 :=\n  p.mod_two_eq_zero_or_one.imp_left fun h =>\n    ((hp.eq_one_or_self_of_dvd 2 (dvd_of_mod_eq_zero h)).resolve_left (by decide)).symm\nassert_not_exists _root_.Nat.Prime.eq_two_or_odd'\n",
+    "binders": "{p : ℕ} (hp : Prime p)",
+    "proposition": "p = 2 ∨ Odd p",
+    "target_name": "_root_.CompressionEval.lib_number_theory_main_prime_basic_06",
+    "premise_context": "namespace Nat\nvariable {n : ℕ}\n\nAvailable preceding statements (within the shown source scopes):\ntheorem prime_mul_iff {a b : ℕ} : Nat.Prime (a * b) ↔ a.Prime ∧ b = 1 ∨ b.Prime ∧ a = 1\n\ntheorem not_prime_mul {a b : ℕ} (a1 : a ≠ 1) (b1 : b ≠ 1) : ¬Prime (a * b)\n\ntheorem not_prime_of_mul_eq {a b n : ℕ} (h : a * b = n) (h₁ : a ≠ 1) (h₂ : b ≠ 1) : ¬Prime n\n\ntheorem Prime.dvd_iff_eq {p a : ℕ} (hp : p.Prime) (a1 : a ≠ 1) : a ∣ p ↔ p = a\n\ntheorem Prime.eq_two_or_odd {p : ℕ} (hp : Prime p) : p = 2 ∨ p % 2 = 1",
+    "forbidden_declarations": [
+      "Nat.Prime.eq_two_or_odd'"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Data.Nat.Prime.Basic",
+      "source_path": "Mathlib/Data/Nat/Prime/Basic.lean",
+      "declaration": "Nat.Prime.eq_two_or_odd'",
+      "source_line": 45,
+      "source_sha256": "b97e83d65681b68b3ad1f4bdfd36defd0a30aa173cf726b3d2807acf8bde5027",
+      "prefix_end_character": 1377,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "922370a7af147fbd41822b051869f332fc646c6e9318f6f581e14fb3d7d57dcc",
+      "premise_context": "f27c40dc82c9bf5b06f26e285a9bdac50edf0796f70ef93a6f860dad78d6fcde",
+      "binders": "78d53dd897c22adeb0307233f81815784222c2c20273637c052009aa68fe142e",
+      "proposition": "37c067e1528aede42b10603b11fff950f92b63f39b9543fe046d0f27e5648ad7"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Algebra.GroupWithZero.Associated",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Ring.Parity",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Nat.Prime.Defs",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

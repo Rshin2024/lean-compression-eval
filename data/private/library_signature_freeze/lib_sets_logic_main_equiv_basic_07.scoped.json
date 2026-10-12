@@ -1,0 +1,202 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_9"
+  ],
+  "trusted_type_source": "∀ {ε : Type u_9} {p : ε → Prop} [inst : DecidablePred.{u_9 + 1} p]\n  (ep : Equiv.Perm.{u_9 + 1} (Subtype.{u_9 + 1} fun (a : ε) => p a))\n  (en : Equiv.Perm.{u_9 + 1} (Subtype.{u_9 + 1} fun (a : ε) => ¬p a)),\n  Eq.{u_9 + 1} (Equiv.symm.{u_9 + 1, u_9 + 1} (Equiv.Perm.subtypeCongr.{u_9} ep en))\n    (Equiv.Perm.subtypeCongr.{u_9} (Equiv.symm.{u_9 + 1, u_9 + 1} ep) (Equiv.symm.{u_9 + 1, u_9 + 1} en))",
+  "trusted_type_expression": "forall {ε : Type.{u_9}} {p : ε -> Prop} [inst._@.EvaluatorCandidate.610454632._hygCtx._hyg.14 : DecidablePred.{succ u_9} ε p] (ep : Equiv.Perm.{succ u_9} (Subtype.{succ u_9} ε (fun (a : ε) => p a))) (en : Equiv.Perm.{succ u_9} (Subtype.{succ u_9} ε (fun (a : ε) => Not (p a)))), Eq.{succ u_9} (Equiv.{succ u_9, succ u_9} ε ε) (Equiv.symm.{succ u_9, succ u_9} ε ε (Equiv.Perm.subtypeCongr.{u_9} ε p inst._@.EvaluatorCandidate.610454632._hygCtx._hyg.14 ep en)) (Equiv.Perm.subtypeCongr.{u_9} ε p inst._@.EvaluatorCandidate.610454632._hygCtx._hyg.14 (Equiv.symm.{succ u_9, succ u_9} (Subtype.{succ u_9} ε (fun (a : ε) => p a)) (Subtype.{succ u_9} ε (fun (a : ε) => p a)) ep) (Equiv.symm.{succ u_9, succ u_9} (Subtype.{succ u_9} ε (fun (a : ε) => Not (p a))) (Subtype.{succ u_9} ε (fun (a : ε) => Not (p a))) en))",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_9 + 1} (Equiv.symm.{u_9 + 1, u_9 + 1} (Equiv.Perm.subtypeCongr.{u_9} ep en))\n  (Equiv.Perm.subtypeCongr.{u_9} (Equiv.symm.{u_9 + 1, u_9 + 1} ep) (Equiv.symm.{u_9 + 1, u_9 + 1} en))",
+    "binders": [
+      {
+        "type_source": "Type u_9",
+        "name": "ε",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "ε → Prop",
+        "name": "p",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "DecidablePred.{u_9 + 1} p",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.14",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Equiv.Perm.{u_9 + 1} (Subtype.{u_9 + 1} fun (a : ε) => p a)",
+        "name": "ep",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Equiv.Perm.{u_9 + 1} (Subtype.{u_9 + 1} fun (a : ε) => ¬p a)",
+        "name": "en",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_sets_logic_main_equiv_basic_07  :\n  (ep.subtypeCongr en).symm = Perm.subtypeCongr ep.symm en.symm :=\nrfl",
+    "signature_spans": [
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 72,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 90
+      },
+      {
+        "start": 90,
+        "end": 91
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 92,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 132
+      }
+    ],
+    "proof_offset": 136,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 65
+      },
+      {
+        "start": 67,
+        "end": 68
+      },
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 72,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 90
+      },
+      {
+        "start": 90,
+        "end": 91
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 92,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 132
+      },
+      {
+        "start": 133,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 139
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 136,
+        "end": 139
+      }
+    ],
+    "W_full": 15,
+    "W_S": 10,
+    "W_B": 1
+  },
+  "root": "CompressionEval.lib_sets_logic_main_equiv_basic_07",
+  "proved_type_fingerprint": "3233481335",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 537,
+    "syntax_kinds": [],
+    "proof_nodes": 63,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_sets_logic_main_equiv_basic_07"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "0d970d604cad509c1b04ec1c44e78e0b0994019dd64de4483abee27df7c5c392",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.333108624909073
+  },
+  "request_fingerprint": "1086584ba6579fe55d46e4d73873480f395d3a2bd328254d3082d7ce46462201"
+}

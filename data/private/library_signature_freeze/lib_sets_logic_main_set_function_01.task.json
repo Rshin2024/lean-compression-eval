@@ -1,0 +1,72 @@
+{
+  "task": {
+    "task_id": "lib_sets_logic_main_set_function_01",
+    "family_id": "source_module_Mathlib.Data.Set.Function",
+    "domain": "sets_logic",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Data.Set.Prod",
+      "Mathlib.Data.Set.Restrict"
+    ],
+    "context": "/-\nCopyright (c) 2014 Jeremy Avigad. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Jeremy Avigad, Andrew Zipperer, Haitao Zhang, Minchao Wu, Yury Kudryashov\n-/\n/-!\n# Functions over sets\n\nThis file contains basic results on the following predicates of functions and sets:\n\n* `Set.EqOn f₁ f₂ s` : functions `f₁` and `f₂` are equal at every point of `s`;\n* `Set.MapsTo f s t` : `f` sends every point of `s` to a point of `t`;\n* `Set.InjOn f s` : restriction of `f` to `s` is injective;\n* `Set.SurjOn f s t` : every point in `s` has a preimage in `s`;\n* `Set.BijOn f s t` : `f` is a bijection between `s` and `t`;\n* `Set.LeftInvOn f' f s` : for every `x ∈ s` we have `f' (f x) = x`;\n* `Set.RightInvOn f' f t` : for every `y ∈ t` we have `f (f' y) = y`;\n* `Set.InvOn f' f s t` : `f'` is a two-side inverse of `f` on `s` and `t`, i.e.\n  we have `Set.LeftInvOn f' f s` and `Set.RightInvOn f' f t`.\n-/\n\n@[expose] public section\n\nvariable {α β γ δ : Type*} {ι : Sort*} {π : α → Type*}\n\nopen Equiv Equiv.Perm Function\n\nnamespace Set\n\n/-! ### Equality on a set -/\nsection equality\n\nvariable {s s₁ s₂ : Set α} {f₁ f₂ f₃ : α → β} {g : β → γ} {a : α}\n\nuniverse «u_1» «u_2»\n\nassert_not_exists _root_.Set.EqOn.eq_of_mem\n",
+    "binders": "{«α» : Type u_1} {«β» : Type u_2} {«s» : Set.{u_1} α} {«f₁» : α → β} {«f₂» : α → β} {«a» : α} (h : s.EqOn f₁ f₂) (ha : a ∈ s)",
+    "proposition": "f₁ a = f₂ a",
+    "target_name": "_root_.CompressionEval.lib_sets_logic_main_set_function_01",
+    "premise_context": "variable {α β γ δ : Type*} {ι : Sort*} {π : α → Type*}\nopen Equiv Equiv.Perm Function\nnamespace Set\nsection equality\nvariable {s s₁ s₂ : Set α} {f₁ f₂ f₃ : α → β} {g : β → γ} {a : α}\n\nAvailable preceding statements (within the shown source scopes):\n",
+    "forbidden_declarations": [
+      "Set.EqOn.eq_of_mem"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Data.Set.Function",
+      "source_path": "Mathlib/Data/Set/Function.lean",
+      "declaration": "Set.EqOn.eq_of_mem",
+      "source_line": 42,
+      "source_sha256": "cc2a361b5b82b08611dea07a180661f9bfb13ac846d5d2c77547da9c63513d15",
+      "prefix_end_character": 1377,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "20bc8bbc09b129b564ba91fa7f185c54ee811c7d001e331b03760da111d6948d",
+      "premise_context": "dd68f13a898c8a5fbd622d9b53bc9398bf3ef7470f60f5a93838b2b767618455",
+      "binders": "458edd92573020740706871a5581091a15c58ddb6ceb0a2b6f9a06015dbbceee",
+      "proposition": "2b190a828c8a2be90a46f526fd5af74eb3100eade685c88adc01ebecfbfd8a57"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Data.Set.Prod",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Set.Restrict",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

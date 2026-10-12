@@ -1,0 +1,967 @@
+{
+  "boundary_policy": "expand_mathlib_and_evaluator_v1",
+  "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+  "evaluated_at": "2026-10-12T04:03:06.029342+00:00",
+  "extraction": {
+    "axioms": [],
+    "candidate_declarations": [
+      "CompressionEval.lib_algebra_groups_main_units_basic_01"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 27,
+      "syntax_kinds": [
+        "Lean.Parser.Term.app",
+        "null",
+        "num"
+      ],
+      "transitive_dependency_count": 25
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "available",
+    "nodes": [
+      {
+        "body": {
+          "@Sort": 1,
+          "OfNat.ofNat": 1,
+          "One": 1,
+          "One.toOfNat1": 1,
+          "Unique": 1,
+          "Unique.default_eq": 1
+        },
+        "body_nodes": 27,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 2,
+        "name": "CompressionEval.lib_algebra_groups_main_units_basic_01",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 1,
+          "Inhabited.default": 1,
+          "OfNat.ofNat": 1,
+          "One": 1,
+          "One.toOfNat1": 1,
+          "Unique": 1,
+          "Unique.instInhabited": 1
+        },
+        "source_counts": null,
+        "type_hash": "323371460",
+        "type_nodes": 35,
+        "value_hash": "3608423106"
+      },
+      {
+        "body": null,
+        "name": "@Sort",
+        "owner_module": "@builtin",
+        "primitive": true,
+        "signature": {},
+        "type_hash": "@Sort",
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Unique",
+        "owner_module": "Mathlib.Logic.Unique",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2
+        },
+        "source_counts": null,
+        "type_hash": "1131989786",
+        "type_nodes": 3,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "One",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3807510281",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3970007004",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Inhabited.default",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3716771866",
+        "type_nodes": null,
+        "value_hash": "1822164146"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "Unique": 1,
+          "Unique.toInhabited": 1
+        },
+        "body_nodes": 11,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Unique.instInhabited",
+        "owner_module": "Mathlib.Logic.Unique",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Inhabited": 1,
+          "Unique": 1
+        },
+        "source_counts": null,
+        "type_hash": "3759447995",
+        "type_nodes": 9,
+        "value_hash": "4276263895"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Inhabited",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1131989786",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "Unique": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Unique.toInhabited",
+        "owner_module": "Mathlib.Logic.Unique",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Inhabited": 1,
+          "Unique": 1
+        },
+        "source_counts": null,
+        "type_hash": "2853124358",
+        "type_nodes": 9,
+        "value_hash": "995150597"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "OfNat.ofNat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3494724834",
+        "type_nodes": null,
+        "value_hash": "2265622595"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "One.toOfNat1",
+        "owner_module": "Init.Data.Zero",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1479039877",
+        "type_nodes": null,
+        "value_hash": "2120009979"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "Eq.symm": 1,
+          "Inhabited.default": 1,
+          "Unique": 1,
+          "Unique.toInhabited": 1,
+          "Unique.uniq": 1
+        },
+        "body_nodes": 31,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Unique.default_eq",
+        "owner_module": "Mathlib.Logic.Unique",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 1,
+          "Inhabited.default": 1,
+          "Unique": 1,
+          "Unique.instInhabited": 1
+        },
+        "source_counts": null,
+        "type_hash": "1369260511",
+        "type_nodes": 23,
+        "value_hash": "948512328"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.symm",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3416241219",
+        "type_nodes": null,
+        "value_hash": "2819966993"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "Unique": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Unique.uniq",
+        "owner_module": "Mathlib.Logic.Unique",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 1,
+          "Inhabited.default": 1,
+          "Unique": 1,
+          "Unique.toInhabited": 1
+        },
+        "source_counts": null,
+        "type_hash": "598085292",
+        "type_nodes": 23,
+        "value_hash": "1208974387"
+      }
+    ],
+    "process_returncode": 0,
+    "proved_type_fingerprint": "323371460",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Algebra.Group.Basic"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Algebra.Group.Commute.Defs"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Algebra.Group.Units.Defs"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Unique"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.Lift"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.Subsingleton"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.Attr.Core"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 2.354300333186984,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "0c4a774072fd9594583ecaf750028438d19ecb5a355c2db7664861c367e3ab9e",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_algebra_groups_main_units_basic_01",
+    "source_tokens": {
+      "W_B": 2,
+      "W_S": 20,
+      "W_full": 26,
+      "body_spans": [
+        {
+          "end": 147,
+          "start": 130
+        },
+        {
+          "end": 149,
+          "start": 148
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 69,
+          "start": 8
+        },
+        {
+          "end": 71,
+          "start": 70
+        },
+        {
+          "end": 73,
+          "start": 71
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 81,
+          "start": 76
+        },
+        {
+          "end": 82,
+          "start": 81
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 90,
+          "start": 84
+        },
+        {
+          "end": 93,
+          "start": 91
+        },
+        {
+          "end": 94,
+          "start": 93
+        },
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 99,
+          "start": 96
+        },
+        {
+          "end": 102,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 115,
+          "start": 108
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 120,
+          "start": 119
+        },
+        {
+          "end": 122,
+          "start": 121
+        },
+        {
+          "end": 125,
+          "start": 123
+        },
+        {
+          "end": 126,
+          "start": 125
+        },
+        {
+          "end": 129,
+          "start": 127
+        },
+        {
+          "end": 147,
+          "start": 130
+        },
+        {
+          "end": 149,
+          "start": 148
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 130,
+      "signature_spans": [
+        {
+          "end": 71,
+          "start": 70
+        },
+        {
+          "end": 73,
+          "start": 71
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 81,
+          "start": 76
+        },
+        {
+          "end": 82,
+          "start": 81
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 90,
+          "start": 84
+        },
+        {
+          "end": 93,
+          "start": 91
+        },
+        {
+          "end": 94,
+          "start": 93
+        },
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 99,
+          "start": 96
+        },
+        {
+          "end": 102,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 115,
+          "start": 108
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 120,
+          "start": 119
+        },
+        {
+          "end": 122,
+          "start": 121
+        },
+        {
+          "end": 125,
+          "start": 123
+        },
+        {
+          "end": 126,
+          "start": 125
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_algebra_groups_main_units_basic_01 {α : Type*} [Unique α] [One α] :\n  default = (1 : α) :=\nUnique.default_eq 1",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "α",
+          "type_source": "Type u_1"
+        },
+        {
+          "binder_info": "instance",
+          "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.4",
+          "type_source": "Unique.{u_1 + 1} α"
+        },
+        {
+          "binder_info": "instance",
+          "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.7",
+          "type_source": "One.{u_1} α"
+        }
+      ],
+      "proposition": "Eq.{u_1 + 1} Inhabited.default.{u_1 + 1} 1"
+    },
+    "trusted_type_expression": "forall {α : Type.{u_1}} [inst._@.EvaluatorCandidate.4095687675._hygCtx._hyg.4 : Unique.{succ u_1} α] [inst._@.EvaluatorCandidate.4095687675._hygCtx._hyg.7 : One.{u_1} α], Eq.{succ u_1} α (Inhabited.default.{succ u_1} α (Unique.instInhabited.{succ u_1} α inst._@.EvaluatorCandidate.4095687675._hygCtx._hyg.4)) (OfNat.ofNat.{u_1} α 1 (One.toOfNat1.{u_1} α inst._@.EvaluatorCandidate.4095687675._hygCtx._hyg.7))",
+    "trusted_type_source": "∀ {α : Type u_1} [inst : Unique.{u_1 + 1} α] [inst_1 : One.{u_1} α], Eq.{u_1 + 1} Inhabited.default.{u_1 + 1} 1",
+    "universe_parameters": [
+      "u_1"
+    ],
+    "validity_status": "success"
+  },
+  "graph_hash": "74554e8654e470402aaf71f309ae3525eae0a9539857b21b0e8278ee9f475e30",
+  "metric_status": "available",
+  "metrics": {
+    "D": 5,
+    "I0": {
+      "denominator_decimal": "20",
+      "log2": -3.3219280948873626,
+      "numerator_decimal": "2"
+    },
+    "T0": {
+      "denominator_decimal": "22",
+      "log2": 1.7500217469916528,
+      "numerator_decimal": "74"
+    },
+    "U_B_decimal": "52",
+    "U_S_decimal": "22",
+    "U_decimal": "74",
+    "W_B": 2,
+    "W_S": 20,
+    "body_state": "present",
+    "distinct_dependency_count": 13,
+    "log2_I0": -3.3219280948873626,
+    "log2_T0": 1.7500217469916528,
+    "log2_U": 6.20945336562895,
+    "log2_U_B": 5.700439718141092,
+    "log2_U_S": 4.459431618637297,
+    "log2_W": 4.459431618637297,
+    "metric_profile": "paper_aligned_v1",
+    "metric_status": "available",
+    "primitive_count": 8,
+    "reachable_node_count": 14,
+    "reasons": []
+  },
+  "primitive_manifest": [
+    "@Sort",
+    "Eq",
+    "Eq.symm",
+    "Inhabited",
+    "Inhabited.default",
+    "OfNat.ofNat",
+    "One",
+    "One.toOfNat1"
+  ],
+  "primitive_manifest_hash": "2cf1af198370ef9534bf724950adde5af22a4e50a75874f73b3a68fc296eeef2",
+  "primitive_manifest_scope": "reachable closure; boundary policy and environment define shared corpus boundary",
+  "reference_cache_key": "574f85e85e14e44ae3b09b27b8b18f601d5d78cb2ccf136e8b43fb0e3fa85c9a",
+  "reference_proof_sha256": "15bd11e4789d3e9d4cf160d0a0f69c020f5989ffb801018a5509ce974a9f5a45",
+  "source_hash": "e3495d0fd1bc1e5286e59dc4f721b0e9aba0585a8ac23ab720c89e5f7cb6de07",
+  "source_token_policy_hash": "878ab5fb5aa65e79973e4577203e29b9e6d67de66b91ff97b86ad021f5f229c9",
+  "task_hash": "4e24540b75d93bf430ad81f6fc077545459a7ea8933a5822283cd2b7f74e982d",
+  "task_id": "lib_algebra_groups_main_units_basic_01",
+  "task_input_hash": "0898ac3d9c496bdf48fc79dccb15069f6b02eeee0ffd27259e158ab739be4605",
+  "validation": {
+    "axioms": [],
+    "candidate_declarations": [
+      "CompressionEval.lib_algebra_groups_main_units_basic_01"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 27,
+      "syntax_kinds": [
+        "Lean.Parser.Term.app",
+        "null",
+        "num"
+      ],
+      "transitive_dependency_count": 25
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "323371460",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Algebra.Group.Basic"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Algebra.Group.Commute.Defs"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Algebra.Group.Units.Defs"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Unique"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.Lift"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.Subsingleton"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.Attr.Core"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 2.6732399999164045,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "edff8b7f90c8edb95dfced11edcebb14ec0aaec914dfe6d6f53f4caf4e9f0b9c",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_algebra_groups_main_units_basic_01",
+    "source_tokens": {
+      "W_B": 2,
+      "W_S": 20,
+      "W_full": 26,
+      "body_spans": [
+        {
+          "end": 147,
+          "start": 130
+        },
+        {
+          "end": 149,
+          "start": 148
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 69,
+          "start": 8
+        },
+        {
+          "end": 71,
+          "start": 70
+        },
+        {
+          "end": 73,
+          "start": 71
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 81,
+          "start": 76
+        },
+        {
+          "end": 82,
+          "start": 81
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 90,
+          "start": 84
+        },
+        {
+          "end": 93,
+          "start": 91
+        },
+        {
+          "end": 94,
+          "start": 93
+        },
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 99,
+          "start": 96
+        },
+        {
+          "end": 102,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 115,
+          "start": 108
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 120,
+          "start": 119
+        },
+        {
+          "end": 122,
+          "start": 121
+        },
+        {
+          "end": 125,
+          "start": 123
+        },
+        {
+          "end": 126,
+          "start": 125
+        },
+        {
+          "end": 129,
+          "start": 127
+        },
+        {
+          "end": 147,
+          "start": 130
+        },
+        {
+          "end": 149,
+          "start": 148
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 130,
+      "signature_spans": [
+        {
+          "end": 71,
+          "start": 70
+        },
+        {
+          "end": 73,
+          "start": 71
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 81,
+          "start": 76
+        },
+        {
+          "end": 82,
+          "start": 81
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 90,
+          "start": 84
+        },
+        {
+          "end": 93,
+          "start": 91
+        },
+        {
+          "end": 94,
+          "start": 93
+        },
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 99,
+          "start": 96
+        },
+        {
+          "end": 102,
+          "start": 100
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 115,
+          "start": 108
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 120,
+          "start": 119
+        },
+        {
+          "end": 122,
+          "start": 121
+        },
+        {
+          "end": 125,
+          "start": 123
+        },
+        {
+          "end": 126,
+          "start": 125
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_algebra_groups_main_units_basic_01 {α : Type*} [Unique α] [One α] :\n  default = (1 : α) :=\nUnique.default_eq 1",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "α",
+          "type_source": "Type u_1"
+        },
+        {
+          "binder_info": "instance",
+          "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.4",
+          "type_source": "Unique.{u_1 + 1} α"
+        },
+        {
+          "binder_info": "instance",
+          "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.7",
+          "type_source": "One.{u_1} α"
+        }
+      ],
+      "proposition": "Eq.{u_1 + 1} Inhabited.default.{u_1 + 1} 1"
+    },
+    "trusted_type_expression": "forall {α : Type.{u_1}} [inst._@.EvaluatorCandidate.4095687675._hygCtx._hyg.4 : Unique.{succ u_1} α] [inst._@.EvaluatorCandidate.4095687675._hygCtx._hyg.7 : One.{u_1} α], Eq.{succ u_1} α (Inhabited.default.{succ u_1} α (Unique.instInhabited.{succ u_1} α inst._@.EvaluatorCandidate.4095687675._hygCtx._hyg.4)) (OfNat.ofNat.{u_1} α 1 (One.toOfNat1.{u_1} α inst._@.EvaluatorCandidate.4095687675._hygCtx._hyg.7))",
+    "trusted_type_source": "∀ {α : Type u_1} [inst : Unique.{u_1 + 1} α] [inst_1 : One.{u_1} α], Eq.{u_1 + 1} Inhabited.default.{u_1 + 1} 1",
+    "universe_parameters": [
+      "u_1"
+    ],
+    "validity_status": "success"
+  },
+  "validity_status": "success"
+}

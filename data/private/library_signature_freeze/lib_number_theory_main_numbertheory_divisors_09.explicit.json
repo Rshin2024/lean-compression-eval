@@ -1,0 +1,326 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "∀ {n m : ℕ}, Membership.mem.{0, 0} m.divisors n → Ne.{1} m 0",
+  "trusted_type_expression": "forall {n : Nat} {m : Nat}, (Membership.mem.{0, 0} Nat (Finset.{0} Nat) (SetLike.instMembership.{0, 0} (Finset.{0} Nat) Nat (Finset.instSetLike.{0} Nat)) (Nat.divisors m) n) -> (Ne.{1} Nat m (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0)))",
+  "trusted_telescope": {
+    "proposition": "Ne.{1} m 0",
+    "binders": [
+      {
+        "type_source": "ℕ",
+        "name": "n",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "ℕ",
+        "name": "m",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Membership.mem.{0, 0} m.divisors n",
+        "name": "h",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_number_theory_main_numbertheory_divisors_09 {«n» : ℕ} {m : ℕ} (h : n ∈ divisors m) :\n  m ≠ 0 :=\n(mem_divisors.mp h).2",
+    "signature_spans": [
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 91
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 106,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 137
+      }
+    ],
+    "proof_offset": 141,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 91
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 106,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 142,
+        "end": 157
+      },
+      {
+        "start": 158,
+        "end": 159
+      },
+      {
+        "start": 159,
+        "end": 160
+      },
+      {
+        "start": 160,
+        "end": 161
+      },
+      {
+        "start": 161,
+        "end": 162
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 142,
+        "end": 157
+      },
+      {
+        "start": 158,
+        "end": 159
+      },
+      {
+        "start": 159,
+        "end": 160
+      },
+      {
+        "start": 160,
+        "end": 161
+      },
+      {
+        "start": 161,
+        "end": 162
+      }
+    ],
+    "W_full": 31,
+    "W_S": 21,
+    "W_B": 6
+  },
+  "root": "CompressionEval.lib_number_theory_main_numbertheory_divisors_09",
+  "proved_type_fingerprint": "3276006340",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 2974,
+    "syntax_kinds": [
+      "Lean.Parser.Term.proj",
+      "Lean.Parser.Term.paren",
+      "Lean.Parser.Term.hygienicLParen",
+      "hygieneInfo",
+      "Lean.Parser.Term.app",
+      "null",
+      "fieldIdx"
+    ],
+    "proof_nodes": 121,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_number_theory_main_numbertheory_divisors_09"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "86bc75031126e778f1b853e001dfac730b13873c9e57176a07f5a776772a57da",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.3142144582234323
+  },
+  "request_fingerprint": "d994c3065064f20228c574a8f63314eed1d762fd7584366c46ba80634ed96b6a"
+}

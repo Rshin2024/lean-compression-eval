@@ -1,0 +1,93 @@
+{
+  "task": {
+    "task_id": "lib_number_theory_pilot_nat_basic_08",
+    "family_id": "source_module_Mathlib.Data.Nat.Basic",
+    "domain": "number_theory",
+    "split": "pilot",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Data.Nat.Init",
+      "Mathlib.Logic.Basic",
+      "Mathlib.Logic.Nontrivial.Defs",
+      "Mathlib.Order.Defs.LinearOrder",
+      "Mathlib.Tactic.GCongr.Core"
+    ],
+    "context": "/-\nCopyright (c) 2014 Floris van Doorn (c) 2016 Microsoft Corporation. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Floris van Doorn, Leonardo de Moura, Jeremy Avigad, Mario Carneiro\n-/\n/-!\n# Basic operations on the natural numbers\n\nThis file builds on `Mathlib/Data/Nat/Init.lean` by adding basic lemmas on natural numbers\ndepending on Mathlib definitions.\n\nSee note [foundational algebra order theory].\n-/\n\npublic section\n\n/- We don't want to import the algebraic hierarchy in this file. -/\nassert_not_exists Monoid\n\nopen Function\n\nnamespace Nat\nvariable {a b c d m n k : ℕ} {p : ℕ → Prop}\n\n-- TODO: Move the `LinearOrder ℕ` instance to `Order.Nat` (https://github.com/leanprover-community/mathlib4/pull/13092).\ninstance instLinearOrder : LinearOrder ℕ where\n  le := Nat.le\n  le_refl := @Nat.le_refl\n  le_trans := @Nat.le_trans\n  le_antisymm := @Nat.le_antisymm\n  le_total := @Nat.le_total\n  lt := Nat.lt\n  lt_iff_le_not_ge := @Nat.lt_iff_le_and_not_ge\n  toDecidableLT := inferInstance\n  toDecidableLE := inferInstance\n  toDecidableEq := inferInstance\n\n-- Shortcut instances\ninstance : Preorder ℕ := inferInstance\ninstance : PartialOrder ℕ := inferInstance\n\ninstance instNontrivial : Nontrivial ℕ := ⟨⟨0, 1, Nat.zero_ne_one⟩⟩\n\nattribute [gcongr] Nat.succ_le_succ Nat.div_le_div_right Nat.div_le_div\n\n/-! ### `succ`, `pred` -/\n\nlemma succ_injective : Injective Nat.succ := @succ.inj\n\n/-! ### `div` -/\n\nprotected theorem div_right_comm (a b c : ℕ) : a / b / c = a / c / b := by\n  rw [Nat.div_div_eq_div_mul, Nat.mul_comm, ← Nat.div_div_eq_div_mul]\n\n/-!\n### `pow`\n-/\n\nlemma pow_left_injective (hn : n ≠ 0) : Injective (fun a : ℕ ↦ a ^ n) := by\n  simp [Injective, le_antisymm_iff, Nat.pow_le_pow_iff_left hn]\n\nprotected lemma pow_right_injective (ha : 2 ≤ a) : Injective (a ^ ·) := by\n  simp [Injective, le_antisymm_iff, Nat.pow_le_pow_iff_right ha]\n\nprotected theorem pow_sub_one {x a : ℕ} (hx : x ≠ 0) (ha : a ≠ 0) :\n    x ^ (a - 1) = x ^ a / x := by\n  rw [← Nat.pow_div (one_le_iff_ne_zero.mpr ha) (Nat.pos_iff_ne_zero.mpr hx), Nat.pow_one]\n\n/-!\n### Recursion and induction principles\n\nThis section is here due to dependencies -- the lemmas here require some of the lemmas\nproved above, and some of the results in later sections depend on the definitions in this section.\n-/\n\nlemma leRecOn_injective {C : ℕ → Sort*} {n m} (hnm : n ≤ m) (next : ∀ {k}, C k → C (k + 1))\n    (Hnext : ∀ n, Injective (@next n)) : Injective (@leRecOn C n m hnm next) := by\n  induction hnm with\n  | refl =>\n    intro x y H\n    rwa [leRecOn_self, leRecOn_self] at H\n  | step hnm ih =>\n    intro x y H\n    rw [leRecOn_succ hnm, leRecOn_succ hnm] at H\n    exact ih (Hnext _ H)\n\nlemma leRecOn_surjective {C : ℕ → Sort*} {n m} (hnm : n ≤ m) (next : ∀ {k}, C k → C (k + 1))\n    (Hnext : ∀ n, Surjective (@next n)) : Surjective (@leRecOn C n m hnm next) := by\n  induction hnm with\n  | refl =>\n    intro x\n    refine ⟨x, ?_⟩\n    rw [leRecOn_self]\n  | step hnm ih =>\n    intro x\n    obtain ⟨w, rfl⟩ := Hnext _ x\n    obtain ⟨x, rfl⟩ := ih w\n    refine ⟨x, ?_⟩\n    rw [leRecOn_succ]\nassert_not_exists _root_.Nat.set_induction_bounded\n",
+    "binders": "{«n» : ℕ} {«k» : ℕ} {S : Set ℕ} (hk : k ∈ S) (h_ind : ∀ k : ℕ, k ∈ S → k + 1 ∈ S)\n    (hnk : k ≤ n)",
+    "proposition": "n ∈ S",
+    "target_name": "_root_.CompressionEval.lib_number_theory_pilot_nat_basic_08",
+    "premise_context": "open Function\nnamespace Nat\nvariable {a b c d m n k : ℕ} {p : ℕ → Prop}\n\nAvailable preceding statements (within the shown source scopes):\nlemma succ_injective : Injective Nat.succ\n\nprotected theorem div_right_comm (a b c : ℕ) : a / b / c = a / c / b\n\nlemma pow_left_injective (hn : n ≠ 0) : Injective (fun a : ℕ ↦ a ^ n)\n\nprotected lemma pow_right_injective (ha : 2 ≤ a) : Injective (a ^ ·)\n\nprotected theorem pow_sub_one {x a : ℕ} (hx : x ≠ 0) (ha : a ≠ 0) :\n    x ^ (a - 1) = x ^ a / x\n\nlemma leRecOn_injective {C : ℕ → Sort*} {n m} (hnm : n ≤ m) (next : ∀ {k}, C k → C (k + 1))\n    (Hnext : ∀ n, Injective (@next n)) : Injective (@leRecOn C n m hnm next)\n\nlemma leRecOn_surjective {C : ℕ → Sort*} {n m} (hnm : n ≤ m) (next : ∀ {k}, C k → C (k + 1))\n    (Hnext : ∀ n, Surjective (@next n)) : Surjective (@leRecOn C n m hnm next)",
+    "forbidden_declarations": [
+      "Nat.set_induction_bounded"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Data.Nat.Basic",
+      "source_path": "Mathlib/Data/Nat/Basic.lean",
+      "declaration": "Nat.set_induction_bounded",
+      "source_line": 111,
+      "source_sha256": "ab7ef072113c236c375fabb66b85c5d82bcdf3c56c37b9d602a3e7c3aa54e1e6",
+      "prefix_end_character": 3408,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "e99a4324f4e5a5716655e2391b887ab83c828a65642e72eeabda06a9fdd2f732",
+      "premise_context": "a39e45276d9238f2118000d54bfcbdc4d0cbaab9c4e97c62c0115b31a19c8d4f",
+      "binders": "7d0b01a577a83db99c6112c59c860119219481bc8a339aad7c09eea0edc1e48b",
+      "proposition": "2e7cec08bb0395aa23cbe2022d28b45f2997c8e1cc0ea15f595d2b89dc24d373"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Data.Nat.Init",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Logic.Basic",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Logic.Nontrivial.Defs",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Order.Defs.LinearOrder",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.GCongr.Core",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

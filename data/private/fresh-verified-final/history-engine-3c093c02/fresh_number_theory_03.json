@@ -1,0 +1,1262 @@
+{
+  "boundary_policy": "expand_mathlib_and_evaluator_v1",
+  "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
+  "engine_hash": "3c093c02b7d907faad45ede5ed175e3527aeaa9dbb9ca2141293075aaeeaa343",
+  "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+  "evaluated_at": "2026-10-12T03:50:00.330864+00:00",
+  "extraction": {
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.fresh_number_theory_03"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 321,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.tacticHave__",
+        "Lean.Parser.Term.letConfig",
+        "Lean.Parser.Term.letDecl",
+        "Lean.Parser.Term.letIdDecl",
+        "Lean.Parser.Term.letId",
+        "Lean.Parser.Term.app",
+        "Lean.Parser.Tactic.subst",
+        "Lean.Parser.Tactic.simp",
+        "Lean.Parser.Tactic.optConfig"
+      ],
+      "transitive_dependency_count": 385
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "available",
+    "nodes": [
+      {
+        "body": {
+          "@Sort": 9,
+          "And": 7,
+          "Dvd.dvd": 6,
+          "Eq": 15,
+          "Eq.ndrec": 1,
+          "Eq.trans": 2,
+          "Nat": 30,
+          "Nat.dvd_antisymm": 1,
+          "Nat.gcd": 7,
+          "Nat.gcd_self": 1,
+          "Nat.instDvd": 6,
+          "True": 8,
+          "and_self": 1,
+          "congr": 1,
+          "congrArg": 2,
+          "congrFun'": 1,
+          "eq_self": 2,
+          "of_eq_true": 1
+        },
+        "body_nodes": 321,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "CompressionEval.fresh_number_theory_03",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "And": 1,
+          "Dvd.dvd": 2,
+          "Eq": 2,
+          "Nat": 6,
+          "Nat.gcd": 1,
+          "Nat.instDvd": 2
+        },
+        "source_counts": null,
+        "type_hash": "1709742676",
+        "type_nodes": 45,
+        "value_hash": "26424305"
+      },
+      {
+        "body": null,
+        "name": "@Sort",
+        "owner_module": "@builtin",
+        "primitive": true,
+        "signature": {},
+        "type_hash": "@Sort",
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3931117990",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Dvd.dvd",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2866682156",
+        "type_nodes": null,
+        "value_hash": "694534265"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.instDvd",
+        "owner_module": "Init.Data.Nat.Div.Basic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1672133723",
+        "type_nodes": null,
+        "value_hash": "34133265"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "And",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2232915537",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3970007004",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.gcd",
+        "owner_module": "Init.Data.Nat.Gcd",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "4163592787",
+        "type_nodes": null,
+        "value_hash": "3884579149"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.dvd_antisymm",
+        "owner_module": "Init.Data.Nat.Dvd",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1117538826",
+        "type_nodes": null,
+        "value_hash": "3075481973"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.ndrec",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1988759079",
+        "type_nodes": null,
+        "value_hash": "1446468482"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "of_eq_true",
+        "owner_module": "Init.SimpLemmas",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "846120182",
+        "type_nodes": null,
+        "value_hash": "2847551586"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.trans",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2833799593",
+        "type_nodes": null,
+        "value_hash": "1736612116"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "True",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3944470172",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "congr",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1876132096",
+        "type_nodes": null,
+        "value_hash": "227469821"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "congrArg",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2722762766",
+        "type_nodes": null,
+        "value_hash": "2643130269"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "eq_self",
+        "owner_module": "Init.SimpLemmas",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2707248190",
+        "type_nodes": null,
+        "value_hash": "1138976229"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "congrFun'",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1463103787",
+        "type_nodes": null,
+        "value_hash": "3906667881"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Nat.gcd_self",
+        "owner_module": "Init.Data.Nat.Gcd",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3040742579",
+        "type_nodes": null,
+        "value_hash": "1465742923"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "and_self",
+        "owner_module": "Init.SimpLemmas",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "4278387167",
+        "type_nodes": null,
+        "value_hash": "121300962"
+      }
+    ],
+    "process_returncode": 0,
+    "proved_type_fingerprint": "1709742676",
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 7.225246374960989,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "7f4f5ba2e0c48e10a240e59d9fb68539e1ed006aa8ebb1ab393dc88597a116bf",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.fresh_number_theory_03",
+    "source_tokens": {
+      "W_B": 12,
+      "W_S": 29,
+      "W_full": 45,
+      "body_spans": [
+        {
+          "end": 133,
+          "start": 131
+        },
+        {
+          "end": 138,
+          "start": 134
+        },
+        {
+          "end": 140,
+          "start": 139
+        },
+        {
+          "end": 143,
+          "start": 141
+        },
+        {
+          "end": 160,
+          "start": 144
+        },
+        {
+          "end": 164,
+          "start": 161
+        },
+        {
+          "end": 168,
+          "start": 165
+        },
+        {
+          "end": 169,
+          "start": 168
+        },
+        {
+          "end": 175,
+          "start": 170
+        },
+        {
+          "end": 177,
+          "start": 176
+        },
+        {
+          "end": 178,
+          "start": 177
+        },
+        {
+          "end": 183,
+          "start": 179
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 53,
+          "start": 8
+        },
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 56,
+          "start": 55
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 64,
+          "start": 61
+        },
+        {
+          "end": 65,
+          "start": 64
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 70,
+          "start": 67
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 78,
+          "start": 75
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 86,
+          "start": 83
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 94,
+          "start": 91
+        },
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 107,
+          "start": 106
+        },
+        {
+          "end": 111,
+          "start": 108
+        },
+        {
+          "end": 119,
+          "start": 112
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 123,
+          "start": 122
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 127,
+          "start": 126
+        },
+        {
+          "end": 130,
+          "start": 128
+        },
+        {
+          "end": 133,
+          "start": 131
+        },
+        {
+          "end": 138,
+          "start": 134
+        },
+        {
+          "end": 140,
+          "start": 139
+        },
+        {
+          "end": 143,
+          "start": 141
+        },
+        {
+          "end": 160,
+          "start": 144
+        },
+        {
+          "end": 164,
+          "start": 161
+        },
+        {
+          "end": 168,
+          "start": 165
+        },
+        {
+          "end": 169,
+          "start": 168
+        },
+        {
+          "end": 175,
+          "start": 170
+        },
+        {
+          "end": 177,
+          "start": 176
+        },
+        {
+          "end": 178,
+          "start": 177
+        },
+        {
+          "end": 183,
+          "start": 179
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 131,
+      "signature_spans": [
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 56,
+          "start": 55
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 64,
+          "start": 61
+        },
+        {
+          "end": 65,
+          "start": 64
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 70,
+          "start": 67
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 78,
+          "start": 75
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 86,
+          "start": 83
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 94,
+          "start": 91
+        },
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 107,
+          "start": 106
+        },
+        {
+          "end": 111,
+          "start": 108
+        },
+        {
+          "end": 119,
+          "start": 112
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 123,
+          "start": 122
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 127,
+          "start": 126
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.fresh_number_theory_03 (a b : ℕ) (hab : a ∣ b) (hba : b ∣ a) :\n  a = b ∧ Nat.gcd a b = a :=\nby have h := Nat.dvd_antisymm hab hba; subst b; simp",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "explicit",
+          "name": "a",
+          "type_source": "ℕ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "b",
+          "type_source": "ℕ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hab",
+          "type_source": "Dvd.dvd.{0} a b"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hba",
+          "type_source": "Dvd.dvd.{0} b a"
+        }
+      ],
+      "proposition": "Eq.{1} a b ∧ Eq.{1} (a.gcd b) a"
+    },
+    "trusted_type_expression": "forall (a : Nat) (b : Nat), (Dvd.dvd.{0} Nat Nat.instDvd a b) -> (Dvd.dvd.{0} Nat Nat.instDvd b a) -> (And (Eq.{1} Nat a b) (Eq.{1} Nat (Nat.gcd a b) a))",
+    "trusted_type_source": "∀ (a b : ℕ), Dvd.dvd.{0} a b → Dvd.dvd.{0} b a → Eq.{1} a b ∧ Eq.{1} (a.gcd b) a",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "graph_hash": "7e12c76d4367e69a28241929b43552266e22358b09a0022a729bee5894a2e3fd",
+  "metric_status": "available",
+  "metrics": {
+    "D": 1,
+    "I0": {
+      "denominator_decimal": "29",
+      "log2": -1.2730184944064158,
+      "numerator_decimal": "12"
+    },
+    "T0": {
+      "denominator_decimal": "41",
+      "log2": 1.487938046326291,
+      "numerator_decimal": "115"
+    },
+    "U_B_decimal": "101",
+    "U_S_decimal": "14",
+    "U_decimal": "115",
+    "W_B": 12,
+    "W_S": 29,
+    "body_state": "present",
+    "distinct_dependency_count": 18,
+    "log2_I0": -1.2730184944064158,
+    "log2_T0": 1.487938046326291,
+    "log2_U": 6.845490050944375,
+    "log2_U_B": 6.658211482751795,
+    "log2_U_S": 3.807354922057604,
+    "log2_W": 5.357552004618084,
+    "metric_profile": "paper_aligned_v1",
+    "metric_status": "available",
+    "primitive_count": 18,
+    "reachable_node_count": 19,
+    "reasons": []
+  },
+  "primitive_manifest": [
+    "@Sort",
+    "And",
+    "Dvd.dvd",
+    "Eq",
+    "Eq.ndrec",
+    "Eq.trans",
+    "Nat",
+    "Nat.dvd_antisymm",
+    "Nat.gcd",
+    "Nat.gcd_self",
+    "Nat.instDvd",
+    "True",
+    "and_self",
+    "congr",
+    "congrArg",
+    "congrFun'",
+    "eq_self",
+    "of_eq_true"
+  ],
+  "primitive_manifest_hash": "aacba584f7150a277aa582d00c4e7fa7c6c5bf301fd84c6fa8c1efc16b8acfc7",
+  "primitive_manifest_scope": "reachable closure; boundary policy and environment define shared corpus boundary",
+  "reference_proof_sha256": "3388aaa9eb36a1f16917e2f7c48925e2ef0b189cb4e57fe951abaeef371f31e1",
+  "source_hash": "eb79da436ffce8aeec2fd193cff890013be2ec1a45afb0c0d927ebb8cdab2939",
+  "source_token_policy_hash": "82278aac4f6faa62bcbabe626b0ca3c486cb3f2a6e213f12c9587341b3dbed61",
+  "task_hash": "747eeaa24f20b60d70b3c6ca605a125b99a65fc0987bfa7a05d2bc13e7a73652",
+  "task_id": "fresh_number_theory_03",
+  "task_input_hash": "2445ff785f1c31a79577f443ab2523032fcac047995efbaa416dfe07820acf86",
+  "validation": {
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.fresh_number_theory_03"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 321,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.tacticHave__",
+        "Lean.Parser.Term.letConfig",
+        "Lean.Parser.Term.letDecl",
+        "Lean.Parser.Term.letIdDecl",
+        "Lean.Parser.Term.letId",
+        "Lean.Parser.Term.app",
+        "Lean.Parser.Tactic.subst",
+        "Lean.Parser.Tactic.simp",
+        "Lean.Parser.Tactic.optConfig"
+      ],
+      "transitive_dependency_count": 385
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "1709742676",
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 6.818202499765903,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "bcc2e2035db2166f2d9f31f8f5dc907a7e1e531309a30e0ff23ed53f3bec78f2",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.fresh_number_theory_03",
+    "source_tokens": {
+      "W_B": 12,
+      "W_S": 29,
+      "W_full": 45,
+      "body_spans": [
+        {
+          "end": 133,
+          "start": 131
+        },
+        {
+          "end": 138,
+          "start": 134
+        },
+        {
+          "end": 140,
+          "start": 139
+        },
+        {
+          "end": 143,
+          "start": 141
+        },
+        {
+          "end": 160,
+          "start": 144
+        },
+        {
+          "end": 164,
+          "start": 161
+        },
+        {
+          "end": 168,
+          "start": 165
+        },
+        {
+          "end": 169,
+          "start": 168
+        },
+        {
+          "end": 175,
+          "start": 170
+        },
+        {
+          "end": 177,
+          "start": 176
+        },
+        {
+          "end": 178,
+          "start": 177
+        },
+        {
+          "end": 183,
+          "start": 179
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 53,
+          "start": 8
+        },
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 56,
+          "start": 55
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 64,
+          "start": 61
+        },
+        {
+          "end": 65,
+          "start": 64
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 70,
+          "start": 67
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 78,
+          "start": 75
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 86,
+          "start": 83
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 94,
+          "start": 91
+        },
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 107,
+          "start": 106
+        },
+        {
+          "end": 111,
+          "start": 108
+        },
+        {
+          "end": 119,
+          "start": 112
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 123,
+          "start": 122
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 127,
+          "start": 126
+        },
+        {
+          "end": 130,
+          "start": 128
+        },
+        {
+          "end": 133,
+          "start": 131
+        },
+        {
+          "end": 138,
+          "start": 134
+        },
+        {
+          "end": 140,
+          "start": 139
+        },
+        {
+          "end": 143,
+          "start": 141
+        },
+        {
+          "end": 160,
+          "start": 144
+        },
+        {
+          "end": 164,
+          "start": 161
+        },
+        {
+          "end": 168,
+          "start": 165
+        },
+        {
+          "end": 169,
+          "start": 168
+        },
+        {
+          "end": 175,
+          "start": 170
+        },
+        {
+          "end": 177,
+          "start": 176
+        },
+        {
+          "end": 178,
+          "start": 177
+        },
+        {
+          "end": 183,
+          "start": 179
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 131,
+      "signature_spans": [
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 56,
+          "start": 55
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 60,
+          "start": 59
+        },
+        {
+          "end": 64,
+          "start": 61
+        },
+        {
+          "end": 65,
+          "start": 64
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 70,
+          "start": 67
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 78,
+          "start": 75
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 86,
+          "start": 83
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 94,
+          "start": 91
+        },
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 107,
+          "start": 106
+        },
+        {
+          "end": 111,
+          "start": 108
+        },
+        {
+          "end": 119,
+          "start": 112
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 123,
+          "start": 122
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 127,
+          "start": 126
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.fresh_number_theory_03 (a b : ℕ) (hab : a ∣ b) (hba : b ∣ a) :\n  a = b ∧ Nat.gcd a b = a :=\nby have h := Nat.dvd_antisymm hab hba; subst b; simp",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "explicit",
+          "name": "a",
+          "type_source": "ℕ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "b",
+          "type_source": "ℕ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hab",
+          "type_source": "Dvd.dvd.{0} a b"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hba",
+          "type_source": "Dvd.dvd.{0} b a"
+        }
+      ],
+      "proposition": "Eq.{1} a b ∧ Eq.{1} (a.gcd b) a"
+    },
+    "trusted_type_expression": "forall (a : Nat) (b : Nat), (Dvd.dvd.{0} Nat Nat.instDvd a b) -> (Dvd.dvd.{0} Nat Nat.instDvd b a) -> (And (Eq.{1} Nat a b) (Eq.{1} Nat (Nat.gcd a b) a))",
+    "trusted_type_source": "∀ (a b : ℕ), Dvd.dvd.{0} a b → Dvd.dvd.{0} b a → Eq.{1} a b ∧ Eq.{1} (a.gcd b) a",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "validity_status": "success"
+}

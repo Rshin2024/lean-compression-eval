@@ -1,0 +1,73 @@
+{
+  "analysis": {
+    "audit_seed": 20261012,
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 20261011,
+    "cluster_unit": "theorem_family",
+    "confidence_level": 0.95,
+    "primary_contrasts": [
+      "compression_vs_standard",
+      "compression_vs_concision"
+    ]
+  },
+  "conditions": [
+    "standard",
+    "mathematical_compression",
+    "source_concision"
+  ],
+  "dataset": {
+    "main_goals": 200,
+    "pilot_goals": 50,
+    "split_unit": "theorem_family"
+  },
+  "environment": {
+    "boundary_policy": "expand_mathlib_and_evaluator_v1",
+    "lean_toolchain": "leanprover/lean4:v4.34.0-rc1",
+    "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+    "source_token_policy": "original_syntax_v1"
+  },
+  "experiment": "lean_math_compression_v1",
+  "extraction": {
+    "dependency_cycle": "metrics_unavailable",
+    "unknown_dependency": "error",
+    "wall_seconds": 60
+  },
+  "generation": {
+    "context_byte_cap": 64000,
+    "max_output_tokens": 8192,
+    "mode": "single_shot",
+    "model_snapshot": null,
+    "notes": "Resolve a pinned model and its supported sampling parameters before generation. OpenAI max_output_tokens includes reasoning tokens. Null temperature means deliberately omit it, never silently retry with changed settings.",
+    "provider": "openai",
+    "reasoning_setting": null,
+    "response_adapter": "identity_v1",
+    "retry": {
+      "backoff_seconds": [
+        1,
+        4
+      ],
+      "max_transport_attempts": 3
+    },
+    "snapshot_pinned": false,
+    "temperature": 0.7,
+    "timeout_seconds": 180
+  },
+  "metric_profile": "paper_aligned_v1",
+  "protocol_version": "draft_v1",
+  "samples_per_goal_condition": 4,
+  "schedule_seed": 20261011,
+  "tactic_portfolio": "by first | rfl | assumption | simp_all | omega | aesop",
+  "tactic_portfolio_total_wall_seconds": 60,
+  "validation": {
+    "cpu_quota": 1,
+    "isolation": "macos_sandbox",
+    "max_heartbeats": 2000000,
+    "memory_mib": 4096,
+    "permitted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "wall_seconds": 60
+  }
+}

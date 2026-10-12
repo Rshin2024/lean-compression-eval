@@ -1,0 +1,472 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "∀ {n : ℕ}, Ne.{1} n 0 → Eq.{1} (Insert.insert.{0, 0} n n.properDivisors) n.divisors",
+  "trusted_type_expression": "forall {n : Nat}, (Ne.{1} Nat n (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0))) -> (Eq.{1} (Finset.{0} Nat) (Insert.insert.{0, 0} Nat (Finset.{0} Nat) (Finset.instInsert.{0} Nat instDecidableEqNat) n (Nat.properDivisors n)) (Nat.divisors n))",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} (Insert.insert.{0, 0} n n.properDivisors) n.divisors",
+    "binders": [
+      {
+        "type_source": "ℕ",
+        "name": "n",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Ne.{1} n 0",
+        "name": "h",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_number_theory_main_numbertheory_divisors_05 {«n» : ℕ} (h : n ≠ 0) :\n  insert n (properDivisors n) = divisors n :=\nby\n  rw [divisors, properDivisors,\n    ← Finset.insert_Ico_right_eq_Ico_add_one (one_le_iff_ne_zero.2 h),\n    Finset.filter_insert, ite_eq_left (dvd_refl n)]",
+    "signature_spans": [
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 91
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 105,
+        "end": 106
+      },
+      {
+        "start": 111,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      }
+    ],
+    "proof_offset": 155,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 91
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 105,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 108
+      },
+      {
+        "start": 111,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 154
+      },
+      {
+        "start": 155,
+        "end": 157
+      },
+      {
+        "start": 160,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 164,
+        "end": 172
+      },
+      {
+        "start": 172,
+        "end": 173
+      },
+      {
+        "start": 174,
+        "end": 188
+      },
+      {
+        "start": 188,
+        "end": 189
+      },
+      {
+        "start": 194,
+        "end": 197
+      },
+      {
+        "start": 198,
+        "end": 236
+      },
+      {
+        "start": 237,
+        "end": 238
+      },
+      {
+        "start": 238,
+        "end": 256
+      },
+      {
+        "start": 256,
+        "end": 257
+      },
+      {
+        "start": 257,
+        "end": 258
+      },
+      {
+        "start": 259,
+        "end": 260
+      },
+      {
+        "start": 260,
+        "end": 261
+      },
+      {
+        "start": 261,
+        "end": 262
+      },
+      {
+        "start": 267,
+        "end": 287
+      },
+      {
+        "start": 287,
+        "end": 288
+      },
+      {
+        "start": 289,
+        "end": 300
+      },
+      {
+        "start": 301,
+        "end": 302
+      },
+      {
+        "start": 302,
+        "end": 310
+      },
+      {
+        "start": 311,
+        "end": 312
+      },
+      {
+        "start": 312,
+        "end": 313
+      },
+      {
+        "start": 313,
+        "end": 314
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 155,
+        "end": 157
+      },
+      {
+        "start": 160,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 164,
+        "end": 172
+      },
+      {
+        "start": 172,
+        "end": 173
+      },
+      {
+        "start": 174,
+        "end": 188
+      },
+      {
+        "start": 188,
+        "end": 189
+      },
+      {
+        "start": 194,
+        "end": 197
+      },
+      {
+        "start": 198,
+        "end": 236
+      },
+      {
+        "start": 237,
+        "end": 238
+      },
+      {
+        "start": 238,
+        "end": 256
+      },
+      {
+        "start": 256,
+        "end": 257
+      },
+      {
+        "start": 257,
+        "end": 258
+      },
+      {
+        "start": 259,
+        "end": 260
+      },
+      {
+        "start": 260,
+        "end": 261
+      },
+      {
+        "start": 261,
+        "end": 262
+      },
+      {
+        "start": 267,
+        "end": 287
+      },
+      {
+        "start": 287,
+        "end": 288
+      },
+      {
+        "start": 289,
+        "end": 300
+      },
+      {
+        "start": 301,
+        "end": 302
+      },
+      {
+        "start": 302,
+        "end": 310
+      },
+      {
+        "start": 311,
+        "end": 312
+      },
+      {
+        "start": 312,
+        "end": 313
+      },
+      {
+        "start": 313,
+        "end": 314
+      }
+    ],
+    "W_full": 49,
+    "W_S": 21,
+    "W_B": 24
+  },
+  "root": "CompressionEval.lib_number_theory_main_numbertheory_divisors_05",
+  "proved_type_fingerprint": "3231759666",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 3392,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.rwSeq",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.rwRuleSeq",
+      "Lean.Parser.Tactic.rwRule",
+      "Lean.Parser.Term.app",
+      "Lean.Parser.Term.paren",
+      "Lean.Parser.Term.hygienicLParen",
+      "hygieneInfo",
+      "Lean.Parser.Term.proj",
+      "fieldIdx"
+    ],
+    "proof_nodes": 4721,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_number_theory_main_numbertheory_divisors_05"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "19bd2b84ee6f5a6eefd2f6b7675279153afff785efffbf7bdd82d24da5516255",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.664526083972305
+  },
+  "request_fingerprint": "ed3c48b89d96147347b92f88635447ad82a1ce9b5f938425483136ff7abe6a13"
+}

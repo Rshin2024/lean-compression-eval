@@ -1,0 +1,112 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "Function.Injective.{1, 1} Nat.succ",
+  "trusted_type_expression": "Function.Injective.{1, 1} Nat Nat Nat.succ",
+  "trusted_telescope": {
+    "proposition": "Function.Injective.{1, 1} Nat.succ",
+    "binders": []
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_number_theory_pilot_nat_basic_01  :\n  Injective Nat.succ :=\n@succ.inj",
+    "signature_spans": [
+      {
+        "start": 73,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 91
+      }
+    ],
+    "proof_offset": 95,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 67
+      },
+      {
+        "start": 69,
+        "end": 70
+      },
+      {
+        "start": 73,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 104
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 104
+      }
+    ],
+    "W_full": 8,
+    "W_S": 2,
+    "W_B": 2
+  },
+  "root": "CompressionEval.lib_number_theory_pilot_nat_basic_01",
+  "proved_type_fingerprint": "3568725967",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 15,
+    "syntax_kinds": [
+      "Lean.Parser.Term.explicit"
+    ],
+    "proof_nodes": 1,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_number_theory_pilot_nat_basic_01"
+  ],
+  "axioms": [],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "a4c9ad2a01b097ada638587be80eb78c5ac1493da2dd08c08878a4732f07c8d2",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 2.3999643749557436
+  },
+  "request_fingerprint": "ccb061653de85cc2dcd07da2180190e0034dc0f3ee8c4b7a351a902e14ba0a4b"
+}

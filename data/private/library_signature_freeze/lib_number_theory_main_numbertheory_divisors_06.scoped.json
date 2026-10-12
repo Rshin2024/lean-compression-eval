@@ -1,0 +1,307 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "∀ {n : ℕ}, Ne.{1} n 0 → Eq.{1} (Finset.cons.{0} n n.properDivisors ⋯) n.divisors",
+  "trusted_type_expression": "forall {n : Nat}, (Ne.{1} Nat n (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0))) -> (Eq.{1} (Finset.{0} Nat) (Finset.cons.{0} Nat n (Nat.properDivisors n) (Nat.self_notMem_properDivisors n)) (Nat.divisors n))",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} (Finset.cons.{0} n n.properDivisors ⋯) n.divisors",
+    "binders": [
+      {
+        "type_source": "ℕ",
+        "name": "n",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Ne.{1} n 0",
+        "name": "h",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_number_theory_main_numbertheory_divisors_06 (h : n ≠ 0) :\n  cons n (properDivisors n) self_notMem_properDivisors = divisors n :=\nby\n  rw [cons_eq_insert, insert_self_properDivisors h]",
+    "signature_spans": [
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 89
+      },
+      {
+        "start": 90,
+        "end": 91
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 97,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 105,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 160
+      },
+      {
+        "start": 161,
+        "end": 162
+      }
+    ],
+    "proof_offset": 166,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 89
+      },
+      {
+        "start": 90,
+        "end": 91
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 97,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 105,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 160
+      },
+      {
+        "start": 161,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 165
+      },
+      {
+        "start": 166,
+        "end": 168
+      },
+      {
+        "start": 171,
+        "end": 173
+      },
+      {
+        "start": 174,
+        "end": 175
+      },
+      {
+        "start": 175,
+        "end": 189
+      },
+      {
+        "start": 189,
+        "end": 190
+      },
+      {
+        "start": 191,
+        "end": 217
+      },
+      {
+        "start": 218,
+        "end": 219
+      },
+      {
+        "start": 219,
+        "end": 220
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 166,
+        "end": 168
+      },
+      {
+        "start": 171,
+        "end": 173
+      },
+      {
+        "start": 174,
+        "end": 175
+      },
+      {
+        "start": 175,
+        "end": 189
+      },
+      {
+        "start": 189,
+        "end": 190
+      },
+      {
+        "start": 191,
+        "end": 217
+      },
+      {
+        "start": 218,
+        "end": 219
+      },
+      {
+        "start": 219,
+        "end": 220
+      }
+    ],
+    "W_full": 29,
+    "W_S": 17,
+    "W_B": 8
+  },
+  "root": "CompressionEval.lib_number_theory_main_numbertheory_divisors_06",
+  "proved_type_fingerprint": "2798551305",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 3409,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.rwSeq",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.rwRuleSeq",
+      "Lean.Parser.Tactic.rwRule",
+      "Lean.Parser.Term.app"
+    ],
+    "proof_nodes": 367,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_number_theory_main_numbertheory_divisors_06"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "d66735d30ed5d01604a2cd49e16158107dca0381ba4463f9bfb2b93aeebaa083",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.2980435830540955
+  },
+  "request_fingerprint": "47df628d0944a0111f1dd4e926a0993314e7ba83ad990afdd72c097ceb7efd39"
+}

@@ -1,0 +1,284 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {α : Type u_1} {r : α → α → Prop} [Std.Symm.{u_1 + 1} r], Eq.{u_1 + 1} (flip.{u_1 + 1, u_1 + 1, 1} r) r",
+  "trusted_type_expression": "forall {α : Type.{u_1}} {r : α -> α -> Prop} [inst._@.EvaluatorCandidate.1685075384._hygCtx._hyg.13 : Std.Symm.{succ u_1} α r], Eq.{succ u_1} (α -> α -> Prop) (flip.{succ u_1, succ u_1, 1} α α Prop r) r",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_1 + 1} (flip.{u_1 + 1, u_1 + 1, 1} r) r",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "α → α → Prop",
+        "name": "r",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Std.Symm.{u_1 + 1} r",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.13",
+        "binder_info": "instance"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_sets_logic_main_logic_relation_07 [Std.Symm r] :\n  flip r = r :=\nfunext₂ fun _ _ ↦ propext <| Std.Symm.iff (r := r) ..",
+    "signature_spans": [
+      {
+        "start": 69,
+        "end": 70
+      },
+      {
+        "start": 70,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 86,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      }
+    ],
+    "proof_offset": 100,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 68
+      },
+      {
+        "start": 69,
+        "end": 70
+      },
+      {
+        "start": 70,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 86,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 132
+      },
+      {
+        "start": 133,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 147
+      },
+      {
+        "start": 147,
+        "end": 148
+      },
+      {
+        "start": 149,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 153
+      },
+      {
+        "start": 153,
+        "end": 154
+      },
+      {
+        "start": 155,
+        "end": 157
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 100,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 132
+      },
+      {
+        "start": 133,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 147
+      },
+      {
+        "start": 147,
+        "end": 148
+      },
+      {
+        "start": 149,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 153
+      },
+      {
+        "start": 153,
+        "end": 154
+      },
+      {
+        "start": 155,
+        "end": 157
+      }
+    ],
+    "W_full": 26,
+    "W_S": 8,
+    "W_B": 14
+  },
+  "root": "CompressionEval.lib_sets_logic_main_logic_relation_07",
+  "proved_type_fingerprint": "3651974724",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 24,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "null",
+      "Lean.Parser.Term.fun",
+      "Lean.Parser.Term.basicFun",
+      "Lean.Parser.Term.hole",
+      "«term_<|_»",
+      "Lean.Parser.Term.namedArgument",
+      "Lean.Parser.Term.ellipsis"
+    ],
+    "proof_nodes": 77,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_sets_logic_main_logic_relation_07"
+  ],
+  "axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "4977cbe7e1a65c20a0a7fa1f4aa49dc09796c23e6340a4747f09cdff98d9bbe6",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 2.4623480001464486
+  },
+  "request_fingerprint": "62f9a3d87eb262d6fd4ecf15ac38b7d3ba202d50ce4900fc637be7ed73107eec"
+}

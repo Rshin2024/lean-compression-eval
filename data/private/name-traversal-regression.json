@@ -1,0 +1,423 @@
+{
+  "boundary_policy": "expand_mathlib_and_evaluator_v1",
+  "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
+  "engine_hash": "46217c8f9d4317cf07b34b5867b8aed1cd37acc29b38c4ecdd5d0c4690982642",
+  "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+  "evaluated_at": "2026-10-12T03:43:40.045657+00:00",
+  "extraction": {
+    "metric_status": "unavailable",
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 60.34485995769501,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "c960ee9bc623a18ed3e2388ad30423f86343a4c0f15d80219914d1c5308cb800",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "wall_seconds_limit": 60
+    },
+    "stderr": "",
+    "stdout": "",
+    "validity_status": "extractor_timeout"
+  },
+  "metric_status": "unavailable",
+  "metric_unavailable_reason": "extractor_timeout",
+  "metrics": null,
+  "source_hash": "b94d8b03be12bea14374c24726c952b0d78c69defd2b3b10d8d97abf6d797813",
+  "validation": {
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.smoke_an_01"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 54815,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Mathlib.Tactic.nlinarith",
+        "Mathlib.Tactic.linarithArgsRest",
+        "Lean.Parser.Tactic.optConfig"
+      ],
+      "transitive_dependency_count": 10882
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "2364092028",
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 48.99542362522334,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "7fa9f628d8d99ce17c3dee8a2ec8b449bc91a9c133e5fe6b8a8d076db1061777",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.smoke_an_01",
+    "source_tokens": {
+      "W_B": 2,
+      "W_S": 32,
+      "W_full": 38,
+      "body_spans": [
+        {
+          "end": 121,
+          "start": 119
+        },
+        {
+          "end": 131,
+          "start": 122
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 42,
+          "start": 8
+        },
+        {
+          "end": 44,
+          "start": 43
+        },
+        {
+          "end": 45,
+          "start": 44
+        },
+        {
+          "end": 47,
+          "start": 46
+        },
+        {
+          "end": 49,
+          "start": 48
+        },
+        {
+          "end": 51,
+          "start": 50
+        },
+        {
+          "end": 55,
+          "start": 52
+        },
+        {
+          "end": 56,
+          "start": 55
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 61,
+          "start": 58
+        },
+        {
+          "end": 63,
+          "start": 62
+        },
+        {
+          "end": 65,
+          "start": 64
+        },
+        {
+          "end": 69,
+          "start": 66
+        },
+        {
+          "end": 71,
+          "start": 70
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 76,
+          "start": 74
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 84,
+          "start": 81
+        },
+        {
+          "end": 86,
+          "start": 85
+        },
+        {
+          "end": 87,
+          "start": 86
+        },
+        {
+          "end": 89,
+          "start": 88
+        },
+        {
+          "end": 93,
+          "start": 92
+        },
+        {
+          "end": 95,
+          "start": 94
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 101,
+          "start": 100
+        },
+        {
+          "end": 105,
+          "start": 102
+        },
+        {
+          "end": 107,
+          "start": 106
+        },
+        {
+          "end": 109,
+          "start": 108
+        },
+        {
+          "end": 111,
+          "start": 110
+        },
+        {
+          "end": 113,
+          "start": 112
+        },
+        {
+          "end": 115,
+          "start": 114
+        },
+        {
+          "end": 118,
+          "start": 116
+        },
+        {
+          "end": 121,
+          "start": 119
+        },
+        {
+          "end": 131,
+          "start": 122
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 119,
+      "signature_spans": [
+        {
+          "end": 44,
+          "start": 43
+        },
+        {
+          "end": 45,
+          "start": 44
+        },
+        {
+          "end": 47,
+          "start": 46
+        },
+        {
+          "end": 49,
+          "start": 48
+        },
+        {
+          "end": 51,
+          "start": 50
+        },
+        {
+          "end": 55,
+          "start": 52
+        },
+        {
+          "end": 56,
+          "start": 55
+        },
+        {
+          "end": 58,
+          "start": 57
+        },
+        {
+          "end": 61,
+          "start": 58
+        },
+        {
+          "end": 63,
+          "start": 62
+        },
+        {
+          "end": 65,
+          "start": 64
+        },
+        {
+          "end": 69,
+          "start": 66
+        },
+        {
+          "end": 71,
+          "start": 70
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 76,
+          "start": 74
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 84,
+          "start": 81
+        },
+        {
+          "end": 86,
+          "start": 85
+        },
+        {
+          "end": 87,
+          "start": 86
+        },
+        {
+          "end": 93,
+          "start": 92
+        },
+        {
+          "end": 95,
+          "start": 94
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 101,
+          "start": 100
+        },
+        {
+          "end": 105,
+          "start": 102
+        },
+        {
+          "end": 107,
+          "start": 106
+        },
+        {
+          "end": 109,
+          "start": 108
+        },
+        {
+          "end": 111,
+          "start": 110
+        },
+        {
+          "end": 113,
+          "start": 112
+        },
+        {
+          "end": 115,
+          "start": 114
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.smoke_an_01 (x y c : ℝ) (hxy : x ≤ y) (hc : 0 ≤ c) :\n  x * c + c ≤ y * c + c :=\nby nlinarith",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "explicit",
+          "name": "x",
+          "type_source": "ℝ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "y",
+          "type_source": "ℝ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "c",
+          "type_source": "ℝ"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hxy",
+          "type_source": "LE.le.{0} x y"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hc",
+          "type_source": "LE.le.{0} 0 c"
+        }
+      ],
+      "proposition": "LE.le.{0} (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} x c) c) (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} y c) c)"
+    },
+    "trusted_type_expression": "forall (x : Real) (y : Real) (c : Real), (LE.le.{0} Real Real.instLE x y) -> (LE.le.{0} Real Real.instLE (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero)) c) -> (LE.le.{0} Real Real.instLE (HAdd.hAdd.{0, 0, 0} Real Real Real (instHAdd.{0} Real Real.instAdd) (HMul.hMul.{0, 0, 0} Real Real Real (instHMul.{0} Real Real.instMul) x c) c) (HAdd.hAdd.{0, 0, 0} Real Real Real (instHAdd.{0} Real Real.instAdd) (HMul.hMul.{0, 0, 0} Real Real Real (instHMul.{0} Real Real.instMul) y c) c))",
+    "trusted_type_source": "∀ (x y c : ℝ),\n  LE.le.{0} x y →\n    LE.le.{0} 0 c →\n      LE.le.{0} (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} x c) c) (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} y c) c)",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "validity_status": "success"
+}

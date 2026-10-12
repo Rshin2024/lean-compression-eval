@@ -1,0 +1,440 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "∀ {p : ℕ}, Nat.Prime p → Eq.{1} p 2 ∨ Odd.{0} p",
+  "trusted_type_expression": "forall {p : Nat}, (Nat.Prime p) -> (Or (Eq.{1} Nat p (OfNat.ofNat.{0} Nat 2 (instOfNatNat 2))) (Odd.{0} Nat Nat.instSemiring p))",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} p 2 ∨ Odd.{0} p",
+    "binders": [
+      {
+        "type_source": "ℕ",
+        "name": "p",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Nat.Prime p",
+        "name": "hp",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_number_theory_main_prime_basic_06 {p : ℕ} (hp : Prime p) :\n  p = 2 ∨ Odd p :=\nOr.imp_right (fun h => ⟨p / 2, (div_add_mod p 2).symm.trans (congr_arg _ h)⟩) hp.eq_two_or_odd",
+    "signature_spans": [
+      {
+        "start": 69,
+        "end": 70
+      },
+      {
+        "start": 70,
+        "end": 71
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 74,
+        "end": 77
+      },
+      {
+        "start": 77,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 113
+      }
+    ],
+    "proof_offset": 117,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 68
+      },
+      {
+        "start": 69,
+        "end": 70
+      },
+      {
+        "start": 70,
+        "end": 71
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 74,
+        "end": 77
+      },
+      {
+        "start": 77,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 131,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 139
+      },
+      {
+        "start": 140,
+        "end": 143
+      },
+      {
+        "start": 143,
+        "end": 144
+      },
+      {
+        "start": 145,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 148
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 151,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 166
+      },
+      {
+        "start": 166,
+        "end": 167
+      },
+      {
+        "start": 167,
+        "end": 168
+      },
+      {
+        "start": 168,
+        "end": 178
+      },
+      {
+        "start": 179,
+        "end": 180
+      },
+      {
+        "start": 180,
+        "end": 189
+      },
+      {
+        "start": 190,
+        "end": 191
+      },
+      {
+        "start": 192,
+        "end": 193
+      },
+      {
+        "start": 193,
+        "end": 194
+      },
+      {
+        "start": 194,
+        "end": 197
+      },
+      {
+        "start": 197,
+        "end": 198
+      },
+      {
+        "start": 199,
+        "end": 215
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 117,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 131,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 139
+      },
+      {
+        "start": 140,
+        "end": 143
+      },
+      {
+        "start": 143,
+        "end": 144
+      },
+      {
+        "start": 145,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 148
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 151,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 166
+      },
+      {
+        "start": 166,
+        "end": 167
+      },
+      {
+        "start": 167,
+        "end": 168
+      },
+      {
+        "start": 168,
+        "end": 178
+      },
+      {
+        "start": 179,
+        "end": 180
+      },
+      {
+        "start": 180,
+        "end": 189
+      },
+      {
+        "start": 190,
+        "end": 191
+      },
+      {
+        "start": 192,
+        "end": 193
+      },
+      {
+        "start": 193,
+        "end": 194
+      },
+      {
+        "start": 194,
+        "end": 197
+      },
+      {
+        "start": 197,
+        "end": 198
+      },
+      {
+        "start": 199,
+        "end": 215
+      }
+    ],
+    "W_full": 46,
+    "W_S": 17,
+    "W_B": 25
+  },
+  "root": "CompressionEval.lib_number_theory_main_prime_basic_06",
+  "proved_type_fingerprint": "995240641",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 798,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "null",
+      "Lean.Parser.Term.paren",
+      "Lean.Parser.Term.hygienicLParen",
+      "hygieneInfo",
+      "Lean.Parser.Term.fun",
+      "Lean.Parser.Term.basicFun",
+      "Lean.Parser.Term.anonymousCtor",
+      "«term_/_»",
+      "num",
+      "Lean.Parser.Term.proj",
+      "Lean.Parser.Term.hole"
+    ],
+    "proof_nodes": 759,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_number_theory_main_prime_basic_06"
+  ],
+  "axioms": [
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "d2a90bb273e8c926be7a6429feb8253e0b606d28c0b3fe6f383b5cf3547fad5e",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 2.6472928752191365
+  },
+  "request_fingerprint": "5c9ce5adc16c44267ed58c1890ff8dfa97e6b9588d27d52c96ceff2c73c85d8d"
+}

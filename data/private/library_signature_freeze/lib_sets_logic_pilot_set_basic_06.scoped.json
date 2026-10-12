@@ -1,0 +1,273 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u"
+  ],
+  "trusted_type_source": "∀ {α : Type u}, Eq.{u + 1} (fun (x1 x2 : Set.{u} α) => x1 ⊔ x2) fun (x1 x2 : Set.{u} α) => Union.union.{u} x1 x2",
+  "trusted_type_expression": "forall {α : Type.{u}}, Eq.{succ u} ((Set.{u} α) -> (Set.{u} α) -> (Set.{u} α)) (fun (x1._@.EvaluatorCandidate.4091395044._hygCtx._hyg.23 : Set.{u} α) (x2._@.EvaluatorCandidate.4091395044._hygCtx._hyg.23 : Set.{u} α) => Max.max.{u} (Set.{u} α) (SemilatticeSup.toMax.{u} (Set.{u} α) (Lattice.toSemilatticeSup.{u} (Set.{u} α) (DistribLattice.toLattice.{u} (Set.{u} α) (Set.instDistribLattice.{u} α)))) x1._@.EvaluatorCandidate.4091395044._hygCtx._hyg.23 x2._@.EvaluatorCandidate.4091395044._hygCtx._hyg.23) (fun (x1._@.EvaluatorCandidate.4091395044._hygCtx._hyg.35 : Set.{u} α) (x2._@.EvaluatorCandidate.4091395044._hygCtx._hyg.35 : Set.{u} α) => Union.union.{u} (Set.{u} α) (Set.instUnion.{u} α) x1._@.EvaluatorCandidate.4091395044._hygCtx._hyg.35 x2._@.EvaluatorCandidate.4091395044._hygCtx._hyg.35)",
+  "trusted_telescope": {
+    "proposition": "Eq.{u + 1} (fun (x1 x2 : Set.{u} α) => x1 ⊔ x2) fun (x1 x2 : Set.{u} α) => Union.union.{u} x1 x2",
+    "binders": [
+      {
+        "type_source": "Type u",
+        "name": "α",
+        "binder_info": "implicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_sets_logic_pilot_set_basic_06  :\n  ((· ⊔ ·) : Set α → Set α → Set α) = (· ∪ ·) :=\nrfl",
+    "signature_spans": [
+      {
+        "start": 70,
+        "end": 71
+      },
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 72,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 81
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 113
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 118,
+        "end": 120
+      },
+      {
+        "start": 121,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 127
+      },
+      {
+        "start": 127,
+        "end": 128
+      }
+    ],
+    "proof_offset": 132,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 64
+      },
+      {
+        "start": 66,
+        "end": 67
+      },
+      {
+        "start": 70,
+        "end": 71
+      },
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 72,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 81
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 113
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 118,
+        "end": 120
+      },
+      {
+        "start": 121,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 127
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 135
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 132,
+        "end": 135
+      }
+    ],
+    "W_full": 27,
+    "W_S": 22,
+    "W_B": 1
+  },
+  "root": "CompressionEval.lib_sets_logic_pilot_set_basic_06",
+  "proved_type_fingerprint": "3496295845",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 482,
+    "syntax_kinds": [],
+    "proof_nodes": 55,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_sets_logic_pilot_set_basic_06"
+  ],
+  "axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "cba821b91b9de94a95525d979f264063fe7beff899cb10cc167d242b619c3561",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 3.891550083179027
+  },
+  "request_fingerprint": "146e8297e1f4f1c5313a32bfe04f10d1f70e72f6b91b48448b091cd3941b3aef"
+}

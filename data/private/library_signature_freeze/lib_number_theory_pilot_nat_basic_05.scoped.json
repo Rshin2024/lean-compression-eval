@@ -1,0 +1,506 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "∀ {x a : ℕ},\n  Ne.{1} x 0 →\n    Ne.{1} a 0 →\n      Eq.{1} (HPow.hPow.{0, 0, 0} x (HSub.hSub.{0, 0, 0} a 1)) (HDiv.hDiv.{0, 0, 0} (HPow.hPow.{0, 0, 0} x a) x)",
+  "trusted_type_expression": "forall {x : Nat} {a : Nat}, (Ne.{1} Nat x (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0))) -> (Ne.{1} Nat a (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0))) -> (Eq.{1} Nat (HPow.hPow.{0, 0, 0} Nat Nat Nat (instHPow.{0, 0} Nat Nat (instPowNat.{0} Nat instNatPowNat)) x (HSub.hSub.{0, 0, 0} Nat Nat Nat (instHSub.{0} Nat instSubNat) a (OfNat.ofNat.{0} Nat 1 (instOfNatNat 1)))) (HDiv.hDiv.{0, 0, 0} Nat Nat Nat (instHDiv.{0} Nat Nat.instDiv) (HPow.hPow.{0, 0, 0} Nat Nat Nat (instHPow.{0, 0} Nat Nat (instPowNat.{0} Nat instNatPowNat)) x a) x))",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} (HPow.hPow.{0, 0, 0} x (HSub.hSub.{0, 0, 0} a 1)) (HDiv.hDiv.{0, 0, 0} (HPow.hPow.{0, 0, 0} x a) x)",
+    "binders": [
+      {
+        "type_source": "ℕ",
+        "name": "x",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "ℕ",
+        "name": "a",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Ne.{1} x 0",
+        "name": "hx",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Ne.{1} a 0",
+        "name": "ha",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_number_theory_pilot_nat_basic_05 {x a : ℕ} (hx : x ≠ 0) (ha : a ≠ 0) :\n  x ^ (a - 1) = x ^ a / x :=\nby\n  rw [← Nat.pow_div (one_le_iff_ne_zero.mpr ha) (Nat.pos_iff_ne_zero.mpr hx), Nat.pow_one]",
+    "signature_spans": [
+      {
+        "start": 68,
+        "end": 69
+      },
+      {
+        "start": 69,
+        "end": 70
+      },
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 73,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 78
+      },
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 81,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 108
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 119,
+        "end": 120
+      },
+      {
+        "start": 121,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 128,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 137
+      }
+    ],
+    "proof_offset": 141,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 67
+      },
+      {
+        "start": 68,
+        "end": 69
+      },
+      {
+        "start": 69,
+        "end": 70
+      },
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 73,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 78
+      },
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 81,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 108
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 119,
+        "end": 120
+      },
+      {
+        "start": 121,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 128,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 143
+      },
+      {
+        "start": 146,
+        "end": 148
+      },
+      {
+        "start": 149,
+        "end": 150
+      },
+      {
+        "start": 150,
+        "end": 153
+      },
+      {
+        "start": 154,
+        "end": 165
+      },
+      {
+        "start": 166,
+        "end": 167
+      },
+      {
+        "start": 167,
+        "end": 189
+      },
+      {
+        "start": 190,
+        "end": 192
+      },
+      {
+        "start": 192,
+        "end": 193
+      },
+      {
+        "start": 194,
+        "end": 195
+      },
+      {
+        "start": 195,
+        "end": 218
+      },
+      {
+        "start": 219,
+        "end": 221
+      },
+      {
+        "start": 221,
+        "end": 222
+      },
+      {
+        "start": 222,
+        "end": 223
+      },
+      {
+        "start": 224,
+        "end": 235
+      },
+      {
+        "start": 235,
+        "end": 236
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 141,
+        "end": 143
+      },
+      {
+        "start": 146,
+        "end": 148
+      },
+      {
+        "start": 149,
+        "end": 150
+      },
+      {
+        "start": 150,
+        "end": 153
+      },
+      {
+        "start": 154,
+        "end": 165
+      },
+      {
+        "start": 166,
+        "end": 167
+      },
+      {
+        "start": 167,
+        "end": 189
+      },
+      {
+        "start": 190,
+        "end": 192
+      },
+      {
+        "start": 192,
+        "end": 193
+      },
+      {
+        "start": 194,
+        "end": 195
+      },
+      {
+        "start": 195,
+        "end": 218
+      },
+      {
+        "start": 219,
+        "end": 221
+      },
+      {
+        "start": 221,
+        "end": 222
+      },
+      {
+        "start": 222,
+        "end": 223
+      },
+      {
+        "start": 224,
+        "end": 235
+      },
+      {
+        "start": 235,
+        "end": 236
+      }
+    ],
+    "W_full": 53,
+    "W_S": 33,
+    "W_B": 16
+  },
+  "root": "CompressionEval.lib_number_theory_pilot_nat_basic_05",
+  "proved_type_fingerprint": "1594217047",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 429,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.rwSeq",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.rwRuleSeq",
+      "Lean.Parser.Tactic.rwRule",
+      "Lean.Parser.Term.app",
+      "Lean.Parser.Term.paren",
+      "Lean.Parser.Term.hygienicLParen",
+      "hygieneInfo"
+    ],
+    "proof_nodes": 1427,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_number_theory_pilot_nat_basic_05"
+  ],
+  "axioms": [
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "da49c4c1b5c26296968df81148906c0d3a1dfc5e28370bd74d2ae7e14f3de0f1",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 1.9570705839432776
+  },
+  "request_fingerprint": "a4ad10b810cf9e567170841b627547d9f179ada788b98e6f2723b787d8da1004"
+}

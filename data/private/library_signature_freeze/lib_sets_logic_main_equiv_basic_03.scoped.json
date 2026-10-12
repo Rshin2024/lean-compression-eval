@@ -1,0 +1,278 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_9"
+  ],
+  "trusted_type_source": "∀ {ε : Type u_9} {p : ε → Prop} [inst : DecidablePred.{u_9 + 1} p]\n  (ep : Equiv.Perm.{u_9 + 1} (Subtype.{u_9 + 1} fun (a : ε) => p a))\n  (en : Equiv.Perm.{u_9 + 1} (Subtype.{u_9 + 1} fun (a : ε) => ¬p a)) (a : Subtype.{u_9 + 1} fun (a : ε) => p a),\n  Eq.{u_9 + 1} ((Equiv.Perm.subtypeCongr.{u_9} ep en) ↑a) ↑(ep a)",
+  "trusted_type_expression": "forall {ε : Type.{u_9}} {p : ε -> Prop} [inst._@.EvaluatorCandidate.2106739785._hygCtx._hyg.14 : DecidablePred.{succ u_9} ε p] (ep : Equiv.Perm.{succ u_9} (Subtype.{succ u_9} ε (fun (a : ε) => p a))) (en : Equiv.Perm.{succ u_9} (Subtype.{succ u_9} ε (fun (a : ε) => Not (p a)))) (a : Subtype.{succ u_9} ε (fun (a : ε) => p a)), Eq.{succ u_9} ε (DFunLike.coe.{succ u_9, succ u_9, succ u_9} (Equiv.Perm.{succ u_9} ε) ε (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : ε) => ε) (EquivLike.toFunLike.{succ u_9, succ u_9, succ u_9} (Equiv.Perm.{succ u_9} ε) ε ε (Equiv.instEquivLike.{succ u_9, succ u_9} ε ε)) (Equiv.Perm.subtypeCongr.{u_9} ε p inst._@.EvaluatorCandidate.2106739785._hygCtx._hyg.14 ep en) (Subtype.val.{succ u_9} ε (fun (a : ε) => p a) a)) (Subtype.val.{succ u_9} ε (fun (a : ε) => p a) (DFunLike.coe.{succ u_9, succ u_9, succ u_9} (Equiv.Perm.{max 1 (succ u_9)} (Subtype.{succ u_9} ε (fun (a : ε) => p a))) (Subtype.{succ u_9} ε (fun (a : ε) => p a)) (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : Subtype.{succ u_9} ε (fun (a : ε) => p a)) => Subtype.{succ u_9} ε (fun (a : ε) => p a)) (EquivLike.toFunLike.{succ u_9, succ u_9, succ u_9} (Equiv.Perm.{max 1 (succ u_9)} (Subtype.{succ u_9} ε (fun (a : ε) => p a))) (Subtype.{succ u_9} ε (fun (a : ε) => p a)) (Subtype.{succ u_9} ε (fun (a : ε) => p a)) (Equiv.instEquivLike.{succ u_9, succ u_9} (Subtype.{succ u_9} ε (fun (a : ε) => p a)) (Subtype.{succ u_9} ε (fun (a : ε) => p a)))) ep a))",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_9 + 1} ((Equiv.Perm.subtypeCongr.{u_9} ep en) ↑a) ↑(ep a)",
+    "binders": [
+      {
+        "type_source": "Type u_9",
+        "name": "ε",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "ε → Prop",
+        "name": "p",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "DecidablePred.{u_9 + 1} p",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.14",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Equiv.Perm.{u_9 + 1} (Subtype.{u_9 + 1} fun (a : ε) => p a)",
+        "name": "ep",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Equiv.Perm.{u_9 + 1} (Subtype.{u_9 + 1} fun (a : ε) => ¬p a)",
+        "name": "en",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Subtype.{u_9 + 1} fun (a : ε) => p a",
+        "name": "a",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_sets_logic_main_equiv_basic_03 (a : { a // p a }) :\n  ep.subtypeCongr en a = ep a :=\nPerm.subtypeCongr.left_apply ep en a.property",
+    "signature_spans": [
+      {
+        "start": 66,
+        "end": 67
+      },
+      {
+        "start": 67,
+        "end": 68
+      },
+      {
+        "start": 69,
+        "end": 70
+      },
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 73,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 77
+      },
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 89,
+        "end": 104
+      },
+      {
+        "start": 105,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 116
+      }
+    ],
+    "proof_offset": 120,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 65
+      },
+      {
+        "start": 66,
+        "end": 67
+      },
+      {
+        "start": 67,
+        "end": 68
+      },
+      {
+        "start": 69,
+        "end": 70
+      },
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 73,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 77
+      },
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 89,
+        "end": 104
+      },
+      {
+        "start": 105,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 148
+      },
+      {
+        "start": 149,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 154
+      },
+      {
+        "start": 155,
+        "end": 165
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 120,
+        "end": 148
+      },
+      {
+        "start": 149,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 154
+      },
+      {
+        "start": 155,
+        "end": 165
+      }
+    ],
+    "W_full": 24,
+    "W_S": 16,
+    "W_B": 4
+  },
+  "root": "CompressionEval.lib_sets_logic_main_equiv_basic_03",
+  "proved_type_fingerprint": "2826525604",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 551,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "null"
+    ],
+    "proof_nodes": 83,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_sets_logic_main_equiv_basic_03"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "3c724347688db2a3d1ec43f95bfba3844d235fc2c460544b7f903637063f19ae",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 2.888436000328511
+  },
+  "request_fingerprint": "6f93409a316bb9d3126bda3d058e4d7eef416af85444c7f8c07e78444ddb8df4"
+}

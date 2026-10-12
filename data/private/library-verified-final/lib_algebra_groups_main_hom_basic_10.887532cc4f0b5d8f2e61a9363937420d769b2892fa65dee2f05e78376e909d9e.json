@@ -1,0 +1,3335 @@
+{
+  "boundary_policy": "expand_mathlib_and_evaluator_v1",
+  "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+  "evaluated_at": "2026-10-12T04:03:01.011069+00:00",
+  "extraction": {
+    "axioms": [
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.lib_algebra_groups_main_hom_basic_10"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 219,
+      "syntax_kinds": [],
+      "transitive_dependency_count": 465
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "available",
+    "nodes": [
+      {
+        "body": {
+          "@Sort": 2,
+          "DFunLike.coe": 1,
+          "DivInvOneMonoid.toInvOneClass": 8,
+          "DivisionMonoid": 1,
+          "DivisionMonoid.toDivInvOneMonoid": 8,
+          "HDiv.hDiv": 1,
+          "InvOneClass.toOne": 8,
+          "One": 1,
+          "OneHom": 7,
+          "OneHom.funLike": 1,
+          "OneHom.instDiv_evaluatorCandidate": 1,
+          "instHDiv": 1,
+          "rfl": 1
+        },
+        "body_nodes": 219,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "CompressionEval.lib_algebra_groups_main_hom_basic_10",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2,
+          "DFunLike.coe": 3,
+          "DivInvMonoid.toDiv": 1,
+          "DivInvOneMonoid.toInvOneClass": 12,
+          "DivisionMonoid": 1,
+          "DivisionMonoid.toDivInvMonoid": 1,
+          "DivisionMonoid.toDivInvOneMonoid": 12,
+          "Eq": 1,
+          "HDiv.hDiv": 2,
+          "InvOneClass.toOne": 12,
+          "One": 1,
+          "OneHom": 9,
+          "OneHom.funLike": 3,
+          "OneHom.instDiv_evaluatorCandidate": 1,
+          "Pi.instDiv": 1,
+          "instHDiv": 2
+        },
+        "source_counts": null,
+        "type_hash": "1327162591",
+        "type_nodes": 367,
+        "value_hash": "2819069786"
+      },
+      {
+        "body": null,
+        "name": "@Sort",
+        "owner_module": "@builtin",
+        "primitive": true,
+        "signature": {},
+        "type_hash": "@Sort",
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "One",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3807510281",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "DivisionMonoid",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2
+        },
+        "source_counts": null,
+        "type_hash": "3807510281",
+        "type_nodes": 3,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "OneHom",
+        "owner_module": "Mathlib.Algebra.Group.Hom.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 3,
+          "One": 2
+        },
+        "source_counts": null,
+        "type_hash": "2539153470",
+        "type_nodes": 13,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "InvOneClass": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "InvOneClass.toOne",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "InvOneClass": 1,
+          "One": 1
+        },
+        "source_counts": null,
+        "type_hash": "1702665471",
+        "type_nodes": 9,
+        "value_hash": "4164624329"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "InvOneClass",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2
+        },
+        "source_counts": null,
+        "type_hash": "1872112561",
+        "type_nodes": 3,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "DivInvMonoid.toInv": 1,
+          "DivInvMonoid.toMonoid": 1,
+          "DivInvOneMonoid": 1,
+          "DivInvOneMonoid.inv_one": 1,
+          "DivInvOneMonoid.toDivInvMonoid": 2,
+          "InvOneClass.mk": 1,
+          "Monoid.toOne": 1
+        },
+        "body_nodes": 39,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "DivInvOneMonoid.toInvOneClass",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivInvOneMonoid": 1,
+          "InvOneClass": 1
+        },
+        "source_counts": null,
+        "type_hash": "269006770",
+        "type_nodes": 9,
+        "value_hash": "2504218430"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "DivInvOneMonoid",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2
+        },
+        "source_counts": null,
+        "type_hash": "1872112561",
+        "type_nodes": 3,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 2,
+        "name": "InvOneClass.mk",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 1,
+          "Inv": 1,
+          "Inv.inv": 1,
+          "InvOneClass": 1,
+          "OfNat.ofNat": 2,
+          "One": 1,
+          "One.toOfNat1": 2
+        },
+        "source_counts": null,
+        "type_hash": "1863298015",
+        "type_nodes": 47,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Inv",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3807510281",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3970007004",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Inv.inv",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "575266645",
+        "type_nodes": null,
+        "value_hash": "1588250075"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "OfNat.ofNat",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3494724834",
+        "type_nodes": null,
+        "value_hash": "2265622595"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "One.toOfNat1",
+        "owner_module": "Init.Data.Zero",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1479039877",
+        "type_nodes": null,
+        "value_hash": "2120009979"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "Monoid": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Monoid.toOne",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Monoid": 1,
+          "One": 1
+        },
+        "source_counts": null,
+        "type_hash": "2539258719",
+        "type_nodes": 9,
+        "value_hash": "207435901"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Monoid",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2
+        },
+        "source_counts": null,
+        "type_hash": "3807510281",
+        "type_nodes": 3,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "DivInvMonoid": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "DivInvMonoid.toMonoid",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivInvMonoid": 1,
+          "Monoid": 1
+        },
+        "source_counts": null,
+        "type_hash": "2949876274",
+        "type_nodes": 9,
+        "value_hash": "1836612286"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "DivInvMonoid",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2
+        },
+        "source_counts": null,
+        "type_hash": "3807510281",
+        "type_nodes": 3,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "DivInvOneMonoid": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "DivInvOneMonoid.toDivInvMonoid",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivInvMonoid": 1,
+          "DivInvOneMonoid": 1
+        },
+        "source_counts": null,
+        "type_hash": "2374236466",
+        "type_nodes": 9,
+        "value_hash": "2733557293"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "DivInvMonoid": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "DivInvMonoid.toInv",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivInvMonoid": 1,
+          "Inv": 1
+        },
+        "source_counts": null,
+        "type_hash": "173913501",
+        "type_nodes": 9,
+        "value_hash": "1828015892"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "DivInvOneMonoid": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 2,
+        "name": "DivInvOneMonoid.inv_one",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivInvMonoid.toInv": 1,
+          "DivInvMonoid.toMonoid": 2,
+          "DivInvOneMonoid": 1,
+          "DivInvOneMonoid.toDivInvMonoid": 3,
+          "Eq": 1,
+          "Inv.inv": 1,
+          "Monoid.toOne": 2,
+          "OfNat.ofNat": 2,
+          "One.toOfNat1": 2
+        },
+        "source_counts": null,
+        "type_hash": "2133227251",
+        "type_nodes": 71,
+        "value_hash": "3167226669"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "DivInvMonoid": 1,
+          "DivInvOneMonoid.mk": 1,
+          "DivisionMonoid": 1,
+          "DivisionMonoid.toDivInvMonoid": 1,
+          "DivisionMonoid.toDivInvOneMonoid._proof_1": 1
+        },
+        "body_nodes": 26,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "DivisionMonoid.toDivInvOneMonoid",
+        "owner_module": "Mathlib.Algebra.Group.Basic",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivInvOneMonoid": 1,
+          "DivisionMonoid": 1
+        },
+        "source_counts": null,
+        "type_hash": "1379145840",
+        "type_nodes": 9,
+        "value_hash": "535565183"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "DivisionMonoid": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "DivisionMonoid.toDivInvMonoid",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivInvMonoid": 1,
+          "DivisionMonoid": 1
+        },
+        "source_counts": null,
+        "type_hash": "2592060827",
+        "type_nodes": 9,
+        "value_hash": "3030673588"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 2,
+        "name": "DivInvOneMonoid.mk",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivInvMonoid": 1,
+          "DivInvMonoid.toInv": 1,
+          "DivInvMonoid.toMonoid": 2,
+          "DivInvOneMonoid": 1,
+          "Eq": 1,
+          "Inv.inv": 1,
+          "Monoid.toOne": 2,
+          "OfNat.ofNat": 2,
+          "One.toOfNat1": 2
+        },
+        "source_counts": null,
+        "type_hash": "1243987337",
+        "type_nodes": 63,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 3,
+          "DivInvMonoid.toDiv": 9,
+          "DivInvMonoid.toInv": 11,
+          "DivInvMonoid.toMonoid": 31,
+          "DivisionMonoid": 1,
+          "DivisionMonoid.toDivInvMonoid": 53,
+          "DivisionMonoid.toInvolutiveInv": 1,
+          "Eq": 5,
+          "Eq.mp": 1,
+          "Eq.symm": 1,
+          "Eq.trans": 1,
+          "HDiv.hDiv": 9,
+          "Inv.inv": 11,
+          "Monoid.toMulOneClass": 31,
+          "MulOne.toOne": 31,
+          "MulOneClass.toMulOne": 31,
+          "OfNat.ofNat": 31,
+          "One.toOfNat1": 31,
+          "congr": 1,
+          "congrArg": 2,
+          "instHDiv": 9,
+          "inv_div": 1,
+          "inv_inv": 1,
+          "one_div": 2
+        },
+        "body_nodes": 1435,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 33,
+        "name": "DivisionMonoid.toDivInvOneMonoid._proof_1",
+        "owner_module": "Mathlib.Algebra.Group.Basic",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivInvMonoid.toInv": 1,
+          "DivInvMonoid.toMonoid": 2,
+          "DivisionMonoid": 1,
+          "DivisionMonoid.toDivInvMonoid": 3,
+          "Eq": 1,
+          "Inv.inv": 1,
+          "Monoid.toOne": 2,
+          "OfNat.ofNat": 2,
+          "One.toOfNat1": 2
+        },
+        "source_counts": null,
+        "type_hash": "1119984744",
+        "type_nodes": 71,
+        "value_hash": "2044255268"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.mp",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "7732840",
+        "type_nodes": null,
+        "value_hash": "3565108002"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "HDiv.hDiv",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3511878171",
+        "type_nodes": null,
+        "value_hash": "2471649093"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instHDiv",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3336929548",
+        "type_nodes": null,
+        "value_hash": "4078084632"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "DivInvMonoid": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "DivInvMonoid.toDiv",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Div": 1,
+          "DivInvMonoid": 1
+        },
+        "source_counts": null,
+        "type_hash": "2911708306",
+        "type_nodes": 9,
+        "value_hash": "3672406104"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Div",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3807510281",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "MulOne": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "MulOne.toOne",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "MulOne": 1,
+          "One": 1
+        },
+        "source_counts": null,
+        "type_hash": "4026477030",
+        "type_nodes": 9,
+        "value_hash": "21515372"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "MulOne",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2
+        },
+        "source_counts": null,
+        "type_hash": "1872112561",
+        "type_nodes": 3,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "MulOneClass": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "MulOneClass.toMulOne",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "MulOne": 1,
+          "MulOneClass": 1
+        },
+        "source_counts": null,
+        "type_hash": "3584535038",
+        "type_nodes": 9,
+        "value_hash": "995716679"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "MulOneClass",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2
+        },
+        "source_counts": null,
+        "type_hash": "3807510281",
+        "type_nodes": 3,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "Monoid": 1,
+          "Monoid.mul_one": 1,
+          "Monoid.one_mul": 1,
+          "Monoid.toOne": 1,
+          "Monoid.toSemigroup": 1,
+          "MulOne.mk": 1,
+          "MulOneClass.mk": 1,
+          "Semigroup.toMul": 1
+        },
+        "body_nodes": 41,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Monoid.toMulOneClass",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Monoid": 1,
+          "MulOneClass": 1
+        },
+        "source_counts": null,
+        "type_hash": "518069924",
+        "type_nodes": 9,
+        "value_hash": "465637745"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 2,
+        "name": "MulOneClass.mk",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 2,
+          "HMul.hMul": 2,
+          "MulOne": 1,
+          "MulOne.toMul": 2,
+          "MulOne.toOne": 2,
+          "MulOneClass": 1,
+          "OfNat.ofNat": 2,
+          "One.toOfNat1": 2,
+          "instHMul": 2
+        },
+        "source_counts": null,
+        "type_hash": "3426678061",
+        "type_nodes": 97,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "HMul.hMul",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "998999565",
+        "type_nodes": null,
+        "value_hash": "2438139686"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instHMul",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2597214157",
+        "type_nodes": null,
+        "value_hash": "3745602868"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "MulOne": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "MulOne.toMul",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Mul": 1,
+          "MulOne": 1
+        },
+        "source_counts": null,
+        "type_hash": "3837900387",
+        "type_nodes": 9,
+        "value_hash": "1798525408"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Mul",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3807510281",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "MulOne.mk",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Mul": 1,
+          "MulOne": 1,
+          "One": 1
+        },
+        "source_counts": null,
+        "type_hash": "4191202123",
+        "type_nodes": 13,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "Semigroup": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Semigroup.toMul",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Mul": 1,
+          "Semigroup": 1
+        },
+        "source_counts": null,
+        "type_hash": "1628757152",
+        "type_nodes": 9,
+        "value_hash": "49670622"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Semigroup",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2
+        },
+        "source_counts": null,
+        "type_hash": "3807510281",
+        "type_nodes": 3,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "Monoid": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Monoid.toSemigroup",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Monoid": 1,
+          "Semigroup": 1
+        },
+        "source_counts": null,
+        "type_hash": "415008744",
+        "type_nodes": 9,
+        "value_hash": "3887066606"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "Monoid": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 1,
+        "name": "Monoid.one_mul",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 1,
+          "HMul.hMul": 1,
+          "Monoid": 1,
+          "Monoid.toOne": 1,
+          "Monoid.toSemigroup": 1,
+          "OfNat.ofNat": 1,
+          "One.toOfNat1": 1,
+          "Semigroup.toMul": 1,
+          "instHMul": 1
+        },
+        "source_counts": null,
+        "type_hash": "2183490199",
+        "type_nodes": 53,
+        "value_hash": "4008136422"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "Monoid": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 1,
+        "name": "Monoid.mul_one",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 1,
+          "HMul.hMul": 1,
+          "Monoid": 1,
+          "Monoid.toOne": 1,
+          "Monoid.toSemigroup": 1,
+          "OfNat.ofNat": 1,
+          "One.toOfNat1": 1,
+          "Semigroup.toMul": 1,
+          "instHMul": 1
+        },
+        "source_counts": null,
+        "type_hash": "4237546871",
+        "type_nodes": 53,
+        "value_hash": "3418456899"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "congr",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1876132096",
+        "type_nodes": null,
+        "value_hash": "227469821"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "congrArg",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2722762766",
+        "type_nodes": null,
+        "value_hash": "2643130269"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "DivInvMonoid": 1,
+          "DivInvMonoid.toDiv": 1,
+          "DivInvMonoid.toInv": 1,
+          "DivInvMonoid.toMonoid": 1,
+          "Eq.symm": 1,
+          "HDiv.hDiv": 1,
+          "Inv.inv": 1,
+          "Monoid.toMulOneClass": 1,
+          "MulOne.toOne": 1,
+          "MulOneClass.toMulOne": 1,
+          "OfNat.ofNat": 1,
+          "One.toOfNat1": 1,
+          "instHDiv": 1,
+          "inv_eq_one_div": 1
+        },
+        "body_nodes": 79,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 2,
+        "name": "one_div",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivInvMonoid": 1,
+          "DivInvMonoid.toDiv": 1,
+          "DivInvMonoid.toInv": 1,
+          "DivInvMonoid.toMonoid": 1,
+          "Eq": 1,
+          "HDiv.hDiv": 1,
+          "Inv.inv": 1,
+          "Monoid.toMulOneClass": 1,
+          "MulOne.toOne": 1,
+          "MulOneClass.toMulOne": 1,
+          "OfNat.ofNat": 1,
+          "One.toOfNat1": 1,
+          "instHDiv": 1
+        },
+        "source_counts": null,
+        "type_hash": "4184191326",
+        "type_nodes": 71,
+        "value_hash": "53705543"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.symm",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3416241219",
+        "type_nodes": null,
+        "value_hash": "2819966993"
+      },
+      {
+        "body": {
+          "@Sort": 5,
+          "DivInvMonoid": 1,
+          "DivInvMonoid.toDiv": 3,
+          "DivInvMonoid.toInv": 21,
+          "DivInvMonoid.toMonoid": 17,
+          "Eq": 12,
+          "Eq.mpr": 2,
+          "Eq.refl": 1,
+          "HDiv.hDiv": 3,
+          "HMul.hMul": 6,
+          "Inv.inv": 21,
+          "Monoid.toMulOneClass": 17,
+          "MulOne.toMul": 6,
+          "MulOne.toOne": 10,
+          "MulOneClass.toMulOne": 16,
+          "OfNat.ofNat": 10,
+          "One.toOfNat1": 10,
+          "congrArg": 2,
+          "div_eq_mul_inv": 1,
+          "id": 2,
+          "instHDiv": 3,
+          "instHMul": 6,
+          "one_mul": 1
+        },
+        "body_nodes": 881,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 11,
+        "name": "inv_eq_one_div",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivInvMonoid": 1,
+          "DivInvMonoid.toDiv": 1,
+          "DivInvMonoid.toInv": 1,
+          "DivInvMonoid.toMonoid": 1,
+          "Eq": 1,
+          "HDiv.hDiv": 1,
+          "Inv.inv": 1,
+          "Monoid.toMulOneClass": 1,
+          "MulOne.toOne": 1,
+          "MulOneClass.toMulOne": 1,
+          "OfNat.ofNat": 1,
+          "One.toOfNat1": 1,
+          "instHDiv": 1
+        },
+        "source_counts": null,
+        "type_hash": "1757801591",
+        "type_nodes": 71,
+        "value_hash": "1474856789"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.mpr",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "4214998329",
+        "type_nodes": null,
+        "value_hash": "136866614"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "id",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1324171196",
+        "type_nodes": null,
+        "value_hash": "2317393034"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "DivInvMonoid": 1,
+          "DivInvMonoid.div_eq_mul_inv": 1
+        },
+        "body_nodes": 19,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "div_eq_mul_inv",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivInvMonoid": 1,
+          "DivInvMonoid.toDiv": 1,
+          "DivInvMonoid.toInv": 1,
+          "DivInvMonoid.toMonoid": 1,
+          "Eq": 1,
+          "HDiv.hDiv": 1,
+          "HMul.hMul": 1,
+          "Inv.inv": 1,
+          "Monoid.toMulOneClass": 1,
+          "MulOne.toMul": 1,
+          "MulOneClass.toMulOne": 1,
+          "instHDiv": 1,
+          "instHMul": 1
+        },
+        "source_counts": null,
+        "type_hash": "3530573554",
+        "type_nodes": 79,
+        "value_hash": "4159257154"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "DivInvMonoid": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "DivInvMonoid.div_eq_mul_inv",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivInvMonoid": 1,
+          "DivInvMonoid.toDiv": 1,
+          "DivInvMonoid.toInv": 1,
+          "DivInvMonoid.toMonoid": 1,
+          "Eq": 1,
+          "HDiv.hDiv": 1,
+          "HMul.hMul": 1,
+          "Inv.inv": 1,
+          "Monoid.toSemigroup": 1,
+          "Semigroup.toMul": 1,
+          "instHDiv": 1,
+          "instHMul": 1
+        },
+        "source_counts": null,
+        "type_hash": "659547741",
+        "type_nodes": 75,
+        "value_hash": "3271062711"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "MulOneClass": 1,
+          "MulOneClass.one_mul": 1
+        },
+        "body_nodes": 11,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 1,
+        "name": "one_mul",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 1,
+          "HMul.hMul": 1,
+          "MulOne.toMul": 1,
+          "MulOne.toOne": 1,
+          "MulOneClass": 1,
+          "MulOneClass.toMulOne": 2,
+          "OfNat.ofNat": 1,
+          "One.toOfNat1": 1,
+          "instHMul": 1
+        },
+        "source_counts": null,
+        "type_hash": "833132821",
+        "type_nodes": 57,
+        "value_hash": "1818053967"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "MulOneClass": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 1,
+        "name": "MulOneClass.one_mul",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 1,
+          "HMul.hMul": 1,
+          "MulOne.toMul": 1,
+          "MulOne.toOne": 1,
+          "MulOneClass": 1,
+          "MulOneClass.toMulOne": 2,
+          "OfNat.ofNat": 1,
+          "One.toOfNat1": 1,
+          "instHMul": 1
+        },
+        "source_counts": null,
+        "type_hash": "833132821",
+        "type_nodes": 57,
+        "value_hash": "1111858467"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.refl",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3843735716",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.trans",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2833799593",
+        "type_nodes": null,
+        "value_hash": "1736612116"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "InvolutiveInv": 1,
+          "InvolutiveInv.inv_inv": 1
+        },
+        "body_nodes": 15,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "inv_inv",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 1,
+          "Inv.inv": 2,
+          "InvolutiveInv": 1,
+          "InvolutiveInv.toInv": 2
+        },
+        "source_counts": null,
+        "type_hash": "2636315019",
+        "type_nodes": 35,
+        "value_hash": "2799926312"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "InvolutiveInv",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2
+        },
+        "source_counts": null,
+        "type_hash": "1872112561",
+        "type_nodes": 3,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "InvolutiveInv": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "InvolutiveInv.toInv",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Inv": 1,
+          "InvolutiveInv": 1
+        },
+        "source_counts": null,
+        "type_hash": "349266376",
+        "type_nodes": 9,
+        "value_hash": "2927707127"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "InvolutiveInv": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "InvolutiveInv.inv_inv",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 1,
+          "Inv.inv": 2,
+          "InvolutiveInv": 1,
+          "InvolutiveInv.toInv": 2
+        },
+        "source_counts": null,
+        "type_hash": "1009103388",
+        "type_nodes": 35,
+        "value_hash": "596890540"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "DivInvMonoid.toInv": 1,
+          "DivisionMonoid": 1,
+          "DivisionMonoid.inv_inv": 1,
+          "DivisionMonoid.toDivInvMonoid": 1,
+          "InvolutiveInv.mk": 1
+        },
+        "body_nodes": 25,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "DivisionMonoid.toInvolutiveInv",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivisionMonoid": 1,
+          "InvolutiveInv": 1
+        },
+        "source_counts": null,
+        "type_hash": "3905365789",
+        "type_nodes": 9,
+        "value_hash": "884010081"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "InvolutiveInv.mk",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 1,
+          "Inv": 1,
+          "Inv.inv": 2,
+          "InvolutiveInv": 1
+        },
+        "source_counts": null,
+        "type_hash": "1548702853",
+        "type_nodes": 31,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "DivisionMonoid": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "DivisionMonoid.inv_inv",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivInvMonoid.toInv": 2,
+          "DivisionMonoid": 1,
+          "DivisionMonoid.toDivInvMonoid": 2,
+          "Eq": 1,
+          "Inv.inv": 2
+        },
+        "source_counts": null,
+        "type_hash": "3084903105",
+        "type_nodes": 43,
+        "value_hash": "2778455737"
+      },
+      {
+        "body": {
+          "@Sort": 4,
+          "DivInvMonoid.toDiv": 10,
+          "DivInvMonoid.toInv": 29,
+          "DivInvMonoid.toMonoid": 14,
+          "DivisionMonoid": 1,
+          "DivisionMonoid.toDivInvMonoid": 55,
+          "DivisionMonoid.toInvolutiveInv": 1,
+          "Eq": 6,
+          "Eq.trans": 3,
+          "HDiv.hDiv": 10,
+          "HMul.hMul": 14,
+          "Inv.inv": 29,
+          "Monoid.toMulOneClass": 14,
+          "MulOne.toMul": 14,
+          "MulOneClass.toMulOne": 14,
+          "True": 1,
+          "congr": 1,
+          "congrArg": 3,
+          "congrFun'": 1,
+          "div_eq_mul_inv": 2,
+          "eq_self": 1,
+          "instHDiv": 10,
+          "instHMul": 14,
+          "inv_inv": 1,
+          "mul_inv_rev": 1,
+          "of_eq_true": 1
+        },
+        "body_nodes": 1333,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "inv_div",
+        "owner_module": "Mathlib.Algebra.Group.Basic",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivInvMonoid.toDiv": 2,
+          "DivInvMonoid.toInv": 1,
+          "DivisionMonoid": 1,
+          "DivisionMonoid.toDivInvMonoid": 3,
+          "Eq": 1,
+          "HDiv.hDiv": 2,
+          "Inv.inv": 1,
+          "instHDiv": 2
+        },
+        "source_counts": null,
+        "type_hash": "641188262",
+        "type_nodes": 79,
+        "value_hash": "4286380964"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "of_eq_true",
+        "owner_module": "Init.SimpLemmas",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "846120182",
+        "type_nodes": null,
+        "value_hash": "2847551586"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "True",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3944470172",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "DivisionMonoid": 1,
+          "DivisionMonoid.mul_inv_rev": 1
+        },
+        "body_nodes": 19,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "mul_inv_rev",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivInvMonoid.toInv": 3,
+          "DivInvMonoid.toMonoid": 2,
+          "DivisionMonoid": 1,
+          "DivisionMonoid.toDivInvMonoid": 5,
+          "Eq": 1,
+          "HMul.hMul": 2,
+          "Inv.inv": 3,
+          "Monoid.toMulOneClass": 2,
+          "MulOne.toMul": 2,
+          "MulOneClass.toMulOne": 2,
+          "instHMul": 2
+        },
+        "source_counts": null,
+        "type_hash": "3616087877",
+        "type_nodes": 131,
+        "value_hash": "2053123470"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "DivisionMonoid": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "DivisionMonoid.mul_inv_rev",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivInvMonoid.toInv": 3,
+          "DivInvMonoid.toMonoid": 2,
+          "DivisionMonoid": 1,
+          "DivisionMonoid.toDivInvMonoid": 5,
+          "Eq": 1,
+          "HMul.hMul": 2,
+          "Inv.inv": 3,
+          "Monoid.toSemigroup": 2,
+          "Semigroup.toMul": 2,
+          "instHMul": 2
+        },
+        "source_counts": null,
+        "type_hash": "1898079850",
+        "type_nodes": 123,
+        "value_hash": "4048318924"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "congrFun'",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1463103787",
+        "type_nodes": null,
+        "value_hash": "3906667881"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "eq_self",
+        "owner_module": "Init.SimpLemmas",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2707248190",
+        "type_nodes": null,
+        "value_hash": "1138976229"
+      },
+      {
+        "body": {
+          "@Sort": 3,
+          "DFunLike": 1,
+          "outParam": 2
+        },
+        "body_nodes": 22,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "DFunLike.coe",
+        "owner_module": "Mathlib.Data.FunLike.Basic",
+        "primitive": false,
+        "signature": {
+          "@Sort": 3,
+          "DFunLike": 1,
+          "outParam": 2
+        },
+        "source_counts": null,
+        "type_hash": "610635595",
+        "type_nodes": 27,
+        "value_hash": "2411533437"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "outParam",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2205951116",
+        "type_nodes": null,
+        "value_hash": "1689025491"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "DFunLike",
+        "owner_module": "Mathlib.Data.FunLike.Basic",
+        "primitive": false,
+        "signature": {
+          "@Sort": 4,
+          "outParam": 2
+        },
+        "source_counts": null,
+        "type_hash": "567494299",
+        "type_nodes": 13,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 2,
+          "DFunLike.mk": 1,
+          "Eq": 1,
+          "One": 2,
+          "OneHom": 3,
+          "OneHom.funLike._proof_1": 1,
+          "OneHom.toFun": 3
+        },
+        "body_nodes": 105,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "OneHom.funLike",
+        "owner_module": "Mathlib.Algebra.Group.Hom.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2,
+          "FunLike": 1,
+          "One": 2,
+          "OneHom": 1
+        },
+        "source_counts": null,
+        "type_hash": "3000441880",
+        "type_nodes": 27,
+        "value_hash": "3397776693"
+      },
+      {
+        "body": {
+          "@Sort": 3,
+          "DFunLike": 1
+        },
+        "body_nodes": 15,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "FunLike",
+        "owner_module": "Mathlib.Data.FunLike.Basic",
+        "primitive": false,
+        "signature": {
+          "@Sort": 4
+        },
+        "source_counts": null,
+        "type_hash": "1587206870",
+        "type_nodes": 7,
+        "value_hash": "32895411"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "DFunLike.mk",
+        "owner_module": "Mathlib.Data.FunLike.Basic",
+        "primitive": false,
+        "signature": {
+          "@Sort": 3,
+          "DFunLike": 1,
+          "Function.Injective": 1,
+          "outParam": 2
+        },
+        "source_counts": null,
+        "type_hash": "2438666552",
+        "type_nodes": 39,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Function.Injective",
+        "owner_module": "Init.Data.Function",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "360156075",
+        "type_nodes": null,
+        "value_hash": "2657691358"
+      },
+      {
+        "body": {
+          "@Sort": 2,
+          "One": 2,
+          "OneHom": 1
+        },
+        "body_nodes": 24,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "OneHom.toFun",
+        "owner_module": "Mathlib.Algebra.Group.Hom.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2,
+          "One": 2,
+          "OneHom": 1
+        },
+        "source_counts": null,
+        "type_hash": "3532250031",
+        "type_nodes": 25,
+        "value_hash": "1442632223"
+      },
+      {
+        "body": {
+          "@Sort": 4,
+          "Eq": 21,
+          "Eq.ndrec": 3,
+          "Eq.rec": 1,
+          "Eq.refl": 3,
+          "Eq.symm": 2,
+          "OfNat.ofNat": 10,
+          "One": 4,
+          "One.toOfNat1": 10,
+          "OneHom": 22,
+          "OneHom.casesOn": 2,
+          "OneHom.mk": 15,
+          "OneHom.toFun": 10
+        },
+        "body_nodes": 929,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 10,
+        "name": "OneHom.funLike._proof_1",
+        "owner_module": "Mathlib.Algebra.Group.Hom.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2,
+          "Eq": 2,
+          "One": 2,
+          "OneHom": 3,
+          "OneHom.toFun": 2
+        },
+        "source_counts": null,
+        "type_hash": "875345612",
+        "type_nodes": 77,
+        "value_hash": "3981271829"
+      },
+      {
+        "body": {
+          "@Sort": 3,
+          "Eq": 2,
+          "OfNat.ofNat": 4,
+          "One": 2,
+          "One.toOfNat1": 4,
+          "OneHom": 2,
+          "OneHom.mk": 1,
+          "OneHom.rec": 1
+        },
+        "body_nodes": 137,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 6,
+        "name": "OneHom.casesOn",
+        "owner_module": "Mathlib.Algebra.Group.Hom.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 3,
+          "Eq": 1,
+          "OfNat.ofNat": 2,
+          "One": 2,
+          "One.toOfNat1": 2,
+          "OneHom": 2,
+          "OneHom.mk": 1
+        },
+        "source_counts": null,
+        "type_hash": "747586331",
+        "type_nodes": 87,
+        "value_hash": "1781952915"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 2,
+        "name": "OneHom.mk",
+        "owner_module": "Mathlib.Algebra.Group.Hom.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2,
+          "Eq": 1,
+          "OfNat.ofNat": 2,
+          "One": 2,
+          "One.toOfNat1": 2,
+          "OneHom": 1
+        },
+        "source_counts": null,
+        "type_hash": "2775599425",
+        "type_nodes": 55,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 2,
+        "name": "OneHom.rec",
+        "owner_module": "Mathlib.Algebra.Group.Hom.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 3,
+          "Eq": 1,
+          "OfNat.ofNat": 2,
+          "One": 2,
+          "One.toOfNat1": 2,
+          "OneHom": 2,
+          "OneHom.mk": 1
+        },
+        "source_counts": null,
+        "type_hash": "553803440",
+        "type_nodes": 87,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.ndrec",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1988759079",
+        "type_nodes": null,
+        "value_hash": "1446468482"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.rec",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1050737851",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 2,
+          "DFunLike.coe": 2,
+          "Div.mk": 1,
+          "DivInvMonoid.toDiv": 1,
+          "DivInvOneMonoid.toInvOneClass": 8,
+          "DivisionMonoid": 1,
+          "DivisionMonoid.toDivInvMonoid": 1,
+          "DivisionMonoid.toDivInvOneMonoid": 8,
+          "HDiv.hDiv": 1,
+          "InvOneClass.toOne": 8,
+          "One": 1,
+          "OneHom": 5,
+          "OneHom.funLike": 2,
+          "OneHom.instDiv_evaluatorCandidate._proof_1": 1,
+          "OneHom.mk": 1,
+          "instHDiv": 1
+        },
+        "body_nodes": 251,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "OneHom.instDiv_evaluatorCandidate",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2,
+          "Div": 1,
+          "DivInvOneMonoid.toInvOneClass": 1,
+          "DivisionMonoid": 1,
+          "DivisionMonoid.toDivInvOneMonoid": 1,
+          "InvOneClass.toOne": 1,
+          "One": 1,
+          "OneHom": 1
+        },
+        "source_counts": null,
+        "type_hash": "1893792927",
+        "type_nodes": 35,
+        "value_hash": "3634400784"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Div.mk",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1849867512",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 5,
+          "DFunLike.coe": 13,
+          "DivInvMonoid.toDiv": 9,
+          "DivInvOneMonoid.toInvOneClass": 51,
+          "DivisionMonoid": 1,
+          "DivisionMonoid.toDivInvMonoid": 9,
+          "DivisionMonoid.toDivInvOneMonoid": 52,
+          "Eq": 6,
+          "Eq.trans": 2,
+          "HDiv.hDiv": 9,
+          "InvOneClass.toOne": 51,
+          "OfNat.ofNat": 28,
+          "One": 1,
+          "One.toOfNat1": 28,
+          "OneHom": 17,
+          "OneHom.funLike": 15,
+          "OneHom.oneHomClass": 2,
+          "True": 1,
+          "congr": 1,
+          "congrArg": 2,
+          "congrFun'": 1,
+          "div_one": 1,
+          "eq_self": 1,
+          "instHDiv": 9,
+          "map_one": 2,
+          "of_eq_true": 1
+        },
+        "body_nodes": 1729,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 31,
+        "name": "OneHom.instDiv_evaluatorCandidate._proof_1",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2,
+          "DFunLike.coe": 2,
+          "DivInvMonoid.toDiv": 1,
+          "DivInvOneMonoid.toInvOneClass": 7,
+          "DivisionMonoid": 1,
+          "DivisionMonoid.toDivInvMonoid": 1,
+          "DivisionMonoid.toDivInvOneMonoid": 7,
+          "Eq": 1,
+          "HDiv.hDiv": 1,
+          "InvOneClass.toOne": 7,
+          "OfNat.ofNat": 3,
+          "One": 1,
+          "One.toOfNat1": 3,
+          "OneHom": 4,
+          "OneHom.funLike": 2,
+          "instHDiv": 1
+        },
+        "source_counts": null,
+        "type_hash": "2730785804",
+        "type_nodes": 237,
+        "value_hash": "2075628420"
+      },
+      {
+        "body": {
+          "@Sort": 3,
+          "FunLike": 1,
+          "One": 2,
+          "OneHomClass": 1,
+          "OneHomClass.map_one": 1
+        },
+        "body_nodes": 55,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 2,
+        "name": "map_one",
+        "owner_module": "Mathlib.Algebra.Group.Hom.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 3,
+          "DFunLike.coe": 1,
+          "Eq": 1,
+          "FunLike": 1,
+          "OfNat.ofNat": 2,
+          "One": 2,
+          "One.toOfNat1": 2,
+          "OneHomClass": 1
+        },
+        "source_counts": null,
+        "type_hash": "3174978310",
+        "type_nodes": 79,
+        "value_hash": "3364241360"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "OneHomClass",
+        "owner_module": "Mathlib.Algebra.Group.Hom.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 4,
+          "FunLike": 1,
+          "One": 2,
+          "outParam": 2
+        },
+        "source_counts": null,
+        "type_hash": "477000875",
+        "type_nodes": 27,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 3,
+          "FunLike": 1,
+          "One": 2,
+          "OneHomClass": 1,
+          "outParam": 2
+        },
+        "body_nodes": 42,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 2,
+        "name": "OneHomClass.map_one",
+        "owner_module": "Mathlib.Algebra.Group.Hom.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 3,
+          "DFunLike.coe": 1,
+          "Eq": 1,
+          "FunLike": 1,
+          "OfNat.ofNat": 2,
+          "One": 2,
+          "One.toOfNat1": 2,
+          "OneHomClass": 1,
+          "outParam": 2
+        },
+        "source_counts": null,
+        "type_hash": "3309877232",
+        "type_nodes": 83,
+        "value_hash": "1051231017"
+      },
+      {
+        "body": {
+          "@Sort": 2,
+          "One": 2,
+          "OneHom": 1,
+          "OneHom.funLike": 1,
+          "OneHom.map_one'": 1,
+          "OneHomClass.mk": 1
+        },
+        "body_nodes": 51,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "OneHom.oneHomClass",
+        "owner_module": "Mathlib.Algebra.Group.Hom.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2,
+          "One": 2,
+          "OneHom": 1,
+          "OneHom.funLike": 1,
+          "OneHomClass": 1
+        },
+        "source_counts": null,
+        "type_hash": "1041102117",
+        "type_nodes": 41,
+        "value_hash": "4109856057"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 2,
+        "name": "OneHomClass.mk",
+        "owner_module": "Mathlib.Algebra.Group.Hom.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 3,
+          "DFunLike.coe": 1,
+          "Eq": 1,
+          "FunLike": 1,
+          "OfNat.ofNat": 2,
+          "One": 2,
+          "One.toOfNat1": 2,
+          "OneHomClass": 1,
+          "outParam": 2
+        },
+        "source_counts": null,
+        "type_hash": "1328078916",
+        "type_nodes": 83,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 2,
+          "One": 2,
+          "OneHom": 1
+        },
+        "body_nodes": 24,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 2,
+        "name": "OneHom.map_one'",
+        "owner_module": "Mathlib.Algebra.Group.Hom.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2,
+          "Eq": 1,
+          "OfNat.ofNat": 2,
+          "One": 2,
+          "One.toOfNat1": 2,
+          "OneHom": 1,
+          "OneHom.toFun": 1
+        },
+        "source_counts": null,
+        "type_hash": "1178081185",
+        "type_nodes": 61,
+        "value_hash": "2032573195"
+      },
+      {
+        "body": {
+          "@Sort": 4,
+          "DivInvMonoid.toDiv": 5,
+          "DivInvMonoid.toInv": 3,
+          "DivInvMonoid.toMonoid": 5,
+          "DivInvOneMonoid": 1,
+          "DivInvOneMonoid.toDivInvMonoid": 14,
+          "DivInvOneMonoid.toInvOneClass": 12,
+          "Eq": 6,
+          "Eq.trans": 3,
+          "HDiv.hDiv": 5,
+          "HMul.hMul": 4,
+          "Inv.inv": 3,
+          "InvOneClass.toOne": 11,
+          "Monoid.toMulOneClass": 5,
+          "MulOne.toMul": 4,
+          "MulOneClass.toMulOne": 4,
+          "OfNat.ofNat": 11,
+          "One.toOfNat1": 11,
+          "True": 1,
+          "congrArg": 2,
+          "congrFun'": 1,
+          "div_eq_mul_inv": 1,
+          "eq_self": 1,
+          "instHDiv": 5,
+          "instHMul": 4,
+          "inv_one": 1,
+          "mul_one": 1,
+          "of_eq_true": 1
+        },
+        "body_nodes": 659,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 12,
+        "name": "div_one",
+        "owner_module": "Mathlib.Algebra.Group.Basic",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "DivInvMonoid.toDiv": 1,
+          "DivInvOneMonoid": 1,
+          "DivInvOneMonoid.toDivInvMonoid": 1,
+          "DivInvOneMonoid.toInvOneClass": 1,
+          "Eq": 1,
+          "HDiv.hDiv": 1,
+          "InvOneClass.toOne": 1,
+          "OfNat.ofNat": 1,
+          "One.toOfNat1": 1,
+          "instHDiv": 1
+        },
+        "source_counts": null,
+        "type_hash": "587119066",
+        "type_nodes": 57,
+        "value_hash": "2804637531"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "InvOneClass": 1,
+          "InvOneClass.inv_one": 1
+        },
+        "body_nodes": 11,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 2,
+        "name": "inv_one",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 1,
+          "Inv.inv": 1,
+          "InvOneClass": 1,
+          "InvOneClass.toInv": 1,
+          "InvOneClass.toOne": 2,
+          "OfNat.ofNat": 2,
+          "One.toOfNat1": 2
+        },
+        "source_counts": null,
+        "type_hash": "2208401353",
+        "type_nodes": 51,
+        "value_hash": "697078903"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "InvOneClass": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "InvOneClass.toInv",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Inv": 1,
+          "InvOneClass": 1
+        },
+        "source_counts": null,
+        "type_hash": "4203271454",
+        "type_nodes": 9,
+        "value_hash": "3649423855"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "InvOneClass": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 2,
+        "name": "InvOneClass.inv_one",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 1,
+          "Inv.inv": 1,
+          "InvOneClass": 1,
+          "InvOneClass.toInv": 1,
+          "InvOneClass.toOne": 2,
+          "OfNat.ofNat": 2,
+          "One.toOfNat1": 2
+        },
+        "source_counts": null,
+        "type_hash": "2819020223",
+        "type_nodes": 51,
+        "value_hash": "2244966522"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "MulOneClass": 1,
+          "MulOneClass.mul_one": 1
+        },
+        "body_nodes": 11,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 1,
+        "name": "mul_one",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 1,
+          "HMul.hMul": 1,
+          "MulOne.toMul": 1,
+          "MulOne.toOne": 1,
+          "MulOneClass": 1,
+          "MulOneClass.toMulOne": 2,
+          "OfNat.ofNat": 1,
+          "One.toOfNat1": 1,
+          "instHMul": 1
+        },
+        "source_counts": null,
+        "type_hash": "1504243505",
+        "type_nodes": 57,
+        "value_hash": "929737008"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "MulOneClass": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 1,
+        "name": "MulOneClass.mul_one",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 1,
+          "HMul.hMul": 1,
+          "MulOne.toMul": 1,
+          "MulOne.toOne": 1,
+          "MulOneClass": 1,
+          "MulOneClass.toMulOne": 2,
+          "OfNat.ofNat": 1,
+          "One.toOfNat1": 1,
+          "instHMul": 1
+        },
+        "source_counts": null,
+        "type_hash": "1504243505",
+        "type_nodes": 57,
+        "value_hash": "167837695"
+      },
+      {
+        "body": {
+          "@Sort": 2,
+          "Div": 1,
+          "Div.mk": 1,
+          "HDiv.hDiv": 1,
+          "instHDiv": 1
+        },
+        "body_nodes": 67,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Pi.instDiv",
+        "owner_module": "Mathlib.Algebra.Notation.Pi.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2,
+          "Div": 2
+        },
+        "source_counts": null,
+        "type_hash": "2248682462",
+        "type_nodes": 21,
+        "value_hash": "449484230"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "rfl",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "871798398",
+        "type_nodes": null,
+        "value_hash": "2491513339"
+      }
+    ],
+    "process_returncode": 0,
+    "proved_type_fingerprint": "1327162591",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Algebra.Group.Basic"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Algebra.Group.Hom.Defs"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 2.390598916914314,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "155ac518fce25f0cb6ed60547df0c56a77961d682c88b5498bdba579c62e5a06",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_algebra_groups_main_hom_basic_10",
+    "source_tokens": {
+      "W_B": 1,
+      "W_S": 32,
+      "W_full": 37,
+      "body_spans": [
+        {
+          "end": 155,
+          "start": 152
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 67,
+          "start": 8
+        },
+        {
+          "end": 69,
+          "start": 68
+        },
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 73,
+          "start": 72
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 78,
+          "start": 75
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 97,
+          "start": 83
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 100,
+          "start": 99
+        },
+        {
+          "end": 102,
+          "start": 101
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 107,
+          "start": 106
+        },
+        {
+          "end": 114,
+          "start": 108
+        },
+        {
+          "end": 116,
+          "start": 115
+        },
+        {
+          "end": 118,
+          "start": 117
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 127,
+          "start": 124
+        },
+        {
+          "end": 128,
+          "start": 127
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 131,
+          "start": 130
+        },
+        {
+          "end": 133,
+          "start": 132
+        },
+        {
+          "end": 134,
+          "start": 133
+        },
+        {
+          "end": 136,
+          "start": 135
+        },
+        {
+          "end": 140,
+          "start": 137
+        },
+        {
+          "end": 141,
+          "start": 140
+        },
+        {
+          "end": 143,
+          "start": 142
+        },
+        {
+          "end": 147,
+          "start": 144
+        },
+        {
+          "end": 148,
+          "start": 147
+        },
+        {
+          "end": 151,
+          "start": 149
+        },
+        {
+          "end": 155,
+          "start": 152
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 152,
+      "signature_spans": [
+        {
+          "end": 69,
+          "start": 68
+        },
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 73,
+          "start": 72
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 78,
+          "start": 75
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 97,
+          "start": 83
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 100,
+          "start": 99
+        },
+        {
+          "end": 102,
+          "start": 101
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 107,
+          "start": 106
+        },
+        {
+          "end": 114,
+          "start": 108
+        },
+        {
+          "end": 116,
+          "start": 115
+        },
+        {
+          "end": 118,
+          "start": 117
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 127,
+          "start": 124
+        },
+        {
+          "end": 128,
+          "start": 127
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 131,
+          "start": 130
+        },
+        {
+          "end": 133,
+          "start": 132
+        },
+        {
+          "end": 134,
+          "start": 133
+        },
+        {
+          "end": 136,
+          "start": 135
+        },
+        {
+          "end": 140,
+          "start": 137
+        },
+        {
+          "end": 141,
+          "start": 140
+        },
+        {
+          "end": 143,
+          "start": 142
+        },
+        {
+          "end": 147,
+          "start": 144
+        },
+        {
+          "end": 148,
+          "start": 147
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_algebra_groups_main_hom_basic_10 {M N} [One M] [DivisionMonoid N] (f g : OneHom M N) :\n  ⇑(f / g) = ⇑f / ⇑g :=\nrfl",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "M",
+          "type_source": "Type u_8"
+        },
+        {
+          "binder_info": "implicit",
+          "name": "N",
+          "type_source": "Type u_9"
+        },
+        {
+          "binder_info": "instance",
+          "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.11",
+          "type_source": "One.{u_8} M"
+        },
+        {
+          "binder_info": "instance",
+          "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.14",
+          "type_source": "DivisionMonoid.{u_9} N"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "f",
+          "type_source": "OneHom.{u_8, u_9} M N"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "g",
+          "type_source": "OneHom.{u_8, u_9} M N"
+        }
+      ],
+      "proposition": "Eq.{max (u_8 + 1) (u_9 + 1)} (⇑(HDiv.hDiv.{max u_8 u_9, max u_8 u_9, max u_8 u_9} f g))\n  (HDiv.hDiv.{max u_8 u_9, max u_8 u_9, max u_8 u_9} ⇑f ⇑g)"
+    },
+    "trusted_type_expression": "forall {M : Type.{u_8}} {N : Type.{u_9}} [inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 : One.{u_8} M] [inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14 : DivisionMonoid.{u_9} N] (f : OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) (g : OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))), Eq.{max (succ u_8) (succ u_9)} (M -> N) (DFunLike.coe.{max (succ u_8) (succ u_9), succ u_8, succ u_9} (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) M (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : M) => N) (OneHom.funLike.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) (HDiv.hDiv.{max u_8 u_9, max u_8 u_9, max u_8 u_9} (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) (instHDiv.{max u_8 u_9} (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) (OneHom.instDiv_evaluatorCandidate.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)) f g)) (HDiv.hDiv.{max u_8 u_9, max u_8 u_9, max u_8 u_9} (M -> N) (M -> N) (M -> N) (instHDiv.{max u_8 u_9} (M -> N) (Pi.instDiv.{u_8, u_9} M (fun (a : M) => N) (fun (i : M) => DivInvMonoid.toDiv.{u_9} N (DivisionMonoid.toDivInvMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) (DFunLike.coe.{max (succ u_8) (succ u_9), succ u_8, succ u_9} (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) M (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : M) => N) (OneHom.funLike.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) f) (DFunLike.coe.{max (succ u_8) (succ u_9), succ u_8, succ u_9} (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) M (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : M) => N) (OneHom.funLike.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) g))",
+    "trusted_type_source": "∀ {M : Type u_8} {N : Type u_9} [inst : One.{u_8} M] [inst_1 : DivisionMonoid.{u_9} N] (f g : OneHom.{u_8, u_9} M N),\n  Eq.{max (u_8 + 1) (u_9 + 1)} (⇑(HDiv.hDiv.{max u_8 u_9, max u_8 u_9, max u_8 u_9} f g))\n    (HDiv.hDiv.{max u_8 u_9, max u_8 u_9, max u_8 u_9} ⇑f ⇑g)",
+    "universe_parameters": [
+      "u_8",
+      "u_9"
+    ],
+    "validity_status": "success"
+  },
+  "graph_hash": "8141d26542d55fd792e0e52088e9b5acd46ed90f1faa4a540ccbfa9a083a518f",
+  "metric_status": "available",
+  "metrics": {
+    "D": 12,
+    "I0": {
+      "denominator_decimal": "32",
+      "log2": -5.0,
+      "numerator_decimal": "1"
+    },
+    "T0": {
+      "denominator_decimal": "33",
+      "log2": 16.445055517333977,
+      "numerator_decimal": "2944211"
+    },
+    "U_B_decimal": "1434104",
+    "U_S_decimal": "1510107",
+    "U_decimal": "2944211",
+    "W_B": 1,
+    "W_S": 32,
+    "body_state": "present",
+    "distinct_dependency_count": 104,
+    "log2_I0": -5.0,
+    "log2_T0": 16.445055517333977,
+    "log2_U": 21.48944963669243,
+    "log2_U_B": 20.451718220172726,
+    "log2_U_S": 20.526219345960815,
+    "log2_W": 5.044394119358453,
+    "metric_profile": "paper_aligned_v1",
+    "metric_status": "available",
+    "primitive_count": 31,
+    "reachable_node_count": 105,
+    "reasons": []
+  },
+  "primitive_manifest": [
+    "@Sort",
+    "Div",
+    "Div.mk",
+    "Eq",
+    "Eq.mp",
+    "Eq.mpr",
+    "Eq.ndrec",
+    "Eq.rec",
+    "Eq.refl",
+    "Eq.symm",
+    "Eq.trans",
+    "Function.Injective",
+    "HDiv.hDiv",
+    "HMul.hMul",
+    "Inv",
+    "Inv.inv",
+    "Mul",
+    "OfNat.ofNat",
+    "One",
+    "One.toOfNat1",
+    "True",
+    "congr",
+    "congrArg",
+    "congrFun'",
+    "eq_self",
+    "id",
+    "instHDiv",
+    "instHMul",
+    "of_eq_true",
+    "outParam",
+    "rfl"
+  ],
+  "primitive_manifest_hash": "a2eea973df657fd644009d3cac490cc60036cb4c2e34a7c99fb1ccee1fc7eae3",
+  "primitive_manifest_scope": "reachable closure; boundary policy and environment define shared corpus boundary",
+  "reference_cache_key": "887532cc4f0b5d8f2e61a9363937420d769b2892fa65dee2f05e78376e909d9e",
+  "reference_proof_sha256": "5a633da644c1afc6f5222be040e6a19d687c01104c0263cce32773e07376dfa8",
+  "source_hash": "2a1172a9fa5394c1b10794e6f26d2e1e904feae0df171dbb629b7eb4e17e6e5b",
+  "source_token_policy_hash": "878ab5fb5aa65e79973e4577203e29b9e6d67de66b91ff97b86ad021f5f229c9",
+  "task_hash": "6ba371acde9c4d5409cda42c4e6751e0c8f9f2c620ee3c0cedd6c50ba3f03022",
+  "task_id": "lib_algebra_groups_main_hom_basic_10",
+  "task_input_hash": "3e9faddddbf06f31eeb011ec5c488edc41de79ace3a52e3e5e3771665a174e78",
+  "validation": {
+    "axioms": [
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.lib_algebra_groups_main_hom_basic_10"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 219,
+      "syntax_kinds": [],
+      "transitive_dependency_count": 465
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "1327162591",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Algebra.Group.Basic"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Algebra.Group.Hom.Defs"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 3.0207061250694096,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "ca3dadca4f5f71581d85d2c851606421bf4b28621e87733c4bbc7fd0e714e853",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_algebra_groups_main_hom_basic_10",
+    "source_tokens": {
+      "W_B": 1,
+      "W_S": 32,
+      "W_full": 37,
+      "body_spans": [
+        {
+          "end": 155,
+          "start": 152
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 67,
+          "start": 8
+        },
+        {
+          "end": 69,
+          "start": 68
+        },
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 73,
+          "start": 72
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 78,
+          "start": 75
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 97,
+          "start": 83
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 100,
+          "start": 99
+        },
+        {
+          "end": 102,
+          "start": 101
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 107,
+          "start": 106
+        },
+        {
+          "end": 114,
+          "start": 108
+        },
+        {
+          "end": 116,
+          "start": 115
+        },
+        {
+          "end": 118,
+          "start": 117
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 127,
+          "start": 124
+        },
+        {
+          "end": 128,
+          "start": 127
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 131,
+          "start": 130
+        },
+        {
+          "end": 133,
+          "start": 132
+        },
+        {
+          "end": 134,
+          "start": 133
+        },
+        {
+          "end": 136,
+          "start": 135
+        },
+        {
+          "end": 140,
+          "start": 137
+        },
+        {
+          "end": 141,
+          "start": 140
+        },
+        {
+          "end": 143,
+          "start": 142
+        },
+        {
+          "end": 147,
+          "start": 144
+        },
+        {
+          "end": 148,
+          "start": 147
+        },
+        {
+          "end": 151,
+          "start": 149
+        },
+        {
+          "end": 155,
+          "start": 152
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 152,
+      "signature_spans": [
+        {
+          "end": 69,
+          "start": 68
+        },
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 73,
+          "start": 72
+        },
+        {
+          "end": 75,
+          "start": 74
+        },
+        {
+          "end": 78,
+          "start": 75
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 97,
+          "start": 83
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 100,
+          "start": 99
+        },
+        {
+          "end": 102,
+          "start": 101
+        },
+        {
+          "end": 103,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 107,
+          "start": 106
+        },
+        {
+          "end": 114,
+          "start": 108
+        },
+        {
+          "end": 116,
+          "start": 115
+        },
+        {
+          "end": 118,
+          "start": 117
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 127,
+          "start": 124
+        },
+        {
+          "end": 128,
+          "start": 127
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 131,
+          "start": 130
+        },
+        {
+          "end": 133,
+          "start": 132
+        },
+        {
+          "end": 134,
+          "start": 133
+        },
+        {
+          "end": 136,
+          "start": 135
+        },
+        {
+          "end": 140,
+          "start": 137
+        },
+        {
+          "end": 141,
+          "start": 140
+        },
+        {
+          "end": 143,
+          "start": 142
+        },
+        {
+          "end": 147,
+          "start": 144
+        },
+        {
+          "end": 148,
+          "start": 147
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_algebra_groups_main_hom_basic_10 {M N} [One M] [DivisionMonoid N] (f g : OneHom M N) :\n  ⇑(f / g) = ⇑f / ⇑g :=\nrfl",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "M",
+          "type_source": "Type u_8"
+        },
+        {
+          "binder_info": "implicit",
+          "name": "N",
+          "type_source": "Type u_9"
+        },
+        {
+          "binder_info": "instance",
+          "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.11",
+          "type_source": "One.{u_8} M"
+        },
+        {
+          "binder_info": "instance",
+          "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.14",
+          "type_source": "DivisionMonoid.{u_9} N"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "f",
+          "type_source": "OneHom.{u_8, u_9} M N"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "g",
+          "type_source": "OneHom.{u_8, u_9} M N"
+        }
+      ],
+      "proposition": "Eq.{max (u_8 + 1) (u_9 + 1)} (⇑(HDiv.hDiv.{max u_8 u_9, max u_8 u_9, max u_8 u_9} f g))\n  (HDiv.hDiv.{max u_8 u_9, max u_8 u_9, max u_8 u_9} ⇑f ⇑g)"
+    },
+    "trusted_type_expression": "forall {M : Type.{u_8}} {N : Type.{u_9}} [inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 : One.{u_8} M] [inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14 : DivisionMonoid.{u_9} N] (f : OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) (g : OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))), Eq.{max (succ u_8) (succ u_9)} (M -> N) (DFunLike.coe.{max (succ u_8) (succ u_9), succ u_8, succ u_9} (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) M (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : M) => N) (OneHom.funLike.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) (HDiv.hDiv.{max u_8 u_9, max u_8 u_9, max u_8 u_9} (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) (instHDiv.{max u_8 u_9} (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) (OneHom.instDiv_evaluatorCandidate.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)) f g)) (HDiv.hDiv.{max u_8 u_9, max u_8 u_9, max u_8 u_9} (M -> N) (M -> N) (M -> N) (instHDiv.{max u_8 u_9} (M -> N) (Pi.instDiv.{u_8, u_9} M (fun (a : M) => N) (fun (i : M) => DivInvMonoid.toDiv.{u_9} N (DivisionMonoid.toDivInvMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) (DFunLike.coe.{max (succ u_8) (succ u_9), succ u_8, succ u_9} (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) M (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : M) => N) (OneHom.funLike.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) f) (DFunLike.coe.{max (succ u_8) (succ u_9), succ u_8, succ u_9} (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) M (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : M) => N) (OneHom.funLike.{u_8, u_9} M N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.11 (InvOneClass.toOne.{u_9} N (DivInvOneMonoid.toInvOneClass.{u_9} N (DivisionMonoid.toDivInvOneMonoid.{u_9} N inst._@.EvaluatorCandidate.1885545375._hygCtx._hyg.14)))) g))",
+    "trusted_type_source": "∀ {M : Type u_8} {N : Type u_9} [inst : One.{u_8} M] [inst_1 : DivisionMonoid.{u_9} N] (f g : OneHom.{u_8, u_9} M N),\n  Eq.{max (u_8 + 1) (u_9 + 1)} (⇑(HDiv.hDiv.{max u_8 u_9, max u_8 u_9, max u_8 u_9} f g))\n    (HDiv.hDiv.{max u_8 u_9, max u_8 u_9, max u_8 u_9} ⇑f ⇑g)",
+    "universe_parameters": [
+      "u_8",
+      "u_9"
+    ],
+    "validity_status": "success"
+  },
+  "validity_status": "success"
+}

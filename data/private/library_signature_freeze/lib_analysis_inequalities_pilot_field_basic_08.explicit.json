@@ -1,0 +1,811 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_2"
+  ],
+  "trusted_type_source": "∀ {α : Type u_2} [inst : NormedDivisionRing.{u_2} α] {z w : α},\n  Ne.{u_2 + 1} z 0 →\n    Ne.{u_2 + 1} w 0 →\n      Eq.{1} (Dist.dist.{u_2} (Inv.inv.{u_2} z) (Inv.inv.{u_2} w))\n        (HDiv.hDiv.{0, 0, 0} (Dist.dist.{u_2} z w) (HMul.hMul.{0, 0, 0} (Norm.norm.{u_2} z) (Norm.norm.{u_2} w)))",
+  "trusted_type_expression": "forall {α : Type.{u_2}} [inst : NormedDivisionRing.{u_2} α] {z : α} {w : α}, (Ne.{succ u_2} α z (OfNat.ofNat.{u_2} α 0 (Zero.toOfNat0.{u_2} α (MulZeroClass.toZero.{u_2} α (instMulZeroClassOfSemiring.{u_2} α (DivisionSemiring.toSemiring.{u_2} α (DivisionRing.toDivisionSemiring.{u_2} α (NormedDivisionRing.toDivisionRing.{u_2} α inst)))))))) -> (Ne.{succ u_2} α w (OfNat.ofNat.{u_2} α 0 (Zero.toOfNat0.{u_2} α (MulZeroClass.toZero.{u_2} α (instMulZeroClassOfSemiring.{u_2} α (DivisionSemiring.toSemiring.{u_2} α (DivisionRing.toDivisionSemiring.{u_2} α (NormedDivisionRing.toDivisionRing.{u_2} α inst)))))))) -> (Eq.{1} Real (Dist.dist.{u_2} α (PseudoMetricSpace.toDist.{u_2} α (SeminormedRing.toPseudoMetricSpace.{u_2} α (NormedRing.toSeminormedRing.{u_2} α (NormedDivisionRing.toNormedRing.{u_2} α inst)))) (Inv.inv.{u_2} α (InvOneClass.toInv.{u_2} α (DivInvOneMonoid.toInvOneClass.{u_2} α (DivisionMonoid.toDivInvOneMonoid.{u_2} α (GroupWithZero.toDivisionMonoid.{u_2} α (DivisionSemiring.toGroupWithZero.{u_2} α (DivisionRing.toDivisionSemiring.{u_2} α (NormedDivisionRing.toDivisionRing.{u_2} α inst))))))) z) (Inv.inv.{u_2} α (InvOneClass.toInv.{u_2} α (DivInvOneMonoid.toInvOneClass.{u_2} α (DivisionMonoid.toDivInvOneMonoid.{u_2} α (GroupWithZero.toDivisionMonoid.{u_2} α (DivisionSemiring.toGroupWithZero.{u_2} α (DivisionRing.toDivisionSemiring.{u_2} α (NormedDivisionRing.toDivisionRing.{u_2} α inst))))))) w)) (HDiv.hDiv.{0, 0, 0} Real Real Real (instHDiv.{0} Real (DivInvMonoid.toDiv.{0} Real Real.instDivInvMonoid)) (Dist.dist.{u_2} α (PseudoMetricSpace.toDist.{u_2} α (SeminormedRing.toPseudoMetricSpace.{u_2} α (NormedRing.toSeminormedRing.{u_2} α (NormedDivisionRing.toNormedRing.{u_2} α inst)))) z w) (HMul.hMul.{0, 0, 0} Real Real Real (instHMul.{0} Real Real.instMul) (Norm.norm.{u_2} α (NormedDivisionRing.toNorm.{u_2} α inst) z) (Norm.norm.{u_2} α (NormedDivisionRing.toNorm.{u_2} α inst) w))))",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} (Dist.dist.{u_2} (Inv.inv.{u_2} z) (Inv.inv.{u_2} w))\n  (HDiv.hDiv.{0, 0, 0} (Dist.dist.{u_2} z w) (HMul.hMul.{0, 0, 0} (Norm.norm.{u_2} z) (Norm.norm.{u_2} w)))",
+    "binders": [
+      {
+        "type_source": "Type u_2",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "NormedDivisionRing.{u_2} α",
+        "name": "inst",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "α",
+        "name": "z",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "α",
+        "name": "w",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Ne.{u_2 + 1} z 0",
+        "name": "hz",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Ne.{u_2 + 1} w 0",
+        "name": "hw",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_analysis_inequalities_pilot_field_basic_08 {«α» : Type u_2} [«inst» : NormedDivisionRing.{u_2} α] {z w : α} (hz : z ≠ 0) (hw : w ≠ 0) :\n  dist z⁻¹ w⁻¹ = dist z w / (‖z‖ * ‖w‖) :=\nby\n  rw [dist_eq_norm, inv_sub_inv' hz hw, norm_mul, norm_mul, norm_inv, norm_inv, mul_comm ‖z‖⁻¹,\n    mul_assoc, dist_eq_norm', div_eq_mul_inv, mul_inv]",
+    "signature_spans": [
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 79,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 99,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 130
+      },
+      {
+        "start": 130,
+        "end": 133
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 137
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 140,
+        "end": 141
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 148
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 151,
+        "end": 153
+      },
+      {
+        "start": 154,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 157
+      },
+      {
+        "start": 158,
+        "end": 161
+      },
+      {
+        "start": 162,
+        "end": 163
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 166
+      },
+      {
+        "start": 166,
+        "end": 168
+      },
+      {
+        "start": 169,
+        "end": 170
+      },
+      {
+        "start": 171,
+        "end": 172
+      },
+      {
+        "start": 173,
+        "end": 176
+      },
+      {
+        "start": 177,
+        "end": 178
+      },
+      {
+        "start": 178,
+        "end": 179
+      },
+      {
+        "start": 184,
+        "end": 188
+      },
+      {
+        "start": 189,
+        "end": 190
+      },
+      {
+        "start": 190,
+        "end": 195
+      },
+      {
+        "start": 196,
+        "end": 197
+      },
+      {
+        "start": 197,
+        "end": 202
+      },
+      {
+        "start": 203,
+        "end": 204
+      },
+      {
+        "start": 205,
+        "end": 209
+      },
+      {
+        "start": 210,
+        "end": 211
+      },
+      {
+        "start": 212,
+        "end": 213
+      },
+      {
+        "start": 214,
+        "end": 215
+      },
+      {
+        "start": 216,
+        "end": 217
+      },
+      {
+        "start": 217,
+        "end": 220
+      },
+      {
+        "start": 220,
+        "end": 221
+      },
+      {
+        "start": 221,
+        "end": 224
+      },
+      {
+        "start": 225,
+        "end": 226
+      },
+      {
+        "start": 227,
+        "end": 230
+      },
+      {
+        "start": 230,
+        "end": 231
+      },
+      {
+        "start": 231,
+        "end": 234
+      },
+      {
+        "start": 234,
+        "end": 235
+      }
+    ],
+    "proof_offset": 239,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 77
+      },
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 79,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 99,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 130
+      },
+      {
+        "start": 130,
+        "end": 133
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 137
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 140,
+        "end": 141
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 148
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 151,
+        "end": 153
+      },
+      {
+        "start": 154,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 157
+      },
+      {
+        "start": 158,
+        "end": 161
+      },
+      {
+        "start": 162,
+        "end": 163
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 165,
+        "end": 166
+      },
+      {
+        "start": 166,
+        "end": 168
+      },
+      {
+        "start": 169,
+        "end": 170
+      },
+      {
+        "start": 171,
+        "end": 172
+      },
+      {
+        "start": 173,
+        "end": 176
+      },
+      {
+        "start": 177,
+        "end": 178
+      },
+      {
+        "start": 178,
+        "end": 179
+      },
+      {
+        "start": 180,
+        "end": 181
+      },
+      {
+        "start": 184,
+        "end": 188
+      },
+      {
+        "start": 189,
+        "end": 190
+      },
+      {
+        "start": 190,
+        "end": 195
+      },
+      {
+        "start": 196,
+        "end": 197
+      },
+      {
+        "start": 197,
+        "end": 202
+      },
+      {
+        "start": 203,
+        "end": 204
+      },
+      {
+        "start": 205,
+        "end": 209
+      },
+      {
+        "start": 210,
+        "end": 211
+      },
+      {
+        "start": 212,
+        "end": 213
+      },
+      {
+        "start": 214,
+        "end": 215
+      },
+      {
+        "start": 216,
+        "end": 217
+      },
+      {
+        "start": 217,
+        "end": 220
+      },
+      {
+        "start": 220,
+        "end": 221
+      },
+      {
+        "start": 221,
+        "end": 224
+      },
+      {
+        "start": 225,
+        "end": 226
+      },
+      {
+        "start": 227,
+        "end": 230
+      },
+      {
+        "start": 230,
+        "end": 231
+      },
+      {
+        "start": 231,
+        "end": 234
+      },
+      {
+        "start": 234,
+        "end": 235
+      },
+      {
+        "start": 236,
+        "end": 238
+      },
+      {
+        "start": 239,
+        "end": 241
+      },
+      {
+        "start": 244,
+        "end": 246
+      },
+      {
+        "start": 247,
+        "end": 248
+      },
+      {
+        "start": 248,
+        "end": 260
+      },
+      {
+        "start": 260,
+        "end": 261
+      },
+      {
+        "start": 262,
+        "end": 274
+      },
+      {
+        "start": 275,
+        "end": 277
+      },
+      {
+        "start": 278,
+        "end": 280
+      },
+      {
+        "start": 280,
+        "end": 281
+      },
+      {
+        "start": 282,
+        "end": 290
+      },
+      {
+        "start": 290,
+        "end": 291
+      },
+      {
+        "start": 292,
+        "end": 300
+      },
+      {
+        "start": 300,
+        "end": 301
+      },
+      {
+        "start": 302,
+        "end": 310
+      },
+      {
+        "start": 310,
+        "end": 311
+      },
+      {
+        "start": 312,
+        "end": 320
+      },
+      {
+        "start": 320,
+        "end": 321
+      },
+      {
+        "start": 322,
+        "end": 330
+      },
+      {
+        "start": 331,
+        "end": 334
+      },
+      {
+        "start": 334,
+        "end": 335
+      },
+      {
+        "start": 335,
+        "end": 338
+      },
+      {
+        "start": 338,
+        "end": 343
+      },
+      {
+        "start": 343,
+        "end": 344
+      },
+      {
+        "start": 349,
+        "end": 358
+      },
+      {
+        "start": 358,
+        "end": 359
+      },
+      {
+        "start": 360,
+        "end": 373
+      },
+      {
+        "start": 373,
+        "end": 374
+      },
+      {
+        "start": 375,
+        "end": 389
+      },
+      {
+        "start": 389,
+        "end": 390
+      },
+      {
+        "start": 391,
+        "end": 398
+      },
+      {
+        "start": 398,
+        "end": 399
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 239,
+        "end": 241
+      },
+      {
+        "start": 244,
+        "end": 246
+      },
+      {
+        "start": 247,
+        "end": 248
+      },
+      {
+        "start": 248,
+        "end": 260
+      },
+      {
+        "start": 260,
+        "end": 261
+      },
+      {
+        "start": 262,
+        "end": 274
+      },
+      {
+        "start": 275,
+        "end": 277
+      },
+      {
+        "start": 278,
+        "end": 280
+      },
+      {
+        "start": 280,
+        "end": 281
+      },
+      {
+        "start": 282,
+        "end": 290
+      },
+      {
+        "start": 290,
+        "end": 291
+      },
+      {
+        "start": 292,
+        "end": 300
+      },
+      {
+        "start": 300,
+        "end": 301
+      },
+      {
+        "start": 302,
+        "end": 310
+      },
+      {
+        "start": 310,
+        "end": 311
+      },
+      {
+        "start": 312,
+        "end": 320
+      },
+      {
+        "start": 320,
+        "end": 321
+      },
+      {
+        "start": 322,
+        "end": 330
+      },
+      {
+        "start": 331,
+        "end": 334
+      },
+      {
+        "start": 334,
+        "end": 335
+      },
+      {
+        "start": 335,
+        "end": 338
+      },
+      {
+        "start": 338,
+        "end": 343
+      },
+      {
+        "start": 343,
+        "end": 344
+      },
+      {
+        "start": 349,
+        "end": 358
+      },
+      {
+        "start": 358,
+        "end": 359
+      },
+      {
+        "start": 360,
+        "end": 373
+      },
+      {
+        "start": 373,
+        "end": 374
+      },
+      {
+        "start": 375,
+        "end": 389
+      },
+      {
+        "start": 389,
+        "end": 390
+      },
+      {
+        "start": 391,
+        "end": 398
+      },
+      {
+        "start": 398,
+        "end": 399
+      }
+    ],
+    "W_full": 89,
+    "W_S": 54,
+    "W_B": 31
+  },
+  "root": "CompressionEval.lib_analysis_inequalities_pilot_field_basic_08",
+  "proved_type_fingerprint": "188191679",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 8100,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.rwSeq",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.rwRuleSeq",
+      "Lean.Parser.Tactic.rwRule",
+      "Lean.Parser.Term.app",
+      "«term_⁻¹»",
+      "«term‖_‖»"
+    ],
+    "proof_nodes": 17255,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_analysis_inequalities_pilot_field_basic_08"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "e19129869099d277ff9f9407898c7571dc4b7839c7fed7eec33d1c819707611d",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 4.2203253749758005
+  },
+  "request_fingerprint": "17ce7c18b900409b36ee18f4eeb45dafd7f46c441f6a258f8fc413a03d7d12c8"
+}

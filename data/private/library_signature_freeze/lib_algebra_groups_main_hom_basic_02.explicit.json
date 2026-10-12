@@ -1,0 +1,310 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {α : Type u_1} [inst : DivisionCommMonoid.{u_1} α] (a : α), Eq.{u_1 + 1} (invMonoidHom.{u_1} a) (Inv.inv.{u_1} a)",
+  "trusted_type_expression": "forall {α : Type.{u_1}} [inst : DivisionCommMonoid.{u_1} α] (a : α), Eq.{succ u_1} α (DFunLike.coe.{succ u_1, succ u_1, succ u_1} (MonoidHom.{u_1, u_1} α α (MulOneClass.toMulOne.{u_1} α (Monoid.toMulOneClass.{u_1} α (DivInvMonoid.toMonoid.{u_1} α (DivisionMonoid.toDivInvMonoid.{u_1} α (DivisionCommMonoid.toDivisionMonoid.{u_1} α inst))))) (MulOneClass.toMulOne.{u_1} α (Monoid.toMulOneClass.{u_1} α (DivInvMonoid.toMonoid.{u_1} α (DivisionMonoid.toDivInvMonoid.{u_1} α (DivisionCommMonoid.toDivisionMonoid.{u_1} α inst)))))) α (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : α) => α) (MonoidHom.instFunLike.{u_1, u_1} α α (MulOneClass.toMulOne.{u_1} α (Monoid.toMulOneClass.{u_1} α (DivInvMonoid.toMonoid.{u_1} α (DivisionMonoid.toDivInvMonoid.{u_1} α (DivisionCommMonoid.toDivisionMonoid.{u_1} α inst))))) (MulOneClass.toMulOne.{u_1} α (Monoid.toMulOneClass.{u_1} α (DivInvMonoid.toMonoid.{u_1} α (DivisionMonoid.toDivInvMonoid.{u_1} α (DivisionCommMonoid.toDivisionMonoid.{u_1} α inst)))))) (invMonoidHom.{u_1} α inst) a) (Inv.inv.{u_1} α (InvOneClass.toInv.{u_1} α (DivInvOneMonoid.toInvOneClass.{u_1} α (DivisionMonoid.toDivInvOneMonoid.{u_1} α (DivisionCommMonoid.toDivisionMonoid.{u_1} α inst)))) a)",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_1 + 1} (invMonoidHom.{u_1} a) (Inv.inv.{u_1} a)",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "DivisionCommMonoid.{u_1} α",
+        "name": "inst",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "α",
+        "name": "a",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_algebra_groups_main_hom_basic_02 {«α» : Type u_1} [«inst» : DivisionCommMonoid.{u_1} α] (a : α) :\n  invMonoidHom a = a⁻¹ :=\nrfl",
+    "signature_spans": [
+      {
+        "start": 68,
+        "end": 69
+      },
+      {
+        "start": 69,
+        "end": 75
+      },
+      {
+        "start": 76,
+        "end": 77
+      },
+      {
+        "start": 78,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 86
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 89
+      },
+      {
+        "start": 89,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 118
+      },
+      {
+        "start": 118,
+        "end": 120
+      },
+      {
+        "start": 120,
+        "end": 123
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 127
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 136
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 142,
+        "end": 154
+      },
+      {
+        "start": 155,
+        "end": 156
+      },
+      {
+        "start": 157,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 160
+      },
+      {
+        "start": 160,
+        "end": 165
+      }
+    ],
+    "proof_offset": 169,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 67
+      },
+      {
+        "start": 68,
+        "end": 69
+      },
+      {
+        "start": 69,
+        "end": 75
+      },
+      {
+        "start": 76,
+        "end": 77
+      },
+      {
+        "start": 78,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 86
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 89
+      },
+      {
+        "start": 89,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 118
+      },
+      {
+        "start": 118,
+        "end": 120
+      },
+      {
+        "start": 120,
+        "end": 123
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 127
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 136
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 142,
+        "end": 154
+      },
+      {
+        "start": 155,
+        "end": 156
+      },
+      {
+        "start": 157,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 160
+      },
+      {
+        "start": 160,
+        "end": 165
+      },
+      {
+        "start": 166,
+        "end": 168
+      },
+      {
+        "start": 169,
+        "end": 172
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 169,
+        "end": 172
+      }
+    ],
+    "W_full": 30,
+    "W_S": 25,
+    "W_B": 1
+  },
+  "root": "CompressionEval.lib_algebra_groups_main_hom_basic_02",
+  "proved_type_fingerprint": "438132865",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 484,
+    "syntax_kinds": [],
+    "proof_nodes": 127,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_algebra_groups_main_hom_basic_02"
+  ],
+  "axioms": [
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "c66ac840c464e7a488f602293781ffd9f69f3bb979b7e2609fcf0698164cf39d",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.017449041828513
+  },
+  "request_fingerprint": "3c93405dc71177d1a56d5ba5d86e213b9fc2b3edb536072514f7e23a63bdf78e"
+}

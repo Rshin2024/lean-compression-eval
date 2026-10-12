@@ -1,0 +1,79 @@
+{
+  "task": {
+    "task_id": "lib_linear_algebra_combinatorics_main_linearindependent_defs_02",
+    "family_id": "source_module_Mathlib.LinearAlgebra.LinearIndependent.Defs",
+    "domain": "linear_algebra_combinatorics",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Algebra.Order.Sub.Basic",
+      "Mathlib.LinearAlgebra.Finsupp.LinearCombination",
+      "Mathlib.Lean.Expr.ExtraRecognizers"
+    ],
+    "context": "/-\nCopyright (c) 2020 Anne Baanen. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Johannes Hölzl, Mario Carneiro, Alexander Bentkamp, Anne Baanen\n-/\n\n/-!\n\n# Linear independence\n\nThis file defines linear independence in a module or vector space.\n\nIt is inspired by Isabelle/HOL's linear algebra, and hence indirectly by HOL Light.\n\nWe define `LinearIndependent R v` as `Function.Injective (Finsupp.linearCombination R v)`. Here\n`Finsupp.linearCombination` is the linear map sending a function `f : ι →₀ R` with finite support to\nthe linear combination of vectors from `v` with these coefficients.\n\nThe goal of this file is to define linear independence and to prove that several other\nstatements are equivalent to this one, including `ker (Finsupp.linearCombination R v) = ⊥` and\nsome versions with explicitly written linear combinations.\n\n## Main definitions\nAll definitions are given for families of vectors, i.e. `v : ι → M` where `M` is the module or\nvector space and `ι : Type*` is an arbitrary indexing type.\n\n* `LinearIndependent R v` states that the elements of the family `v` are linearly independent.\n\n* `LinearIndepOn R v s` states that the elements of the family `v` indexed by the members\n  of the set `s : Set ι` are linearly independent.\n\n* `LinearIndependent.repr hv x` returns the linear combination representing `x : span R (range v)`\n  on the linearly independent vectors `v`, given `hv : LinearIndependent R v`\n  (using classical choice). `LinearIndependent.repr hv` is provided as a linear map.\n\n* `LinearIndependent.Maximal` states that there exists no linear independent family that strictly\n  includes the given one.\n\n## Main results\n\n* `Fintype.linearIndependent_iff`: if `ι` is a finite type, then any function `f : ι → R` has\n  finite support, so we can reformulate the statement using `∑ i : ι, f i • v i` instead of a sum\n  over an auxiliary `s : Finset ι`;\n\n## Implementation notes\n\nWe use families instead of sets in `LinearIndependent` because it allows us to say that two\nidentical vectors are linearly dependent.\n\nIf you want to use sets, use `LinearIndepOn id s` given a set `s : Set M`. The lemmas\n`LinearIndependent.linearIndepOn_id` and `LinearIndependent.of_linearIndepOn_id_range` connect those\ntwo worlds.\n\nIn this file we prove some variants of results on different kinds of (semi)rings. We distinguish\nthem by using suffixes in their names, e.g. `linearIndependent_iffₛ` for semirings,\n`linearIndependent_iffₒₛ` for (canonically) ordered semirings, and `linearIndependent_iff` (without\nsuffix) for rings.\n\n## TODO\n\nThis file contains much more than definitions.\n\nRework proofs to hold in semirings, by avoiding the path through\n`ker (Finsupp.linearCombination R v) = ⊥`.\n\n## Tags\n\nlinearly dependent, linear dependence, linearly independent, linear independence\n\n-/\n\n@[expose] public section\n\nassert_not_exists Cardinal\n\nnoncomputable section\n\nopen Function Module Set Submodule\n\nuniverse u' u\n\nvariable {ι : Type u'} {ι' : Type*} {R : Type*} {K : Type*} {s : Set ι}\nvariable {M : Type*} {M' : Type*} {V : Type u}\n\nsection Semiring\n\n\nvariable {v : ι → M}\nvariable [Semiring R] [AddCommMonoid M] [AddCommMonoid M']\nvariable [Module R M] [Module R M']\nvariable (R) (v)\n/-- `LinearIndependent R v` states the family of vectors `v` is linearly independent over `R`. -/\ndef LinearIndependent : Prop :=\n  Injective (Finsupp.linearCombination R v)\n\nopen Lean PrettyPrinter.Delaborator SubExpr in\n/-- Delaborator for `LinearIndependent` that suggests pretty printing with type hints\nin case the family of vectors is over a `Set`.\n\nType hints look like `LinearIndependent fun (v : ↑s) => ↑v` or `LinearIndependent (ι := ↑s) f`,\ndepending on whether the family is a lambda expression or not. -/\n@[app_delab LinearIndependent]\nmeta def delabLinearIndependent : Delab :=\n  whenPPOption getPPNotation <|\n  whenNotPPOption getPPAnalysisSkip <|\n  withOptionAtCurrPos `pp.analysis.skip true do\n    let e ← getExpr\n    guard <| e.isAppOfArity ``LinearIndependent 7\n    let some _ := (e.getArg! 0).coeTypeSet? | failure\n    let optionsPerPos ← if (e.getArg! 3).isLambda then\n      withNaryArg 3 do return (← read).optionsPerPos.setBool (← getPos) pp.funBinderTypes.name true\n    else\n      withNaryArg 0 do return (← read).optionsPerPos.setBool (← getPos) `pp.analysis.namedArg true\n    withTheReader Context ({· with optionsPerPos}) delab\n\n/-- `LinearIndepOn R v s` states that the vectors in the family `v` that are indexed\nby the elements of `s` are linearly independent over `R`. -/\ndef LinearIndepOn (s : Set ι) : Prop := LinearIndependent R (fun x : s ↦ v x)\n\nvariable {R v}\n\ntheorem LinearIndepOn.linearIndependent {s : Set ι} (h : LinearIndepOn R v s) :\n    LinearIndependent R (fun x : s ↦ v x) := h\n\nuniverse «u_2» «u_4»\n\nassert_not_exists _root_.linearIndependent_iff_injective_finsuppLinearCombination\n",
+    "binders": "{«ι» : Type u'} {«R» : Type u_2} {«M» : Type u_4} {«v» : ι → M} [«inst» : Semiring.{u_2} R] [«inst_1» : AddCommMonoid.{u_4} M] [«inst_2» : Module.{u_2, u_4} R M]",
+    "proposition": "LinearIndependent R v ↔ Injective (Finsupp.linearCombination R v)",
+    "target_name": "_root_.CompressionEval.lib_linear_algebra_combinatorics_main_linearindependent_defs_02",
+    "premise_context": "open Function Module Set Submodule\nuniverse u' u\nvariable {ι : Type u'} {ι' : Type*} {R : Type*} {K : Type*} {s : Set ι}\nvariable {M : Type*} {M' : Type*} {V : Type u}\nsection Semiring\nvariable {v : ι → M}\nvariable [Semiring R] [AddCommMonoid M] [AddCommMonoid M']\nvariable [Module R M] [Module R M']\nvariable (R) (v)\nopen Lean PrettyPrinter.Delaborator SubExpr in\nvariable {R v}\n\nAvailable preceding statements (within the shown source scopes):\ntheorem LinearIndepOn.linearIndependent {s : Set ι} (h : LinearIndepOn R v s) :\n    LinearIndependent R (fun x : s ↦ v x)",
+    "forbidden_declarations": [
+      "linearIndependent_iff_injective_finsuppLinearCombination"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.LinearAlgebra.LinearIndependent.Defs",
+      "source_path": "Mathlib/LinearAlgebra/LinearIndependent/Defs.lean",
+      "declaration": "linearIndependent_iff_injective_finsuppLinearCombination",
+      "source_line": 130,
+      "source_sha256": "c3f326f454a93dbe5a93df28e6053f18db0153a35c551a93fd4232ef55cc591c",
+      "prefix_end_character": 4955,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "7d60228f88579df500b6ef1847c05452cdec0c232c9305b48e229187d7a8516e",
+      "premise_context": "4324b68961e93aa240c2581c95074bd46ac22ea370c9d6c01cfc1938309cb801",
+      "binders": "96943cb630bca0c7f17a1fcf4425c33e3233ee3e57d37bccb2e99a6baa14d9f6",
+      "proposition": "3d47c991e208d52ebc09e493eed495c06a7380cf2830da9b4eda109a62a16488"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Algebra.Order.Sub.Basic",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.LinearAlgebra.Finsupp.LinearCombination",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Lean.Expr.ExtraRecognizers",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": true
+      }
+    ]
+  },
+  "status": "frozen"
+}

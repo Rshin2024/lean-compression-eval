@@ -1,0 +1,188 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {G : Type u_1} [inst : DivisionMonoid.{u_1} G] {a b : G},\n  Commute.{u_1} a b → Commute.{u_1} (Inv.inv.{u_1} a) (Inv.inv.{u_1} b)",
+  "trusted_type_expression": "forall {G : Type.{u_1}} [inst._@.EvaluatorCandidate.1910838414._hygCtx._hyg.3 : DivisionMonoid.{u_1} G] {a : G} {b : G}, (Commute.{u_1} G (MulOne.toMul.{u_1} G (MulOneClass.toMulOne.{u_1} G (Monoid.toMulOneClass.{u_1} G (DivInvMonoid.toMonoid.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst._@.EvaluatorCandidate.1910838414._hygCtx._hyg.3))))) a b) -> (Commute.{u_1} G (MulOne.toMul.{u_1} G (MulOneClass.toMulOne.{u_1} G (Monoid.toMulOneClass.{u_1} G (DivInvMonoid.toMonoid.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst._@.EvaluatorCandidate.1910838414._hygCtx._hyg.3))))) (Inv.inv.{u_1} G (InvOneClass.toInv.{u_1} G (DivInvOneMonoid.toInvOneClass.{u_1} G (DivisionMonoid.toDivInvOneMonoid.{u_1} G inst._@.EvaluatorCandidate.1910838414._hygCtx._hyg.3))) a) (Inv.inv.{u_1} G (InvOneClass.toInv.{u_1} G (DivInvOneMonoid.toInvOneClass.{u_1} G (DivisionMonoid.toDivInvOneMonoid.{u_1} G inst._@.EvaluatorCandidate.1910838414._hygCtx._hyg.3))) b))",
+  "trusted_telescope": {
+    "proposition": "Commute.{u_1} (Inv.inv.{u_1} a) (Inv.inv.{u_1} b)",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "G",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "DivisionMonoid.{u_1} G",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.3",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "G",
+        "name": "a",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "G",
+        "name": "b",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Commute.{u_1} a b",
+        "name": "a._@._internal._hyg.0",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_algebra_groups_main_commute_basic_05  :\n  Commute a b → Commute a⁻¹ b⁻¹ :=\nSemiconjBy.inv_inv_symm",
+    "signature_spans": [
+      {
+        "start": 77,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 102,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 114
+      }
+    ],
+    "proof_offset": 118,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 71
+      },
+      {
+        "start": 73,
+        "end": 74
+      },
+      {
+        "start": 77,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 102,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 141
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 118,
+        "end": 141
+      }
+    ],
+    "W_full": 14,
+    "W_S": 9,
+    "W_B": 1
+  },
+  "root": "CompressionEval.lib_algebra_groups_main_commute_basic_05",
+  "proved_type_fingerprint": "2803003817",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 461,
+    "syntax_kinds": [],
+    "proof_nodes": 21,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_algebra_groups_main_commute_basic_05"
+  ],
+  "axioms": [
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "efdca848b07e7a6a4b14095e2df7a7c40a0c8cc78e7f0f76ca452314e04a2674",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 3.1905215843580663
+  },
+  "request_fingerprint": "4cb8cc02de3a2505aa76355ce6cf3569e23535358f73ada98f9dfef74d28ed2a"
+}

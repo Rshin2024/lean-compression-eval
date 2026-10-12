@@ -1,0 +1,114 @@
+{
+  "task": {
+    "task_id": "lib_sets_logic_main_logic_relation_03",
+    "family_id": "source_module_Mathlib.Logic.Relation",
+    "domain": "sets_logic",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Logic.Relator",
+      "Mathlib.Tactic.Use",
+      "Mathlib.Tactic.MkIffOfInductiveProp",
+      "Mathlib.Tactic.SimpRw",
+      "Mathlib.Order.Defs.Prop",
+      "Mathlib.Order.Defs.Unbundled",
+      "Batteries.Logic",
+      "Batteries.Tactic.Trans"
+    ],
+    "context": "/-\nCopyright (c) 2018 Johannes Hölzl. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Johannes Hölzl\n-/\n/-!\n# Relation closures\n\nThis file defines the reflexive, symmetric, transitive, reflexive transitive and equivalence\nclosures of relations and proves some basic results on them.\n\nNote that this is about unbundled relations, that is terms of types of the form `α → β → Prop`. For\nthe bundled version, see `Rel`.\n\n## Definitions\n\n* `Relation.ReflGen`: Reflexive closure. `ReflGen r` relates everything `r` related, plus for all\n  `a` it relates `a` with itself. So `ReflGen r a b ↔ r a b ∨ a = b`.\n* `Relation.SymmGen`: Symmetric closure. This is also the comparability relation,\n  such that `SymmGen r a b` means that either `r a b` or `r b a` (see `Mathlib.Order.Comparable`)\n* `Relation.TransGen`: Transitive closure. `TransGen r` relates everything `r` related\n  transitively. So `TransGen r a b ↔ ∃ x₀ ... xₙ, r a x₀ ∧ r x₀ x₁ ∧ ... ∧ r xₙ b`.\n* `Relation.ReflTransGen`: Reflexive transitive closure. `ReflTransGen r` relates everything\n  `r` related transitively, plus for all `a` it relates `a` with itself. So\n  `ReflTransGen r a b ↔ (∃ x₀ ... xₙ, r a x₀ ∧ r x₀ x₁ ∧ ... ∧ r xₙ b) ∨ a = b`. It is the same as\n  the reflexive closure of the transitive closure, or the transitive closure of the reflexive\n  closure. In terms of rewriting systems, this means that `a` can be rewritten to `b` in a number of\n  rewrites.\n* `Relation.EqvGen`: Equivalence closure. `EqvGen r` relates everything `ReflTransGen r` relates,\n  plus for all related pairs it relates them in the opposite order.\n* `Relation.Comp`:  Relation composition. We provide notation `∘r`. For `r : α → β → Prop` and\n  `s : β → γ → Prop`, `r ∘r s` relates `a : α` and `c : γ` iff there exists `b : β` that's related\n  to both.\n* `Relation.Map`: Image of a relation under a pair of maps. For `r : α → β → Prop`, `f : α → γ`,\n  `g : β → δ`, `Map r f g` is the relation `γ → δ → Prop` relating `f a` and `g b` for all `a`, `b`\n  related by `r`.\n* `Relation.Join`: Join of a relation. For `r : α → α → Prop`, `Join r a b ↔ ∃ c, r a c ∧ r b c`. In\n  terms of rewriting systems, this means that `a` and `b` can be rewritten to the same term.\n-/\n\n@[expose] public section\n\n\nopen Function\n\nvariable {α β γ δ ε ζ : Type*}\n\ntheorem Subrelation.antisymm {r r' : α → α → Prop} (h1 : r ≤ r') (h2 : r' ≤ r) :\n    r = r' :=\n  funext₂ fun a b => propext ⟨h1 a b, h2 a b⟩\n\nsection NeImp\n\nvariable {r : α → α → Prop}\n\n@[deprecated (since := \"2026-03-27\")] alias Std.Refl.reflexive := refl\n\n/-- To show a reflexive relation `r : α → α → Prop` holds over `x y : α`,\nit suffices to show it holds when `x ≠ y`. -/\ntheorem Std.Refl.rel_of_ne_imp [Std.Refl r] {x y : α} (hr : x ≠ y → r x y) : r x y := by\n  grind [Std.Refl]\n\n@[deprecated (since := \"2026-03-27\")] alias Reflexive.rel_of_ne_imp := Std.Refl.rel_of_ne_imp\n\nuniverse «u_1»\n\nassert_not_exists _root_.Std.Refl.ne_imp_iff\n",
+    "binders": "{«α» : Type u_1} {«r» : α → α → Prop} [Std.Refl r] {x y : α}",
+    "proposition": "x ≠ y → r x y ↔ r x y",
+    "target_name": "_root_.CompressionEval.lib_sets_logic_main_logic_relation_03",
+    "premise_context": "open Function\nvariable {α β γ δ ε ζ : Type*}\nsection NeImp\nvariable {r : α → α → Prop}\n\nAvailable preceding statements (within the shown source scopes):\ntheorem Subrelation.antisymm {r r' : α → α → Prop} (h1 : r ≤ r') (h2 : r' ≤ r) :\n    r = r'\n\ntheorem Std.Refl.rel_of_ne_imp [Std.Refl r] {x y : α} (hr : x ≠ y → r x y) : r x y",
+    "forbidden_declarations": [
+      "Std.Refl.ne_imp_iff"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Logic.Relation",
+      "source_path": "Mathlib/Logic/Relation.lean",
+      "declaration": "Std.Refl.ne_imp_iff",
+      "source_line": 78,
+      "source_sha256": "b2d33508cecf38cbaf053297eef1b24f509c6da2510ef5a61a86ebc0d79c3e44",
+      "prefix_end_character": 3339,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "efe5ae63b4daf402a9e1cffa0d9a5d445b69b001850ef49747698865b9d599be",
+      "premise_context": "806053a597d22a4d0f1b7bd156ea3739b3931dca1df2eb8bd56d5e2ec9108014",
+      "binders": "891844ab34691c7e480c1a2a3774efbd39c2217de61ac15ab4058fceacfbb40e",
+      "proposition": "b617ff9dfdc736b6b046778e349eec0c21435b4a088f31c80c090418ec51b742"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Logic.Relator",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.Use",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.MkIffOfInductiveProp",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.SimpRw",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Order.Defs.Prop",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Order.Defs.Unbundled",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Batteries.Logic",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Batteries.Tactic.Trans",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

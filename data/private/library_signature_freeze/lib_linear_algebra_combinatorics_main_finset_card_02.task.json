@@ -1,0 +1,79 @@
+{
+  "task": {
+    "task_id": "lib_linear_algebra_combinatorics_main_finset_card_02",
+    "family_id": "source_module_Mathlib.Data.Finset.Card",
+    "domain": "linear_algebra_combinatorics",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Data.Finset.Basic",
+      "Mathlib.Data.Finset.Image",
+      "Mathlib.Data.Finset.Lattice.Lemmas"
+    ],
+    "context": "/-\nCopyright (c) 2015 Microsoft Corporation. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Leonardo de Moura, Jeremy Avigad\n-/\n/-!\n# Cardinality of a finite set\n\nThis defines the cardinality of a `Finset` and provides induction principles for finsets.\n\n## Main declarations\n\n* `Finset.card`: `#s : ℕ` returns the cardinality of `s : Finset α`.\n\n### Induction principles\n\n* `Finset.strongInduction`: Strong induction\n* `Finset.strongInductionOn`\n* `Finset.strongDownwardInduction`\n* `Finset.strongDownwardInductionOn`\n* `Finset.case_strong_induction_on`\n* `Finset.Nonempty.strong_induction`\n* `Finset.eraseInduction`\n-/\n\n@[expose] public section\n\nassert_not_exists Monoid\n\nopen Function Multiset Nat\n\nvariable {α β R : Type*}\n\nnamespace Finset\n\nvariable {s t : Finset α} {a b c : α}\n\n/-- `s.card` is the number of elements of `s`, aka its cardinality.\n\nThe notation `#s` can be accessed in the `Finset` locale. -/\ndef card (s : Finset α) : ℕ :=\n  Multiset.card s.1\n\n@[inherit_doc] scoped prefix:arg \"#\" => Finset.card\n\ntheorem card_def (s : Finset α) : #s = Multiset.card s.1 :=\n  rfl\n\n@[simp] lemma card_val (s : Finset α) : Multiset.card s.1 = #s := rfl\n\nuniverse «u_1»\n\nassert_not_exists _root_.Finset.card_mk\n",
+    "binders": "{«α» : Type u_1} {m nodup}",
+    "proposition": "#(⟨m, nodup⟩ : Finset α) = Multiset.card m",
+    "target_name": "_root_.CompressionEval.lib_linear_algebra_combinatorics_main_finset_card_02",
+    "premise_context": "open Function Multiset Nat\nvariable {α β R : Type*}\nnamespace Finset\nvariable {s t : Finset α} {a b c : α}\n\nAvailable preceding statements (within the shown source scopes):\ntheorem card_def (s : Finset α) : #s = Multiset.card s.1",
+    "forbidden_declarations": [
+      "Finset.card_mk"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Data.Finset.Card",
+      "source_path": "Mathlib/Data/Finset/Card.lean",
+      "declaration": "Finset.card_mk",
+      "source_line": 58,
+      "source_sha256": "63075161faba9370d95262eff21dfd43094d9f1a2f9ea1fd3bec52e2ffa2c2e9",
+      "prefix_end_character": 1354,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "6a0e9c06dd3ac2f1565ed51d6328340ded348fbfd1c3597a15d5dfca9917b136",
+      "premise_context": "0ff71352773be95e9aa00f5045eecd5056da50fef21b6fa84e1973eed317fa57",
+      "binders": "8524a63c0ec5150b286c1728f92401d98c80ea55ba40380cdbdd5c098b36c511",
+      "proposition": "bdb45d2dcc3505ca325cf9206261cf3ecd91f1a412c1ebc3f55346054d26174b"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Data.Finset.Basic",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Finset.Image",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Finset.Lattice.Lemmas",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

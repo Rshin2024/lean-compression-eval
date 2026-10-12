@@ -1,0 +1,371 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {α : Type u_1} [inst : Semigroup.{u_1} α] (x y : α),\n  Eq.{u_1 + 1}\n    (Function.comp.{u_1 + 1, u_1 + 1, u_1 + 1} (fun (x_1 : α) => HMul.hMul.{u_1, u_1, u_1} x x_1) fun (x : α) =>\n      HMul.hMul.{u_1, u_1, u_1} y x)\n    fun (x_1 : α) => HMul.hMul.{u_1, u_1, u_1} (HMul.hMul.{u_1, u_1, u_1} x y) x_1",
+  "trusted_type_expression": "forall {α : Type.{u_1}} [inst._@.EvaluatorCandidate.2995968760._hygCtx._hyg.6 : Semigroup.{u_1} α] (x : α) (y : α), Eq.{succ u_1} (α -> α) (Function.comp.{succ u_1, succ u_1, succ u_1} α α α (fun (x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.18 : α) => HMul.hMul.{u_1, u_1, u_1} α α α (instHMul.{u_1} α (Semigroup.toMul.{u_1} α inst._@.EvaluatorCandidate.2995968760._hygCtx._hyg.6)) x x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.18) (fun (x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.29 : α) => HMul.hMul.{u_1, u_1, u_1} α α α (instHMul.{u_1} α (Semigroup.toMul.{u_1} α inst._@.EvaluatorCandidate.2995968760._hygCtx._hyg.6)) y x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.29)) (fun (x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.40 : α) => HMul.hMul.{u_1, u_1, u_1} α α α (instHMul.{u_1} α (Semigroup.toMul.{u_1} α inst._@.EvaluatorCandidate.2995968760._hygCtx._hyg.6)) (HMul.hMul.{u_1, u_1, u_1} α α α (instHMul.{u_1} α (Semigroup.toMul.{u_1} α inst._@.EvaluatorCandidate.2995968760._hygCtx._hyg.6)) x y) x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.40)",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_1 + 1}\n  (Function.comp.{u_1 + 1, u_1 + 1, u_1 + 1} (fun (x_1 : α) => HMul.hMul.{u_1, u_1, u_1} x x_1) fun (x : α) =>\n    HMul.hMul.{u_1, u_1, u_1} y x)\n  fun (x_1 : α) => HMul.hMul.{u_1, u_1, u_1} (HMul.hMul.{u_1, u_1, u_1} x y) x_1",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Semigroup.{u_1} α",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.6",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "α",
+        "name": "x",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "α",
+        "name": "y",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_algebra_groups_pilot_group_basic_05 (x y : α) :\n  (x * ·) ∘ (y * ·) = (x * y * ·) :=\nby\n  ext z\n  simp [mul_assoc]",
+    "signature_spans": [
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 74,
+        "end": 75
+      },
+      {
+        "start": 76,
+        "end": 77
+      },
+      {
+        "start": 78,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 93
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 100,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 106
+      },
+      {
+        "start": 106,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 122
+      }
+    ],
+    "proof_offset": 126,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 70
+      },
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 74,
+        "end": 75
+      },
+      {
+        "start": 76,
+        "end": 77
+      },
+      {
+        "start": 78,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 93
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 100,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 106
+      },
+      {
+        "start": 106,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 128
+      },
+      {
+        "start": 131,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 139,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 145,
+        "end": 154
+      },
+      {
+        "start": 154,
+        "end": 155
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 126,
+        "end": 128
+      },
+      {
+        "start": 131,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 139,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 145,
+        "end": 154
+      },
+      {
+        "start": 154,
+        "end": 155
+      }
+    ],
+    "W_full": 36,
+    "W_S": 25,
+    "W_B": 7
+  },
+  "root": "CompressionEval.lib_algebra_groups_pilot_group_basic_05",
+  "proved_type_fingerprint": "1384117838",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 38,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Elab.Tactic.Ext.ext",
+      "Lean.Parser.Tactic.rintroPat.one",
+      "Lean.Parser.Tactic.rcasesPat.one",
+      "Lean.Parser.Tactic.simp",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.simpLemma"
+    ],
+    "proof_nodes": 585,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_algebra_groups_pilot_group_basic_05"
+  ],
+  "axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "ed45c57c60e7622b96bd7f34a351f96a86f6071ce48723bcd42fb0c46418821a",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 3.865972583182156
+  },
+  "request_fingerprint": "19a1cb576dbeebf9d2c309c316c037aa6ecd6e2e3169e6e6923178b3b3e70934"
+}

@@ -1,0 +1,229 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u'",
+    "u_2",
+    "u_4"
+  ],
+  "trusted_type_source": "∀ {ι : Type u'} {R : Type u_2} {M : Type u_4} {v : ι → M} [inst : Semiring.{u_2} R] [inst_1 : AddCommMonoid.{u_4} M]\n  [inst_2 : Module.{u_2, u_4} R M] [IsEmpty.{u' + 1} ι], LinearIndependent.{u', u_2, u_4} R v",
+  "trusted_type_expression": "forall {ι : Type.{u'}} {R : Type.{u_2}} {M : Type.{u_4}} {v : ι -> M} [inst._@.EvaluatorCandidate.2617184642._hygCtx._hyg.14 : Semiring.{u_2} R] [inst._@.EvaluatorCandidate.2617184642._hygCtx._hyg.17 : AddCommMonoid.{u_4} M] [inst._@.EvaluatorCandidate.2617184642._hygCtx._hyg.23 : Module.{u_2, u_4} R M inst._@.EvaluatorCandidate.2617184642._hygCtx._hyg.14 inst._@.EvaluatorCandidate.2617184642._hygCtx._hyg.17] [inst._@.EvaluatorCandidate.2617184642._hygCtx._hyg.31 : IsEmpty.{succ u'} ι], LinearIndependent.{u', u_2, u_4} ι R M v inst._@.EvaluatorCandidate.2617184642._hygCtx._hyg.14 inst._@.EvaluatorCandidate.2617184642._hygCtx._hyg.17 inst._@.EvaluatorCandidate.2617184642._hygCtx._hyg.23",
+  "trusted_telescope": {
+    "proposition": "LinearIndependent.{u', u_2, u_4} R v",
+    "binders": [
+      {
+        "type_source": "Type u'",
+        "name": "ι",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_2",
+        "name": "R",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_4",
+        "name": "M",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "ι → M",
+        "name": "v",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Semiring.{u_2} R",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.14",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "AddCommMonoid.{u_4} M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.17",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Module.{u_2, u_4} R M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.23",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "IsEmpty.{u' + 1} ι",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.31",
+        "binder_info": "instance"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_linear_algebra_combinatorics_main_linearindependent_defs_10 [IsEmpty ι] :\n  LinearIndependent R v :=\ninjective_of_subsingleton _",
+    "signature_spans": [
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 106
+      },
+      {
+        "start": 106,
+        "end": 107
+      },
+      {
+        "start": 112,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      }
+    ],
+    "proof_offset": 137,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 106
+      },
+      {
+        "start": 106,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 112,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 137,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      }
+    ],
+    "W_full": 13,
+    "W_S": 7,
+    "W_B": 2
+  },
+  "root": "CompressionEval.lib_linear_algebra_combinatorics_main_linearindependent_defs_10",
+  "resolved_imports": [
+    {
+      "module": "Mathlib.Algebra.Order.Sub.Basic",
+      "is_meta": false,
+      "is_exported": true,
+      "import_all": false
+    },
+    {
+      "module": "Mathlib.LinearAlgebra.Finsupp.LinearCombination",
+      "is_meta": false,
+      "is_exported": true,
+      "import_all": false
+    },
+    {
+      "module": "Mathlib.Lean.Expr.ExtraRecognizers",
+      "is_meta": true,
+      "is_exported": true,
+      "import_all": false
+    }
+  ],
+  "proved_type_fingerprint": "2070169453",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 4749,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "null",
+      "Lean.Parser.Term.hole"
+    ],
+    "proof_nodes": 273,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_linear_algebra_combinatorics_main_linearindependent_defs_10"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "4c854b3304b877e482884ff390296403b0fb2a121eb21e51b1edf510cea632f8",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.91736716683954
+  },
+  "request_fingerprint": "2aa32140ae8a8995fc67a2bc71c17e88afb0c6dd932a3251a7e0b3fd0ddafd7b",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "engine_path": "lean/versions/Evaluator-83da0074.lean"
+}

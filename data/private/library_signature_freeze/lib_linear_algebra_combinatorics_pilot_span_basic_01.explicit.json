@@ -1,0 +1,496 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_4"
+  ],
+  "trusted_type_source": "∀ {M : Type u_4} [inst : AddCommMonoid.{u_4} M] (s : Set.{u_4} M),\n  Eq.{u_4 + 1} (AddSubmonoid.toNatSubmodule.{u_4} (AddSubmonoid.closure.{u_4} s)) (Submodule.span.{0, u_4} ℕ s)",
+  "trusted_type_expression": "forall {M : Type.{u_4}} [inst : AddCommMonoid.{u_4} M] (s : Set.{u_4} M), Eq.{succ u_4} (Submodule.{0, u_4} Nat M Nat.instSemiring inst (AddCommMonoid.toNatModule.{u_4} M inst)) (DFunLike.coe.{succ u_4, succ u_4, succ u_4} (OrderIso.{u_4, u_4} (AddSubmonoid.{u_4} M (AddMonoid.toAddZeroClass.{u_4} M (AddCommMonoid.toAddMonoid.{u_4} M inst))) (Submodule.{0, u_4} Nat M Nat.instSemiring inst (AddCommMonoid.toNatModule.{u_4} M inst)) (Preorder.toLE.{u_4} (AddSubmonoid.{u_4} M (AddMonoid.toAddZeroClass.{u_4} M (AddCommMonoid.toAddMonoid.{u_4} M inst))) (PartialOrder.toPreorder.{u_4} (AddSubmonoid.{u_4} M (AddMonoid.toAddZeroClass.{u_4} M (AddCommMonoid.toAddMonoid.{u_4} M inst))) (AddSubmonoid.instPartialOrder.{u_4} M (AddMonoid.toAddZeroClass.{u_4} M (AddCommMonoid.toAddMonoid.{u_4} M inst))))) (Preorder.toLE.{u_4} (Submodule.{0, u_4} Nat M Nat.instSemiring inst (AddCommMonoid.toNatModule.{u_4} M inst)) (PartialOrder.toPreorder.{u_4} (Submodule.{0, u_4} Nat M Nat.instSemiring inst (AddCommMonoid.toNatModule.{u_4} M inst)) (Submodule.instPartialOrder.{0, u_4} Nat M Nat.instSemiring inst (AddCommMonoid.toNatModule.{u_4} M inst))))) (AddSubmonoid.{u_4} M (AddMonoid.toAddZeroClass.{u_4} M (AddCommMonoid.toAddMonoid.{u_4} M inst))) (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : AddSubmonoid.{u_4} M (AddMonoid.toAddZeroClass.{u_4} M (AddCommMonoid.toAddMonoid.{u_4} M inst))) => Submodule.{0, u_4} Nat M Nat.instSemiring inst (AddCommMonoid.toNatModule.{u_4} M inst)) (instFunLikeOrderIso.{u_4, u_4} (AddSubmonoid.{u_4} M (AddMonoid.toAddZeroClass.{u_4} M (AddCommMonoid.toAddMonoid.{u_4} M inst))) (Submodule.{0, u_4} Nat M Nat.instSemiring inst (AddCommMonoid.toNatModule.{u_4} M inst)) (Preorder.toLE.{u_4} (AddSubmonoid.{u_4} M (AddMonoid.toAddZeroClass.{u_4} M (AddCommMonoid.toAddMonoid.{u_4} M inst))) (PartialOrder.toPreorder.{u_4} (AddSubmonoid.{u_4} M (AddMonoid.toAddZeroClass.{u_4} M (AddCommMonoid.toAddMonoid.{u_4} M inst))) (AddSubmonoid.instPartialOrder.{u_4} M (AddMonoid.toAddZeroClass.{u_4} M (AddCommMonoid.toAddMonoid.{u_4} M inst))))) (Preorder.toLE.{u_4} (Submodule.{0, u_4} Nat M Nat.instSemiring inst (AddCommMonoid.toNatModule.{u_4} M inst)) (PartialOrder.toPreorder.{u_4} (Submodule.{0, u_4} Nat M Nat.instSemiring inst (AddCommMonoid.toNatModule.{u_4} M inst)) (Submodule.instPartialOrder.{0, u_4} Nat M Nat.instSemiring inst (AddCommMonoid.toNatModule.{u_4} M inst))))) (AddSubmonoid.toNatSubmodule.{u_4} M inst) (AddSubmonoid.closure.{u_4} M (AddMonoid.toAddZeroClass.{u_4} M (AddCommMonoid.toAddMonoid.{u_4} M inst)) s)) (Submodule.span.{0, u_4} Nat M Nat.instSemiring inst (AddCommMonoid.toNatModule.{u_4} M inst) s)",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_4 + 1} (AddSubmonoid.toNatSubmodule.{u_4} (AddSubmonoid.closure.{u_4} s)) (Submodule.span.{0, u_4} ℕ s)",
+    "binders": [
+      {
+        "type_source": "Type u_4",
+        "name": "M",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "AddCommMonoid.{u_4} M",
+        "name": "inst",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Set.{u_4} M",
+        "name": "s",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_01 {«M» : Type u_4} [«inst» : AddCommMonoid.{u_4} M] (s : Set M) :\n  (AddSubmonoid.closure s).toNatSubmodule = .span ℕ s :=\n(Submodule.span_le.mpr AddSubmonoid.subset_closure).antisymm'\n    ((Submodule.span ℕ s).toAddSubmonoid.closure_le.mpr Submodule.subset_span)",
+    "signature_spans": [
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 104,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 130
+      },
+      {
+        "start": 130,
+        "end": 133
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 148
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 154,
+        "end": 155
+      },
+      {
+        "start": 155,
+        "end": 175
+      },
+      {
+        "start": 176,
+        "end": 177
+      },
+      {
+        "start": 177,
+        "end": 178
+      },
+      {
+        "start": 178,
+        "end": 179
+      },
+      {
+        "start": 179,
+        "end": 193
+      },
+      {
+        "start": 194,
+        "end": 195
+      },
+      {
+        "start": 196,
+        "end": 197
+      },
+      {
+        "start": 197,
+        "end": 201
+      },
+      {
+        "start": 202,
+        "end": 205
+      },
+      {
+        "start": 206,
+        "end": 207
+      }
+    ],
+    "proof_offset": 211,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 104,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 130
+      },
+      {
+        "start": 130,
+        "end": 133
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 148
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 154,
+        "end": 155
+      },
+      {
+        "start": 155,
+        "end": 175
+      },
+      {
+        "start": 176,
+        "end": 177
+      },
+      {
+        "start": 177,
+        "end": 178
+      },
+      {
+        "start": 178,
+        "end": 179
+      },
+      {
+        "start": 179,
+        "end": 193
+      },
+      {
+        "start": 194,
+        "end": 195
+      },
+      {
+        "start": 196,
+        "end": 197
+      },
+      {
+        "start": 197,
+        "end": 201
+      },
+      {
+        "start": 202,
+        "end": 205
+      },
+      {
+        "start": 206,
+        "end": 207
+      },
+      {
+        "start": 208,
+        "end": 210
+      },
+      {
+        "start": 211,
+        "end": 212
+      },
+      {
+        "start": 212,
+        "end": 233
+      },
+      {
+        "start": 234,
+        "end": 261
+      },
+      {
+        "start": 261,
+        "end": 262
+      },
+      {
+        "start": 262,
+        "end": 263
+      },
+      {
+        "start": 263,
+        "end": 272
+      },
+      {
+        "start": 277,
+        "end": 278
+      },
+      {
+        "start": 278,
+        "end": 279
+      },
+      {
+        "start": 279,
+        "end": 293
+      },
+      {
+        "start": 294,
+        "end": 297
+      },
+      {
+        "start": 298,
+        "end": 299
+      },
+      {
+        "start": 299,
+        "end": 300
+      },
+      {
+        "start": 300,
+        "end": 301
+      },
+      {
+        "start": 301,
+        "end": 330
+      },
+      {
+        "start": 331,
+        "end": 352
+      },
+      {
+        "start": 352,
+        "end": 353
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 211,
+        "end": 212
+      },
+      {
+        "start": 212,
+        "end": 233
+      },
+      {
+        "start": 234,
+        "end": 261
+      },
+      {
+        "start": 261,
+        "end": 262
+      },
+      {
+        "start": 262,
+        "end": 263
+      },
+      {
+        "start": 263,
+        "end": 272
+      },
+      {
+        "start": 277,
+        "end": 278
+      },
+      {
+        "start": 278,
+        "end": 279
+      },
+      {
+        "start": 279,
+        "end": 293
+      },
+      {
+        "start": 294,
+        "end": 297
+      },
+      {
+        "start": 298,
+        "end": 299
+      },
+      {
+        "start": 299,
+        "end": 300
+      },
+      {
+        "start": 300,
+        "end": 301
+      },
+      {
+        "start": 301,
+        "end": 330
+      },
+      {
+        "start": 331,
+        "end": 352
+      },
+      {
+        "start": 352,
+        "end": 353
+      }
+    ],
+    "W_full": 52,
+    "W_S": 32,
+    "W_B": 16
+  },
+  "root": "CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_01",
+  "proved_type_fingerprint": "700979913",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 1994,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "Lean.Parser.Term.proj",
+      "Lean.Parser.Term.paren",
+      "Lean.Parser.Term.hygienicLParen",
+      "hygieneInfo",
+      "null",
+      "termℕ"
+    ],
+    "proof_nodes": 1805,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_01"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "b42229b37de46ed6d5610eee952651992964ea7164f7c517bf6928451b09555e",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.5028943330980837
+  },
+  "request_fingerprint": "2c2c9f693326f312e38c982c6fad67fd22a55006bcf7e06a830e3bc90a51e59c"
+}

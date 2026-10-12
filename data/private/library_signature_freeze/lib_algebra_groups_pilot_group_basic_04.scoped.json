@@ -1,0 +1,494 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1",
+    "u_2"
+  ],
+  "trusted_type_source": "∀ {α : Type u_1} {β : Type u_2} [inst : Pow.{u_1, u_2} α β] (p : Prop) [inst_1 : Decidable p] (a b : α) (c : β),\n  Eq.{u_1 + 1} (HPow.hPow.{u_1, u_2, u_1} (ite.{u_1 + 1} p a b) c)\n    (ite.{u_1 + 1} p (HPow.hPow.{u_1, u_2, u_1} a c) (HPow.hPow.{u_1, u_2, u_1} b c))",
+  "trusted_type_expression": "forall {α : Type.{u_1}} {β : Type.{u_2}} [inst._@.EvaluatorCandidate.3725006893._hygCtx._hyg.6 : Pow.{u_1, u_2} α β] (p : Prop) [inst._@.EvaluatorCandidate.3725006893._hygCtx._hyg.11 : Decidable p] (a : α) (b : α) (c : β), Eq.{succ u_1} α (HPow.hPow.{u_1, u_2, u_1} α β α (instHPow.{u_1, u_2} α β inst._@.EvaluatorCandidate.3725006893._hygCtx._hyg.6) (ite.{succ u_1} α p inst._@.EvaluatorCandidate.3725006893._hygCtx._hyg.11 a b) c) (ite.{succ u_1} α p inst._@.EvaluatorCandidate.3725006893._hygCtx._hyg.11 (HPow.hPow.{u_1, u_2, u_1} α β α (instHPow.{u_1, u_2} α β inst._@.EvaluatorCandidate.3725006893._hygCtx._hyg.6) a c) (HPow.hPow.{u_1, u_2, u_1} α β α (instHPow.{u_1, u_2} α β inst._@.EvaluatorCandidate.3725006893._hygCtx._hyg.6) b c))",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_1 + 1} (HPow.hPow.{u_1, u_2, u_1} (ite.{u_1 + 1} p a b) c)\n  (ite.{u_1 + 1} p (HPow.hPow.{u_1, u_2, u_1} a c) (HPow.hPow.{u_1, u_2, u_1} b c))",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_2",
+        "name": "β",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Pow.{u_1, u_2} α β",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.6",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Prop",
+        "name": "p",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Decidable p",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.11",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "α",
+        "name": "a",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "α",
+        "name": "b",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "β",
+        "name": "c",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_algebra_groups_pilot_group_basic_04 (p : Prop) [Decidable p] (a b : α) (c : β) :\n  (if p then a else b) ^ c = if p then a ^ c else b ^ c :=\ndite_pow _ _ _ _",
+    "signature_spans": [
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 74,
+        "end": 75
+      },
+      {
+        "start": 76,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 83,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 105
+      },
+      {
+        "start": 105,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 108
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 114
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 132
+      },
+      {
+        "start": 133,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 144
+      },
+      {
+        "start": 145,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 156
+      },
+      {
+        "start": 157,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 160
+      },
+      {
+        "start": 161,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 167
+      },
+      {
+        "start": 168,
+        "end": 169
+      },
+      {
+        "start": 170,
+        "end": 171
+      },
+      {
+        "start": 172,
+        "end": 173
+      }
+    ],
+    "proof_offset": 177,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 70
+      },
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 74,
+        "end": 75
+      },
+      {
+        "start": 76,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 83,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 105
+      },
+      {
+        "start": 105,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 108
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 114
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 132
+      },
+      {
+        "start": 133,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 144
+      },
+      {
+        "start": 145,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 156
+      },
+      {
+        "start": 157,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 160
+      },
+      {
+        "start": 161,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 167
+      },
+      {
+        "start": 168,
+        "end": 169
+      },
+      {
+        "start": 170,
+        "end": 171
+      },
+      {
+        "start": 172,
+        "end": 173
+      },
+      {
+        "start": 174,
+        "end": 176
+      },
+      {
+        "start": 177,
+        "end": 185
+      },
+      {
+        "start": 186,
+        "end": 187
+      },
+      {
+        "start": 188,
+        "end": 189
+      },
+      {
+        "start": 190,
+        "end": 191
+      },
+      {
+        "start": 192,
+        "end": 193
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 177,
+        "end": 185
+      },
+      {
+        "start": 186,
+        "end": 187
+      },
+      {
+        "start": 188,
+        "end": 189
+      },
+      {
+        "start": 190,
+        "end": 191
+      },
+      {
+        "start": 192,
+        "end": 193
+      }
+    ],
+    "W_full": 50,
+    "W_S": 41,
+    "W_B": 5
+  },
+  "root": "CompressionEval.lib_algebra_groups_pilot_group_basic_04",
+  "proved_type_fingerprint": "2045322753",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 35,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "null",
+      "Lean.Parser.Term.hole"
+    ],
+    "proof_nodes": 45,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_algebra_groups_pilot_group_basic_04"
+  ],
+  "axioms": [],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "cf627a13d7528417223af5e67a70c31b94eb809ffe5b1f31e39a598f3f50dff8",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 3.8391482080332935
+  },
+  "request_fingerprint": "6c68d135c17298d962e4dae26131b7700e88a38bda6a93b25ddbf78cdf1ee57d"
+}

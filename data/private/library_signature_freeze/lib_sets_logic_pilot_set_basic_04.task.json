@@ -1,0 +1,79 @@
+{
+  "task": {
+    "task_id": "lib_sets_logic_pilot_set_basic_04",
+    "family_id": "source_module_Mathlib.Data.Set.Basic",
+    "domain": "sets_logic",
+    "split": "pilot",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Order.PropInstances",
+      "Mathlib.Tactic.Lift",
+      "Mathlib.Tactic.Attr.Register"
+    ],
+    "context": "/-\nCopyright (c) 2014 Jeremy Avigad. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Jeremy Avigad, Leonardo de Moura\n-/\n/-!\n# Basic properties of sets\n\nSets in Lean are homogeneous; all their elements have the same type. Sets whose elements\nhave type `X` are thus defined as `Set X := X → Prop`. Note that this function need not\nbe decidable. The definition is in the module `Mathlib/Data/Set/Defs.lean`.\n\nThis file provides some basic definitions related to sets and functions not present in the\ndefinitions file, as well as extra lemmas for functions defined in the definitions file and\n`Mathlib/Data/Set/Operations.lean` (empty set, univ, union, intersection, insert, singleton and\npowerset).\n\nNote that a set is a term, not a type. There is a coercion from `Set α` to `Type*` sending\n`s` to the corresponding subtype `↥s`.\n\nSee also the directory `Mathlib/SetTheory/ZFC/`, which contains an encoding of ZFC set theory in\nLean.\n\n## Main definitions\n\nNotation used here:\n\n-  `f : α → β` is a function,\n\n-  `s : Set α` and `s₁ s₂ : Set α` are subsets of `α`\n\n-  `t : Set β` is a subset of `β`.\n\nDefinitions in the file:\n\n* `Nonempty s : Prop` : the predicate `s ≠ ∅`. Note that this is the preferred way to express the\n  fact that `s` has an element (see the Implementation Notes).\n\n* `inclusion s₁ s₂ : ↥s₁ → ↥s₂` : the map `↥s₁ → ↥s₂` induced by an inclusion `s₁ ⊆ s₂`.\n\n## Implementation notes\n\n* `s.Nonempty` is to be preferred to `s ≠ ∅` or `∃ x, x ∈ s`. It has the advantage that\n  the `s.Nonempty` dot notation can be used.\n\n* For `s : Set α`, do not use `Subtype s`. Instead use `↥s` or `(s : Type*)` or `s`.\n\n## Tags\n\nset, sets, subset, subsets, union, intersection, insert, singleton, powerset\n-/\n\n@[expose] public section\n\nassert_not_exists HeytingAlgebra RelIso\n\n/-! ### Set coercion to a type -/\n\nopen Function\n\nuniverse u v\n\nnamespace Set\n\nvariable {α : Type u} {s t : Set α}\n\nprotected theorem mem_injective : Injective (Membership.mem : Set α → α → Prop) := injective_id\nprotected theorem mem_surjective : Surjective (Membership.mem : Set α → α → Prop) := surjective_id\nprotected theorem mem_bijective : Bijective (Membership.mem : Set α → α → Prop) := bijective_id\n\ninstance instDistribLattice : DistribLattice (Set α) where\n  __ : DistribLattice (α → Prop) := inferInstance\n  le := (· ≤ ·)\n  lt := fun s t => s ⊆ t ∧ ¬t ⊆ s\n  sup := (· ∪ ·)\n  inf := (· ∩ ·)\n\ninstance instBoundedOrder : BoundedOrder (Set α) where\n  __ : BoundedOrder (α → Prop) := inferInstance\n  bot := ∅\n  top := univ\nassert_not_exists _root_.Set.top_eq_univ\n",
+    "binders": "{«α» : Type u}",
+    "proposition": "(⊤ : Set α) = univ",
+    "target_name": "_root_.CompressionEval.lib_sets_logic_pilot_set_basic_04",
+    "premise_context": "open Function\nuniverse u v\nnamespace Set\nvariable {α : Type u} {s t : Set α}\n\nAvailable preceding statements (within the shown source scopes):\nprotected theorem mem_injective : Injective (Membership.mem : Set α → α → Prop)\n\nprotected theorem mem_surjective : Surjective (Membership.mem : Set α → α → Prop)\n\nprotected theorem mem_bijective : Bijective (Membership.mem : Set α → α → Prop)",
+    "forbidden_declarations": [
+      "Set.top_eq_univ"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Data.Set.Basic",
+      "source_path": "Mathlib/Data/Set/Basic.lean",
+      "declaration": "Set.top_eq_univ",
+      "source_line": 90,
+      "source_sha256": "becd3a54ec1041faec888b685437e7af415875f39d7c9bd8ff2b64c13ccbaf8b",
+      "prefix_end_character": 2694,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "ebe8b2a5d82670b47a78523b8a5df54e7573f53ca2956d38538287940679fcde",
+      "premise_context": "e497f03fad803299ccd928fa07ddac54a33784b2f85a4901e5351ff67bff2906",
+      "binders": "964a7944fb9382196a2d46d13d35aed94995b60ffa5dfa915621596c0d3c1fb4",
+      "proposition": "ecbf486423530700432c4306be7105b9d9ba7494cf94ef7f01c8c9dd1f6ffd86"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Order.PropInstances",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.Lift",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.Attr.Register",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

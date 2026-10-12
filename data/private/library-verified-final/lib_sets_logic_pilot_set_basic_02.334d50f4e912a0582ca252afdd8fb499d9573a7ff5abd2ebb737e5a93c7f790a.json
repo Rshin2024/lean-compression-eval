@@ -1,0 +1,739 @@
+{
+  "boundary_policy": "expand_mathlib_and_evaluator_v1",
+  "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+  "evaluated_at": "2026-10-12T04:11:25.118242+00:00",
+  "extraction": {
+    "axioms": [],
+    "candidate_declarations": [
+      "CompressionEval.lib_sets_logic_pilot_set_basic_02"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 7,
+      "syntax_kinds": [],
+      "transitive_dependency_count": 16
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "available",
+    "nodes": [
+      {
+        "body": {
+          "@Sort": 1,
+          "Function.surjective_id": 1,
+          "Set": 1
+        },
+        "body_nodes": 7,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "CompressionEval.lib_sets_logic_pilot_set_basic_02",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2,
+          "Function.Surjective": 1,
+          "Membership.mem": 1,
+          "Set": 2,
+          "Set.instMembership": 1
+        },
+        "source_counts": null,
+        "type_hash": "3913954969",
+        "type_nodes": 23,
+        "value_hash": "2469431478"
+      },
+      {
+        "body": null,
+        "name": "@Sort",
+        "owner_module": "@builtin",
+        "primitive": true,
+        "signature": {},
+        "type_hash": "@Sort",
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Function.Surjective",
+        "owner_module": "Init.Data.Function",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "360156075",
+        "type_nodes": null,
+        "value_hash": "1220068565"
+      },
+      {
+        "body": {
+          "@Sort": 2
+        },
+        "body_nodes": 5,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Set",
+        "owner_module": "Mathlib.Data.Set.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2
+        },
+        "source_counts": null,
+        "type_hash": "3807510281",
+        "type_nodes": 3,
+        "value_hash": "722537027"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Membership.mem",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3470671983",
+        "type_nodes": null,
+        "value_hash": "4237132110"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "Membership.mk": 1,
+          "Set": 1,
+          "Set.Mem": 1
+        },
+        "body_nodes": 13,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Set.instMembership",
+        "owner_module": "Mathlib.Data.Set.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Membership": 1,
+          "Set": 1
+        },
+        "source_counts": null,
+        "type_hash": "4076238755",
+        "type_nodes": 9,
+        "value_hash": "1417047363"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Membership",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1934795436",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Membership.mk",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3701658408",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "Set": 1
+        },
+        "body_nodes": 11,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Set.Mem",
+        "owner_module": "Mathlib.Data.Set.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2,
+          "Set": 1
+        },
+        "source_counts": null,
+        "type_hash": "3815906838",
+        "type_nodes": 9,
+        "value_hash": "3165736356"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Function.surjective_id",
+        "owner_module": "Init.Data.Function",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1227028013",
+        "type_nodes": null,
+        "value_hash": "2193172965"
+      }
+    ],
+    "process_returncode": 0,
+    "proved_type_fingerprint": "3913954969",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.PropInstances"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.Lift"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.Attr.Register"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 2.0817615827545524,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "dac912e8dafbaca895b1c1ee61a2190bd11af3f3d087c3235add1571e7efd8b3",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_sets_logic_pilot_set_basic_02",
+    "source_tokens": {
+      "W_B": 1,
+      "W_S": 17,
+      "W_full": 22,
+      "body_spans": [
+        {
+          "end": 156,
+          "start": 143
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 64,
+          "start": 8
+        },
+        {
+          "end": 66,
+          "start": 65
+        },
+        {
+          "end": 72,
+          "start": 66
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 79,
+          "start": 75
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 82,
+          "start": 81
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 97,
+          "start": 87
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 113,
+          "start": 99
+        },
+        {
+          "end": 115,
+          "start": 114
+        },
+        {
+          "end": 119,
+          "start": 116
+        },
+        {
+          "end": 122,
+          "start": 120
+        },
+        {
+          "end": 126,
+          "start": 123
+        },
+        {
+          "end": 129,
+          "start": 127
+        },
+        {
+          "end": 133,
+          "start": 130
+        },
+        {
+          "end": 138,
+          "start": 134
+        },
+        {
+          "end": 139,
+          "start": 138
+        },
+        {
+          "end": 142,
+          "start": 140
+        },
+        {
+          "end": 156,
+          "start": 143
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 143,
+      "signature_spans": [
+        {
+          "end": 66,
+          "start": 65
+        },
+        {
+          "end": 72,
+          "start": 66
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 79,
+          "start": 75
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 82,
+          "start": 81
+        },
+        {
+          "end": 97,
+          "start": 87
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 113,
+          "start": 99
+        },
+        {
+          "end": 115,
+          "start": 114
+        },
+        {
+          "end": 119,
+          "start": 116
+        },
+        {
+          "end": 122,
+          "start": 120
+        },
+        {
+          "end": 126,
+          "start": 123
+        },
+        {
+          "end": 129,
+          "start": 127
+        },
+        {
+          "end": 133,
+          "start": 130
+        },
+        {
+          "end": 138,
+          "start": 134
+        },
+        {
+          "end": 139,
+          "start": 138
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_sets_logic_pilot_set_basic_02 {«α» : Type u} :\n  Surjective (Membership.mem : Set α → α → Prop) :=\nsurjective_id",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "α",
+          "type_source": "Type u"
+        }
+      ],
+      "proposition": "Function.Surjective.{u + 1, u + 1} Membership.mem.{u, u}"
+    },
+    "trusted_type_expression": "forall {α : Type.{u}}, Function.Surjective.{succ u, succ u} (Set.{u} α) (α -> Prop) (Membership.mem.{u, u} α (Set.{u} α) (Set.instMembership.{u} α))",
+    "trusted_type_source": "∀ {α : Type u}, Function.Surjective.{u + 1, u + 1} Membership.mem.{u, u}",
+    "universe_parameters": [
+      "u"
+    ],
+    "validity_status": "success"
+  },
+  "graph_hash": "998a1bf304ce19ef3711e504436487b6bb88f29cd9b8e63ff130c24eaca788db",
+  "metric_status": "available",
+  "metrics": {
+    "D": 4,
+    "I0": {
+      "denominator_decimal": "17",
+      "log2": -4.087462841250339,
+      "numerator_decimal": "1"
+    },
+    "T0": {
+      "denominator_decimal": "18",
+      "log2": 1.1876270031757716,
+      "numerator_decimal": "41"
+    },
+    "U_B_decimal": "6",
+    "U_S_decimal": "35",
+    "U_decimal": "41",
+    "W_B": 1,
+    "W_S": 17,
+    "body_state": "present",
+    "distinct_dependency_count": 9,
+    "log2_I0": -4.087462841250339,
+    "log2_T0": 1.1876270031757716,
+    "log2_U": 5.357552004618084,
+    "log2_U_B": 2.584962500721156,
+    "log2_U_S": 5.129283016944966,
+    "log2_W": 4.169925001442312,
+    "metric_profile": "paper_aligned_v1",
+    "metric_status": "available",
+    "primitive_count": 6,
+    "reachable_node_count": 10,
+    "reasons": []
+  },
+  "primitive_manifest": [
+    "@Sort",
+    "Function.Surjective",
+    "Function.surjective_id",
+    "Membership",
+    "Membership.mem",
+    "Membership.mk"
+  ],
+  "primitive_manifest_hash": "062662b343bf88e81212ad32b0e61675939efa43ec5aac7837bb2249c59d5828",
+  "primitive_manifest_scope": "reachable closure; boundary policy and environment define shared corpus boundary",
+  "reference_cache_key": "334d50f4e912a0582ca252afdd8fb499d9573a7ff5abd2ebb737e5a93c7f790a",
+  "reference_proof_sha256": "49c7bb716aa2b7c18907384e7ec03fa04725802ca2cbc0ed8403ce4d719e9a4d",
+  "source_hash": "ea0b9fbcc84746b766ff5aea4d13a9c4e59bc527d4adef28d4f38e4af366fcf4",
+  "source_token_policy_hash": "878ab5fb5aa65e79973e4577203e29b9e6d67de66b91ff97b86ad021f5f229c9",
+  "task_hash": "7a17106a8eeea1aba4e1b172cd04879d6dc3942f4f593649b41b2414935eae7b",
+  "task_id": "lib_sets_logic_pilot_set_basic_02",
+  "task_input_hash": "4e4f4784535316de8967bd11c1b14c7c5ed9cfc1a2d943a77da11efe63c1fa4c",
+  "validation": {
+    "axioms": [],
+    "candidate_declarations": [
+      "CompressionEval.lib_sets_logic_pilot_set_basic_02"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 7,
+      "syntax_kinds": [],
+      "transitive_dependency_count": 16
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "3913954969",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.PropInstances"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.Lift"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.Attr.Register"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 2.131520416587591,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "bea689de7d57479701448e7ffd98d50249b48bd1e84ba86362fad997df1bf507",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_sets_logic_pilot_set_basic_02",
+    "source_tokens": {
+      "W_B": 1,
+      "W_S": 17,
+      "W_full": 22,
+      "body_spans": [
+        {
+          "end": 156,
+          "start": 143
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 64,
+          "start": 8
+        },
+        {
+          "end": 66,
+          "start": 65
+        },
+        {
+          "end": 72,
+          "start": 66
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 79,
+          "start": 75
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 82,
+          "start": 81
+        },
+        {
+          "end": 84,
+          "start": 83
+        },
+        {
+          "end": 97,
+          "start": 87
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 113,
+          "start": 99
+        },
+        {
+          "end": 115,
+          "start": 114
+        },
+        {
+          "end": 119,
+          "start": 116
+        },
+        {
+          "end": 122,
+          "start": 120
+        },
+        {
+          "end": 126,
+          "start": 123
+        },
+        {
+          "end": 129,
+          "start": 127
+        },
+        {
+          "end": 133,
+          "start": 130
+        },
+        {
+          "end": 138,
+          "start": 134
+        },
+        {
+          "end": 139,
+          "start": 138
+        },
+        {
+          "end": 142,
+          "start": 140
+        },
+        {
+          "end": 156,
+          "start": 143
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 143,
+      "signature_spans": [
+        {
+          "end": 66,
+          "start": 65
+        },
+        {
+          "end": 72,
+          "start": 66
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 79,
+          "start": 75
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 82,
+          "start": 81
+        },
+        {
+          "end": 97,
+          "start": 87
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 113,
+          "start": 99
+        },
+        {
+          "end": 115,
+          "start": 114
+        },
+        {
+          "end": 119,
+          "start": 116
+        },
+        {
+          "end": 122,
+          "start": 120
+        },
+        {
+          "end": 126,
+          "start": 123
+        },
+        {
+          "end": 129,
+          "start": 127
+        },
+        {
+          "end": 133,
+          "start": 130
+        },
+        {
+          "end": 138,
+          "start": 134
+        },
+        {
+          "end": 139,
+          "start": 138
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_sets_logic_pilot_set_basic_02 {«α» : Type u} :\n  Surjective (Membership.mem : Set α → α → Prop) :=\nsurjective_id",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "α",
+          "type_source": "Type u"
+        }
+      ],
+      "proposition": "Function.Surjective.{u + 1, u + 1} Membership.mem.{u, u}"
+    },
+    "trusted_type_expression": "forall {α : Type.{u}}, Function.Surjective.{succ u, succ u} (Set.{u} α) (α -> Prop) (Membership.mem.{u, u} α (Set.{u} α) (Set.instMembership.{u} α))",
+    "trusted_type_source": "∀ {α : Type u}, Function.Surjective.{u + 1, u + 1} Membership.mem.{u, u}",
+    "universe_parameters": [
+      "u"
+    ],
+    "validity_status": "success"
+  },
+  "validity_status": "success"
+}

@@ -1,0 +1,2588 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1",
+    "u_4",
+    "u_8"
+  ],
+  "trusted_type_source": "∀ {R : Type u_1} {M : Type u_4} [inst : Semiring.{u_1} R] [inst_1 : AddCommMonoid.{u_4} M]\n  [inst_2 : Module.{u_1, u_4} R M] {N : Type u_8} [inst_3 : AddCommMonoid.{u_8} N] [inst_4 : Module.{u_1, u_8} R N]\n  {V : Submodule.{u_1, u_4} R M} (f g : LinearMap.{u_1, u_1, u_4, u_8} (RingHom.id.{u_1} R) (↥V) N) {S : Set.{u_4} M}\n  (hV : Eq.{u_4 + 1} V (Submodule.span.{u_1, u_4} R S)),\n  Eq.{max (u_4 + 1) (u_8 + 1)} f g ↔\n    ∀ (s : ↑S), Eq.{u_8 + 1} (f (Subtype.mk.{u_4 + 1} ↑s ⋯)) (g (Subtype.mk.{u_4 + 1} ↑s ⋯))",
+  "trusted_type_expression": "forall {R : Type.{u_1}} {M : Type.{u_4}} [inst : Semiring.{u_1} R] [inst_1 : AddCommMonoid.{u_4} M] [inst_2 : Module.{u_1, u_4} R M inst inst_1] {N : Type.{u_8}} [inst_3 : AddCommMonoid.{u_8} N] [inst_4 : Module.{u_1, u_8} R N inst inst_3] {V : Submodule.{u_1, u_4} R M inst inst_1 inst_2} (f : LinearMap.{u_1, u_1, u_4, u_8} R R inst inst (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst)) (Subtype.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V x)) N (Submodule.addCommMonoid.{u_1, u_4} R M inst inst_1 inst_2 V) inst_3 (Submodule.module.{u_1, u_4} R M inst inst_1 inst_2 V) inst_4) (g : LinearMap.{u_1, u_1, u_4, u_8} R R inst inst (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst)) (Subtype.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V x)) N (Submodule.addCommMonoid.{u_1, u_4} R M inst inst_1 inst_2 V) inst_3 (Submodule.module.{u_1, u_4} R M inst inst_1 inst_2 V) inst_4) {S : Set.{u_4} M} (hV : Eq.{succ u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) V (Submodule.span.{u_1, u_4} R M inst inst_1 inst_2 S)), Iff (Eq.{max (succ u_4) (succ u_8)} (LinearMap.{u_1, u_1, u_4, u_8} R R inst inst (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst)) (Subtype.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V x)) N (Submodule.addCommMonoid.{u_1, u_4} R M inst inst_1 inst_2 V) inst_3 (Submodule.module.{u_1, u_4} R M inst inst_1 inst_2 V) inst_4) f g) (forall (s : Set.Elem.{u_4} M S), Eq.{succ u_8} N (DFunLike.coe.{max (succ u_4) (succ u_8), succ u_4, succ u_8} (LinearMap.{u_1, u_1, u_4, u_8} R R inst inst (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst)) (Subtype.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V x)) N (Submodule.addCommMonoid.{u_1, u_4} R M inst inst_1 inst_2 V) inst_3 (Submodule.module.{u_1, u_4} R M inst inst_1 inst_2 V) inst_4) (Subtype.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V x)) (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : Subtype.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V x)) => N) (LinearMap.instFunLike.{u_1, u_1, u_4, u_8} R R (Subtype.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V x)) N inst inst (Submodule.addCommMonoid.{u_1, u_4} R M inst inst_1 inst_2 V) inst_3 (Submodule.module.{u_1, u_4} R M inst inst_1 inst_2 V) inst_4 (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst))) f (Subtype.mk.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V x) (Subtype.val.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S x) s) (Eq.mpr.{0} (Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V (Subtype.val.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S x) s)) (Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) (Submodule.span.{u_1, u_4} R M inst inst_1 inst_2 S) (Subtype.val.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S x) s)) (id.{0} (Eq.{1} Prop (Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V (Subtype.val.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S x) s)) (Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) (Submodule.span.{u_1, u_4} R M inst inst_1 inst_2 S) (Subtype.val.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S x) s))) (congrFun'.{succ u_4, 1} M Prop (Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V) (Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) (Submodule.span.{u_1, u_4} R M inst inst_1 inst_2 S)) (congrArg.{succ u_4, succ u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (M -> Prop) V (Submodule.span.{u_1, u_4} R M inst inst_1 inst_2 S) (Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2))) hV) (Subtype.val.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S x) s))) (Submodule.subset_span.{u_1, u_4} R M inst inst_1 inst_2 S (Subtype.val.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S x) s) (of_eq_true (Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S (Subtype.val.{succ u_4} M (fun (a : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S a) s)) (Subtype.coe_prop._simp_1.{u_4} M S s)))))) (DFunLike.coe.{max (succ u_4) (succ u_8), succ u_4, succ u_8} (LinearMap.{u_1, u_1, u_4, u_8} R R inst inst (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst)) (Subtype.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V x)) N (Submodule.addCommMonoid.{u_1, u_4} R M inst inst_1 inst_2 V) inst_3 (Submodule.module.{u_1, u_4} R M inst inst_1 inst_2 V) inst_4) (Subtype.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V x)) (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : Subtype.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V x)) => N) (LinearMap.instFunLike.{u_1, u_1, u_4, u_8} R R (Subtype.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V x)) N inst inst (Submodule.addCommMonoid.{u_1, u_4} R M inst inst_1 inst_2 V) inst_3 (Submodule.module.{u_1, u_4} R M inst inst_1 inst_2 V) inst_4 (RingHom.id.{u_1} R (Semiring.toNonAssocSemiring.{u_1} R inst))) g (Subtype.mk.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V x) (Subtype.val.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S x) s) (Eq.mpr.{0} (Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V (Subtype.val.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S x) s)) (Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) (Submodule.span.{u_1, u_4} R M inst inst_1 inst_2 S) (Subtype.val.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S x) s)) (id.{0} (Eq.{1} Prop (Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V (Subtype.val.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S x) s)) (Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) (Submodule.span.{u_1, u_4} R M inst inst_1 inst_2 S) (Subtype.val.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S x) s))) (congrFun'.{succ u_4, 1} M Prop (Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) V) (Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2)) (Submodule.span.{u_1, u_4} R M inst inst_1 inst_2 S)) (congrArg.{succ u_4, succ u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (M -> Prop) V (Submodule.span.{u_1, u_4} R M inst inst_1 inst_2 S) (Membership.mem.{u_4, u_4} M (Submodule.{u_1, u_4} R M inst inst_1 inst_2) (SetLike.instMembership.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2))) hV) (Subtype.val.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S x) s))) (Submodule.subset_span.{u_1, u_4} R M inst inst_1 inst_2 S (Subtype.val.{succ u_4} M (fun (x : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S x) s) (of_eq_true (Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S (Subtype.val.{succ u_4} M (fun (a : M) => Membership.mem.{u_4, u_4} M (Set.{u_4} M) (Set.instMembership.{u_4} M) S a) s)) (Subtype.coe_prop._simp_1.{u_4} M S s)))))))",
+  "trusted_telescope": {
+    "proposition": "Eq.{max (u_4 + 1) (u_8 + 1)} f g ↔\n  ∀ (s : ↑S), Eq.{u_8 + 1} (f (Subtype.mk.{u_4 + 1} ↑s ⋯)) (g (Subtype.mk.{u_4 + 1} ↑s ⋯))",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "R",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_4",
+        "name": "M",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Semiring.{u_1} R",
+        "name": "inst",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "AddCommMonoid.{u_4} M",
+        "name": "inst_1",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Module.{u_1, u_4} R M",
+        "name": "inst_2",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Type u_8",
+        "name": "N",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "AddCommMonoid.{u_8} N",
+        "name": "inst_3",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Module.{u_1, u_8} R N",
+        "name": "inst_4",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Submodule.{u_1, u_4} R M",
+        "name": "V",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "LinearMap.{u_1, u_1, u_4, u_8} (RingHom.id.{u_1} R) (↥V) N",
+        "name": "f",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "LinearMap.{u_1, u_1, u_4, u_8} (RingHom.id.{u_1} R) (↥V) N",
+        "name": "g",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Set.{u_4} M",
+        "name": "S",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Eq.{u_4 + 1} V (Submodule.span.{u_1, u_4} R S)",
+        "name": "hV",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_06 {«R» : Type u_1} {«M» : Type u_4} [«inst» : Semiring.{u_1} R] [«inst_1» : AddCommMonoid.{u_4} M] [«inst_2» : Module.{u_1, u_4} R M] {«N» : Type u_8} [«inst_3» : AddCommMonoid.{u_8} N] [«inst_4» : Module.{u_1, u_8} R N] {V : Submodule R M} (f g : V →ₗ[R] N)\n    {S : Set M} (hV : V = span R S) :\n  f = g ↔ ∀ (s : S), f ⟨s, by simpa only [hV] using! subset_span (by simp)⟩ =\n      g ⟨s, by simpa only [hV] using! subset_span (by simp)⟩ :=\nby\n  constructor\n  · rintro rfl _\n    rfl\n  · intro h\n    subst hV\n    suffices ∀ (x : M) (hx : x ∈ span R S), f ⟨x, hx⟩ = g ⟨x, hx⟩ by\n      ext ⟨x, hx⟩\n      exact this x hx\n    intro x hx\n    induction hx using span_induction with\n    | mem x hx => exact h ⟨x, hx⟩\n    | zero => erw [map_zero, map_zero]\n    | add x y hx hy hx' hy' =>\n        erw [f.map_add ⟨x, hx⟩ ⟨y, hy⟩, g.map_add ⟨x, hx⟩ ⟨y, hy⟩]\n        rw [hx', hy']\n    | smul a x hx hx' =>\n        erw [f.map_smul a ⟨x, hx⟩, g.map_smul a ⟨x, hx⟩]\n        rw [hx']",
+    "signature_spans": [
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 104,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 120
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 123,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 142
+      },
+      {
+        "start": 142,
+        "end": 144
+      },
+      {
+        "start": 144,
+        "end": 147
+      },
+      {
+        "start": 147,
+        "end": 148
+      },
+      {
+        "start": 149,
+        "end": 150
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 153
+      },
+      {
+        "start": 153,
+        "end": 163
+      },
+      {
+        "start": 164,
+        "end": 165
+      },
+      {
+        "start": 166,
+        "end": 179
+      },
+      {
+        "start": 179,
+        "end": 181
+      },
+      {
+        "start": 181,
+        "end": 184
+      },
+      {
+        "start": 184,
+        "end": 185
+      },
+      {
+        "start": 186,
+        "end": 187
+      },
+      {
+        "start": 187,
+        "end": 188
+      },
+      {
+        "start": 189,
+        "end": 190
+      },
+      {
+        "start": 190,
+        "end": 200
+      },
+      {
+        "start": 201,
+        "end": 202
+      },
+      {
+        "start": 203,
+        "end": 209
+      },
+      {
+        "start": 209,
+        "end": 211
+      },
+      {
+        "start": 211,
+        "end": 214
+      },
+      {
+        "start": 214,
+        "end": 215
+      },
+      {
+        "start": 216,
+        "end": 219
+      },
+      {
+        "start": 219,
+        "end": 220
+      },
+      {
+        "start": 221,
+        "end": 222
+      },
+      {
+        "start": 223,
+        "end": 224
+      },
+      {
+        "start": 224,
+        "end": 225
+      },
+      {
+        "start": 226,
+        "end": 227
+      },
+      {
+        "start": 227,
+        "end": 232
+      },
+      {
+        "start": 233,
+        "end": 234
+      },
+      {
+        "start": 235,
+        "end": 239
+      },
+      {
+        "start": 240,
+        "end": 243
+      },
+      {
+        "start": 243,
+        "end": 244
+      },
+      {
+        "start": 245,
+        "end": 246
+      },
+      {
+        "start": 246,
+        "end": 256
+      },
+      {
+        "start": 257,
+        "end": 258
+      },
+      {
+        "start": 259,
+        "end": 272
+      },
+      {
+        "start": 272,
+        "end": 274
+      },
+      {
+        "start": 274,
+        "end": 277
+      },
+      {
+        "start": 277,
+        "end": 278
+      },
+      {
+        "start": 279,
+        "end": 280
+      },
+      {
+        "start": 280,
+        "end": 281
+      },
+      {
+        "start": 282,
+        "end": 283
+      },
+      {
+        "start": 283,
+        "end": 293
+      },
+      {
+        "start": 294,
+        "end": 295
+      },
+      {
+        "start": 296,
+        "end": 302
+      },
+      {
+        "start": 302,
+        "end": 304
+      },
+      {
+        "start": 304,
+        "end": 307
+      },
+      {
+        "start": 307,
+        "end": 308
+      },
+      {
+        "start": 309,
+        "end": 312
+      },
+      {
+        "start": 312,
+        "end": 313
+      },
+      {
+        "start": 314,
+        "end": 315
+      },
+      {
+        "start": 316,
+        "end": 317
+      },
+      {
+        "start": 317,
+        "end": 318
+      },
+      {
+        "start": 319,
+        "end": 320
+      },
+      {
+        "start": 320,
+        "end": 321
+      },
+      {
+        "start": 322,
+        "end": 323
+      },
+      {
+        "start": 324,
+        "end": 333
+      },
+      {
+        "start": 334,
+        "end": 335
+      },
+      {
+        "start": 336,
+        "end": 337
+      },
+      {
+        "start": 337,
+        "end": 338
+      },
+      {
+        "start": 339,
+        "end": 340
+      },
+      {
+        "start": 340,
+        "end": 341
+      },
+      {
+        "start": 342,
+        "end": 343
+      },
+      {
+        "start": 344,
+        "end": 345
+      },
+      {
+        "start": 346,
+        "end": 347
+      },
+      {
+        "start": 348,
+        "end": 355
+      },
+      {
+        "start": 355,
+        "end": 356
+      },
+      {
+        "start": 356,
+        "end": 357
+      },
+      {
+        "start": 358,
+        "end": 359
+      },
+      {
+        "start": 359,
+        "end": 360
+      },
+      {
+        "start": 365,
+        "end": 366
+      },
+      {
+        "start": 366,
+        "end": 367
+      },
+      {
+        "start": 368,
+        "end": 369
+      },
+      {
+        "start": 370,
+        "end": 373
+      },
+      {
+        "start": 374,
+        "end": 375
+      },
+      {
+        "start": 375,
+        "end": 376
+      },
+      {
+        "start": 377,
+        "end": 378
+      },
+      {
+        "start": 378,
+        "end": 380
+      },
+      {
+        "start": 381,
+        "end": 382
+      },
+      {
+        "start": 383,
+        "end": 384
+      },
+      {
+        "start": 385,
+        "end": 386
+      },
+      {
+        "start": 387,
+        "end": 391
+      },
+      {
+        "start": 392,
+        "end": 393
+      },
+      {
+        "start": 394,
+        "end": 395
+      },
+      {
+        "start": 395,
+        "end": 396
+      },
+      {
+        "start": 401,
+        "end": 402
+      },
+      {
+        "start": 403,
+        "end": 404
+      },
+      {
+        "start": 405,
+        "end": 406
+      },
+      {
+        "start": 407,
+        "end": 410
+      },
+      {
+        "start": 411,
+        "end": 414
+      },
+      {
+        "start": 415,
+        "end": 416
+      },
+      {
+        "start": 416,
+        "end": 417
+      },
+      {
+        "start": 418,
+        "end": 419
+      },
+      {
+        "start": 420,
+        "end": 421
+      },
+      {
+        "start": 421,
+        "end": 422
+      },
+      {
+        "start": 422,
+        "end": 423
+      },
+      {
+        "start": 424,
+        "end": 425
+      },
+      {
+        "start": 426,
+        "end": 429
+      },
+      {
+        "start": 429,
+        "end": 430
+      },
+      {
+        "start": 430,
+        "end": 431
+      },
+      {
+        "start": 432,
+        "end": 434
+      },
+      {
+        "start": 435,
+        "end": 440
+      },
+      {
+        "start": 441,
+        "end": 445
+      },
+      {
+        "start": 446,
+        "end": 447
+      },
+      {
+        "start": 447,
+        "end": 449
+      },
+      {
+        "start": 449,
+        "end": 450
+      },
+      {
+        "start": 451,
+        "end": 457
+      },
+      {
+        "start": 458,
+        "end": 469
+      },
+      {
+        "start": 470,
+        "end": 471
+      },
+      {
+        "start": 471,
+        "end": 473
+      },
+      {
+        "start": 474,
+        "end": 478
+      },
+      {
+        "start": 478,
+        "end": 479
+      },
+      {
+        "start": 479,
+        "end": 482
+      },
+      {
+        "start": 483,
+        "end": 484
+      },
+      {
+        "start": 491,
+        "end": 492
+      },
+      {
+        "start": 493,
+        "end": 496
+      },
+      {
+        "start": 496,
+        "end": 497
+      },
+      {
+        "start": 497,
+        "end": 498
+      },
+      {
+        "start": 499,
+        "end": 501
+      },
+      {
+        "start": 502,
+        "end": 507
+      },
+      {
+        "start": 508,
+        "end": 512
+      },
+      {
+        "start": 513,
+        "end": 514
+      },
+      {
+        "start": 514,
+        "end": 516
+      },
+      {
+        "start": 516,
+        "end": 517
+      },
+      {
+        "start": 518,
+        "end": 524
+      },
+      {
+        "start": 525,
+        "end": 536
+      },
+      {
+        "start": 537,
+        "end": 538
+      },
+      {
+        "start": 538,
+        "end": 540
+      },
+      {
+        "start": 541,
+        "end": 545
+      },
+      {
+        "start": 545,
+        "end": 546
+      },
+      {
+        "start": 546,
+        "end": 549
+      }
+    ],
+    "proof_offset": 553,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 104,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 120
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 123,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 142
+      },
+      {
+        "start": 142,
+        "end": 144
+      },
+      {
+        "start": 144,
+        "end": 147
+      },
+      {
+        "start": 147,
+        "end": 148
+      },
+      {
+        "start": 149,
+        "end": 150
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 153
+      },
+      {
+        "start": 153,
+        "end": 163
+      },
+      {
+        "start": 164,
+        "end": 165
+      },
+      {
+        "start": 166,
+        "end": 179
+      },
+      {
+        "start": 179,
+        "end": 181
+      },
+      {
+        "start": 181,
+        "end": 184
+      },
+      {
+        "start": 184,
+        "end": 185
+      },
+      {
+        "start": 186,
+        "end": 187
+      },
+      {
+        "start": 187,
+        "end": 188
+      },
+      {
+        "start": 189,
+        "end": 190
+      },
+      {
+        "start": 190,
+        "end": 200
+      },
+      {
+        "start": 201,
+        "end": 202
+      },
+      {
+        "start": 203,
+        "end": 209
+      },
+      {
+        "start": 209,
+        "end": 211
+      },
+      {
+        "start": 211,
+        "end": 214
+      },
+      {
+        "start": 214,
+        "end": 215
+      },
+      {
+        "start": 216,
+        "end": 219
+      },
+      {
+        "start": 219,
+        "end": 220
+      },
+      {
+        "start": 221,
+        "end": 222
+      },
+      {
+        "start": 223,
+        "end": 224
+      },
+      {
+        "start": 224,
+        "end": 225
+      },
+      {
+        "start": 226,
+        "end": 227
+      },
+      {
+        "start": 227,
+        "end": 232
+      },
+      {
+        "start": 233,
+        "end": 234
+      },
+      {
+        "start": 235,
+        "end": 239
+      },
+      {
+        "start": 240,
+        "end": 243
+      },
+      {
+        "start": 243,
+        "end": 244
+      },
+      {
+        "start": 245,
+        "end": 246
+      },
+      {
+        "start": 246,
+        "end": 256
+      },
+      {
+        "start": 257,
+        "end": 258
+      },
+      {
+        "start": 259,
+        "end": 272
+      },
+      {
+        "start": 272,
+        "end": 274
+      },
+      {
+        "start": 274,
+        "end": 277
+      },
+      {
+        "start": 277,
+        "end": 278
+      },
+      {
+        "start": 279,
+        "end": 280
+      },
+      {
+        "start": 280,
+        "end": 281
+      },
+      {
+        "start": 282,
+        "end": 283
+      },
+      {
+        "start": 283,
+        "end": 293
+      },
+      {
+        "start": 294,
+        "end": 295
+      },
+      {
+        "start": 296,
+        "end": 302
+      },
+      {
+        "start": 302,
+        "end": 304
+      },
+      {
+        "start": 304,
+        "end": 307
+      },
+      {
+        "start": 307,
+        "end": 308
+      },
+      {
+        "start": 309,
+        "end": 312
+      },
+      {
+        "start": 312,
+        "end": 313
+      },
+      {
+        "start": 314,
+        "end": 315
+      },
+      {
+        "start": 316,
+        "end": 317
+      },
+      {
+        "start": 317,
+        "end": 318
+      },
+      {
+        "start": 319,
+        "end": 320
+      },
+      {
+        "start": 320,
+        "end": 321
+      },
+      {
+        "start": 322,
+        "end": 323
+      },
+      {
+        "start": 324,
+        "end": 333
+      },
+      {
+        "start": 334,
+        "end": 335
+      },
+      {
+        "start": 336,
+        "end": 337
+      },
+      {
+        "start": 337,
+        "end": 338
+      },
+      {
+        "start": 339,
+        "end": 340
+      },
+      {
+        "start": 340,
+        "end": 341
+      },
+      {
+        "start": 342,
+        "end": 343
+      },
+      {
+        "start": 344,
+        "end": 345
+      },
+      {
+        "start": 346,
+        "end": 347
+      },
+      {
+        "start": 348,
+        "end": 355
+      },
+      {
+        "start": 355,
+        "end": 356
+      },
+      {
+        "start": 356,
+        "end": 357
+      },
+      {
+        "start": 358,
+        "end": 359
+      },
+      {
+        "start": 359,
+        "end": 360
+      },
+      {
+        "start": 365,
+        "end": 366
+      },
+      {
+        "start": 366,
+        "end": 367
+      },
+      {
+        "start": 368,
+        "end": 369
+      },
+      {
+        "start": 370,
+        "end": 373
+      },
+      {
+        "start": 374,
+        "end": 375
+      },
+      {
+        "start": 375,
+        "end": 376
+      },
+      {
+        "start": 377,
+        "end": 378
+      },
+      {
+        "start": 378,
+        "end": 380
+      },
+      {
+        "start": 381,
+        "end": 382
+      },
+      {
+        "start": 383,
+        "end": 384
+      },
+      {
+        "start": 385,
+        "end": 386
+      },
+      {
+        "start": 387,
+        "end": 391
+      },
+      {
+        "start": 392,
+        "end": 393
+      },
+      {
+        "start": 394,
+        "end": 395
+      },
+      {
+        "start": 395,
+        "end": 396
+      },
+      {
+        "start": 397,
+        "end": 398
+      },
+      {
+        "start": 401,
+        "end": 402
+      },
+      {
+        "start": 403,
+        "end": 404
+      },
+      {
+        "start": 405,
+        "end": 406
+      },
+      {
+        "start": 407,
+        "end": 410
+      },
+      {
+        "start": 411,
+        "end": 414
+      },
+      {
+        "start": 415,
+        "end": 416
+      },
+      {
+        "start": 416,
+        "end": 417
+      },
+      {
+        "start": 418,
+        "end": 419
+      },
+      {
+        "start": 420,
+        "end": 421
+      },
+      {
+        "start": 421,
+        "end": 422
+      },
+      {
+        "start": 422,
+        "end": 423
+      },
+      {
+        "start": 424,
+        "end": 425
+      },
+      {
+        "start": 426,
+        "end": 429
+      },
+      {
+        "start": 429,
+        "end": 430
+      },
+      {
+        "start": 430,
+        "end": 431
+      },
+      {
+        "start": 432,
+        "end": 434
+      },
+      {
+        "start": 435,
+        "end": 440
+      },
+      {
+        "start": 441,
+        "end": 445
+      },
+      {
+        "start": 446,
+        "end": 447
+      },
+      {
+        "start": 447,
+        "end": 449
+      },
+      {
+        "start": 449,
+        "end": 450
+      },
+      {
+        "start": 451,
+        "end": 457
+      },
+      {
+        "start": 458,
+        "end": 469
+      },
+      {
+        "start": 470,
+        "end": 471
+      },
+      {
+        "start": 471,
+        "end": 473
+      },
+      {
+        "start": 474,
+        "end": 478
+      },
+      {
+        "start": 478,
+        "end": 479
+      },
+      {
+        "start": 479,
+        "end": 482
+      },
+      {
+        "start": 483,
+        "end": 484
+      },
+      {
+        "start": 491,
+        "end": 492
+      },
+      {
+        "start": 493,
+        "end": 496
+      },
+      {
+        "start": 496,
+        "end": 497
+      },
+      {
+        "start": 497,
+        "end": 498
+      },
+      {
+        "start": 499,
+        "end": 501
+      },
+      {
+        "start": 502,
+        "end": 507
+      },
+      {
+        "start": 508,
+        "end": 512
+      },
+      {
+        "start": 513,
+        "end": 514
+      },
+      {
+        "start": 514,
+        "end": 516
+      },
+      {
+        "start": 516,
+        "end": 517
+      },
+      {
+        "start": 518,
+        "end": 524
+      },
+      {
+        "start": 525,
+        "end": 536
+      },
+      {
+        "start": 537,
+        "end": 538
+      },
+      {
+        "start": 538,
+        "end": 540
+      },
+      {
+        "start": 541,
+        "end": 545
+      },
+      {
+        "start": 545,
+        "end": 546
+      },
+      {
+        "start": 546,
+        "end": 549
+      },
+      {
+        "start": 550,
+        "end": 552
+      },
+      {
+        "start": 553,
+        "end": 555
+      },
+      {
+        "start": 558,
+        "end": 569
+      },
+      {
+        "start": 572,
+        "end": 574
+      },
+      {
+        "start": 575,
+        "end": 581
+      },
+      {
+        "start": 582,
+        "end": 585
+      },
+      {
+        "start": 586,
+        "end": 587
+      },
+      {
+        "start": 592,
+        "end": 595
+      },
+      {
+        "start": 598,
+        "end": 600
+      },
+      {
+        "start": 601,
+        "end": 606
+      },
+      {
+        "start": 607,
+        "end": 608
+      },
+      {
+        "start": 613,
+        "end": 618
+      },
+      {
+        "start": 619,
+        "end": 621
+      },
+      {
+        "start": 626,
+        "end": 634
+      },
+      {
+        "start": 635,
+        "end": 638
+      },
+      {
+        "start": 639,
+        "end": 640
+      },
+      {
+        "start": 640,
+        "end": 641
+      },
+      {
+        "start": 642,
+        "end": 643
+      },
+      {
+        "start": 644,
+        "end": 645
+      },
+      {
+        "start": 645,
+        "end": 646
+      },
+      {
+        "start": 647,
+        "end": 648
+      },
+      {
+        "start": 648,
+        "end": 650
+      },
+      {
+        "start": 651,
+        "end": 652
+      },
+      {
+        "start": 653,
+        "end": 654
+      },
+      {
+        "start": 655,
+        "end": 658
+      },
+      {
+        "start": 659,
+        "end": 663
+      },
+      {
+        "start": 664,
+        "end": 665
+      },
+      {
+        "start": 666,
+        "end": 667
+      },
+      {
+        "start": 667,
+        "end": 668
+      },
+      {
+        "start": 668,
+        "end": 669
+      },
+      {
+        "start": 670,
+        "end": 671
+      },
+      {
+        "start": 672,
+        "end": 675
+      },
+      {
+        "start": 675,
+        "end": 676
+      },
+      {
+        "start": 676,
+        "end": 677
+      },
+      {
+        "start": 678,
+        "end": 680
+      },
+      {
+        "start": 680,
+        "end": 683
+      },
+      {
+        "start": 684,
+        "end": 685
+      },
+      {
+        "start": 686,
+        "end": 687
+      },
+      {
+        "start": 688,
+        "end": 691
+      },
+      {
+        "start": 691,
+        "end": 692
+      },
+      {
+        "start": 692,
+        "end": 693
+      },
+      {
+        "start": 694,
+        "end": 696
+      },
+      {
+        "start": 696,
+        "end": 699
+      },
+      {
+        "start": 700,
+        "end": 702
+      },
+      {
+        "start": 709,
+        "end": 712
+      },
+      {
+        "start": 713,
+        "end": 716
+      },
+      {
+        "start": 716,
+        "end": 717
+      },
+      {
+        "start": 717,
+        "end": 718
+      },
+      {
+        "start": 719,
+        "end": 721
+      },
+      {
+        "start": 721,
+        "end": 724
+      },
+      {
+        "start": 731,
+        "end": 736
+      },
+      {
+        "start": 737,
+        "end": 741
+      },
+      {
+        "start": 742,
+        "end": 743
+      },
+      {
+        "start": 744,
+        "end": 746
+      },
+      {
+        "start": 751,
+        "end": 756
+      },
+      {
+        "start": 757,
+        "end": 758
+      },
+      {
+        "start": 759,
+        "end": 761
+      },
+      {
+        "start": 766,
+        "end": 775
+      },
+      {
+        "start": 776,
+        "end": 778
+      },
+      {
+        "start": 779,
+        "end": 784
+      },
+      {
+        "start": 785,
+        "end": 799
+      },
+      {
+        "start": 800,
+        "end": 804
+      },
+      {
+        "start": 809,
+        "end": 810
+      },
+      {
+        "start": 811,
+        "end": 814
+      },
+      {
+        "start": 815,
+        "end": 816
+      },
+      {
+        "start": 817,
+        "end": 819
+      },
+      {
+        "start": 820,
+        "end": 822
+      },
+      {
+        "start": 823,
+        "end": 828
+      },
+      {
+        "start": 829,
+        "end": 830
+      },
+      {
+        "start": 831,
+        "end": 834
+      },
+      {
+        "start": 834,
+        "end": 835
+      },
+      {
+        "start": 835,
+        "end": 836
+      },
+      {
+        "start": 837,
+        "end": 839
+      },
+      {
+        "start": 839,
+        "end": 842
+      },
+      {
+        "start": 847,
+        "end": 848
+      },
+      {
+        "start": 849,
+        "end": 853
+      },
+      {
+        "start": 854,
+        "end": 856
+      },
+      {
+        "start": 857,
+        "end": 860
+      },
+      {
+        "start": 861,
+        "end": 862
+      },
+      {
+        "start": 862,
+        "end": 870
+      },
+      {
+        "start": 870,
+        "end": 871
+      },
+      {
+        "start": 872,
+        "end": 880
+      },
+      {
+        "start": 880,
+        "end": 881
+      },
+      {
+        "start": 886,
+        "end": 887
+      },
+      {
+        "start": 888,
+        "end": 891
+      },
+      {
+        "start": 892,
+        "end": 893
+      },
+      {
+        "start": 894,
+        "end": 895
+      },
+      {
+        "start": 896,
+        "end": 898
+      },
+      {
+        "start": 899,
+        "end": 901
+      },
+      {
+        "start": 902,
+        "end": 905
+      },
+      {
+        "start": 906,
+        "end": 909
+      },
+      {
+        "start": 910,
+        "end": 912
+      },
+      {
+        "start": 921,
+        "end": 924
+      },
+      {
+        "start": 925,
+        "end": 926
+      },
+      {
+        "start": 926,
+        "end": 935
+      },
+      {
+        "start": 936,
+        "end": 939
+      },
+      {
+        "start": 939,
+        "end": 940
+      },
+      {
+        "start": 940,
+        "end": 941
+      },
+      {
+        "start": 942,
+        "end": 944
+      },
+      {
+        "start": 944,
+        "end": 947
+      },
+      {
+        "start": 948,
+        "end": 951
+      },
+      {
+        "start": 951,
+        "end": 952
+      },
+      {
+        "start": 952,
+        "end": 953
+      },
+      {
+        "start": 954,
+        "end": 956
+      },
+      {
+        "start": 956,
+        "end": 959
+      },
+      {
+        "start": 959,
+        "end": 960
+      },
+      {
+        "start": 961,
+        "end": 970
+      },
+      {
+        "start": 971,
+        "end": 974
+      },
+      {
+        "start": 974,
+        "end": 975
+      },
+      {
+        "start": 975,
+        "end": 976
+      },
+      {
+        "start": 977,
+        "end": 979
+      },
+      {
+        "start": 979,
+        "end": 982
+      },
+      {
+        "start": 983,
+        "end": 986
+      },
+      {
+        "start": 986,
+        "end": 987
+      },
+      {
+        "start": 987,
+        "end": 988
+      },
+      {
+        "start": 989,
+        "end": 991
+      },
+      {
+        "start": 991,
+        "end": 994
+      },
+      {
+        "start": 994,
+        "end": 995
+      },
+      {
+        "start": 1004,
+        "end": 1006
+      },
+      {
+        "start": 1007,
+        "end": 1008
+      },
+      {
+        "start": 1008,
+        "end": 1011
+      },
+      {
+        "start": 1011,
+        "end": 1012
+      },
+      {
+        "start": 1013,
+        "end": 1016
+      },
+      {
+        "start": 1016,
+        "end": 1017
+      },
+      {
+        "start": 1022,
+        "end": 1023
+      },
+      {
+        "start": 1024,
+        "end": 1028
+      },
+      {
+        "start": 1029,
+        "end": 1030
+      },
+      {
+        "start": 1031,
+        "end": 1032
+      },
+      {
+        "start": 1033,
+        "end": 1035
+      },
+      {
+        "start": 1036,
+        "end": 1039
+      },
+      {
+        "start": 1040,
+        "end": 1042
+      },
+      {
+        "start": 1051,
+        "end": 1054
+      },
+      {
+        "start": 1055,
+        "end": 1056
+      },
+      {
+        "start": 1056,
+        "end": 1066
+      },
+      {
+        "start": 1067,
+        "end": 1068
+      },
+      {
+        "start": 1069,
+        "end": 1072
+      },
+      {
+        "start": 1072,
+        "end": 1073
+      },
+      {
+        "start": 1073,
+        "end": 1074
+      },
+      {
+        "start": 1075,
+        "end": 1077
+      },
+      {
+        "start": 1077,
+        "end": 1080
+      },
+      {
+        "start": 1080,
+        "end": 1081
+      },
+      {
+        "start": 1082,
+        "end": 1092
+      },
+      {
+        "start": 1093,
+        "end": 1094
+      },
+      {
+        "start": 1095,
+        "end": 1098
+      },
+      {
+        "start": 1098,
+        "end": 1099
+      },
+      {
+        "start": 1099,
+        "end": 1100
+      },
+      {
+        "start": 1101,
+        "end": 1103
+      },
+      {
+        "start": 1103,
+        "end": 1106
+      },
+      {
+        "start": 1106,
+        "end": 1107
+      },
+      {
+        "start": 1116,
+        "end": 1118
+      },
+      {
+        "start": 1119,
+        "end": 1120
+      },
+      {
+        "start": 1120,
+        "end": 1123
+      },
+      {
+        "start": 1123,
+        "end": 1124
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 553,
+        "end": 555
+      },
+      {
+        "start": 558,
+        "end": 569
+      },
+      {
+        "start": 572,
+        "end": 574
+      },
+      {
+        "start": 575,
+        "end": 581
+      },
+      {
+        "start": 582,
+        "end": 585
+      },
+      {
+        "start": 586,
+        "end": 587
+      },
+      {
+        "start": 592,
+        "end": 595
+      },
+      {
+        "start": 598,
+        "end": 600
+      },
+      {
+        "start": 601,
+        "end": 606
+      },
+      {
+        "start": 607,
+        "end": 608
+      },
+      {
+        "start": 613,
+        "end": 618
+      },
+      {
+        "start": 619,
+        "end": 621
+      },
+      {
+        "start": 626,
+        "end": 634
+      },
+      {
+        "start": 635,
+        "end": 638
+      },
+      {
+        "start": 639,
+        "end": 640
+      },
+      {
+        "start": 640,
+        "end": 641
+      },
+      {
+        "start": 642,
+        "end": 643
+      },
+      {
+        "start": 644,
+        "end": 645
+      },
+      {
+        "start": 645,
+        "end": 646
+      },
+      {
+        "start": 647,
+        "end": 648
+      },
+      {
+        "start": 648,
+        "end": 650
+      },
+      {
+        "start": 651,
+        "end": 652
+      },
+      {
+        "start": 653,
+        "end": 654
+      },
+      {
+        "start": 655,
+        "end": 658
+      },
+      {
+        "start": 659,
+        "end": 663
+      },
+      {
+        "start": 664,
+        "end": 665
+      },
+      {
+        "start": 666,
+        "end": 667
+      },
+      {
+        "start": 667,
+        "end": 668
+      },
+      {
+        "start": 668,
+        "end": 669
+      },
+      {
+        "start": 670,
+        "end": 671
+      },
+      {
+        "start": 672,
+        "end": 675
+      },
+      {
+        "start": 675,
+        "end": 676
+      },
+      {
+        "start": 676,
+        "end": 677
+      },
+      {
+        "start": 678,
+        "end": 680
+      },
+      {
+        "start": 680,
+        "end": 683
+      },
+      {
+        "start": 684,
+        "end": 685
+      },
+      {
+        "start": 686,
+        "end": 687
+      },
+      {
+        "start": 688,
+        "end": 691
+      },
+      {
+        "start": 691,
+        "end": 692
+      },
+      {
+        "start": 692,
+        "end": 693
+      },
+      {
+        "start": 694,
+        "end": 696
+      },
+      {
+        "start": 696,
+        "end": 699
+      },
+      {
+        "start": 700,
+        "end": 702
+      },
+      {
+        "start": 709,
+        "end": 712
+      },
+      {
+        "start": 713,
+        "end": 716
+      },
+      {
+        "start": 716,
+        "end": 717
+      },
+      {
+        "start": 717,
+        "end": 718
+      },
+      {
+        "start": 719,
+        "end": 721
+      },
+      {
+        "start": 721,
+        "end": 724
+      },
+      {
+        "start": 731,
+        "end": 736
+      },
+      {
+        "start": 737,
+        "end": 741
+      },
+      {
+        "start": 742,
+        "end": 743
+      },
+      {
+        "start": 744,
+        "end": 746
+      },
+      {
+        "start": 751,
+        "end": 756
+      },
+      {
+        "start": 757,
+        "end": 758
+      },
+      {
+        "start": 759,
+        "end": 761
+      },
+      {
+        "start": 766,
+        "end": 775
+      },
+      {
+        "start": 776,
+        "end": 778
+      },
+      {
+        "start": 779,
+        "end": 784
+      },
+      {
+        "start": 785,
+        "end": 799
+      },
+      {
+        "start": 800,
+        "end": 804
+      },
+      {
+        "start": 809,
+        "end": 810
+      },
+      {
+        "start": 811,
+        "end": 814
+      },
+      {
+        "start": 815,
+        "end": 816
+      },
+      {
+        "start": 817,
+        "end": 819
+      },
+      {
+        "start": 820,
+        "end": 822
+      },
+      {
+        "start": 823,
+        "end": 828
+      },
+      {
+        "start": 829,
+        "end": 830
+      },
+      {
+        "start": 831,
+        "end": 834
+      },
+      {
+        "start": 834,
+        "end": 835
+      },
+      {
+        "start": 835,
+        "end": 836
+      },
+      {
+        "start": 837,
+        "end": 839
+      },
+      {
+        "start": 839,
+        "end": 842
+      },
+      {
+        "start": 847,
+        "end": 848
+      },
+      {
+        "start": 849,
+        "end": 853
+      },
+      {
+        "start": 854,
+        "end": 856
+      },
+      {
+        "start": 857,
+        "end": 860
+      },
+      {
+        "start": 861,
+        "end": 862
+      },
+      {
+        "start": 862,
+        "end": 870
+      },
+      {
+        "start": 870,
+        "end": 871
+      },
+      {
+        "start": 872,
+        "end": 880
+      },
+      {
+        "start": 880,
+        "end": 881
+      },
+      {
+        "start": 886,
+        "end": 887
+      },
+      {
+        "start": 888,
+        "end": 891
+      },
+      {
+        "start": 892,
+        "end": 893
+      },
+      {
+        "start": 894,
+        "end": 895
+      },
+      {
+        "start": 896,
+        "end": 898
+      },
+      {
+        "start": 899,
+        "end": 901
+      },
+      {
+        "start": 902,
+        "end": 905
+      },
+      {
+        "start": 906,
+        "end": 909
+      },
+      {
+        "start": 910,
+        "end": 912
+      },
+      {
+        "start": 921,
+        "end": 924
+      },
+      {
+        "start": 925,
+        "end": 926
+      },
+      {
+        "start": 926,
+        "end": 935
+      },
+      {
+        "start": 936,
+        "end": 939
+      },
+      {
+        "start": 939,
+        "end": 940
+      },
+      {
+        "start": 940,
+        "end": 941
+      },
+      {
+        "start": 942,
+        "end": 944
+      },
+      {
+        "start": 944,
+        "end": 947
+      },
+      {
+        "start": 948,
+        "end": 951
+      },
+      {
+        "start": 951,
+        "end": 952
+      },
+      {
+        "start": 952,
+        "end": 953
+      },
+      {
+        "start": 954,
+        "end": 956
+      },
+      {
+        "start": 956,
+        "end": 959
+      },
+      {
+        "start": 959,
+        "end": 960
+      },
+      {
+        "start": 961,
+        "end": 970
+      },
+      {
+        "start": 971,
+        "end": 974
+      },
+      {
+        "start": 974,
+        "end": 975
+      },
+      {
+        "start": 975,
+        "end": 976
+      },
+      {
+        "start": 977,
+        "end": 979
+      },
+      {
+        "start": 979,
+        "end": 982
+      },
+      {
+        "start": 983,
+        "end": 986
+      },
+      {
+        "start": 986,
+        "end": 987
+      },
+      {
+        "start": 987,
+        "end": 988
+      },
+      {
+        "start": 989,
+        "end": 991
+      },
+      {
+        "start": 991,
+        "end": 994
+      },
+      {
+        "start": 994,
+        "end": 995
+      },
+      {
+        "start": 1004,
+        "end": 1006
+      },
+      {
+        "start": 1007,
+        "end": 1008
+      },
+      {
+        "start": 1008,
+        "end": 1011
+      },
+      {
+        "start": 1011,
+        "end": 1012
+      },
+      {
+        "start": 1013,
+        "end": 1016
+      },
+      {
+        "start": 1016,
+        "end": 1017
+      },
+      {
+        "start": 1022,
+        "end": 1023
+      },
+      {
+        "start": 1024,
+        "end": 1028
+      },
+      {
+        "start": 1029,
+        "end": 1030
+      },
+      {
+        "start": 1031,
+        "end": 1032
+      },
+      {
+        "start": 1033,
+        "end": 1035
+      },
+      {
+        "start": 1036,
+        "end": 1039
+      },
+      {
+        "start": 1040,
+        "end": 1042
+      },
+      {
+        "start": 1051,
+        "end": 1054
+      },
+      {
+        "start": 1055,
+        "end": 1056
+      },
+      {
+        "start": 1056,
+        "end": 1066
+      },
+      {
+        "start": 1067,
+        "end": 1068
+      },
+      {
+        "start": 1069,
+        "end": 1072
+      },
+      {
+        "start": 1072,
+        "end": 1073
+      },
+      {
+        "start": 1073,
+        "end": 1074
+      },
+      {
+        "start": 1075,
+        "end": 1077
+      },
+      {
+        "start": 1077,
+        "end": 1080
+      },
+      {
+        "start": 1080,
+        "end": 1081
+      },
+      {
+        "start": 1082,
+        "end": 1092
+      },
+      {
+        "start": 1093,
+        "end": 1094
+      },
+      {
+        "start": 1095,
+        "end": 1098
+      },
+      {
+        "start": 1098,
+        "end": 1099
+      },
+      {
+        "start": 1099,
+        "end": 1100
+      },
+      {
+        "start": 1101,
+        "end": 1103
+      },
+      {
+        "start": 1103,
+        "end": 1106
+      },
+      {
+        "start": 1106,
+        "end": 1107
+      },
+      {
+        "start": 1116,
+        "end": 1118
+      },
+      {
+        "start": 1119,
+        "end": 1120
+      },
+      {
+        "start": 1120,
+        "end": 1123
+      },
+      {
+        "start": 1123,
+        "end": 1124
+      }
+    ],
+    "W_full": 303,
+    "W_S": 147,
+    "W_B": 152
+  },
+  "root": "CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_06",
+  "proved_type_fingerprint": "3308334053",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 983,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.constructor",
+      "Lean.cdot",
+      "Lean.cdotTk",
+      "Lean.Parser.Tactic.rintro",
+      "Lean.Parser.Tactic.rintroPat.one",
+      "Lean.Parser.Tactic.rcasesPat.one",
+      "Lean.Parser.Tactic.rcasesPat.ignore",
+      "Lean.Parser.Tactic.tacticRfl",
+      "Lean.Parser.Tactic.intro",
+      "Lean.Parser.Tactic.subst",
+      "Lean.Parser.Tactic.tacticSuffices_",
+      "Lean.Parser.Term.sufficesDecl",
+      "hygieneInfo",
+      "Lean.Parser.Term.forall",
+      "Lean.Parser.Term.explicitBinder",
+      "«term_∈_»",
+      "Lean.Parser.Term.app",
+      "«term_=_»",
+      "Lean.Parser.Term.anonymousCtor",
+      "Lean.Parser.Term.byTactic'",
+      "Lean.Elab.Tactic.Ext.ext",
+      "Lean.Parser.Tactic.rcasesPat.tuple",
+      "Lean.Parser.Tactic.rcasesPatLo",
+      "Lean.Parser.Tactic.rcasesPatMed",
+      "Lean.Parser.Tactic.exact",
+      "Lean.Parser.Tactic.induction",
+      "Lean.Parser.Tactic.elimTarget",
+      "Lean.Parser.Tactic.inductionAlts",
+      "Lean.Parser.Tactic.inductionAlt",
+      "Lean.Parser.Tactic.inductionAltLHS",
+      "group",
+      "Lean.Parser.Tactic.tacticErw___",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.rwRuleSeq",
+      "Lean.Parser.Tactic.rwRule",
+      "Lean.Parser.Tactic.rwSeq"
+    ],
+    "proof_nodes": 94844,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_06"
+  ],
+  "axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "4968eaab62e791ebb4a8ea1f3c1a99cb801f0e83106e44e0dc8dd92573f50f95",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.7622096249833703
+  },
+  "request_fingerprint": "646bc2ec6b754d9f23bd69985a416556021941e8cc5eeb91a1d1c779e6d9e705"
+}

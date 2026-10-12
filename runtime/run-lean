@@ -1,0 +1,18 @@
+#!/bin/sh
+set -eu
+LEAN_PATH=$(cat /opt/eval/lean-path)
+export LEAN_PATH
+LEAN_SYSROOT=$(dirname "$(dirname "$(cat /opt/eval/lean-binary)")")
+export LEAN_SYSROOT
+PATH="$LEAN_SYSROOT/bin:/usr/bin:/bin"
+export PATH
+set +e
+"$LEAN_SYSROOT/bin/lean" --run "$@"
+lean_exit=$?
+for counter in /sys/fs/cgroup/memory.peak /sys/fs/cgroup/memory/memory.max_usage_in_bytes; do
+    if [ -r "$counter" ]; then
+        cat "$counter" > /job/peak_memory_bytes
+        break
+    fi
+done
+exit "$lean_exit"

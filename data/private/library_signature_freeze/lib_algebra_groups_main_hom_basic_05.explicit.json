@@ -1,0 +1,427 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_8",
+    "u_9"
+  ],
+  "trusted_type_source": "∀ {M : Type u_8} {N : Type u_9} [inst : One.{u_8} M] [inst_1 : MulOneClass.{u_9} N] (f g : OneHom.{u_8, u_9} M N)\n  (x : M),\n  Eq.{u_9 + 1} ((HMul.hMul.{max u_8 u_9, max u_8 u_9, max u_8 u_9} f g) x) (HMul.hMul.{u_9, u_9, u_9} (f x) (g x))",
+  "trusted_type_expression": "forall {M : Type.{u_8}} {N : Type.{u_9}} [inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.11 : One.{u_8} M] [inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.14 : MulOneClass.{u_9} N] (f : OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.11 (MulOne.toOne.{u_9} N (MulOneClass.toMulOne.{u_9} N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.14))) (g : OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.11 (MulOne.toOne.{u_9} N (MulOneClass.toMulOne.{u_9} N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.14))) (x : M), Eq.{succ u_9} N (DFunLike.coe.{max (succ u_8) (succ u_9), succ u_8, succ u_9} (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.11 (MulOne.toOne.{u_9} N (MulOneClass.toMulOne.{u_9} N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.14))) M (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : M) => N) (OneHom.funLike.{u_8, u_9} M N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.11 (MulOne.toOne.{u_9} N (MulOneClass.toMulOne.{u_9} N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.14))) (HMul.hMul.{max u_8 u_9, max u_8 u_9, max u_8 u_9} (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.11 (MulOne.toOne.{u_9} N (MulOneClass.toMulOne.{u_9} N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.14))) (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.11 (MulOne.toOne.{u_9} N (MulOneClass.toMulOne.{u_9} N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.14))) (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.11 (MulOne.toOne.{u_9} N (MulOneClass.toMulOne.{u_9} N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.14))) (instHMul.{max u_8 u_9} (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.11 (MulOne.toOne.{u_9} N (MulOneClass.toMulOne.{u_9} N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.14))) (OneHom.instMul_evaluatorCandidate.{u_8, u_9} M N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.11 inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.14)) f g) x) (HMul.hMul.{u_9, u_9, u_9} N N N (instHMul.{u_9} N (MulOne.toMul.{u_9} N (MulOneClass.toMulOne.{u_9} N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.14))) (DFunLike.coe.{max (succ u_8) (succ u_9), succ u_8, succ u_9} (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.11 (MulOne.toOne.{u_9} N (MulOneClass.toMulOne.{u_9} N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.14))) M (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : M) => N) (OneHom.funLike.{u_8, u_9} M N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.11 (MulOne.toOne.{u_9} N (MulOneClass.toMulOne.{u_9} N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.14))) f x) (DFunLike.coe.{max (succ u_8) (succ u_9), succ u_8, succ u_9} (OneHom.{u_8, u_9} M N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.11 (MulOne.toOne.{u_9} N (MulOneClass.toMulOne.{u_9} N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.14))) M (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : M) => N) (OneHom.funLike.{u_8, u_9} M N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.11 (MulOne.toOne.{u_9} N (MulOneClass.toMulOne.{u_9} N inst._@.EvaluatorCandidate.1245876096._hygCtx._hyg.14))) g x))",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_9 + 1} ((HMul.hMul.{max u_8 u_9, max u_8 u_9, max u_8 u_9} f g) x) (HMul.hMul.{u_9, u_9, u_9} (f x) (g x))",
+    "binders": [
+      {
+        "type_source": "Type u_8",
+        "name": "M",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_9",
+        "name": "N",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "One.{u_8} M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.11",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "MulOneClass.{u_9} N",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.14",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "OneHom.{u_8, u_9} M N",
+        "name": "f",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "OneHom.{u_8, u_9} M N",
+        "name": "g",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "M",
+        "name": "x",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_algebra_groups_main_hom_basic_05 {M N} [One M] [MulOneClass N] (f g : OneHom M N) (x : M) :\n  (f * g) x = f x * g x :=\nrfl",
+    "signature_spans": [
+      {
+        "start": 68,
+        "end": 69
+      },
+      {
+        "start": 69,
+        "end": 70
+      },
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 74,
+        "end": 75
+      },
+      {
+        "start": 75,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 83,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 105,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 135
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 144
+      },
+      {
+        "start": 145,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 148
+      },
+      {
+        "start": 149,
+        "end": 150
+      }
+    ],
+    "proof_offset": 154,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 67
+      },
+      {
+        "start": 68,
+        "end": 69
+      },
+      {
+        "start": 69,
+        "end": 70
+      },
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 74,
+        "end": 75
+      },
+      {
+        "start": 75,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 83,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 105,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 135
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 144
+      },
+      {
+        "start": 145,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 148
+      },
+      {
+        "start": 149,
+        "end": 150
+      },
+      {
+        "start": 151,
+        "end": 153
+      },
+      {
+        "start": 154,
+        "end": 157
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 154,
+        "end": 157
+      }
+    ],
+    "W_full": 42,
+    "W_S": 37,
+    "W_B": 1
+  },
+  "root": "CompressionEval.lib_algebra_groups_main_hom_basic_05",
+  "proved_type_fingerprint": "1171968354",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 67,
+    "syntax_kinds": [],
+    "proof_nodes": 189,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_algebra_groups_main_hom_basic_05"
+  ],
+  "axioms": [
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "57e7491233322497f7f77eaa68e176ab8d43b6dc4cb0137f65be8b3aeea4a0d6",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.651087832637131
+  },
+  "request_fingerprint": "ce61fac3c47c57a2eae90e87889b828f449c33e1a729f2244d68208953b95ad4"
+}

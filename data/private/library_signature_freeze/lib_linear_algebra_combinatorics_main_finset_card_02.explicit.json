@@ -1,0 +1,303 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {α : Type u_1} {m : Multiset.{u_1} α} {nodup : Multiset.Nodup.{u_1} m},\n  Eq.{1} (Finset.card.{u_1} (Finset.mk.{u_1} m nodup)) (Multiset.card.{u_1} m)",
+  "trusted_type_expression": "forall {α : Type.{u_1}} {m : Multiset.{u_1} α} {nodup : Multiset.Nodup.{u_1} α m}, Eq.{1} Nat (Finset.card.{u_1} α (Finset.mk.{u_1} α m nodup)) (Multiset.card.{u_1} α m)",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} (Finset.card.{u_1} (Finset.mk.{u_1} m nodup)) (Multiset.card.{u_1} m)",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Multiset.{u_1} α",
+        "name": "m",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Multiset.Nodup.{u_1} m",
+        "name": "nodup",
+        "binder_info": "implicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_linear_algebra_combinatorics_main_finset_card_02 {«α» : Type u_1} {m nodup} :\n  #(⟨m, nodup⟩ : Finset α) = Multiset.card m :=\nrfl",
+    "signature_spans": [
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 102
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 105,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 112
+      },
+      {
+        "start": 112,
+        "end": 113
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 119,
+        "end": 120
+      },
+      {
+        "start": 120,
+        "end": 123
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 131
+      },
+      {
+        "start": 131,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 146
+      },
+      {
+        "start": 146,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 163
+      },
+      {
+        "start": 164,
+        "end": 165
+      }
+    ],
+    "proof_offset": 169,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 102
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 105,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 112
+      },
+      {
+        "start": 112,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 119,
+        "end": 120
+      },
+      {
+        "start": 120,
+        "end": 123
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 131
+      },
+      {
+        "start": 131,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 146
+      },
+      {
+        "start": 146,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 163
+      },
+      {
+        "start": 164,
+        "end": 165
+      },
+      {
+        "start": 166,
+        "end": 168
+      },
+      {
+        "start": 169,
+        "end": 172
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 169,
+        "end": 172
+      }
+    ],
+    "W_full": 29,
+    "W_S": 24,
+    "W_B": 1
+  },
+  "root": "CompressionEval.lib_linear_algebra_combinatorics_main_finset_card_02",
+  "proved_type_fingerprint": "2301161131",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 275,
+    "syntax_kinds": [],
+    "proof_nodes": 27,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_linear_algebra_combinatorics_main_finset_card_02"
+  ],
+  "axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "77bce545875d6ddd091490d3704e493d18ad7fd049d5b720be8d59aa72ecb66d",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.5572475004009902
+  },
+  "request_fingerprint": "6afb624e14afb928a4f32371c86a9ef6d4002559c41166a2b4362bccad5783b2"
+}

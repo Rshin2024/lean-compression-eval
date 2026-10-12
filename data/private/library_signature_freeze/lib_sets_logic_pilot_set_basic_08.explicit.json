@@ -1,0 +1,314 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u"
+  ],
+  "trusted_type_source": "∀ {α : Type u}, Eq.{u + 1} (fun (x1 x2 : Set.{u} α) => x1 ⊆ x2) fun (x1 x2 : Set.{u} α) => x1 ⊆ x2",
+  "trusted_type_expression": "forall {α : Type.{u}}, Eq.{succ u} ((Set.{u} α) -> (Set.{u} α) -> Prop) (fun (x1._@.EvaluatorCandidate.8184615._hygCtx._hyg.23 : Set.{u} α) (x2._@.EvaluatorCandidate.8184615._hygCtx._hyg.23 : Set.{u} α) => LE.le.{u} (Set.{u} α) (Set.instLE.{u} α) x1._@.EvaluatorCandidate.8184615._hygCtx._hyg.23 x2._@.EvaluatorCandidate.8184615._hygCtx._hyg.23) (fun (x1._@.EvaluatorCandidate.8184615._hygCtx._hyg.35 : Set.{u} α) (x2._@.EvaluatorCandidate.8184615._hygCtx._hyg.35 : Set.{u} α) => LE.le.{u} (Set.{u} α) (Set.instLE.{u} α) x1._@.EvaluatorCandidate.8184615._hygCtx._hyg.35 x2._@.EvaluatorCandidate.8184615._hygCtx._hyg.35)",
+  "trusted_telescope": {
+    "proposition": "Eq.{u + 1} (fun (x1 x2 : Set.{u} α) => x1 ⊆ x2) fun (x1 x2 : Set.{u} α) => x1 ⊆ x2",
+    "binders": [
+      {
+        "type_source": "Type u",
+        "name": "α",
+        "binder_info": "implicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_sets_logic_pilot_set_basic_08 {«α» : Type u} :\n  ((· ≤ ·) : Set α → Set α → Prop) = (· ⊆ ·) :=\nrfl",
+    "signature_spans": [
+      {
+        "start": 65,
+        "end": 66
+      },
+      {
+        "start": 66,
+        "end": 72
+      },
+      {
+        "start": 73,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 79
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 88,
+        "end": 89
+      },
+      {
+        "start": 89,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 98
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 105
+      },
+      {
+        "start": 106,
+        "end": 108
+      },
+      {
+        "start": 109,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 133,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 139
+      },
+      {
+        "start": 140,
+        "end": 142
+      },
+      {
+        "start": 142,
+        "end": 143
+      }
+    ],
+    "proof_offset": 147,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 64
+      },
+      {
+        "start": 65,
+        "end": 66
+      },
+      {
+        "start": 66,
+        "end": 72
+      },
+      {
+        "start": 73,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 79
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 88,
+        "end": 89
+      },
+      {
+        "start": 89,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 98
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 105
+      },
+      {
+        "start": 106,
+        "end": 108
+      },
+      {
+        "start": 109,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 133,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 139
+      },
+      {
+        "start": 140,
+        "end": 142
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 150
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 147,
+        "end": 150
+      }
+    ],
+    "W_full": 32,
+    "W_S": 27,
+    "W_B": 1
+  },
+  "root": "CompressionEval.lib_sets_logic_pilot_set_basic_08",
+  "proved_type_fingerprint": "1255812577",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 16,
+    "syntax_kinds": [],
+    "proof_nodes": 35,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_sets_logic_pilot_set_basic_08"
+  ],
+  "axioms": [],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "b54df5fd3829d1cca5630d70027ee2865c1490eb5a3f5e2fa27fc9faae92b260",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.846135708037764
+  },
+  "request_fingerprint": "c4a585431f90810584e0120a43d1915c0efaddaa27e8b86e0dfd1aa6e6afc612"
+}

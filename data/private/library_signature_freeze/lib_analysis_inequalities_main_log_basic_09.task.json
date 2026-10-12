@@ -1,0 +1,86 @@
+{
+  "task": {
+    "task_id": "lib_analysis_inequalities_main_log_basic_09",
+    "family_id": "source_module_Mathlib.Analysis.SpecialFunctions.Log.Basic",
+    "domain": "analysis_inequalities",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Analysis.SpecialFunctions.Exp",
+      "Mathlib.Data.Nat.Factorization.Defs",
+      "Mathlib.Analysis.Normed.Module.RCLike.Real",
+      "Mathlib.Data.Rat.Cast.CharZero"
+    ],
+    "context": "/-\nCopyright (c) 2018 Chris Hughes. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Chris Hughes, Abhimanyu Pallavi Sudhir, Jean Lo, Calle Sönne\n-/\n/-!\n# Real logarithm\n\nIn this file we define `Real.log` to be the logarithm of a real number. As usual, we extend it from\nits domain `(0, +∞)` to a globally defined function. We choose to do it so that `log 0 = 0` and\n`log (-x) = log x`.\n\nWe prove some basic properties of this function and show that it is continuous.\n\n## Tags\n\nlogarithm, continuity\n-/\n\n@[expose] public section\n\nopen Set Filter Function\n\nopen Topology\n\nnoncomputable section\n\nnamespace Real\n\nvariable {x y : ℝ}\n\n/-- The real logarithm function, equal to the inverse of the exponential for `x > 0`,\nto `log |x|` for `x < 0`, and to `0` for `0`. We use this unconventional extension to\n`(-∞, 0]` as it gives the formula `log (x * y) = log x + log y` for all nonzero `x` and `y`, and\nthe derivative of `log` is `1/x` away from `0`. -/\n@[pp_nodot, wikidata Q11197]\nnoncomputable def log (x : ℝ) : ℝ :=\n  if hx : x = 0 then 0 else expOrderIso.symm ⟨|x|, abs_pos.2 hx⟩\n\ntheorem log_of_ne_zero (hx : x ≠ 0) : log x = expOrderIso.symm ⟨|x|, abs_pos.2 hx⟩ :=\n  dite_eq_right hx\n\ntheorem log_of_pos (hx : 0 < x) : log x = expOrderIso.symm ⟨x, hx⟩ := by\n  rw [log_of_ne_zero hx.ne']\n  congr\n  exact abs_of_pos hx\n\nset_option backward.isDefEq.respectTransparency false in\ntheorem exp_log_eq_abs (hx : x ≠ 0) : exp (log x) = |x| := by\n  rw [log_of_ne_zero hx, ← coe_expOrderIso_apply, OrderIso.apply_symm_apply, Subtype.coe_mk]\n\ntheorem exp_log (hx : 0 < x) : exp (log x) = x := by\n  rw [exp_log_eq_abs hx.ne']\n  exact abs_of_pos hx\n\ntheorem exp_log_of_neg (hx : x < 0) : exp (log x) = -x := by\n  rw [exp_log_eq_abs (ne_of_lt hx)]\n  exact abs_of_neg hx\n\ntheorem le_exp_log (x : ℝ) : x ≤ exp (log x) := by\n  by_cases h_zero : x = 0\n  · rw [h_zero, log, dite_eq_left rfl, exp_zero]\n    exact zero_le_one\n  · rw [exp_log_eq_abs h_zero]\n    exact le_abs_self _\n\n@[simp, push]\ntheorem log_exp (x : ℝ) : log (exp x) = x :=\n  exp_injective <| exp_log (exp_pos x)\n\n@[simp] theorem log_comp_exp : log ∘ exp = id := funext log_exp\n\ntheorem exp_one_mul_le_exp {x : ℝ} : exp 1 * x ≤ exp x := by\n  by_cases hx0 : x ≤ 0\n  · apply le_trans (mul_nonpos_of_nonneg_of_nonpos (exp_pos 1).le hx0) (exp_nonneg x)\n  · have h := add_one_le_exp (log x)\n    rwa [← exp_le_exp, exp_add, exp_log (lt_of_not_ge hx0), mul_comm] at h\n\ntheorem two_mul_le_exp {x : ℝ} : 2 * x ≤ exp x := by\n  by_cases hx0 : x < 0\n  · exact le_trans (mul_nonpos_of_nonneg_of_nonpos (by simp only [Nat.ofNat_nonneg]) hx0.le)\n      (exp_nonneg x)\n  · apply le_trans (mul_le_mul_of_nonneg_right _ (le_of_not_gt hx0)) exp_one_mul_le_exp\n    have := Real.add_one_le_exp 1\n    rwa [one_add_one_eq_two] at this\nassert_not_exists _root_.Real.surjOn_log\n",
+    "binders": "",
+    "proposition": "SurjOn log (Ioi 0) univ",
+    "target_name": "_root_.CompressionEval.lib_analysis_inequalities_main_log_basic_09",
+    "premise_context": "open Set Filter Function\nopen Topology\nnamespace Real\nvariable {x y : ℝ}\n\nAvailable preceding statements (within the shown source scopes):\ntheorem log_of_pos (hx : 0 < x) : log x = expOrderIso.symm ⟨x, hx⟩\n\ntheorem exp_log_eq_abs (hx : x ≠ 0) : exp (log x) = |x|\n\ntheorem exp_log (hx : 0 < x) : exp (log x) = x\n\ntheorem exp_log_of_neg (hx : x < 0) : exp (log x) = -x\n\ntheorem le_exp_log (x : ℝ) : x ≤ exp (log x)\n\ntheorem log_exp (x : ℝ) : log (exp x) = x\n\ntheorem exp_one_mul_le_exp {x : ℝ} : exp 1 * x ≤ exp x\n\ntheorem two_mul_le_exp {x : ℝ} : 2 * x ≤ exp x",
+    "forbidden_declarations": [
+      "Real.surjOn_log"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "source_path": "Mathlib/Analysis/SpecialFunctions/Log/Basic.lean",
+      "declaration": "Real.surjOn_log",
+      "source_line": 94,
+      "source_sha256": "c8fd09f98e15900fc91d435aee54a90758bc726d770b56eb5fac9b9673d78ec0",
+      "prefix_end_character": 3022,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "3ef98a30922dc7cbd9b95d0044ff93f48d96a3198b0c086650b0104709630447",
+      "premise_context": "13d78ad43f3456af7847dc46fd152cd9f52711ebf318231aa0c7dc956d2d9b87",
+      "binders": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proposition": "24720ffcd154a1ed62a31b963db5c51fb92ed3aab63f2ccb900ae302f214c546"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Analysis.SpecialFunctions.Exp",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Nat.Factorization.Defs",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Analysis.Normed.Module.RCLike.Real",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Rat.Cast.CharZero",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

@@ -1,0 +1,1512 @@
+{
+  "boundary_policy": "expand_mathlib_and_evaluator_v1",
+  "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+  "evaluated_at": "2026-10-12T04:19:20.413495+00:00",
+  "extraction": {
+    "axioms": [],
+    "candidate_declarations": [
+      "CompressionEval.lib_sets_logic_main_logic_relation_08"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 95,
+      "syntax_kinds": [
+        "Lean.Parser.Term.anonymousCtor",
+        "null",
+        "Lean.Parser.Term.fun",
+        "Lean.Parser.Term.basicFun",
+        "Lean.Parser.Term.app",
+        "Lean.Parser.Term.paren",
+        "Lean.Parser.Term.hygienicLParen",
+        "hygieneInfo"
+      ],
+      "transitive_dependency_count": 7
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "available",
+    "nodes": [
+      {
+        "body": {
+          "@Sort": 4,
+          "Equivalence": 1,
+          "Equivalence.mk": 1,
+          "Equivalence.refl": 1,
+          "Equivalence.symm": 1,
+          "Equivalence.trans": 1,
+          "Function.onFun": 1
+        },
+        "body_nodes": 95,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "CompressionEval.lib_sets_logic_main_logic_relation_08",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "@Sort": 4,
+          "Equivalence": 2,
+          "Function.onFun": 1
+        },
+        "source_counts": null,
+        "type_hash": "2742343287",
+        "type_nodes": 35,
+        "value_hash": "2748786473"
+      },
+      {
+        "body": null,
+        "name": "@Sort",
+        "owner_module": "@builtin",
+        "primitive": true,
+        "signature": {},
+        "type_hash": "@Sort",
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Equivalence",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3074319351",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 3
+        },
+        "body_nodes": 29,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Function.onFun",
+        "owner_module": "Mathlib.Logic.Function.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 3
+        },
+        "source_counts": null,
+        "type_hash": "1161807408",
+        "type_nodes": 21,
+        "value_hash": "3509816975"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Equivalence.mk",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2601491896",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Equivalence.refl",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2228078609",
+        "type_nodes": null,
+        "value_hash": "3979490772"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Equivalence.symm",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1935312124",
+        "type_nodes": null,
+        "value_hash": "284510354"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Equivalence.trans",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2088853492",
+        "type_nodes": null,
+        "value_hash": "3010557470"
+      }
+    ],
+    "process_returncode": 0,
+    "proved_type_fingerprint": "2742343287",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Relator"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.Use"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.MkIffOfInductiveProp"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.SimpRw"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.Defs.Prop"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.Defs.Unbundled"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Batteries.Logic"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Batteries.Tactic.Trans"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 2.0155671248212457,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "bb594057eb69eb12a35f151d1b9f7ddbbca984d88eac81ee20f954d63ea70a8d",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_sets_logic_main_logic_relation_08",
+    "source_tokens": {
+      "W_B": 14,
+      "W_S": 40,
+      "W_full": 58,
+      "body_spans": [
+        {
+          "end": 205,
+          "start": 202
+        },
+        {
+          "end": 208,
+          "start": 205
+        },
+        {
+          "end": 210,
+          "start": 209
+        },
+        {
+          "end": 214,
+          "start": 211
+        },
+        {
+          "end": 221,
+          "start": 215
+        },
+        {
+          "end": 223,
+          "start": 222
+        },
+        {
+          "end": 224,
+          "start": 223
+        },
+        {
+          "end": 226,
+          "start": 225
+        },
+        {
+          "end": 227,
+          "start": 226
+        },
+        {
+          "end": 228,
+          "start": 227
+        },
+        {
+          "end": 235,
+          "start": 229
+        },
+        {
+          "end": 236,
+          "start": 235
+        },
+        {
+          "end": 244,
+          "start": 237
+        },
+        {
+          "end": 247,
+          "start": 244
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 68,
+          "start": 8
+        },
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 76,
+          "start": 70
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 83,
+          "start": 79
+        },
+        {
+          "end": 87,
+          "start": 84
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 96,
+          "start": 90
+        },
+        {
+          "end": 98,
+          "start": 97
+        },
+        {
+          "end": 103,
+          "start": 99
+        },
+        {
+          "end": 107,
+          "start": 104
+        },
+        {
+          "end": 108,
+          "start": 107
+        },
+        {
+          "end": 110,
+          "start": 109
+        },
+        {
+          "end": 115,
+          "start": 110
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 120,
+          "start": 118
+        },
+        {
+          "end": 124,
+          "start": 121
+        },
+        {
+          "end": 127,
+          "start": 125
+        },
+        {
+          "end": 131,
+          "start": 128
+        },
+        {
+          "end": 136,
+          "start": 132
+        },
+        {
+          "end": 137,
+          "start": 136
+        },
+        {
+          "end": 139,
+          "start": 138
+        },
+        {
+          "end": 140,
+          "start": 139
+        },
+        {
+          "end": 142,
+          "start": 141
+        },
+        {
+          "end": 154,
+          "start": 143
+        },
+        {
+          "end": 156,
+          "start": 155
+        },
+        {
+          "end": 157,
+          "start": 156
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 160,
+          "start": 159
+        },
+        {
+          "end": 162,
+          "start": 161
+        },
+        {
+          "end": 165,
+          "start": 163
+        },
+        {
+          "end": 169,
+          "start": 166
+        },
+        {
+          "end": 172,
+          "start": 170
+        },
+        {
+          "end": 173,
+          "start": 172
+        },
+        {
+          "end": 175,
+          "start": 174
+        },
+        {
+          "end": 189,
+          "start": 178
+        },
+        {
+          "end": 191,
+          "start": 190
+        },
+        {
+          "end": 192,
+          "start": 191
+        },
+        {
+          "end": 195,
+          "start": 193
+        },
+        {
+          "end": 197,
+          "start": 196
+        },
+        {
+          "end": 198,
+          "start": 197
+        },
+        {
+          "end": 201,
+          "start": 199
+        },
+        {
+          "end": 205,
+          "start": 202
+        },
+        {
+          "end": 208,
+          "start": 205
+        },
+        {
+          "end": 210,
+          "start": 209
+        },
+        {
+          "end": 214,
+          "start": 211
+        },
+        {
+          "end": 221,
+          "start": 215
+        },
+        {
+          "end": 223,
+          "start": 222
+        },
+        {
+          "end": 224,
+          "start": 223
+        },
+        {
+          "end": 226,
+          "start": 225
+        },
+        {
+          "end": 227,
+          "start": 226
+        },
+        {
+          "end": 228,
+          "start": 227
+        },
+        {
+          "end": 235,
+          "start": 229
+        },
+        {
+          "end": 236,
+          "start": 235
+        },
+        {
+          "end": 244,
+          "start": 237
+        },
+        {
+          "end": 247,
+          "start": 244
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 202,
+      "signature_spans": [
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 76,
+          "start": 70
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 83,
+          "start": 79
+        },
+        {
+          "end": 87,
+          "start": 84
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 96,
+          "start": 90
+        },
+        {
+          "end": 98,
+          "start": 97
+        },
+        {
+          "end": 103,
+          "start": 99
+        },
+        {
+          "end": 107,
+          "start": 104
+        },
+        {
+          "end": 108,
+          "start": 107
+        },
+        {
+          "end": 110,
+          "start": 109
+        },
+        {
+          "end": 115,
+          "start": 110
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 120,
+          "start": 118
+        },
+        {
+          "end": 124,
+          "start": 121
+        },
+        {
+          "end": 127,
+          "start": 125
+        },
+        {
+          "end": 131,
+          "start": 128
+        },
+        {
+          "end": 136,
+          "start": 132
+        },
+        {
+          "end": 137,
+          "start": 136
+        },
+        {
+          "end": 139,
+          "start": 138
+        },
+        {
+          "end": 140,
+          "start": 139
+        },
+        {
+          "end": 142,
+          "start": 141
+        },
+        {
+          "end": 154,
+          "start": 143
+        },
+        {
+          "end": 156,
+          "start": 155
+        },
+        {
+          "end": 157,
+          "start": 156
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 160,
+          "start": 159
+        },
+        {
+          "end": 162,
+          "start": 161
+        },
+        {
+          "end": 165,
+          "start": 163
+        },
+        {
+          "end": 169,
+          "start": 166
+        },
+        {
+          "end": 172,
+          "start": 170
+        },
+        {
+          "end": 173,
+          "start": 172
+        },
+        {
+          "end": 189,
+          "start": 178
+        },
+        {
+          "end": 191,
+          "start": 190
+        },
+        {
+          "end": 192,
+          "start": 191
+        },
+        {
+          "end": 195,
+          "start": 193
+        },
+        {
+          "end": 197,
+          "start": 196
+        },
+        {
+          "end": 198,
+          "start": 197
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_sets_logic_main_logic_relation_08 {«α» : Type u_1} {«β» : Type u_2} {«r» : β → β → Prop} (h : Equivalence r) (f : α → β) :\n  Equivalence (r on f) :=\n⟨fun a ↦ h.refl (f a), h.symm, h.trans⟩",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "α",
+          "type_source": "Type u_1"
+        },
+        {
+          "binder_info": "implicit",
+          "name": "β",
+          "type_source": "Type u_2"
+        },
+        {
+          "binder_info": "implicit",
+          "name": "r",
+          "type_source": "β → β → Prop"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "h",
+          "type_source": "Equivalence.{u_2 + 1} r"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "f",
+          "type_source": "α → β"
+        }
+      ],
+      "proposition": "Equivalence.{u_1 + 1} (Function.onFun.{u_1 + 1, u_2 + 1, 1} r f)"
+    },
+    "trusted_type_expression": "forall {α : Type.{u_1}} {β : Type.{u_2}} {r : β -> β -> Prop}, (Equivalence.{succ u_2} β r) -> (forall (f : α -> β), Equivalence.{succ u_1} α (Function.onFun.{succ u_1, succ u_2, 1} α β Prop r f))",
+    "trusted_type_source": "∀ {α : Type u_1} {β : Type u_2} {r : β → β → Prop},\n  Equivalence.{u_2 + 1} r → ∀ (f : α → β), Equivalence.{u_1 + 1} (Function.onFun.{u_1 + 1, u_2 + 1, 1} r f)",
+    "universe_parameters": [
+      "u_1",
+      "u_2"
+    ],
+    "validity_status": "success"
+  },
+  "graph_hash": "e8c93fb3ce2df39b408d0d52106b9a6e05a9dedaf8e9ef8a1e1e319872850f8a",
+  "metric_status": "available",
+  "metrics": {
+    "D": 2,
+    "I0": {
+      "denominator_decimal": "40",
+      "log2": -1.5145731728297585,
+      "numerator_decimal": "14"
+    },
+    "T0": {
+      "denominator_decimal": "54",
+      "log2": -1.0,
+      "numerator_decimal": "27"
+    },
+    "U_B_decimal": "15",
+    "U_S_decimal": "12",
+    "U_decimal": "27",
+    "W_B": 14,
+    "W_S": 40,
+    "body_state": "present",
+    "distinct_dependency_count": 7,
+    "log2_I0": -1.5145731728297585,
+    "log2_T0": -1.0,
+    "log2_U": 4.754887502163468,
+    "log2_U_B": 3.9068905956085187,
+    "log2_U_S": 3.584962500721156,
+    "log2_W": 5.754887502163468,
+    "metric_profile": "paper_aligned_v1",
+    "metric_status": "available",
+    "primitive_count": 6,
+    "reachable_node_count": 8,
+    "reasons": []
+  },
+  "primitive_manifest": [
+    "@Sort",
+    "Equivalence",
+    "Equivalence.mk",
+    "Equivalence.refl",
+    "Equivalence.symm",
+    "Equivalence.trans"
+  ],
+  "primitive_manifest_hash": "e0eb3063f23989891ebe16a129b806a00dbc8d96bffc8b08386de926fb0f6a23",
+  "primitive_manifest_scope": "reachable closure; boundary policy and environment define shared corpus boundary",
+  "reference_cache_key": "51fd90e91fd12d030ba78e458685d683360964d3b30f5ebced9486343aee7de3",
+  "reference_proof_sha256": "c62f7a8f467d5887b672ea58cad4e5ae91f32279eb59e4c7edd531705c790ff0",
+  "source_hash": "9d9fafc4a4982595bb0752392cc3f0e2541b224c85f4f4b9c7bac226e021b9aa",
+  "source_token_policy_hash": "878ab5fb5aa65e79973e4577203e29b9e6d67de66b91ff97b86ad021f5f229c9",
+  "submitted_proof": "⟨fun a ↦ h.refl (f a), h.symm, h.trans⟩",
+  "supporting_diagnostics": {
+    "helper_count": 0,
+    "helper_count_scope": "generated auxiliary declarations; local have/let source remains included in W_B",
+    "proof_nodes": 95,
+    "tactic_syntax_kinds": []
+  },
+  "task_hash": "582fad2c1e7f1807b61921054eefaba4c128e5668e414a0ce95a0a692b70175a",
+  "task_id": "lib_sets_logic_main_logic_relation_08",
+  "task_input_hash": "75c8025739fac6cd091564439a9fe8acebd12d66ac80a3b6609608b60c2c0852",
+  "task_snapshot": {
+    "audit": {
+      "answer_access_audited": false,
+      "axiom_policy_pass": true,
+      "explicit_signature_frozen": true,
+      "family_reviewed": false,
+      "independent_kernel_replay": true,
+      "metric_closure_verified": false,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization",
+      "reference_verified": true,
+      "transitive_forbidden_dependency_pass": true
+    },
+    "binders": "{«α» : Type u_1} {«β» : Type u_2} {«r» : β → β → Prop} (h : Equivalence r) (f : α → β)",
+    "context": "/-\nCopyright (c) 2018 Johannes Hölzl. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Johannes Hölzl\n-/\n/-!\n# Relation closures\n\nThis file defines the reflexive, symmetric, transitive, reflexive transitive and equivalence\nclosures of relations and proves some basic results on them.\n\nNote that this is about unbundled relations, that is terms of types of the form `α → β → Prop`. For\nthe bundled version, see `Rel`.\n\n## Definitions\n\n* `Relation.ReflGen`: Reflexive closure. `ReflGen r` relates everything `r` related, plus for all\n  `a` it relates `a` with itself. So `ReflGen r a b ↔ r a b ∨ a = b`.\n* `Relation.SymmGen`: Symmetric closure. This is also the comparability relation,\n  such that `SymmGen r a b` means that either `r a b` or `r b a` (see `Mathlib.Order.Comparable`)\n* `Relation.TransGen`: Transitive closure. `TransGen r` relates everything `r` related\n  transitively. So `TransGen r a b ↔ ∃ x₀ ... xₙ, r a x₀ ∧ r x₀ x₁ ∧ ... ∧ r xₙ b`.\n* `Relation.ReflTransGen`: Reflexive transitive closure. `ReflTransGen r` relates everything\n  `r` related transitively, plus for all `a` it relates `a` with itself. So\n  `ReflTransGen r a b ↔ (∃ x₀ ... xₙ, r a x₀ ∧ r x₀ x₁ ∧ ... ∧ r xₙ b) ∨ a = b`. It is the same as\n  the reflexive closure of the transitive closure, or the transitive closure of the reflexive\n  closure. In terms of rewriting systems, this means that `a` can be rewritten to `b` in a number of\n  rewrites.\n* `Relation.EqvGen`: Equivalence closure. `EqvGen r` relates everything `ReflTransGen r` relates,\n  plus for all related pairs it relates them in the opposite order.\n* `Relation.Comp`:  Relation composition. We provide notation `∘r`. For `r : α → β → Prop` and\n  `s : β → γ → Prop`, `r ∘r s` relates `a : α` and `c : γ` iff there exists `b : β` that's related\n  to both.\n* `Relation.Map`: Image of a relation under a pair of maps. For `r : α → β → Prop`, `f : α → γ`,\n  `g : β → δ`, `Map r f g` is the relation `γ → δ → Prop` relating `f a` and `g b` for all `a`, `b`\n  related by `r`.\n* `Relation.Join`: Join of a relation. For `r : α → α → Prop`, `Join r a b ↔ ∃ c, r a c ∧ r b c`. In\n  terms of rewriting systems, this means that `a` and `b` can be rewritten to the same term.\n-/\n\n@[expose] public section\n\n\nopen Function\n\nvariable {α β γ δ ε ζ : Type*}\n\ntheorem Subrelation.antisymm {r r' : α → α → Prop} (h1 : r ≤ r') (h2 : r' ≤ r) :\n    r = r' :=\n  funext₂ fun a b => propext ⟨h1 a b, h2 a b⟩\n\nsection NeImp\n\nvariable {r : α → α → Prop}\n\n@[deprecated (since := \"2026-03-27\")] alias Std.Refl.reflexive := refl\n\n/-- To show a reflexive relation `r : α → α → Prop` holds over `x y : α`,\nit suffices to show it holds when `x ≠ y`. -/\ntheorem Std.Refl.rel_of_ne_imp [Std.Refl r] {x y : α} (hr : x ≠ y → r x y) : r x y := by\n  grind [Std.Refl]\n\n@[deprecated (since := \"2026-03-27\")] alias Reflexive.rel_of_ne_imp := Std.Refl.rel_of_ne_imp\n\n/-- If a reflexive relation `r : α → α → Prop` holds over `x y : α`,\nthen it holds whether or not `x ≠ y`. -/\ntheorem Std.Refl.ne_imp_iff [Std.Refl r] {x y : α} : x ≠ y → r x y ↔ r x y :=\n  ⟨Std.Refl.rel_of_ne_imp, fun hr _ ↦ hr⟩\n\n@[deprecated (since := \"2026-03-27\")] alias Reflexive.ne_imp_iff := Std.Refl.ne_imp_iff\n@[deprecated (since := \"2026-03-27\")] alias reflexive_ne_imp_iff := Std.Refl.ne_imp_iff\n\ntheorem refl_iff_eq_le : Std.Refl r ↔ Eq ≤ r := by\n  unfold Pi.hasLe Prop.le\n  grind [Std.Refl]\n\n@[deprecated (since := \"2026-06-30\")] alias refl_iff_subrelation_eq := refl_iff_eq_le\n@[deprecated (since := \"2026-03-27\")] alias reflexive_iff_subrelation_eq := refl_iff_eq_le\n\ntheorem irrefl_iff_le_ne : Std.Irrefl r ↔ r ≤ Ne := by\n  unfold Pi.hasLe Prop.le\n  grind [Std.Irrefl]\n\n@[deprecated (since := \"2026-06-30\")] alias irrefl_iff_subrelation_ne := irrefl_iff_le_ne\n@[deprecated (since := \"2026-02-12\")] alias irreflexive_iff_subrelation_ne := irrefl_iff_le_ne\n\nprotected theorem Std.Symm.iff [Std.Symm r] (x y : α) : r x y ↔ r y x :=\n  ⟨symm_of r, symm_of r⟩\n\n@[deprecated (since := \"2026-06-10\")] protected alias Symmetric.iff := Std.Symm.iff\n\ntheorem Std.Symm.flip_eq [Std.Symm r] : flip r = r :=\n  funext₂ fun _ _ ↦ propext <| Std.Symm.iff (r := r) ..\n\n@[deprecated (since := \"2026-06-10\")] alias Symmetric.flip_eq := Std.Symm.flip_eq\n\ntheorem Std.Symm.swap_eq [Std.Symm r] : swap r = r :=\n  Std.Symm.flip_eq\n\n@[deprecated (since := \"2026-06-10\")] alias Symmetric.swap_eq := Std.Symm.swap_eq\n\ntheorem flip_eq_iff : flip r = r ↔ Std.Symm r :=\n  ⟨fun h ↦ ⟨fun _ _ ↦ congr_fun₂ h .. |>.mp⟩, fun _ ↦ Std.Symm.flip_eq⟩\n\ntheorem swap_eq_iff : swap r = r ↔ Std.Symm r :=\n  flip_eq_iff\n\nend NeImp\n\nsection Comap\n\nvariable {r : β → β → Prop}\n\ninstance Std.Refl.comap [Std.Refl r] (f : α → β) : Std.Refl (r on f) where\n  refl a := refl <| f a\n\n@[deprecated (since := \"2026-03-27\")] alias Reflexive.comap := Std.Refl.comap\n\ninstance Std.Symm.comap [Std.Symm r] (f : α → β) : Std.Symm (r on f) where\n  symm _ _ hab := symm_of r hab\n\n@[deprecated (since := \"2026-06-10\")] alias Symmetric.comap := Std.Symm.comap\n\ninstance IsTrans.comap [IsTrans β r] (f : α → β) : IsTrans α (r on f) where\n  trans _ _ _ := trans_of r\n\n@[deprecated (since := \"2026-02-21\")] alias Transitive.comap := IsTrans.comap\n\ninstance IsEquiv.comap [IsEquiv β r] (f : α → β) : IsEquiv α (r on f) where\n\nuniverse «u_1» «u_2»\n\nassert_not_exists _root_.Equivalence.comap\n",
+    "domain": "sets_logic",
+    "environment": {
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1",
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11"
+    },
+    "family_id": "source_module_Mathlib.Logic.Relation",
+    "forbidden_declarations": [
+      "Equivalence.comap"
+    ],
+    "hashes": {
+      "binders": "e10beea377332facc869aa45a7d421d168366a8cbebf1f3b0299035268ae097e",
+      "context": "f8c7647ae51a2f78b05394e9b8b24a66cc3c54d9b57b33e8a6dcd474a393d2fa",
+      "premise_context": "e478b32a3d9c79e41c40493ab681c927c158f171f4c1c725668df5e13f59ee28",
+      "proposition": "c878ff90a3527a537c24bad315eac59bdb9c23fb6635d9db84d179dbbca8726c"
+    },
+    "import_specs": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Relator"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.Use"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.MkIffOfInductiveProp"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.SimpRw"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.Defs.Prop"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.Defs.Unbundled"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Batteries.Logic"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Batteries.Tactic.Trans"
+      }
+    ],
+    "imports": [
+      "Mathlib.Logic.Relator",
+      "Mathlib.Tactic.Use",
+      "Mathlib.Tactic.MkIffOfInductiveProp",
+      "Mathlib.Tactic.SimpRw",
+      "Mathlib.Order.Defs.Prop",
+      "Mathlib.Order.Defs.Unbundled",
+      "Batteries.Logic",
+      "Batteries.Tactic.Trans"
+    ],
+    "origin": "library",
+    "premise_context": "/-\nCopyright (c) 2018 Johannes Hölzl. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Johannes Hölzl\n-/\n/-!\n# Relation closures\n\nThis file defines the reflexive, symmetric, transitive, reflexive transitive and equivalence\nclosures of relations and proves some basic results on them.\n\nNote that this is about unbundled relations, that is terms of types of the form `α → β → Prop`. For\nthe bundled version, see `Rel`.\n\n## Definitions\n\n* `Relation.ReflGen`: Reflexive closure. `ReflGen r` relates everything `r` related, plus for all\n  `a` it relates `a` with itself. So `ReflGen r a b ↔ r a b ∨ a = b`.\n* `Relation.SymmGen`: Symmetric closure. This is also the comparability relation,\n  such that `SymmGen r a b` means that either `r a b` or `r b a` (see `Mathlib.Order.Comparable`)\n* `Relation.TransGen`: Transitive closure. `TransGen r` relates everything `r` related\n  transitively. So `TransGen r a b ↔ ∃ x₀ ... xₙ, r a x₀ ∧ r x₀ x₁ ∧ ... ∧ r xₙ b`.\n* `Relation.ReflTransGen`: Reflexive transitive closure. `ReflTransGen r` relates everything\n  `r` related transitively, plus for all `a` it relates `a` with itself. So\n  `ReflTransGen r a b ↔ (∃ x₀ ... xₙ, r a x₀ ∧ r x₀ x₁ ∧ ... ∧ r xₙ b) ∨ a = b`. It is the same as\n  the reflexive closure of the transitive closure, or the transitive closure of the reflexive\n  closure. In terms of rewriting systems, this means that `a` can be rewritten to `b` in a number of\n  rewrites.\n* `Relation.EqvGen`: Equivalence closure. `EqvGen r` relates everything `ReflTransGen r` relates,\n  plus for all related pairs it relates them in the opposite order.\n* `Relation.Comp`:  Relation composition. We provide notation `∘r`. For `r : α → β → Prop` and\n  `s : β → γ → Prop`, `r ∘r s` relates `a : α` and `c : γ` iff there exists `b : β` that's related\n  to both.\n* `Relation.Map`: Image of a relation under a pair of maps. For `r : α → β → Prop`, `f : α → γ`,\n  `g : β → δ`, `Map r f g` is the relation `γ → δ → Prop` relating `f a` and `g b` for all `a`, `b`\n  related by `r`.\n* `Relation.Join`: Join of a relation. For `r : α → α → Prop`, `Join r a b ↔ ∃ c, r a c ∧ r b c`. In\n  terms of rewriting systems, this means that `a` and `b` can be rewritten to the same term.\n-/\n\n@[expose] public section\n\n\nopen Function\n\nvariable {α β γ δ ε ζ : Type*}\n\ntheorem Subrelation.antisymm {r r' : α → α → Prop} (h1 : r ≤ r') (h2 : r' ≤ r) :\n    r = r' :=\n  funext₂ fun a b => propext ⟨h1 a b, h2 a b⟩\n\nsection NeImp\n\nvariable {r : α → α → Prop}\n\n@[deprecated (since := \"2026-03-27\")] alias Std.Refl.reflexive := refl\n\n/-- To show a reflexive relation `r : α → α → Prop` holds over `x y : α`,\nit suffices to show it holds when `x ≠ y`. -/\ntheorem Std.Refl.rel_of_ne_imp [Std.Refl r] {x y : α} (hr : x ≠ y → r x y) : r x y := by\n  grind [Std.Refl]\n\n@[deprecated (since := \"2026-03-27\")] alias Reflexive.rel_of_ne_imp := Std.Refl.rel_of_ne_imp\n\n/-- If a reflexive relation `r : α → α → Prop` holds over `x y : α`,\nthen it holds whether or not `x ≠ y`. -/\ntheorem Std.Refl.ne_imp_iff [Std.Refl r] {x y : α} : x ≠ y → r x y ↔ r x y :=\n  ⟨Std.Refl.rel_of_ne_imp, fun hr _ ↦ hr⟩\n\n@[deprecated (since := \"2026-03-27\")] alias Reflexive.ne_imp_iff := Std.Refl.ne_imp_iff\n@[deprecated (since := \"2026-03-27\")] alias reflexive_ne_imp_iff := Std.Refl.ne_imp_iff\n\ntheorem refl_iff_eq_le : Std.Refl r ↔ Eq ≤ r := by\n  unfold Pi.hasLe Prop.le\n  grind [Std.Refl]\n\n@[deprecated (since := \"2026-06-30\")] alias refl_iff_subrelation_eq := refl_iff_eq_le\n@[deprecated (since := \"2026-03-27\")] alias reflexive_iff_subrelation_eq := refl_iff_eq_le\n\ntheorem irrefl_iff_le_ne : Std.Irrefl r ↔ r ≤ Ne := by\n  unfold Pi.hasLe Prop.le\n  grind [Std.Irrefl]\n\n@[deprecated (since := \"2026-06-30\")] alias irrefl_iff_subrelation_ne := irrefl_iff_le_ne\n@[deprecated (since := \"2026-02-12\")] alias irreflexive_iff_subrelation_ne := irrefl_iff_le_ne\n\nprotected theorem Std.Symm.iff [Std.Symm r] (x y : α) : r x y ↔ r y x :=\n  ⟨symm_of r, symm_of r⟩\n\n@[deprecated (since := \"2026-06-10\")] protected alias Symmetric.iff := Std.Symm.iff\n\ntheorem Std.Symm.flip_eq [Std.Symm r] : flip r = r :=\n  funext₂ fun _ _ ↦ propext <| Std.Symm.iff (r := r) ..\n\n@[deprecated (since := \"2026-06-10\")] alias Symmetric.flip_eq := Std.Symm.flip_eq\n\ntheorem Std.Symm.swap_eq [Std.Symm r] : swap r = r :=\n  Std.Symm.flip_eq\n\n@[deprecated (since := \"2026-06-10\")] alias Symmetric.swap_eq := Std.Symm.swap_eq\n\ntheorem flip_eq_iff : flip r = r ↔ Std.Symm r :=\n  ⟨fun h ↦ ⟨fun _ _ ↦ congr_fun₂ h .. |>.mp⟩, fun _ ↦ Std.Symm.flip_eq⟩\n\ntheorem swap_eq_iff : swap r = r ↔ Std.Symm r :=\n  flip_eq_iff\n\nend NeImp\n\nsection Comap\n\nvariable {r : β → β → Prop}\n\ninstance Std.Refl.comap [Std.Refl r] (f : α → β) : Std.Refl (r on f) where\n  refl a := refl <| f a\n\n@[deprecated (since := \"2026-03-27\")] alias Reflexive.comap := Std.Refl.comap\n\ninstance Std.Symm.comap [Std.Symm r] (f : α → β) : Std.Symm (r on f) where\n  symm _ _ hab := symm_of r hab\n\n@[deprecated (since := \"2026-06-10\")] alias Symmetric.comap := Std.Symm.comap\n\ninstance IsTrans.comap [IsTrans β r] (f : α → β) : IsTrans α (r on f) where\n  trans _ _ _ := trans_of r\n\n@[deprecated (since := \"2026-02-21\")] alias Transitive.comap := IsTrans.comap\n\ninstance IsEquiv.comap [IsEquiv β r] (f : α → β) : IsEquiv α (r on f) where\n\nuniverse «u_1» «u_2»",
+    "proposition": "Equivalence (r on f)",
+    "provenance": {
+      "declaration": "Equivalence.comap",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Logic.Relation",
+      "prefix_end_character": 5604,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "premise_policy": "complete predecessor source and explicit universe declarations; evaluator target-absence assertions omitted; target reference proof absent",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers",
+      "source_line": 142,
+      "source_path": "Mathlib/Logic/Relation.lean",
+      "source_sha256": "b2d33508cecf38cbaf053297eef1b24f509c6da2510ef5a61a86ebc0d79c3e44"
+    },
+    "smoke": false,
+    "split": "main",
+    "stratum": "provisional_source_length_short",
+    "target_name": "_root_.CompressionEval.lib_sets_logic_main_logic_relation_08",
+    "task_id": "lib_sets_logic_main_logic_relation_08"
+  },
+  "validation": {
+    "axioms": [],
+    "candidate_declarations": [
+      "CompressionEval.lib_sets_logic_main_logic_relation_08"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 95,
+      "syntax_kinds": [
+        "Lean.Parser.Term.anonymousCtor",
+        "null",
+        "Lean.Parser.Term.fun",
+        "Lean.Parser.Term.basicFun",
+        "Lean.Parser.Term.app",
+        "Lean.Parser.Term.paren",
+        "Lean.Parser.Term.hygienicLParen",
+        "hygieneInfo"
+      ],
+      "transitive_dependency_count": 7
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "2742343287",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Relator"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.Use"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.MkIffOfInductiveProp"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.SimpRw"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.Defs.Prop"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.Defs.Unbundled"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Batteries.Logic"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Batteries.Tactic.Trans"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 2.2550673340447247,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "a8d51251326f8a90aa0caf04ee9cbe7913af5a376cdcec83b09871bc32a064d6",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_sets_logic_main_logic_relation_08",
+    "source_tokens": {
+      "W_B": 14,
+      "W_S": 40,
+      "W_full": 58,
+      "body_spans": [
+        {
+          "end": 205,
+          "start": 202
+        },
+        {
+          "end": 208,
+          "start": 205
+        },
+        {
+          "end": 210,
+          "start": 209
+        },
+        {
+          "end": 214,
+          "start": 211
+        },
+        {
+          "end": 221,
+          "start": 215
+        },
+        {
+          "end": 223,
+          "start": 222
+        },
+        {
+          "end": 224,
+          "start": 223
+        },
+        {
+          "end": 226,
+          "start": 225
+        },
+        {
+          "end": 227,
+          "start": 226
+        },
+        {
+          "end": 228,
+          "start": 227
+        },
+        {
+          "end": 235,
+          "start": 229
+        },
+        {
+          "end": 236,
+          "start": 235
+        },
+        {
+          "end": 244,
+          "start": 237
+        },
+        {
+          "end": 247,
+          "start": 244
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 68,
+          "start": 8
+        },
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 76,
+          "start": 70
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 83,
+          "start": 79
+        },
+        {
+          "end": 87,
+          "start": 84
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 96,
+          "start": 90
+        },
+        {
+          "end": 98,
+          "start": 97
+        },
+        {
+          "end": 103,
+          "start": 99
+        },
+        {
+          "end": 107,
+          "start": 104
+        },
+        {
+          "end": 108,
+          "start": 107
+        },
+        {
+          "end": 110,
+          "start": 109
+        },
+        {
+          "end": 115,
+          "start": 110
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 120,
+          "start": 118
+        },
+        {
+          "end": 124,
+          "start": 121
+        },
+        {
+          "end": 127,
+          "start": 125
+        },
+        {
+          "end": 131,
+          "start": 128
+        },
+        {
+          "end": 136,
+          "start": 132
+        },
+        {
+          "end": 137,
+          "start": 136
+        },
+        {
+          "end": 139,
+          "start": 138
+        },
+        {
+          "end": 140,
+          "start": 139
+        },
+        {
+          "end": 142,
+          "start": 141
+        },
+        {
+          "end": 154,
+          "start": 143
+        },
+        {
+          "end": 156,
+          "start": 155
+        },
+        {
+          "end": 157,
+          "start": 156
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 160,
+          "start": 159
+        },
+        {
+          "end": 162,
+          "start": 161
+        },
+        {
+          "end": 165,
+          "start": 163
+        },
+        {
+          "end": 169,
+          "start": 166
+        },
+        {
+          "end": 172,
+          "start": 170
+        },
+        {
+          "end": 173,
+          "start": 172
+        },
+        {
+          "end": 175,
+          "start": 174
+        },
+        {
+          "end": 189,
+          "start": 178
+        },
+        {
+          "end": 191,
+          "start": 190
+        },
+        {
+          "end": 192,
+          "start": 191
+        },
+        {
+          "end": 195,
+          "start": 193
+        },
+        {
+          "end": 197,
+          "start": 196
+        },
+        {
+          "end": 198,
+          "start": 197
+        },
+        {
+          "end": 201,
+          "start": 199
+        },
+        {
+          "end": 205,
+          "start": 202
+        },
+        {
+          "end": 208,
+          "start": 205
+        },
+        {
+          "end": 210,
+          "start": 209
+        },
+        {
+          "end": 214,
+          "start": 211
+        },
+        {
+          "end": 221,
+          "start": 215
+        },
+        {
+          "end": 223,
+          "start": 222
+        },
+        {
+          "end": 224,
+          "start": 223
+        },
+        {
+          "end": 226,
+          "start": 225
+        },
+        {
+          "end": 227,
+          "start": 226
+        },
+        {
+          "end": 228,
+          "start": 227
+        },
+        {
+          "end": 235,
+          "start": 229
+        },
+        {
+          "end": 236,
+          "start": 235
+        },
+        {
+          "end": 244,
+          "start": 237
+        },
+        {
+          "end": 247,
+          "start": 244
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 202,
+      "signature_spans": [
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 76,
+          "start": 70
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 83,
+          "start": 79
+        },
+        {
+          "end": 87,
+          "start": 84
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 96,
+          "start": 90
+        },
+        {
+          "end": 98,
+          "start": 97
+        },
+        {
+          "end": 103,
+          "start": 99
+        },
+        {
+          "end": 107,
+          "start": 104
+        },
+        {
+          "end": 108,
+          "start": 107
+        },
+        {
+          "end": 110,
+          "start": 109
+        },
+        {
+          "end": 115,
+          "start": 110
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 120,
+          "start": 118
+        },
+        {
+          "end": 124,
+          "start": 121
+        },
+        {
+          "end": 127,
+          "start": 125
+        },
+        {
+          "end": 131,
+          "start": 128
+        },
+        {
+          "end": 136,
+          "start": 132
+        },
+        {
+          "end": 137,
+          "start": 136
+        },
+        {
+          "end": 139,
+          "start": 138
+        },
+        {
+          "end": 140,
+          "start": 139
+        },
+        {
+          "end": 142,
+          "start": 141
+        },
+        {
+          "end": 154,
+          "start": 143
+        },
+        {
+          "end": 156,
+          "start": 155
+        },
+        {
+          "end": 157,
+          "start": 156
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 160,
+          "start": 159
+        },
+        {
+          "end": 162,
+          "start": 161
+        },
+        {
+          "end": 165,
+          "start": 163
+        },
+        {
+          "end": 169,
+          "start": 166
+        },
+        {
+          "end": 172,
+          "start": 170
+        },
+        {
+          "end": 173,
+          "start": 172
+        },
+        {
+          "end": 189,
+          "start": 178
+        },
+        {
+          "end": 191,
+          "start": 190
+        },
+        {
+          "end": 192,
+          "start": 191
+        },
+        {
+          "end": 195,
+          "start": 193
+        },
+        {
+          "end": 197,
+          "start": 196
+        },
+        {
+          "end": 198,
+          "start": 197
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_sets_logic_main_logic_relation_08 {«α» : Type u_1} {«β» : Type u_2} {«r» : β → β → Prop} (h : Equivalence r) (f : α → β) :\n  Equivalence (r on f) :=\n⟨fun a ↦ h.refl (f a), h.symm, h.trans⟩",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "α",
+          "type_source": "Type u_1"
+        },
+        {
+          "binder_info": "implicit",
+          "name": "β",
+          "type_source": "Type u_2"
+        },
+        {
+          "binder_info": "implicit",
+          "name": "r",
+          "type_source": "β → β → Prop"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "h",
+          "type_source": "Equivalence.{u_2 + 1} r"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "f",
+          "type_source": "α → β"
+        }
+      ],
+      "proposition": "Equivalence.{u_1 + 1} (Function.onFun.{u_1 + 1, u_2 + 1, 1} r f)"
+    },
+    "trusted_type_expression": "forall {α : Type.{u_1}} {β : Type.{u_2}} {r : β -> β -> Prop}, (Equivalence.{succ u_2} β r) -> (forall (f : α -> β), Equivalence.{succ u_1} α (Function.onFun.{succ u_1, succ u_2, 1} α β Prop r f))",
+    "trusted_type_source": "∀ {α : Type u_1} {β : Type u_2} {r : β → β → Prop},\n  Equivalence.{u_2 + 1} r → ∀ (f : α → β), Equivalence.{u_1 + 1} (Function.onFun.{u_1 + 1, u_2 + 1, 1} r f)",
+    "universe_parameters": [
+      "u_1",
+      "u_2"
+    ],
+    "validity_status": "success"
+  },
+  "validity_status": "success",
+  "verification_request_hash": "cb3740d5bd12ce61c3f47092ddd61ce2d73f762a4f271316deead0b00494e090"
+}

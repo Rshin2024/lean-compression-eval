@@ -1,0 +1,72 @@
+{
+  "task": {
+    "task_id": "lib_linear_algebra_combinatorics_main_basis_defs_01",
+    "family_id": "source_module_Mathlib.LinearAlgebra.Basis.Defs",
+    "domain": "linear_algebra_combinatorics",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.LinearAlgebra.Finsupp.LinearCombination",
+      "Mathlib.Tactic.CrossRefAttribute"
+    ],
+    "context": "/-\nCopyright (c) 2017 Johannes Hölzl. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Johannes Hölzl, Mario Carneiro, Alexander Bentkamp\n-/\n/-!\n# Bases\n\nThis file defines bases in a module or vector space.\n\nIt is inspired by Isabelle/HOL's linear algebra, and hence indirectly by HOL Light.\n\n## Main definitions\n\nAll definitions are given for families of vectors, i.e. `v : ι → M` where `M` is the module or\nvector space and `ι : Type*` is an arbitrary indexing type.\n\n* `Basis ι R M` is the type of `ι`-indexed `R`-bases for a module `M`,\n  represented by a linear equiv `M ≃ₗ[R] ι →₀ R`.\n* the basis vectors of a basis `b : Basis ι R M` are available as `b i`, where `i : ι`\n\n* `Basis.repr` is the isomorphism sending `x : M` to its coordinates `Basis.repr x : ι →₀ R`.\n  The converse, turning this isomorphism into a basis, is called `Basis.ofRepr`.\n* If `ι` is finite, there is a variant of `repr` called `Basis.equivFun b : M ≃ₗ[R] ι → R`\n  (saving you from having to work with `Finsupp`). The converse, turning this isomorphism into\n  a basis, is called `Basis.ofEquivFun`.\n\n* `Basis.reindex` uses an equiv to map a basis to a different indexing set.\n\n* `Basis.map` uses a linear equiv to map a basis to a different module.\n\n* `Basis.constr`: given `b : Basis ι R M` and `f : ι → M`, construct a linear map `g` so that\n  `g (b i) = f i`.\n\n* `Basis.coord`: `b.coord i x` is the `i`-th coordinate of a vector `x` with respect to the basis\n  `b`.\n\n## Main results\n\n* `Basis.ext` states that two linear maps are equal if they coincide on a basis.\n  Similar results are available for linear equivs (if they coincide on the basis vectors),\n  elements (if their coordinates coincide) and the functions `b.repr` and `⇑b`.\n\n## Implementation notes\n\nWe use families instead of sets because it allows us to say that two identical vectors are linearly\ndependent. For bases, this is useful as well because we can easily derive ordered bases by using an\nordered index type `ι`.\n\n## Tags\n\nbasis, bases\n\n-/\n\n@[expose] public section\n\nassert_not_exists LinearMap.pi LinearIndependent Cardinal\n-- TODO: assert_not_exists Submodule\n-- (should be possible after splitting `Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean`)\n\nnoncomputable section\n\nuniverse u\n\nopen Function Set Submodule Finsupp\n\nvariable {ι : Type*} {ι' : Type*} {R : Type*} {R₂ : Type*} {K : Type*}\nvariable {M : Type*} {M' M'' : Type*} {V : Type u} {V' : Type*}\n\nnamespace Module\n\nvariable [Semiring R]\nvariable [AddCommMonoid M] [Module R M] [AddCommMonoid M'] [Module R M']\n\nvariable (ι R M) in\n/-- A `Basis ι R M` for a module `M` is the type of `ι`-indexed `R`-bases of `M`.\n\nThe basis vectors are available as `DFunLike.coe (b : Basis ι R M) : ι → M`.\nTo turn a linear independent family of vectors spanning `M` into a basis, use `Basis.mk`.\nThey are internally represented as linear equivs `M ≃ₗ[R] (ι →₀ R)`,\navailable as `Basis.repr`.\n-/\n@[wikidata Q189569]\nstructure Basis where\n  /-- `Basis.ofRepr` constructs a basis given an assignment of coordinates to each vector. -/\n  ofRepr ::\n    /-- `repr` is the linear equivalence sending a vector `x` to its coordinates:\n    the `c`s such that `x = ∑ i, c i`. -/\n    repr : M ≃ₗ[R] ι →₀ R\n\nnamespace Basis\n\ninstance : Inhabited (Basis ι R (ι →₀ R)) :=\n  ⟨.ofRepr (LinearEquiv.refl _ _)⟩\n\nvariable (b b₁ : Basis ι R M) (i : ι) (c : R) (x : M)\n\nsection repr\n\nuniverse «u_1» «u_3» «u_6»\n\nassert_not_exists _root_.Module.Basis.repr_injective\n",
+    "binders": "{«ι» : Type u_1} {«R» : Type u_3} {«M» : Type u_6} [«inst» : Semiring.{u_3} R] [«inst_1» : AddCommMonoid.{u_6} M] [«inst_2» : Module.{u_3, u_6} R M]",
+    "proposition": "Injective (repr : Basis ι R M → M ≃ₗ[R] ι →₀ R)",
+    "target_name": "_root_.CompressionEval.lib_linear_algebra_combinatorics_main_basis_defs_01",
+    "premise_context": "universe u\nopen Function Set Submodule Finsupp\nvariable {ι : Type*} {ι' : Type*} {R : Type*} {R₂ : Type*} {K : Type*}\nvariable {M : Type*} {M' M'' : Type*} {V : Type u} {V' : Type*}\nnamespace Module\nvariable [Semiring R]\nvariable [AddCommMonoid M] [Module R M] [AddCommMonoid M'] [Module R M']\nvariable (ι R M) in\nnamespace Basis\nvariable (b b₁ : Basis ι R M) (i : ι) (c : R) (x : M)\nsection repr\n\nAvailable preceding statements (within the shown source scopes):\n",
+    "forbidden_declarations": [
+      "Module.Basis.repr_injective"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.LinearAlgebra.Basis.Defs",
+      "source_path": "Mathlib/LinearAlgebra/Basis/Defs.lean",
+      "declaration": "Module.Basis.repr_injective",
+      "source_line": 106,
+      "source_sha256": "ad842a6dd55f00fd3b5d435320595633d8eda5ca18ee4920ab69e2a8b6672cf1",
+      "prefix_end_character": 3540,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "64f610b528efa9e9c28da3f603e99e2db7bb0573c575690f9fcd872ee567ece7",
+      "premise_context": "e4cf7d959c7a10a4e63db50ca0f404e56ddd6e7d884094c73d653c78bbb5a27f",
+      "binders": "e73be0e4967b11b2cb7e3070019dadd1ebf88458d06b27325761dbf3a1b4ac47",
+      "proposition": "907f0b2c6fdbebde6c19bc35f5da06f15abb8b4416b3ecc9e9b4011b10274721"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.LinearAlgebra.Finsupp.LinearCombination",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.CrossRefAttribute",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen"
+}

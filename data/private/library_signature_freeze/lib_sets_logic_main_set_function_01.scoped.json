@@ -1,0 +1,293 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1",
+    "u_2"
+  ],
+  "trusted_type_source": "∀ {α : Type u_1} {β : Type u_2} {s : Set.{u_1} α} {f₁ f₂ : α → β} {a : α},\n  Set.EqOn.{u_1, u_2} f₁ f₂ s → Membership.mem.{u_1, u_1} s a → Eq.{u_2 + 1} (f₁ a) (f₂ a)",
+  "trusted_type_expression": "forall {α : Type.{u_1}} {β : Type.{u_2}} {s : Set.{u_1} α} {f₁ : α -> β} {f₂ : α -> β} {a : α}, (Set.EqOn.{u_1, u_2} α β f₁ f₂ s) -> (Membership.mem.{u_1, u_1} α (Set.{u_1} α) (Set.instMembership.{u_1} α) s a) -> (Eq.{succ u_2} β (f₁ a) (f₂ a))",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_2 + 1} (f₁ a) (f₂ a)",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_2",
+        "name": "β",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Set.{u_1} α",
+        "name": "s",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "α → β",
+        "name": "f₁",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "α → β",
+        "name": "f₂",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "α",
+        "name": "a",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Set.EqOn.{u_1, u_2} f₁ f₂ s",
+        "name": "h",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Membership.mem.{u_1, u_1} s a",
+        "name": "ha",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_sets_logic_main_set_function_01 (h : s.EqOn f₁ f₂) (ha : a ∈ s) :\n  f₁ a = f₂ a :=\nh ha",
+    "signature_spans": [
+      {
+        "start": 67,
+        "end": 68
+      },
+      {
+        "start": 68,
+        "end": 69
+      },
+      {
+        "start": 70,
+        "end": 71
+      },
+      {
+        "start": 72,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 88
+      },
+      {
+        "start": 88,
+        "end": 89
+      },
+      {
+        "start": 90,
+        "end": 91
+      },
+      {
+        "start": 91,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 109,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 124
+      }
+    ],
+    "proof_offset": 128,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 66
+      },
+      {
+        "start": 67,
+        "end": 68
+      },
+      {
+        "start": 68,
+        "end": 69
+      },
+      {
+        "start": 70,
+        "end": 71
+      },
+      {
+        "start": 72,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 88
+      },
+      {
+        "start": 88,
+        "end": 89
+      },
+      {
+        "start": 90,
+        "end": 91
+      },
+      {
+        "start": 91,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 105,
+        "end": 106
+      },
+      {
+        "start": 109,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 127
+      },
+      {
+        "start": 128,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 132
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 128,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 132
+      }
+    ],
+    "W_full": 25,
+    "W_S": 19,
+    "W_B": 2
+  },
+  "root": "CompressionEval.lib_sets_logic_main_set_function_01",
+  "proved_type_fingerprint": "1043952442",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 11,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "null"
+    ],
+    "proof_nodes": 51,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_sets_logic_main_set_function_01"
+  ],
+  "axioms": [],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "a819a56d7664d23e61f4a01c8fe449466b15187917abeaaf4ba2bcc673a6f552",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 5.536579041276127
+  },
+  "request_fingerprint": "ee647603547249e5b41d907cb199527d53e81626f59d5e0df4e468c21d77b92c"
+}

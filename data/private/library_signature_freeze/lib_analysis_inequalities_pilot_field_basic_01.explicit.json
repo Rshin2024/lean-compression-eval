@@ -1,0 +1,469 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_2"
+  ],
+  "trusted_type_source": "∀ {α : Type u_2} [inst : NormedDivisionRing.{u_2} α] (a b : α),\n  Eq.{1} (Norm.norm.{u_2} (HDiv.hDiv.{u_2, u_2, u_2} a b)) (HDiv.hDiv.{0, 0, 0} (Norm.norm.{u_2} a) (Norm.norm.{u_2} b))",
+  "trusted_type_expression": "forall {α : Type.{u_2}} [inst : NormedDivisionRing.{u_2} α] (a : α) (b : α), Eq.{1} Real (Norm.norm.{u_2} α (NormedDivisionRing.toNorm.{u_2} α inst) (HDiv.hDiv.{u_2, u_2, u_2} α α α (instHDiv.{u_2} α (DivInvMonoid.toDiv.{u_2} α (DivisionRing.toDivInvMonoid.{u_2} α (NormedDivisionRing.toDivisionRing.{u_2} α inst)))) a b)) (HDiv.hDiv.{0, 0, 0} Real Real Real (instHDiv.{0} Real (DivInvMonoid.toDiv.{0} Real Real.instDivInvMonoid)) (Norm.norm.{u_2} α (NormedDivisionRing.toNorm.{u_2} α inst) a) (Norm.norm.{u_2} α (NormedDivisionRing.toNorm.{u_2} α inst) b))",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} (Norm.norm.{u_2} (HDiv.hDiv.{u_2, u_2, u_2} a b)) (HDiv.hDiv.{0, 0, 0} (Norm.norm.{u_2} a) (Norm.norm.{u_2} b))",
+    "binders": [
+      {
+        "type_source": "Type u_2",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "NormedDivisionRing.{u_2} α",
+        "name": "inst",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "α",
+        "name": "a",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "α",
+        "name": "b",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_analysis_inequalities_pilot_field_basic_01 {«α» : Type u_2} [«inst» : NormedDivisionRing.{u_2} α] (a b : α) :\n  ‖a / b‖ = ‖a‖ / ‖b‖ :=\nmap_div₀ (normHom : α →*₀ ℝ) a b",
+    "signature_spans": [
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 79,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 99,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 130
+      },
+      {
+        "start": 130,
+        "end": 133
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 137
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 140,
+        "end": 141
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 148
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 154,
+        "end": 157
+      },
+      {
+        "start": 157,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 160
+      },
+      {
+        "start": 161,
+        "end": 162
+      },
+      {
+        "start": 162,
+        "end": 165
+      },
+      {
+        "start": 166,
+        "end": 167
+      },
+      {
+        "start": 168,
+        "end": 171
+      },
+      {
+        "start": 171,
+        "end": 172
+      },
+      {
+        "start": 172,
+        "end": 175
+      },
+      {
+        "start": 176,
+        "end": 177
+      },
+      {
+        "start": 178,
+        "end": 181
+      },
+      {
+        "start": 181,
+        "end": 182
+      },
+      {
+        "start": 182,
+        "end": 185
+      }
+    ],
+    "proof_offset": 189,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 77
+      },
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 79,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 99,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 130
+      },
+      {
+        "start": 130,
+        "end": 133
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 137
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 140,
+        "end": 141
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 148
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 154,
+        "end": 157
+      },
+      {
+        "start": 157,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 160
+      },
+      {
+        "start": 161,
+        "end": 162
+      },
+      {
+        "start": 162,
+        "end": 165
+      },
+      {
+        "start": 166,
+        "end": 167
+      },
+      {
+        "start": 168,
+        "end": 171
+      },
+      {
+        "start": 171,
+        "end": 172
+      },
+      {
+        "start": 172,
+        "end": 175
+      },
+      {
+        "start": 176,
+        "end": 177
+      },
+      {
+        "start": 178,
+        "end": 181
+      },
+      {
+        "start": 181,
+        "end": 182
+      },
+      {
+        "start": 182,
+        "end": 185
+      },
+      {
+        "start": 186,
+        "end": 188
+      },
+      {
+        "start": 189,
+        "end": 199
+      },
+      {
+        "start": 200,
+        "end": 201
+      },
+      {
+        "start": 201,
+        "end": 208
+      },
+      {
+        "start": 209,
+        "end": 210
+      },
+      {
+        "start": 211,
+        "end": 213
+      },
+      {
+        "start": 214,
+        "end": 221
+      },
+      {
+        "start": 222,
+        "end": 225
+      },
+      {
+        "start": 225,
+        "end": 226
+      },
+      {
+        "start": 227,
+        "end": 228
+      },
+      {
+        "start": 229,
+        "end": 230
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 189,
+        "end": 199
+      },
+      {
+        "start": 200,
+        "end": 201
+      },
+      {
+        "start": 201,
+        "end": 208
+      },
+      {
+        "start": 209,
+        "end": 210
+      },
+      {
+        "start": 211,
+        "end": 213
+      },
+      {
+        "start": 214,
+        "end": 221
+      },
+      {
+        "start": 222,
+        "end": 225
+      },
+      {
+        "start": 225,
+        "end": 226
+      },
+      {
+        "start": 227,
+        "end": 228
+      },
+      {
+        "start": 229,
+        "end": 230
+      }
+    ],
+    "W_full": 48,
+    "W_S": 34,
+    "W_B": 10
+  },
+  "root": "CompressionEval.lib_analysis_inequalities_pilot_field_basic_01",
+  "proved_type_fingerprint": "282341816",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 8093,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "null",
+      "Lean.Parser.Term.typeAscription",
+      "Lean.Parser.Term.hygienicLParen",
+      "hygieneInfo",
+      "«term_→*₀_»",
+      "termℝ"
+    ],
+    "proof_nodes": 175,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_analysis_inequalities_pilot_field_basic_01"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "b9fc7082a941740396394f4e32c3808c7963d801b897c5e99f8eed0bf563e13e",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.7335127503611147
+  },
+  "request_fingerprint": "a42d511741dfdf0b279ef89661f6279c3985c9076ad13540c4e33a0769a97ff3"
+}

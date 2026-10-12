@@ -1,0 +1,114 @@
+{
+  "task": {
+    "task_id": "lib_sets_logic_main_logic_relation_10",
+    "family_id": "source_module_Mathlib.Logic.Relation",
+    "domain": "sets_logic",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Logic.Relator",
+      "Mathlib.Tactic.Use",
+      "Mathlib.Tactic.MkIffOfInductiveProp",
+      "Mathlib.Tactic.SimpRw",
+      "Mathlib.Order.Defs.Prop",
+      "Mathlib.Order.Defs.Unbundled",
+      "Batteries.Logic",
+      "Batteries.Tactic.Trans"
+    ],
+    "import_specs": [
+      {
+        "module": "Mathlib.Logic.Relator",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.Use",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.MkIffOfInductiveProp",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.SimpRw",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Order.Defs.Prop",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Order.Defs.Unbundled",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Batteries.Logic",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Batteries.Tactic.Trans",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ],
+    "context": "/-\nCopyright (c) 2018 Johannes Hölzl. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Johannes Hölzl\n-/\n/-!\n# Relation closures\n\nThis file defines the reflexive, symmetric, transitive, reflexive transitive and equivalence\nclosures of relations and proves some basic results on them.\n\nNote that this is about unbundled relations, that is terms of types of the form `α → β → Prop`. For\nthe bundled version, see `Rel`.\n\n## Definitions\n\n* `Relation.ReflGen`: Reflexive closure. `ReflGen r` relates everything `r` related, plus for all\n  `a` it relates `a` with itself. So `ReflGen r a b ↔ r a b ∨ a = b`.\n* `Relation.SymmGen`: Symmetric closure. This is also the comparability relation,\n  such that `SymmGen r a b` means that either `r a b` or `r b a` (see `Mathlib.Order.Comparable`)\n* `Relation.TransGen`: Transitive closure. `TransGen r` relates everything `r` related\n  transitively. So `TransGen r a b ↔ ∃ x₀ ... xₙ, r a x₀ ∧ r x₀ x₁ ∧ ... ∧ r xₙ b`.\n* `Relation.ReflTransGen`: Reflexive transitive closure. `ReflTransGen r` relates everything\n  `r` related transitively, plus for all `a` it relates `a` with itself. So\n  `ReflTransGen r a b ↔ (∃ x₀ ... xₙ, r a x₀ ∧ r x₀ x₁ ∧ ... ∧ r xₙ b) ∨ a = b`. It is the same as\n  the reflexive closure of the transitive closure, or the transitive closure of the reflexive\n  closure. In terms of rewriting systems, this means that `a` can be rewritten to `b` in a number of\n  rewrites.\n* `Relation.EqvGen`: Equivalence closure. `EqvGen r` relates everything `ReflTransGen r` relates,\n  plus for all related pairs it relates them in the opposite order.\n* `Relation.Comp`:  Relation composition. We provide notation `∘r`. For `r : α → β → Prop` and\n  `s : β → γ → Prop`, `r ∘r s` relates `a : α` and `c : γ` iff there exists `b : β` that's related\n  to both.\n* `Relation.Map`: Image of a relation under a pair of maps. For `r : α → β → Prop`, `f : α → γ`,\n  `g : β → δ`, `Map r f g` is the relation `γ → δ → Prop` relating `f a` and `g b` for all `a`, `b`\n  related by `r`.\n* `Relation.Join`: Join of a relation. For `r : α → α → Prop`, `Join r a b ↔ ∃ c, r a c ∧ r b c`. In\n  terms of rewriting systems, this means that `a` and `b` can be rewritten to the same term.\n-/\n\n@[expose] public section\n\n\nopen Function\n\nvariable {α β γ δ ε ζ : Type*}\n\ntheorem Subrelation.antisymm {r r' : α → α → Prop} (h1 : r ≤ r') (h2 : r' ≤ r) :\n    r = r' :=\n  funext₂ fun a b => propext ⟨h1 a b, h2 a b⟩\n\nsection NeImp\n\nvariable {r : α → α → Prop}\n\n@[deprecated (since := \"2026-03-27\")] alias Std.Refl.reflexive := refl\n\n/-- To show a reflexive relation `r : α → α → Prop` holds over `x y : α`,\nit suffices to show it holds when `x ≠ y`. -/\ntheorem Std.Refl.rel_of_ne_imp [Std.Refl r] {x y : α} (hr : x ≠ y → r x y) : r x y := by\n  grind [Std.Refl]\n\n@[deprecated (since := \"2026-03-27\")] alias Reflexive.rel_of_ne_imp := Std.Refl.rel_of_ne_imp\n\n/-- If a reflexive relation `r : α → α → Prop` holds over `x y : α`,\nthen it holds whether or not `x ≠ y`. -/\ntheorem Std.Refl.ne_imp_iff [Std.Refl r] {x y : α} : x ≠ y → r x y ↔ r x y :=\n  ⟨Std.Refl.rel_of_ne_imp, fun hr _ ↦ hr⟩\n\n@[deprecated (since := \"2026-03-27\")] alias Reflexive.ne_imp_iff := Std.Refl.ne_imp_iff\n@[deprecated (since := \"2026-03-27\")] alias reflexive_ne_imp_iff := Std.Refl.ne_imp_iff\n\ntheorem refl_iff_eq_le : Std.Refl r ↔ Eq ≤ r := by\n  unfold Pi.hasLe Prop.le\n  grind [Std.Refl]\n\n@[deprecated (since := \"2026-06-30\")] alias refl_iff_subrelation_eq := refl_iff_eq_le\n@[deprecated (since := \"2026-03-27\")] alias reflexive_iff_subrelation_eq := refl_iff_eq_le\n\ntheorem irrefl_iff_le_ne : Std.Irrefl r ↔ r ≤ Ne := by\n  unfold Pi.hasLe Prop.le\n  grind [Std.Irrefl]\n\n@[deprecated (since := \"2026-06-30\")] alias irrefl_iff_subrelation_ne := irrefl_iff_le_ne\n@[deprecated (since := \"2026-02-12\")] alias irreflexive_iff_subrelation_ne := irrefl_iff_le_ne\n\nprotected theorem Std.Symm.iff [Std.Symm r] (x y : α) : r x y ↔ r y x :=\n  ⟨symm_of r, symm_of r⟩\n\n@[deprecated (since := \"2026-06-10\")] protected alias Symmetric.iff := Std.Symm.iff\n\ntheorem Std.Symm.flip_eq [Std.Symm r] : flip r = r :=\n  funext₂ fun _ _ ↦ propext <| Std.Symm.iff (r := r) ..\n\n@[deprecated (since := \"2026-06-10\")] alias Symmetric.flip_eq := Std.Symm.flip_eq\n\ntheorem Std.Symm.swap_eq [Std.Symm r] : swap r = r :=\n  Std.Symm.flip_eq\n\n@[deprecated (since := \"2026-06-10\")] alias Symmetric.swap_eq := Std.Symm.swap_eq\n\ntheorem flip_eq_iff : flip r = r ↔ Std.Symm r :=\n  ⟨fun h ↦ ⟨fun _ _ ↦ congr_fun₂ h .. |>.mp⟩, fun _ ↦ Std.Symm.flip_eq⟩\n\ntheorem swap_eq_iff : swap r = r ↔ Std.Symm r :=\n  flip_eq_iff\n\nend NeImp\n\nsection Comap\n\nvariable {r : β → β → Prop}\n\ninstance Std.Refl.comap [Std.Refl r] (f : α → β) : Std.Refl (r on f) where\n  refl a := refl <| f a\n\n@[deprecated (since := \"2026-03-27\")] alias Reflexive.comap := Std.Refl.comap\n\ninstance Std.Symm.comap [Std.Symm r] (f : α → β) : Std.Symm (r on f) where\n  symm _ _ hab := symm_of r hab\n\n@[deprecated (since := \"2026-06-10\")] alias Symmetric.comap := Std.Symm.comap\n\ninstance IsTrans.comap [IsTrans β r] (f : α → β) : IsTrans α (r on f) where\n  trans _ _ _ := trans_of r\n\n@[deprecated (since := \"2026-02-21\")] alias Transitive.comap := IsTrans.comap\n\ninstance IsEquiv.comap [IsEquiv β r] (f : α → β) : IsEquiv α (r on f) where\n\ntheorem Equivalence.comap (h : Equivalence r) (f : α → β) : Equivalence (r on f) :=\n  ⟨fun a ↦ h.refl (f a), h.symm, h.trans⟩\n\nend Comap\n\nnamespace Relation\n\nsection Comp\n\nvariable {r : α → β → Prop} {p : β → γ → Prop} {q : γ → δ → Prop}\n\n/-- The composition of two relations, yielding a new relation.  The result\nrelates a term of `α` and a term of `γ` if there is an intermediate\nterm of `β` related to both.\n-/\ndef Comp (r : α → β → Prop) (p : β → γ → Prop) (a : α) (c : γ) : Prop :=\n  ∃ b, r a b ∧ p b c\n\n@[inherit_doc]\nlocal infixr:80 \" ∘r \" => Relation.Comp\n\nuniverse «u_1» «u_2» «u_3»\n\nassert_not_exists _root_.Relation.comp_eq_fun\n",
+    "binders": "{«α» : Type u_1} {«β» : Type u_2} {«γ» : Type u_3} {«r» : α → β → Prop} (f : γ → β)",
+    "proposition": "r ∘r (· = f ·) = (r · <| f ·)",
+    "target_name": "_root_.CompressionEval.lib_sets_logic_main_logic_relation_10",
+    "premise_context": "open Function\nvariable {α β γ δ ε ζ : Type*}\nsection NeImp\nvariable {r : α → α → Prop}\nend NeImp\nsection Comap\nvariable {r : β → β → Prop}\nend Comap\nnamespace Relation\nsection Comp\nvariable {r : α → β → Prop} {p : β → γ → Prop} {q : γ → δ → Prop}\n\nAvailable preceding statements (within the shown source scopes):\ntheorem refl_iff_eq_le : Std.Refl r ↔ Eq ≤ r\n\ntheorem irrefl_iff_le_ne : Std.Irrefl r ↔ r ≤ Ne\n\nprotected theorem Std.Symm.iff [Std.Symm r] (x y : α) : r x y ↔ r y x\n\ntheorem Std.Symm.flip_eq [Std.Symm r] : flip r = r\n\ntheorem Std.Symm.swap_eq [Std.Symm r] : swap r = r\n\ntheorem flip_eq_iff : flip r = r ↔ Std.Symm r\n\ntheorem swap_eq_iff : swap r = r ↔ Std.Symm r\n\ntheorem Equivalence.comap (h : Equivalence r) (f : α → β) : Equivalence (r on f)",
+    "forbidden_declarations": [
+      "Relation.comp_eq_fun"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Logic.Relation",
+      "source_path": "Mathlib/Logic/Relation.lean",
+      "declaration": "Relation.comp_eq_fun",
+      "source_line": 164,
+      "source_sha256": "b2d33508cecf38cbaf053297eef1b24f509c6da2510ef5a61a86ebc0d79c3e44",
+      "prefix_end_character": 6177,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "2f685ef667520922fbf4cefd511e5c96c059cfbf33ed1bdfc7ea7ca847c7ef9a",
+      "premise_context": "b9f4608d283b36bed4f4aa6a482592e27dd061a917c6d4053ea7df5dc209582d",
+      "binders": "2c207533b320025b94ca11ed83389970a2b6440b1f90e44753afbde678c67174",
+      "proposition": "3ca1728580d75b25b83557787be5b0bacc3ca0a918ce1b8a35909c5d973c6e17"
+    }
+  },
+  "status": "frozen"
+}

@@ -1,0 +1,2025 @@
+{
+  "analysis_version": "task_weighted_family_bootstrap_v1",
+  "metric_profile": "paper_aligned_v1",
+  "population": {
+    "task_count": 1,
+    "family_count": 1,
+    "domains": {
+      "algebra_groups": 1
+    },
+    "origins": {
+      "fresh": 1
+    },
+    "splits": {
+      "pilot": 1
+    }
+  },
+  "samples_per_goal_condition": 1,
+  "sample_index_base": 0,
+  "bootstrap": {
+    "replicates": 100,
+    "seed": 20261011,
+    "confidence_level": 0.95,
+    "cluster_unit": "theorem_family",
+    "stratified_by_domain": true,
+    "strata": {
+      "algebra_groups": 1
+    },
+    "cross_domain_families": [],
+    "singleton_strata": [
+      "algebra_groups"
+    ]
+  },
+  "ignored_out_of_population_attempts": 0,
+  "missing_reference_task_ids": [],
+  "models": {
+    "reference_fixture": {
+      "conditions": {
+        "standard": {
+          "scheduled_attempts": 1,
+          "valid_attempts": 1,
+          "measurable_valid_attempts": 1,
+          "measurable_task_count": 1,
+          "measurable_family_count": 1,
+          "success_rate": 1.0,
+          "first_attempt_success_rate": 1,
+          "any_sample_success_rate": 1,
+          "metric_coverage_among_valid": 1.0,
+          "metric_coverage_among_scheduled": 1.0,
+          "missing_metric_reasons": {},
+          "failure_statuses": {},
+          "attainment": {
+            "0": {
+              "rate": 1.0,
+              "denominator_scheduled_attempts": 1,
+              "reason": null,
+              "attaining_valid_measurable_attempts": 1,
+              "fraction_of_measurable_valid_attaining": 1.0
+            },
+            "1": {
+              "rate": 0.0,
+              "denominator_scheduled_attempts": 1,
+              "reason": null,
+              "attaining_valid_measurable_attempts": 0,
+              "fraction_of_measurable_valid_attaining": 0.0
+            },
+            "2": {
+              "rate": 0.0,
+              "denominator_scheduled_attempts": 1,
+              "reason": null,
+              "attaining_valid_measurable_attempts": 0,
+              "fraction_of_measurable_valid_attaining": 0.0
+            }
+          },
+          "resources": {
+            "population": "all_scheduled_attempts_including_failures",
+            "scheduled_attempts": 1,
+            "measurements": {
+              "validation_elapsed_seconds": {
+                "unit": "seconds",
+                "observed_count": 1,
+                "missing_count": 0,
+                "invalid_count": 0,
+                "sum": 12.14081212459132,
+                "median": 12.14081212459132,
+                "p95": 12.14081212459132,
+                "max": 12.14081212459132,
+                "sum_scope": "observed_records_only",
+                "reason": null
+              },
+              "extraction_elapsed_seconds": {
+                "unit": "seconds",
+                "observed_count": 1,
+                "missing_count": 0,
+                "invalid_count": 0,
+                "sum": 20.517539790831506,
+                "median": 20.517539790831506,
+                "p95": 20.517539790831506,
+                "max": 20.517539790831506,
+                "sum_scope": "observed_records_only",
+                "reason": null
+              },
+              "generation_elapsed_seconds": {
+                "unit": "seconds",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "observed_records_only",
+                "reason": "no_recorded_measurements",
+                "description": "Recorded generation workflow wall time, including retries/backoff for the built-in provider; not model-only compute."
+              },
+              "validation_peak_memory_mib": {
+                "unit": "MiB",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "not_applicable_for_peak_memory",
+                "reason": "no_recorded_measurements"
+              },
+              "extraction_peak_memory_mib": {
+                "unit": "MiB",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "not_applicable_for_peak_memory",
+                "reason": "no_recorded_measurements"
+              },
+              "input_tokens": {
+                "unit": "tokens",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "observed_records_only",
+                "reason": "no_recorded_measurements"
+              },
+              "output_tokens": {
+                "unit": "tokens",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "observed_records_only",
+                "reason": "no_recorded_measurements"
+              },
+              "reasoning_tokens": {
+                "unit": "tokens",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "observed_records_only",
+                "reason": "no_recorded_measurements"
+              }
+            },
+            "notes": [
+              "Missing or unrecorded values are not zero; extraction may not have run after a validation failure.",
+              "Elapsed sums and quantiles include only observed records; sums are not whole-run totals when coverage is incomplete.",
+              "Requested memory limits are not peak-memory measurements.",
+              "Generation latency is unavailable unless explicitly stored on the generation record; it is not inferred from timestamps or transport logs.",
+              "Built-in provider generation_elapsed_seconds measures the entire generation workflow, including fixed transport retries/backoff, not model-only computation.",
+              "Reasoning-token counts may already be included in provider output-token counts; these columns must not be added together.",
+              "No API cost is estimated without an explicit pricing schedule."
+            ]
+          }
+        },
+        "mathematical_compression": {
+          "scheduled_attempts": 1,
+          "valid_attempts": 1,
+          "measurable_valid_attempts": 1,
+          "measurable_task_count": 1,
+          "measurable_family_count": 1,
+          "success_rate": 1.0,
+          "first_attempt_success_rate": 1,
+          "any_sample_success_rate": 1,
+          "metric_coverage_among_valid": 1.0,
+          "metric_coverage_among_scheduled": 1.0,
+          "missing_metric_reasons": {},
+          "failure_statuses": {},
+          "attainment": {
+            "0": {
+              "rate": 1.0,
+              "denominator_scheduled_attempts": 1,
+              "reason": null,
+              "attaining_valid_measurable_attempts": 1,
+              "fraction_of_measurable_valid_attaining": 1.0
+            },
+            "1": {
+              "rate": 0.0,
+              "denominator_scheduled_attempts": 1,
+              "reason": null,
+              "attaining_valid_measurable_attempts": 0,
+              "fraction_of_measurable_valid_attaining": 0.0
+            },
+            "2": {
+              "rate": 0.0,
+              "denominator_scheduled_attempts": 1,
+              "reason": null,
+              "attaining_valid_measurable_attempts": 0,
+              "fraction_of_measurable_valid_attaining": 0.0
+            }
+          },
+          "resources": {
+            "population": "all_scheduled_attempts_including_failures",
+            "scheduled_attempts": 1,
+            "measurements": {
+              "validation_elapsed_seconds": {
+                "unit": "seconds",
+                "observed_count": 1,
+                "missing_count": 0,
+                "invalid_count": 0,
+                "sum": 9.01370850019157,
+                "median": 9.01370850019157,
+                "p95": 9.01370850019157,
+                "max": 9.01370850019157,
+                "sum_scope": "observed_records_only",
+                "reason": null
+              },
+              "extraction_elapsed_seconds": {
+                "unit": "seconds",
+                "observed_count": 1,
+                "missing_count": 0,
+                "invalid_count": 0,
+                "sum": 7.936087334062904,
+                "median": 7.936087334062904,
+                "p95": 7.936087334062904,
+                "max": 7.936087334062904,
+                "sum_scope": "observed_records_only",
+                "reason": null
+              },
+              "generation_elapsed_seconds": {
+                "unit": "seconds",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "observed_records_only",
+                "reason": "no_recorded_measurements",
+                "description": "Recorded generation workflow wall time, including retries/backoff for the built-in provider; not model-only compute."
+              },
+              "validation_peak_memory_mib": {
+                "unit": "MiB",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "not_applicable_for_peak_memory",
+                "reason": "no_recorded_measurements"
+              },
+              "extraction_peak_memory_mib": {
+                "unit": "MiB",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "not_applicable_for_peak_memory",
+                "reason": "no_recorded_measurements"
+              },
+              "input_tokens": {
+                "unit": "tokens",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "observed_records_only",
+                "reason": "no_recorded_measurements"
+              },
+              "output_tokens": {
+                "unit": "tokens",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "observed_records_only",
+                "reason": "no_recorded_measurements"
+              },
+              "reasoning_tokens": {
+                "unit": "tokens",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "observed_records_only",
+                "reason": "no_recorded_measurements"
+              }
+            },
+            "notes": [
+              "Missing or unrecorded values are not zero; extraction may not have run after a validation failure.",
+              "Elapsed sums and quantiles include only observed records; sums are not whole-run totals when coverage is incomplete.",
+              "Requested memory limits are not peak-memory measurements.",
+              "Generation latency is unavailable unless explicitly stored on the generation record; it is not inferred from timestamps or transport logs.",
+              "Built-in provider generation_elapsed_seconds measures the entire generation workflow, including fixed transport retries/backoff, not model-only computation.",
+              "Reasoning-token counts may already be included in provider output-token counts; these columns must not be added together.",
+              "No API cost is estimated without an explicit pricing schedule."
+            ]
+          }
+        },
+        "source_concision": {
+          "scheduled_attempts": 1,
+          "valid_attempts": 1,
+          "measurable_valid_attempts": 1,
+          "measurable_task_count": 1,
+          "measurable_family_count": 1,
+          "success_rate": 1.0,
+          "first_attempt_success_rate": 1,
+          "any_sample_success_rate": 1,
+          "metric_coverage_among_valid": 1.0,
+          "metric_coverage_among_scheduled": 1.0,
+          "missing_metric_reasons": {},
+          "failure_statuses": {},
+          "attainment": {
+            "0": {
+              "rate": 1.0,
+              "denominator_scheduled_attempts": 1,
+              "reason": null,
+              "attaining_valid_measurable_attempts": 1,
+              "fraction_of_measurable_valid_attaining": 1.0
+            },
+            "1": {
+              "rate": 0.0,
+              "denominator_scheduled_attempts": 1,
+              "reason": null,
+              "attaining_valid_measurable_attempts": 0,
+              "fraction_of_measurable_valid_attaining": 0.0
+            },
+            "2": {
+              "rate": 0.0,
+              "denominator_scheduled_attempts": 1,
+              "reason": null,
+              "attaining_valid_measurable_attempts": 0,
+              "fraction_of_measurable_valid_attaining": 0.0
+            }
+          },
+          "resources": {
+            "population": "all_scheduled_attempts_including_failures",
+            "scheduled_attempts": 1,
+            "measurements": {
+              "validation_elapsed_seconds": {
+                "unit": "seconds",
+                "observed_count": 1,
+                "missing_count": 0,
+                "invalid_count": 0,
+                "sum": 7.572982291691005,
+                "median": 7.572982291691005,
+                "p95": 7.572982291691005,
+                "max": 7.572982291691005,
+                "sum_scope": "observed_records_only",
+                "reason": null
+              },
+              "extraction_elapsed_seconds": {
+                "unit": "seconds",
+                "observed_count": 1,
+                "missing_count": 0,
+                "invalid_count": 0,
+                "sum": 8.991037874948233,
+                "median": 8.991037874948233,
+                "p95": 8.991037874948233,
+                "max": 8.991037874948233,
+                "sum_scope": "observed_records_only",
+                "reason": null
+              },
+              "generation_elapsed_seconds": {
+                "unit": "seconds",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "observed_records_only",
+                "reason": "no_recorded_measurements",
+                "description": "Recorded generation workflow wall time, including retries/backoff for the built-in provider; not model-only compute."
+              },
+              "validation_peak_memory_mib": {
+                "unit": "MiB",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "not_applicable_for_peak_memory",
+                "reason": "no_recorded_measurements"
+              },
+              "extraction_peak_memory_mib": {
+                "unit": "MiB",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "not_applicable_for_peak_memory",
+                "reason": "no_recorded_measurements"
+              },
+              "input_tokens": {
+                "unit": "tokens",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "observed_records_only",
+                "reason": "no_recorded_measurements"
+              },
+              "output_tokens": {
+                "unit": "tokens",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "observed_records_only",
+                "reason": "no_recorded_measurements"
+              },
+              "reasoning_tokens": {
+                "unit": "tokens",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "observed_records_only",
+                "reason": "no_recorded_measurements"
+              }
+            },
+            "notes": [
+              "Missing or unrecorded values are not zero; extraction may not have run after a validation failure.",
+              "Elapsed sums and quantiles include only observed records; sums are not whole-run totals when coverage is incomplete.",
+              "Requested memory limits are not peak-memory measurements.",
+              "Generation latency is unavailable unless explicitly stored on the generation record; it is not inferred from timestamps or transport logs.",
+              "Built-in provider generation_elapsed_seconds measures the entire generation workflow, including fixed transport retries/backoff, not model-only computation.",
+              "Reasoning-token counts may already be included in provider output-token counts; these columns must not be added together.",
+              "No API cost is estimated without an explicit pricing schedule."
+            ]
+          }
+        }
+      },
+      "contrasts": {
+        "compression_vs_standard": {
+          "conditions": [
+            "mathematical_compression",
+            "standard"
+          ],
+          "paired_population": {
+            "task_count": 1,
+            "family_count": 1,
+            "domains": {
+              "algebra_groups": 1
+            },
+            "origins": {
+              "fresh": 1
+            },
+            "splits": {
+              "pilot": 1
+            }
+          },
+          "paired_task_ids": [
+            "smoke_ag_01"
+          ],
+          "selection": {
+            "B_only_solved": 0,
+            "control_only_solved": 0,
+            "both_solved": 1,
+            "neither_solved": 0,
+            "B_only_measurable": 0,
+            "control_only_measurable": 0,
+            "B_valid_unmeasurable_attempts": 0,
+            "control_valid_unmeasurable_attempts": 0
+          },
+          "common_intersection_population": {
+            "task_count": 1,
+            "family_count": 1,
+            "domains": {
+              "algebra_groups": 1
+            },
+            "origins": {
+              "fresh": 1
+            },
+            "splits": {
+              "pilot": 1
+            }
+          },
+          "success_rate_difference": {
+            "estimate": 0.0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1
+          },
+          "first_attempt_difference": {
+            "estimate": 0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1
+          },
+          "any_sample_difference": {
+            "estimate": 0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1
+          },
+          "mean_log2_T0_difference": {
+            "estimate": 0.0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1,
+            "geometric_ratio": 1.0,
+            "geometric_ratio_interval": [
+              1.0,
+              1.0
+            ]
+          },
+          "mean_log2_U_difference": {
+            "estimate": 0.0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1,
+            "geometric_ratio": 1.0,
+            "geometric_ratio_interval": [
+              1.0,
+              1.0
+            ]
+          },
+          "mean_log2_W_difference": {
+            "estimate": 0.0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1,
+            "geometric_ratio": 1.0,
+            "geometric_ratio_interval": [
+              1.0,
+              1.0
+            ]
+          },
+          "common_mean_log2_T0_difference": {
+            "estimate": 0.0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1,
+            "geometric_ratio": 1.0,
+            "geometric_ratio_interval": [
+              1.0,
+              1.0
+            ]
+          },
+          "mean_depth_difference": {
+            "estimate": 0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1
+          },
+          "mean_log2_W_B_difference": {
+            "estimate": 0.0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1,
+            "geometric_ratio": 1.0,
+            "geometric_ratio_interval": [
+              1.0,
+              1.0
+            ]
+          },
+          "attainment_0_difference": {
+            "estimate": 0.0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1
+          },
+          "attainment_1_difference": {
+            "estimate": 0.0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1
+          },
+          "attainment_2_difference": {
+            "estimate": 0.0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1
+          },
+          "decomposition_residual": 0.0
+        },
+        "compression_vs_concision": {
+          "conditions": [
+            "mathematical_compression",
+            "source_concision"
+          ],
+          "paired_population": {
+            "task_count": 1,
+            "family_count": 1,
+            "domains": {
+              "algebra_groups": 1
+            },
+            "origins": {
+              "fresh": 1
+            },
+            "splits": {
+              "pilot": 1
+            }
+          },
+          "paired_task_ids": [
+            "smoke_ag_01"
+          ],
+          "selection": {
+            "B_only_solved": 0,
+            "control_only_solved": 0,
+            "both_solved": 1,
+            "neither_solved": 0,
+            "B_only_measurable": 0,
+            "control_only_measurable": 0,
+            "B_valid_unmeasurable_attempts": 0,
+            "control_valid_unmeasurable_attempts": 0
+          },
+          "common_intersection_population": {
+            "task_count": 1,
+            "family_count": 1,
+            "domains": {
+              "algebra_groups": 1
+            },
+            "origins": {
+              "fresh": 1
+            },
+            "splits": {
+              "pilot": 1
+            }
+          },
+          "success_rate_difference": {
+            "estimate": 0.0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1
+          },
+          "first_attempt_difference": {
+            "estimate": 0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1
+          },
+          "any_sample_difference": {
+            "estimate": 0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1
+          },
+          "mean_log2_T0_difference": {
+            "estimate": 0.0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1,
+            "geometric_ratio": 1.0,
+            "geometric_ratio_interval": [
+              1.0,
+              1.0
+            ]
+          },
+          "mean_log2_U_difference": {
+            "estimate": 0.0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1,
+            "geometric_ratio": 1.0,
+            "geometric_ratio_interval": [
+              1.0,
+              1.0
+            ]
+          },
+          "mean_log2_W_difference": {
+            "estimate": 0.0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1,
+            "geometric_ratio": 1.0,
+            "geometric_ratio_interval": [
+              1.0,
+              1.0
+            ]
+          },
+          "common_mean_log2_T0_difference": {
+            "estimate": 0.0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1,
+            "geometric_ratio": 1.0,
+            "geometric_ratio_interval": [
+              1.0,
+              1.0
+            ]
+          },
+          "mean_depth_difference": {
+            "estimate": 0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1
+          },
+          "mean_log2_W_B_difference": {
+            "estimate": 0.0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1,
+            "geometric_ratio": 1.0,
+            "geometric_ratio_interval": [
+              1.0,
+              1.0
+            ]
+          },
+          "attainment_0_difference": {
+            "estimate": 0.0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1
+          },
+          "attainment_1_difference": {
+            "estimate": 0.0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1
+          },
+          "attainment_2_difference": {
+            "estimate": 0.0,
+            "confidence_interval": [
+              0.0,
+              0.0
+            ],
+            "confidence_level": 0.95,
+            "method": "percentile_family_cluster_bootstrap",
+            "one_sided_lower_bound": 0.0,
+            "bootstrap_defined": 100,
+            "bootstrap_undefined": 0,
+            "task_count": 1,
+            "family_count": 1,
+            "uncertainty_warning": "fewer_than_two_supported_families",
+            "minimum_bootstrap_task_multiplicity": 1
+          },
+          "decomposition_residual": 0.0
+        }
+      },
+      "per_task": {
+        "smoke_ag_01": {
+          "standard": {
+            "success_rate": 1.0,
+            "first_attempt_success": 1,
+            "any_sample_success": 1,
+            "valid_count": 1,
+            "measurable_count": 1,
+            "metric_missing_valid_count": 0,
+            "missing_metric_reasons": {},
+            "mean_log2_T0": 24.57751176631106,
+            "mean_log2_U": 29.74743676775337,
+            "mean_log2_W": 5.169925001442312,
+            "mean_log2_W_B": 1.0,
+            "mean_D": 17,
+            "attainment": {
+              "0": 1.0,
+              "1": 0.0,
+              "2": 0.0
+            }
+          },
+          "mathematical_compression": {
+            "success_rate": 1.0,
+            "first_attempt_success": 1,
+            "any_sample_success": 1,
+            "valid_count": 1,
+            "measurable_count": 1,
+            "metric_missing_valid_count": 0,
+            "missing_metric_reasons": {},
+            "mean_log2_T0": 24.57751176631106,
+            "mean_log2_U": 29.74743676775337,
+            "mean_log2_W": 5.169925001442312,
+            "mean_log2_W_B": 1.0,
+            "mean_D": 17,
+            "attainment": {
+              "0": 1.0,
+              "1": 0.0,
+              "2": 0.0
+            }
+          },
+          "source_concision": {
+            "success_rate": 1.0,
+            "first_attempt_success": 1,
+            "any_sample_success": 1,
+            "valid_count": 1,
+            "measurable_count": 1,
+            "metric_missing_valid_count": 0,
+            "missing_metric_reasons": {},
+            "mean_log2_T0": 24.57751176631106,
+            "mean_log2_U": 29.74743676775337,
+            "mean_log2_W": 5.169925001442312,
+            "mean_log2_W_B": 1.0,
+            "mean_D": 17,
+            "attainment": {
+              "0": 1.0,
+              "1": 0.0,
+              "2": 0.0
+            }
+          }
+        }
+      },
+      "paired_tasks": [
+        {
+          "contrast": "compression_vs_standard",
+          "task_id": "smoke_ag_01",
+          "family_id": "pilot_ring_difference_square",
+          "domain": "algebra_groups",
+          "origin": "fresh",
+          "B_measurable_samples": 1,
+          "control_measurable_samples": 1,
+          "mean_log2_T0_difference": 0.0,
+          "mean_log2_U_difference": 0.0,
+          "mean_log2_W_difference": 0.0
+        },
+        {
+          "contrast": "compression_vs_concision",
+          "task_id": "smoke_ag_01",
+          "family_id": "pilot_ring_difference_square",
+          "domain": "algebra_groups",
+          "origin": "fresh",
+          "B_measurable_samples": 1,
+          "control_measurable_samples": 1,
+          "mean_log2_T0_difference": 0.0,
+          "mean_log2_U_difference": 0.0,
+          "mean_log2_W_difference": 0.0
+        }
+      ],
+      "common_intersection": {
+        "task_count": 1,
+        "family_count": 1,
+        "domains": {
+          "algebra_groups": 1
+        },
+        "origins": {
+          "fresh": 1
+        },
+        "splits": {
+          "pilot": 1
+        },
+        "task_ids": [
+          "smoke_ag_01"
+        ]
+      },
+      "missing_scheduled_records": [],
+      "incomplete_scheduled_outcomes": [],
+      "run_complete": true,
+      "correctness_conclusions_ready": true,
+      "fixed_signature_mismatch_task_ids": [],
+      "compression_conclusions_ready": true,
+      "distributions": {
+        "all": {
+          "population": "measurable_valid_attempts",
+          "composition": {
+            "task_count": 1,
+            "family_count": 1,
+            "domains": {
+              "algebra_groups": 1
+            },
+            "origins": {
+              "fresh": 1
+            },
+            "splits": {
+              "pilot": 1
+            }
+          },
+          "conditions": {
+            "standard": {
+              "W_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "2",
+                "q1": "2",
+                "q3": "2",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 1.0,
+                  "q1": 1.0,
+                  "q3": 1.0
+                }
+              },
+              "U_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901292402",
+                "q1": "901292402",
+                "q3": "901292402",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.747419987755972,
+                  "q1": 29.747419987755972,
+                  "q3": 29.747419987755972
+                }
+              },
+              "W": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "36",
+                "q1": "36",
+                "q3": "36",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 5.169925001442312,
+                  "q1": 5.169925001442312,
+                  "q3": 5.169925001442312
+                }
+              },
+              "U": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901302885",
+                "q1": "901302885",
+                "q3": "901302885",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.74743676775337,
+                  "q1": 29.74743676775337,
+                  "q3": 29.74743676775337
+                }
+              },
+              "I0": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "1/17",
+                "q1": "1/17",
+                "q3": "1/17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": -4.087462841250339,
+                  "q1": -4.087462841250339,
+                  "q3": -4.087462841250339
+                }
+              },
+              "D": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "17",
+                "q1": "17",
+                "q3": "17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 4.087462841250339,
+                  "q1": 4.087462841250339,
+                  "q3": 4.087462841250339
+                }
+              }
+            },
+            "mathematical_compression": {
+              "W_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "2",
+                "q1": "2",
+                "q3": "2",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 1.0,
+                  "q1": 1.0,
+                  "q3": 1.0
+                }
+              },
+              "U_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901292402",
+                "q1": "901292402",
+                "q3": "901292402",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.747419987755972,
+                  "q1": 29.747419987755972,
+                  "q3": 29.747419987755972
+                }
+              },
+              "W": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "36",
+                "q1": "36",
+                "q3": "36",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 5.169925001442312,
+                  "q1": 5.169925001442312,
+                  "q3": 5.169925001442312
+                }
+              },
+              "U": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901302885",
+                "q1": "901302885",
+                "q3": "901302885",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.74743676775337,
+                  "q1": 29.74743676775337,
+                  "q3": 29.74743676775337
+                }
+              },
+              "I0": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "1/17",
+                "q1": "1/17",
+                "q3": "1/17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": -4.087462841250339,
+                  "q1": -4.087462841250339,
+                  "q3": -4.087462841250339
+                }
+              },
+              "D": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "17",
+                "q1": "17",
+                "q3": "17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 4.087462841250339,
+                  "q1": 4.087462841250339,
+                  "q3": 4.087462841250339
+                }
+              }
+            },
+            "source_concision": {
+              "W_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "2",
+                "q1": "2",
+                "q3": "2",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 1.0,
+                  "q1": 1.0,
+                  "q3": 1.0
+                }
+              },
+              "U_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901292402",
+                "q1": "901292402",
+                "q3": "901292402",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.747419987755972,
+                  "q1": 29.747419987755972,
+                  "q3": 29.747419987755972
+                }
+              },
+              "W": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "36",
+                "q1": "36",
+                "q3": "36",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 5.169925001442312,
+                  "q1": 5.169925001442312,
+                  "q3": 5.169925001442312
+                }
+              },
+              "U": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901302885",
+                "q1": "901302885",
+                "q3": "901302885",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.74743676775337,
+                  "q1": 29.74743676775337,
+                  "q3": 29.74743676775337
+                }
+              },
+              "I0": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "1/17",
+                "q1": "1/17",
+                "q3": "1/17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": -4.087462841250339,
+                  "q1": -4.087462841250339,
+                  "q3": -4.087462841250339
+                }
+              },
+              "D": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "17",
+                "q1": "17",
+                "q3": "17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 4.087462841250339,
+                  "q1": 4.087462841250339,
+                  "q3": 4.087462841250339
+                }
+              }
+            }
+          },
+          "correctness_population": "all_scheduled_attempts",
+          "correctness_by_condition": {
+            "standard": {
+              "success_rate": 1.0,
+              "first_attempt_success_rate": 1,
+              "any_sample_success_rate": 1,
+              "scheduled_attempts": 1,
+              "valid_attempts": 1,
+              "measurable_attempts": 1
+            },
+            "mathematical_compression": {
+              "success_rate": 1.0,
+              "first_attempt_success_rate": 1,
+              "any_sample_success_rate": 1,
+              "scheduled_attempts": 1,
+              "valid_attempts": 1,
+              "measurable_attempts": 1
+            },
+            "source_concision": {
+              "success_rate": 1.0,
+              "first_attempt_success_rate": 1,
+              "any_sample_success_rate": 1,
+              "scheduled_attempts": 1,
+              "valid_attempts": 1,
+              "measurable_attempts": 1
+            }
+          }
+        },
+        "domain:algebra_groups": {
+          "population": "measurable_valid_attempts",
+          "composition": {
+            "task_count": 1,
+            "family_count": 1,
+            "domains": {
+              "algebra_groups": 1
+            },
+            "origins": {
+              "fresh": 1
+            },
+            "splits": {
+              "pilot": 1
+            }
+          },
+          "conditions": {
+            "standard": {
+              "W_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "2",
+                "q1": "2",
+                "q3": "2",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 1.0,
+                  "q1": 1.0,
+                  "q3": 1.0
+                }
+              },
+              "U_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901292402",
+                "q1": "901292402",
+                "q3": "901292402",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.747419987755972,
+                  "q1": 29.747419987755972,
+                  "q3": 29.747419987755972
+                }
+              },
+              "W": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "36",
+                "q1": "36",
+                "q3": "36",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 5.169925001442312,
+                  "q1": 5.169925001442312,
+                  "q3": 5.169925001442312
+                }
+              },
+              "U": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901302885",
+                "q1": "901302885",
+                "q3": "901302885",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.74743676775337,
+                  "q1": 29.74743676775337,
+                  "q3": 29.74743676775337
+                }
+              },
+              "I0": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "1/17",
+                "q1": "1/17",
+                "q3": "1/17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": -4.087462841250339,
+                  "q1": -4.087462841250339,
+                  "q3": -4.087462841250339
+                }
+              },
+              "D": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "17",
+                "q1": "17",
+                "q3": "17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 4.087462841250339,
+                  "q1": 4.087462841250339,
+                  "q3": 4.087462841250339
+                }
+              }
+            },
+            "mathematical_compression": {
+              "W_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "2",
+                "q1": "2",
+                "q3": "2",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 1.0,
+                  "q1": 1.0,
+                  "q3": 1.0
+                }
+              },
+              "U_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901292402",
+                "q1": "901292402",
+                "q3": "901292402",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.747419987755972,
+                  "q1": 29.747419987755972,
+                  "q3": 29.747419987755972
+                }
+              },
+              "W": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "36",
+                "q1": "36",
+                "q3": "36",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 5.169925001442312,
+                  "q1": 5.169925001442312,
+                  "q3": 5.169925001442312
+                }
+              },
+              "U": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901302885",
+                "q1": "901302885",
+                "q3": "901302885",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.74743676775337,
+                  "q1": 29.74743676775337,
+                  "q3": 29.74743676775337
+                }
+              },
+              "I0": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "1/17",
+                "q1": "1/17",
+                "q3": "1/17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": -4.087462841250339,
+                  "q1": -4.087462841250339,
+                  "q3": -4.087462841250339
+                }
+              },
+              "D": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "17",
+                "q1": "17",
+                "q3": "17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 4.087462841250339,
+                  "q1": 4.087462841250339,
+                  "q3": 4.087462841250339
+                }
+              }
+            },
+            "source_concision": {
+              "W_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "2",
+                "q1": "2",
+                "q3": "2",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 1.0,
+                  "q1": 1.0,
+                  "q3": 1.0
+                }
+              },
+              "U_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901292402",
+                "q1": "901292402",
+                "q3": "901292402",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.747419987755972,
+                  "q1": 29.747419987755972,
+                  "q3": 29.747419987755972
+                }
+              },
+              "W": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "36",
+                "q1": "36",
+                "q3": "36",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 5.169925001442312,
+                  "q1": 5.169925001442312,
+                  "q3": 5.169925001442312
+                }
+              },
+              "U": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901302885",
+                "q1": "901302885",
+                "q3": "901302885",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.74743676775337,
+                  "q1": 29.74743676775337,
+                  "q3": 29.74743676775337
+                }
+              },
+              "I0": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "1/17",
+                "q1": "1/17",
+                "q3": "1/17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": -4.087462841250339,
+                  "q1": -4.087462841250339,
+                  "q3": -4.087462841250339
+                }
+              },
+              "D": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "17",
+                "q1": "17",
+                "q3": "17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 4.087462841250339,
+                  "q1": 4.087462841250339,
+                  "q3": 4.087462841250339
+                }
+              }
+            }
+          },
+          "correctness_population": "all_scheduled_attempts",
+          "correctness_by_condition": {
+            "standard": {
+              "success_rate": 1.0,
+              "first_attempt_success_rate": 1,
+              "any_sample_success_rate": 1,
+              "scheduled_attempts": 1,
+              "valid_attempts": 1,
+              "measurable_attempts": 1
+            },
+            "mathematical_compression": {
+              "success_rate": 1.0,
+              "first_attempt_success_rate": 1,
+              "any_sample_success_rate": 1,
+              "scheduled_attempts": 1,
+              "valid_attempts": 1,
+              "measurable_attempts": 1
+            },
+            "source_concision": {
+              "success_rate": 1.0,
+              "first_attempt_success_rate": 1,
+              "any_sample_success_rate": 1,
+              "scheduled_attempts": 1,
+              "valid_attempts": 1,
+              "measurable_attempts": 1
+            }
+          }
+        },
+        "origin:fresh": {
+          "population": "measurable_valid_attempts",
+          "composition": {
+            "task_count": 1,
+            "family_count": 1,
+            "domains": {
+              "algebra_groups": 1
+            },
+            "origins": {
+              "fresh": 1
+            },
+            "splits": {
+              "pilot": 1
+            }
+          },
+          "conditions": {
+            "standard": {
+              "W_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "2",
+                "q1": "2",
+                "q3": "2",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 1.0,
+                  "q1": 1.0,
+                  "q3": 1.0
+                }
+              },
+              "U_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901292402",
+                "q1": "901292402",
+                "q3": "901292402",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.747419987755972,
+                  "q1": 29.747419987755972,
+                  "q3": 29.747419987755972
+                }
+              },
+              "W": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "36",
+                "q1": "36",
+                "q3": "36",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 5.169925001442312,
+                  "q1": 5.169925001442312,
+                  "q3": 5.169925001442312
+                }
+              },
+              "U": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901302885",
+                "q1": "901302885",
+                "q3": "901302885",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.74743676775337,
+                  "q1": 29.74743676775337,
+                  "q3": 29.74743676775337
+                }
+              },
+              "I0": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "1/17",
+                "q1": "1/17",
+                "q3": "1/17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": -4.087462841250339,
+                  "q1": -4.087462841250339,
+                  "q3": -4.087462841250339
+                }
+              },
+              "D": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "17",
+                "q1": "17",
+                "q3": "17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 4.087462841250339,
+                  "q1": 4.087462841250339,
+                  "q3": 4.087462841250339
+                }
+              }
+            },
+            "mathematical_compression": {
+              "W_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "2",
+                "q1": "2",
+                "q3": "2",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 1.0,
+                  "q1": 1.0,
+                  "q3": 1.0
+                }
+              },
+              "U_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901292402",
+                "q1": "901292402",
+                "q3": "901292402",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.747419987755972,
+                  "q1": 29.747419987755972,
+                  "q3": 29.747419987755972
+                }
+              },
+              "W": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "36",
+                "q1": "36",
+                "q3": "36",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 5.169925001442312,
+                  "q1": 5.169925001442312,
+                  "q3": 5.169925001442312
+                }
+              },
+              "U": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901302885",
+                "q1": "901302885",
+                "q3": "901302885",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.74743676775337,
+                  "q1": 29.74743676775337,
+                  "q3": 29.74743676775337
+                }
+              },
+              "I0": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "1/17",
+                "q1": "1/17",
+                "q3": "1/17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": -4.087462841250339,
+                  "q1": -4.087462841250339,
+                  "q3": -4.087462841250339
+                }
+              },
+              "D": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "17",
+                "q1": "17",
+                "q3": "17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 4.087462841250339,
+                  "q1": 4.087462841250339,
+                  "q3": 4.087462841250339
+                }
+              }
+            },
+            "source_concision": {
+              "W_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "2",
+                "q1": "2",
+                "q3": "2",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 1.0,
+                  "q1": 1.0,
+                  "q3": 1.0
+                }
+              },
+              "U_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901292402",
+                "q1": "901292402",
+                "q3": "901292402",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.747419987755972,
+                  "q1": 29.747419987755972,
+                  "q3": 29.747419987755972
+                }
+              },
+              "W": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "36",
+                "q1": "36",
+                "q3": "36",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 5.169925001442312,
+                  "q1": 5.169925001442312,
+                  "q3": 5.169925001442312
+                }
+              },
+              "U": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901302885",
+                "q1": "901302885",
+                "q3": "901302885",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.74743676775337,
+                  "q1": 29.74743676775337,
+                  "q3": 29.74743676775337
+                }
+              },
+              "I0": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "1/17",
+                "q1": "1/17",
+                "q3": "1/17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": -4.087462841250339,
+                  "q1": -4.087462841250339,
+                  "q3": -4.087462841250339
+                }
+              },
+              "D": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "17",
+                "q1": "17",
+                "q3": "17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 4.087462841250339,
+                  "q1": 4.087462841250339,
+                  "q3": 4.087462841250339
+                }
+              }
+            }
+          },
+          "correctness_population": "all_scheduled_attempts",
+          "correctness_by_condition": {
+            "standard": {
+              "success_rate": 1.0,
+              "first_attempt_success_rate": 1,
+              "any_sample_success_rate": 1,
+              "scheduled_attempts": 1,
+              "valid_attempts": 1,
+              "measurable_attempts": 1
+            },
+            "mathematical_compression": {
+              "success_rate": 1.0,
+              "first_attempt_success_rate": 1,
+              "any_sample_success_rate": 1,
+              "scheduled_attempts": 1,
+              "valid_attempts": 1,
+              "measurable_attempts": 1
+            },
+            "source_concision": {
+              "success_rate": 1.0,
+              "first_attempt_success_rate": 1,
+              "any_sample_success_rate": 1,
+              "scheduled_attempts": 1,
+              "valid_attempts": 1,
+              "measurable_attempts": 1
+            }
+          }
+        }
+      },
+      "audit_sample": {
+        "compression_vs_standard": {
+          "largest_negative": [],
+          "largest_positive": [],
+          "random_paired": [
+            "smoke_ag_01"
+          ],
+          "review_instruction": "Review all available outputs from all three conditions for each selected task."
+        },
+        "compression_vs_concision": {
+          "largest_negative": [],
+          "largest_positive": [],
+          "random_paired": [
+            "smoke_ag_01"
+          ],
+          "review_instruction": "Review all available outputs from all three conditions for each selected task."
+        }
+      }
+    }
+  },
+  "interpretation": [
+    "Compression comparisons condition on validity and metric availability.",
+    "All scheduled slots, including missing records, count in correctness denominators.",
+    "Point estimates weight tasks equally; bootstrap resamples whole theorem families.",
+    "Larger U/W alone does not establish better reasoning."
+  ],
+  "provenance": {
+    "metric_profile": "paper_aligned_v1",
+    "lean_toolchain": null,
+    "mathlib_commit": null,
+    "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+    "primitive_manifest_hash": null,
+    "source_token_policy_hash": "82278aac4f6faa62bcbabe626b0ca3c486cb3f2a6e213f12c9587341b3dbed61",
+    "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
+    "reachable_primitive_manifest_count": 1,
+    "reachable_primitive_manifest_note": "Per-root reachable primitive sets may differ under the same environment and boundary policy; their hashes are not corpus-wide boundary identities.",
+    "configured_boundary_policy": "expand_mathlib_and_evaluator_v1"
+  },
+  "run_provenance": {
+    "run_hash": "6122f5627920dd7875f20581dbb95a55cd03b218e39666b8059f80a4d1f5ad67",
+    "development": true,
+    "evaluation_version": "v2",
+    "model_snapshot": "reference_fixture",
+    "label": "Development fixture; not LLM evidence"
+  }
+}

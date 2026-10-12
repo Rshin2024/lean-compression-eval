@@ -1,0 +1,296 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_2"
+  ],
+  "trusted_type_source": "∀ {α : Type u_2} [inst : NormedDivisionRing.{u_2} α] (a : α),\n  Eq.{1} (Norm.norm.{u_2} (Inv.inv.{u_2} a)) (Inv.inv.{0} (Norm.norm.{u_2} a))",
+  "trusted_type_expression": "forall {α : Type.{u_2}} [inst._@.EvaluatorCandidate.2396617683._hygCtx._hyg.6 : NormedDivisionRing.{u_2} α] (a : α), Eq.{1} Real (Norm.norm.{u_2} α (NormedDivisionRing.toNorm.{u_2} α inst._@.EvaluatorCandidate.2396617683._hygCtx._hyg.6) (Inv.inv.{u_2} α (InvOneClass.toInv.{u_2} α (DivInvOneMonoid.toInvOneClass.{u_2} α (DivisionMonoid.toDivInvOneMonoid.{u_2} α (GroupWithZero.toDivisionMonoid.{u_2} α (DivisionSemiring.toGroupWithZero.{u_2} α (DivisionRing.toDivisionSemiring.{u_2} α (NormedDivisionRing.toDivisionRing.{u_2} α inst._@.EvaluatorCandidate.2396617683._hygCtx._hyg.6))))))) a)) (Inv.inv.{0} Real Real.instInv (Norm.norm.{u_2} α (NormedDivisionRing.toNorm.{u_2} α inst._@.EvaluatorCandidate.2396617683._hygCtx._hyg.6) a))",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} (Norm.norm.{u_2} (Inv.inv.{u_2} a)) (Inv.inv.{0} (Norm.norm.{u_2} a))",
+    "binders": [
+      {
+        "type_source": "Type u_2",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "NormedDivisionRing.{u_2} α",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.6",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "α",
+        "name": "a",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_analysis_inequalities_pilot_field_basic_03 (a : α) :\n  ‖a⁻¹‖ = ‖a‖⁻¹ :=\nmap_inv₀ (normHom : α →*₀ ℝ) a",
+    "signature_spans": [
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 91,
+        "end": 94
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 95,
+        "end": 100
+      },
+      {
+        "start": 100,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 106,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 110,
+        "end": 113
+      },
+      {
+        "start": 113,
+        "end": 118
+      }
+    ],
+    "proof_offset": 122,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 77
+      },
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 91,
+        "end": 94
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 95,
+        "end": 100
+      },
+      {
+        "start": 100,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 106,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 110,
+        "end": 113
+      },
+      {
+        "start": 113,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 132
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 134,
+        "end": 141
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 154
+      },
+      {
+        "start": 155,
+        "end": 158
+      },
+      {
+        "start": 158,
+        "end": 159
+      },
+      {
+        "start": 160,
+        "end": 161
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 122,
+        "end": 132
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 134,
+        "end": 141
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 146
+      },
+      {
+        "start": 147,
+        "end": 154
+      },
+      {
+        "start": 155,
+        "end": 158
+      },
+      {
+        "start": 158,
+        "end": 159
+      },
+      {
+        "start": 160,
+        "end": 161
+      }
+    ],
+    "W_full": 27,
+    "W_S": 14,
+    "W_B": 9
+  },
+  "root": "CompressionEval.lib_analysis_inequalities_pilot_field_basic_03",
+  "proved_type_fingerprint": "344775280",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 8089,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "null",
+      "Lean.Parser.Term.typeAscription",
+      "Lean.Parser.Term.hygienicLParen",
+      "hygieneInfo",
+      "«term_→*₀_»",
+      "termℝ"
+    ],
+    "proof_nodes": 171,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_analysis_inequalities_pilot_field_basic_03"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "bba2141c67f577536d732cdef3ab16c4320e725abb254c4c95aa9bc74948eb1b",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.690660500433296
+  },
+  "request_fingerprint": "3a335393a5cc1dfa4e1a59916b40d8db56f1025eb20ded648b80088c53d2719f"
+}

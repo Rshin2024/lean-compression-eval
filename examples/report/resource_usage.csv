@@ -1,0 +1,25 @@
+model,condition,measurement,population,scheduled_attempts,unit,observed_count,missing_count,invalid_count,sum,median,p95,max,sum_scope,reason,description
+reference_fixture,standard,validation_elapsed_seconds,all_scheduled_attempts_including_failures,1,seconds,1,0,0,12.14081212459132,12.14081212459132,12.14081212459132,12.14081212459132,observed_records_only,,
+reference_fixture,standard,extraction_elapsed_seconds,all_scheduled_attempts_including_failures,1,seconds,1,0,0,20.517539790831506,20.517539790831506,20.517539790831506,20.517539790831506,observed_records_only,,
+reference_fixture,standard,generation_elapsed_seconds,all_scheduled_attempts_including_failures,1,seconds,0,1,0,,,,,observed_records_only,no_recorded_measurements,"Recorded generation workflow wall time, including retries/backoff for the built-in provider; not model-only compute."
+reference_fixture,standard,validation_peak_memory_mib,all_scheduled_attempts_including_failures,1,MiB,0,1,0,,,,,not_applicable_for_peak_memory,no_recorded_measurements,
+reference_fixture,standard,extraction_peak_memory_mib,all_scheduled_attempts_including_failures,1,MiB,0,1,0,,,,,not_applicable_for_peak_memory,no_recorded_measurements,
+reference_fixture,standard,input_tokens,all_scheduled_attempts_including_failures,1,tokens,0,1,0,,,,,observed_records_only,no_recorded_measurements,
+reference_fixture,standard,output_tokens,all_scheduled_attempts_including_failures,1,tokens,0,1,0,,,,,observed_records_only,no_recorded_measurements,
+reference_fixture,standard,reasoning_tokens,all_scheduled_attempts_including_failures,1,tokens,0,1,0,,,,,observed_records_only,no_recorded_measurements,
+reference_fixture,mathematical_compression,validation_elapsed_seconds,all_scheduled_attempts_including_failures,1,seconds,1,0,0,9.01370850019157,9.01370850019157,9.01370850019157,9.01370850019157,observed_records_only,,
+reference_fixture,mathematical_compression,extraction_elapsed_seconds,all_scheduled_attempts_including_failures,1,seconds,1,0,0,7.936087334062904,7.936087334062904,7.936087334062904,7.936087334062904,observed_records_only,,
+reference_fixture,mathematical_compression,generation_elapsed_seconds,all_scheduled_attempts_including_failures,1,seconds,0,1,0,,,,,observed_records_only,no_recorded_measurements,"Recorded generation workflow wall time, including retries/backoff for the built-in provider; not model-only compute."
+reference_fixture,mathematical_compression,validation_peak_memory_mib,all_scheduled_attempts_including_failures,1,MiB,0,1,0,,,,,not_applicable_for_peak_memory,no_recorded_measurements,
+reference_fixture,mathematical_compression,extraction_peak_memory_mib,all_scheduled_attempts_including_failures,1,MiB,0,1,0,,,,,not_applicable_for_peak_memory,no_recorded_measurements,
+reference_fixture,mathematical_compression,input_tokens,all_scheduled_attempts_including_failures,1,tokens,0,1,0,,,,,observed_records_only,no_recorded_measurements,
+reference_fixture,mathematical_compression,output_tokens,all_scheduled_attempts_including_failures,1,tokens,0,1,0,,,,,observed_records_only,no_recorded_measurements,
+reference_fixture,mathematical_compression,reasoning_tokens,all_scheduled_attempts_including_failures,1,tokens,0,1,0,,,,,observed_records_only,no_recorded_measurements,
+reference_fixture,source_concision,validation_elapsed_seconds,all_scheduled_attempts_including_failures,1,seconds,1,0,0,7.572982291691005,7.572982291691005,7.572982291691005,7.572982291691005,observed_records_only,,
+reference_fixture,source_concision,extraction_elapsed_seconds,all_scheduled_attempts_including_failures,1,seconds,1,0,0,8.991037874948233,8.991037874948233,8.991037874948233,8.991037874948233,observed_records_only,,
+reference_fixture,source_concision,generation_elapsed_seconds,all_scheduled_attempts_including_failures,1,seconds,0,1,0,,,,,observed_records_only,no_recorded_measurements,"Recorded generation workflow wall time, including retries/backoff for the built-in provider; not model-only compute."
+reference_fixture,source_concision,validation_peak_memory_mib,all_scheduled_attempts_including_failures,1,MiB,0,1,0,,,,,not_applicable_for_peak_memory,no_recorded_measurements,
+reference_fixture,source_concision,extraction_peak_memory_mib,all_scheduled_attempts_including_failures,1,MiB,0,1,0,,,,,not_applicable_for_peak_memory,no_recorded_measurements,
+reference_fixture,source_concision,input_tokens,all_scheduled_attempts_including_failures,1,tokens,0,1,0,,,,,observed_records_only,no_recorded_measurements,
+reference_fixture,source_concision,output_tokens,all_scheduled_attempts_including_failures,1,tokens,0,1,0,,,,,observed_records_only,no_recorded_measurements,
+reference_fixture,source_concision,reasoning_tokens,all_scheduled_attempts_including_failures,1,tokens,0,1,0,,,,,observed_records_only,no_recorded_measurements,

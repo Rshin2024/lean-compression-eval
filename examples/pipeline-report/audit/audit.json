@@ -1,0 +1,85 @@
+{
+  "audit_version": "frozen_blinded_v1",
+  "blinding_limit": "Model and condition labels are hidden in review/. Proof text and mathematical task are preserved verbatim; they may reveal clues.",
+  "mechanism_labels": [
+    "ordinary brevity",
+    "useful existing-lemma reuse",
+    "local factoring",
+    "automation",
+    "irrelevant dependency growth",
+    "suspected answer access"
+  ],
+  "policy": "Manual labels explain metrics; they never override scores or remove valid outliers.",
+  "review_index": "review/index.html",
+  "run_hash": "6122f5627920dd7875f20581dbb95a55cd03b218e39666b8059f80a4d1f5ad67",
+  "seed": 20261012,
+  "selected_tasks": [
+    {
+      "attempt_count": 3,
+      "domain": "algebra_groups",
+      "evidence_directory": "review/task-95036cf69a329828",
+      "family_id": "pilot_ring_difference_square",
+      "origin": "fresh",
+      "paired_context": {
+        "reference_fixture": [
+          {
+            "B_measurable_samples": 1,
+            "contrast": "compression_vs_standard",
+            "control_measurable_samples": 1,
+            "domain": "algebra_groups",
+            "family_id": "pilot_ring_difference_square",
+            "mean_log2_T0_difference": 0.0,
+            "mean_log2_U_difference": 0.0,
+            "mean_log2_W_difference": 0.0,
+            "origin": "fresh",
+            "task_id": "smoke_ag_01"
+          },
+          {
+            "B_measurable_samples": 1,
+            "contrast": "compression_vs_concision",
+            "control_measurable_samples": 1,
+            "domain": "algebra_groups",
+            "family_id": "pilot_ring_difference_square",
+            "mean_log2_T0_difference": 0.0,
+            "mean_log2_U_difference": 0.0,
+            "mean_log2_W_difference": 0.0,
+            "origin": "fresh",
+            "task_id": "smoke_ag_01"
+          }
+        ]
+      },
+      "selection_reasons": [
+        {
+          "contrast": "compression_vs_concision",
+          "model_snapshot": "reference_fixture",
+          "reason": "random_paired"
+        },
+        {
+          "contrast": "compression_vs_standard",
+          "model_snapshot": "reference_fixture",
+          "reason": "random_paired"
+        }
+      ],
+      "task_code": "task-95036cf69a329828",
+      "task_id": "smoke_ag_01"
+    }
+  ],
+  "selection_by_contrast": {
+    "reference_fixture/compression_vs_concision": {
+      "largest_negative": [],
+      "largest_positive": [],
+      "random_paired": [
+        "smoke_ag_01"
+      ]
+    },
+    "reference_fixture/compression_vs_standard": {
+      "largest_negative": [],
+      "largest_positive": [],
+      "random_paired": [
+        "smoke_ag_01"
+      ]
+    }
+  },
+  "selection_rule": "10 strictly positive, 10 strictly negative, 20 random paired tasks per model/contrast",
+  "unblinding_key": "private/labels.json"
+}

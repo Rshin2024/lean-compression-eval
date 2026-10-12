@@ -1,0 +1,1432 @@
+{
+  "boundary_policy": "expand_mathlib_and_evaluator_v1",
+  "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+  "evaluated_at": "2026-10-12T04:02:04.460389+00:00",
+  "extraction": {
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.lib_algebra_groups_pilot_group_basic_05"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 585,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Elab.Tactic.Ext.ext",
+        "Lean.Parser.Tactic.rintroPat.one",
+        "Lean.Parser.Tactic.rcasesPat.one",
+        "Lean.Parser.Tactic.simp",
+        "Lean.Parser.Tactic.optConfig",
+        "Lean.Parser.Tactic.simpLemma"
+      ],
+      "transitive_dependency_count": 38
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "available",
+    "nodes": [
+      {
+        "body": {
+          "@Sort": 3,
+          "Eq": 4,
+          "Eq.trans": 1,
+          "Function.comp": 1,
+          "HMul.hMul": 24,
+          "Semigroup": 1,
+          "Semigroup.toMul": 24,
+          "True": 1,
+          "congrArg": 1,
+          "eq_self": 1,
+          "funext": 1,
+          "instHMul": 24,
+          "mul_assoc": 1,
+          "of_eq_true": 1
+        },
+        "body_nodes": 585,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "CompressionEval.lib_algebra_groups_pilot_group_basic_05",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 1,
+          "Function.comp": 1,
+          "HMul.hMul": 4,
+          "Semigroup": 1,
+          "Semigroup.toMul": 4,
+          "instHMul": 4
+        },
+        "source_counts": null,
+        "type_hash": "1384117838",
+        "type_nodes": 115,
+        "value_hash": "3793745522"
+      },
+      {
+        "body": null,
+        "name": "@Sort",
+        "owner_module": "@builtin",
+        "primitive": true,
+        "signature": {},
+        "type_hash": "@Sort",
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Semigroup",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2
+        },
+        "source_counts": null,
+        "type_hash": "3807510281",
+        "type_nodes": 3,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3970007004",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Function.comp",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3662594154",
+        "type_nodes": null,
+        "value_hash": "2414953941"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "HMul.hMul",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "998999565",
+        "type_nodes": null,
+        "value_hash": "2438139686"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instHMul",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2597214157",
+        "type_nodes": null,
+        "value_hash": "3745602868"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "Semigroup": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Semigroup.toMul",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Mul": 1,
+          "Semigroup": 1
+        },
+        "source_counts": null,
+        "type_hash": "1628757152",
+        "type_nodes": 9,
+        "value_hash": "49670622"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Mul",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3807510281",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "funext",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2419604752",
+        "type_nodes": null,
+        "value_hash": "3312662140"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "of_eq_true",
+        "owner_module": "Init.SimpLemmas",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "846120182",
+        "type_nodes": null,
+        "value_hash": "2847551586"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.trans",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2833799593",
+        "type_nodes": null,
+        "value_hash": "1736612116"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "True",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3944470172",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "congrArg",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2722762766",
+        "type_nodes": null,
+        "value_hash": "2643130269"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "Semigroup": 1,
+          "Semigroup.mul_assoc": 1
+        },
+        "body_nodes": 11,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "mul_assoc",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 1,
+          "HMul.hMul": 4,
+          "Semigroup": 1,
+          "Semigroup.toMul": 4,
+          "instHMul": 4
+        },
+        "source_counts": null,
+        "type_hash": "3468928909",
+        "type_nodes": 99,
+        "value_hash": "1052102176"
+      },
+      {
+        "body": {
+          "@Sort": 1,
+          "Semigroup": 1
+        },
+        "body_nodes": 8,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Semigroup.mul_assoc",
+        "owner_module": "Mathlib.Algebra.Group.Defs",
+        "primitive": false,
+        "signature": {
+          "@Sort": 1,
+          "Eq": 1,
+          "HMul.hMul": 4,
+          "Semigroup": 1,
+          "Semigroup.toMul": 4,
+          "instHMul": 4
+        },
+        "source_counts": null,
+        "type_hash": "3937942278",
+        "type_nodes": 99,
+        "value_hash": "94248353"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "eq_self",
+        "owner_module": "Init.SimpLemmas",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2707248190",
+        "type_nodes": null,
+        "value_hash": "1138976229"
+      }
+    ],
+    "process_returncode": 0,
+    "proved_type_fingerprint": "1384117838",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Aesop"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Algebra.Group.Defs"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Data.Int.Init"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Function.Iterate"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.SimpRw"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.SplitIfs"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 2.3996452088467777,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "99e17203f51785f4607fc55188059a79e1e44a8513f13f25155dc46ab3783bf5",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_algebra_groups_pilot_group_basic_05",
+    "source_tokens": {
+      "W_B": 7,
+      "W_S": 40,
+      "W_full": 51,
+      "body_spans": [
+        {
+          "end": 180,
+          "start": 178
+        },
+        {
+          "end": 186,
+          "start": 183
+        },
+        {
+          "end": 188,
+          "start": 187
+        },
+        {
+          "end": 195,
+          "start": 191
+        },
+        {
+          "end": 197,
+          "start": 196
+        },
+        {
+          "end": 206,
+          "start": 197
+        },
+        {
+          "end": 207,
+          "start": 206
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 70,
+          "start": 8
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 78,
+          "start": 72
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 85,
+          "start": 81
+        },
+        {
+          "end": 89,
+          "start": 86
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 92,
+          "start": 91
+        },
+        {
+          "end": 100,
+          "start": 92
+        },
+        {
+          "end": 102,
+          "start": 101
+        },
+        {
+          "end": 112,
+          "start": 103
+        },
+        {
+          "end": 114,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 114
+        },
+        {
+          "end": 118,
+          "start": 117
+        },
+        {
+          "end": 121,
+          "start": 119
+        },
+        {
+          "end": 122,
+          "start": 121
+        },
+        {
+          "end": 124,
+          "start": 123
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 127,
+          "start": 126
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 132,
+          "start": 130
+        },
+        {
+          "end": 133,
+          "start": 132
+        },
+        {
+          "end": 135,
+          "start": 134
+        },
+        {
+          "end": 139,
+          "start": 138
+        },
+        {
+          "end": 140,
+          "start": 139
+        },
+        {
+          "end": 142,
+          "start": 141
+        },
+        {
+          "end": 145,
+          "start": 143
+        },
+        {
+          "end": 146,
+          "start": 145
+        },
+        {
+          "end": 150,
+          "start": 147
+        },
+        {
+          "end": 152,
+          "start": 151
+        },
+        {
+          "end": 153,
+          "start": 152
+        },
+        {
+          "end": 155,
+          "start": 154
+        },
+        {
+          "end": 158,
+          "start": 156
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 161,
+          "start": 160
+        },
+        {
+          "end": 163,
+          "start": 162
+        },
+        {
+          "end": 164,
+          "start": 163
+        },
+        {
+          "end": 166,
+          "start": 165
+        },
+        {
+          "end": 168,
+          "start": 167
+        },
+        {
+          "end": 170,
+          "start": 169
+        },
+        {
+          "end": 173,
+          "start": 171
+        },
+        {
+          "end": 174,
+          "start": 173
+        },
+        {
+          "end": 177,
+          "start": 175
+        },
+        {
+          "end": 180,
+          "start": 178
+        },
+        {
+          "end": 186,
+          "start": 183
+        },
+        {
+          "end": 188,
+          "start": 187
+        },
+        {
+          "end": 195,
+          "start": 191
+        },
+        {
+          "end": 197,
+          "start": 196
+        },
+        {
+          "end": 206,
+          "start": 197
+        },
+        {
+          "end": 207,
+          "start": 206
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 178,
+      "signature_spans": [
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 78,
+          "start": 72
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 85,
+          "start": 81
+        },
+        {
+          "end": 89,
+          "start": 86
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 92,
+          "start": 91
+        },
+        {
+          "end": 100,
+          "start": 92
+        },
+        {
+          "end": 102,
+          "start": 101
+        },
+        {
+          "end": 112,
+          "start": 103
+        },
+        {
+          "end": 114,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 114
+        },
+        {
+          "end": 118,
+          "start": 117
+        },
+        {
+          "end": 121,
+          "start": 119
+        },
+        {
+          "end": 122,
+          "start": 121
+        },
+        {
+          "end": 124,
+          "start": 123
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 127,
+          "start": 126
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 132,
+          "start": 130
+        },
+        {
+          "end": 133,
+          "start": 132
+        },
+        {
+          "end": 139,
+          "start": 138
+        },
+        {
+          "end": 140,
+          "start": 139
+        },
+        {
+          "end": 142,
+          "start": 141
+        },
+        {
+          "end": 145,
+          "start": 143
+        },
+        {
+          "end": 146,
+          "start": 145
+        },
+        {
+          "end": 150,
+          "start": 147
+        },
+        {
+          "end": 152,
+          "start": 151
+        },
+        {
+          "end": 153,
+          "start": 152
+        },
+        {
+          "end": 155,
+          "start": 154
+        },
+        {
+          "end": 158,
+          "start": 156
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 161,
+          "start": 160
+        },
+        {
+          "end": 163,
+          "start": 162
+        },
+        {
+          "end": 164,
+          "start": 163
+        },
+        {
+          "end": 166,
+          "start": 165
+        },
+        {
+          "end": 168,
+          "start": 167
+        },
+        {
+          "end": 170,
+          "start": 169
+        },
+        {
+          "end": 173,
+          "start": 171
+        },
+        {
+          "end": 174,
+          "start": 173
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_algebra_groups_pilot_group_basic_05 {«α» : Type u_1} [«inst» : Semigroup.{u_1} α] (x y : α) :\n  (x * ·) ∘ (y * ·) = (x * y * ·) :=\nby\n  ext z\n  simp [mul_assoc]",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "α",
+          "type_source": "Type u_1"
+        },
+        {
+          "binder_info": "instance",
+          "name": "inst",
+          "type_source": "Semigroup.{u_1} α"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "x",
+          "type_source": "α"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "y",
+          "type_source": "α"
+        }
+      ],
+      "proposition": "Eq.{u_1 + 1}\n  (Function.comp.{u_1 + 1, u_1 + 1, u_1 + 1} (fun (x_1 : α) => HMul.hMul.{u_1, u_1, u_1} x x_1) fun (x : α) =>\n    HMul.hMul.{u_1, u_1, u_1} y x)\n  fun (x_1 : α) => HMul.hMul.{u_1, u_1, u_1} (HMul.hMul.{u_1, u_1, u_1} x y) x_1"
+    },
+    "trusted_type_expression": "forall {α : Type.{u_1}} [inst : Semigroup.{u_1} α] (x : α) (y : α), Eq.{succ u_1} (α -> α) (Function.comp.{succ u_1, succ u_1, succ u_1} α α α (fun (x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.21 : α) => HMul.hMul.{u_1, u_1, u_1} α α α (instHMul.{u_1} α (Semigroup.toMul.{u_1} α inst)) x x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.21) (fun (x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.32 : α) => HMul.hMul.{u_1, u_1, u_1} α α α (instHMul.{u_1} α (Semigroup.toMul.{u_1} α inst)) y x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.32)) (fun (x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.43 : α) => HMul.hMul.{u_1, u_1, u_1} α α α (instHMul.{u_1} α (Semigroup.toMul.{u_1} α inst)) (HMul.hMul.{u_1, u_1, u_1} α α α (instHMul.{u_1} α (Semigroup.toMul.{u_1} α inst)) x y) x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.43)",
+    "trusted_type_source": "∀ {α : Type u_1} [inst : Semigroup.{u_1} α] (x y : α),\n  Eq.{u_1 + 1}\n    (Function.comp.{u_1 + 1, u_1 + 1, u_1 + 1} (fun (x_1 : α) => HMul.hMul.{u_1, u_1, u_1} x x_1) fun (x : α) =>\n      HMul.hMul.{u_1, u_1, u_1} y x)\n    fun (x_1 : α) => HMul.hMul.{u_1, u_1, u_1} (HMul.hMul.{u_1, u_1, u_1} x y) x_1",
+    "universe_parameters": [
+      "u_1"
+    ],
+    "validity_status": "success"
+  },
+  "graph_hash": "66358df0015b67e9207d4ee11b610df7cbb79fbbcb37acba9e93b9f47cee4ae8",
+  "metric_status": "available",
+  "metrics": {
+    "D": 5,
+    "I0": {
+      "denominator_decimal": "40",
+      "log2": -2.5145731728297585,
+      "numerator_decimal": "7"
+    },
+    "T0": {
+      "denominator_decimal": "47",
+      "log2": 2.9332511821454137,
+      "numerator_decimal": "359"
+    },
+    "U_B_decimal": "318",
+    "U_S_decimal": "41",
+    "U_decimal": "359",
+    "W_B": 7,
+    "W_S": 40,
+    "body_state": "present",
+    "distinct_dependency_count": 16,
+    "log2_I0": -2.5145731728297585,
+    "log2_T0": 2.9332511821454137,
+    "log2_U": 8.487840033823051,
+    "log2_U_B": 8.312882955284355,
+    "log2_U_S": 5.357552004618084,
+    "log2_W": 5.554588851677638,
+    "metric_profile": "paper_aligned_v1",
+    "metric_status": "available",
+    "primitive_count": 12,
+    "reachable_node_count": 17,
+    "reasons": []
+  },
+  "primitive_manifest": [
+    "@Sort",
+    "Eq",
+    "Eq.trans",
+    "Function.comp",
+    "HMul.hMul",
+    "Mul",
+    "True",
+    "congrArg",
+    "eq_self",
+    "funext",
+    "instHMul",
+    "of_eq_true"
+  ],
+  "primitive_manifest_hash": "b5246325f6990cad8e3827b1a1af9b1ae9673060d5f07fc55caf517771728720",
+  "primitive_manifest_scope": "reachable closure; boundary policy and environment define shared corpus boundary",
+  "reference_cache_key": "5e3370218f4f4e94e232bf28f492760747333d96fa6268d4e6487d919d26b3eb",
+  "reference_proof_sha256": "6a7f5e27c4ae92e813928bbac01bb9e05891496ba4a626bda1a7138d1937496f",
+  "source_hash": "15d87a78164135cabe2ebaced20f87e6b751d9ed6792ae04eb04f661ef2528b2",
+  "source_token_policy_hash": "878ab5fb5aa65e79973e4577203e29b9e6d67de66b91ff97b86ad021f5f229c9",
+  "task_hash": "1d3c596101b45ece9893f898786e52b711af431b3c7a711289d065f2283b5381",
+  "task_id": "lib_algebra_groups_pilot_group_basic_05",
+  "task_input_hash": "a8c69d71fabe85455c65064641100a515113c041263adab250a783daaddb99b2",
+  "validation": {
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.lib_algebra_groups_pilot_group_basic_05"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 585,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Elab.Tactic.Ext.ext",
+        "Lean.Parser.Tactic.rintroPat.one",
+        "Lean.Parser.Tactic.rcasesPat.one",
+        "Lean.Parser.Tactic.simp",
+        "Lean.Parser.Tactic.optConfig",
+        "Lean.Parser.Tactic.simpLemma"
+      ],
+      "transitive_dependency_count": 38
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "1384117838",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Aesop"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Algebra.Group.Defs"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Data.Int.Init"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Function.Iterate"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.SimpRw"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.SplitIfs"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 2.437514209188521,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "7dfbad3e841908fb9f746b9b21ae599945edd48e9c1c215909984fedbfcad3c5",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_algebra_groups_pilot_group_basic_05",
+    "source_tokens": {
+      "W_B": 7,
+      "W_S": 40,
+      "W_full": 51,
+      "body_spans": [
+        {
+          "end": 180,
+          "start": 178
+        },
+        {
+          "end": 186,
+          "start": 183
+        },
+        {
+          "end": 188,
+          "start": 187
+        },
+        {
+          "end": 195,
+          "start": 191
+        },
+        {
+          "end": 197,
+          "start": 196
+        },
+        {
+          "end": 206,
+          "start": 197
+        },
+        {
+          "end": 207,
+          "start": 206
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 70,
+          "start": 8
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 78,
+          "start": 72
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 85,
+          "start": 81
+        },
+        {
+          "end": 89,
+          "start": 86
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 92,
+          "start": 91
+        },
+        {
+          "end": 100,
+          "start": 92
+        },
+        {
+          "end": 102,
+          "start": 101
+        },
+        {
+          "end": 112,
+          "start": 103
+        },
+        {
+          "end": 114,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 114
+        },
+        {
+          "end": 118,
+          "start": 117
+        },
+        {
+          "end": 121,
+          "start": 119
+        },
+        {
+          "end": 122,
+          "start": 121
+        },
+        {
+          "end": 124,
+          "start": 123
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 127,
+          "start": 126
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 132,
+          "start": 130
+        },
+        {
+          "end": 133,
+          "start": 132
+        },
+        {
+          "end": 135,
+          "start": 134
+        },
+        {
+          "end": 139,
+          "start": 138
+        },
+        {
+          "end": 140,
+          "start": 139
+        },
+        {
+          "end": 142,
+          "start": 141
+        },
+        {
+          "end": 145,
+          "start": 143
+        },
+        {
+          "end": 146,
+          "start": 145
+        },
+        {
+          "end": 150,
+          "start": 147
+        },
+        {
+          "end": 152,
+          "start": 151
+        },
+        {
+          "end": 153,
+          "start": 152
+        },
+        {
+          "end": 155,
+          "start": 154
+        },
+        {
+          "end": 158,
+          "start": 156
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 161,
+          "start": 160
+        },
+        {
+          "end": 163,
+          "start": 162
+        },
+        {
+          "end": 164,
+          "start": 163
+        },
+        {
+          "end": 166,
+          "start": 165
+        },
+        {
+          "end": 168,
+          "start": 167
+        },
+        {
+          "end": 170,
+          "start": 169
+        },
+        {
+          "end": 173,
+          "start": 171
+        },
+        {
+          "end": 174,
+          "start": 173
+        },
+        {
+          "end": 177,
+          "start": 175
+        },
+        {
+          "end": 180,
+          "start": 178
+        },
+        {
+          "end": 186,
+          "start": 183
+        },
+        {
+          "end": 188,
+          "start": 187
+        },
+        {
+          "end": 195,
+          "start": 191
+        },
+        {
+          "end": 197,
+          "start": 196
+        },
+        {
+          "end": 206,
+          "start": 197
+        },
+        {
+          "end": 207,
+          "start": 206
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 178,
+      "signature_spans": [
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 78,
+          "start": 72
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 85,
+          "start": 81
+        },
+        {
+          "end": 89,
+          "start": 86
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 92,
+          "start": 91
+        },
+        {
+          "end": 100,
+          "start": 92
+        },
+        {
+          "end": 102,
+          "start": 101
+        },
+        {
+          "end": 112,
+          "start": 103
+        },
+        {
+          "end": 114,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 114
+        },
+        {
+          "end": 118,
+          "start": 117
+        },
+        {
+          "end": 121,
+          "start": 119
+        },
+        {
+          "end": 122,
+          "start": 121
+        },
+        {
+          "end": 124,
+          "start": 123
+        },
+        {
+          "end": 125,
+          "start": 124
+        },
+        {
+          "end": 127,
+          "start": 126
+        },
+        {
+          "end": 129,
+          "start": 128
+        },
+        {
+          "end": 132,
+          "start": 130
+        },
+        {
+          "end": 133,
+          "start": 132
+        },
+        {
+          "end": 139,
+          "start": 138
+        },
+        {
+          "end": 140,
+          "start": 139
+        },
+        {
+          "end": 142,
+          "start": 141
+        },
+        {
+          "end": 145,
+          "start": 143
+        },
+        {
+          "end": 146,
+          "start": 145
+        },
+        {
+          "end": 150,
+          "start": 147
+        },
+        {
+          "end": 152,
+          "start": 151
+        },
+        {
+          "end": 153,
+          "start": 152
+        },
+        {
+          "end": 155,
+          "start": 154
+        },
+        {
+          "end": 158,
+          "start": 156
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 161,
+          "start": 160
+        },
+        {
+          "end": 163,
+          "start": 162
+        },
+        {
+          "end": 164,
+          "start": 163
+        },
+        {
+          "end": 166,
+          "start": 165
+        },
+        {
+          "end": 168,
+          "start": 167
+        },
+        {
+          "end": 170,
+          "start": 169
+        },
+        {
+          "end": 173,
+          "start": 171
+        },
+        {
+          "end": 174,
+          "start": 173
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_algebra_groups_pilot_group_basic_05 {«α» : Type u_1} [«inst» : Semigroup.{u_1} α] (x y : α) :\n  (x * ·) ∘ (y * ·) = (x * y * ·) :=\nby\n  ext z\n  simp [mul_assoc]",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "α",
+          "type_source": "Type u_1"
+        },
+        {
+          "binder_info": "instance",
+          "name": "inst",
+          "type_source": "Semigroup.{u_1} α"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "x",
+          "type_source": "α"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "y",
+          "type_source": "α"
+        }
+      ],
+      "proposition": "Eq.{u_1 + 1}\n  (Function.comp.{u_1 + 1, u_1 + 1, u_1 + 1} (fun (x_1 : α) => HMul.hMul.{u_1, u_1, u_1} x x_1) fun (x : α) =>\n    HMul.hMul.{u_1, u_1, u_1} y x)\n  fun (x_1 : α) => HMul.hMul.{u_1, u_1, u_1} (HMul.hMul.{u_1, u_1, u_1} x y) x_1"
+    },
+    "trusted_type_expression": "forall {α : Type.{u_1}} [inst : Semigroup.{u_1} α] (x : α) (y : α), Eq.{succ u_1} (α -> α) (Function.comp.{succ u_1, succ u_1, succ u_1} α α α (fun (x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.21 : α) => HMul.hMul.{u_1, u_1, u_1} α α α (instHMul.{u_1} α (Semigroup.toMul.{u_1} α inst)) x x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.21) (fun (x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.32 : α) => HMul.hMul.{u_1, u_1, u_1} α α α (instHMul.{u_1} α (Semigroup.toMul.{u_1} α inst)) y x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.32)) (fun (x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.43 : α) => HMul.hMul.{u_1, u_1, u_1} α α α (instHMul.{u_1} α (Semigroup.toMul.{u_1} α inst)) (HMul.hMul.{u_1, u_1, u_1} α α α (instHMul.{u_1} α (Semigroup.toMul.{u_1} α inst)) x y) x._@.EvaluatorCandidate.2995968760._hygCtx._hyg.43)",
+    "trusted_type_source": "∀ {α : Type u_1} [inst : Semigroup.{u_1} α] (x y : α),\n  Eq.{u_1 + 1}\n    (Function.comp.{u_1 + 1, u_1 + 1, u_1 + 1} (fun (x_1 : α) => HMul.hMul.{u_1, u_1, u_1} x x_1) fun (x : α) =>\n      HMul.hMul.{u_1, u_1, u_1} y x)\n    fun (x_1 : α) => HMul.hMul.{u_1, u_1, u_1} (HMul.hMul.{u_1, u_1, u_1} x y) x_1",
+    "universe_parameters": [
+      "u_1"
+    ],
+    "validity_status": "success"
+  },
+  "validity_status": "success"
+}

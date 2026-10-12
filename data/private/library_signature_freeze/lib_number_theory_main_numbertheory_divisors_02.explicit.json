@@ -1,0 +1,531 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "∀ {n : ℕ}, Ne.{1} n 0 → Eq.{1} ({d ∈ Finset.range n | Dvd.dvd.{0} d n}) n.properDivisors",
+  "trusted_type_expression": "forall {n : Nat}, (Ne.{1} Nat n (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0))) -> (Eq.{1} (Finset.{0} Nat) (Finset.filter.{0} Nat (fun (d : Nat) => Dvd.dvd.{0} Nat Nat.instDvd d n) (fun (a : Nat) => Nat.decidable_dvd a n) (Finset.range n)) (Nat.properDivisors n))",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} ({d ∈ Finset.range n | Dvd.dvd.{0} d n}) n.properDivisors",
+    "binders": [
+      {
+        "type_source": "ℕ",
+        "name": "n",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Ne.{1} n 0",
+        "name": "h",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_number_theory_main_numbertheory_divisors_02 {«n» : ℕ} (h : n ≠ 0) :\n  {d ∈ range n | d ∣ n} = n.properDivisors :=\nby\n  ext\n  simp only [properDivisors, mem_filter, mem_range, mem_Ico, and_congr_left_iff, iff_and_self]\n  exact fun ha _ => succ_le_iff.mpr (pos_of_dvd_of_pos ha h.bot_lt)",
+    "signature_spans": [
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 91
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 105,
+        "end": 106
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 112,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 128,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 135
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 155
+      }
+    ],
+    "proof_offset": 159,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 91
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 105,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 108
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 112,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 128,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 135
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 161
+      },
+      {
+        "start": 164,
+        "end": 167
+      },
+      {
+        "start": 170,
+        "end": 174
+      },
+      {
+        "start": 175,
+        "end": 179
+      },
+      {
+        "start": 180,
+        "end": 181
+      },
+      {
+        "start": 181,
+        "end": 195
+      },
+      {
+        "start": 195,
+        "end": 196
+      },
+      {
+        "start": 197,
+        "end": 207
+      },
+      {
+        "start": 207,
+        "end": 208
+      },
+      {
+        "start": 209,
+        "end": 218
+      },
+      {
+        "start": 218,
+        "end": 219
+      },
+      {
+        "start": 220,
+        "end": 227
+      },
+      {
+        "start": 227,
+        "end": 228
+      },
+      {
+        "start": 229,
+        "end": 247
+      },
+      {
+        "start": 247,
+        "end": 248
+      },
+      {
+        "start": 249,
+        "end": 261
+      },
+      {
+        "start": 261,
+        "end": 262
+      },
+      {
+        "start": 265,
+        "end": 270
+      },
+      {
+        "start": 271,
+        "end": 274
+      },
+      {
+        "start": 275,
+        "end": 277
+      },
+      {
+        "start": 278,
+        "end": 279
+      },
+      {
+        "start": 280,
+        "end": 282
+      },
+      {
+        "start": 283,
+        "end": 298
+      },
+      {
+        "start": 299,
+        "end": 300
+      },
+      {
+        "start": 300,
+        "end": 317
+      },
+      {
+        "start": 318,
+        "end": 320
+      },
+      {
+        "start": 321,
+        "end": 329
+      },
+      {
+        "start": 329,
+        "end": 330
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 159,
+        "end": 161
+      },
+      {
+        "start": 164,
+        "end": 167
+      },
+      {
+        "start": 170,
+        "end": 174
+      },
+      {
+        "start": 175,
+        "end": 179
+      },
+      {
+        "start": 180,
+        "end": 181
+      },
+      {
+        "start": 181,
+        "end": 195
+      },
+      {
+        "start": 195,
+        "end": 196
+      },
+      {
+        "start": 197,
+        "end": 207
+      },
+      {
+        "start": 207,
+        "end": 208
+      },
+      {
+        "start": 209,
+        "end": 218
+      },
+      {
+        "start": 218,
+        "end": 219
+      },
+      {
+        "start": 220,
+        "end": 227
+      },
+      {
+        "start": 227,
+        "end": 228
+      },
+      {
+        "start": 229,
+        "end": 247
+      },
+      {
+        "start": 247,
+        "end": 248
+      },
+      {
+        "start": 249,
+        "end": 261
+      },
+      {
+        "start": 261,
+        "end": 262
+      },
+      {
+        "start": 265,
+        "end": 270
+      },
+      {
+        "start": 271,
+        "end": 274
+      },
+      {
+        "start": 275,
+        "end": 277
+      },
+      {
+        "start": 278,
+        "end": 279
+      },
+      {
+        "start": 280,
+        "end": 282
+      },
+      {
+        "start": 283,
+        "end": 298
+      },
+      {
+        "start": 299,
+        "end": 300
+      },
+      {
+        "start": 300,
+        "end": 317
+      },
+      {
+        "start": 318,
+        "end": 320
+      },
+      {
+        "start": 321,
+        "end": 329
+      },
+      {
+        "start": 329,
+        "end": 330
+      }
+    ],
+    "W_full": 56,
+    "W_S": 24,
+    "W_B": 28
+  },
+  "root": "CompressionEval.lib_number_theory_main_numbertheory_divisors_02",
+  "proved_type_fingerprint": "3090073885",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 2728,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Elab.Tactic.Ext.ext",
+      "Lean.Parser.Tactic.simp",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.simpLemma",
+      "Lean.Parser.Tactic.exact",
+      "Lean.Parser.Term.fun",
+      "Lean.Parser.Term.basicFun",
+      "Lean.Parser.Term.hole",
+      "Lean.Parser.Term.app",
+      "Lean.Parser.Term.paren",
+      "Lean.Parser.Term.hygienicLParen",
+      "hygieneInfo"
+    ],
+    "proof_nodes": 1929,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "Nat.properDivisors.eq_1",
+    "CompressionEval.lib_number_theory_main_numbertheory_divisors_02"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "bcd4d70eaffd0be2dd61736328d26bd0167841b55e2ef7f00dcd92d314e7ae9e",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.719988750293851
+  },
+  "request_fingerprint": "c50b9bcc51899ca8a8f1826f1450cfc4e53ae72dbdcfdb597a18031e6a7d8ee7"
+}

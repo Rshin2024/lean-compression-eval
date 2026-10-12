@@ -1,0 +1,166 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {α : Type u_1} {s : Finset.{u_1} α}, Ne.{1} (Finset.card.{u_1} s) 0 ↔ Finset.Nonempty.{u_1} s",
+  "trusted_type_expression": "forall {α : Type.{u_1}} {s : Finset.{u_1} α}, Iff (Ne.{1} Nat (Finset.card.{u_1} α s) (OfNat.ofNat.{0} Nat 0 (instOfNatNat 0))) (Finset.Nonempty.{u_1} α s)",
+  "trusted_telescope": {
+    "proposition": "Ne.{1} (Finset.card.{u_1} s) 0 ↔ Finset.Nonempty.{u_1} s",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Finset.{u_1} α",
+        "name": "s",
+        "binder_info": "implicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_linear_algebra_combinatorics_main_finset_card_05  :\n  #s ≠ 0 ↔ s.Nonempty :=\ncard_eq_zero.ne.trans nonempty_iff_ne_empty.symm",
+    "signature_spans": [
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 90,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 112
+      }
+    ],
+    "proof_offset": 116,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 83
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 90,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 164
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 116,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 164
+      }
+    ],
+    "W_full": 12,
+    "W_S": 6,
+    "W_B": 2
+  },
+  "root": "CompressionEval.lib_linear_algebra_combinatorics_main_finset_card_05",
+  "proved_type_fingerprint": "3376242047",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 1978,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "null"
+    ],
+    "proof_nodes": 125,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_linear_algebra_combinatorics_main_finset_card_05"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "07b589912b1ba0c32311fd3563c37af736b63bf37f2864aa5ebff643d1ec17a1",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.519112665671855
+  },
+  "request_fingerprint": "14bc1d1c202f39b51881b01f0f38329d25c3db808cc52db780ef5277707cc1c0"
+}

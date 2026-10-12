@@ -1,0 +1,280 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {α : Type u_1} [inst : Unique.{u_1 + 1} α] [inst_1 : One.{u_1} α], Eq.{u_1 + 1} Inhabited.default.{u_1 + 1} 1",
+  "trusted_type_expression": "forall {α : Type.{u_1}} [inst._@.EvaluatorCandidate.4095687675._hygCtx._hyg.4 : Unique.{succ u_1} α] [inst._@.EvaluatorCandidate.4095687675._hygCtx._hyg.7 : One.{u_1} α], Eq.{succ u_1} α (Inhabited.default.{succ u_1} α (Unique.instInhabited.{succ u_1} α inst._@.EvaluatorCandidate.4095687675._hygCtx._hyg.4)) (OfNat.ofNat.{u_1} α 1 (One.toOfNat1.{u_1} α inst._@.EvaluatorCandidate.4095687675._hygCtx._hyg.7))",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_1 + 1} Inhabited.default.{u_1 + 1} 1",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Unique.{u_1 + 1} α",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.4",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "One.{u_1} α",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.7",
+        "binder_info": "instance"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_algebra_groups_main_units_basic_01 {α : Type*} [Unique α] [One α] :\n  default = (1 : α) :=\nUnique.default_eq 1",
+    "signature_spans": [
+      {
+        "start": 70,
+        "end": 71
+      },
+      {
+        "start": 71,
+        "end": 73
+      },
+      {
+        "start": 74,
+        "end": 75
+      },
+      {
+        "start": 76,
+        "end": 81
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 84,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 93
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 102
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 108,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 119,
+        "end": 120
+      },
+      {
+        "start": 121,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 125
+      },
+      {
+        "start": 125,
+        "end": 126
+      }
+    ],
+    "proof_offset": 130,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 69
+      },
+      {
+        "start": 70,
+        "end": 71
+      },
+      {
+        "start": 71,
+        "end": 73
+      },
+      {
+        "start": 74,
+        "end": 75
+      },
+      {
+        "start": 76,
+        "end": 81
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 84,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 93
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 102
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 108,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 119,
+        "end": 120
+      },
+      {
+        "start": 121,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 125
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 130,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      }
+    ],
+    "W_full": 26,
+    "W_S": 20,
+    "W_B": 2
+  },
+  "root": "CompressionEval.lib_algebra_groups_main_units_basic_01",
+  "proved_type_fingerprint": "323371460",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 25,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "null",
+      "num"
+    ],
+    "proof_nodes": 27,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_algebra_groups_main_units_basic_01"
+  ],
+  "axioms": [],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "08e1e8aba935a6b7f2beb5f46a38771fe3cdb15981fd88acfc81ababb169a390",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.360293250065297
+  },
+  "request_fingerprint": "ac1a5d465329001a15eeb1026608b964d3c66cbc0fcb8b81c0fbfad09e92cecc"
+}

@@ -1,0 +1,79 @@
+{
+  "task": {
+    "task_id": "lib_linear_algebra_combinatorics_main_finset_card_10",
+    "family_id": "source_module_Mathlib.Data.Finset.Card",
+    "domain": "linear_algebra_combinatorics",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Data.Finset.Basic",
+      "Mathlib.Data.Finset.Image",
+      "Mathlib.Data.Finset.Lattice.Lemmas"
+    ],
+    "context": "/-\nCopyright (c) 2015 Microsoft Corporation. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Leonardo de Moura, Jeremy Avigad\n-/\n/-!\n# Cardinality of a finite set\n\nThis defines the cardinality of a `Finset` and provides induction principles for finsets.\n\n## Main declarations\n\n* `Finset.card`: `#s : ℕ` returns the cardinality of `s : Finset α`.\n\n### Induction principles\n\n* `Finset.strongInduction`: Strong induction\n* `Finset.strongInductionOn`\n* `Finset.strongDownwardInduction`\n* `Finset.strongDownwardInductionOn`\n* `Finset.case_strong_induction_on`\n* `Finset.Nonempty.strong_induction`\n* `Finset.eraseInduction`\n-/\n\n@[expose] public section\n\nassert_not_exists Monoid\n\nopen Function Multiset Nat\n\nvariable {α β R : Type*}\n\nnamespace Finset\n\nvariable {s t : Finset α} {a b c : α}\n\n/-- `s.card` is the number of elements of `s`, aka its cardinality.\n\nThe notation `#s` can be accessed in the `Finset` locale. -/\ndef card (s : Finset α) : ℕ :=\n  Multiset.card s.1\n\n@[inherit_doc] scoped prefix:arg \"#\" => Finset.card\n\ntheorem card_def (s : Finset α) : #s = Multiset.card s.1 :=\n  rfl\n\n@[simp] lemma card_val (s : Finset α) : Multiset.card s.1 = #s := rfl\n\n@[simp]\ntheorem card_mk {m nodup} : #(⟨m, nodup⟩ : Finset α) = Multiset.card m :=\n  rfl\n\n@[simp, grind =]\ntheorem card_empty : #(∅ : Finset α) = 0 :=\n  rfl\n\n@[gcongr]\ntheorem card_le_card : s ⊆ t → #s ≤ #t :=\n  Multiset.card_le_card ∘ val_le_iff.mpr\n\n-- This pattern is unreasonable to use generally, but it's convenient in this file.\n-- (Note that we turn it on again later in this file.)\nlocal grind_pattern card_le_card => #s, #t\n\n@[mono]\ntheorem card_mono : Monotone (@card α) := by apply card_le_card\n\n@[simp] lemma card_eq_zero : #s = 0 ↔ s = ∅ := Multiset.card_eq_zero.trans val_eq_zero\nlemma card_ne_zero : #s ≠ 0 ↔ s.Nonempty := card_eq_zero.ne.trans nonempty_iff_ne_empty.symm\n@[simp] lemma card_pos : 0 < #s ↔ s.Nonempty := Nat.pos_iff_ne_zero.trans card_ne_zero\n@[simp] lemma one_le_card : 1 ≤ #s ↔ s.Nonempty := card_pos\n\nalias ⟨_, Nonempty.card_pos⟩ := card_pos\nalias ⟨_, Nonempty.card_ne_zero⟩ := card_ne_zero\n\ntheorem card_ne_zero_of_mem (h : a ∈ s) : #s ≠ 0 :=\n  (not_congr card_eq_zero).2 <| ne_empty_of_mem h\n\ngrind_pattern card_ne_zero_of_mem => a ∈ s, #s\n\n@[simp, grind =]\ntheorem card_singleton (a : α) : #{a} = 1 :=\n  Multiset.card_singleton _\n\ntheorem card_singleton_inter [DecidableEq α] : #({a} ∩ s) ≤ 1 := by grind\n\n@[simp, grind =]\ntheorem card_cons (h : a ∉ s) : #(s.cons a h) = #s + 1 :=\n  Multiset.card_cons _ _\n\nsection InsertErase\n\nvariable [DecidableEq α]\n\n@[simp, grind =]\ntheorem card_insert_of_notMem (h : a ∉ s) : #(insert a s) = #s + 1 := by\n  grind [=_ cons_eq_insert]\n\ntheorem card_insert_of_mem (h : a ∈ s) : #(insert a s) = #s := by rw [insert_eq_of_mem h]\n\ntheorem card_insert_le (a : α) (s : Finset α) : #(insert a s) ≤ #s + 1 := by grind\n\nsection\n\nvariable {a b c d e f : α}\n\nuniverse «u_1»\n\nassert_not_exists _root_.Finset.card_le_two\n",
+    "binders": "{«α» : Type u_1} [«inst» : DecidableEq.{u_1 + 1} α] {«a» : α} {«b» : α}",
+    "proposition": "#{a, b} ≤ 2",
+    "target_name": "_root_.CompressionEval.lib_linear_algebra_combinatorics_main_finset_card_10",
+    "premise_context": "open Function Multiset Nat\nvariable {α β R : Type*}\nnamespace Finset\nvariable {s t : Finset α} {a b c : α}\nsection InsertErase\nvariable [DecidableEq α]\nsection\nvariable {a b c d e f : α}\n\nAvailable preceding statements (within the shown source scopes):\nlemma card_ne_zero : #s ≠ 0 ↔ s.Nonempty\n\ntheorem card_ne_zero_of_mem (h : a ∈ s) : #s ≠ 0\n\ntheorem card_singleton (a : α) : #{a} = 1\n\ntheorem card_singleton_inter [DecidableEq α] : #({a} ∩ s) ≤ 1\n\ntheorem card_cons (h : a ∉ s) : #(s.cons a h) = #s + 1\n\ntheorem card_insert_of_notMem (h : a ∉ s) : #(insert a s) = #s + 1\n\ntheorem card_insert_of_mem (h : a ∈ s) : #(insert a s) = #s\n\ntheorem card_insert_le (a : α) (s : Finset α) : #(insert a s) ≤ #s + 1",
+    "forbidden_declarations": [
+      "Finset.card_le_two"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Data.Finset.Card",
+      "source_path": "Mathlib/Data/Finset/Card.lean",
+      "declaration": "Finset.card_le_two",
+      "source_line": 115,
+      "source_sha256": "63075161faba9370d95262eff21dfd43094d9f1a2f9ea1fd3bec52e2ffa2c2e9",
+      "prefix_end_character": 3068,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "201e4b64c7089dd640a4ade47d50c19a7ae45c6ff07c8b792ca012b98fdd1a2d",
+      "premise_context": "79013abf423017596013e247ce3719214a0fde41b093b5588d14d3f2800a5ac2",
+      "binders": "a79e124d06fbec1732aff6be4b71c4b264a594d9f1441c082f515ae6944dcc00",
+      "proposition": "6c4d209c946c8501109ac641176b55b179e6cfac6cc10706b6b6b01079b981e4"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Data.Finset.Basic",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Finset.Image",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Finset.Lattice.Lemmas",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

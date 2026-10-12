@@ -1,0 +1,1371 @@
+{
+  "boundary_policy": "expand_mathlib_and_evaluator_v1",
+  "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+  "evaluated_at": "2026-10-12T04:32:00.679638+00:00",
+  "extraction": {
+    "axioms": [],
+    "candidate_declarations": [
+      "CompressionEval.fresh_sets_logic_05"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 45,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.intro",
+        "Lean.Parser.Tactic.exact",
+        "Lean.Parser.Term.anonymousCtor",
+        "Lean.Parser.Term.fun",
+        "Lean.Parser.Term.basicFun",
+        "Lean.Parser.Term.app",
+        "Lean.Parser.Term.paren",
+        "Lean.Parser.Term.hygienicLParen",
+        "hygieneInfo"
+      ],
+      "transitive_dependency_count": 5
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "available",
+    "nodes": [
+      {
+        "body": {
+          "@Sort": 3,
+          "And.intro": 1,
+          "Not": 3
+        },
+        "body_nodes": 45,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "CompressionEval.fresh_sets_logic_05",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "@Sort": 3,
+          "And": 1,
+          "Not": 3
+        },
+        "source_counts": null,
+        "type_hash": "822686634",
+        "type_nodes": 27,
+        "value_hash": "4154587354"
+      },
+      {
+        "body": null,
+        "name": "@Sort",
+        "owner_module": "@builtin",
+        "primitive": true,
+        "signature": {},
+        "type_hash": "@Sort",
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Not",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3536219763",
+        "type_nodes": null,
+        "value_hash": "147715320"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "And",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2232915537",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "And.intro",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2469061797",
+        "type_nodes": null,
+        "value_hash": null
+      }
+    ],
+    "process_returncode": 0,
+    "proved_type_fingerprint": "822686634",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 17.50603145826608,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "5025832852b98d39a76f9a4dea8fff9cb479fdb5cf5f1efc19e3a192ff899ac1",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.fresh_sets_logic_05",
+    "source_tokens": {
+      "W_B": 27,
+      "W_S": 29,
+      "W_full": 60,
+      "body_spans": [
+        {
+          "end": 127,
+          "start": 125
+        },
+        {
+          "end": 133,
+          "start": 128
+        },
+        {
+          "end": 136,
+          "start": 134
+        },
+        {
+          "end": 137,
+          "start": 136
+        },
+        {
+          "end": 143,
+          "start": 138
+        },
+        {
+          "end": 147,
+          "start": 144
+        },
+        {
+          "end": 150,
+          "start": 147
+        },
+        {
+          "end": 153,
+          "start": 151
+        },
+        {
+          "end": 156,
+          "start": 154
+        },
+        {
+          "end": 159,
+          "start": 157
+        },
+        {
+          "end": 161,
+          "start": 160
+        },
+        {
+          "end": 164,
+          "start": 161
+        },
+        {
+          "end": 166,
+          "start": 165
+        },
+        {
+          "end": 169,
+          "start": 166
+        },
+        {
+          "end": 172,
+          "start": 170
+        },
+        {
+          "end": 173,
+          "start": 172
+        },
+        {
+          "end": 174,
+          "start": 173
+        },
+        {
+          "end": 175,
+          "start": 174
+        },
+        {
+          "end": 179,
+          "start": 176
+        },
+        {
+          "end": 182,
+          "start": 180
+        },
+        {
+          "end": 185,
+          "start": 183
+        },
+        {
+          "end": 188,
+          "start": 186
+        },
+        {
+          "end": 190,
+          "start": 189
+        },
+        {
+          "end": 193,
+          "start": 190
+        },
+        {
+          "end": 196,
+          "start": 194
+        },
+        {
+          "end": 197,
+          "start": 196
+        },
+        {
+          "end": 200,
+          "start": 197
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 50,
+          "start": 8
+        },
+        {
+          "end": 52,
+          "start": 51
+        },
+        {
+          "end": 53,
+          "start": 52
+        },
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 57,
+          "start": 56
+        },
+        {
+          "end": 59,
+          "start": 58
+        },
+        {
+          "end": 64,
+          "start": 60
+        },
+        {
+          "end": 65,
+          "start": 64
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 70,
+          "start": 67
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 78,
+          "start": 75
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 86,
+          "start": 83
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 94,
+          "start": 91
+        },
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 104,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 112,
+          "start": 110
+        },
+        {
+          "end": 113,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 114
+        },
+        {
+          "end": 120,
+          "start": 118
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 124,
+          "start": 122
+        },
+        {
+          "end": 127,
+          "start": 125
+        },
+        {
+          "end": 133,
+          "start": 128
+        },
+        {
+          "end": 136,
+          "start": 134
+        },
+        {
+          "end": 137,
+          "start": 136
+        },
+        {
+          "end": 143,
+          "start": 138
+        },
+        {
+          "end": 147,
+          "start": 144
+        },
+        {
+          "end": 150,
+          "start": 147
+        },
+        {
+          "end": 153,
+          "start": 151
+        },
+        {
+          "end": 156,
+          "start": 154
+        },
+        {
+          "end": 159,
+          "start": 157
+        },
+        {
+          "end": 161,
+          "start": 160
+        },
+        {
+          "end": 164,
+          "start": 161
+        },
+        {
+          "end": 166,
+          "start": 165
+        },
+        {
+          "end": 169,
+          "start": 166
+        },
+        {
+          "end": 172,
+          "start": 170
+        },
+        {
+          "end": 173,
+          "start": 172
+        },
+        {
+          "end": 174,
+          "start": 173
+        },
+        {
+          "end": 175,
+          "start": 174
+        },
+        {
+          "end": 179,
+          "start": 176
+        },
+        {
+          "end": 182,
+          "start": 180
+        },
+        {
+          "end": 185,
+          "start": 183
+        },
+        {
+          "end": 188,
+          "start": 186
+        },
+        {
+          "end": 190,
+          "start": 189
+        },
+        {
+          "end": 193,
+          "start": 190
+        },
+        {
+          "end": 196,
+          "start": 194
+        },
+        {
+          "end": 197,
+          "start": 196
+        },
+        {
+          "end": 200,
+          "start": 197
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 125,
+      "signature_spans": [
+        {
+          "end": 52,
+          "start": 51
+        },
+        {
+          "end": 53,
+          "start": 52
+        },
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 57,
+          "start": 56
+        },
+        {
+          "end": 59,
+          "start": 58
+        },
+        {
+          "end": 64,
+          "start": 60
+        },
+        {
+          "end": 65,
+          "start": 64
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 70,
+          "start": 67
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 78,
+          "start": 75
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 86,
+          "start": 83
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 94,
+          "start": 91
+        },
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 104,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 112,
+          "start": 110
+        },
+        {
+          "end": 113,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 114
+        },
+        {
+          "end": 120,
+          "start": 118
+        },
+        {
+          "end": 121,
+          "start": 120
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.fresh_sets_logic_05 (P Q R : Prop) (hpq : P → Q) (hqr : Q → R) :\n  ¬R → ¬P ∧ ¬Q :=\nby intro hn; exact ⟨fun hp => hn (hqr (hpq hp)), fun hq => hn (hqr hq)⟩",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "explicit",
+          "name": "P",
+          "type_source": "Prop"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "Q",
+          "type_source": "Prop"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "R",
+          "type_source": "Prop"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hpq",
+          "type_source": "P → Q"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hqr",
+          "type_source": "Q → R"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "a._@._internal._hyg.0",
+          "type_source": "¬R"
+        }
+      ],
+      "proposition": "¬P ∧ ¬Q"
+    },
+    "trusted_type_expression": "forall (P : Prop) (Q : Prop) (R : Prop), (P -> Q) -> (Q -> R) -> (Not R) -> (And (Not P) (Not Q))",
+    "trusted_type_source": "∀ (P Q R : Prop), (P → Q) → (Q → R) → ¬R → ¬P ∧ ¬Q",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "graph_hash": "c8ba791b513ce612ea3ba78156072594251176e23ec82139ed3d75451f2b2029",
+  "historical_record_sha256": "cd923a369523d6f5c16e450764b59ea8c8f530a0277800b50c366fdf1d17cd02",
+  "metric_status": "available",
+  "metrics": {
+    "D": 1,
+    "I0": {
+      "denominator_decimal": "29",
+      "log2": -0.10309349296410364,
+      "numerator_decimal": "27"
+    },
+    "T0": {
+      "denominator_decimal": "56",
+      "log2": -1.9999999999999996,
+      "numerator_decimal": "14"
+    },
+    "U_B_decimal": "7",
+    "U_S_decimal": "7",
+    "U_decimal": "14",
+    "W_B": 27,
+    "W_S": 29,
+    "body_state": "present",
+    "distinct_dependency_count": 4,
+    "log2_I0": -0.10309349296410364,
+    "log2_T0": -1.9999999999999996,
+    "log2_U": 3.807354922057604,
+    "log2_U_B": 2.807354922057604,
+    "log2_U_S": 2.807354922057604,
+    "log2_W": 5.807354922057604,
+    "metric_profile": "paper_aligned_v1",
+    "metric_status": "available",
+    "primitive_count": 4,
+    "reachable_node_count": 5,
+    "reasons": []
+  },
+  "normalization_cache_key": "fb7297f8bb4a26d68cb0a57622e82a2bd69e9e16795d0c6e472e622ad2c93736",
+  "primitive_manifest": [
+    "@Sort",
+    "And",
+    "And.intro",
+    "Not"
+  ],
+  "primitive_manifest_hash": "c997e2bc10e7d45ccf1462fe01ecbbb92c13ce462055aee692948589dcef29ef",
+  "primitive_manifest_scope": "reachable closure; boundary policy and environment define shared corpus boundary",
+  "reference_proof_sha256": "0d621ea1eb966cbe3fcd92fa984290599c4f105cc9e505165fd8bb5c5c6ecdc8",
+  "replaces_engine_hash": "3c093c02b7d907faad45ede5ed175e3527aeaa9dbb9ca2141293075aaeeaa343",
+  "source_hash": "9ef3e29e56f47dee1110760e5d2357d126aceca1e3d6110150c566466ec5df8d",
+  "source_token_policy_hash": "878ab5fb5aa65e79973e4577203e29b9e6d67de66b91ff97b86ad021f5f229c9",
+  "submitted_proof": "by intro hn; exact ⟨fun hp => hn (hqr (hpq hp)), fun hq => hn (hqr hq)⟩",
+  "supporting_diagnostics": {
+    "helper_count": 0,
+    "helper_count_scope": "generated auxiliary declarations; local have/let source remains included in W_B",
+    "proof_nodes": 45,
+    "tactic_syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "Lean.Parser.Tactic.intro",
+      "Lean.Parser.Tactic.exact"
+    ]
+  },
+  "task_hash": "f2f91b01201a30e2e9b7f9d3afdbb1bdca055f84e78970ceb51d89c92e0111f2",
+  "task_id": "fresh_sets_logic_05",
+  "task_input_hash": "4bfd780f2912f544fec8922d40082de8d8b8b04e0a20c2a33f7d4af72695ba12",
+  "task_snapshot": {
+    "audit": {
+      "answer_access_audited": false,
+      "explicit_signature_frozen": true,
+      "family_reviewed": false,
+      "metric_closure_verified": true,
+      "reference_verification_method": "Lean compiler, batch source; engine replay/axiom audit pending",
+      "reference_verified": true
+    },
+    "binders": "(P Q R : Prop) (hpq : P → Q) (hqr : Q → R)",
+    "context": "",
+    "domain": "sets_logic",
+    "environment": {
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1",
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11"
+    },
+    "family_id": "main_logic_contrapositive_pair",
+    "forbidden_declarations": [],
+    "hashes": {
+      "binders": "11f22c83d164822c19d361a6e0a86ef7c2267c29bf41dd8e650bb50fb86ba8e2",
+      "context": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "premise_context": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "proposition": "96a64969a9e2524ef6939f0c70c56289bfdcb6f0be4152ba15bdf33307bddac4"
+    },
+    "imports": [
+      "Mathlib"
+    ],
+    "origin": "fresh",
+    "premise_context": "",
+    "proposition": "¬R → ¬P ∧ ¬Q",
+    "provenance": {
+      "authorship_date": "2026-10-11",
+      "kind": "authored_composition",
+      "rationale": "Extracts two contrapositives from a chained implication.",
+      "training_novelty": "not_established"
+    },
+    "reference_measurements": {
+      "D": 1,
+      "T0": {
+        "denominator_decimal": "56",
+        "log2": -1.9999999999999996,
+        "numerator_decimal": "14"
+      },
+      "U_B_decimal": "7",
+      "U_S_decimal": "7",
+      "W_B": 27,
+      "W_S": 29,
+      "engine_hash": "3c093c02b7d907faad45ede5ed175e3527aeaa9dbb9ca2141293075aaeeaa343",
+      "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f"
+    },
+    "smoke": false,
+    "split": "main",
+    "stratum": "provisional_easy",
+    "target_name": "_root_.CompressionEval.fresh_sets_logic_05",
+    "task_id": "fresh_sets_logic_05"
+  },
+  "validation": {
+    "axioms": [],
+    "candidate_declarations": [
+      "CompressionEval.fresh_sets_logic_05"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 45,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.intro",
+        "Lean.Parser.Tactic.exact",
+        "Lean.Parser.Term.anonymousCtor",
+        "Lean.Parser.Term.fun",
+        "Lean.Parser.Term.basicFun",
+        "Lean.Parser.Term.app",
+        "Lean.Parser.Term.paren",
+        "Lean.Parser.Term.hygienicLParen",
+        "hygieneInfo"
+      ],
+      "transitive_dependency_count": 5
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "822686634",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 26.455249208025634,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "cd55118806d0016ab2fb92bb7f212b61e45593ca7f05e07a4d74e8b3dd2a13df",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.fresh_sets_logic_05",
+    "source_tokens": {
+      "W_B": 27,
+      "W_S": 29,
+      "W_full": 60,
+      "body_spans": [
+        {
+          "end": 127,
+          "start": 125
+        },
+        {
+          "end": 133,
+          "start": 128
+        },
+        {
+          "end": 136,
+          "start": 134
+        },
+        {
+          "end": 137,
+          "start": 136
+        },
+        {
+          "end": 143,
+          "start": 138
+        },
+        {
+          "end": 147,
+          "start": 144
+        },
+        {
+          "end": 150,
+          "start": 147
+        },
+        {
+          "end": 153,
+          "start": 151
+        },
+        {
+          "end": 156,
+          "start": 154
+        },
+        {
+          "end": 159,
+          "start": 157
+        },
+        {
+          "end": 161,
+          "start": 160
+        },
+        {
+          "end": 164,
+          "start": 161
+        },
+        {
+          "end": 166,
+          "start": 165
+        },
+        {
+          "end": 169,
+          "start": 166
+        },
+        {
+          "end": 172,
+          "start": 170
+        },
+        {
+          "end": 173,
+          "start": 172
+        },
+        {
+          "end": 174,
+          "start": 173
+        },
+        {
+          "end": 175,
+          "start": 174
+        },
+        {
+          "end": 179,
+          "start": 176
+        },
+        {
+          "end": 182,
+          "start": 180
+        },
+        {
+          "end": 185,
+          "start": 183
+        },
+        {
+          "end": 188,
+          "start": 186
+        },
+        {
+          "end": 190,
+          "start": 189
+        },
+        {
+          "end": 193,
+          "start": 190
+        },
+        {
+          "end": 196,
+          "start": 194
+        },
+        {
+          "end": 197,
+          "start": 196
+        },
+        {
+          "end": 200,
+          "start": 197
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 50,
+          "start": 8
+        },
+        {
+          "end": 52,
+          "start": 51
+        },
+        {
+          "end": 53,
+          "start": 52
+        },
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 57,
+          "start": 56
+        },
+        {
+          "end": 59,
+          "start": 58
+        },
+        {
+          "end": 64,
+          "start": 60
+        },
+        {
+          "end": 65,
+          "start": 64
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 70,
+          "start": 67
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 78,
+          "start": 75
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 86,
+          "start": 83
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 94,
+          "start": 91
+        },
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 99,
+          "start": 98
+        },
+        {
+          "end": 104,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 112,
+          "start": 110
+        },
+        {
+          "end": 113,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 114
+        },
+        {
+          "end": 120,
+          "start": 118
+        },
+        {
+          "end": 121,
+          "start": 120
+        },
+        {
+          "end": 124,
+          "start": 122
+        },
+        {
+          "end": 127,
+          "start": 125
+        },
+        {
+          "end": 133,
+          "start": 128
+        },
+        {
+          "end": 136,
+          "start": 134
+        },
+        {
+          "end": 137,
+          "start": 136
+        },
+        {
+          "end": 143,
+          "start": 138
+        },
+        {
+          "end": 147,
+          "start": 144
+        },
+        {
+          "end": 150,
+          "start": 147
+        },
+        {
+          "end": 153,
+          "start": 151
+        },
+        {
+          "end": 156,
+          "start": 154
+        },
+        {
+          "end": 159,
+          "start": 157
+        },
+        {
+          "end": 161,
+          "start": 160
+        },
+        {
+          "end": 164,
+          "start": 161
+        },
+        {
+          "end": 166,
+          "start": 165
+        },
+        {
+          "end": 169,
+          "start": 166
+        },
+        {
+          "end": 172,
+          "start": 170
+        },
+        {
+          "end": 173,
+          "start": 172
+        },
+        {
+          "end": 174,
+          "start": 173
+        },
+        {
+          "end": 175,
+          "start": 174
+        },
+        {
+          "end": 179,
+          "start": 176
+        },
+        {
+          "end": 182,
+          "start": 180
+        },
+        {
+          "end": 185,
+          "start": 183
+        },
+        {
+          "end": 188,
+          "start": 186
+        },
+        {
+          "end": 190,
+          "start": 189
+        },
+        {
+          "end": 193,
+          "start": 190
+        },
+        {
+          "end": 196,
+          "start": 194
+        },
+        {
+          "end": 197,
+          "start": 196
+        },
+        {
+          "end": 200,
+          "start": 197
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 125,
+      "signature_spans": [
+        {
+          "end": 52,
+          "start": 51
+        },
+        {
+          "end": 53,
+          "start": 52
+        },
+        {
+          "end": 55,
+          "start": 54
+        },
+        {
+          "end": 57,
+          "start": 56
+        },
+        {
+          "end": 59,
+          "start": 58
+        },
+        {
+          "end": 64,
+          "start": 60
+        },
+        {
+          "end": 65,
+          "start": 64
+        },
+        {
+          "end": 67,
+          "start": 66
+        },
+        {
+          "end": 70,
+          "start": 67
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 74,
+          "start": 73
+        },
+        {
+          "end": 78,
+          "start": 75
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 81,
+          "start": 80
+        },
+        {
+          "end": 83,
+          "start": 82
+        },
+        {
+          "end": 86,
+          "start": 83
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 94,
+          "start": 91
+        },
+        {
+          "end": 96,
+          "start": 95
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 104,
+          "start": 102
+        },
+        {
+          "end": 105,
+          "start": 104
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 112,
+          "start": 110
+        },
+        {
+          "end": 113,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 114
+        },
+        {
+          "end": 120,
+          "start": 118
+        },
+        {
+          "end": 121,
+          "start": 120
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.fresh_sets_logic_05 (P Q R : Prop) (hpq : P → Q) (hqr : Q → R) :\n  ¬R → ¬P ∧ ¬Q :=\nby intro hn; exact ⟨fun hp => hn (hqr (hpq hp)), fun hq => hn (hqr hq)⟩",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "explicit",
+          "name": "P",
+          "type_source": "Prop"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "Q",
+          "type_source": "Prop"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "R",
+          "type_source": "Prop"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hpq",
+          "type_source": "P → Q"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "hqr",
+          "type_source": "Q → R"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "a._@._internal._hyg.0",
+          "type_source": "¬R"
+        }
+      ],
+      "proposition": "¬P ∧ ¬Q"
+    },
+    "trusted_type_expression": "forall (P : Prop) (Q : Prop) (R : Prop), (P -> Q) -> (Q -> R) -> (Not R) -> (And (Not P) (Not Q))",
+    "trusted_type_source": "∀ (P Q R : Prop), (P → Q) → (Q → R) → ¬R → ¬P ∧ ¬Q",
+    "universe_parameters": [],
+    "validity_status": "success"
+  },
+  "validity_status": "success",
+  "verification_request_hash": "bca9e9e1a6af0ec0a551b52d105ee34ebf05c62fc4127938951ed122f4862978"
+}

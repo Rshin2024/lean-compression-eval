@@ -1,0 +1,467 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_4"
+  ],
+  "trusted_type_source": "∀ {M : Type u_4} [inst : MulOneClass.{u_4} M] {P : Prop} [inst_1 : Decidable P] {a b : M},\n  Eq.{u_4 + 1} (ite.{u_4 + 1} P (HMul.hMul.{u_4, u_4, u_4} a b) 1)\n    (HMul.hMul.{u_4, u_4, u_4} (ite.{u_4 + 1} P a 1) (ite.{u_4 + 1} P b 1))",
+  "trusted_type_expression": "forall {M : Type.{u_4}} [inst._@.EvaluatorCandidate.1656812437._hygCtx._hyg.6 : MulOneClass.{u_4} M] {P : Prop} [inst._@.EvaluatorCandidate.1656812437._hygCtx._hyg.10 : Decidable P] {a : M} {b : M}, Eq.{succ u_4} M (ite.{succ u_4} M P inst._@.EvaluatorCandidate.1656812437._hygCtx._hyg.10 (HMul.hMul.{u_4, u_4, u_4} M M M (instHMul.{u_4} M (MulOne.toMul.{u_4} M (MulOneClass.toMulOne.{u_4} M inst._@.EvaluatorCandidate.1656812437._hygCtx._hyg.6))) a b) (OfNat.ofNat.{u_4} M 1 (One.toOfNat1.{u_4} M (MulOne.toOne.{u_4} M (MulOneClass.toMulOne.{u_4} M inst._@.EvaluatorCandidate.1656812437._hygCtx._hyg.6))))) (HMul.hMul.{u_4, u_4, u_4} M M M (instHMul.{u_4} M (MulOne.toMul.{u_4} M (MulOneClass.toMulOne.{u_4} M inst._@.EvaluatorCandidate.1656812437._hygCtx._hyg.6))) (ite.{succ u_4} M P inst._@.EvaluatorCandidate.1656812437._hygCtx._hyg.10 a (OfNat.ofNat.{u_4} M 1 (One.toOfNat1.{u_4} M (MulOne.toOne.{u_4} M (MulOneClass.toMulOne.{u_4} M inst._@.EvaluatorCandidate.1656812437._hygCtx._hyg.6))))) (ite.{succ u_4} M P inst._@.EvaluatorCandidate.1656812437._hygCtx._hyg.10 b (OfNat.ofNat.{u_4} M 1 (One.toOfNat1.{u_4} M (MulOne.toOne.{u_4} M (MulOneClass.toMulOne.{u_4} M inst._@.EvaluatorCandidate.1656812437._hygCtx._hyg.6))))))",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_4 + 1} (ite.{u_4 + 1} P (HMul.hMul.{u_4, u_4, u_4} a b) 1)\n  (HMul.hMul.{u_4, u_4, u_4} (ite.{u_4 + 1} P a 1) (ite.{u_4 + 1} P b 1))",
+    "binders": [
+      {
+        "type_source": "Type u_4",
+        "name": "M",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "MulOneClass.{u_4} M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.6",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Prop",
+        "name": "P",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Decidable P",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.10",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "M",
+        "name": "a",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "M",
+        "name": "b",
+        "binder_info": "implicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_algebra_groups_pilot_group_basic_07 {P : Prop} [Decidable P] {a b : M} :\n  ite P (a * b) 1 = ite P a 1 * ite P b 1 :=\nby\n  by_cases h : P <;> simp [h]",
+    "signature_spans": [
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 74,
+        "end": 75
+      },
+      {
+        "start": 76,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 83,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 110,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 120
+      },
+      {
+        "start": 121,
+        "end": 122
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 128,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 140,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      }
+    ],
+    "proof_offset": 153,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 70
+      },
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 74,
+        "end": 75
+      },
+      {
+        "start": 76,
+        "end": 80
+      },
+      {
+        "start": 80,
+        "end": 81
+      },
+      {
+        "start": 82,
+        "end": 83
+      },
+      {
+        "start": 83,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 104,
+        "end": 105
+      },
+      {
+        "start": 106,
+        "end": 107
+      },
+      {
+        "start": 110,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 120
+      },
+      {
+        "start": 121,
+        "end": 122
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 128,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 140,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 152
+      },
+      {
+        "start": 153,
+        "end": 155
+      },
+      {
+        "start": 158,
+        "end": 166
+      },
+      {
+        "start": 167,
+        "end": 168
+      },
+      {
+        "start": 169,
+        "end": 170
+      },
+      {
+        "start": 171,
+        "end": 172
+      },
+      {
+        "start": 173,
+        "end": 176
+      },
+      {
+        "start": 177,
+        "end": 181
+      },
+      {
+        "start": 182,
+        "end": 183
+      },
+      {
+        "start": 183,
+        "end": 184
+      },
+      {
+        "start": 184,
+        "end": 185
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 153,
+        "end": 155
+      },
+      {
+        "start": 158,
+        "end": 166
+      },
+      {
+        "start": 167,
+        "end": 168
+      },
+      {
+        "start": 169,
+        "end": 170
+      },
+      {
+        "start": 171,
+        "end": 172
+      },
+      {
+        "start": 173,
+        "end": 176
+      },
+      {
+        "start": 177,
+        "end": 181
+      },
+      {
+        "start": 182,
+        "end": 183
+      },
+      {
+        "start": 183,
+        "end": 184
+      },
+      {
+        "start": 184,
+        "end": 185
+      }
+    ],
+    "W_full": 47,
+    "W_S": 33,
+    "W_B": 10
+  },
+  "root": "CompressionEval.lib_algebra_groups_pilot_group_basic_07",
+  "proved_type_fingerprint": "91634332",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 82,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.«tactic_<;>_»",
+      "«tacticBy_cases_:_»",
+      "Lean.Parser.Tactic.simp",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.simpLemma"
+    ],
+    "proof_nodes": 2331,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_algebra_groups_pilot_group_basic_07"
+  ],
+  "axioms": [
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "6d280c12dca07b86bbcbc52887751cf2e1eed2b5d5b79d0f60c82fbcaf8e4145",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 4.226556374691427
+  },
+  "request_fingerprint": "cd64ed329bca55f8788603d74933ba14305f24607733fada9792d2248edb1ae8"
+}

@@ -1,0 +1,79 @@
+{
+  "task": {
+    "task_id": "lib_number_theory_main_prime_basic_10",
+    "family_id": "source_module_Mathlib.Data.Nat.Prime.Basic",
+    "domain": "number_theory",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Algebra.GroupWithZero.Associated",
+      "Mathlib.Algebra.Ring.Parity",
+      "Mathlib.Data.Nat.Prime.Defs"
+    ],
+    "context": "/-\nCopyright (c) 2015 Microsoft Corporation. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Leonardo de Moura, Jeremy Avigad, Mario Carneiro\n-/\n/-!\n# Prime numbers\n\nThis file develops the theory of prime numbers: natural numbers `p ≥ 2` whose only divisors are\n`p` and `1`.\n\n-/\n\npublic section\n\nnamespace Nat\nvariable {n : ℕ}\n\ntheorem prime_mul_iff {a b : ℕ} : Nat.Prime (a * b) ↔ a.Prime ∧ b = 1 ∨ b.Prime ∧ a = 1 := by\n  simp only [irreducible_mul_iff, ← irreducible_iff_nat_prime, Nat.isUnit_iff]\n\ntheorem not_prime_mul {a b : ℕ} (a1 : a ≠ 1) (b1 : b ≠ 1) : ¬Prime (a * b) := by\n  simp [prime_mul_iff, *]\n\ntheorem not_prime_of_mul_eq {a b n : ℕ} (h : a * b = n) (h₁ : a ≠ 1) (h₂ : b ≠ 1) : ¬Prime n :=\n  h ▸ not_prime_mul h₁ h₂\n\ntheorem Prime.dvd_iff_eq {p a : ℕ} (hp : p.Prime) (a1 : a ≠ 1) : a ∣ p ↔ p = a := by\n  refine ⟨?_, by rintro rfl; rfl⟩\n  rintro ⟨j, rfl⟩\n  rcases prime_mul_iff.mp hp with (⟨_, rfl⟩ | ⟨_, rfl⟩)\n  · exact mul_one _\n  · exact (a1 rfl).elim\n\ntheorem Prime.eq_two_or_odd {p : ℕ} (hp : Prime p) : p = 2 ∨ p % 2 = 1 :=\n  p.mod_two_eq_zero_or_one.imp_left fun h =>\n    ((hp.eq_one_or_self_of_dvd 2 (dvd_of_mod_eq_zero h)).resolve_left (by decide)).symm\n\ntheorem Prime.eq_two_or_odd' {p : ℕ} (hp : Prime p) : p = 2 ∨ Odd p :=\n  Or.imp_right (fun h => ⟨p / 2, (div_add_mod p 2).symm.trans (congr_arg _ h)⟩) hp.eq_two_or_odd\n\nsection\n\ntheorem Prime.five_le_of_ne_two_of_ne_three {p : ℕ} (hp : p.Prime) (h_two : p ≠ 2)\n    (h_three : p ≠ 3) : 5 ≤ p := by\n  by_contra! h\n  revert h_two h_three hp\n  decide +revert\n\nend\n\ntheorem Prime.pred_pos {p : ℕ} (pp : Prime p) : 0 < pred p :=\n  lt_pred_iff.2 pp.one_lt\n\ntheorem succ_pred_prime {p : ℕ} (pp : Prime p) : succ (pred p) = p :=\n  succ_pred_eq_of_pos pp.pos\nassert_not_exists _root_.Nat.exists_dvd_of_not_prime\n",
+    "binders": "{n : ℕ} (n2 : 2 ≤ n) (np : ¬Prime n)",
+    "proposition": "∃ m, m ∣ n ∧ m ≠ 1 ∧ m ≠ n",
+    "target_name": "_root_.CompressionEval.lib_number_theory_main_prime_basic_10",
+    "premise_context": "namespace Nat\nvariable {n : ℕ}\nsection\nend\n\nAvailable preceding statements (within the shown source scopes):\ntheorem not_prime_mul {a b : ℕ} (a1 : a ≠ 1) (b1 : b ≠ 1) : ¬Prime (a * b)\n\ntheorem not_prime_of_mul_eq {a b n : ℕ} (h : a * b = n) (h₁ : a ≠ 1) (h₂ : b ≠ 1) : ¬Prime n\n\ntheorem Prime.dvd_iff_eq {p a : ℕ} (hp : p.Prime) (a1 : a ≠ 1) : a ∣ p ↔ p = a\n\ntheorem Prime.eq_two_or_odd {p : ℕ} (hp : Prime p) : p = 2 ∨ p % 2 = 1\n\ntheorem Prime.eq_two_or_odd' {p : ℕ} (hp : Prime p) : p = 2 ∨ Odd p\n\ntheorem Prime.five_le_of_ne_two_of_ne_three {p : ℕ} (hp : p.Prime) (h_two : p ≠ 2)\n    (h_three : p ≠ 3) : 5 ≤ p\n\ntheorem Prime.pred_pos {p : ℕ} (pp : Prime p) : 0 < pred p\n\ntheorem succ_pred_prime {p : ℕ} (pp : Prime p) : succ (pred p) = p",
+    "forbidden_declarations": [
+      "Nat.exists_dvd_of_not_prime"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Data.Nat.Prime.Basic",
+      "source_path": "Mathlib/Data/Nat/Prime/Basic.lean",
+      "declaration": "Nat.exists_dvd_of_not_prime",
+      "source_line": 64,
+      "source_sha256": "b97e83d65681b68b3ad1f4bdfd36defd0a30aa173cf726b3d2807acf8bde5027",
+      "prefix_end_character": 1927,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "b0555f2b47453978b0e5b4dcb5b87a17ddede33ca14f1c7f12960074ded93ec7",
+      "premise_context": "df1d1bd5c988528e6e7a0eae7b2534bb7021439b0fcb1ebb490a5cd10442106f",
+      "binders": "08b7ff6ad14e05339737d5b10d1aad7e0ec651a4a2408be0994fa863d5cf3046",
+      "proposition": "b0a76f6ccf180c5a89bb12a87472a1829b0cb3a10eb3a09e64191bccc29879e3"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Algebra.GroupWithZero.Associated",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Ring.Parity",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Nat.Prime.Defs",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

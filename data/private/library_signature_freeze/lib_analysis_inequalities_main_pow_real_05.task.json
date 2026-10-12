@@ -1,0 +1,79 @@
+{
+  "task": {
+    "task_id": "lib_analysis_inequalities_main_pow_real_05",
+    "family_id": "source_module_Mathlib.Analysis.SpecialFunctions.Pow.Real",
+    "domain": "analysis_inequalities",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Analysis.SpecialFunctions.Pow.Complex",
+      "Mathlib.Data.Nat.NthRoot.Defs",
+      "Qq"
+    ],
+    "context": "/-\nCopyright (c) 2018 Chris Hughes. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Chris Hughes, Abhimanyu Pallavi Sudhir, Jean Lo, Calle Sönne, Sébastien Gouëzel,\n  Rémy Degenne, David Loeffler\n-/\n\n/-! # Power function on `ℝ`\n\nWe construct the power functions `x ^ y`, where `x` and `y` are real numbers.\n-/\n\n@[expose] public section\n\n\nnoncomputable section\n\nopen Real Finset Set\n\n/-\n## Definitions\n-/\nnamespace Real\nvariable {x y z : ℝ}\n\n/-- The real power function `x ^ y`, defined as the real part of the complex power function.\nFor `x > 0`, it is equal to `exp (y log x)`. For `x = 0`, one sets `0 ^ 0=1` and `0 ^ y=0` for\n`y ≠ 0`. For `x < 0`, the definition is somewhat arbitrary as it depends on the choice of a complex\ndetermination of the logarithm. With our conventions, it is equal to `exp (y log x) cos (π y)`. -/\nnoncomputable def rpow (x y : ℝ) :=\n  ((x : ℂ) ^ (y : ℂ)).re\n\nnoncomputable instance : Pow ℝ ℝ := ⟨rpow⟩\n\n@[simp]\ntheorem rpow_eq_pow (x y : ℝ) : rpow x y = x ^ y := rfl\n\ntheorem rpow_def (x y : ℝ) : x ^ y = ((x : ℂ) ^ (y : ℂ)).re := rfl\n\ntheorem rpow_def_of_nonneg {x : ℝ} (hx : 0 ≤ x) (y : ℝ) :\n    x ^ y = if x = 0 then if y = 0 then 1 else 0 else exp (log x * y) := by\n  simp only [rpow_def, Complex.cpow_def]; split_ifs <;>\n  simp_all [(Complex.ofReal_log hx).symm, -Complex.ofReal_mul,\n      (Complex.ofReal_mul _ _).symm, Complex.exp_ofReal_re, Complex.ofReal_eq_zero]\n\ntheorem rpow_def_of_pos {x : ℝ} (hx : 0 < x) (y : ℝ) : x ^ y = exp (log x * y) := by\n  rw [rpow_def_of_nonneg (le_of_lt hx), ite_eq_right (ne_of_gt hx)]\nassert_not_exists _root_.Real.exp_mul\n",
+    "binders": "(x y : ℝ)",
+    "proposition": "exp (x * y) = exp x ^ y",
+    "target_name": "_root_.CompressionEval.lib_analysis_inequalities_main_pow_real_05",
+    "premise_context": "open Real Finset Set\nnamespace Real\nvariable {x y z : ℝ}\n\nAvailable preceding statements (within the shown source scopes):\ntheorem rpow_eq_pow (x y : ℝ) : rpow x y = x ^ y\n\ntheorem rpow_def (x y : ℝ) : x ^ y = ((x : ℂ) ^ (y : ℂ)).re\n\ntheorem rpow_def_of_nonneg {x : ℝ} (hx : 0 ≤ x) (y : ℝ) :\n    x ^ y = if x = 0 then if y = 0 then 1 else 0 else exp (log x * y)\n\ntheorem rpow_def_of_pos {x : ℝ} (hx : 0 < x) (y : ℝ) : x ^ y = exp (log x * y)",
+    "forbidden_declarations": [
+      "Real.exp_mul"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+      "source_path": "Mathlib/Analysis/SpecialFunctions/Pow/Real.lean",
+      "declaration": "Real.exp_mul",
+      "source_line": 54,
+      "source_sha256": "f458646bbf15c59ae1a26b09f902b5f8aa36d6956420093076091c6fec4f4b25",
+      "prefix_end_character": 1743,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "078f2de4e301f5fbaa57de82d4dc6de91270de365dae0b23ccc70ad1f0155ac8",
+      "premise_context": "e99be960891d345e315e1e5a5a0c21db39e6f4f35555fe5300b442ea84376712",
+      "binders": "637212f3127ae1aa95c693fc5343c52f4abba46460efd8fd09d6c98e2ddf5b4c",
+      "proposition": "68a3cd1801fba786c2befd70f1be78fc59ca65faa62d43137f95ff57a2447dec"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Analysis.SpecialFunctions.Pow.Complex",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Nat.NthRoot.Defs",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": true
+      },
+      {
+        "module": "Qq",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen"
+}

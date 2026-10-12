@@ -1,0 +1,79 @@
+{
+  "task": {
+    "task_id": "lib_number_theory_main_prime_basic_01",
+    "family_id": "source_module_Mathlib.Data.Nat.Prime.Basic",
+    "domain": "number_theory",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Algebra.GroupWithZero.Associated",
+      "Mathlib.Algebra.Ring.Parity",
+      "Mathlib.Data.Nat.Prime.Defs"
+    ],
+    "context": "/-\nCopyright (c) 2015 Microsoft Corporation. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Leonardo de Moura, Jeremy Avigad, Mario Carneiro\n-/\n/-!\n# Prime numbers\n\nThis file develops the theory of prime numbers: natural numbers `p ≥ 2` whose only divisors are\n`p` and `1`.\n\n-/\n\npublic section\n\nnamespace Nat\nvariable {n : ℕ}\nassert_not_exists _root_.Nat.prime_mul_iff\n",
+    "binders": "{a b : ℕ}",
+    "proposition": "Nat.Prime (a * b) ↔ a.Prime ∧ b = 1 ∨ b.Prime ∧ a = 1",
+    "target_name": "_root_.CompressionEval.lib_number_theory_main_prime_basic_01",
+    "premise_context": "namespace Nat\nvariable {n : ℕ}\n\nAvailable preceding statements (within the shown source scopes):\n",
+    "forbidden_declarations": [
+      "Nat.prime_mul_iff"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Data.Nat.Prime.Basic",
+      "source_path": "Mathlib/Data/Nat/Prime/Basic.lean",
+      "declaration": "Nat.prime_mul_iff",
+      "source_line": 25,
+      "source_sha256": "b97e83d65681b68b3ad1f4bdfd36defd0a30aa173cf726b3d2807acf8bde5027",
+      "prefix_end_character": 526,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "80d092d8eee9783c4de59479ccef8d77745bc36202cf4e45a58cbab560be1f7e",
+      "premise_context": "1324aa606c776b4a7ea682d995c72aa3c7736ac5cf7542c28c0cfd98c4da0e5b",
+      "binders": "3ca90be17b3305d989a2a515a59d430f13ac68e6cd6153e76e3f47693c39f244",
+      "proposition": "657a8939f4aa95da4dcb7f70ba4d9cba0f46b13e24fe402f98b1ce6836ba5820"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Algebra.GroupWithZero.Associated",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Ring.Parity",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Nat.Prime.Defs",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

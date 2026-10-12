@@ -1,0 +1,313 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "∀ {x : ℝ} (hx : LT.lt.{0} 0 x), Eq.{1} (Real.log x) ((OrderIso.symm.{0, 0} Real.expOrderIso) (Subtype.mk.{1} x hx))",
+  "trusted_type_expression": "forall {x : Real} (hx : LT.lt.{0} Real Real.instLT (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero)) x), Eq.{1} Real (Real.log x) (DFunLike.coe.{1, 1, 1} (OrderIso.{0, 0} (Set.Elem.{0} Real (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero)))) Real (Subtype.instLE.{0} Real Real.instLE (fun (x : Real) => Membership.mem.{0, 0} Real (Set.{0} Real) (Set.instMembership.{0} Real) (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero))) x)) Real.instLE) (Set.Elem.{0} Real (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero)))) (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : Set.Elem.{0} Real (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero)))) => Real) (instFunLikeOrderIso.{0, 0} (Set.Elem.{0} Real (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero)))) Real (Subtype.instLE.{0} Real Real.instLE (fun (x : Real) => Membership.mem.{0, 0} Real (Set.{0} Real) (Set.instMembership.{0} Real) (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero))) x)) Real.instLE) (OrderIso.symm.{0, 0} Real (Set.Elem.{0} Real (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero)))) Real.instLE (Subtype.instLE.{0} Real Real.instLE (fun (x : Real) => Membership.mem.{0, 0} Real (Set.{0} Real) (Set.instMembership.{0} Real) (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero))) x)) Real.expOrderIso) (Subtype.mk.{1} Real (fun (x : Real) => Membership.mem.{0, 0} Real (Set.{0} Real) (Set.instMembership.{0} Real) (Set.Ioi.{0} Real Real.instPreorder (OfNat.ofNat.{0} Real 0 (Zero.toOfNat0.{0} Real Real.instZero))) x) x hx))",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} (Real.log x) ((OrderIso.symm.{0, 0} Real.expOrderIso) (Subtype.mk.{1} x hx))",
+    "binders": [
+      {
+        "type_source": "ℝ",
+        "name": "x",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "LT.lt.{0} 0 x",
+        "name": "hx",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_analysis_inequalities_main_log_basic_02 (hx : 0 < x) :\n  log x = expOrderIso.symm ⟨x, hx⟩ :=\nby\n  rw [log_of_ne_zero hx.ne']\n  congr\n  exact abs_of_pos hx",
+    "signature_spans": [
+      {
+        "start": 75,
+        "end": 76
+      },
+      {
+        "start": 76,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 92,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 120
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 125
+      },
+      {
+        "start": 125,
+        "end": 128
+      }
+    ],
+    "proof_offset": 132,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 76
+      },
+      {
+        "start": 76,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 89
+      },
+      {
+        "start": 92,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 99
+      },
+      {
+        "start": 100,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 120
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 121,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 125
+      },
+      {
+        "start": 125,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 134
+      },
+      {
+        "start": 137,
+        "end": 139
+      },
+      {
+        "start": 140,
+        "end": 141
+      },
+      {
+        "start": 141,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 162
+      },
+      {
+        "start": 162,
+        "end": 163
+      },
+      {
+        "start": 166,
+        "end": 171
+      },
+      {
+        "start": 174,
+        "end": 179
+      },
+      {
+        "start": 180,
+        "end": 190
+      },
+      {
+        "start": 191,
+        "end": 193
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 132,
+        "end": 134
+      },
+      {
+        "start": 137,
+        "end": 139
+      },
+      {
+        "start": 140,
+        "end": 141
+      },
+      {
+        "start": 141,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 162
+      },
+      {
+        "start": 162,
+        "end": 163
+      },
+      {
+        "start": 166,
+        "end": 171
+      },
+      {
+        "start": 174,
+        "end": 179
+      },
+      {
+        "start": 180,
+        "end": 190
+      },
+      {
+        "start": 191,
+        "end": 193
+      }
+    ],
+    "W_full": 30,
+    "W_S": 16,
+    "W_B": 10
+  },
+  "root": "CompressionEval.lib_analysis_inequalities_main_log_basic_02",
+  "proved_type_fingerprint": "3336653046",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 15789,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.rwSeq",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.rwRuleSeq",
+      "Lean.Parser.Tactic.rwRule",
+      "Lean.Parser.Term.app",
+      "Lean.Parser.Tactic.congr",
+      "Lean.Parser.Tactic.exact"
+    ],
+    "proof_nodes": 6845,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_analysis_inequalities_main_log_basic_02"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "e03b10cbcfe7294308cb778a33be892e2b1cb2ff48b600fa6bd4cc7d9e47925d",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 4.250768416095525
+  },
+  "request_fingerprint": "5927dacc595d9370ceaf5e51d134f55c9eb771635e75457e1e7b6e5aeb641ca7"
+}

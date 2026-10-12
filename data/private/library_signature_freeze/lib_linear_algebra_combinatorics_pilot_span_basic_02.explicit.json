@@ -1,0 +1,919 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1",
+    "u_4",
+    "u_7"
+  ],
+  "trusted_type_source": "∀ {R : Type u_1} {M : Type u_4} {S : Type u_7} [inst : Semiring.{u_1} R] [inst_1 : AddCommMonoid.{u_4} M]\n  [inst_2 : Module.{u_1, u_4} R M] (p : Submodule.{u_1, u_4} R M) [inst_3 : Semiring.{u_7} S]\n  [inst_4 : SMul.{u_7, u_1} S R] [inst_5 : Module.{u_7, u_4} S M] [inst_6 : IsScalarTower.{u_7, u_1, u_4} S R M],\n  Eq.{u_4 + 1} (Submodule.span.{u_7, u_4} S ↑p) (Submodule.restrictScalars.{u_7, u_1, u_4} S p)",
+  "trusted_type_expression": "forall {R : Type.{u_1}} {M : Type.{u_4}} {S : Type.{u_7}} [inst : Semiring.{u_1} R] [inst_1 : AddCommMonoid.{u_4} M] [inst_2 : Module.{u_1, u_4} R M inst inst_1] (p : Submodule.{u_1, u_4} R M inst inst_1 inst_2) [inst._@.EvaluatorCandidate.3542867901._hygCtx._hyg.58 : Semiring.{u_7} S] [inst._@.EvaluatorCandidate.3542867901._hygCtx._hyg.61 : SMul.{u_7, u_1} S R] [inst._@.EvaluatorCandidate.3542867901._hygCtx._hyg.65 : Module.{u_7, u_4} S M inst._@.EvaluatorCandidate.3542867901._hygCtx._hyg.58 inst_1] [inst._@.EvaluatorCandidate.3542867901._hygCtx._hyg.69 : IsScalarTower.{u_7, u_1, u_4} S R M inst._@.EvaluatorCandidate.3542867901._hygCtx._hyg.61 (SMulZeroClass.toSMul.{u_1, u_4} R M (AddZero.toZero.{u_4} M (AddZeroClass.toAddZero.{u_4} M (AddMonoid.toAddZeroClass.{u_4} M (AddCommMonoid.toAddMonoid.{u_4} M inst_1)))) (DistribSMul.toSMulZeroClass.{u_1, u_4} R M (AddMonoid.toAddZeroClass.{u_4} M (AddCommMonoid.toAddMonoid.{u_4} M inst_1)) (DistribMulAction.toDistribSMul.{u_1, u_4} R M (Semiring.toMonoid.{u_1} R inst) (AddCommMonoid.toAddMonoid.{u_4} M inst_1) (Module.toDistribMulAction.{u_1, u_4} R M inst inst_1 inst_2)))) (SMulZeroClass.toSMul.{u_7, u_4} S M (AddZero.toZero.{u_4} M (AddZeroClass.toAddZero.{u_4} M (AddMonoid.toAddZeroClass.{u_4} M (AddCommMonoid.toAddMonoid.{u_4} M inst_1)))) (DistribSMul.toSMulZeroClass.{u_7, u_4} S M (AddMonoid.toAddZeroClass.{u_4} M (AddCommMonoid.toAddMonoid.{u_4} M inst_1)) (DistribMulAction.toDistribSMul.{u_7, u_4} S M (Semiring.toMonoid.{u_7} S inst._@.EvaluatorCandidate.3542867901._hygCtx._hyg.58) (AddCommMonoid.toAddMonoid.{u_4} M inst_1) (Module.toDistribMulAction.{u_7, u_4} S M inst._@.EvaluatorCandidate.3542867901._hygCtx._hyg.58 inst_1 inst._@.EvaluatorCandidate.3542867901._hygCtx._hyg.65))))], Eq.{succ u_4} (Submodule.{u_7, u_4} S M inst._@.EvaluatorCandidate.3542867901._hygCtx._hyg.58 inst_1 inst._@.EvaluatorCandidate.3542867901._hygCtx._hyg.65) (Submodule.span.{u_7, u_4} S M inst._@.EvaluatorCandidate.3542867901._hygCtx._hyg.58 inst_1 inst._@.EvaluatorCandidate.3542867901._hygCtx._hyg.65 (SetLike.coe.{u_4, u_4} (Submodule.{u_1, u_4} R M inst inst_1 inst_2) M (Submodule.setLike.{u_1, u_4} R M inst inst_1 inst_2) p)) (Submodule.restrictScalars.{u_7, u_1, u_4} S R M inst inst_1 inst._@.EvaluatorCandidate.3542867901._hygCtx._hyg.58 inst._@.EvaluatorCandidate.3542867901._hygCtx._hyg.65 inst_2 inst._@.EvaluatorCandidate.3542867901._hygCtx._hyg.61 inst._@.EvaluatorCandidate.3542867901._hygCtx._hyg.69 p)",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_4 + 1} (Submodule.span.{u_7, u_4} S ↑p) (Submodule.restrictScalars.{u_7, u_1, u_4} S p)",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "R",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_4",
+        "name": "M",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_7",
+        "name": "S",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Semiring.{u_1} R",
+        "name": "inst",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "AddCommMonoid.{u_4} M",
+        "name": "inst_1",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Module.{u_1, u_4} R M",
+        "name": "inst_2",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Submodule.{u_1, u_4} R M",
+        "name": "p",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Semiring.{u_7} S",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.58",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "SMul.{u_7, u_1} S R",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.61",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Module.{u_7, u_4} S M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.65",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "IsScalarTower.{u_7, u_1, u_4} S R M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.69",
+        "binder_info": "instance"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_02 {«R» : Type u_1} {«M» : Type u_4} {«S» : Type u_7} [«inst» : Semiring.{u_1} R] [«inst_1» : AddCommMonoid.{u_4} M] [«inst_2» : Module.{u_1, u_4} R M] («p» : Submodule.{u_1, u_4} R M) [Semiring S] [SMul S R] [Module S M] [IsScalarTower S R M] :\n  span S (p : Set M) = p.restrictScalars S :=\nspan_eq (p.restrictScalars S)",
+    "signature_spans": [
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 104,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 120
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 123,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 139
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 142,
+        "end": 150
+      },
+      {
+        "start": 151,
+        "end": 152
+      },
+      {
+        "start": 153,
+        "end": 161
+      },
+      {
+        "start": 161,
+        "end": 163
+      },
+      {
+        "start": 163,
+        "end": 166
+      },
+      {
+        "start": 166,
+        "end": 167
+      },
+      {
+        "start": 168,
+        "end": 169
+      },
+      {
+        "start": 169,
+        "end": 170
+      },
+      {
+        "start": 171,
+        "end": 172
+      },
+      {
+        "start": 172,
+        "end": 182
+      },
+      {
+        "start": 183,
+        "end": 184
+      },
+      {
+        "start": 185,
+        "end": 198
+      },
+      {
+        "start": 198,
+        "end": 200
+      },
+      {
+        "start": 200,
+        "end": 203
+      },
+      {
+        "start": 203,
+        "end": 204
+      },
+      {
+        "start": 205,
+        "end": 206
+      },
+      {
+        "start": 206,
+        "end": 207
+      },
+      {
+        "start": 208,
+        "end": 209
+      },
+      {
+        "start": 209,
+        "end": 219
+      },
+      {
+        "start": 220,
+        "end": 221
+      },
+      {
+        "start": 222,
+        "end": 228
+      },
+      {
+        "start": 228,
+        "end": 230
+      },
+      {
+        "start": 230,
+        "end": 233
+      },
+      {
+        "start": 233,
+        "end": 234
+      },
+      {
+        "start": 235,
+        "end": 238
+      },
+      {
+        "start": 238,
+        "end": 239
+      },
+      {
+        "start": 240,
+        "end": 241
+      },
+      {
+        "start": 242,
+        "end": 243
+      },
+      {
+        "start": 243,
+        "end": 244
+      },
+      {
+        "start": 245,
+        "end": 246
+      },
+      {
+        "start": 246,
+        "end": 251
+      },
+      {
+        "start": 252,
+        "end": 253
+      },
+      {
+        "start": 254,
+        "end": 263
+      },
+      {
+        "start": 263,
+        "end": 265
+      },
+      {
+        "start": 265,
+        "end": 268
+      },
+      {
+        "start": 268,
+        "end": 269
+      },
+      {
+        "start": 270,
+        "end": 273
+      },
+      {
+        "start": 273,
+        "end": 274
+      },
+      {
+        "start": 275,
+        "end": 276
+      },
+      {
+        "start": 277,
+        "end": 278
+      },
+      {
+        "start": 278,
+        "end": 279
+      },
+      {
+        "start": 280,
+        "end": 281
+      },
+      {
+        "start": 281,
+        "end": 289
+      },
+      {
+        "start": 290,
+        "end": 291
+      },
+      {
+        "start": 291,
+        "end": 292
+      },
+      {
+        "start": 293,
+        "end": 294
+      },
+      {
+        "start": 294,
+        "end": 298
+      },
+      {
+        "start": 299,
+        "end": 300
+      },
+      {
+        "start": 301,
+        "end": 302
+      },
+      {
+        "start": 302,
+        "end": 303
+      },
+      {
+        "start": 304,
+        "end": 305
+      },
+      {
+        "start": 305,
+        "end": 311
+      },
+      {
+        "start": 312,
+        "end": 313
+      },
+      {
+        "start": 314,
+        "end": 315
+      },
+      {
+        "start": 315,
+        "end": 316
+      },
+      {
+        "start": 317,
+        "end": 318
+      },
+      {
+        "start": 318,
+        "end": 331
+      },
+      {
+        "start": 332,
+        "end": 333
+      },
+      {
+        "start": 334,
+        "end": 335
+      },
+      {
+        "start": 336,
+        "end": 337
+      },
+      {
+        "start": 337,
+        "end": 338
+      },
+      {
+        "start": 343,
+        "end": 347
+      },
+      {
+        "start": 348,
+        "end": 349
+      },
+      {
+        "start": 350,
+        "end": 351
+      },
+      {
+        "start": 351,
+        "end": 352
+      },
+      {
+        "start": 353,
+        "end": 354
+      },
+      {
+        "start": 355,
+        "end": 358
+      },
+      {
+        "start": 359,
+        "end": 360
+      },
+      {
+        "start": 360,
+        "end": 361
+      },
+      {
+        "start": 362,
+        "end": 363
+      },
+      {
+        "start": 364,
+        "end": 381
+      },
+      {
+        "start": 382,
+        "end": 383
+      }
+    ],
+    "proof_offset": 387,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 101
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 104
+      },
+      {
+        "start": 104,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 120
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 123,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 139
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 142,
+        "end": 150
+      },
+      {
+        "start": 151,
+        "end": 152
+      },
+      {
+        "start": 153,
+        "end": 161
+      },
+      {
+        "start": 161,
+        "end": 163
+      },
+      {
+        "start": 163,
+        "end": 166
+      },
+      {
+        "start": 166,
+        "end": 167
+      },
+      {
+        "start": 168,
+        "end": 169
+      },
+      {
+        "start": 169,
+        "end": 170
+      },
+      {
+        "start": 171,
+        "end": 172
+      },
+      {
+        "start": 172,
+        "end": 182
+      },
+      {
+        "start": 183,
+        "end": 184
+      },
+      {
+        "start": 185,
+        "end": 198
+      },
+      {
+        "start": 198,
+        "end": 200
+      },
+      {
+        "start": 200,
+        "end": 203
+      },
+      {
+        "start": 203,
+        "end": 204
+      },
+      {
+        "start": 205,
+        "end": 206
+      },
+      {
+        "start": 206,
+        "end": 207
+      },
+      {
+        "start": 208,
+        "end": 209
+      },
+      {
+        "start": 209,
+        "end": 219
+      },
+      {
+        "start": 220,
+        "end": 221
+      },
+      {
+        "start": 222,
+        "end": 228
+      },
+      {
+        "start": 228,
+        "end": 230
+      },
+      {
+        "start": 230,
+        "end": 233
+      },
+      {
+        "start": 233,
+        "end": 234
+      },
+      {
+        "start": 235,
+        "end": 238
+      },
+      {
+        "start": 238,
+        "end": 239
+      },
+      {
+        "start": 240,
+        "end": 241
+      },
+      {
+        "start": 242,
+        "end": 243
+      },
+      {
+        "start": 243,
+        "end": 244
+      },
+      {
+        "start": 245,
+        "end": 246
+      },
+      {
+        "start": 246,
+        "end": 251
+      },
+      {
+        "start": 252,
+        "end": 253
+      },
+      {
+        "start": 254,
+        "end": 263
+      },
+      {
+        "start": 263,
+        "end": 265
+      },
+      {
+        "start": 265,
+        "end": 268
+      },
+      {
+        "start": 268,
+        "end": 269
+      },
+      {
+        "start": 270,
+        "end": 273
+      },
+      {
+        "start": 273,
+        "end": 274
+      },
+      {
+        "start": 275,
+        "end": 276
+      },
+      {
+        "start": 277,
+        "end": 278
+      },
+      {
+        "start": 278,
+        "end": 279
+      },
+      {
+        "start": 280,
+        "end": 281
+      },
+      {
+        "start": 281,
+        "end": 289
+      },
+      {
+        "start": 290,
+        "end": 291
+      },
+      {
+        "start": 291,
+        "end": 292
+      },
+      {
+        "start": 293,
+        "end": 294
+      },
+      {
+        "start": 294,
+        "end": 298
+      },
+      {
+        "start": 299,
+        "end": 300
+      },
+      {
+        "start": 301,
+        "end": 302
+      },
+      {
+        "start": 302,
+        "end": 303
+      },
+      {
+        "start": 304,
+        "end": 305
+      },
+      {
+        "start": 305,
+        "end": 311
+      },
+      {
+        "start": 312,
+        "end": 313
+      },
+      {
+        "start": 314,
+        "end": 315
+      },
+      {
+        "start": 315,
+        "end": 316
+      },
+      {
+        "start": 317,
+        "end": 318
+      },
+      {
+        "start": 318,
+        "end": 331
+      },
+      {
+        "start": 332,
+        "end": 333
+      },
+      {
+        "start": 334,
+        "end": 335
+      },
+      {
+        "start": 336,
+        "end": 337
+      },
+      {
+        "start": 337,
+        "end": 338
+      },
+      {
+        "start": 339,
+        "end": 340
+      },
+      {
+        "start": 343,
+        "end": 347
+      },
+      {
+        "start": 348,
+        "end": 349
+      },
+      {
+        "start": 350,
+        "end": 351
+      },
+      {
+        "start": 351,
+        "end": 352
+      },
+      {
+        "start": 353,
+        "end": 354
+      },
+      {
+        "start": 355,
+        "end": 358
+      },
+      {
+        "start": 359,
+        "end": 360
+      },
+      {
+        "start": 360,
+        "end": 361
+      },
+      {
+        "start": 362,
+        "end": 363
+      },
+      {
+        "start": 364,
+        "end": 381
+      },
+      {
+        "start": 382,
+        "end": 383
+      },
+      {
+        "start": 384,
+        "end": 386
+      },
+      {
+        "start": 387,
+        "end": 394
+      },
+      {
+        "start": 395,
+        "end": 396
+      },
+      {
+        "start": 396,
+        "end": 413
+      },
+      {
+        "start": 414,
+        "end": 415
+      },
+      {
+        "start": 415,
+        "end": 416
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 387,
+        "end": 394
+      },
+      {
+        "start": 395,
+        "end": 396
+      },
+      {
+        "start": 396,
+        "end": 413
+      },
+      {
+        "start": 414,
+        "end": 415
+      },
+      {
+        "start": 415,
+        "end": 416
+      }
+    ],
+    "W_full": 100,
+    "W_S": 91,
+    "W_B": 5
+  },
+  "root": "CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_02",
+  "proved_type_fingerprint": "3432387647",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 746,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "null",
+      "Lean.Parser.Term.paren",
+      "Lean.Parser.Term.hygienicLParen",
+      "hygieneInfo"
+    ],
+    "proof_nodes": 241,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_02"
+  ],
+  "axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "9bed6e4d84d81f3b3b6b3959aaf57130ee9ce0257635a301143654c5879ed989",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.3858460411429405
+  },
+  "request_fingerprint": "1219b69a714262773093cc26960d0255d2a477fe3818aa71bb26e037bada88b6"
+}

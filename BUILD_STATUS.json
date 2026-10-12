@@ -1,0 +1,47 @@
+{
+  "build_status": "implemented_and_locally_verified",
+  "cache_validation": "examples/smoke-cache-validation.json",
+  "dataset": {
+    "explicit_signatures": 250,
+    "families_provisional": 74,
+    "independent_kernel_verified_references": 250,
+    "main": 200,
+    "main_fresh": 50,
+    "main_library": 150,
+    "manifest_sha256": "6f980f0c5759cb599759171de9931ea3f9b881416cd2f84be95156dfce7d2a59",
+    "measurable_references": 250,
+    "pilot": 50,
+    "reference_index": "data/private/reference-index.json",
+    "status": "candidate_benchmark_pending_broader_review",
+    "tasks": 250,
+    "uniform_engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7"
+  },
+  "dataset_readiness": "examples/dataset-readiness/readiness.html",
+  "docker_runtime": "recipe_and_opt_in_acceptance_tests_provided; not_executed_here",
+  "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+  "evaluation_api_calls_made": 0,
+  "evaluator_source_hash": "26caeb696f42b136cf63593d5eb00d647ebb36da7028a79532ddcb9e55f4e3ed",
+  "example_report": "examples/report/report.html",
+  "local_runtime": "trusted_reference_development_only",
+  "model_selected": false,
+  "optional_extensions_not_implemented": [
+    "new_lemma_transfer_experiment",
+    "PageRank I1",
+    "synthetic_monoid_f(s)"
+  ],
+  "package_version": "0.1.0",
+  "readiness_report_hash": "48bbb75a95e61ee64214570ce5cdb5342661629f1c37d78244d6d88178af9d1f",
+  "remaining_before_main_study": [
+    "complete construction-family and reference-length/depth/difficulty review",
+    "broader known-equivalent/alias review",
+    "container runtime acceptance and reference checking inside that runtime",
+    "model/API configuration, pilot calibration, and preregistration before main generation"
+  ],
+  "rendered_browser_qa": "not_available_local_file_URL_policy; HTML/data_verified",
+  "tests": {
+    "docker_acceptance_suite": "skipped_daemon_unavailable",
+    "failed": 0,
+    "log": "docs/test-results.txt",
+    "passed": 90
+  }
+}

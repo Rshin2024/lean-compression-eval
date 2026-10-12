@@ -1,0 +1,412 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {G : Type u_1} [inst : Semigroup.{u_1} G] {a b c : G},\n  SemiconjBy.{u_1} a b c →\n    Function.Semiconj.{u_1, u_1} (fun (x : G) => HMul.hMul.{u_1, u_1, u_1} a x)\n      (fun (x : G) => HMul.hMul.{u_1, u_1, u_1} b x) fun (x : G) => HMul.hMul.{u_1, u_1, u_1} c x",
+  "trusted_type_expression": "forall {G : Type.{u_1}} [inst._@.EvaluatorCandidate.909998518._hygCtx._hyg.3 : Semigroup.{u_1} G] {a : G} {b : G} {c : G}, (SemiconjBy.{u_1} G (Semigroup.toMul.{u_1} G inst._@.EvaluatorCandidate.909998518._hygCtx._hyg.3) a b c) -> (Function.Semiconj.{u_1, u_1} G G (fun (x._@.EvaluatorCandidate.909998518._hygCtx._hyg.16 : G) => HMul.hMul.{u_1, u_1, u_1} G G G (instHMul.{u_1} G (Semigroup.toMul.{u_1} G inst._@.EvaluatorCandidate.909998518._hygCtx._hyg.3)) a x._@.EvaluatorCandidate.909998518._hygCtx._hyg.16) (fun (x._@.EvaluatorCandidate.909998518._hygCtx._hyg.27 : G) => HMul.hMul.{u_1, u_1, u_1} G G G (instHMul.{u_1} G (Semigroup.toMul.{u_1} G inst._@.EvaluatorCandidate.909998518._hygCtx._hyg.3)) b x._@.EvaluatorCandidate.909998518._hygCtx._hyg.27) (fun (x._@.EvaluatorCandidate.909998518._hygCtx._hyg.38 : G) => HMul.hMul.{u_1, u_1, u_1} G G G (instHMul.{u_1} G (Semigroup.toMul.{u_1} G inst._@.EvaluatorCandidate.909998518._hygCtx._hyg.3)) c x._@.EvaluatorCandidate.909998518._hygCtx._hyg.38))",
+  "trusted_telescope": {
+    "proposition": "Function.Semiconj.{u_1, u_1} (fun (x : G) => HMul.hMul.{u_1, u_1, u_1} a x)\n  (fun (x : G) => HMul.hMul.{u_1, u_1, u_1} b x) fun (x : G) => HMul.hMul.{u_1, u_1, u_1} c x",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "G",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Semigroup.{u_1} G",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.3",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "G",
+        "name": "a",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "G",
+        "name": "b",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "G",
+        "name": "c",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "SemiconjBy.{u_1} a b c",
+        "name": "h",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_algebra_groups_main_commute_basic_01 (h : SemiconjBy a b c) :\n  Semiconj (a * ·) (b * ·) (c * ·) :=\nfun j ↦ by simp only [← mul_assoc, h.eq]",
+    "signature_spans": [
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 73,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 76
+      },
+      {
+        "start": 77,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 89
+      },
+      {
+        "start": 90,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 99,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 115
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 124
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 133
+      },
+      {
+        "start": 133,
+        "end": 134
+      }
+    ],
+    "proof_offset": 138,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 71
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 73,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 76
+      },
+      {
+        "start": 77,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 89
+      },
+      {
+        "start": 90,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 99,
+        "end": 107
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 115
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 124
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 133
+      },
+      {
+        "start": 133,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 141
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 150
+      },
+      {
+        "start": 151,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 160
+      },
+      {
+        "start": 161,
+        "end": 162
+      },
+      {
+        "start": 162,
+        "end": 165
+      },
+      {
+        "start": 166,
+        "end": 175
+      },
+      {
+        "start": 175,
+        "end": 176
+      },
+      {
+        "start": 177,
+        "end": 181
+      },
+      {
+        "start": 181,
+        "end": 182
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 138,
+        "end": 141
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 150
+      },
+      {
+        "start": 151,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 160
+      },
+      {
+        "start": 161,
+        "end": 162
+      },
+      {
+        "start": 162,
+        "end": 165
+      },
+      {
+        "start": 166,
+        "end": 175
+      },
+      {
+        "start": 175,
+        "end": 176
+      },
+      {
+        "start": 177,
+        "end": 181
+      },
+      {
+        "start": 181,
+        "end": 182
+      }
+    ],
+    "W_full": 40,
+    "W_S": 24,
+    "W_B": 12
+  },
+  "root": "CompressionEval.lib_algebra_groups_main_commute_basic_01",
+  "proved_type_fingerprint": "1073056490",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 36,
+    "syntax_kinds": [
+      "Lean.Parser.Term.fun",
+      "Lean.Parser.Term.basicFun",
+      "null",
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "Lean.Parser.Tactic.simp",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.simpLemma"
+    ],
+    "proof_nodes": 1011,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_algebra_groups_main_commute_basic_01",
+    "CompressionEval.lib_algebra_groups_main_commute_basic_01._simp_1"
+  ],
+  "axioms": [
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "4c485dd1c6e7ac5b1919ff4d641857004e7c08375b506bf6513724c3195f4a92",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 4.067721874918789
+  },
+  "request_fingerprint": "3bc59bbe56c26adfd33c36d8844e0c14218a362f9072a0412784e151ad4af613"
+}

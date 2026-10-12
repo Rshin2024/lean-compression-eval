@@ -1,0 +1,457 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u'",
+    "u_2",
+    "u_4"
+  ],
+  "trusted_type_source": "∀ {ι : Type u'} {R : Type u_2} {s : Set.{u'} ι} {M : Type u_4} {v : ι → M} [inst : Semiring.{u_2} R]\n  [inst_1 : AddCommMonoid.{u_4} M] [inst_2 : Module.{u_2, u_4} R M] [Nontrivial.{u_2} R] {i : ι},\n  LinearIndepOn.{u', u_2, u_4} R v s → Membership.mem.{u', u'} s i → Ne.{u_4 + 1} (v i) 0",
+  "trusted_type_expression": "forall {ι : Type.{u'}} {R : Type.{u_2}} {s : Set.{u'} ι} {M : Type.{u_4}} {v : ι -> M} [inst._@.EvaluatorCandidate.1974825834._hygCtx._hyg.14 : Semiring.{u_2} R] [inst._@.EvaluatorCandidate.1974825834._hygCtx._hyg.17 : AddCommMonoid.{u_4} M] [inst._@.EvaluatorCandidate.1974825834._hygCtx._hyg.23 : Module.{u_2, u_4} R M inst._@.EvaluatorCandidate.1974825834._hygCtx._hyg.14 inst._@.EvaluatorCandidate.1974825834._hygCtx._hyg.17] [inst._@.EvaluatorCandidate.1974825834._hygCtx._hyg.31 : Nontrivial.{u_2} R] {i : ι}, (LinearIndepOn.{u', u_2, u_4} ι R M v inst._@.EvaluatorCandidate.1974825834._hygCtx._hyg.14 inst._@.EvaluatorCandidate.1974825834._hygCtx._hyg.17 inst._@.EvaluatorCandidate.1974825834._hygCtx._hyg.23 s) -> (Membership.mem.{u', u'} ι (Set.{u'} ι) (Set.instMembership.{u'} ι) s i) -> (Ne.{succ u_4} M (v i) (OfNat.ofNat.{u_4} M 0 (Zero.toOfNat0.{u_4} M (AddZero.toZero.{u_4} M (AddZeroClass.toAddZero.{u_4} M (AddMonoid.toAddZeroClass.{u_4} M (AddCommMonoid.toAddMonoid.{u_4} M inst._@.EvaluatorCandidate.1974825834._hygCtx._hyg.17)))))))",
+  "trusted_telescope": {
+    "proposition": "Ne.{u_4 + 1} (v i) 0",
+    "binders": [
+      {
+        "type_source": "Type u'",
+        "name": "ι",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_2",
+        "name": "R",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Set.{u'} ι",
+        "name": "s",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_4",
+        "name": "M",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "ι → M",
+        "name": "v",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Semiring.{u_2} R",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.14",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "AddCommMonoid.{u_4} M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.17",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Module.{u_2, u_4} R M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.23",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Nontrivial.{u_2} R",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.31",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "ι",
+        "name": "i",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "LinearIndepOn.{u', u_2, u_4} R v s",
+        "name": "hv",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Membership.mem.{u', u'} s i",
+        "name": "hi",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_linear_algebra_combinatorics_main_linearindependent_defs_08 [Nontrivial R] {i : ι} (hv : LinearIndepOn R v s) (hi : i ∈ s) :\n  v i ≠ 0 :=\nLinearIndependent.ne_zero ⟨i, hi⟩ hv",
+    "signature_spans": [
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 108
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 117
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 120
+      },
+      {
+        "start": 120,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 144
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 147
+      },
+      {
+        "start": 147,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 153
+      },
+      {
+        "start": 154,
+        "end": 157
+      },
+      {
+        "start": 158,
+        "end": 159
+      },
+      {
+        "start": 159,
+        "end": 160
+      },
+      {
+        "start": 165,
+        "end": 166
+      },
+      {
+        "start": 167,
+        "end": 168
+      },
+      {
+        "start": 169,
+        "end": 172
+      },
+      {
+        "start": 173,
+        "end": 174
+      }
+    ],
+    "proof_offset": 178,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 96,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 108
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 111,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 114
+      },
+      {
+        "start": 115,
+        "end": 117
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 119,
+        "end": 120
+      },
+      {
+        "start": 120,
+        "end": 122
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 125,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 144
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 147
+      },
+      {
+        "start": 147,
+        "end": 149
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 152,
+        "end": 153
+      },
+      {
+        "start": 154,
+        "end": 157
+      },
+      {
+        "start": 158,
+        "end": 159
+      },
+      {
+        "start": 159,
+        "end": 160
+      },
+      {
+        "start": 161,
+        "end": 162
+      },
+      {
+        "start": 165,
+        "end": 166
+      },
+      {
+        "start": 167,
+        "end": 168
+      },
+      {
+        "start": 169,
+        "end": 172
+      },
+      {
+        "start": 173,
+        "end": 174
+      },
+      {
+        "start": 175,
+        "end": 177
+      },
+      {
+        "start": 178,
+        "end": 203
+      },
+      {
+        "start": 204,
+        "end": 207
+      },
+      {
+        "start": 207,
+        "end": 208
+      },
+      {
+        "start": 208,
+        "end": 209
+      },
+      {
+        "start": 210,
+        "end": 212
+      },
+      {
+        "start": 212,
+        "end": 215
+      },
+      {
+        "start": 216,
+        "end": 218
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 178,
+        "end": 203
+      },
+      {
+        "start": 204,
+        "end": 207
+      },
+      {
+        "start": 207,
+        "end": 208
+      },
+      {
+        "start": 208,
+        "end": 209
+      },
+      {
+        "start": 210,
+        "end": 212
+      },
+      {
+        "start": 212,
+        "end": 215
+      },
+      {
+        "start": 216,
+        "end": 218
+      }
+    ],
+    "W_full": 39,
+    "W_S": 28,
+    "W_B": 7
+  },
+  "root": "CompressionEval.lib_linear_algebra_combinatorics_main_linearindependent_defs_08",
+  "resolved_imports": [
+    {
+      "module": "Mathlib.Algebra.Order.Sub.Basic",
+      "is_meta": false,
+      "is_exported": true,
+      "import_all": false
+    },
+    {
+      "module": "Mathlib.LinearAlgebra.Finsupp.LinearCombination",
+      "is_meta": false,
+      "is_exported": true,
+      "import_all": false
+    },
+    {
+      "module": "Mathlib.Lean.Expr.ExtraRecognizers",
+      "is_meta": true,
+      "is_exported": true,
+      "import_all": false
+    }
+  ],
+  "proved_type_fingerprint": "2684203655",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 4766,
+    "syntax_kinds": [
+      "Lean.Parser.Term.app",
+      "null",
+      "Lean.Parser.Term.anonymousCtor"
+    ],
+    "proof_nodes": 151,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_linear_algebra_combinatorics_main_linearindependent_defs_08"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "1c6980fe2514e31387d970c6a347e140421a2ac0826a8a5c478f6e908d7fdd99",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.7810360831208527
+  },
+  "request_fingerprint": "31964b730255fc59ca651260c84a1a6a0969ad58753e9b36fe0005d32f908b80",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "engine_path": "lean/versions/Evaluator-83da0074.lean"
+}

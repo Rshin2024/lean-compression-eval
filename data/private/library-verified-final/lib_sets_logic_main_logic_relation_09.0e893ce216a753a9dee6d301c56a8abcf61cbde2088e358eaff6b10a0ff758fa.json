@@ -1,0 +1,1366 @@
+{
+  "boundary_policy": "expand_mathlib_and_evaluator_v1",
+  "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+  "evaluated_at": "2026-10-12T04:12:17.430064+00:00",
+  "extraction": {
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.lib_sets_logic_main_logic_relation_09"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 133,
+      "syntax_kinds": [
+        "Lean.Parser.Term.anonymousCtor",
+        "null",
+        "Lean.Parser.Term.fun",
+        "Lean.Parser.Term.basicFun",
+        "Lean.Parser.Term.hole",
+        "Lean.Parser.Term.pipeProj",
+        "Lean.Parser.Term.app",
+        "Lean.Parser.Term.ellipsis"
+      ],
+      "transitive_dependency_count": 29
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "available",
+    "nodes": [
+      {
+        "body": {
+          "@Sort": 9,
+          "Eq": 2,
+          "Eq.mp": 1,
+          "Iff.intro": 1,
+          "Std.Symm": 2,
+          "Std.Symm.flip_eq": 1,
+          "Std.Symm.mk": 1,
+          "congr_fun₂": 1,
+          "flip": 4
+        },
+        "body_nodes": 133,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "CompressionEval.lib_sets_logic_main_logic_relation_09",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "@Sort": 4,
+          "Eq": 1,
+          "Iff": 1,
+          "Std.Symm": 1,
+          "flip": 1
+        },
+        "source_counts": null,
+        "type_hash": "1591728164",
+        "type_nodes": 35,
+        "value_hash": "4264323145"
+      },
+      {
+        "body": null,
+        "name": "@Sort",
+        "owner_module": "@builtin",
+        "primitive": true,
+        "signature": {},
+        "type_hash": "@Sort",
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Iff",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2232915537",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3970007004",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "flip",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2826022113",
+        "type_nodes": null,
+        "value_hash": "4104331942"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Std.Symm",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3074319351",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Iff.intro",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1289877537",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Std.Symm.mk",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "677842030",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.mp",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "7732840",
+        "type_nodes": null,
+        "value_hash": "3565108002"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "congr_fun₂",
+        "owner_module": "Batteries.Logic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1660825947",
+        "type_nodes": null,
+        "value_hash": "1644821769"
+      },
+      {
+        "body": {
+          "@Sort": 5,
+          "Std.Symm": 1,
+          "Std.Symm.iff": 1,
+          "flip": 2,
+          "funext₂": 1,
+          "propext": 1
+        },
+        "body_nodes": 77,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Std.Symm.flip_eq",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "@Sort": 4,
+          "Eq": 1,
+          "Std.Symm": 1,
+          "flip": 1
+        },
+        "source_counts": null,
+        "type_hash": "3651974724",
+        "type_nodes": 33,
+        "value_hash": "1775900466"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "funext₂",
+        "owner_module": "Batteries.Logic",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3412688478",
+        "type_nodes": null,
+        "value_hash": "2512855069"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "propext",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "624793144",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": {
+          "@Sort": 2,
+          "Iff.intro": 1,
+          "Std.Symm": 1,
+          "symm_of": 2
+        },
+        "body_nodes": 55,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "Std.Symm.iff",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2,
+          "Iff": 1,
+          "Std.Symm": 1
+        },
+        "source_counts": null,
+        "type_hash": "1234147329",
+        "type_nodes": 31,
+        "value_hash": "747062602"
+      },
+      {
+        "body": {
+          "@Sort": 2,
+          "Std.Symm": 1,
+          "symm": 1
+        },
+        "body_nodes": 29,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "symm_of",
+        "owner_module": "Mathlib.Order.Defs.Unbundled",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2,
+          "Std.Symm": 1
+        },
+        "source_counts": null,
+        "type_hash": "2280312031",
+        "type_nodes": 29,
+        "value_hash": "3867022707"
+      },
+      {
+        "body": {
+          "@Sort": 2,
+          "Std.Symm": 1,
+          "Std.Symm.symm": 1
+        },
+        "body_nodes": 29,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "symm",
+        "owner_module": "Mathlib.Order.Defs.Unbundled",
+        "primitive": false,
+        "signature": {
+          "@Sort": 2,
+          "Std.Symm": 1
+        },
+        "source_counts": null,
+        "type_hash": "2280312031",
+        "type_nodes": 29,
+        "value_hash": "4113301599"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Std.Symm.symm",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "296503795",
+        "type_nodes": null,
+        "value_hash": "251014526"
+      }
+    ],
+    "process_returncode": 0,
+    "proved_type_fingerprint": "1591728164",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Relator"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.Use"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.MkIffOfInductiveProp"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.SimpRw"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.Defs.Prop"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.Defs.Unbundled"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Batteries.Logic"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Batteries.Tactic.Trans"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 2.166710499674082,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "0e3e171f2abb28ed53579c3fa2388dd1748c18654060e50bd3a684b3fc59c95f",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_sets_logic_main_logic_relation_09",
+    "source_tokens": {
+      "W_B": 21,
+      "W_S": 22,
+      "W_full": 47,
+      "body_spans": [
+        {
+          "end": 154,
+          "start": 151
+        },
+        {
+          "end": 157,
+          "start": 154
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 163,
+          "start": 160
+        },
+        {
+          "end": 167,
+          "start": 164
+        },
+        {
+          "end": 170,
+          "start": 167
+        },
+        {
+          "end": 172,
+          "start": 171
+        },
+        {
+          "end": 174,
+          "start": 173
+        },
+        {
+          "end": 178,
+          "start": 175
+        },
+        {
+          "end": 191,
+          "start": 179
+        },
+        {
+          "end": 193,
+          "start": 192
+        },
+        {
+          "end": 196,
+          "start": 194
+        },
+        {
+          "end": 200,
+          "start": 197
+        },
+        {
+          "end": 202,
+          "start": 200
+        },
+        {
+          "end": 205,
+          "start": 202
+        },
+        {
+          "end": 206,
+          "start": 205
+        },
+        {
+          "end": 210,
+          "start": 207
+        },
+        {
+          "end": 212,
+          "start": 211
+        },
+        {
+          "end": 216,
+          "start": 213
+        },
+        {
+          "end": 233,
+          "start": 217
+        },
+        {
+          "end": 236,
+          "start": 233
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 68,
+          "start": 8
+        },
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 76,
+          "start": 70
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 83,
+          "start": 79
+        },
+        {
+          "end": 87,
+          "start": 84
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 95,
+          "start": 90
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 100,
+          "start": 98
+        },
+        {
+          "end": 104,
+          "start": 101
+        },
+        {
+          "end": 107,
+          "start": 105
+        },
+        {
+          "end": 111,
+          "start": 108
+        },
+        {
+          "end": 116,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 126,
+          "start": 122
+        },
+        {
+          "end": 128,
+          "start": 127
+        },
+        {
+          "end": 130,
+          "start": 129
+        },
+        {
+          "end": 132,
+          "start": 131
+        },
+        {
+          "end": 136,
+          "start": 133
+        },
+        {
+          "end": 145,
+          "start": 137
+        },
+        {
+          "end": 147,
+          "start": 146
+        },
+        {
+          "end": 150,
+          "start": 148
+        },
+        {
+          "end": 154,
+          "start": 151
+        },
+        {
+          "end": 157,
+          "start": 154
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 163,
+          "start": 160
+        },
+        {
+          "end": 167,
+          "start": 164
+        },
+        {
+          "end": 170,
+          "start": 167
+        },
+        {
+          "end": 172,
+          "start": 171
+        },
+        {
+          "end": 174,
+          "start": 173
+        },
+        {
+          "end": 178,
+          "start": 175
+        },
+        {
+          "end": 191,
+          "start": 179
+        },
+        {
+          "end": 193,
+          "start": 192
+        },
+        {
+          "end": 196,
+          "start": 194
+        },
+        {
+          "end": 200,
+          "start": 197
+        },
+        {
+          "end": 202,
+          "start": 200
+        },
+        {
+          "end": 205,
+          "start": 202
+        },
+        {
+          "end": 206,
+          "start": 205
+        },
+        {
+          "end": 210,
+          "start": 207
+        },
+        {
+          "end": 212,
+          "start": 211
+        },
+        {
+          "end": 216,
+          "start": 213
+        },
+        {
+          "end": 233,
+          "start": 217
+        },
+        {
+          "end": 236,
+          "start": 233
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 151,
+      "signature_spans": [
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 76,
+          "start": 70
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 83,
+          "start": 79
+        },
+        {
+          "end": 87,
+          "start": 84
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 95,
+          "start": 90
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 100,
+          "start": 98
+        },
+        {
+          "end": 104,
+          "start": 101
+        },
+        {
+          "end": 107,
+          "start": 105
+        },
+        {
+          "end": 111,
+          "start": 108
+        },
+        {
+          "end": 116,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 126,
+          "start": 122
+        },
+        {
+          "end": 128,
+          "start": 127
+        },
+        {
+          "end": 130,
+          "start": 129
+        },
+        {
+          "end": 132,
+          "start": 131
+        },
+        {
+          "end": 136,
+          "start": 133
+        },
+        {
+          "end": 145,
+          "start": 137
+        },
+        {
+          "end": 147,
+          "start": 146
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_sets_logic_main_logic_relation_09 {«α» : Type u_1} {«r» : α → α → Prop} :\n  flip r = r ↔ Std.Symm r :=\n⟨fun h ↦ ⟨fun _ _ ↦ congr_fun₂ h .. |>.mp⟩, fun _ ↦ Std.Symm.flip_eq⟩",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "α",
+          "type_source": "Type u_1"
+        },
+        {
+          "binder_info": "implicit",
+          "name": "r",
+          "type_source": "α → α → Prop"
+        }
+      ],
+      "proposition": "Eq.{u_1 + 1} (flip.{u_1 + 1, u_1 + 1, 1} r) r ↔ Std.Symm.{u_1 + 1} r"
+    },
+    "trusted_type_expression": "forall {α : Type.{u_1}} {r : α -> α -> Prop}, Iff (Eq.{succ u_1} (α -> α -> Prop) (flip.{succ u_1, succ u_1, 1} α α Prop r) r) (Std.Symm.{succ u_1} α r)",
+    "trusted_type_source": "∀ {α : Type u_1} {r : α → α → Prop}, Eq.{u_1 + 1} (flip.{u_1 + 1, u_1 + 1, 1} r) r ↔ Std.Symm.{u_1 + 1} r",
+    "universe_parameters": [
+      "u_1"
+    ],
+    "validity_status": "success"
+  },
+  "graph_hash": "a620c18e036af2ca77fe240dd62d7db0816c2334f01d385617c5bf8acc222ea7",
+  "metric_status": "available",
+  "metrics": {
+    "D": 5,
+    "I0": {
+      "denominator_decimal": "22",
+      "log2": -0.06711419585853662,
+      "numerator_decimal": "21"
+    },
+    "T0": {
+      "denominator_decimal": "43",
+      "log2": 0.8956633401852647,
+      "numerator_decimal": "80"
+    },
+    "U_B_decimal": "72",
+    "U_S_decimal": "8",
+    "U_decimal": "80",
+    "W_B": 21,
+    "W_S": 22,
+    "body_state": "present",
+    "distinct_dependency_count": 16,
+    "log2_I0": -0.06711419585853662,
+    "log2_T0": 0.8956633401852647,
+    "log2_U": 6.321928094887363,
+    "log2_U_B": 6.169925001442312,
+    "log2_U_S": 3.0,
+    "log2_W": 5.426264754702098,
+    "metric_profile": "paper_aligned_v1",
+    "metric_status": "available",
+    "primitive_count": 12,
+    "reachable_node_count": 17,
+    "reasons": []
+  },
+  "primitive_manifest": [
+    "@Sort",
+    "Eq",
+    "Eq.mp",
+    "Iff",
+    "Iff.intro",
+    "Std.Symm",
+    "Std.Symm.mk",
+    "Std.Symm.symm",
+    "congr_fun₂",
+    "flip",
+    "funext₂",
+    "propext"
+  ],
+  "primitive_manifest_hash": "25f9ed2c419f773c8f563316b8d36410220c2b28999b5166cc350307a4278cf2",
+  "primitive_manifest_scope": "reachable closure; boundary policy and environment define shared corpus boundary",
+  "reference_cache_key": "0e893ce216a753a9dee6d301c56a8abcf61cbde2088e358eaff6b10a0ff758fa",
+  "reference_proof_sha256": "166bf9aeec0faae8da096df1f30041316a94bc116728a270d631df82d8f5f598",
+  "source_hash": "a36b5e113751a704ae270c143cdf6794a52b4fe75976e49f46aa820eefbe496d",
+  "source_token_policy_hash": "878ab5fb5aa65e79973e4577203e29b9e6d67de66b91ff97b86ad021f5f229c9",
+  "task_hash": "5c3ab98f6121aa94e58e7862ae5ca3b6ba7305feeb3ecf1fb0533913a3c2ef85",
+  "task_id": "lib_sets_logic_main_logic_relation_09",
+  "task_input_hash": "6b7ad7bd10ee731df0d023b7add72539d6449ac59d3ca0197a7f721a01386bcf",
+  "validation": {
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "candidate_declarations": [
+      "CompressionEval.lib_sets_logic_main_logic_relation_09"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 133,
+      "syntax_kinds": [
+        "Lean.Parser.Term.anonymousCtor",
+        "null",
+        "Lean.Parser.Term.fun",
+        "Lean.Parser.Term.basicFun",
+        "Lean.Parser.Term.hole",
+        "Lean.Parser.Term.pipeProj",
+        "Lean.Parser.Term.app",
+        "Lean.Parser.Term.ellipsis"
+      ],
+      "transitive_dependency_count": 29
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "1591728164",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Relator"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.Use"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.MkIffOfInductiveProp"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.SimpRw"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.Defs.Prop"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Order.Defs.Unbundled"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Batteries.Logic"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Batteries.Tactic.Trans"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 2.2815975416451693,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "2e35a2e30167f7982c0017af3cb8353b458bb32491f1bb8115d09c7dce7ecd31",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_sets_logic_main_logic_relation_09",
+    "source_tokens": {
+      "W_B": 21,
+      "W_S": 22,
+      "W_full": 47,
+      "body_spans": [
+        {
+          "end": 154,
+          "start": 151
+        },
+        {
+          "end": 157,
+          "start": 154
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 163,
+          "start": 160
+        },
+        {
+          "end": 167,
+          "start": 164
+        },
+        {
+          "end": 170,
+          "start": 167
+        },
+        {
+          "end": 172,
+          "start": 171
+        },
+        {
+          "end": 174,
+          "start": 173
+        },
+        {
+          "end": 178,
+          "start": 175
+        },
+        {
+          "end": 191,
+          "start": 179
+        },
+        {
+          "end": 193,
+          "start": 192
+        },
+        {
+          "end": 196,
+          "start": 194
+        },
+        {
+          "end": 200,
+          "start": 197
+        },
+        {
+          "end": 202,
+          "start": 200
+        },
+        {
+          "end": 205,
+          "start": 202
+        },
+        {
+          "end": 206,
+          "start": 205
+        },
+        {
+          "end": 210,
+          "start": 207
+        },
+        {
+          "end": 212,
+          "start": 211
+        },
+        {
+          "end": 216,
+          "start": 213
+        },
+        {
+          "end": 233,
+          "start": 217
+        },
+        {
+          "end": 236,
+          "start": 233
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 68,
+          "start": 8
+        },
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 76,
+          "start": 70
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 83,
+          "start": 79
+        },
+        {
+          "end": 87,
+          "start": 84
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 95,
+          "start": 90
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 100,
+          "start": 98
+        },
+        {
+          "end": 104,
+          "start": 101
+        },
+        {
+          "end": 107,
+          "start": 105
+        },
+        {
+          "end": 111,
+          "start": 108
+        },
+        {
+          "end": 116,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 119,
+          "start": 118
+        },
+        {
+          "end": 126,
+          "start": 122
+        },
+        {
+          "end": 128,
+          "start": 127
+        },
+        {
+          "end": 130,
+          "start": 129
+        },
+        {
+          "end": 132,
+          "start": 131
+        },
+        {
+          "end": 136,
+          "start": 133
+        },
+        {
+          "end": 145,
+          "start": 137
+        },
+        {
+          "end": 147,
+          "start": 146
+        },
+        {
+          "end": 150,
+          "start": 148
+        },
+        {
+          "end": 154,
+          "start": 151
+        },
+        {
+          "end": 157,
+          "start": 154
+        },
+        {
+          "end": 159,
+          "start": 158
+        },
+        {
+          "end": 163,
+          "start": 160
+        },
+        {
+          "end": 167,
+          "start": 164
+        },
+        {
+          "end": 170,
+          "start": 167
+        },
+        {
+          "end": 172,
+          "start": 171
+        },
+        {
+          "end": 174,
+          "start": 173
+        },
+        {
+          "end": 178,
+          "start": 175
+        },
+        {
+          "end": 191,
+          "start": 179
+        },
+        {
+          "end": 193,
+          "start": 192
+        },
+        {
+          "end": 196,
+          "start": 194
+        },
+        {
+          "end": 200,
+          "start": 197
+        },
+        {
+          "end": 202,
+          "start": 200
+        },
+        {
+          "end": 205,
+          "start": 202
+        },
+        {
+          "end": 206,
+          "start": 205
+        },
+        {
+          "end": 210,
+          "start": 207
+        },
+        {
+          "end": 212,
+          "start": 211
+        },
+        {
+          "end": 216,
+          "start": 213
+        },
+        {
+          "end": 233,
+          "start": 217
+        },
+        {
+          "end": 236,
+          "start": 233
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 151,
+      "signature_spans": [
+        {
+          "end": 70,
+          "start": 69
+        },
+        {
+          "end": 76,
+          "start": 70
+        },
+        {
+          "end": 78,
+          "start": 77
+        },
+        {
+          "end": 83,
+          "start": 79
+        },
+        {
+          "end": 87,
+          "start": 84
+        },
+        {
+          "end": 88,
+          "start": 87
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 95,
+          "start": 90
+        },
+        {
+          "end": 97,
+          "start": 96
+        },
+        {
+          "end": 100,
+          "start": 98
+        },
+        {
+          "end": 104,
+          "start": 101
+        },
+        {
+          "end": 107,
+          "start": 105
+        },
+        {
+          "end": 111,
+          "start": 108
+        },
+        {
+          "end": 116,
+          "start": 112
+        },
+        {
+          "end": 117,
+          "start": 116
+        },
+        {
+          "end": 126,
+          "start": 122
+        },
+        {
+          "end": 128,
+          "start": 127
+        },
+        {
+          "end": 130,
+          "start": 129
+        },
+        {
+          "end": 132,
+          "start": 131
+        },
+        {
+          "end": 136,
+          "start": 133
+        },
+        {
+          "end": 145,
+          "start": 137
+        },
+        {
+          "end": 147,
+          "start": 146
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_sets_logic_main_logic_relation_09 {«α» : Type u_1} {«r» : α → α → Prop} :\n  flip r = r ↔ Std.Symm r :=\n⟨fun h ↦ ⟨fun _ _ ↦ congr_fun₂ h .. |>.mp⟩, fun _ ↦ Std.Symm.flip_eq⟩",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "α",
+          "type_source": "Type u_1"
+        },
+        {
+          "binder_info": "implicit",
+          "name": "r",
+          "type_source": "α → α → Prop"
+        }
+      ],
+      "proposition": "Eq.{u_1 + 1} (flip.{u_1 + 1, u_1 + 1, 1} r) r ↔ Std.Symm.{u_1 + 1} r"
+    },
+    "trusted_type_expression": "forall {α : Type.{u_1}} {r : α -> α -> Prop}, Iff (Eq.{succ u_1} (α -> α -> Prop) (flip.{succ u_1, succ u_1, 1} α α Prop r) r) (Std.Symm.{succ u_1} α r)",
+    "trusted_type_source": "∀ {α : Type u_1} {r : α → α → Prop}, Eq.{u_1 + 1} (flip.{u_1 + 1, u_1 + 1, 1} r) r ↔ Std.Symm.{u_1 + 1} r",
+    "universe_parameters": [
+      "u_1"
+    ],
+    "validity_status": "success"
+  },
+  "validity_status": "success"
+}

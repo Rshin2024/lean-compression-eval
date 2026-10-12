@@ -1,0 +1,128 @@
+{
+  "task": {
+    "task_id": "lib_number_theory_main_numbertheory_divisors_01",
+    "family_id": "source_module_Mathlib.NumberTheory.Divisors",
+    "domain": "number_theory",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Algebra.IsPrimePow",
+      "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+      "Mathlib.Algebra.Order.Interval.Finset.SuccPred",
+      "Mathlib.Algebra.Order.Ring.Int",
+      "Mathlib.Algebra.Ring.CharZero",
+      "Mathlib.Data.Finset.NatAntidiagonal",
+      "Mathlib.Data.Nat.Cast.Order.Ring",
+      "Mathlib.Data.Nat.PrimeFin",
+      "Mathlib.Data.Nat.SuccPred",
+      "Mathlib.Order.Interval.Finset.Nat"
+    ],
+    "context": "/-\nCopyright (c) 2020 Aaron Anderson. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Aaron Anderson\n-/\n/-!\n# Divisor Finsets\n\nThis file defines sets of divisors of a natural number. This is particularly useful as background\nfor defining Dirichlet convolution.\n\n## Main Definitions\nLet `n : ℕ`. All of the following definitions are in the `Nat` namespace:\n* `divisors n` is the `Finset` of natural numbers that divide `n`.\n* `properDivisors n` is the `Finset` of natural numbers that divide `n`, other than `n`.\n* `divisorsAntidiagonal n` is the `Finset` of pairs `(x,y)` such that `x * y = n`.\n* `Perfect n` is true when `n` is positive and the sum of `properDivisors n` is `n`.\n\n## Conventions\n\nSince `0` has infinitely many divisors, none of the definitions in this file make sense for it.\nTherefore we adopt the convention that `Nat.divisors 0`, `Nat.properDivisors 0`,\n`Nat.divisorsAntidiagonal 0` and `Int.divisorsAntidiag 0` are all `∅`.\n\n## Tags\ndivisors, perfect numbers\n\n-/\n\n@[expose] public section\n\nopen Finset\n\nnamespace Nat\n\nvariable (n : ℕ)\n\n/-- `divisors n` is the `Finset` of divisors of `n`. By convention, we set `divisors 0 = ∅`. -/\ndef divisors : Finset ℕ := {d ∈ Ico 1 (n + 1) | d ∣ n}\n\n/-- `properDivisors n` is the `Finset` of divisors of `n`, other than `n`.\nBy convention, we set `properDivisors 0 = ∅`. -/\ndef properDivisors : Finset ℕ := {d ∈ Ico 1 n | d ∣ n}\n\n/-- Pairs of divisors of a natural number as a finset.\n\n`n.divisorsAntidiagonal` is the finset of pairs `(a, b) : ℕ × ℕ` such that `a * b = n`.\nBy convention, we set `Nat.divisorsAntidiagonal 0 = ∅`.\n\nO(n). -/\ndef divisorsAntidiagonal : Finset (ℕ × ℕ) :=\n  (Icc 1 n).filterMap (fun x ↦ let y := n / x; if x * y = n then some (x, y) else none)\n    fun x₁ x₂ (x, y) hx₁ hx₂ ↦ by aesop\n\n/-- Pairs of divisors of a natural number, as a list.\n\n`n.divisorsAntidiagonalList` is the list of pairs `(a, b) : ℕ × ℕ` such that `a * b = n`, ordered\nby increasing `a`. By convention, we set `Nat.divisorsAntidiagonalList 0 = []`.\n-/\ndef divisorsAntidiagonalList (n : ℕ) : List (ℕ × ℕ) :=\n  (List.range' 1 n).filterMap\n    (fun x ↦ let y := n / x; if x * y = n then some (x, y) else none)\n\nvariable {n}\nassert_not_exists _root_.Nat.filter_dvd_eq_divisors\n",
+    "binders": "{«n» : ℕ} (h : n ≠ 0)",
+    "proposition": "{d ∈ range n.succ | d ∣ n} = n.divisors",
+    "target_name": "_root_.CompressionEval.lib_number_theory_main_numbertheory_divisors_01",
+    "premise_context": "open Finset\nnamespace Nat\nvariable (n : ℕ)\nvariable {n}\n\nAvailable preceding statements (within the shown source scopes):\n",
+    "forbidden_declarations": [
+      "Nat.filter_dvd_eq_divisors"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.NumberTheory.Divisors",
+      "source_path": "Mathlib/NumberTheory/Divisors.lean",
+      "declaration": "Nat.filter_dvd_eq_divisors",
+      "source_line": 80,
+      "source_sha256": "e7555124268396deaeb0c2b2764a87d4578820d1becca4597ff48224f5a5817a",
+      "prefix_end_character": 2724,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "372f711f2803f4d79950a62547a1c03ffc0876ebecbab07a24e2c23893912f04",
+      "premise_context": "df01e987780069db15f3a092bd36a3500ffa7742ff4ea80c6f4f3d50ef5c8b28",
+      "binders": "6e60ce5b4d517af0153c0ae8a1fe0f95a79117d07ce0adf96d694bf1a07206e0",
+      "proposition": "eb8452517d28938a18aa71a23915ca64e4e49689a257027a0e998773425ea135"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Algebra.IsPrimePow",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Order.BigOperators.Group.Finset",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Order.Interval.Finset.SuccPred",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Order.Ring.Int",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Ring.CharZero",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Finset.NatAntidiagonal",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Nat.Cast.Order.Ring",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Nat.PrimeFin",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Nat.SuccPred",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Order.Interval.Finset.Nat",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

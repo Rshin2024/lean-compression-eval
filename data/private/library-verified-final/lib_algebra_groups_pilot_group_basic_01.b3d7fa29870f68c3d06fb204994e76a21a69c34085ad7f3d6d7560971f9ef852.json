@@ -1,0 +1,2046 @@
+{
+  "boundary_policy": "expand_mathlib_and_evaluator_v1",
+  "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
+  "evaluated_at": "2026-10-12T04:01:53.735391+00:00",
+  "extraction": {
+    "axioms": [],
+    "candidate_declarations": [
+      "CompressionEval.lib_algebra_groups_pilot_group_basic_01"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 1537,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.«tactic_<;>_»",
+        "Mathlib.Tactic.splitIfs",
+        "Lean.Parser.Tactic.tacticRfl"
+      ],
+      "transitive_dependency_count": 32
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "available",
+    "nodes": [
+      {
+        "body": {
+          "@Sort": 9,
+          "Decidable": 1,
+          "Eq": 17,
+          "Eq.mpr": 2,
+          "Eq.refl": 2,
+          "HPow.hPow": 45,
+          "Not": 24,
+          "Pow": 1,
+          "congr": 2,
+          "congrArg": 4,
+          "dite": 19,
+          "dite_eq_left": 2,
+          "dite_eq_right": 2,
+          "id": 2,
+          "instHPow": 45
+        },
+        "body_nodes": 1537,
+        "body_present": true,
+        "histogram_status": "measured",
+        "literal_bytes": 0,
+        "name": "CompressionEval.lib_algebra_groups_pilot_group_basic_01",
+        "owner_module": "EvaluatorCandidate",
+        "primitive": false,
+        "signature": {
+          "@Sort": 3,
+          "Decidable": 1,
+          "Eq": 1,
+          "HPow.hPow": 3,
+          "Not": 3,
+          "Pow": 1,
+          "dite": 2,
+          "instHPow": 3
+        },
+        "source_counts": null,
+        "type_hash": "2092745224",
+        "type_nodes": 129,
+        "value_hash": "3387552735"
+      },
+      {
+        "body": null,
+        "name": "@Sort",
+        "owner_module": "@builtin",
+        "primitive": true,
+        "signature": {},
+        "type_hash": "@Sort",
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Pow",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3173088088",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Decidable",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3999629524",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Not",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3536219763",
+        "type_nodes": null,
+        "value_hash": "147715320"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3970007004",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "HPow.hPow",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1206077899",
+        "type_nodes": null,
+        "value_hash": "3889254115"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "instHPow",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "572985902",
+        "type_nodes": null,
+        "value_hash": "3415853709"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "dite",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "910459786",
+        "type_nodes": null,
+        "value_hash": "3466187488"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.mpr",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "4214998329",
+        "type_nodes": null,
+        "value_hash": "136866614"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "id",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1324171196",
+        "type_nodes": null,
+        "value_hash": "2317393034"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "congr",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1876132096",
+        "type_nodes": null,
+        "value_hash": "227469821"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "congrArg",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "2722762766",
+        "type_nodes": null,
+        "value_hash": "2643130269"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "dite_eq_left",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1132350498",
+        "type_nodes": null,
+        "value_hash": "52181581"
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": false,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "Eq.refl",
+        "owner_module": "Init.Prelude",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "3843735716",
+        "type_nodes": null,
+        "value_hash": null
+      },
+      {
+        "body": null,
+        "body_nodes": null,
+        "body_present": true,
+        "histogram_status": "atomic_boundary_not_expanded",
+        "literal_bytes": null,
+        "name": "dite_eq_right",
+        "owner_module": "Init.Core",
+        "primitive": true,
+        "signature": {},
+        "source_counts": null,
+        "type_hash": "1918154891",
+        "type_nodes": null,
+        "value_hash": "3765302604"
+      }
+    ],
+    "process_returncode": 0,
+    "proved_type_fingerprint": "2092745224",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Aesop"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Algebra.Group.Defs"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Data.Int.Init"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Function.Iterate"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.SimpRw"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.SplitIfs"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 3.3060638341121376,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "1dc4209c39b12e2cc58ca6a4784d8336914853ad9b764528f85f6f6cc50d961f",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_algebra_groups_pilot_group_basic_01",
+    "source_tokens": {
+      "W_B": 4,
+      "W_S": 82,
+      "W_full": 90,
+      "body_spans": [
+        {
+          "end": 291,
+          "start": 289
+        },
+        {
+          "end": 301,
+          "start": 292
+        },
+        {
+          "end": 305,
+          "start": 302
+        },
+        {
+          "end": 309,
+          "start": 306
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 70,
+          "start": 8
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 78,
+          "start": 72
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 85,
+          "start": 81
+        },
+        {
+          "end": 89,
+          "start": 86
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 92,
+          "start": 91
+        },
+        {
+          "end": 98,
+          "start": 92
+        },
+        {
+          "end": 100,
+          "start": 99
+        },
+        {
+          "end": 105,
+          "start": 101
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 110,
+          "start": 109
+        },
+        {
+          "end": 112,
+          "start": 111
+        },
+        {
+          "end": 120,
+          "start": 112
+        },
+        {
+          "end": 122,
+          "start": 121
+        },
+        {
+          "end": 126,
+          "start": 123
+        },
+        {
+          "end": 128,
+          "start": 126
+        },
+        {
+          "end": 131,
+          "start": 128
+        },
+        {
+          "end": 132,
+          "start": 131
+        },
+        {
+          "end": 136,
+          "start": 133
+        },
+        {
+          "end": 137,
+          "start": 136
+        },
+        {
+          "end": 140,
+          "start": 138
+        },
+        {
+          "end": 143,
+          "start": 141
+        },
+        {
+          "end": 144,
+          "start": 143
+        },
+        {
+          "end": 146,
+          "start": 145
+        },
+        {
+          "end": 147,
+          "start": 146
+        },
+        {
+          "end": 149,
+          "start": 148
+        },
+        {
+          "end": 154,
+          "start": 150
+        },
+        {
+          "end": 155,
+          "start": 154
+        },
+        {
+          "end": 157,
+          "start": 156
+        },
+        {
+          "end": 166,
+          "start": 157
+        },
+        {
+          "end": 168,
+          "start": 167
+        },
+        {
+          "end": 169,
+          "start": 168
+        },
+        {
+          "end": 171,
+          "start": 170
+        },
+        {
+          "end": 172,
+          "start": 171
+        },
+        {
+          "end": 174,
+          "start": 173
+        },
+        {
+          "end": 177,
+          "start": 175
+        },
+        {
+          "end": 178,
+          "start": 177
+        },
+        {
+          "end": 180,
+          "start": 179
+        },
+        {
+          "end": 181,
+          "start": 180
+        },
+        {
+          "end": 183,
+          "start": 182
+        },
+        {
+          "end": 185,
+          "start": 184
+        },
+        {
+          "end": 189,
+          "start": 186
+        },
+        {
+          "end": 192,
+          "start": 190
+        },
+        {
+          "end": 193,
+          "start": 192
+        },
+        {
+          "end": 195,
+          "start": 194
+        },
+        {
+          "end": 196,
+          "start": 195
+        },
+        {
+          "end": 198,
+          "start": 197
+        },
+        {
+          "end": 201,
+          "start": 199
+        },
+        {
+          "end": 203,
+          "start": 202
+        },
+        {
+          "end": 207,
+          "start": 204
+        },
+        {
+          "end": 210,
+          "start": 208
+        },
+        {
+          "end": 211,
+          "start": 210
+        },
+        {
+          "end": 213,
+          "start": 212
+        },
+        {
+          "end": 217,
+          "start": 216
+        },
+        {
+          "end": 219,
+          "start": 218
+        },
+        {
+          "end": 221,
+          "start": 220
+        },
+        {
+          "end": 223,
+          "start": 221
+        },
+        {
+          "end": 225,
+          "start": 224
+        },
+        {
+          "end": 227,
+          "start": 226
+        },
+        {
+          "end": 229,
+          "start": 228
+        },
+        {
+          "end": 234,
+          "start": 230
+        },
+        {
+          "end": 236,
+          "start": 235
+        },
+        {
+          "end": 238,
+          "start": 237
+        },
+        {
+          "end": 243,
+          "start": 239
+        },
+        {
+          "end": 245,
+          "start": 244
+        },
+        {
+          "end": 247,
+          "start": 246
+        },
+        {
+          "end": 248,
+          "start": 247
+        },
+        {
+          "end": 250,
+          "start": 249
+        },
+        {
+          "end": 253,
+          "start": 251
+        },
+        {
+          "end": 255,
+          "start": 254
+        },
+        {
+          "end": 257,
+          "start": 256
+        },
+        {
+          "end": 259,
+          "start": 258
+        },
+        {
+          "end": 264,
+          "start": 260
+        },
+        {
+          "end": 266,
+          "start": 265
+        },
+        {
+          "end": 268,
+          "start": 267
+        },
+        {
+          "end": 270,
+          "start": 269
+        },
+        {
+          "end": 272,
+          "start": 271
+        },
+        {
+          "end": 277,
+          "start": 273
+        },
+        {
+          "end": 279,
+          "start": 278
+        },
+        {
+          "end": 281,
+          "start": 280
+        },
+        {
+          "end": 283,
+          "start": 282
+        },
+        {
+          "end": 285,
+          "start": 284
+        },
+        {
+          "end": 288,
+          "start": 286
+        },
+        {
+          "end": 291,
+          "start": 289
+        },
+        {
+          "end": 301,
+          "start": 292
+        },
+        {
+          "end": 305,
+          "start": 302
+        },
+        {
+          "end": 309,
+          "start": 306
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 289,
+      "signature_spans": [
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 78,
+          "start": 72
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 85,
+          "start": 81
+        },
+        {
+          "end": 89,
+          "start": 86
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 92,
+          "start": 91
+        },
+        {
+          "end": 98,
+          "start": 92
+        },
+        {
+          "end": 100,
+          "start": 99
+        },
+        {
+          "end": 105,
+          "start": 101
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 110,
+          "start": 109
+        },
+        {
+          "end": 112,
+          "start": 111
+        },
+        {
+          "end": 120,
+          "start": 112
+        },
+        {
+          "end": 122,
+          "start": 121
+        },
+        {
+          "end": 126,
+          "start": 123
+        },
+        {
+          "end": 128,
+          "start": 126
+        },
+        {
+          "end": 131,
+          "start": 128
+        },
+        {
+          "end": 132,
+          "start": 131
+        },
+        {
+          "end": 136,
+          "start": 133
+        },
+        {
+          "end": 137,
+          "start": 136
+        },
+        {
+          "end": 140,
+          "start": 138
+        },
+        {
+          "end": 143,
+          "start": 141
+        },
+        {
+          "end": 144,
+          "start": 143
+        },
+        {
+          "end": 146,
+          "start": 145
+        },
+        {
+          "end": 147,
+          "start": 146
+        },
+        {
+          "end": 149,
+          "start": 148
+        },
+        {
+          "end": 154,
+          "start": 150
+        },
+        {
+          "end": 155,
+          "start": 154
+        },
+        {
+          "end": 157,
+          "start": 156
+        },
+        {
+          "end": 166,
+          "start": 157
+        },
+        {
+          "end": 168,
+          "start": 167
+        },
+        {
+          "end": 169,
+          "start": 168
+        },
+        {
+          "end": 171,
+          "start": 170
+        },
+        {
+          "end": 172,
+          "start": 171
+        },
+        {
+          "end": 174,
+          "start": 173
+        },
+        {
+          "end": 177,
+          "start": 175
+        },
+        {
+          "end": 178,
+          "start": 177
+        },
+        {
+          "end": 180,
+          "start": 179
+        },
+        {
+          "end": 181,
+          "start": 180
+        },
+        {
+          "end": 183,
+          "start": 182
+        },
+        {
+          "end": 185,
+          "start": 184
+        },
+        {
+          "end": 189,
+          "start": 186
+        },
+        {
+          "end": 192,
+          "start": 190
+        },
+        {
+          "end": 193,
+          "start": 192
+        },
+        {
+          "end": 195,
+          "start": 194
+        },
+        {
+          "end": 196,
+          "start": 195
+        },
+        {
+          "end": 198,
+          "start": 197
+        },
+        {
+          "end": 201,
+          "start": 199
+        },
+        {
+          "end": 203,
+          "start": 202
+        },
+        {
+          "end": 207,
+          "start": 204
+        },
+        {
+          "end": 210,
+          "start": 208
+        },
+        {
+          "end": 211,
+          "start": 210
+        },
+        {
+          "end": 217,
+          "start": 216
+        },
+        {
+          "end": 219,
+          "start": 218
+        },
+        {
+          "end": 221,
+          "start": 220
+        },
+        {
+          "end": 223,
+          "start": 221
+        },
+        {
+          "end": 225,
+          "start": 224
+        },
+        {
+          "end": 227,
+          "start": 226
+        },
+        {
+          "end": 229,
+          "start": 228
+        },
+        {
+          "end": 234,
+          "start": 230
+        },
+        {
+          "end": 236,
+          "start": 235
+        },
+        {
+          "end": 238,
+          "start": 237
+        },
+        {
+          "end": 243,
+          "start": 239
+        },
+        {
+          "end": 245,
+          "start": 244
+        },
+        {
+          "end": 247,
+          "start": 246
+        },
+        {
+          "end": 248,
+          "start": 247
+        },
+        {
+          "end": 250,
+          "start": 249
+        },
+        {
+          "end": 253,
+          "start": 251
+        },
+        {
+          "end": 255,
+          "start": 254
+        },
+        {
+          "end": 257,
+          "start": 256
+        },
+        {
+          "end": 259,
+          "start": 258
+        },
+        {
+          "end": 264,
+          "start": 260
+        },
+        {
+          "end": 266,
+          "start": 265
+        },
+        {
+          "end": 268,
+          "start": 267
+        },
+        {
+          "end": 270,
+          "start": 269
+        },
+        {
+          "end": 272,
+          "start": 271
+        },
+        {
+          "end": 277,
+          "start": 273
+        },
+        {
+          "end": 279,
+          "start": 278
+        },
+        {
+          "end": 281,
+          "start": 280
+        },
+        {
+          "end": 283,
+          "start": 282
+        },
+        {
+          "end": 285,
+          "start": 284
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_algebra_groups_pilot_group_basic_01 {«α» : Type u_1} {«β» : Type u_2} [«inst» : Pow.{u_1, u_2} α β] (p : Prop) [Decidable p] (a : α) (b : p → β) (c : ¬ p → β) :\n  a ^ (if h : p then b h else c h) = if h : p then a ^ b h else a ^ c h :=\nby split_ifs <;> rfl",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "α",
+          "type_source": "Type u_1"
+        },
+        {
+          "binder_info": "implicit",
+          "name": "β",
+          "type_source": "Type u_2"
+        },
+        {
+          "binder_info": "instance",
+          "name": "inst",
+          "type_source": "Pow.{u_1, u_2} α β"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "p",
+          "type_source": "Prop"
+        },
+        {
+          "binder_info": "instance",
+          "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.16",
+          "type_source": "Decidable p"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "a",
+          "type_source": "α"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "b",
+          "type_source": "p → β"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "c",
+          "type_source": "¬p → β"
+        }
+      ],
+      "proposition": "Eq.{u_1 + 1} (HPow.hPow.{u_1, u_2, u_1} a (if h : p then b h else c h))\n  (if h : p then HPow.hPow.{u_1, u_2, u_1} a (b h) else HPow.hPow.{u_1, u_2, u_1} a (c h))"
+    },
+    "trusted_type_expression": "forall {α : Type.{u_1}} {β : Type.{u_2}} [inst : Pow.{u_1, u_2} α β] (p : Prop) [inst._@.EvaluatorCandidate.2816149411._hygCtx._hyg.16 : Decidable p] (a : α) (b : p -> β) (c : (Not p) -> β), Eq.{succ u_1} α (HPow.hPow.{u_1, u_2, u_1} α β α (instHPow.{u_1, u_2} α β inst) a (dite.{succ u_2} β p inst._@.EvaluatorCandidate.2816149411._hygCtx._hyg.16 (fun (h : p) => b h) (fun (h : Not p) => c h))) (dite.{succ u_1} α p inst._@.EvaluatorCandidate.2816149411._hygCtx._hyg.16 (fun (h : p) => HPow.hPow.{u_1, u_2, u_1} α β α (instHPow.{u_1, u_2} α β inst) a (b h)) (fun (h : Not p) => HPow.hPow.{u_1, u_2, u_1} α β α (instHPow.{u_1, u_2} α β inst) a (c h)))",
+    "trusted_type_source": "∀ {α : Type u_1} {β : Type u_2} [inst : Pow.{u_1, u_2} α β] (p : Prop) [inst_1 : Decidable p] (a : α) (b : p → β)\n  (c : ¬p → β),\n  Eq.{u_1 + 1} (HPow.hPow.{u_1, u_2, u_1} a (if h : p then b h else c h))\n    (if h : p then HPow.hPow.{u_1, u_2, u_1} a (b h) else HPow.hPow.{u_1, u_2, u_1} a (c h))",
+    "universe_parameters": [
+      "u_1",
+      "u_2"
+    ],
+    "validity_status": "success"
+  },
+  "graph_hash": "13b00e696e5a4f3e5e4b46b392334dc59155c6b2571d2af63a850659f2180de9",
+  "metric_status": "available",
+  "metrics": {
+    "D": 1,
+    "I0": {
+      "denominator_decimal": "82",
+      "log2": -4.357552004618084,
+      "numerator_decimal": "4"
+    },
+    "T0": {
+      "denominator_decimal": "86",
+      "log2": 1.17364808748503,
+      "numerator_decimal": "194"
+    },
+    "U_B_decimal": "177",
+    "U_S_decimal": "17",
+    "U_decimal": "194",
+    "W_B": 4,
+    "W_S": 82,
+    "body_state": "present",
+    "distinct_dependency_count": 15,
+    "log2_I0": -4.357552004618084,
+    "log2_T0": 1.17364808748503,
+    "log2_U": 7.599912842187128,
+    "log2_U_B": 7.467605550082998,
+    "log2_U_S": 4.087462841250339,
+    "log2_W": 6.426264754702098,
+    "metric_profile": "paper_aligned_v1",
+    "metric_status": "available",
+    "primitive_count": 15,
+    "reachable_node_count": 16,
+    "reasons": []
+  },
+  "primitive_manifest": [
+    "@Sort",
+    "Decidable",
+    "Eq",
+    "Eq.mpr",
+    "Eq.refl",
+    "HPow.hPow",
+    "Not",
+    "Pow",
+    "congr",
+    "congrArg",
+    "dite",
+    "dite_eq_left",
+    "dite_eq_right",
+    "id",
+    "instHPow"
+  ],
+  "primitive_manifest_hash": "15287b73bc7ea3f2c0f5350502adeebd5e59de38af1a159da9660f537adca7d5",
+  "primitive_manifest_scope": "reachable closure; boundary policy and environment define shared corpus boundary",
+  "reference_cache_key": "b3d7fa29870f68c3d06fb204994e76a21a69c34085ad7f3d6d7560971f9ef852",
+  "reference_proof_sha256": "99e5995670b2ed24cded406f048aeb16e64636afc7ab7200b953da3a8fa981e3",
+  "source_hash": "b76318e40afced2660ff58980eab648e5659c41f8401746d0d8086bdf2736d3b",
+  "source_token_policy_hash": "878ab5fb5aa65e79973e4577203e29b9e6d67de66b91ff97b86ad021f5f229c9",
+  "task_hash": "efe013805e05cedc6ca6e0e5f287e9a5b5a1abc74143c1bb20b4cd2a05256dd1",
+  "task_id": "lib_algebra_groups_pilot_group_basic_01",
+  "task_input_hash": "b16de707cc334f959326647e65a618229c13b5fb1ea3d739f4cb3cc55f537859",
+  "validation": {
+    "axioms": [],
+    "candidate_declarations": [
+      "CompressionEval.lib_algebra_groups_pilot_group_basic_01"
+    ],
+    "diagnostics": {
+      "cached_uncached_root_histogram_agree": null,
+      "proof_nodes": 1537,
+      "syntax_kinds": [
+        "Lean.Parser.Term.byTactic",
+        "Lean.Parser.Tactic.tacticSeq",
+        "Lean.Parser.Tactic.tacticSeq1Indented",
+        "null",
+        "Lean.Parser.Tactic.«tactic_<;>_»",
+        "Mathlib.Tactic.splitIfs",
+        "Lean.Parser.Tactic.tacticRfl"
+      ],
+      "transitive_dependency_count": 32
+    },
+    "fingerprint_kind": "lean_expr_hash_noncryptographic",
+    "kernel_replay": true,
+    "metric_status": "not_requested",
+    "process_returncode": 0,
+    "proved_type_fingerprint": "2092745224",
+    "resolved_imports": [
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Aesop"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Algebra.Group.Defs"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Data.Int.Init"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Logic.Function.Iterate"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.SimpRw"
+      },
+      {
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false,
+        "module": "Mathlib.Tactic.SplitIfs"
+      }
+    ],
+    "resources": {
+      "cpu_quota": null,
+      "credentials_inherited": false,
+      "elapsed_seconds": 2.462460041977465,
+      "heartbeats_limit": 2000000,
+      "heartbeats_used": null,
+      "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+      "isolation": "macos_sandbox",
+      "memory_enforced": false,
+      "memory_mib_requested": 4096,
+      "model_tool_calls": 0,
+      "network": "disabled",
+      "peak_memory_mib": null,
+      "peak_memory_reason": "not_instrumented",
+      "profile_hash": "582eb1bc7ab12c1e617f5445bf3433f13bfcd300bc805eb567eccc4b885e0b4c",
+      "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+      "stderr_bytes": 0,
+      "stderr_log_truncated": false,
+      "stdout_bytes": 0,
+      "stdout_log_truncated": false,
+      "wall_seconds_limit": 60
+    },
+    "root": "CompressionEval.lib_algebra_groups_pilot_group_basic_01",
+    "source_tokens": {
+      "W_B": 4,
+      "W_S": 82,
+      "W_full": 90,
+      "body_spans": [
+        {
+          "end": 291,
+          "start": 289
+        },
+        {
+          "end": 301,
+          "start": 292
+        },
+        {
+          "end": 305,
+          "start": 302
+        },
+        {
+          "end": 309,
+          "start": 306
+        }
+      ],
+      "full_spans": [
+        {
+          "end": 7,
+          "start": 0
+        },
+        {
+          "end": 70,
+          "start": 8
+        },
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 78,
+          "start": 72
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 85,
+          "start": 81
+        },
+        {
+          "end": 89,
+          "start": 86
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 92,
+          "start": 91
+        },
+        {
+          "end": 98,
+          "start": 92
+        },
+        {
+          "end": 100,
+          "start": 99
+        },
+        {
+          "end": 105,
+          "start": 101
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 110,
+          "start": 109
+        },
+        {
+          "end": 112,
+          "start": 111
+        },
+        {
+          "end": 120,
+          "start": 112
+        },
+        {
+          "end": 122,
+          "start": 121
+        },
+        {
+          "end": 126,
+          "start": 123
+        },
+        {
+          "end": 128,
+          "start": 126
+        },
+        {
+          "end": 131,
+          "start": 128
+        },
+        {
+          "end": 132,
+          "start": 131
+        },
+        {
+          "end": 136,
+          "start": 133
+        },
+        {
+          "end": 137,
+          "start": 136
+        },
+        {
+          "end": 140,
+          "start": 138
+        },
+        {
+          "end": 143,
+          "start": 141
+        },
+        {
+          "end": 144,
+          "start": 143
+        },
+        {
+          "end": 146,
+          "start": 145
+        },
+        {
+          "end": 147,
+          "start": 146
+        },
+        {
+          "end": 149,
+          "start": 148
+        },
+        {
+          "end": 154,
+          "start": 150
+        },
+        {
+          "end": 155,
+          "start": 154
+        },
+        {
+          "end": 157,
+          "start": 156
+        },
+        {
+          "end": 166,
+          "start": 157
+        },
+        {
+          "end": 168,
+          "start": 167
+        },
+        {
+          "end": 169,
+          "start": 168
+        },
+        {
+          "end": 171,
+          "start": 170
+        },
+        {
+          "end": 172,
+          "start": 171
+        },
+        {
+          "end": 174,
+          "start": 173
+        },
+        {
+          "end": 177,
+          "start": 175
+        },
+        {
+          "end": 178,
+          "start": 177
+        },
+        {
+          "end": 180,
+          "start": 179
+        },
+        {
+          "end": 181,
+          "start": 180
+        },
+        {
+          "end": 183,
+          "start": 182
+        },
+        {
+          "end": 185,
+          "start": 184
+        },
+        {
+          "end": 189,
+          "start": 186
+        },
+        {
+          "end": 192,
+          "start": 190
+        },
+        {
+          "end": 193,
+          "start": 192
+        },
+        {
+          "end": 195,
+          "start": 194
+        },
+        {
+          "end": 196,
+          "start": 195
+        },
+        {
+          "end": 198,
+          "start": 197
+        },
+        {
+          "end": 201,
+          "start": 199
+        },
+        {
+          "end": 203,
+          "start": 202
+        },
+        {
+          "end": 207,
+          "start": 204
+        },
+        {
+          "end": 210,
+          "start": 208
+        },
+        {
+          "end": 211,
+          "start": 210
+        },
+        {
+          "end": 213,
+          "start": 212
+        },
+        {
+          "end": 217,
+          "start": 216
+        },
+        {
+          "end": 219,
+          "start": 218
+        },
+        {
+          "end": 221,
+          "start": 220
+        },
+        {
+          "end": 223,
+          "start": 221
+        },
+        {
+          "end": 225,
+          "start": 224
+        },
+        {
+          "end": 227,
+          "start": 226
+        },
+        {
+          "end": 229,
+          "start": 228
+        },
+        {
+          "end": 234,
+          "start": 230
+        },
+        {
+          "end": 236,
+          "start": 235
+        },
+        {
+          "end": 238,
+          "start": 237
+        },
+        {
+          "end": 243,
+          "start": 239
+        },
+        {
+          "end": 245,
+          "start": 244
+        },
+        {
+          "end": 247,
+          "start": 246
+        },
+        {
+          "end": 248,
+          "start": 247
+        },
+        {
+          "end": 250,
+          "start": 249
+        },
+        {
+          "end": 253,
+          "start": 251
+        },
+        {
+          "end": 255,
+          "start": 254
+        },
+        {
+          "end": 257,
+          "start": 256
+        },
+        {
+          "end": 259,
+          "start": 258
+        },
+        {
+          "end": 264,
+          "start": 260
+        },
+        {
+          "end": 266,
+          "start": 265
+        },
+        {
+          "end": 268,
+          "start": 267
+        },
+        {
+          "end": 270,
+          "start": 269
+        },
+        {
+          "end": 272,
+          "start": 271
+        },
+        {
+          "end": 277,
+          "start": 273
+        },
+        {
+          "end": 279,
+          "start": 278
+        },
+        {
+          "end": 281,
+          "start": 280
+        },
+        {
+          "end": 283,
+          "start": 282
+        },
+        {
+          "end": 285,
+          "start": 284
+        },
+        {
+          "end": 288,
+          "start": 286
+        },
+        {
+          "end": 291,
+          "start": 289
+        },
+        {
+          "end": 301,
+          "start": 292
+        },
+        {
+          "end": 305,
+          "start": 302
+        },
+        {
+          "end": 309,
+          "start": 306
+        }
+      ],
+      "policy": "lean_original_leaf_spans_v1",
+      "proof_offset": 289,
+      "signature_spans": [
+        {
+          "end": 72,
+          "start": 71
+        },
+        {
+          "end": 78,
+          "start": 72
+        },
+        {
+          "end": 80,
+          "start": 79
+        },
+        {
+          "end": 85,
+          "start": 81
+        },
+        {
+          "end": 89,
+          "start": 86
+        },
+        {
+          "end": 90,
+          "start": 89
+        },
+        {
+          "end": 92,
+          "start": 91
+        },
+        {
+          "end": 98,
+          "start": 92
+        },
+        {
+          "end": 100,
+          "start": 99
+        },
+        {
+          "end": 105,
+          "start": 101
+        },
+        {
+          "end": 109,
+          "start": 106
+        },
+        {
+          "end": 110,
+          "start": 109
+        },
+        {
+          "end": 112,
+          "start": 111
+        },
+        {
+          "end": 120,
+          "start": 112
+        },
+        {
+          "end": 122,
+          "start": 121
+        },
+        {
+          "end": 126,
+          "start": 123
+        },
+        {
+          "end": 128,
+          "start": 126
+        },
+        {
+          "end": 131,
+          "start": 128
+        },
+        {
+          "end": 132,
+          "start": 131
+        },
+        {
+          "end": 136,
+          "start": 133
+        },
+        {
+          "end": 137,
+          "start": 136
+        },
+        {
+          "end": 140,
+          "start": 138
+        },
+        {
+          "end": 143,
+          "start": 141
+        },
+        {
+          "end": 144,
+          "start": 143
+        },
+        {
+          "end": 146,
+          "start": 145
+        },
+        {
+          "end": 147,
+          "start": 146
+        },
+        {
+          "end": 149,
+          "start": 148
+        },
+        {
+          "end": 154,
+          "start": 150
+        },
+        {
+          "end": 155,
+          "start": 154
+        },
+        {
+          "end": 157,
+          "start": 156
+        },
+        {
+          "end": 166,
+          "start": 157
+        },
+        {
+          "end": 168,
+          "start": 167
+        },
+        {
+          "end": 169,
+          "start": 168
+        },
+        {
+          "end": 171,
+          "start": 170
+        },
+        {
+          "end": 172,
+          "start": 171
+        },
+        {
+          "end": 174,
+          "start": 173
+        },
+        {
+          "end": 177,
+          "start": 175
+        },
+        {
+          "end": 178,
+          "start": 177
+        },
+        {
+          "end": 180,
+          "start": 179
+        },
+        {
+          "end": 181,
+          "start": 180
+        },
+        {
+          "end": 183,
+          "start": 182
+        },
+        {
+          "end": 185,
+          "start": 184
+        },
+        {
+          "end": 189,
+          "start": 186
+        },
+        {
+          "end": 192,
+          "start": 190
+        },
+        {
+          "end": 193,
+          "start": 192
+        },
+        {
+          "end": 195,
+          "start": 194
+        },
+        {
+          "end": 196,
+          "start": 195
+        },
+        {
+          "end": 198,
+          "start": 197
+        },
+        {
+          "end": 201,
+          "start": 199
+        },
+        {
+          "end": 203,
+          "start": 202
+        },
+        {
+          "end": 207,
+          "start": 204
+        },
+        {
+          "end": 210,
+          "start": 208
+        },
+        {
+          "end": 211,
+          "start": 210
+        },
+        {
+          "end": 217,
+          "start": 216
+        },
+        {
+          "end": 219,
+          "start": 218
+        },
+        {
+          "end": 221,
+          "start": 220
+        },
+        {
+          "end": 223,
+          "start": 221
+        },
+        {
+          "end": 225,
+          "start": 224
+        },
+        {
+          "end": 227,
+          "start": 226
+        },
+        {
+          "end": 229,
+          "start": 228
+        },
+        {
+          "end": 234,
+          "start": 230
+        },
+        {
+          "end": 236,
+          "start": 235
+        },
+        {
+          "end": 238,
+          "start": 237
+        },
+        {
+          "end": 243,
+          "start": 239
+        },
+        {
+          "end": 245,
+          "start": 244
+        },
+        {
+          "end": 247,
+          "start": 246
+        },
+        {
+          "end": 248,
+          "start": 247
+        },
+        {
+          "end": 250,
+          "start": 249
+        },
+        {
+          "end": 253,
+          "start": 251
+        },
+        {
+          "end": 255,
+          "start": 254
+        },
+        {
+          "end": 257,
+          "start": 256
+        },
+        {
+          "end": 259,
+          "start": 258
+        },
+        {
+          "end": 264,
+          "start": 260
+        },
+        {
+          "end": 266,
+          "start": 265
+        },
+        {
+          "end": 268,
+          "start": 267
+        },
+        {
+          "end": 270,
+          "start": 269
+        },
+        {
+          "end": 272,
+          "start": 271
+        },
+        {
+          "end": 277,
+          "start": 273
+        },
+        {
+          "end": 279,
+          "start": 278
+        },
+        {
+          "end": 281,
+          "start": 280
+        },
+        {
+          "end": 283,
+          "start": 282
+        },
+        {
+          "end": 285,
+          "start": 284
+        }
+      ],
+      "source": "theorem _root_.CompressionEval.lib_algebra_groups_pilot_group_basic_01 {«α» : Type u_1} {«β» : Type u_2} [«inst» : Pow.{u_1, u_2} α β] (p : Prop) [Decidable p] (a : α) (b : p → β) (c : ¬ p → β) :\n  a ^ (if h : p then b h else c h) = if h : p then a ^ b h else a ^ c h :=\nby split_ifs <;> rfl",
+      "span_unit": "utf8_bytes"
+    },
+    "stderr": "",
+    "stdout": "",
+    "trusted_telescope": {
+      "binders": [
+        {
+          "binder_info": "implicit",
+          "name": "α",
+          "type_source": "Type u_1"
+        },
+        {
+          "binder_info": "implicit",
+          "name": "β",
+          "type_source": "Type u_2"
+        },
+        {
+          "binder_info": "instance",
+          "name": "inst",
+          "type_source": "Pow.{u_1, u_2} α β"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "p",
+          "type_source": "Prop"
+        },
+        {
+          "binder_info": "instance",
+          "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.16",
+          "type_source": "Decidable p"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "a",
+          "type_source": "α"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "b",
+          "type_source": "p → β"
+        },
+        {
+          "binder_info": "explicit",
+          "name": "c",
+          "type_source": "¬p → β"
+        }
+      ],
+      "proposition": "Eq.{u_1 + 1} (HPow.hPow.{u_1, u_2, u_1} a (if h : p then b h else c h))\n  (if h : p then HPow.hPow.{u_1, u_2, u_1} a (b h) else HPow.hPow.{u_1, u_2, u_1} a (c h))"
+    },
+    "trusted_type_expression": "forall {α : Type.{u_1}} {β : Type.{u_2}} [inst : Pow.{u_1, u_2} α β] (p : Prop) [inst._@.EvaluatorCandidate.2816149411._hygCtx._hyg.16 : Decidable p] (a : α) (b : p -> β) (c : (Not p) -> β), Eq.{succ u_1} α (HPow.hPow.{u_1, u_2, u_1} α β α (instHPow.{u_1, u_2} α β inst) a (dite.{succ u_2} β p inst._@.EvaluatorCandidate.2816149411._hygCtx._hyg.16 (fun (h : p) => b h) (fun (h : Not p) => c h))) (dite.{succ u_1} α p inst._@.EvaluatorCandidate.2816149411._hygCtx._hyg.16 (fun (h : p) => HPow.hPow.{u_1, u_2, u_1} α β α (instHPow.{u_1, u_2} α β inst) a (b h)) (fun (h : Not p) => HPow.hPow.{u_1, u_2, u_1} α β α (instHPow.{u_1, u_2} α β inst) a (c h)))",
+    "trusted_type_source": "∀ {α : Type u_1} {β : Type u_2} [inst : Pow.{u_1, u_2} α β] (p : Prop) [inst_1 : Decidable p] (a : α) (b : p → β)\n  (c : ¬p → β),\n  Eq.{u_1 + 1} (HPow.hPow.{u_1, u_2, u_1} a (if h : p then b h else c h))\n    (if h : p then HPow.hPow.{u_1, u_2, u_1} a (b h) else HPow.hPow.{u_1, u_2, u_1} a (c h))",
+    "universe_parameters": [
+      "u_1",
+      "u_2"
+    ],
+    "validity_status": "success"
+  },
+  "validity_status": "success"
+}

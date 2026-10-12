@@ -1,0 +1,1067 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {C : ℕ → Sort u_1} {n m : ℕ} (hnm : LE.le.{0} n m) (next : {k : ℕ} → C k → C (HAdd.hAdd.{0, 0, 0} k 1)),\n  (∀ (n : ℕ), Function.Surjective.{u_1, u_1} next) →\n    Function.Surjective.{u_1, u_1} (Nat.leRecOn.{u_1} hnm fun {k : ℕ} => next)",
+  "trusted_type_expression": "forall {C : Nat -> Sort.{u_1}} {n : Nat} {m : Nat} (hnm : LE.le.{0} Nat instLENat n m) (next : forall {k : Nat}, (C k) -> (C (HAdd.hAdd.{0, 0, 0} Nat Nat Nat (instHAdd.{0} Nat instAddNat) k (OfNat.ofNat.{0} Nat 1 (instOfNatNat 1))))), (forall (n : Nat), Function.Surjective.{u_1, u_1} (C n) (C (HAdd.hAdd.{0, 0, 0} Nat Nat Nat (instHAdd.{0} Nat instAddNat) n (OfNat.ofNat.{0} Nat 1 (instOfNatNat 1)))) (next n)) -> (Function.Surjective.{u_1, u_1} (C n) (C m) (Nat.leRecOn.{u_1} C n m hnm (fun {k._@.EvaluatorCandidate.1817058738._hygCtx._hyg.71 : Nat} => next k._@.EvaluatorCandidate.1817058738._hygCtx._hyg.71)))",
+  "trusted_telescope": {
+    "proposition": "Function.Surjective.{u_1, u_1} (Nat.leRecOn.{u_1} hnm fun {k : ℕ} => next)",
+    "binders": [
+      {
+        "type_source": "ℕ → Sort u_1",
+        "name": "C",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "ℕ",
+        "name": "n",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "ℕ",
+        "name": "m",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "LE.le.{0} n m",
+        "name": "hnm",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "{k : ℕ} → C k → C (HAdd.hAdd.{0, 0, 0} k 1)",
+        "name": "next",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "∀ (n : ℕ), Function.Surjective.{u_1, u_1} next",
+        "name": "Hnext",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_number_theory_pilot_nat_basic_07 {C : ℕ → Sort*} {n m} (hnm : n ≤ m) (next : ∀ {k}, C k → C (k + 1))\n    (Hnext : ∀ n, Surjective (@next n)) :\n  Surjective (@leRecOn C n m hnm next) :=\nby\n  induction hnm with\n  | refl =>\n    intro x\n    refine ⟨x, ?_⟩\n    rw [leRecOn_self]\n  | step hnm ih =>\n    intro x\n    obtain ⟨w, rfl⟩ := Hnext _ x\n    obtain ⟨x, rfl⟩ := ih w\n    refine ⟨x, ?_⟩\n    rw [leRecOn_succ]",
+    "signature_spans": [
+      {
+        "start": 68,
+        "end": 69
+      },
+      {
+        "start": 69,
+        "end": 70
+      },
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 73,
+        "end": 76
+      },
+      {
+        "start": 77,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 86
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 89
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 95,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 108
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 111,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 140,
+        "end": 141
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 143,
+        "end": 144
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 151,
+        "end": 156
+      },
+      {
+        "start": 157,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 164,
+        "end": 165
+      },
+      {
+        "start": 166,
+        "end": 176
+      },
+      {
+        "start": 177,
+        "end": 178
+      },
+      {
+        "start": 178,
+        "end": 179
+      },
+      {
+        "start": 179,
+        "end": 183
+      },
+      {
+        "start": 184,
+        "end": 185
+      },
+      {
+        "start": 185,
+        "end": 186
+      },
+      {
+        "start": 186,
+        "end": 187
+      },
+      {
+        "start": 192,
+        "end": 202
+      },
+      {
+        "start": 203,
+        "end": 204
+      },
+      {
+        "start": 204,
+        "end": 205
+      },
+      {
+        "start": 205,
+        "end": 212
+      },
+      {
+        "start": 213,
+        "end": 214
+      },
+      {
+        "start": 215,
+        "end": 216
+      },
+      {
+        "start": 217,
+        "end": 218
+      },
+      {
+        "start": 219,
+        "end": 222
+      },
+      {
+        "start": 223,
+        "end": 227
+      },
+      {
+        "start": 227,
+        "end": 228
+      }
+    ],
+    "proof_offset": 232,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 67
+      },
+      {
+        "start": 68,
+        "end": 69
+      },
+      {
+        "start": 69,
+        "end": 70
+      },
+      {
+        "start": 71,
+        "end": 72
+      },
+      {
+        "start": 73,
+        "end": 76
+      },
+      {
+        "start": 77,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 86
+      },
+      {
+        "start": 86,
+        "end": 87
+      },
+      {
+        "start": 88,
+        "end": 89
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 92,
+        "end": 93
+      },
+      {
+        "start": 94,
+        "end": 95
+      },
+      {
+        "start": 95,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 108
+      },
+      {
+        "start": 108,
+        "end": 109
+      },
+      {
+        "start": 110,
+        "end": 111
+      },
+      {
+        "start": 111,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 123,
+        "end": 124
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 134
+      },
+      {
+        "start": 135,
+        "end": 136
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 140,
+        "end": 141
+      },
+      {
+        "start": 142,
+        "end": 143
+      },
+      {
+        "start": 143,
+        "end": 144
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 150,
+        "end": 151
+      },
+      {
+        "start": 151,
+        "end": 156
+      },
+      {
+        "start": 157,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 164,
+        "end": 165
+      },
+      {
+        "start": 166,
+        "end": 176
+      },
+      {
+        "start": 177,
+        "end": 178
+      },
+      {
+        "start": 178,
+        "end": 179
+      },
+      {
+        "start": 179,
+        "end": 183
+      },
+      {
+        "start": 184,
+        "end": 185
+      },
+      {
+        "start": 185,
+        "end": 186
+      },
+      {
+        "start": 186,
+        "end": 187
+      },
+      {
+        "start": 188,
+        "end": 189
+      },
+      {
+        "start": 192,
+        "end": 202
+      },
+      {
+        "start": 203,
+        "end": 204
+      },
+      {
+        "start": 204,
+        "end": 205
+      },
+      {
+        "start": 205,
+        "end": 212
+      },
+      {
+        "start": 213,
+        "end": 214
+      },
+      {
+        "start": 215,
+        "end": 216
+      },
+      {
+        "start": 217,
+        "end": 218
+      },
+      {
+        "start": 219,
+        "end": 222
+      },
+      {
+        "start": 223,
+        "end": 227
+      },
+      {
+        "start": 227,
+        "end": 228
+      },
+      {
+        "start": 229,
+        "end": 231
+      },
+      {
+        "start": 232,
+        "end": 234
+      },
+      {
+        "start": 237,
+        "end": 246
+      },
+      {
+        "start": 247,
+        "end": 250
+      },
+      {
+        "start": 251,
+        "end": 255
+      },
+      {
+        "start": 258,
+        "end": 259
+      },
+      {
+        "start": 260,
+        "end": 264
+      },
+      {
+        "start": 265,
+        "end": 267
+      },
+      {
+        "start": 272,
+        "end": 277
+      },
+      {
+        "start": 278,
+        "end": 279
+      },
+      {
+        "start": 284,
+        "end": 290
+      },
+      {
+        "start": 291,
+        "end": 294
+      },
+      {
+        "start": 294,
+        "end": 295
+      },
+      {
+        "start": 295,
+        "end": 296
+      },
+      {
+        "start": 297,
+        "end": 298
+      },
+      {
+        "start": 298,
+        "end": 299
+      },
+      {
+        "start": 299,
+        "end": 302
+      },
+      {
+        "start": 307,
+        "end": 309
+      },
+      {
+        "start": 310,
+        "end": 311
+      },
+      {
+        "start": 311,
+        "end": 323
+      },
+      {
+        "start": 323,
+        "end": 324
+      },
+      {
+        "start": 327,
+        "end": 328
+      },
+      {
+        "start": 329,
+        "end": 333
+      },
+      {
+        "start": 334,
+        "end": 337
+      },
+      {
+        "start": 338,
+        "end": 340
+      },
+      {
+        "start": 341,
+        "end": 343
+      },
+      {
+        "start": 348,
+        "end": 353
+      },
+      {
+        "start": 354,
+        "end": 355
+      },
+      {
+        "start": 360,
+        "end": 366
+      },
+      {
+        "start": 367,
+        "end": 370
+      },
+      {
+        "start": 370,
+        "end": 371
+      },
+      {
+        "start": 371,
+        "end": 372
+      },
+      {
+        "start": 373,
+        "end": 376
+      },
+      {
+        "start": 376,
+        "end": 379
+      },
+      {
+        "start": 380,
+        "end": 382
+      },
+      {
+        "start": 383,
+        "end": 388
+      },
+      {
+        "start": 389,
+        "end": 390
+      },
+      {
+        "start": 391,
+        "end": 392
+      },
+      {
+        "start": 397,
+        "end": 403
+      },
+      {
+        "start": 404,
+        "end": 407
+      },
+      {
+        "start": 407,
+        "end": 408
+      },
+      {
+        "start": 408,
+        "end": 409
+      },
+      {
+        "start": 410,
+        "end": 413
+      },
+      {
+        "start": 413,
+        "end": 416
+      },
+      {
+        "start": 417,
+        "end": 419
+      },
+      {
+        "start": 420,
+        "end": 422
+      },
+      {
+        "start": 423,
+        "end": 424
+      },
+      {
+        "start": 429,
+        "end": 435
+      },
+      {
+        "start": 436,
+        "end": 439
+      },
+      {
+        "start": 439,
+        "end": 440
+      },
+      {
+        "start": 440,
+        "end": 441
+      },
+      {
+        "start": 442,
+        "end": 443
+      },
+      {
+        "start": 443,
+        "end": 444
+      },
+      {
+        "start": 444,
+        "end": 447
+      },
+      {
+        "start": 452,
+        "end": 454
+      },
+      {
+        "start": 455,
+        "end": 456
+      },
+      {
+        "start": 456,
+        "end": 468
+      },
+      {
+        "start": 468,
+        "end": 469
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 232,
+        "end": 234
+      },
+      {
+        "start": 237,
+        "end": 246
+      },
+      {
+        "start": 247,
+        "end": 250
+      },
+      {
+        "start": 251,
+        "end": 255
+      },
+      {
+        "start": 258,
+        "end": 259
+      },
+      {
+        "start": 260,
+        "end": 264
+      },
+      {
+        "start": 265,
+        "end": 267
+      },
+      {
+        "start": 272,
+        "end": 277
+      },
+      {
+        "start": 278,
+        "end": 279
+      },
+      {
+        "start": 284,
+        "end": 290
+      },
+      {
+        "start": 291,
+        "end": 294
+      },
+      {
+        "start": 294,
+        "end": 295
+      },
+      {
+        "start": 295,
+        "end": 296
+      },
+      {
+        "start": 297,
+        "end": 298
+      },
+      {
+        "start": 298,
+        "end": 299
+      },
+      {
+        "start": 299,
+        "end": 302
+      },
+      {
+        "start": 307,
+        "end": 309
+      },
+      {
+        "start": 310,
+        "end": 311
+      },
+      {
+        "start": 311,
+        "end": 323
+      },
+      {
+        "start": 323,
+        "end": 324
+      },
+      {
+        "start": 327,
+        "end": 328
+      },
+      {
+        "start": 329,
+        "end": 333
+      },
+      {
+        "start": 334,
+        "end": 337
+      },
+      {
+        "start": 338,
+        "end": 340
+      },
+      {
+        "start": 341,
+        "end": 343
+      },
+      {
+        "start": 348,
+        "end": 353
+      },
+      {
+        "start": 354,
+        "end": 355
+      },
+      {
+        "start": 360,
+        "end": 366
+      },
+      {
+        "start": 367,
+        "end": 370
+      },
+      {
+        "start": 370,
+        "end": 371
+      },
+      {
+        "start": 371,
+        "end": 372
+      },
+      {
+        "start": 373,
+        "end": 376
+      },
+      {
+        "start": 376,
+        "end": 379
+      },
+      {
+        "start": 380,
+        "end": 382
+      },
+      {
+        "start": 383,
+        "end": 388
+      },
+      {
+        "start": 389,
+        "end": 390
+      },
+      {
+        "start": 391,
+        "end": 392
+      },
+      {
+        "start": 397,
+        "end": 403
+      },
+      {
+        "start": 404,
+        "end": 407
+      },
+      {
+        "start": 407,
+        "end": 408
+      },
+      {
+        "start": 408,
+        "end": 409
+      },
+      {
+        "start": 410,
+        "end": 413
+      },
+      {
+        "start": 413,
+        "end": 416
+      },
+      {
+        "start": 417,
+        "end": 419
+      },
+      {
+        "start": 420,
+        "end": 422
+      },
+      {
+        "start": 423,
+        "end": 424
+      },
+      {
+        "start": 429,
+        "end": 435
+      },
+      {
+        "start": 436,
+        "end": 439
+      },
+      {
+        "start": 439,
+        "end": 440
+      },
+      {
+        "start": 440,
+        "end": 441
+      },
+      {
+        "start": 442,
+        "end": 443
+      },
+      {
+        "start": 443,
+        "end": 444
+      },
+      {
+        "start": 444,
+        "end": 447
+      },
+      {
+        "start": 452,
+        "end": 454
+      },
+      {
+        "start": 455,
+        "end": 456
+      },
+      {
+        "start": 456,
+        "end": 468
+      },
+      {
+        "start": 468,
+        "end": 469
+      }
+    ],
+    "W_full": 120,
+    "W_S": 59,
+    "W_B": 57
+  },
+  "root": "CompressionEval.lib_number_theory_pilot_nat_basic_07",
+  "proved_type_fingerprint": "3767408891",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 217,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.induction",
+      "Lean.Parser.Tactic.elimTarget",
+      "Lean.Parser.Tactic.inductionAlts",
+      "Lean.Parser.Tactic.inductionAlt",
+      "Lean.Parser.Tactic.inductionAltLHS",
+      "group",
+      "Lean.Parser.Tactic.intro",
+      "Lean.Parser.Tactic.refine",
+      "Lean.Parser.Term.anonymousCtor",
+      "Lean.Parser.Term.syntheticHole",
+      "Lean.Parser.Tactic.rwSeq",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.rwRuleSeq",
+      "Lean.Parser.Tactic.rwRule",
+      "Lean.Parser.Tactic.obtain",
+      "Lean.Parser.Tactic.rcasesPatMed",
+      "Lean.Parser.Tactic.rcasesPat.tuple",
+      "Lean.Parser.Tactic.rcasesPatLo",
+      "Lean.Parser.Tactic.rcasesPat.one",
+      "Lean.Parser.Term.app",
+      "Lean.Parser.Term.hole"
+    ],
+    "proof_nodes": 1421,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_number_theory_pilot_nat_basic_07"
+  ],
+  "axioms": [
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "acc4396e28c1be1dd11b6c0054f831b9a5f04c1c2706d1ad2a068545fc42b51e",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 2.6085062087513506
+  },
+  "request_fingerprint": "0c5c305076b109d9779f3a55ca051c18ed673581f79678b46c27a72a389ece2c"
+}

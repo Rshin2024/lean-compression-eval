@@ -1,0 +1,495 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1",
+    "u_2",
+    "u_4",
+    "u_5"
+  ],
+  "trusted_type_source": "∀ {R : Type u_1} {R₂ : Type u_2} {M : Type u_4} {M₂ : Type u_5} [inst : Semiring.{u_1} R]\n  [inst_1 : AddCommMonoid.{u_4} M] [inst_2 : Module.{u_1, u_4} R M] [inst_3 : Semiring.{u_2} R₂]\n  {σ₁₂ : RingHom.{u_1, u_2} R R₂} [inst_4 : AddCommMonoid.{u_5} M₂] [inst_5 : Module.{u_2, u_5} R₂ M₂]\n  (f : LinearMap.{u_1, u_2, u_4, u_5} σ₁₂ M M₂) (s : Set.{u_5} M₂),\n  LE.le.{u_4} (Submodule.span.{u_1, u_4} R (Set.preimage.{u_4, u_5} (⇑f) s))\n    (Submodule.comap.{u_1, u_2, u_4, u_5} f (Submodule.span.{u_2, u_5} R₂ s))",
+  "trusted_type_expression": "forall {R : Type.{u_1}} {R₂ : Type.{u_2}} {M : Type.{u_4}} {M₂ : Type.{u_5}} [inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.9 : Semiring.{u_1} R] [inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.12 : AddCommMonoid.{u_4} M] [inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.15 : Module.{u_1, u_4} R M inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.9 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.12] [inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.26 : Semiring.{u_2} R₂] {σ₁₂ : RingHom.{u_1, u_2} R R₂ (Semiring.toNonAssocSemiring.{u_1} R inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.9) (Semiring.toNonAssocSemiring.{u_2} R₂ inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.26)} [inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.34 : AddCommMonoid.{u_5} M₂] [inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.37 : Module.{u_2, u_5} R₂ M₂ inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.26 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.34] (f : LinearMap.{u_1, u_2, u_4, u_5} R R₂ inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.9 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.26 σ₁₂ M M₂ inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.12 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.34 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.15 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.37) (s : Set.{u_5} M₂), LE.le.{u_4} (Submodule.{u_1, u_4} R M inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.9 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.12 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.15) (Preorder.toLE.{u_4} (Submodule.{u_1, u_4} R M inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.9 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.12 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.15) (PartialOrder.toPreorder.{u_4} (Submodule.{u_1, u_4} R M inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.9 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.12 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.15) (Submodule.instPartialOrder.{u_1, u_4} R M inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.9 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.12 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.15))) (Submodule.span.{u_1, u_4} R M inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.9 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.12 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.15 (Set.preimage.{u_4, u_5} M M₂ (DFunLike.coe.{max (succ u_4) (succ u_5), succ u_4, succ u_5} (LinearMap.{u_1, u_2, u_4, u_5} R R₂ inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.9 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.26 σ₁₂ M M₂ inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.12 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.34 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.15 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.37) M (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : M) => M₂) (LinearMap.instFunLike.{u_1, u_2, u_4, u_5} R R₂ M M₂ inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.9 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.26 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.12 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.34 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.15 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.37 σ₁₂) f) s)) (Submodule.comap.{u_1, u_2, u_4, u_5} R R₂ M M₂ inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.9 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.26 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.12 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.34 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.15 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.37 σ₁₂ f (Submodule.span.{u_2, u_5} R₂ M₂ inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.26 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.34 inst._@.EvaluatorCandidate.3518756488._hygCtx._hyg.37 s))",
+  "trusted_telescope": {
+    "proposition": "LE.le.{u_4} (Submodule.span.{u_1, u_4} R (Set.preimage.{u_4, u_5} (⇑f) s))\n  (Submodule.comap.{u_1, u_2, u_4, u_5} f (Submodule.span.{u_2, u_5} R₂ s))",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "R",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_2",
+        "name": "R₂",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_4",
+        "name": "M",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_5",
+        "name": "M₂",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Semiring.{u_1} R",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.9",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "AddCommMonoid.{u_4} M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.12",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Module.{u_1, u_4} R M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.15",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Semiring.{u_2} R₂",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.26",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "RingHom.{u_1, u_2} R R₂",
+        "name": "σ₁₂",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "AddCommMonoid.{u_5} M₂",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.34",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Module.{u_2, u_5} R₂ M₂",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.37",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "LinearMap.{u_1, u_2, u_4, u_5} σ₁₂ M M₂",
+        "name": "f",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Set.{u_5} M₂",
+        "name": "s",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_05 (f : M →ₛₗ[σ₁₂] M₂) (s : Set M₂) :\n  span R (f ⁻¹' s) ≤ (span R₂ s).comap f :=\nby\n  rw [span_le, comap_coe]\n  exact preimage_mono subset_span",
+    "signature_spans": [
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 101
+      },
+      {
+        "start": 101,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 115
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 130
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 136,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 144
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 152
+      },
+      {
+        "start": 153,
+        "end": 154
+      },
+      {
+        "start": 154,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 159
+      },
+      {
+        "start": 160,
+        "end": 161
+      },
+      {
+        "start": 161,
+        "end": 165
+      },
+      {
+        "start": 166,
+        "end": 170
+      },
+      {
+        "start": 171,
+        "end": 172
+      },
+      {
+        "start": 172,
+        "end": 173
+      },
+      {
+        "start": 173,
+        "end": 174
+      },
+      {
+        "start": 174,
+        "end": 179
+      },
+      {
+        "start": 180,
+        "end": 181
+      }
+    ],
+    "proof_offset": 185,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 83
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 101
+      },
+      {
+        "start": 101,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 111,
+        "end": 115
+      },
+      {
+        "start": 115,
+        "end": 116
+      },
+      {
+        "start": 117,
+        "end": 118
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 120,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 130
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 136,
+        "end": 140
+      },
+      {
+        "start": 141,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 144
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 152
+      },
+      {
+        "start": 153,
+        "end": 154
+      },
+      {
+        "start": 154,
+        "end": 155
+      },
+      {
+        "start": 156,
+        "end": 159
+      },
+      {
+        "start": 160,
+        "end": 161
+      },
+      {
+        "start": 161,
+        "end": 165
+      },
+      {
+        "start": 166,
+        "end": 170
+      },
+      {
+        "start": 171,
+        "end": 172
+      },
+      {
+        "start": 172,
+        "end": 173
+      },
+      {
+        "start": 173,
+        "end": 174
+      },
+      {
+        "start": 174,
+        "end": 179
+      },
+      {
+        "start": 180,
+        "end": 181
+      },
+      {
+        "start": 182,
+        "end": 184
+      },
+      {
+        "start": 185,
+        "end": 187
+      },
+      {
+        "start": 190,
+        "end": 192
+      },
+      {
+        "start": 193,
+        "end": 194
+      },
+      {
+        "start": 194,
+        "end": 201
+      },
+      {
+        "start": 201,
+        "end": 202
+      },
+      {
+        "start": 203,
+        "end": 212
+      },
+      {
+        "start": 212,
+        "end": 213
+      },
+      {
+        "start": 216,
+        "end": 221
+      },
+      {
+        "start": 222,
+        "end": 235
+      },
+      {
+        "start": 236,
+        "end": 247
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 185,
+        "end": 187
+      },
+      {
+        "start": 190,
+        "end": 192
+      },
+      {
+        "start": 193,
+        "end": 194
+      },
+      {
+        "start": 194,
+        "end": 201
+      },
+      {
+        "start": 201,
+        "end": 202
+      },
+      {
+        "start": 203,
+        "end": 212
+      },
+      {
+        "start": 212,
+        "end": 213
+      },
+      {
+        "start": 216,
+        "end": 221
+      },
+      {
+        "start": 222,
+        "end": 235
+      },
+      {
+        "start": 236,
+        "end": 247
+      }
+    ],
+    "W_full": 45,
+    "W_S": 31,
+    "W_B": 10
+  },
+  "root": "CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_05",
+  "proved_type_fingerprint": "2188461094",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 870,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.rwSeq",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.rwRuleSeq",
+      "Lean.Parser.Tactic.rwRule",
+      "Lean.Parser.Tactic.exact",
+      "Lean.Parser.Term.app"
+    ],
+    "proof_nodes": 2577,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_05"
+  ],
+  "axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "4779b5937434ce489eb9a7262bda58e86486f1261cec94a0cf40d3b6731192f7",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 2.842108250129968
+  },
+  "request_fingerprint": "3c227c07d8aeb031d65012aa4b3a13916a2c94adbcd89c39b1392c193675c96a"
+}

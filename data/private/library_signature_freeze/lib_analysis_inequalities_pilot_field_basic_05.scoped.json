@@ -1,0 +1,353 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_2"
+  ],
+  "trusted_type_source": "∀ {α : Type u_2} [inst : NormedDivisionRing.{u_2} α] {a : α},\n  Ne.{u_2 + 1} a 0 → Eq.{1} (ENorm.enorm.{u_2} (Inv.inv.{u_2} a)) (Inv.inv.{0} (ENorm.enorm.{u_2} a))",
+  "trusted_type_expression": "forall {α : Type.{u_2}} [inst._@.EvaluatorCandidate.37767591._hygCtx._hyg.6 : NormedDivisionRing.{u_2} α] {a : α}, (Ne.{succ u_2} α a (OfNat.ofNat.{u_2} α 0 (Zero.toOfNat0.{u_2} α (MulZeroClass.toZero.{u_2} α (instMulZeroClassOfSemiring.{u_2} α (DivisionSemiring.toSemiring.{u_2} α (DivisionRing.toDivisionSemiring.{u_2} α (NormedDivisionRing.toDivisionRing.{u_2} α inst._@.EvaluatorCandidate.37767591._hygCtx._hyg.6)))))))) -> (Eq.{1} ENNReal (ENorm.enorm.{u_2} α (NNNorm.toENorm.{u_2} α (SeminormedAddGroup.toNNNorm.{u_2} α (SeminormedAddCommGroup.toSeminormedAddGroup.{u_2} α (NonUnitalSeminormedRing.toSeminormedAddCommGroup.{u_2} α (NonUnitalNormedRing.toNonUnitalSeminormedRing.{u_2} α (NormedRing.toNonUnitalNormedRing.{u_2} α (NormedDivisionRing.toNormedRing.{u_2} α inst._@.EvaluatorCandidate.37767591._hygCtx._hyg.6))))))) (Inv.inv.{u_2} α (InvOneClass.toInv.{u_2} α (DivInvOneMonoid.toInvOneClass.{u_2} α (DivisionMonoid.toDivInvOneMonoid.{u_2} α (GroupWithZero.toDivisionMonoid.{u_2} α (DivisionSemiring.toGroupWithZero.{u_2} α (DivisionRing.toDivisionSemiring.{u_2} α (NormedDivisionRing.toDivisionRing.{u_2} α inst._@.EvaluatorCandidate.37767591._hygCtx._hyg.6))))))) a)) (Inv.inv.{0} ENNReal ENNReal.instInv (ENorm.enorm.{u_2} α (NNNorm.toENorm.{u_2} α (SeminormedAddGroup.toNNNorm.{u_2} α (SeminormedAddCommGroup.toSeminormedAddGroup.{u_2} α (NonUnitalSeminormedRing.toSeminormedAddCommGroup.{u_2} α (NonUnitalNormedRing.toNonUnitalSeminormedRing.{u_2} α (NormedRing.toNonUnitalNormedRing.{u_2} α (NormedDivisionRing.toNormedRing.{u_2} α inst._@.EvaluatorCandidate.37767591._hygCtx._hyg.6))))))) a)))",
+  "trusted_telescope": {
+    "proposition": "Eq.{1} (ENorm.enorm.{u_2} (Inv.inv.{u_2} a)) (Inv.inv.{0} (ENorm.enorm.{u_2} a))",
+    "binders": [
+      {
+        "type_source": "Type u_2",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "NormedDivisionRing.{u_2} α",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.6",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "α",
+        "name": "a",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Ne.{u_2 + 1} a 0",
+        "name": "ha",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_analysis_inequalities_pilot_field_basic_05 {a : α} (ha : a ≠ 0) :\n  ‖a⁻¹‖ₑ = ‖a‖ₑ⁻¹ :=\nby simp [enorm, ENNReal.coe_inv, ha]",
+    "signature_spans": [
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 88,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 100,
+        "end": 101
+      },
+      {
+        "start": 106,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 110,
+        "end": 115
+      },
+      {
+        "start": 115,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 127
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 134
+      },
+      {
+        "start": 134,
+        "end": 139
+      }
+    ],
+    "proof_offset": 143,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 77
+      },
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 85
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 87,
+        "end": 88
+      },
+      {
+        "start": 88,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 100
+      },
+      {
+        "start": 100,
+        "end": 101
+      },
+      {
+        "start": 102,
+        "end": 103
+      },
+      {
+        "start": 106,
+        "end": 109
+      },
+      {
+        "start": 109,
+        "end": 110
+      },
+      {
+        "start": 110,
+        "end": 115
+      },
+      {
+        "start": 115,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 127
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 134
+      },
+      {
+        "start": 134,
+        "end": 139
+      },
+      {
+        "start": 140,
+        "end": 142
+      },
+      {
+        "start": 143,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 150
+      },
+      {
+        "start": 151,
+        "end": 152
+      },
+      {
+        "start": 152,
+        "end": 157
+      },
+      {
+        "start": 157,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 174
+      },
+      {
+        "start": 174,
+        "end": 175
+      },
+      {
+        "start": 176,
+        "end": 178
+      },
+      {
+        "start": 178,
+        "end": 179
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 143,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 150
+      },
+      {
+        "start": 151,
+        "end": 152
+      },
+      {
+        "start": 152,
+        "end": 157
+      },
+      {
+        "start": 157,
+        "end": 158
+      },
+      {
+        "start": 159,
+        "end": 174
+      },
+      {
+        "start": 174,
+        "end": 175
+      },
+      {
+        "start": 176,
+        "end": 178
+      },
+      {
+        "start": 178,
+        "end": 179
+      }
+    ],
+    "W_full": 34,
+    "W_S": 21,
+    "W_B": 9
+  },
+  "root": "CompressionEval.lib_analysis_inequalities_pilot_field_basic_05",
+  "proved_type_fingerprint": "1850903217",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 9412,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.simp",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.simpLemma"
+    ],
+    "proof_nodes": 1347,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_analysis_inequalities_pilot_field_basic_05"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "4e8dbc6b388ee98985efcdd2662f2b564e69669a6cf39856f0db1771a5d4c899",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 4.500164499972016
+  },
+  "request_fingerprint": "e9ee217cb13ca40060d9480091769c1dc9c1fbde5050218c9b005a0958bbebb7"
+}

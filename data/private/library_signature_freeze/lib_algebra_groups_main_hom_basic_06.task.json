@@ -1,0 +1,72 @@
+{
+  "task": {
+    "task_id": "lib_algebra_groups_main_hom_basic_06",
+    "family_id": "source_module_Mathlib.Algebra.Group.Hom.Basic",
+    "domain": "algebra_groups",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Algebra.Group.Basic",
+      "Mathlib.Algebra.Group.Hom.Defs"
+    ],
+    "context": "/-\nCopyright (c) 2018 Patrick Massot. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Patrick Massot, Kevin Buzzard, Kim Morrison, Johan Commelin, Chris Hughes,\n  Johannes Hölzl, Yury Kudryashov\n-/\n/-!\n# Additional lemmas about monoid and group homomorphisms\n\n-/\n\n@[expose] public section\n\n-- `NeZero` cannot be additivised, hence its theory should be developed outside of the\n-- `Algebra.Group` folder.\nassert_not_imported Mathlib.Algebra.NeZero\n\nvariable {α M N P : Type*}\n\n-- monoids\nvariable {G : Type*} {H : Type*}\n\n-- groups\nvariable {F : Type*}\n\nsection CommMonoid\nvariable [CommMonoid α]\n\n/-- The `n`th power map on a commutative monoid for a natural `n`, considered as a morphism of\nmonoids. -/\n@[to_additive (attr := simps) /-- Multiplication by a natural `n` on a commutative additive monoid,\nconsidered as a morphism of additive monoids. -/]\ndef powMonoidHom (n : ℕ) : α →* α where\n  toFun := (· ^ n)\n  map_one' := one_pow _\n  map_mul' a b := mul_pow a b n\n\nend CommMonoid\n\nsection DivisionCommMonoid\n\nvariable [DivisionCommMonoid α]\n\n/-- The `n`-th power map (for an integer `n`) on a commutative group, considered as a group\nhomomorphism. -/\n@[to_additive (attr := simps) /-- Multiplication by an integer `n` on a commutative additive group,\nconsidered as an additive group homomorphism. -/]\ndef zpowGroupHom (n : ℤ) : α →* α where\n  toFun := (· ^ n)\n  map_one' := one_zpow n\n  map_mul' a b := mul_zpow a b n\n\n/-- Inversion on a commutative group, considered as a monoid homomorphism. -/\n@[to_additive /-- Negation on a commutative additive group, considered as an additive monoid\nhomomorphism. -/]\ndef invMonoidHom : α →* α where\n  toFun := Inv.inv\n  map_one' := inv_one\n  map_mul' := mul_inv\n\n@[to_additive (attr := simp)]\ntheorem coe_invMonoidHom : (invMonoidHom : α → α) = Inv.inv := rfl\n\n@[to_additive (attr := simp)]\ntheorem invMonoidHom_apply (a : α) : invMonoidHom a = a⁻¹ := rfl\n\n@[to_additive (attr := simp)]\ntheorem invMonoidHom_comp_invMonoidHom : (invMonoidHom (α := α)).comp invMonoidHom = .id _ := by\n  ext; simp\n\nend DivisionCommMonoid\n\nnamespace OneHom\n\n/-- Given two one-preserving morphisms `f`, `g`,\n`f * g` is the one-preserving morphism sending `x` to `f x * g x`. -/\n@[to_additive /-- Given two zero-preserving morphisms `f`, `g`,\n`f + g` is the zero-preserving morphism sending `x` to `f x + g x`. -/]\ninstance [One M] [MulOneClass N] : Mul (OneHom M N) where\n  mul f g :=\n    { toFun m := f m * g m\n      map_one' := by simp }\n\n@[to_additive (attr := norm_cast)]\ntheorem coe_mul {M N} [One M] [MulOneClass N] (f g : OneHom M N) : ⇑(f * g) = ⇑f * ⇑g := rfl\n\n@[to_additive (attr := simp)]\ntheorem mul_apply {M N} [One M] [MulOneClass N] (f g : OneHom M N) (x : M) :\n    (f * g) x = f x * g x := rfl\n\nuniverse «u_2» «u_3» «u_4»\n\nassert_not_exists _root_.OneHom.mul_comp\n",
+    "binders": "{«M» : Type u_2} {«N» : Type u_3} {«P» : Type u_4} [One M] [One N] [MulOneClass P] (g₁ g₂ : OneHom N P) (f : OneHom M N)",
+    "proposition": "(g₁ * g₂).comp f = g₁.comp f * g₂.comp f",
+    "target_name": "_root_.CompressionEval.lib_algebra_groups_main_hom_basic_06",
+    "premise_context": "variable {α M N P : Type*}\nvariable {G : Type*} {H : Type*}\nvariable {F : Type*}\nsection CommMonoid\nvariable [CommMonoid α]\nend CommMonoid\nsection DivisionCommMonoid\nvariable [DivisionCommMonoid α]\nend DivisionCommMonoid\nnamespace OneHom\n\nAvailable preceding statements (within the shown source scopes):\ntheorem coe_invMonoidHom : (invMonoidHom : α → α) = Inv.inv\n\ntheorem invMonoidHom_apply (a : α) : invMonoidHom a = a⁻¹\n\ntheorem invMonoidHom_comp_invMonoidHom : (invMonoidHom (α := α)).comp invMonoidHom = .id _\n\ntheorem coe_mul {M N} [One M] [MulOneClass N] (f g : OneHom M N) : ⇑(f * g) = ⇑f * ⇑g\n\ntheorem mul_apply {M N} [One M] [MulOneClass N] (f g : OneHom M N) (x : M) :\n    (f * g) x = f x * g x",
+    "forbidden_declarations": [
+      "OneHom.mul_comp"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Algebra.Group.Hom.Basic",
+      "source_path": "Mathlib/Algebra/Group/Hom/Basic.lean",
+      "declaration": "OneHom.mul_comp",
+      "source_line": 97,
+      "source_sha256": "ba508cf5f216d0765dd9fe01866361a4b3acfe51ada9b6211e9e4a4714c1847c",
+      "prefix_end_character": 2898,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "4101067059405cc57c936631426bd45a5af4d2473da5a140dcd369e88de1166c",
+      "premise_context": "b300ce8d550df0d4c509f76568e111859722f050b4f664a91c77fd7857c5de91",
+      "binders": "5041a273bb8ccff7143e75ae1c84d6101d626944d24fc79daa245fffe831720a",
+      "proposition": "91ff28ce3aae9e43518cdfdb5e8793187c19de2108b5dada2daeb693334ebf3a"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Algebra.Group.Basic",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Group.Hom.Defs",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

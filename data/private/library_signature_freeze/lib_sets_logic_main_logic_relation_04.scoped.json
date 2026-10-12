@@ -1,0 +1,218 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {α : Type u_1} {r : α → α → Prop}, Std.Refl.{u_1 + 1} r ↔ LE.le.{u_1} Eq.{u_1 + 1} r",
+  "trusted_type_expression": "forall {α : Type.{u_1}} {r : α -> α -> Prop}, Iff (Std.Refl.{succ u_1} α r) (LE.le.{u_1} (α -> α -> Prop) (Pi.hasLe.{u_1, u_1} α (fun (a._@._internal._hyg.0 : α) => α -> Prop) (fun (i : α) => Pi.hasLe.{u_1, 0} α (fun (a._@._internal._hyg.0 : α) => Prop) (fun (i : α) => Prop.le))) (Eq.{succ u_1} α) r)",
+  "trusted_telescope": {
+    "proposition": "Std.Refl.{u_1 + 1} r ↔ LE.le.{u_1} Eq.{u_1 + 1} r",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "α",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "α → α → Prop",
+        "name": "r",
+        "binder_info": "implicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_sets_logic_main_logic_relation_04  :\n  Std.Refl r ↔ Eq ≤ r :=\nby\n  unfold Pi.hasLe Prop.le\n  grind [Std.Refl]",
+    "signature_spans": [
+      {
+        "start": 74,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      }
+    ],
+    "proof_offset": 101,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 68
+      },
+      {
+        "start": 70,
+        "end": 71
+      },
+      {
+        "start": 74,
+        "end": 82
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 88
+      },
+      {
+        "start": 89,
+        "end": 91
+      },
+      {
+        "start": 92,
+        "end": 95
+      },
+      {
+        "start": 96,
+        "end": 97
+      },
+      {
+        "start": 98,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 103
+      },
+      {
+        "start": 106,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 129
+      },
+      {
+        "start": 132,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 139,
+        "end": 147
+      },
+      {
+        "start": 147,
+        "end": 148
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 101,
+        "end": 103
+      },
+      {
+        "start": 106,
+        "end": 112
+      },
+      {
+        "start": 113,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 129
+      },
+      {
+        "start": 132,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 139,
+        "end": 147
+      },
+      {
+        "start": 147,
+        "end": 148
+      }
+    ],
+    "W_full": 18,
+    "W_S": 6,
+    "W_B": 8
+  },
+  "root": "CompressionEval.lib_sets_logic_main_logic_relation_04",
+  "proved_type_fingerprint": "3331825502",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 197,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.unfold",
+      "Lean.Parser.Tactic.grind",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.grindParam",
+      "Lean.Parser.Tactic.grindLemma"
+    ],
+    "proof_nodes": 191,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_sets_logic_main_logic_relation_04._proof_1",
+    "CompressionEval.lib_sets_logic_main_logic_relation_04"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "14c53c4dd16e8b71637c47a92595c8a161d798dff91998fccc5f89d1e433b3cb",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "elapsed_seconds": 2.261267624795437
+  },
+  "request_fingerprint": "384a4d7c1918490e54dc5a637ed24b2c499726aaa61334b71b5c00ec31429049"
+}

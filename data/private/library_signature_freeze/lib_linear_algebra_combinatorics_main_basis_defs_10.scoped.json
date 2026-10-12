@@ -1,0 +1,302 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1",
+    "u_3",
+    "u_6"
+  ],
+  "trusted_type_source": "∀ {ι : Type u_1} {R : Type u_3} {M : Type u_6} [inst : Semiring.{u_3} R] [inst_1 : AddCommMonoid.{u_6} M]\n  [inst_2 : Module.{u_3, u_6} R M] (b : Module.Basis.{u_1, u_3, u_6} ι R M) (x : M),\n  Eq.{u_6 + 1} ((Finsupp.linearCombination.{u_1, u_6, u_3} R ⇑b) ((Module.Basis.repr.{u_1, u_3, u_6} b) x)) x",
+  "trusted_type_expression": "forall {ι : Type.{u_1}} {R : Type.{u_3}} {M : Type.{u_6}} [inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 : Semiring.{u_3} R] [inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.15 : AddCommMonoid.{u_6} M] [inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.18 : Module.{u_3, u_6} R M inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.15] (b : Module.Basis.{u_1, u_3, u_6} ι R M inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.15 inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.18) (x : M), Eq.{succ u_6} M (DFunLike.coe.{max (max (succ u_1) (succ u_6)) (succ u_3), max (succ u_1) (succ u_3), succ u_6} (LinearMap.{u_3, u_3, max u_3 u_1, u_6} R R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 (RingHom.id.{u_3} R (Semiring.toNonAssocSemiring.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12)) (Finsupp.{u_1, u_3} ι R (MulZeroClass.toZero.{u_3} R (instMulZeroClassOfSemiring.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12))) M (Finsupp.instAddCommMonoid.{u_1, u_3} ι R (Semiring.toAddCommMonoid.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12)) inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.15 (Finsupp.module.{u_1, u_3, u_3} ι R R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 (Semiring.toAddCommMonoid.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12) (Semiring.toModule.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12)) inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.18) (Finsupp.{u_1, u_3} ι R (MulZeroClass.toZero.{u_3} R (instMulZeroClassOfSemiring.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12))) (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : Finsupp.{u_1, u_3} ι R (MulZeroClass.toZero.{u_3} R (instMulZeroClassOfSemiring.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12))) => M) (LinearMap.instFunLike.{u_3, u_3, max u_1 u_3, u_6} R R (Finsupp.{u_1, u_3} ι R (MulZeroClass.toZero.{u_3} R (instMulZeroClassOfSemiring.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12))) M inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 (Finsupp.instAddCommMonoid.{u_1, u_3} ι R (Semiring.toAddCommMonoid.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12)) inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.15 (Finsupp.module.{u_1, u_3, u_3} ι R R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 (Semiring.toAddCommMonoid.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12) (Semiring.toModule.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12)) inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.18 (RingHom.id.{u_3} R (Semiring.toNonAssocSemiring.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12))) (Finsupp.linearCombination.{u_1, u_6, u_3} ι M R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.15 inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.18 (DFunLike.coe.{max (max (succ u_1) (succ u_3)) (succ u_6), succ u_1, succ u_6} (Module.Basis.{u_1, u_3, u_6} ι R M inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.15 inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.18) ι (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : ι) => M) (Module.Basis.instFunLike.{u_1, u_3, u_6} ι R M inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.15 inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.18) b)) (DFunLike.coe.{max (max (succ u_1) (succ u_3)) (succ u_6), succ u_6, max (succ u_1) (succ u_3)} (LinearEquiv.{u_3, u_3, u_6, max u_3 u_1} R R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 (RingHom.id.{u_3} R (Semiring.toNonAssocSemiring.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12)) (RingHom.id.{u_3} R (Semiring.toNonAssocSemiring.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12)) (RingHomInvPair.ids.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12) (RingHomInvPair.ids.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12) M (Finsupp.{u_1, u_3} ι R (MulZeroClass.toZero.{u_3} R (instMulZeroClassOfSemiring.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12))) inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.15 (Finsupp.instAddCommMonoid.{u_1, u_3} ι R (Semiring.toAddCommMonoid.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12)) inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.18 (Finsupp.module.{u_1, u_3, u_3} ι R R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 (Semiring.toAddCommMonoid.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12) (Semiring.toModule.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12))) M (fun (x._@.Mathlib.Data.FunLike.Basic.2582841819._hygCtx._hyg.11 : M) => Finsupp.{u_1, u_3} ι R (MulZeroClass.toZero.{u_3} R (instMulZeroClassOfSemiring.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12))) (EquivLike.toFunLike.{max (max (succ u_1) (succ u_3)) (succ u_6), succ u_6, max (succ u_1) (succ u_3)} (LinearEquiv.{u_3, u_3, u_6, max u_3 u_1} R R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 (RingHom.id.{u_3} R (Semiring.toNonAssocSemiring.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12)) (RingHom.id.{u_3} R (Semiring.toNonAssocSemiring.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12)) (RingHomInvPair.ids.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12) (RingHomInvPair.ids.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12) M (Finsupp.{u_1, u_3} ι R (MulZeroClass.toZero.{u_3} R (instMulZeroClassOfSemiring.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12))) inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.15 (Finsupp.instAddCommMonoid.{u_1, u_3} ι R (Semiring.toAddCommMonoid.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12)) inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.18 (Finsupp.module.{u_1, u_3, u_3} ι R R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 (Semiring.toAddCommMonoid.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12) (Semiring.toModule.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12))) M (Finsupp.{u_1, u_3} ι R (MulZeroClass.toZero.{u_3} R (instMulZeroClassOfSemiring.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12))) (LinearEquiv.instEquivLike.{u_3, u_3, u_6, max u_1 u_3} R R M (Finsupp.{u_1, u_3} ι R (MulZeroClass.toZero.{u_3} R (instMulZeroClassOfSemiring.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12))) inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.15 (Finsupp.instAddCommMonoid.{u_1, u_3} ι R (Semiring.toAddCommMonoid.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12)) inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.18 (Finsupp.module.{u_1, u_3, u_3} ι R R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 (Semiring.toAddCommMonoid.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12) (Semiring.toModule.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12)) (RingHom.id.{u_3} R (Semiring.toNonAssocSemiring.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12)) (RingHom.id.{u_3} R (Semiring.toNonAssocSemiring.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12)) (RingHomInvPair.ids.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12) (RingHomInvPair.ids.{u_3} R inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12))) (Module.Basis.repr.{u_1, u_3, u_6} ι R M inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.12 inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.15 inst._@.EvaluatorCandidate.2065208963._hygCtx._hyg.18 b) x)) x",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_6 + 1} ((Finsupp.linearCombination.{u_1, u_6, u_3} R ⇑b) ((Module.Basis.repr.{u_1, u_3, u_6} b) x)) x",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "ι",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_3",
+        "name": "R",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Type u_6",
+        "name": "M",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Semiring.{u_3} R",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.12",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "AddCommMonoid.{u_6} M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.15",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Module.{u_3, u_6} R M",
+        "name": "inst._@.EvaluatorCandidate.365176561._hygCtx._hyg.18",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "Module.Basis.{u_1, u_3, u_6} ι R M",
+        "name": "b",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "M",
+        "name": "x",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_linear_algebra_combinatorics_main_basis_defs_10  :\n  Finsupp.linearCombination _ b (b.repr x) = x :=\nby\n  rw [← b.coe_repr_symm]\n  exact b.repr.symm_apply_apply x",
+    "signature_spans": [
+      {
+        "start": 88,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 119,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 132
+      }
+    ],
+    "proof_offset": 136,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 82
+      },
+      {
+        "start": 84,
+        "end": 85
+      },
+      {
+        "start": 88,
+        "end": 113
+      },
+      {
+        "start": 114,
+        "end": 115
+      },
+      {
+        "start": 116,
+        "end": 117
+      },
+      {
+        "start": 118,
+        "end": 119
+      },
+      {
+        "start": 119,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 127
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 129,
+        "end": 130
+      },
+      {
+        "start": 131,
+        "end": 132
+      },
+      {
+        "start": 133,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 138
+      },
+      {
+        "start": 141,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 145,
+        "end": 148
+      },
+      {
+        "start": 149,
+        "end": 164
+      },
+      {
+        "start": 164,
+        "end": 165
+      },
+      {
+        "start": 168,
+        "end": 173
+      },
+      {
+        "start": 174,
+        "end": 197
+      },
+      {
+        "start": 198,
+        "end": 199
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 136,
+        "end": 138
+      },
+      {
+        "start": 141,
+        "end": 143
+      },
+      {
+        "start": 144,
+        "end": 145
+      },
+      {
+        "start": 145,
+        "end": 148
+      },
+      {
+        "start": 149,
+        "end": 164
+      },
+      {
+        "start": 164,
+        "end": 165
+      },
+      {
+        "start": 168,
+        "end": 173
+      },
+      {
+        "start": 174,
+        "end": 197
+      },
+      {
+        "start": 198,
+        "end": 199
+      }
+    ],
+    "W_full": 22,
+    "W_S": 9,
+    "W_B": 9
+  },
+  "root": "CompressionEval.lib_linear_algebra_combinatorics_main_basis_defs_10",
+  "resolved_imports": [
+    {
+      "module": "Mathlib.LinearAlgebra.Finsupp.LinearCombination",
+      "is_meta": false,
+      "is_exported": true,
+      "import_all": false
+    },
+    {
+      "module": "Mathlib.Tactic.CrossRefAttribute",
+      "is_meta": false,
+      "is_exported": true,
+      "import_all": false
+    }
+  ],
+  "proved_type_fingerprint": "3586919090",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 4805,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Lean.Parser.Tactic.rwSeq",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.rwRuleSeq",
+      "Lean.Parser.Tactic.rwRule",
+      "Lean.Parser.Tactic.exact",
+      "Lean.Parser.Term.app"
+    ],
+    "proof_nodes": 4211,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_linear_algebra_combinatorics_main_basis_defs_10"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "ff71463bac7d8c93a96e1416df7470c2b60db03a07e6011cedae9042453d3a09",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.11685683298856
+  },
+  "request_fingerprint": "3bb752e0bc63568ca1c6faebdb4842dcf188722c81ff7e7d8cb72c4d864df652",
+  "engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7",
+  "engine_path": "lean/versions/Evaluator-83da0074.lean"
+}

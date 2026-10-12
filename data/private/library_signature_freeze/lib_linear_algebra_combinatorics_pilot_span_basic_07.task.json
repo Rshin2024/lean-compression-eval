@@ -1,0 +1,128 @@
+{
+  "task": {
+    "task_id": "lib_linear_algebra_combinatorics_pilot_span_basic_07",
+    "family_id": "source_module_Mathlib.LinearAlgebra.Span.Basic",
+    "domain": "linear_algebra_combinatorics",
+    "split": "pilot",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Algebra.GroupWithZero.NonZeroDivisors",
+      "Mathlib.Algebra.Module.Prod",
+      "Mathlib.Algebra.Module.Submodule.Equiv",
+      "Mathlib.Algebra.Module.Submodule.Pointwise",
+      "Mathlib.LinearAlgebra.Span.Defs",
+      "Mathlib.Order.CompactlyGenerated.Basic",
+      "Mathlib.Order.BourbakiWitt",
+      "Mathlib.Algebra.Field.Basic",
+      "Mathlib.Algebra.Module.Submodule.EqLocus",
+      "Mathlib.Algebra.Module.Torsion.Field"
+    ],
+    "context": "/-\nCopyright (c) 2017 Johannes Hölzl. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Johannes Hölzl, Mario Carneiro, Kevin Buzzard, Yury Kudryashov, Frédéric Dupuis,\n  Heather Macbeth\n-/\n/-!\n# The span of a set of vectors, as a submodule\n\n* `Submodule.span s` is defined to be the smallest submodule containing the set `s`.\n\n## Notation\n\n* We introduce the notation `R ∙ v` for the span of a singleton, `Submodule.span R {v}`.  This is\n  `\\span`, not the same as the scalar multiplication `•`/`\\bub`.\n\n-/\n\n@[expose] public section\n\nvariable {R R₂ K M M₂ V S : Type*}\n\nnamespace Submodule\n\nopen Function Set\n\nopen scoped Pointwise\n\nsection AddCommMonoid\n\nvariable [Semiring R] [AddCommMonoid M] [Module R M]\nvariable {x : M} (p p' : Submodule R M)\nvariable [Semiring R₂] {σ₁₂ : R →+* R₂}\nvariable [AddCommMonoid M₂] [Module R₂ M₂]\n\nvariable {s t : Set M}\n\nlemma _root_.AddSubmonoid.toNatSubmodule_closure (s : Set M) :\n    (AddSubmonoid.closure s).toNatSubmodule = .span ℕ s :=\n  (Submodule.span_le.mpr AddSubmonoid.subset_closure).antisymm'\n    ((Submodule.span ℕ s).toAddSubmonoid.closure_le.mpr Submodule.subset_span)\n\n/-- A version of `Submodule.span_eq` for when the span is by a smaller ring. -/\n@[simp]\ntheorem span_coe_eq_restrictScalars [Semiring S] [SMul S R] [Module S M] [IsScalarTower S R M] :\n    span S (p : Set M) = p.restrictScalars S :=\n  span_eq (p.restrictScalars S)\n\ninclude σ₁₂ in\n/-- A version of `Submodule.map_span_le` that does not require the `RingHomSurjective`\nassumption. -/\ntheorem image_span_subset (f : M →ₛₗ[σ₁₂] M₂) (s : Set M) (N : Submodule R₂ M₂) :\n    f '' span R s ⊆ N ↔ ∀ m ∈ s, f m ∈ N := image_subset_iff.trans <| span_le (p := N.comap f)\n\ninclude σ₁₂ in\ntheorem image_span_subset_span (f : M →ₛₗ[σ₁₂] M₂) (s : Set M) : f '' span R s ⊆ span R₂ (f '' s) :=\n  (image_span_subset f s _).2 fun x hx ↦ subset_span ⟨x, hx, rfl⟩\n\ntheorem map_span [RingHomSurjective σ₁₂] (f : M →ₛₗ[σ₁₂] M₂) (s : Set M) :\n    (span R s).map f = span R₂ (f '' s) :=\n  Eq.symm <| span_eq_of_le _ (Set.image_mono subset_span) (image_span_subset_span f s)\n\nalias _root_.LinearMap.map_span := Submodule.map_span\n\ntheorem map_span_le [RingHomSurjective σ₁₂] (f : M →ₛₗ[σ₁₂] M₂) (s : Set M) (N : Submodule R₂ M₂) :\n    map f (span R s) ≤ N ↔ ∀ m ∈ s, f m ∈ N := image_span_subset f s N\n\nalias _root_.LinearMap.map_span_le := Submodule.map_span_le\n\n/-- See also `Submodule.span_preimage_eq`. -/\ntheorem span_preimage_le (f : M →ₛₗ[σ₁₂] M₂) (s : Set M₂) :\n    span R (f ⁻¹' s) ≤ (span R₂ s).comap f := by\n  rw [span_le, comap_coe]\n  exact preimage_mono subset_span\n\nalias _root_.LinearMap.span_preimage_le := Submodule.span_preimage_le\n\ninclude σ₁₂ in\ntheorem mapsTo_span {f : M →ₛₗ[σ₁₂] M₂} {s : Set M} {t : Set M₂} (h : MapsTo f s t) :\n    MapsTo f (span R s) (span R₂ t) :=\n  (span_mono h).trans (span_preimage_le (σ₁₂ := σ₁₂) f t)\n\nalias _root_.Set.MapsTo.submoduleSpan := mapsTo_span\n\nsection\n\nvariable {N : Type*} [AddCommMonoid N] [Module R N]\n\nlemma linearMap_eq_iff_of_eq_span {V : Submodule R M} (f g : V →ₗ[R] N)\n    {S : Set M} (hV : V = span R S) :\n    f = g ↔ ∀ (s : S), f ⟨s, by simpa only [hV] using! subset_span (by simp)⟩ =\n      g ⟨s, by simpa only [hV] using! subset_span (by simp)⟩ := by\n  constructor\n  · rintro rfl _\n    rfl\n  · intro h\n    subst hV\n    suffices ∀ (x : M) (hx : x ∈ span R S), f ⟨x, hx⟩ = g ⟨x, hx⟩ by\n      ext ⟨x, hx⟩\n      exact this x hx\n    intro x hx\n    induction hx using span_induction with\n    | mem x hx => exact h ⟨x, hx⟩\n    | zero => erw [map_zero, map_zero]\n    | add x y hx hy hx' hy' =>\n        erw [f.map_add ⟨x, hx⟩ ⟨y, hy⟩, g.map_add ⟨x, hx⟩ ⟨y, hy⟩]\n        rw [hx', hy']\n    | smul a x hx hx' =>\n        erw [f.map_smul a ⟨x, hx⟩, g.map_smul a ⟨x, hx⟩]\n        rw [hx']\n\nuniverse «u_1» «u_4» «u_8»\n\nassert_not_exists _root_.Submodule.linearMap_eq_iff_of_span_eq_top\n",
+    "binders": "{«R» : Type u_1} {«M» : Type u_4} [«inst» : Semiring.{u_1} R] [«inst_1» : AddCommMonoid.{u_4} M] [«inst_2» : Module.{u_1, u_4} R M] {«N» : Type u_8} [«inst_3» : AddCommMonoid.{u_8} N] [«inst_4» : Module.{u_1, u_8} R N] (f g : M →ₗ[R] N)\n    {S : Set M} (hM : span R S = ⊤)",
+    "proposition": "f = g ↔ ∀ (s : S), f s = g s",
+    "target_name": "_root_.CompressionEval.lib_linear_algebra_combinatorics_pilot_span_basic_07",
+    "premise_context": "variable {R R₂ K M M₂ V S : Type*}\nnamespace Submodule\nopen Function Set\nopen scoped Pointwise\nsection AddCommMonoid\nvariable [Semiring R] [AddCommMonoid M] [Module R M]\nvariable {x : M} (p p' : Submodule R M)\nvariable [Semiring R₂] {σ₁₂ : R →+* R₂}\nvariable [AddCommMonoid M₂] [Module R₂ M₂]\nvariable {s t : Set M}\nsection\nvariable {N : Type*} [AddCommMonoid N] [Module R N]\n\nAvailable preceding statements (within the shown source scopes):\ntheorem span_coe_eq_restrictScalars [Semiring S] [SMul S R] [Module S M] [IsScalarTower S R M] :\n    span S (p : Set M) = p.restrictScalars S\n\ntheorem image_span_subset (f : M →ₛₗ[σ₁₂] M₂) (s : Set M) (N : Submodule R₂ M₂) :\n    f '' span R s ⊆ N ↔ ∀ m ∈ s, f m ∈ N\n\ntheorem image_span_subset_span (f : M →ₛₗ[σ₁₂] M₂) (s : Set M) : f '' span R s ⊆ span R₂ (f '' s)\n\ntheorem map_span [RingHomSurjective σ₁₂] (f : M →ₛₗ[σ₁₂] M₂) (s : Set M) :\n    (span R s).map f = span R₂ (f '' s)\n\ntheorem map_span_le [RingHomSurjective σ₁₂] (f : M →ₛₗ[σ₁₂] M₂) (s : Set M) (N : Submodule R₂ M₂) :\n    map f (span R s) ≤ N ↔ ∀ m ∈ s, f m ∈ N\n\ntheorem span_preimage_le (f : M →ₛₗ[σ₁₂] M₂) (s : Set M₂) :\n    span R (f ⁻¹' s) ≤ (span R₂ s).comap f\n\ntheorem mapsTo_span {f : M →ₛₗ[σ₁₂] M₂} {s : Set M} {t : Set M₂} (h : MapsTo f s t) :\n    MapsTo f (span R s) (span R₂ t)\n\nlemma linearMap_eq_iff_of_eq_span {V : Submodule R M} (f g : V →ₗ[R] N)\n    {S : Set M} (hV : V = span R S) :\n    f = g ↔ ∀ (s : S), f ⟨s, by simpa only [hV] using! subset_span (by simp)⟩ =\n      g ⟨s, by simpa only [hV] using! subset_span (by simp)⟩",
+    "forbidden_declarations": [
+      "Submodule.linearMap_eq_iff_of_span_eq_top"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.LinearAlgebra.Span.Basic",
+      "source_path": "Mathlib/LinearAlgebra/Span/Basic.lean",
+      "declaration": "Submodule.linearMap_eq_iff_of_span_eq_top",
+      "source_line": 126,
+      "source_sha256": "030186742b5758bcfeed49623129d424943c18a58cdce1fae62228309527b70c",
+      "prefix_end_character": 4282,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "c9a8fa8b4841570b9257bec9e47a7ba0490917e45e0cd198e8489592e0a1d5a4",
+      "premise_context": "22d37c3d9cc9e027bafcc6f266f49909c3ba1cb7556cc689559cadf2b3cece0c",
+      "binders": "57b2294491650877258c966ddff56c1f2880a8f8d8e994d5246180fe47befdbb",
+      "proposition": "2dd69c41a06fb8f69f0ff39a9128ffa0cbee8548995dbcc9f26573265b9a42e1"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Algebra.GroupWithZero.NonZeroDivisors",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Module.Prod",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Module.Submodule.Equiv",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Module.Submodule.Pointwise",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.LinearAlgebra.Span.Defs",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Order.CompactlyGenerated.Basic",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Order.BourbakiWitt",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Field.Basic",
+        "import_all": false,
+        "is_exported": false,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Module.Submodule.EqLocus",
+        "import_all": false,
+        "is_exported": false,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Module.Torsion.Field",
+        "import_all": false,
+        "is_exported": false,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

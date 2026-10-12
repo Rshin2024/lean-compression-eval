@@ -1,0 +1,72 @@
+{
+  "task": {
+    "task_id": "lib_algebra_groups_main_commute_basic_01",
+    "family_id": "source_module_Mathlib.Algebra.Group.Commute.Basic",
+    "domain": "algebra_groups",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Algebra.Group.Commute.Defs",
+      "Mathlib.Algebra.Group.Semiconj.Basic"
+    ],
+    "context": "/-\nCopyright (c) 2019 Neil Strickland. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Neil Strickland, Yury Kudryashov\n-/\n/-!\n# Additional lemmas about commuting pairs of elements in monoids\n\n-/\n\npublic section\n\nassert_not_exists MonoidWithZero DenselyOrdered\n\nvariable {G : Type*}\n\nsection Semigroup\nvariable [Semigroup G] {a b c : G}\n\nopen Function\n\nuniverse «u_1»\n\nassert_not_exists _root_.SemiconjBy.function_semiconj_mul_left\n",
+    "binders": "{«G» : Type u_1} [«inst» : Semigroup.{u_1} G] {«a» : G} {«b» : G} {«c» : G} (h : SemiconjBy a b c)",
+    "proposition": "Semiconj (a * ·) (b * ·) (c * ·)",
+    "target_name": "_root_.CompressionEval.lib_algebra_groups_main_commute_basic_01",
+    "premise_context": "variable {G : Type*}\nsection Semigroup\nvariable [Semigroup G] {a b c : G}\nopen Function\n\nAvailable preceding statements (within the shown source scopes):\n",
+    "forbidden_declarations": [
+      "SemiconjBy.function_semiconj_mul_left"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Algebra.Group.Commute.Basic",
+      "source_path": "Mathlib/Algebra/Group/Commute/Basic.lean",
+      "declaration": "SemiconjBy.function_semiconj_mul_left",
+      "source_line": 28,
+      "source_sha256": "25164de3ccbb6554365e45fb0bc04dcfa7cff307d8dc2fa7327b1fa137ae45b1",
+      "prefix_end_character": 527,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "9082c191d3102f4a4f3feeed5b801d26a51e5394ed66a4571b2324ae5a43f8d6",
+      "premise_context": "6133f69499642f31c8066b1fba549db2c238aa47f27fd044e3a3a2addf5aad8a",
+      "binders": "e316b54433f378b06f724b62c0eb2cf3c9aea2dde2c79b8ee3d671d5da33a8eb",
+      "proposition": "bcfe689753990a6c5efa34528ccd1671ddc8ba5d2c8ed2b56ee989c46114f4ae"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Algebra.Group.Commute.Defs",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Algebra.Group.Semiconj.Basic",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}

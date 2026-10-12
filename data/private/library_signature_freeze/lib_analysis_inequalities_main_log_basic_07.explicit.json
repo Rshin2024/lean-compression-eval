@@ -1,0 +1,614 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [],
+  "trusted_type_source": "∀ {x : ℝ}, LE.le.{0} (HMul.hMul.{0, 0, 0} (rexp 1) x) (rexp x)",
+  "trusted_type_expression": "forall {x : Real}, LE.le.{0} Real Real.instLE (HMul.hMul.{0, 0, 0} Real Real Real (instHMul.{0} Real Real.instMul) (Real.exp (OfNat.ofNat.{0} Real 1 (One.toOfNat1.{0} Real Real.instOne))) x) (Real.exp x)",
+  "trusted_telescope": {
+    "proposition": "LE.le.{0} (HMul.hMul.{0, 0, 0} (rexp 1) x) (rexp x)",
+    "binders": [
+      {
+        "type_source": "ℝ",
+        "name": "x",
+        "binder_info": "implicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_analysis_inequalities_main_log_basic_07 {x : ℝ} :\n  exp 1 * x ≤ exp x :=\nby\n  by_cases hx0 : x ≤ 0\n  · apply le_trans (mul_nonpos_of_nonneg_of_nonpos (exp_pos 1).le hx0) (exp_nonneg x)\n  · have h := add_one_le_exp (log x)\n    rwa [← exp_le_exp, exp_add, exp_log (lt_of_not_ge hx0), mul_comm] at h",
+    "signature_spans": [
+      {
+        "start": 75,
+        "end": 76
+      },
+      {
+        "start": 76,
+        "end": 77
+      },
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 80,
+        "end": 83
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 89,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 108
+      }
+    ],
+    "proof_offset": 112,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 74
+      },
+      {
+        "start": 75,
+        "end": 76
+      },
+      {
+        "start": 76,
+        "end": 77
+      },
+      {
+        "start": 78,
+        "end": 79
+      },
+      {
+        "start": 80,
+        "end": 83
+      },
+      {
+        "start": 83,
+        "end": 84
+      },
+      {
+        "start": 85,
+        "end": 86
+      },
+      {
+        "start": 89,
+        "end": 92
+      },
+      {
+        "start": 93,
+        "end": 94
+      },
+      {
+        "start": 95,
+        "end": 96
+      },
+      {
+        "start": 97,
+        "end": 98
+      },
+      {
+        "start": 99,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 106
+      },
+      {
+        "start": 107,
+        "end": 108
+      },
+      {
+        "start": 109,
+        "end": 111
+      },
+      {
+        "start": 112,
+        "end": 114
+      },
+      {
+        "start": 117,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 142,
+        "end": 144
+      },
+      {
+        "start": 145,
+        "end": 150
+      },
+      {
+        "start": 151,
+        "end": 159
+      },
+      {
+        "start": 160,
+        "end": 161
+      },
+      {
+        "start": 161,
+        "end": 191
+      },
+      {
+        "start": 192,
+        "end": 193
+      },
+      {
+        "start": 193,
+        "end": 200
+      },
+      {
+        "start": 201,
+        "end": 202
+      },
+      {
+        "start": 202,
+        "end": 203
+      },
+      {
+        "start": 203,
+        "end": 204
+      },
+      {
+        "start": 204,
+        "end": 206
+      },
+      {
+        "start": 207,
+        "end": 210
+      },
+      {
+        "start": 210,
+        "end": 211
+      },
+      {
+        "start": 212,
+        "end": 213
+      },
+      {
+        "start": 213,
+        "end": 223
+      },
+      {
+        "start": 224,
+        "end": 225
+      },
+      {
+        "start": 225,
+        "end": 226
+      },
+      {
+        "start": 229,
+        "end": 231
+      },
+      {
+        "start": 232,
+        "end": 236
+      },
+      {
+        "start": 237,
+        "end": 238
+      },
+      {
+        "start": 239,
+        "end": 241
+      },
+      {
+        "start": 242,
+        "end": 256
+      },
+      {
+        "start": 257,
+        "end": 258
+      },
+      {
+        "start": 258,
+        "end": 261
+      },
+      {
+        "start": 262,
+        "end": 263
+      },
+      {
+        "start": 263,
+        "end": 264
+      },
+      {
+        "start": 269,
+        "end": 272
+      },
+      {
+        "start": 273,
+        "end": 274
+      },
+      {
+        "start": 274,
+        "end": 277
+      },
+      {
+        "start": 278,
+        "end": 288
+      },
+      {
+        "start": 288,
+        "end": 289
+      },
+      {
+        "start": 290,
+        "end": 297
+      },
+      {
+        "start": 297,
+        "end": 298
+      },
+      {
+        "start": 299,
+        "end": 306
+      },
+      {
+        "start": 307,
+        "end": 308
+      },
+      {
+        "start": 308,
+        "end": 320
+      },
+      {
+        "start": 321,
+        "end": 324
+      },
+      {
+        "start": 324,
+        "end": 325
+      },
+      {
+        "start": 325,
+        "end": 326
+      },
+      {
+        "start": 327,
+        "end": 335
+      },
+      {
+        "start": 335,
+        "end": 336
+      },
+      {
+        "start": 337,
+        "end": 339
+      },
+      {
+        "start": 340,
+        "end": 341
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 112,
+        "end": 114
+      },
+      {
+        "start": 117,
+        "end": 125
+      },
+      {
+        "start": 126,
+        "end": 129
+      },
+      {
+        "start": 130,
+        "end": 131
+      },
+      {
+        "start": 132,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 137
+      },
+      {
+        "start": 138,
+        "end": 139
+      },
+      {
+        "start": 142,
+        "end": 144
+      },
+      {
+        "start": 145,
+        "end": 150
+      },
+      {
+        "start": 151,
+        "end": 159
+      },
+      {
+        "start": 160,
+        "end": 161
+      },
+      {
+        "start": 161,
+        "end": 191
+      },
+      {
+        "start": 192,
+        "end": 193
+      },
+      {
+        "start": 193,
+        "end": 200
+      },
+      {
+        "start": 201,
+        "end": 202
+      },
+      {
+        "start": 202,
+        "end": 203
+      },
+      {
+        "start": 203,
+        "end": 204
+      },
+      {
+        "start": 204,
+        "end": 206
+      },
+      {
+        "start": 207,
+        "end": 210
+      },
+      {
+        "start": 210,
+        "end": 211
+      },
+      {
+        "start": 212,
+        "end": 213
+      },
+      {
+        "start": 213,
+        "end": 223
+      },
+      {
+        "start": 224,
+        "end": 225
+      },
+      {
+        "start": 225,
+        "end": 226
+      },
+      {
+        "start": 229,
+        "end": 231
+      },
+      {
+        "start": 232,
+        "end": 236
+      },
+      {
+        "start": 237,
+        "end": 238
+      },
+      {
+        "start": 239,
+        "end": 241
+      },
+      {
+        "start": 242,
+        "end": 256
+      },
+      {
+        "start": 257,
+        "end": 258
+      },
+      {
+        "start": 258,
+        "end": 261
+      },
+      {
+        "start": 262,
+        "end": 263
+      },
+      {
+        "start": 263,
+        "end": 264
+      },
+      {
+        "start": 269,
+        "end": 272
+      },
+      {
+        "start": 273,
+        "end": 274
+      },
+      {
+        "start": 274,
+        "end": 277
+      },
+      {
+        "start": 278,
+        "end": 288
+      },
+      {
+        "start": 288,
+        "end": 289
+      },
+      {
+        "start": 290,
+        "end": 297
+      },
+      {
+        "start": 297,
+        "end": 298
+      },
+      {
+        "start": 299,
+        "end": 306
+      },
+      {
+        "start": 307,
+        "end": 308
+      },
+      {
+        "start": 308,
+        "end": 320
+      },
+      {
+        "start": 321,
+        "end": 324
+      },
+      {
+        "start": 324,
+        "end": 325
+      },
+      {
+        "start": 325,
+        "end": 326
+      },
+      {
+        "start": 327,
+        "end": 335
+      },
+      {
+        "start": 335,
+        "end": 336
+      },
+      {
+        "start": 337,
+        "end": 339
+      },
+      {
+        "start": 340,
+        "end": 341
+      }
+    ],
+    "W_full": 66,
+    "W_S": 12,
+    "W_B": 50
+  },
+  "root": "CompressionEval.lib_analysis_inequalities_main_log_basic_07",
+  "proved_type_fingerprint": "2828092034",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 15797,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "«tacticBy_cases_:_»",
+      "«term_≤_»",
+      "num",
+      "Lean.cdot",
+      "Lean.cdotTk",
+      "Lean.Parser.Tactic.apply",
+      "Lean.Parser.Term.app",
+      "Lean.Parser.Term.paren",
+      "Lean.Parser.Term.hygienicLParen",
+      "hygieneInfo",
+      "Lean.Parser.Term.proj",
+      "Lean.Parser.Tactic.tacticHave__",
+      "Lean.Parser.Term.letConfig",
+      "Lean.Parser.Term.letDecl",
+      "Lean.Parser.Term.letIdDecl",
+      "Lean.Parser.Term.letId",
+      "Lean.Parser.Tactic.tacticRwa__",
+      "Lean.Parser.Tactic.rwRuleSeq",
+      "Lean.Parser.Tactic.rwRule",
+      "Lean.Parser.Tactic.location",
+      "Lean.Parser.Tactic.locationHyp"
+    ],
+    "proof_nodes": 1392,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_analysis_inequalities_main_log_basic_07"
+  ],
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "3f1a5b5770ec15a932cc20ba0a6dcc53a74089ac4d94b1a72cd75b24be1bf06a",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.419455375056714
+  },
+  "request_fingerprint": "3f115d9eb564e49ebd29e5fb801f61b25f43cf6f647faf8cc39265d33c685ce4"
+}

@@ -1,0 +1,203 @@
+{
+  "compiled_environment_hash": null,
+  "compiled_files": [],
+  "dependency_lockfile": {
+    "fixedToolchain": false,
+    "lakeDir": ".lake",
+    "name": "richPlanes",
+    "packages": [
+      {
+        "configFile": "lakefile.lean",
+        "inherited": false,
+        "inputRev": "274ed6d67d9b226c557813b9ce437574cccdce11",
+        "manifestFile": "lake-manifest.json",
+        "name": "mathlib",
+        "rev": "274ed6d67d9b226c557813b9ce437574cccdce11",
+        "scope": "",
+        "subDir": null,
+        "type": "git",
+        "url": "https://github.com/leanprover-community/mathlib4.git"
+      },
+      {
+        "configFile": "lakefile.toml",
+        "inherited": true,
+        "inputRev": "main",
+        "manifestFile": "lake-manifest.json",
+        "name": "plausible",
+        "rev": "38e9c3ce15cbb63c92e90bb9a92e4eb82131f669",
+        "scope": "leanprover-community",
+        "subDir": null,
+        "type": "git",
+        "url": "https://github.com/leanprover-community/plausible"
+      },
+      {
+        "configFile": "lakefile.toml",
+        "inherited": true,
+        "inputRev": "main",
+        "manifestFile": "lake-manifest.json",
+        "name": "LeanSearchClient",
+        "rev": "2bc7cf064315b26bc38dac2e9612fb581be9b75f",
+        "scope": "leanprover-community",
+        "subDir": null,
+        "type": "git",
+        "url": "https://github.com/leanprover-community/LeanSearchClient"
+      },
+      {
+        "configFile": "lakefile.toml",
+        "inherited": true,
+        "inputRev": "main",
+        "manifestFile": "lake-manifest.json",
+        "name": "importGraph",
+        "rev": "978b7ec9fbbf9a535114f1de8fe5b3778b358870",
+        "scope": "leanprover-community",
+        "subDir": null,
+        "type": "git",
+        "url": "https://github.com/leanprover-community/import-graph"
+      },
+      {
+        "configFile": "lakefile.lean",
+        "inherited": true,
+        "inputRev": "main",
+        "manifestFile": "lake-manifest.json",
+        "name": "proofwidgets",
+        "rev": "99e8adeea3c3cd86b6b79ba01a1383bf2d31d055",
+        "scope": "leanprover-community",
+        "subDir": null,
+        "type": "git",
+        "url": "https://github.com/leanprover-community/ProofWidgets4"
+      },
+      {
+        "configFile": "lakefile.toml",
+        "inherited": true,
+        "inputRev": "master",
+        "manifestFile": "lake-manifest.json",
+        "name": "aesop",
+        "rev": "c1c4362a130f12e632d252180a6c2a31d8fd4726",
+        "scope": "leanprover-community",
+        "subDir": null,
+        "type": "git",
+        "url": "https://github.com/leanprover-community/aesop"
+      },
+      {
+        "configFile": "lakefile.toml",
+        "inherited": true,
+        "inputRev": "master",
+        "manifestFile": "lake-manifest.json",
+        "name": "Qq",
+        "rev": "3b55e9d00c6b0018e5d984eb011b6f93c09bd163",
+        "scope": "leanprover-community",
+        "subDir": null,
+        "type": "git",
+        "url": "https://github.com/leanprover-community/quote4"
+      },
+      {
+        "configFile": "lakefile.toml",
+        "inherited": true,
+        "inputRev": "main",
+        "manifestFile": "lake-manifest.json",
+        "name": "batteries",
+        "rev": "36cc05ca2d0e469bfbeea9437f460e19238e885e",
+        "scope": "leanprover-community",
+        "subDir": null,
+        "type": "git",
+        "url": "https://github.com/leanprover-community/batteries"
+      },
+      {
+        "configFile": "lakefile.toml",
+        "inherited": true,
+        "inputRev": "v4.34.0-rc1",
+        "manifestFile": "lake-manifest.json",
+        "name": "Cli",
+        "rev": "af8bc067a4cc6c6df472a68909a3f40b1c76c43e",
+        "scope": "leanprover",
+        "subDir": null,
+        "type": "git",
+        "url": "https://github.com/leanprover/lean4-cli"
+      }
+    ],
+    "packagesDir": ".lake/packages",
+    "version": "1.2.0"
+  },
+  "environment_hash": "b3a47e1977f7a71d5906459df606c0a9dc983c02f13ad732590a3322cc5e6ae3",
+  "hardware": {
+    "cpu_count": 18,
+    "machine": "arm64",
+    "system": "Darwin"
+  },
+  "hash_mode": "development_metadata_only",
+  "lean_binary": "/Users/ryanshin/.elan/toolchains/leanprover--lean4---v4.34.0-rc1/bin/lean",
+  "lean_binary_hash": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+  "lean_search_paths": [
+    "/Users/ryanshin/Documents/Codex/2026-08-18/fi/formal_capacity/.lake/packages/mathlib/.lake/build/lib/lean",
+    "/Users/ryanshin/Documents/Codex/2026-08-18/fi/formal_capacity/.lake/packages/plausible/.lake/build/lib/lean",
+    "/Users/ryanshin/Documents/Codex/2026-08-18/fi/formal_capacity/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+    "/Users/ryanshin/Documents/Codex/2026-08-18/fi/formal_capacity/.lake/packages/importGraph/.lake/build/lib/lean",
+    "/Users/ryanshin/Documents/Codex/2026-08-18/fi/formal_capacity/.lake/packages/proofwidgets/.lake/build/lib/lean",
+    "/Users/ryanshin/Documents/Codex/2026-08-18/fi/formal_capacity/.lake/packages/aesop/.lake/build/lib/lean",
+    "/Users/ryanshin/Documents/Codex/2026-08-18/fi/formal_capacity/.lake/packages/Qq/.lake/build/lib/lean",
+    "/Users/ryanshin/Documents/Codex/2026-08-18/fi/formal_capacity/.lake/packages/batteries/.lake/build/lib/lean"
+  ],
+  "lean_toolchain": "leanprover/lean4:v4.34.0-rc1",
+  "lockfile_hash": "e1ea511938b687316154de57c9dfe145fd56c5f259807f09f4278a2695ba9b24",
+  "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+  "packages": [
+    {
+      "library_path": "/Users/ryanshin/Documents/Codex/2026-09-08/f/outputs/q1-lean/.lake/packages/mathlib/.lake/build/lib/lean",
+      "name": "mathlib",
+      "path": "/Users/ryanshin/Documents/Codex/2026-09-08/f/outputs/q1-lean/.lake/packages/mathlib",
+      "rev": "274ed6d67d9b226c557813b9ce437574cccdce11"
+    },
+    {
+      "library_path": "/Users/ryanshin/Documents/Codex/2026-09-08/f/outputs/q1-lean/.lake/packages/plausible/.lake/build/lib/lean",
+      "name": "plausible",
+      "path": "/Users/ryanshin/Documents/Codex/2026-09-08/f/outputs/q1-lean/.lake/packages/plausible",
+      "rev": "38e9c3ce15cbb63c92e90bb9a92e4eb82131f669"
+    },
+    {
+      "library_path": "/Users/ryanshin/Documents/Codex/2026-09-08/f/outputs/q1-lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+      "name": "LeanSearchClient",
+      "path": "/Users/ryanshin/Documents/Codex/2026-09-08/f/outputs/q1-lean/.lake/packages/LeanSearchClient",
+      "rev": "2bc7cf064315b26bc38dac2e9612fb581be9b75f"
+    },
+    {
+      "library_path": "/Users/ryanshin/Documents/Codex/2026-09-08/f/outputs/q1-lean/.lake/packages/importGraph/.lake/build/lib/lean",
+      "name": "importGraph",
+      "path": "/Users/ryanshin/Documents/Codex/2026-09-08/f/outputs/q1-lean/.lake/packages/importGraph",
+      "rev": "978b7ec9fbbf9a535114f1de8fe5b3778b358870"
+    },
+    {
+      "library_path": "/Users/ryanshin/Documents/Codex/2026-09-08/f/outputs/q1-lean/.lake/packages/proofwidgets/.lake/build/lib/lean",
+      "name": "proofwidgets",
+      "path": "/Users/ryanshin/Documents/Codex/2026-09-08/f/outputs/q1-lean/.lake/packages/proofwidgets",
+      "rev": "99e8adeea3c3cd86b6b79ba01a1383bf2d31d055"
+    },
+    {
+      "library_path": "/Users/ryanshin/Documents/Codex/2026-09-08/f/outputs/q1-lean/.lake/packages/aesop/.lake/build/lib/lean",
+      "name": "aesop",
+      "path": "/Users/ryanshin/Documents/Codex/2026-09-08/f/outputs/q1-lean/.lake/packages/aesop",
+      "rev": "c1c4362a130f12e632d252180a6c2a31d8fd4726"
+    },
+    {
+      "library_path": "/Users/ryanshin/Documents/Codex/2026-09-08/f/outputs/q1-lean/.lake/packages/Qq/.lake/build/lib/lean",
+      "name": "Qq",
+      "path": "/Users/ryanshin/Documents/Codex/2026-09-08/f/outputs/q1-lean/.lake/packages/Qq",
+      "rev": "3b55e9d00c6b0018e5d984eb011b6f93c09bd163"
+    },
+    {
+      "library_path": "/Users/ryanshin/Documents/Codex/2026-09-08/f/outputs/q1-lean/.lake/packages/batteries/.lake/build/lib/lean",
+      "name": "batteries",
+      "path": "/Users/ryanshin/Documents/Codex/2026-09-08/f/outputs/q1-lean/.lake/packages/batteries",
+      "rev": "36cc05ca2d0e469bfbeea9437f460e19238e885e"
+    },
+    {
+      "library_path": "/Users/ryanshin/Documents/Codex/2026-09-08/f/outputs/q1-lean/.lake/packages/Cli/.lake/build/lib/lean",
+      "name": "Cli",
+      "path": "/Users/ryanshin/Documents/Codex/2026-09-08/f/outputs/q1-lean/.lake/packages/Cli",
+      "rev": "af8bc067a4cc6c6df472a68909a3f40b1c76c43e"
+    }
+  ],
+  "schema_version": 1,
+  "source_environment_hash": null,
+  "source_files": [],
+  "toolchain_root": "/Users/ryanshin/.elan/toolchains/leanprover--lean4---v4.34.0-rc1"
+}

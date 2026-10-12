@@ -1,0 +1,877 @@
+{
+  "validity_status": "success",
+  "universe_parameters": [
+    "u_1"
+  ],
+  "trusted_type_source": "∀ {G : Type u_1} [inst : DivisionMonoid.{u_1} G] {a b c d : G},\n  Commute.{u_1} b c →\n    Commute.{u_1} (Inv.inv.{u_1} b) d →\n      Commute.{u_1} (Inv.inv.{u_1} c) d →\n        Eq.{u_1 + 1} (HDiv.hDiv.{u_1, u_1, u_1} (HDiv.hDiv.{u_1, u_1, u_1} a b) (HDiv.hDiv.{u_1, u_1, u_1} c d))\n          (HDiv.hDiv.{u_1, u_1, u_1} (HDiv.hDiv.{u_1, u_1, u_1} a c) (HDiv.hDiv.{u_1, u_1, u_1} b d))",
+  "trusted_type_expression": "forall {G : Type.{u_1}} [inst : DivisionMonoid.{u_1} G] {a : G} {b : G} {c : G} {d : G}, (Commute.{u_1} G (MulOne.toMul.{u_1} G (MulOneClass.toMulOne.{u_1} G (Monoid.toMulOneClass.{u_1} G (DivInvMonoid.toMonoid.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst))))) b c) -> (Commute.{u_1} G (MulOne.toMul.{u_1} G (MulOneClass.toMulOne.{u_1} G (Monoid.toMulOneClass.{u_1} G (DivInvMonoid.toMonoid.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst))))) (Inv.inv.{u_1} G (InvOneClass.toInv.{u_1} G (DivInvOneMonoid.toInvOneClass.{u_1} G (DivisionMonoid.toDivInvOneMonoid.{u_1} G inst))) b) d) -> (Commute.{u_1} G (MulOne.toMul.{u_1} G (MulOneClass.toMulOne.{u_1} G (Monoid.toMulOneClass.{u_1} G (DivInvMonoid.toMonoid.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst))))) (Inv.inv.{u_1} G (InvOneClass.toInv.{u_1} G (DivInvOneMonoid.toInvOneClass.{u_1} G (DivisionMonoid.toDivInvOneMonoid.{u_1} G inst))) c) d) -> (Eq.{succ u_1} G (HDiv.hDiv.{u_1, u_1, u_1} G G G (instHDiv.{u_1} G (DivInvMonoid.toDiv.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst))) (HDiv.hDiv.{u_1, u_1, u_1} G G G (instHDiv.{u_1} G (DivInvMonoid.toDiv.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst))) a b) (HDiv.hDiv.{u_1, u_1, u_1} G G G (instHDiv.{u_1} G (DivInvMonoid.toDiv.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst))) c d)) (HDiv.hDiv.{u_1, u_1, u_1} G G G (instHDiv.{u_1} G (DivInvMonoid.toDiv.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst))) (HDiv.hDiv.{u_1, u_1, u_1} G G G (instHDiv.{u_1} G (DivInvMonoid.toDiv.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst))) a c) (HDiv.hDiv.{u_1, u_1, u_1} G G G (instHDiv.{u_1} G (DivInvMonoid.toDiv.{u_1} G (DivisionMonoid.toDivInvMonoid.{u_1} G inst))) b d)))",
+  "trusted_telescope": {
+    "proposition": "Eq.{u_1 + 1} (HDiv.hDiv.{u_1, u_1, u_1} (HDiv.hDiv.{u_1, u_1, u_1} a b) (HDiv.hDiv.{u_1, u_1, u_1} c d))\n  (HDiv.hDiv.{u_1, u_1, u_1} (HDiv.hDiv.{u_1, u_1, u_1} a c) (HDiv.hDiv.{u_1, u_1, u_1} b d))",
+    "binders": [
+      {
+        "type_source": "Type u_1",
+        "name": "G",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "DivisionMonoid.{u_1} G",
+        "name": "inst",
+        "binder_info": "instance"
+      },
+      {
+        "type_source": "G",
+        "name": "a",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "G",
+        "name": "b",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "G",
+        "name": "c",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "G",
+        "name": "d",
+        "binder_info": "implicit"
+      },
+      {
+        "type_source": "Commute.{u_1} b c",
+        "name": "hbc",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Commute.{u_1} (Inv.inv.{u_1} b) d",
+        "name": "hbd",
+        "binder_info": "explicit"
+      },
+      {
+        "type_source": "Commute.{u_1} (Inv.inv.{u_1} c) d",
+        "name": "hcd",
+        "binder_info": "explicit"
+      }
+    ]
+  },
+  "source_tokens": {
+    "span_unit": "utf8_bytes",
+    "source": "theorem _root_.CompressionEval.lib_algebra_groups_main_commute_basic_09 {«G» : Type u_1} [«inst» : DivisionMonoid.{u_1} G] {«a» : G} {«b» : G} {«c» : G} {«d» : G} (hbc : Commute b c) (hbd : Commute b⁻¹ d) (hcd : Commute c⁻¹ d) :\n  a / b / (c / d) = a / c / (b / d) :=\nby\n  simp_rw [div_eq_mul_inv, mul_inv_rev, inv_inv, hbd.symm.eq, hcd.symm.eq,\n    hbc.inv_inv.mul_mul_mul_comm]",
+    "signature_spans": [
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 73,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 89
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 92,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 117
+      },
+      {
+        "start": 117,
+        "end": 119
+      },
+      {
+        "start": 119,
+        "end": 122
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 140,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 149,
+        "end": 150
+      },
+      {
+        "start": 151,
+        "end": 152
+      },
+      {
+        "start": 152,
+        "end": 157
+      },
+      {
+        "start": 158,
+        "end": 159
+      },
+      {
+        "start": 160,
+        "end": 161
+      },
+      {
+        "start": 161,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 164,
+        "end": 169
+      },
+      {
+        "start": 170,
+        "end": 171
+      },
+      {
+        "start": 172,
+        "end": 173
+      },
+      {
+        "start": 173,
+        "end": 174
+      },
+      {
+        "start": 175,
+        "end": 176
+      },
+      {
+        "start": 176,
+        "end": 179
+      },
+      {
+        "start": 180,
+        "end": 181
+      },
+      {
+        "start": 182,
+        "end": 189
+      },
+      {
+        "start": 190,
+        "end": 191
+      },
+      {
+        "start": 192,
+        "end": 193
+      },
+      {
+        "start": 193,
+        "end": 194
+      },
+      {
+        "start": 195,
+        "end": 196
+      },
+      {
+        "start": 196,
+        "end": 199
+      },
+      {
+        "start": 200,
+        "end": 201
+      },
+      {
+        "start": 202,
+        "end": 209
+      },
+      {
+        "start": 210,
+        "end": 211
+      },
+      {
+        "start": 211,
+        "end": 216
+      },
+      {
+        "start": 217,
+        "end": 218
+      },
+      {
+        "start": 218,
+        "end": 219
+      },
+      {
+        "start": 220,
+        "end": 221
+      },
+      {
+        "start": 221,
+        "end": 224
+      },
+      {
+        "start": 225,
+        "end": 226
+      },
+      {
+        "start": 227,
+        "end": 234
+      },
+      {
+        "start": 235,
+        "end": 236
+      },
+      {
+        "start": 236,
+        "end": 241
+      },
+      {
+        "start": 242,
+        "end": 243
+      },
+      {
+        "start": 243,
+        "end": 244
+      },
+      {
+        "start": 249,
+        "end": 250
+      },
+      {
+        "start": 251,
+        "end": 252
+      },
+      {
+        "start": 253,
+        "end": 254
+      },
+      {
+        "start": 255,
+        "end": 256
+      },
+      {
+        "start": 257,
+        "end": 258
+      },
+      {
+        "start": 258,
+        "end": 259
+      },
+      {
+        "start": 260,
+        "end": 261
+      },
+      {
+        "start": 262,
+        "end": 263
+      },
+      {
+        "start": 263,
+        "end": 264
+      },
+      {
+        "start": 265,
+        "end": 266
+      },
+      {
+        "start": 267,
+        "end": 268
+      },
+      {
+        "start": 269,
+        "end": 270
+      },
+      {
+        "start": 271,
+        "end": 272
+      },
+      {
+        "start": 273,
+        "end": 274
+      },
+      {
+        "start": 275,
+        "end": 276
+      },
+      {
+        "start": 276,
+        "end": 277
+      },
+      {
+        "start": 278,
+        "end": 279
+      },
+      {
+        "start": 280,
+        "end": 281
+      },
+      {
+        "start": 281,
+        "end": 282
+      }
+    ],
+    "proof_offset": 286,
+    "policy": "lean_original_leaf_spans_v1",
+    "full_spans": [
+      {
+        "start": 0,
+        "end": 7
+      },
+      {
+        "start": 8,
+        "end": 71
+      },
+      {
+        "start": 72,
+        "end": 73
+      },
+      {
+        "start": 73,
+        "end": 78
+      },
+      {
+        "start": 79,
+        "end": 80
+      },
+      {
+        "start": 81,
+        "end": 85
+      },
+      {
+        "start": 86,
+        "end": 89
+      },
+      {
+        "start": 89,
+        "end": 90
+      },
+      {
+        "start": 91,
+        "end": 92
+      },
+      {
+        "start": 92,
+        "end": 100
+      },
+      {
+        "start": 101,
+        "end": 102
+      },
+      {
+        "start": 103,
+        "end": 117
+      },
+      {
+        "start": 117,
+        "end": 119
+      },
+      {
+        "start": 119,
+        "end": 122
+      },
+      {
+        "start": 122,
+        "end": 123
+      },
+      {
+        "start": 124,
+        "end": 125
+      },
+      {
+        "start": 125,
+        "end": 126
+      },
+      {
+        "start": 127,
+        "end": 128
+      },
+      {
+        "start": 128,
+        "end": 133
+      },
+      {
+        "start": 134,
+        "end": 135
+      },
+      {
+        "start": 136,
+        "end": 137
+      },
+      {
+        "start": 137,
+        "end": 138
+      },
+      {
+        "start": 139,
+        "end": 140
+      },
+      {
+        "start": 140,
+        "end": 145
+      },
+      {
+        "start": 146,
+        "end": 147
+      },
+      {
+        "start": 148,
+        "end": 149
+      },
+      {
+        "start": 149,
+        "end": 150
+      },
+      {
+        "start": 151,
+        "end": 152
+      },
+      {
+        "start": 152,
+        "end": 157
+      },
+      {
+        "start": 158,
+        "end": 159
+      },
+      {
+        "start": 160,
+        "end": 161
+      },
+      {
+        "start": 161,
+        "end": 162
+      },
+      {
+        "start": 163,
+        "end": 164
+      },
+      {
+        "start": 164,
+        "end": 169
+      },
+      {
+        "start": 170,
+        "end": 171
+      },
+      {
+        "start": 172,
+        "end": 173
+      },
+      {
+        "start": 173,
+        "end": 174
+      },
+      {
+        "start": 175,
+        "end": 176
+      },
+      {
+        "start": 176,
+        "end": 179
+      },
+      {
+        "start": 180,
+        "end": 181
+      },
+      {
+        "start": 182,
+        "end": 189
+      },
+      {
+        "start": 190,
+        "end": 191
+      },
+      {
+        "start": 192,
+        "end": 193
+      },
+      {
+        "start": 193,
+        "end": 194
+      },
+      {
+        "start": 195,
+        "end": 196
+      },
+      {
+        "start": 196,
+        "end": 199
+      },
+      {
+        "start": 200,
+        "end": 201
+      },
+      {
+        "start": 202,
+        "end": 209
+      },
+      {
+        "start": 210,
+        "end": 211
+      },
+      {
+        "start": 211,
+        "end": 216
+      },
+      {
+        "start": 217,
+        "end": 218
+      },
+      {
+        "start": 218,
+        "end": 219
+      },
+      {
+        "start": 220,
+        "end": 221
+      },
+      {
+        "start": 221,
+        "end": 224
+      },
+      {
+        "start": 225,
+        "end": 226
+      },
+      {
+        "start": 227,
+        "end": 234
+      },
+      {
+        "start": 235,
+        "end": 236
+      },
+      {
+        "start": 236,
+        "end": 241
+      },
+      {
+        "start": 242,
+        "end": 243
+      },
+      {
+        "start": 243,
+        "end": 244
+      },
+      {
+        "start": 245,
+        "end": 246
+      },
+      {
+        "start": 249,
+        "end": 250
+      },
+      {
+        "start": 251,
+        "end": 252
+      },
+      {
+        "start": 253,
+        "end": 254
+      },
+      {
+        "start": 255,
+        "end": 256
+      },
+      {
+        "start": 257,
+        "end": 258
+      },
+      {
+        "start": 258,
+        "end": 259
+      },
+      {
+        "start": 260,
+        "end": 261
+      },
+      {
+        "start": 262,
+        "end": 263
+      },
+      {
+        "start": 263,
+        "end": 264
+      },
+      {
+        "start": 265,
+        "end": 266
+      },
+      {
+        "start": 267,
+        "end": 268
+      },
+      {
+        "start": 269,
+        "end": 270
+      },
+      {
+        "start": 271,
+        "end": 272
+      },
+      {
+        "start": 273,
+        "end": 274
+      },
+      {
+        "start": 275,
+        "end": 276
+      },
+      {
+        "start": 276,
+        "end": 277
+      },
+      {
+        "start": 278,
+        "end": 279
+      },
+      {
+        "start": 280,
+        "end": 281
+      },
+      {
+        "start": 281,
+        "end": 282
+      },
+      {
+        "start": 283,
+        "end": 285
+      },
+      {
+        "start": 286,
+        "end": 288
+      },
+      {
+        "start": 291,
+        "end": 298
+      },
+      {
+        "start": 299,
+        "end": 300
+      },
+      {
+        "start": 300,
+        "end": 314
+      },
+      {
+        "start": 314,
+        "end": 315
+      },
+      {
+        "start": 316,
+        "end": 327
+      },
+      {
+        "start": 327,
+        "end": 328
+      },
+      {
+        "start": 329,
+        "end": 336
+      },
+      {
+        "start": 336,
+        "end": 337
+      },
+      {
+        "start": 338,
+        "end": 349
+      },
+      {
+        "start": 349,
+        "end": 350
+      },
+      {
+        "start": 351,
+        "end": 362
+      },
+      {
+        "start": 362,
+        "end": 363
+      },
+      {
+        "start": 368,
+        "end": 396
+      },
+      {
+        "start": 396,
+        "end": 397
+      }
+    ],
+    "body_spans": [
+      {
+        "start": 286,
+        "end": 288
+      },
+      {
+        "start": 291,
+        "end": 298
+      },
+      {
+        "start": 299,
+        "end": 300
+      },
+      {
+        "start": 300,
+        "end": 314
+      },
+      {
+        "start": 314,
+        "end": 315
+      },
+      {
+        "start": 316,
+        "end": 327
+      },
+      {
+        "start": 327,
+        "end": 328
+      },
+      {
+        "start": 329,
+        "end": 336
+      },
+      {
+        "start": 336,
+        "end": 337
+      },
+      {
+        "start": 338,
+        "end": 349
+      },
+      {
+        "start": 349,
+        "end": 350
+      },
+      {
+        "start": 351,
+        "end": 362
+      },
+      {
+        "start": 362,
+        "end": 363
+      },
+      {
+        "start": 368,
+        "end": 396
+      },
+      {
+        "start": 396,
+        "end": 397
+      }
+    ],
+    "W_full": 96,
+    "W_S": 77,
+    "W_B": 15
+  },
+  "root": "CompressionEval.lib_algebra_groups_main_commute_basic_09",
+  "proved_type_fingerprint": "3838027231",
+  "metric_status": "not_requested",
+  "kernel_replay": true,
+  "fingerprint_kind": "lean_expr_hash_noncryptographic",
+  "diagnostics": {
+    "transitive_dependency_count": 469,
+    "syntax_kinds": [
+      "Lean.Parser.Term.byTactic",
+      "Lean.Parser.Tactic.tacticSeq",
+      "Lean.Parser.Tactic.tacticSeq1Indented",
+      "null",
+      "Mathlib.Tactic.tacticSimp_rw___",
+      "Lean.Parser.Tactic.optConfig",
+      "Lean.Parser.Tactic.rwRuleSeq",
+      "Lean.Parser.Tactic.rwRule"
+    ],
+    "proof_nodes": 15081,
+    "cached_uncached_root_histogram_agree": null
+  },
+  "candidate_declarations": [
+    "CompressionEval.lib_algebra_groups_main_commute_basic_09"
+  ],
+  "axioms": [
+    "propext"
+  ],
+  "process_returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "resources": {
+    "wall_seconds_limit": 120,
+    "memory_mib_requested": 4096,
+    "isolation": "macos_sandbox",
+    "cpu_quota": null,
+    "memory_enforced": false,
+    "network": "disabled",
+    "credentials_inherited": false,
+    "peak_memory_mib": null,
+    "peak_memory_reason": "not_instrumented",
+    "heartbeats_limit": 2000000,
+    "heartbeats_used": null,
+    "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
+    "model_tool_calls": 0,
+    "profile_hash": "b32d5e76f01fcfd33c1c98b3e8f4d9f10f4b1366f8dedb7cf599fe8e41108ea9",
+    "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "stdout_log_truncated": false,
+    "stderr_log_truncated": false,
+    "elapsed_seconds": 3.7863844581879675
+  },
+  "request_fingerprint": "f5aa10d06801a3363b8848eaac9451766773057d937a202af65314bd651064e0"
+}

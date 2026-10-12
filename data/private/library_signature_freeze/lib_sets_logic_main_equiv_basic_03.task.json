@@ -1,0 +1,93 @@
+{
+  "task": {
+    "task_id": "lib_sets_logic_main_equiv_basic_03",
+    "family_id": "source_module_Mathlib.Logic.Equiv.Basic",
+    "domain": "sets_logic",
+    "split": "main",
+    "origin": "library",
+    "stratum": "provisional_source_length_short",
+    "imports": [
+      "Mathlib.Logic.Equiv.Option",
+      "Mathlib.Logic.Equiv.Sum",
+      "Mathlib.Logic.Function.Conjugate",
+      "Mathlib.Tactic.Lift",
+      "Mathlib.Data.Int.Notation"
+    ],
+    "context": "/-\nCopyright (c) 2015 Microsoft Corporation. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Leonardo de Moura, Mario Carneiro\n-/\n/-!\n# Equivalence between types\n\nIn this file we continue the work on equivalences begun in `Mathlib/Logic/Equiv/Defs.lean`, defining\na lot of equivalences between various types and operations on these equivalences.\n\nMore definitions of this kind can be found in other files.\nE.g., `Mathlib/Algebra/Group/TransferInstance.lean` does it for `Group`,\n`Mathlib/Algebra/Module/TransferInstance.lean` does it for `Module`, and similar files exist for\nother algebraic type classes.\n\n## Tags\n\nequivalence, congruence, bijective map\n-/\n\n@[expose] public section\n\nuniverse u v w z\n\nopen Function\n\n-- Unless required to be `Type*`, all variables in this file are `Sort*`\nvariable {α α₁ α₂ β β₁ β₂ γ δ : Sort*}\n\nnamespace Equiv\n\n/-- The product over `Option α` of `β a` is the binary product of the\nproduct over `α` of `β (some α)` and `β none` -/\n@[simps]\ndef piOptionEquivProd {α} {β : Option α → Type*} :\n    (∀ a : Option α, β a) ≃ β none × ∀ a : α, β (some a) where\n  toFun f := (f none, fun a => f (some a))\n  invFun x a := Option.casesOn a x.fst x.snd\n  left_inv f := funext fun a => by cases a <;> rfl\n\nsection subtypeCongr\n\n/-- Combines an `Equiv` between two subtypes with an `Equiv` between their complements to form a\n  permutation. -/\ndef subtypeCongr {α} {p q : α → Prop} [DecidablePred p] [DecidablePred q]\n    (e : { x // p x } ≃ { x // q x }) (f : { x // ¬p x } ≃ { x // ¬q x }) : Perm α :=\n  (sumCompl p).symm.trans ((sumCongr e f).trans (sumCompl q))\n\nvariable {ε : Type*} {p : ε → Prop} [DecidablePred p]\nvariable (ep ep' : Perm { a // p a }) (en en' : Perm { a // ¬p a })\n\n/-- Combining permutations on `ε` that permute only inside or outside the subtype\nsplit induced by `p : ε → Prop` constructs a permutation on `ε`. -/\ndef Perm.subtypeCongr : Equiv.Perm ε :=\n  permCongr (sumCompl p) (sumCongr ep en)\n\ntheorem Perm.subtypeCongr.apply (a : ε) : ep.subtypeCongr en a =\n    if h : p a then (ep ⟨a, h⟩ : ε) else en ⟨a, h⟩ := by\n  by_cases h : p a <;> simp [Perm.subtypeCongr, h]\n\n@[simp]\ntheorem Perm.subtypeCongr.left_apply {a : ε} (h : p a) : ep.subtypeCongr en a = ep ⟨a, h⟩ := by\n  simp [Perm.subtypeCongr.apply, h]\n\nuniverse «u_9»\n\nassert_not_exists _root_.Equiv.Perm.subtypeCongr.left_apply_subtype\n",
+    "binders": "{«ε» : Type u_9} {«p» : ε → Prop} [«inst» : DecidablePred.{u_9 + 1} p] («ep» : Equiv.Perm.{u_9 + 1} (Subtype.{u_9 + 1} fun (a : ε) => p a)) («en» : Equiv.Perm.{u_9 + 1} (Subtype.{u_9 + 1} fun (a : ε) => ¬p a)) (a : { a // p a })",
+    "proposition": "ep.subtypeCongr en a = ep a",
+    "target_name": "_root_.CompressionEval.lib_sets_logic_main_equiv_basic_03",
+    "premise_context": "universe u v w z\nopen Function\nvariable {α α₁ α₂ β β₁ β₂ γ δ : Sort*}\nnamespace Equiv\nsection subtypeCongr\nvariable {ε : Type*} {p : ε → Prop} [DecidablePred p]\nvariable (ep ep' : Perm { a // p a }) (en en' : Perm { a // ¬p a })\n\nAvailable preceding statements (within the shown source scopes):\ntheorem Perm.subtypeCongr.apply (a : ε) : ep.subtypeCongr en a =\n    if h : p a then (ep ⟨a, h⟩ : ε) else en ⟨a, h⟩\n\ntheorem Perm.subtypeCongr.left_apply {a : ε} (h : p a) : ep.subtypeCongr en a = ep ⟨a, h⟩",
+    "forbidden_declarations": [
+      "Equiv.Perm.subtypeCongr.left_apply_subtype"
+    ],
+    "smoke": false,
+    "provenance": {
+      "kind": "source_prefix_reconstruction",
+      "module": "Mathlib.Logic.Equiv.Basic",
+      "source_path": "Mathlib/Logic/Equiv/Basic.lean",
+      "declaration": "Equiv.Perm.subtypeCongr.left_apply_subtype",
+      "source_line": 75,
+      "source_sha256": "22f27604e617b21a03e7a65fe8ea335bc70487de5a9fe7adf2b51d424c21a4d0",
+      "prefix_end_character": 2528,
+      "prefix_policy": "exact predecessor source excluding imports/module header and target attributes/documentation; public sections preserved",
+      "family_assignment": "provisional source module; cross-module construction review pending",
+      "signature_materialization": "missing section parameters from trusted telescope; original source binders and proposition preserved; declaration types checked by Kernel.isDefEqGuarded modulo ordered universe renaming in a separate comparison process; original reference replayed without comparison helpers"
+    },
+    "audit": {
+      "reference_verified": true,
+      "explicit_signature_frozen": true,
+      "answer_access_audited": false,
+      "family_reviewed": false,
+      "metric_closure_verified": false,
+      "independent_kernel_replay": true,
+      "axiom_policy_pass": true,
+      "transitive_forbidden_dependency_pass": true,
+      "original_declaration_absent": true,
+      "reference_verification_method": "isolated engine replay before/after telescope materialization"
+    },
+    "environment": {
+      "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
+      "lean_toolchain": "leanprover/lean4:v4.34.0-rc1"
+    },
+    "hashes": {
+      "context": "5acf5b74d6d74abef5739489f37df500b09c66fe775a6d2ca89e95f122f17bea",
+      "premise_context": "2d49132196477c75b417d30d4c3e5eee4eea757112e501dbc6d29d2c49e61e72",
+      "binders": "8f195820c4e4e419bb33f9a71e42b5fed09321600b38975c3deb4e8acc364551",
+      "proposition": "3ac9b4f323f1b1ae8d60edeedba864c04c01cf6f37de6e82d69ae00077c10743"
+    },
+    "import_specs": [
+      {
+        "module": "Mathlib.Logic.Equiv.Option",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Logic.Equiv.Sum",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Logic.Function.Conjugate",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Tactic.Lift",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      },
+      {
+        "module": "Mathlib.Data.Int.Notation",
+        "import_all": false,
+        "is_exported": true,
+        "is_meta": false
+      }
+    ]
+  },
+  "status": "frozen_prior_engine_pending_full_recheck"
+}
