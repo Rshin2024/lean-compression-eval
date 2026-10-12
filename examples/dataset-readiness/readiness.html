@@ -1,10 +1,14 @@
 <!doctype html><html><meta charset='utf-8'><title>Dataset readiness</title>
 <style>body{max-width:1100px;margin:3rem auto;padding:0 1rem;font:16px system-ui;color:#17212b}table{border-collapse:collapse;width:100%;margin:1rem 0}td,th{padding:.65rem;border-bottom:1px solid #ccd5df;text-align:left}th{background:#edf2f5}.notice{background:#fff3d3;padding:1rem}code{overflow-wrap:anywhere}summary{cursor:pointer}</style>
 <h1>Dataset readiness</h1><p class='notice'><strong>not ready for dataset freeze</strong>. Reference evidence and curation diagnostic; no model outcomes are included.</p>
-<p>Source: supplied public task manifest and independent reference records. Manifest hash: <code>dfe9074dfdc438f5aca77b37fc1802977522e8080c6b85d2995dc793fda45ce5</code>.</p><h2>Dataset gates</h2><table><tr><th>Gate</th><th>Status</th></tr>
+<p>Source: supplied public task manifest and independent reference records. Canonical task-list digest (SHA-256 of canonical JSON of the parsed tasks, not of the file bytes): <code>edf787783a574b8f82548a5940a98812c4e29d01826081445bb4c89cdcec5e05</code>. Task file SHA-256: <code>3494cdb86710c9dd88723b70aaf33819a2003c1590c4244edb73d31614d49c50</code>.</p>
+<p>Effective settings: quotas enforced; strata fit split pilot; cutpoint source observed_reference_25th_and_75th_percentiles; supplied pins {&quot;boundary_policy_hash&quot;: null, &quot;engine_hash&quot;: null, &quot;environment_hash&quot;: null, &quot;source_token_policy_hash&quot;: null}; readiness configuration digest <code>44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a</code>; full configuration digest <code>8348d456ac5106f0e8658fb54a3243022741dc880d99a2d0d103ca9ddb986c20</code>.</p>
+<h2>Dataset gates</h2><table><tr><th>Gate</th><th>Status</th></tr>
 <tr><td>structural manifest valid</td><td>Complete</td></tr>
+<tr><td>quotas enforced</td><td>Complete</td></tr>
 <tr><td>all reference evidence complete</td><td>Complete</td></tr>
 <tr><td>all required audits complete</td><td>Pending</td></tr>
+<tr><td>reference proofs absent from prompts</td><td>Complete</td></tr>
 <tr><td>reference provenance consistent</td><td>Complete</td></tr>
 <tr><td>length depth cutpoints frozen</td><td>Pending</td></tr>
 <tr><td>difficulty coverage reviewed</td><td>Pending</td></tr>
@@ -46,11 +50,13 @@
 <tr><td>middle</td><td>30</td><td>47</td><td>37</td></tr>
 <tr><td>high</td><td>8</td><td>35</td><td>24</td></tr>
 </table><h2>Source-shape controls</h2><p>These source labels do not establish mathematical difficulty.</p><ul>
-<li>single_tactic_wrapper: 4 tasks</li>
+<li>single_tactic_wrapper: 9 tasks (grind 4, nlinarith 1, omega 2, ring 1, simp 1)</li>
 <li>literal_reflexivity: 23 tasks</li>
 </ul><h2>Homogeneous reference cohorts</h2><p>Archived measurements under different pins are shown separately; they are not pooled into the proposed strata.</p><table><tr><th>Cohort</th><th>Tasks</th><th>Engine</th><th>Token policy</th><th>Median W_B</th><th>Median D</th></tr>
 <tr><td>f7f72a8a5557</td><td>250</td><td>83da0074473c</td><td>878ab5fb5aa6</td><td>9</td><td>15</td></tr>
-</table><h2>Task-level pending evidence</h2>
+</table>
+<h2>Answer-access screen</h2><p>Flagged when a whitespace-normalized reference proof of at least 15 characters occurs in the model-visible prompt: none. Shorter exact matches: lib_sets_logic_main_equiv_basic_09. Unchecked: 0 tasks. A flag marks a copyable answer for the answer-access audit; exact matches of 9-14 characters are listed for that audit without blocking the gate; an unflagged task is not thereby cleared.</p>
+<h2>Task-level pending evidence</h2>
 <details><summary>smoke_ag_01</summary><p>Evidence: complete</p><p>Audits: answer_access_audited, family_reviewed</p></details>
 <details><summary>smoke_ag_02</summary><p>Evidence: complete</p><p>Audits: answer_access_audited, family_reviewed</p></details>
 <details><summary>smoke_nt_01</summary><p>Evidence: complete</p><p>Audits: answer_access_audited, family_reviewed</p></details>

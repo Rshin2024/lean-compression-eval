@@ -48,6 +48,10 @@
           "metric_coverage_among_scheduled": 1.0,
           "missing_metric_reasons": {},
           "failure_statuses": {},
+          "failure_breakdown": {
+            "model_failures": {},
+            "unresolved_outcomes": {}
+          },
           "attainment": {
             "0": {
               "rate": 1.0,
@@ -98,6 +102,19 @@
                 "max": 20.517539790831506,
                 "sum_scope": "observed_records_only",
                 "reason": null
+              },
+              "validation_heartbeats": {
+                "unit": "maxHeartbeats",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "observed_records_only",
+                "reason": "no_recorded_measurements",
+                "description": "Lean heartbeats (maxHeartbeats units) of candidate elaboration, including the elaborator's own kernel checks, plus kernel replay in the validation run; not bounded by or comparable with validation.max_heartbeats. Engines that report them do so for successful checks only."
               },
               "generation_elapsed_seconds": {
                 "unit": "seconds",
@@ -197,6 +214,10 @@
           "metric_coverage_among_scheduled": 1.0,
           "missing_metric_reasons": {},
           "failure_statuses": {},
+          "failure_breakdown": {
+            "model_failures": {},
+            "unresolved_outcomes": {}
+          },
           "attainment": {
             "0": {
               "rate": 1.0,
@@ -247,6 +268,19 @@
                 "max": 7.936087334062904,
                 "sum_scope": "observed_records_only",
                 "reason": null
+              },
+              "validation_heartbeats": {
+                "unit": "maxHeartbeats",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "observed_records_only",
+                "reason": "no_recorded_measurements",
+                "description": "Lean heartbeats (maxHeartbeats units) of candidate elaboration, including the elaborator's own kernel checks, plus kernel replay in the validation run; not bounded by or comparable with validation.max_heartbeats. Engines that report them do so for successful checks only."
               },
               "generation_elapsed_seconds": {
                 "unit": "seconds",
@@ -346,6 +380,10 @@
           "metric_coverage_among_scheduled": 1.0,
           "missing_metric_reasons": {},
           "failure_statuses": {},
+          "failure_breakdown": {
+            "model_failures": {},
+            "unresolved_outcomes": {}
+          },
           "attainment": {
             "0": {
               "rate": 1.0,
@@ -396,6 +434,19 @@
                 "max": 8.991037874948233,
                 "sum_scope": "observed_records_only",
                 "reason": null
+              },
+              "validation_heartbeats": {
+                "unit": "maxHeartbeats",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "observed_records_only",
+                "reason": "no_recorded_measurements",
+                "description": "Lean heartbeats (maxHeartbeats units) of candidate elaboration, including the elaborator's own kernel checks, plus kernel replay in the validation run; not bounded by or comparable with validation.max_heartbeats. Engines that report them do so for successful checks only."
               },
               "generation_elapsed_seconds": {
                 "unit": "seconds",
@@ -1975,6 +2026,576 @@
               "measurable_attempts": 1
             }
           }
+        },
+        "stratum_class:easy_control": {
+          "population": "measurable_valid_attempts",
+          "composition": {
+            "task_count": 1,
+            "family_count": 1,
+            "domains": {
+              "algebra_groups": 1
+            },
+            "origins": {
+              "fresh": 1
+            },
+            "splits": {
+              "pilot": 1
+            }
+          },
+          "conditions": {
+            "standard": {
+              "W_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "2",
+                "q1": "2",
+                "q3": "2",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 1.0,
+                  "q1": 1.0,
+                  "q3": 1.0
+                }
+              },
+              "U_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901292402",
+                "q1": "901292402",
+                "q3": "901292402",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.747419987755972,
+                  "q1": 29.747419987755972,
+                  "q3": 29.747419987755972
+                }
+              },
+              "W": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "36",
+                "q1": "36",
+                "q3": "36",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 5.169925001442312,
+                  "q1": 5.169925001442312,
+                  "q3": 5.169925001442312
+                }
+              },
+              "U": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901302885",
+                "q1": "901302885",
+                "q3": "901302885",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.74743676775337,
+                  "q1": 29.74743676775337,
+                  "q3": 29.74743676775337
+                }
+              },
+              "I0": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "1/17",
+                "q1": "1/17",
+                "q3": "1/17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": -4.087462841250339,
+                  "q1": -4.087462841250339,
+                  "q3": -4.087462841250339
+                }
+              },
+              "D": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "17",
+                "q1": "17",
+                "q3": "17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 4.087462841250339,
+                  "q1": 4.087462841250339,
+                  "q3": 4.087462841250339
+                }
+              }
+            },
+            "mathematical_compression": {
+              "W_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "2",
+                "q1": "2",
+                "q3": "2",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 1.0,
+                  "q1": 1.0,
+                  "q3": 1.0
+                }
+              },
+              "U_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901292402",
+                "q1": "901292402",
+                "q3": "901292402",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.747419987755972,
+                  "q1": 29.747419987755972,
+                  "q3": 29.747419987755972
+                }
+              },
+              "W": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "36",
+                "q1": "36",
+                "q3": "36",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 5.169925001442312,
+                  "q1": 5.169925001442312,
+                  "q3": 5.169925001442312
+                }
+              },
+              "U": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901302885",
+                "q1": "901302885",
+                "q3": "901302885",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.74743676775337,
+                  "q1": 29.74743676775337,
+                  "q3": 29.74743676775337
+                }
+              },
+              "I0": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "1/17",
+                "q1": "1/17",
+                "q3": "1/17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": -4.087462841250339,
+                  "q1": -4.087462841250339,
+                  "q3": -4.087462841250339
+                }
+              },
+              "D": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "17",
+                "q1": "17",
+                "q3": "17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 4.087462841250339,
+                  "q1": 4.087462841250339,
+                  "q3": 4.087462841250339
+                }
+              }
+            },
+            "source_concision": {
+              "W_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "2",
+                "q1": "2",
+                "q3": "2",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 1.0,
+                  "q1": 1.0,
+                  "q3": 1.0
+                }
+              },
+              "U_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901292402",
+                "q1": "901292402",
+                "q3": "901292402",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.747419987755972,
+                  "q1": 29.747419987755972,
+                  "q3": 29.747419987755972
+                }
+              },
+              "W": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "36",
+                "q1": "36",
+                "q3": "36",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 5.169925001442312,
+                  "q1": 5.169925001442312,
+                  "q3": 5.169925001442312
+                }
+              },
+              "U": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901302885",
+                "q1": "901302885",
+                "q3": "901302885",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.74743676775337,
+                  "q1": 29.74743676775337,
+                  "q3": 29.74743676775337
+                }
+              },
+              "I0": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "1/17",
+                "q1": "1/17",
+                "q3": "1/17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": -4.087462841250339,
+                  "q1": -4.087462841250339,
+                  "q3": -4.087462841250339
+                }
+              },
+              "D": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "17",
+                "q1": "17",
+                "q3": "17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 4.087462841250339,
+                  "q1": 4.087462841250339,
+                  "q3": 4.087462841250339
+                }
+              }
+            }
+          },
+          "correctness_population": "all_scheduled_attempts",
+          "correctness_by_condition": {
+            "standard": {
+              "success_rate": 1.0,
+              "first_attempt_success_rate": 1,
+              "any_sample_success_rate": 1,
+              "scheduled_attempts": 1,
+              "valid_attempts": 1,
+              "measurable_attempts": 1
+            },
+            "mathematical_compression": {
+              "success_rate": 1.0,
+              "first_attempt_success_rate": 1,
+              "any_sample_success_rate": 1,
+              "scheduled_attempts": 1,
+              "valid_attempts": 1,
+              "measurable_attempts": 1
+            },
+            "source_concision": {
+              "success_rate": 1.0,
+              "first_attempt_success_rate": 1,
+              "any_sample_success_rate": 1,
+              "scheduled_attempts": 1,
+              "valid_attempts": 1,
+              "measurable_attempts": 1
+            }
+          }
+        },
+        "stratum:provisional_easy": {
+          "population": "measurable_valid_attempts",
+          "composition": {
+            "task_count": 1,
+            "family_count": 1,
+            "domains": {
+              "algebra_groups": 1
+            },
+            "origins": {
+              "fresh": 1
+            },
+            "splits": {
+              "pilot": 1
+            }
+          },
+          "conditions": {
+            "standard": {
+              "W_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "2",
+                "q1": "2",
+                "q3": "2",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 1.0,
+                  "q1": 1.0,
+                  "q3": 1.0
+                }
+              },
+              "U_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901292402",
+                "q1": "901292402",
+                "q3": "901292402",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.747419987755972,
+                  "q1": 29.747419987755972,
+                  "q3": 29.747419987755972
+                }
+              },
+              "W": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "36",
+                "q1": "36",
+                "q3": "36",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 5.169925001442312,
+                  "q1": 5.169925001442312,
+                  "q3": 5.169925001442312
+                }
+              },
+              "U": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901302885",
+                "q1": "901302885",
+                "q3": "901302885",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.74743676775337,
+                  "q1": 29.74743676775337,
+                  "q3": 29.74743676775337
+                }
+              },
+              "I0": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "1/17",
+                "q1": "1/17",
+                "q3": "1/17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": -4.087462841250339,
+                  "q1": -4.087462841250339,
+                  "q3": -4.087462841250339
+                }
+              },
+              "D": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "17",
+                "q1": "17",
+                "q3": "17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 4.087462841250339,
+                  "q1": 4.087462841250339,
+                  "q3": 4.087462841250339
+                }
+              }
+            },
+            "mathematical_compression": {
+              "W_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "2",
+                "q1": "2",
+                "q3": "2",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 1.0,
+                  "q1": 1.0,
+                  "q3": 1.0
+                }
+              },
+              "U_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901292402",
+                "q1": "901292402",
+                "q3": "901292402",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.747419987755972,
+                  "q1": 29.747419987755972,
+                  "q3": 29.747419987755972
+                }
+              },
+              "W": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "36",
+                "q1": "36",
+                "q3": "36",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 5.169925001442312,
+                  "q1": 5.169925001442312,
+                  "q3": 5.169925001442312
+                }
+              },
+              "U": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901302885",
+                "q1": "901302885",
+                "q3": "901302885",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.74743676775337,
+                  "q1": 29.74743676775337,
+                  "q3": 29.74743676775337
+                }
+              },
+              "I0": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "1/17",
+                "q1": "1/17",
+                "q3": "1/17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": -4.087462841250339,
+                  "q1": -4.087462841250339,
+                  "q3": -4.087462841250339
+                }
+              },
+              "D": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "17",
+                "q1": "17",
+                "q3": "17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 4.087462841250339,
+                  "q1": 4.087462841250339,
+                  "q3": 4.087462841250339
+                }
+              }
+            },
+            "source_concision": {
+              "W_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "2",
+                "q1": "2",
+                "q3": "2",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 1.0,
+                  "q1": 1.0,
+                  "q3": 1.0
+                }
+              },
+              "U_B": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901292402",
+                "q1": "901292402",
+                "q3": "901292402",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.747419987755972,
+                  "q1": 29.747419987755972,
+                  "q3": 29.747419987755972
+                }
+              },
+              "W": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "36",
+                "q1": "36",
+                "q3": "36",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 5.169925001442312,
+                  "q1": 5.169925001442312,
+                  "q3": 5.169925001442312
+                }
+              },
+              "U": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "901302885",
+                "q1": "901302885",
+                "q3": "901302885",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 29.74743676775337,
+                  "q1": 29.74743676775337,
+                  "q3": 29.74743676775337
+                }
+              },
+              "I0": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "1/17",
+                "q1": "1/17",
+                "q3": "1/17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": -4.087462841250339,
+                  "q1": -4.087462841250339,
+                  "q3": -4.087462841250339
+                }
+              },
+              "D": {
+                "count": 1,
+                "zero_count": 0,
+                "median": "17",
+                "q1": "17",
+                "q3": "17",
+                "positive_log2": {
+                  "count": 1,
+                  "median": 4.087462841250339,
+                  "q1": 4.087462841250339,
+                  "q3": 4.087462841250339
+                }
+              }
+            }
+          },
+          "correctness_population": "all_scheduled_attempts",
+          "correctness_by_condition": {
+            "standard": {
+              "success_rate": 1.0,
+              "first_attempt_success_rate": 1,
+              "any_sample_success_rate": 1,
+              "scheduled_attempts": 1,
+              "valid_attempts": 1,
+              "measurable_attempts": 1
+            },
+            "mathematical_compression": {
+              "success_rate": 1.0,
+              "first_attempt_success_rate": 1,
+              "any_sample_success_rate": 1,
+              "scheduled_attempts": 1,
+              "valid_attempts": 1,
+              "measurable_attempts": 1
+            },
+            "source_concision": {
+              "success_rate": 1.0,
+              "first_attempt_success_rate": 1,
+              "any_sample_success_rate": 1,
+              "scheduled_attempts": 1,
+              "valid_attempts": 1,
+              "measurable_attempts": 1
+            }
+          }
         }
       },
       "audit_sample": {
@@ -1994,6 +2615,305 @@
           ],
           "review_instruction": "Review all available outputs from all three conditions for each selected task."
         }
+      },
+      "stratum_breakdown": {
+        "field": "stratum",
+        "easy_control_strata": [
+          "easy",
+          "provisional_easy"
+        ],
+        "status": "exploratory_subgroups_not_separately_powered",
+        "groups": {
+          "stratum_class:easy_control": {
+            "composition": {
+              "task_count": 1,
+              "family_count": 1,
+              "domains": {
+                "algebra_groups": 1
+              },
+              "origins": {
+                "fresh": 1
+              },
+              "splits": {
+                "pilot": 1
+              }
+            },
+            "task_ids": [
+              "smoke_ag_01"
+            ],
+            "distribution_group": "stratum_class:easy_control",
+            "contrasts": {
+              "compression_vs_standard": {
+                "success_rate_difference": {
+                  "estimate": 0.0,
+                  "confidence_interval": [
+                    0.0,
+                    0.0
+                  ],
+                  "confidence_level": 0.95,
+                  "method": "percentile_family_cluster_bootstrap",
+                  "one_sided_lower_bound": 0.0,
+                  "bootstrap_defined": 100,
+                  "bootstrap_undefined": 0,
+                  "task_count": 1,
+                  "family_count": 1,
+                  "uncertainty_warning": "fewer_than_two_supported_families",
+                  "minimum_bootstrap_task_multiplicity": 1
+                },
+                "mean_log2_T0_difference": {
+                  "estimate": 0.0,
+                  "confidence_interval": [
+                    0.0,
+                    0.0
+                  ],
+                  "confidence_level": 0.95,
+                  "method": "percentile_family_cluster_bootstrap",
+                  "one_sided_lower_bound": 0.0,
+                  "bootstrap_defined": 100,
+                  "bootstrap_undefined": 0,
+                  "task_count": 1,
+                  "family_count": 1,
+                  "uncertainty_warning": "fewer_than_two_supported_families",
+                  "minimum_bootstrap_task_multiplicity": 1,
+                  "geometric_ratio": 1.0,
+                  "geometric_ratio_interval": [
+                    1.0,
+                    1.0
+                  ]
+                }
+              },
+              "compression_vs_concision": {
+                "success_rate_difference": {
+                  "estimate": 0.0,
+                  "confidence_interval": [
+                    0.0,
+                    0.0
+                  ],
+                  "confidence_level": 0.95,
+                  "method": "percentile_family_cluster_bootstrap",
+                  "one_sided_lower_bound": 0.0,
+                  "bootstrap_defined": 100,
+                  "bootstrap_undefined": 0,
+                  "task_count": 1,
+                  "family_count": 1,
+                  "uncertainty_warning": "fewer_than_two_supported_families",
+                  "minimum_bootstrap_task_multiplicity": 1
+                },
+                "mean_log2_T0_difference": {
+                  "estimate": 0.0,
+                  "confidence_interval": [
+                    0.0,
+                    0.0
+                  ],
+                  "confidence_level": 0.95,
+                  "method": "percentile_family_cluster_bootstrap",
+                  "one_sided_lower_bound": 0.0,
+                  "bootstrap_defined": 100,
+                  "bootstrap_undefined": 0,
+                  "task_count": 1,
+                  "family_count": 1,
+                  "uncertainty_warning": "fewer_than_two_supported_families",
+                  "minimum_bootstrap_task_multiplicity": 1,
+                  "geometric_ratio": 1.0,
+                  "geometric_ratio_interval": [
+                    1.0,
+                    1.0
+                  ]
+                }
+              }
+            }
+          },
+          "stratum_class:non_control": {
+            "composition": {
+              "task_count": 0,
+              "family_count": 0,
+              "domains": {},
+              "origins": {},
+              "splits": {}
+            },
+            "task_ids": [],
+            "distribution_group": null,
+            "contrasts": {
+              "compression_vs_standard": {
+                "success_rate_difference": {
+                  "estimate": null,
+                  "confidence_interval": [
+                    null,
+                    null
+                  ],
+                  "confidence_level": 0.95,
+                  "method": "percentile_family_cluster_bootstrap",
+                  "one_sided_lower_bound": null,
+                  "bootstrap_defined": 0,
+                  "bootstrap_undefined": 100,
+                  "task_count": 0,
+                  "family_count": 0,
+                  "uncertainty_warning": "fewer_than_two_supported_families",
+                  "minimum_bootstrap_task_multiplicity": 0
+                },
+                "mean_log2_T0_difference": {
+                  "estimate": null,
+                  "confidence_interval": [
+                    null,
+                    null
+                  ],
+                  "confidence_level": 0.95,
+                  "method": "percentile_family_cluster_bootstrap",
+                  "one_sided_lower_bound": null,
+                  "bootstrap_defined": 0,
+                  "bootstrap_undefined": 100,
+                  "task_count": 0,
+                  "family_count": 0,
+                  "uncertainty_warning": "fewer_than_two_supported_families",
+                  "minimum_bootstrap_task_multiplicity": 0,
+                  "geometric_ratio": null,
+                  "geometric_ratio_interval": [
+                    null,
+                    null
+                  ]
+                }
+              },
+              "compression_vs_concision": {
+                "success_rate_difference": {
+                  "estimate": null,
+                  "confidence_interval": [
+                    null,
+                    null
+                  ],
+                  "confidence_level": 0.95,
+                  "method": "percentile_family_cluster_bootstrap",
+                  "one_sided_lower_bound": null,
+                  "bootstrap_defined": 0,
+                  "bootstrap_undefined": 100,
+                  "task_count": 0,
+                  "family_count": 0,
+                  "uncertainty_warning": "fewer_than_two_supported_families",
+                  "minimum_bootstrap_task_multiplicity": 0
+                },
+                "mean_log2_T0_difference": {
+                  "estimate": null,
+                  "confidence_interval": [
+                    null,
+                    null
+                  ],
+                  "confidence_level": 0.95,
+                  "method": "percentile_family_cluster_bootstrap",
+                  "one_sided_lower_bound": null,
+                  "bootstrap_defined": 0,
+                  "bootstrap_undefined": 100,
+                  "task_count": 0,
+                  "family_count": 0,
+                  "uncertainty_warning": "fewer_than_two_supported_families",
+                  "minimum_bootstrap_task_multiplicity": 0,
+                  "geometric_ratio": null,
+                  "geometric_ratio_interval": [
+                    null,
+                    null
+                  ]
+                }
+              }
+            }
+          },
+          "stratum:provisional_easy": {
+            "composition": {
+              "task_count": 1,
+              "family_count": 1,
+              "domains": {
+                "algebra_groups": 1
+              },
+              "origins": {
+                "fresh": 1
+              },
+              "splits": {
+                "pilot": 1
+              }
+            },
+            "task_ids": [
+              "smoke_ag_01"
+            ],
+            "distribution_group": "stratum:provisional_easy",
+            "contrasts": {
+              "compression_vs_standard": {
+                "success_rate_difference": {
+                  "estimate": 0.0,
+                  "confidence_interval": [
+                    0.0,
+                    0.0
+                  ],
+                  "confidence_level": 0.95,
+                  "method": "percentile_family_cluster_bootstrap",
+                  "one_sided_lower_bound": 0.0,
+                  "bootstrap_defined": 100,
+                  "bootstrap_undefined": 0,
+                  "task_count": 1,
+                  "family_count": 1,
+                  "uncertainty_warning": "fewer_than_two_supported_families",
+                  "minimum_bootstrap_task_multiplicity": 1
+                },
+                "mean_log2_T0_difference": {
+                  "estimate": 0.0,
+                  "confidence_interval": [
+                    0.0,
+                    0.0
+                  ],
+                  "confidence_level": 0.95,
+                  "method": "percentile_family_cluster_bootstrap",
+                  "one_sided_lower_bound": 0.0,
+                  "bootstrap_defined": 100,
+                  "bootstrap_undefined": 0,
+                  "task_count": 1,
+                  "family_count": 1,
+                  "uncertainty_warning": "fewer_than_two_supported_families",
+                  "minimum_bootstrap_task_multiplicity": 1,
+                  "geometric_ratio": 1.0,
+                  "geometric_ratio_interval": [
+                    1.0,
+                    1.0
+                  ]
+                }
+              },
+              "compression_vs_concision": {
+                "success_rate_difference": {
+                  "estimate": 0.0,
+                  "confidence_interval": [
+                    0.0,
+                    0.0
+                  ],
+                  "confidence_level": 0.95,
+                  "method": "percentile_family_cluster_bootstrap",
+                  "one_sided_lower_bound": 0.0,
+                  "bootstrap_defined": 100,
+                  "bootstrap_undefined": 0,
+                  "task_count": 1,
+                  "family_count": 1,
+                  "uncertainty_warning": "fewer_than_two_supported_families",
+                  "minimum_bootstrap_task_multiplicity": 1
+                },
+                "mean_log2_T0_difference": {
+                  "estimate": 0.0,
+                  "confidence_interval": [
+                    0.0,
+                    0.0
+                  ],
+                  "confidence_level": 0.95,
+                  "method": "percentile_family_cluster_bootstrap",
+                  "one_sided_lower_bound": 0.0,
+                  "bootstrap_defined": 100,
+                  "bootstrap_undefined": 0,
+                  "task_count": 1,
+                  "family_count": 1,
+                  "uncertainty_warning": "fewer_than_two_supported_families",
+                  "minimum_bootstrap_task_multiplicity": 1,
+                  "geometric_ratio": 1.0,
+                  "geometric_ratio_interval": [
+                    1.0,
+                    1.0
+                  ]
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
@@ -2005,21 +2925,59 @@
   ],
   "provenance": {
     "metric_profile": "paper_aligned_v1",
-    "lean_toolchain": null,
-    "mathlib_commit": null,
+    "lean_toolchain": "leanprover/lean4:v4.34.0-rc1",
+    "mathlib_commit": "274ed6d67d9b226c557813b9ce437574cccdce11",
     "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
     "primitive_manifest_hash": null,
     "source_token_policy_hash": "82278aac4f6faa62bcbabe626b0ca3c486cb3f2a6e213f12c9587341b3dbed61",
     "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
     "reachable_primitive_manifest_count": 1,
     "reachable_primitive_manifest_note": "Per-root reachable primitive sets may differ under the same environment and boundary policy; their hashes are not corpus-wide boundary identities.",
-    "configured_boundary_policy": "expand_mathlib_and_evaluator_v1"
+    "configured_boundary_policy": "expand_mathlib_and_evaluator_v1",
+    "scorer_hash": "legacy",
+    "engine_hash": "3c093c02b7d907faad45ede5ed175e3527aeaa9dbb9ca2141293075aaeeaa343",
+    "evaluator_source_hash": null
   },
   "run_provenance": {
     "run_hash": "6122f5627920dd7875f20581dbb95a55cd03b218e39666b8059f80a4d1f5ad67",
     "development": true,
+    "split": "pilot",
+    "experiment": "lean_math_compression_v1",
+    "protocol_version": "pipeline_fixture_v1",
     "evaluation_version": "v2",
     "model_snapshot": "reference_fixture",
-    "label": "Development fixture; not LLM evidence"
+    "label": "Development fixture; not LLM evidence",
+    "reference_policy_hash": "453ea9a5ecc39e3e5dc5bb58c11167d227529dd2e092d666151645bc3a9560f4",
+    "reference_anchor_binding": "not_frozen",
+    "reference_anchor_digests": {
+      "smoke_ag_01": "019b39d97102de0842995d32dbe3e3de2b239792701011a5db4e4d2949295ef9"
+    },
+    "unanchored_reference_tasks": {},
+    "reference_metrics_recomputed": [],
+    "checker_incidents": {
+      "log": "evaluations/v2/incidents.jsonl",
+      "events": 0,
+      "unreadable_lines": 0,
+      "attempts": 0,
+      "unresolved_attempts": 0,
+      "unresolved_statuses": {},
+      "unresolved_phases": {},
+      "unresolved_reasons": {}
+    },
+    "inherited_checker_incidents": null,
+    "provider_outages": {
+      "log": "transport.jsonl",
+      "no_model_outcome_events": 0,
+      "outcome_unknown_events": 0,
+      "unreadable_lines": 0,
+      "unresolved_attempts": 0,
+      "prompt_rejected_attempts": 0,
+      "in_flight_markers": 0
+    }
+  },
+  "automation_baseline": {
+    "supplied": false,
+    "status": "not_supplied",
+    "note": "No trusted tactic-portfolio baseline was supplied (analyze --baseline); this report does not establish what existing automation solves."
   }
 }

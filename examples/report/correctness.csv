@@ -1,4 +1,4 @@
-model,condition,scheduled_attempts,valid_attempts,success_rate,first_attempt_success_rate,four_sample_success_rate,any_sample_success_rate,metric_coverage_among_valid
-reference_fixture,standard,1,1,1.0,1,,1,1.0
-reference_fixture,mathematical_compression,1,1,1.0,1,,1,1.0
-reference_fixture,source_concision,1,1,1.0,1,,1,1.0
+model,condition,scheduled_attempts,valid_attempts,success_rate,first_attempt_success_rate,four_sample_success_rate,any_sample_success_rate,metric_coverage_among_valid,model_failure_attempts,unresolved_attempts
+reference_fixture,standard,1,1,1.0,1,,1,1.0,0,0
+reference_fixture,mathematical_compression,1,1,1.0,1,,1,1.0,0,0
+reference_fixture,source_concision,1,1,1.0,1,,1,1.0,0,0

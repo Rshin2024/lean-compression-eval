@@ -1,6 +1,8 @@
 {
   "build_status": "implemented_and_locally_verified",
   "cache_validation": "examples/smoke-cache-validation.json",
+  "current_engine_archive": "lean/versions/Evaluator-b10e7972.lean",
+  "current_engine_hash": "b10e7972d8d191bec26e48b18c183c25ada350fc4c114e173475b53e239c709b",
   "dataset": {
     "explicit_signatures": 250,
     "families_provisional": 74,
@@ -8,7 +10,7 @@
     "main": 200,
     "main_fresh": 50,
     "main_library": 150,
-    "manifest_sha256": "6f980f0c5759cb599759171de9931ea3f9b881416cd2f84be95156dfce7d2a59",
+    "manifest_sha256": "3494cdb86710c9dd88723b70aaf33819a2003c1590c4244edb73d31614d49c50",
     "measurable_references": 250,
     "pilot": 50,
     "reference_index": "data/private/reference-index.json",
@@ -17,11 +19,49 @@
     "uniform_engine_hash": "83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7"
   },
   "dataset_readiness": "examples/dataset-readiness/readiness.html",
-  "docker_runtime": "recipe_and_opt_in_acceptance_tests_provided; not_executed_here",
+  "docker_environment": {
+    "docker_image": "sha256:9e9d5ed714d5cd5d1374b214f36eff3ed2cce7efffc15374d3c0b2d7e03c799b",
+    "environment_hash": "89585b04bc4efd32f691632c9fb87432fc0a011ded9f2cc621052017a4c15fa7",
+    "record": "configs/environment.docker.json",
+    "runtime": "Colima profile lce-eval (Docker 29.5.2, linux/arm64)"
+  },
+  "docker_runtime": "pinned_image_built_and_acceptance_tested_locally_2026-10-12",
   "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
   "evaluation_api_calls_made": 0,
-  "evaluator_source_hash": "26caeb696f42b136cf63593d5eb00d647ebb36da7028a79532ddcb9e55f4e3ed",
+  "evaluator_source_hash": "d69dd4070ef8805f31adad2e0d3cfd3dc545374f038d3ad1842d44161b865f02",
   "example_report": "examples/report/report.html",
+  "local_container_validation": {
+    "date": "2026-10-12",
+    "engine_hash": "b10e7972d8d191bec26e48b18c183c25ada350fc4c114e173475b53e239c709b",
+    "evidence_location": "runs/ (git-ignored; not committed)",
+    "pilot_reference_checks": {
+      "measurable": 10,
+      "verified": 10
+    },
+    "reference_checks": {
+      "checker_incidents": 0,
+      "max_extraction_seconds": 19.9,
+      "max_peak_memory_mib": 2323,
+      "max_validation_seconds": 10.9,
+      "measurable": 250,
+      "metric_comparisons_with_committed_evidence": 258,
+      "metric_mismatches": 0,
+      "verified": 250
+    },
+    "reference_replay_fixture_pipeline": {
+      "checker_incidents": 0,
+      "evaluated_in_docker": 120,
+      "label": "Development fixture; not LLM evidence",
+      "run_complete": true,
+      "scheduled_attempts": 120
+    },
+    "tactic_baseline": {
+      "note": "parse failures are tasks whose minimal imports lack Aesop, so the single first|...|aesop portfolio string cannot parse; run tactics separately to fix",
+      "parse_failures": 18,
+      "solved": 75,
+      "tasks": 250
+    }
+  },
   "local_runtime": "trusted_reference_development_only",
   "model_selected": false,
   "optional_extensions_not_implemented": [
@@ -30,18 +70,28 @@
     "synthetic_monoid_f(s)"
   ],
   "package_version": "0.1.0",
-  "readiness_report_hash": "48bbb75a95e61ee64214570ce5cdb5342661629f1c37d78244d6d88178af9d1f",
+  "readiness_report_hash": "6e9b96e1cdb9ee2255d3e487b4d34e7bb937d90dd886732f0ebe849804e7d32e",
   "remaining_before_main_study": [
     "complete construction-family and reference-length/depth/difficulty review",
     "broader known-equivalent/alias review",
-    "container runtime acceptance and reference checking inside that runtime",
+    "publish the container reference evidence (verified locally 2026-10-12 under runs/reference-checks-docker) and re-time caps on the target host",
+    "make the tactic baseline robust to tasks whose imports lack a portfolio tactic (18 parse failures)",
     "model/API configuration, pilot calibration, and preregistration before main generation"
   ],
   "rendered_browser_qa": "not_available_local_file_URL_policy; HTML/data_verified",
   "tests": {
-    "docker_acceptance_suite": "skipped_daemon_unavailable",
+    "docker_acceptance_suite": "passed_28_of_28_with_LEAN_COMPRESSION_DOCKER_ENV_2026-10-12",
     "failed": 0,
     "log": "docs/test-results.txt",
-    "passed": 90
+    "passed": 477,
+    "python_versions": [
+      "3.14.7",
+      "3.11.16"
+    ],
+    "ran": 477,
+    "skipped": 1,
+    "skipped_classes": [
+      "DockerRuntimeAcceptanceTests (opt-in; run separately with LEAN_COMPRESSION_DOCKER_ENV)"
+    ]
   }
 }

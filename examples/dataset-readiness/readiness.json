@@ -1,4 +1,13 @@
 {
+  "answer_access_screen": {
+    "flagged_task_ids": [],
+    "interpretation": "A flag marks a copyable answer for the answer-access audit; exact matches of 9-14 characters are listed for that audit without blocking the gate; an unflagged task is not thereby cleared.",
+    "rule": "whitespace-normalized reference proof of at least 15 characters occurs in the model-visible prompt",
+    "short_exact_match_task_ids": [
+      "lib_sets_logic_main_equiv_basic_09"
+    ],
+    "unchecked_task_ids": []
+  },
   "audit_flag_counts": {
     "answer_access_audited": {
       "complete": 0,
@@ -46,6 +55,8 @@
     "all_required_audits_complete": false,
     "difficulty_coverage_reviewed": false,
     "length_depth_cutpoints_frozen": false,
+    "quotas_enforced": true,
+    "reference_proofs_absent_from_prompts": true,
     "reference_provenance_consistent": true,
     "structural_manifest_valid": true
   },
@@ -102,7 +113,7 @@
       },
       "source_control_counts": {
         "literal_reflexivity": 23,
-        "single_tactic_wrapper": 4
+        "single_tactic_wrapper": 9
       },
       "tasks": 250
     },
@@ -213,7 +224,8 @@
         "zero_count": 0
       },
       "source_control_counts": {
-        "literal_reflexivity": 2
+        "literal_reflexivity": 2,
+        "single_tactic_wrapper": 1
       },
       "tasks": 50
     },
@@ -268,7 +280,8 @@
         "zero_count": 0
       },
       "source_control_counts": {
-        "literal_reflexivity": 6
+        "literal_reflexivity": 6,
+        "single_tactic_wrapper": 2
       },
       "tasks": 50
     },
@@ -378,7 +391,8 @@
         "zero_count": 0
       },
       "source_control_counts": {
-        "literal_reflexivity": 6
+        "literal_reflexivity": 6,
+        "single_tactic_wrapper": 2
       },
       "tasks": 50
     },
@@ -433,7 +447,7 @@
         "zero_count": 0
       },
       "source_control_counts": {
-        "single_tactic_wrapper": 3
+        "single_tactic_wrapper": 4
       },
       "tasks": 60
     },
@@ -489,7 +503,7 @@
       },
       "source_control_counts": {
         "literal_reflexivity": 23,
-        "single_tactic_wrapper": 1
+        "single_tactic_wrapper": 5
       },
       "tasks": 190
     },
@@ -545,7 +559,7 @@
       },
       "source_control_counts": {
         "literal_reflexivity": 18,
-        "single_tactic_wrapper": 2
+        "single_tactic_wrapper": 6
       },
       "tasks": 200
     },
@@ -869,7 +883,8 @@
         "zero_count": 0
       },
       "source_control_counts": {
-        "literal_reflexivity": 6
+        "literal_reflexivity": 6,
+        "single_tactic_wrapper": 2
       },
       "tasks": 30
     },
@@ -1087,7 +1102,8 @@
         "zero_count": 0
       },
       "source_control_counts": {
-        "literal_reflexivity": 1
+        "literal_reflexivity": 1,
+        "single_tactic_wrapper": 2
       },
       "tasks": 30
     },
@@ -1143,7 +1159,7 @@
       },
       "source_control_counts": {
         "literal_reflexivity": 5,
-        "single_tactic_wrapper": 2
+        "single_tactic_wrapper": 3
       },
       "tasks": 50
     },
@@ -1305,7 +1321,9 @@
         "q3": "143/4",
         "zero_count": 0
       },
-      "source_control_counts": {},
+      "source_control_counts": {
+        "single_tactic_wrapper": 1
+      },
       "tasks": 2
     },
     "split:pilot/domain:analysis_inequalities/origin:library": {
@@ -1775,7 +1793,20 @@
       "878ab5fb5aa65e79973e4577203e29b9e6d67de66b91ff97b86ad021f5f229c9"
     ]
   },
-  "readiness_version": "reference_evidence_readiness_v1",
+  "readiness_settings": {
+    "config_hash": "8348d456ac5106f0e8658fb54a3243022741dc880d99a2d0d103ca9ddb986c20",
+    "cutpoint_source": "observed_reference_25th_and_75th_percentiles",
+    "enforce_quotas": true,
+    "readiness_config_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "strata_fit_split": "pilot",
+    "supplied_pins": {
+      "boundary_policy_hash": null,
+      "engine_hash": null,
+      "environment_hash": null,
+      "source_token_policy_hash": null
+    }
+  },
+  "readiness_version": "reference_evidence_readiness_v2",
   "reference_cohorts": [
     {
       "cohort_id": "f7f72a8a55570dbb2ab76b7779c0a0dfce862444270a2e00a2e7517f5f64c5a0",
@@ -2066,7 +2097,7 @@
       "tasks": 250
     }
   ],
-  "report_hash": "48bbb75a95e61ee64214570ce5cdb5342661629f1c37d78244d6d88178af9d1f",
+  "report_hash": "6e9b96e1cdb9ee2255d3e487b4d34e7bb937d90dd886732f0ebe849804e7d32e",
   "scope": "Dataset evidence only; model pin, budget, infrastructure and preregistration gates are separate.",
   "source_only_controls": {
     "literal_reflexivity": [
@@ -2097,13 +2128,20 @@
     "single_tactic_wrapper": [
       "smoke_ag_01",
       "smoke_nt_02",
+      "smoke_an_01",
       "lib_number_theory_main_numbertheory_divisors_10",
+      "lib_sets_logic_main_set_function_09",
+      "lib_sets_logic_main_set_function_10",
+      "lib_linear_algebra_combinatorics_main_finset_card_06",
+      "lib_linear_algebra_combinatorics_main_finset_card_09",
       "fresh_number_theory_06"
     ]
   },
   "status": "not_ready_for_dataset_freeze",
   "structural_errors": [],
-  "task_manifest_hash": "dfe9074dfdc438f5aca77b37fc1802977522e8080c6b85d2995dc793fda45ce5",
+  "task_file_sha256": "3494cdb86710c9dd88723b70aaf33819a2003c1590c4244edb73d31614d49c50",
+  "task_manifest_hash": "edf787783a574b8f82548a5940a98812c4e29d01826081445bb4c89cdcec5e05",
+  "task_manifest_hash_method": "sha256_of_canonical_json_of_parsed_task_list",
   "tasks": {
     "fresh_algebra_groups_01": {
       "audit_flags": {
@@ -2139,11 +2177,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -2185,11 +2225,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -2231,11 +2273,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -2277,11 +2321,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -2323,11 +2369,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -2369,11 +2417,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -2415,11 +2465,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -2461,11 +2513,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -2507,11 +2561,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -2553,11 +2609,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -2599,11 +2657,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -2645,11 +2705,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -2691,11 +2753,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -2737,11 +2801,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -2783,11 +2849,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -2829,11 +2897,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -2875,11 +2945,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -2921,11 +2993,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -2967,11 +3041,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3013,11 +3089,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3059,11 +3137,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3105,11 +3185,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3151,11 +3233,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3197,11 +3281,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3243,11 +3329,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3289,11 +3377,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3335,11 +3425,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3381,11 +3473,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3427,11 +3521,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3473,11 +3569,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3519,11 +3617,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3565,11 +3665,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3611,11 +3713,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3657,11 +3761,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3703,11 +3809,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3749,11 +3857,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": "single_tactic_wrapper",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": "omega"
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3795,11 +3905,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3841,11 +3953,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3887,11 +4001,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3933,11 +4049,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -3979,11 +4097,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4025,11 +4145,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4071,11 +4193,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4117,11 +4241,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4163,11 +4289,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4209,11 +4337,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4255,11 +4385,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4301,11 +4433,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4347,11 +4481,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4393,11 +4529,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4439,11 +4577,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4485,11 +4625,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4531,11 +4673,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4577,11 +4721,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4623,11 +4769,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4669,11 +4817,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4715,11 +4865,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4761,11 +4913,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4807,11 +4961,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4853,11 +5009,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4899,11 +5057,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4945,11 +5105,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -4991,11 +5153,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -5037,11 +5201,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -5083,11 +5249,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -5129,11 +5297,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -5175,11 +5345,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -5221,11 +5393,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -5267,11 +5441,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -5313,11 +5489,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -5359,11 +5537,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -5405,11 +5585,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -5451,11 +5633,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -5497,11 +5681,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -5543,11 +5729,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -5589,11 +5777,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -5635,11 +5825,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -5681,11 +5873,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -5727,11 +5921,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -5773,11 +5969,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -5819,11 +6017,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -5865,16 +6065,18 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
       "task_id": "lib_algebra_groups_pilot_group_basic_02",
-      "task_input_hash": "be11bf6266173f0c6e8388d6cd049be3cc6d90a6b3434c57ee8647c5d8fa2cce",
+      "task_input_hash": "11b04f3ddcaafaefbe11337cb946273324653a7ec8ca7560e8ffb79d9161b981",
       "verification_request_hash": "2680417024ee4840c2bf703bbefbb392ecc438d39982be4a1161265fadf23544"
     },
     "lib_algebra_groups_pilot_group_basic_03": {
@@ -5911,11 +6113,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -5957,11 +6161,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -6003,11 +6209,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -6049,16 +6257,18 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
       "task_id": "lib_algebra_groups_pilot_group_basic_06",
-      "task_input_hash": "bc028239490575677f30f222138ad18862e633915111670717028318fcd84325",
+      "task_input_hash": "6ace8040c08e233cc1d1289d3dd780791a3fa60af2bb54eb90eee3c79ea0dd77",
       "verification_request_hash": "87792643e7288bf8c0708a26266da951c527dd7ca1622b27aa6893c222d0653c"
     },
     "lib_algebra_groups_pilot_group_basic_07": {
@@ -6095,11 +6305,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -6141,16 +6353,18 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
       "task_id": "lib_algebra_groups_pilot_group_basic_08",
-      "task_input_hash": "7c624075bb392b6205b7861843d1baae3c1463b64d5581464fbbb57aaa731b77",
+      "task_input_hash": "0c34f8994e33808d71be566937db3725b74b979a544d4b4b96ad4af7fed06df7",
       "verification_request_hash": "8208c03840876e0b3dae35ae2ff52d1ca606881282ef4457cc94e5683f5dbc89"
     },
     "lib_analysis_inequalities_main_convex_function_01": {
@@ -6187,11 +6401,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -6233,11 +6449,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -6279,11 +6497,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -6325,11 +6545,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -6371,11 +6593,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -6417,16 +6641,18 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
       "task_id": "lib_analysis_inequalities_main_convex_function_06",
-      "task_input_hash": "2b1bd47d08cac3ec449f7470f994d3997f08685ca08f8d07eba4964674e68a13",
+      "task_input_hash": "f0c6cb1fa803d5e71f63ea9bc30d5de3941ec58bb9f114e74d27c12d12a8d096",
       "verification_request_hash": "45bd77c0fccc3c65ac5d0fe89e35617fbdc38fad62c9507e38a4ba0e1dea52ae"
     },
     "lib_analysis_inequalities_main_convex_function_07": {
@@ -6463,11 +6689,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -6509,16 +6737,18 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
       "task_id": "lib_analysis_inequalities_main_convex_function_08",
-      "task_input_hash": "32f2ea6ed1b6213d3490af9de6efb812d6ea2c70ce2cb4fd14deacd90f76b6d7",
+      "task_input_hash": "4edff815d0b2ac892a5aa480567f5382cbbe4715fef268380667f171878d7656",
       "verification_request_hash": "e7089686998e973f2005f64fdffeb447f6132445bdcbf6611864c8790cb5334f"
     },
     "lib_analysis_inequalities_main_convex_function_09": {
@@ -6555,11 +6785,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -6601,16 +6833,18 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
       "task_id": "lib_analysis_inequalities_main_convex_function_10",
-      "task_input_hash": "9511a68c5656c9e1d28aceadca211054f9f76479f546945a85f2538fc1e2d47a",
+      "task_input_hash": "4f981a5339917fbde08fed9130382a4f468179379e1f5966b7b5e963fd0c81aa",
       "verification_request_hash": "ea0f8e038b97bddc5bf04859e52379c458455109181549a2b9751ae03b84eb33"
     },
     "lib_analysis_inequalities_main_log_basic_01": {
@@ -6647,11 +6881,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -6693,11 +6929,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -6739,11 +6977,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -6785,11 +7025,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -6831,11 +7073,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -6877,11 +7121,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -6923,11 +7169,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -6969,11 +7217,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -7015,11 +7265,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -7061,11 +7313,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -7107,11 +7361,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -7153,11 +7409,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -7199,11 +7457,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -7245,11 +7505,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -7291,11 +7553,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -7337,11 +7601,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -7383,11 +7649,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -7429,11 +7697,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -7475,11 +7745,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -7521,11 +7793,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -7567,11 +7841,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -7613,11 +7889,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -7659,11 +7937,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -7705,11 +7985,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -7751,11 +8033,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -7797,11 +8081,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -7843,11 +8129,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -7889,11 +8177,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -7935,11 +8225,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -7981,11 +8273,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8027,11 +8321,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8073,11 +8369,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8119,11 +8417,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8165,11 +8465,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8211,11 +8513,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8257,11 +8561,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8303,11 +8609,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8349,11 +8657,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8395,11 +8705,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8441,11 +8753,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8487,11 +8801,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8533,11 +8849,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8579,11 +8897,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8625,11 +8945,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
-        "classification": null,
+        "classification": "single_tactic_wrapper",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": "grind"
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8671,11 +8993,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8717,11 +9041,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8763,11 +9089,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
-        "classification": null,
+        "classification": "single_tactic_wrapper",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": "grind"
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8809,11 +9137,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8855,11 +9185,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8901,11 +9233,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8947,11 +9281,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -8993,11 +9329,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -9039,11 +9377,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -9085,11 +9425,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -9131,11 +9473,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -9177,11 +9521,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -9223,11 +9569,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -9269,11 +9617,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -9315,11 +9665,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -9361,11 +9713,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -9407,11 +9761,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -9453,11 +9809,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -9499,11 +9857,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -9545,11 +9905,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -9591,11 +9953,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -9637,11 +10001,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -9683,11 +10049,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -9729,11 +10097,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -9775,11 +10145,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -9821,11 +10193,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -9867,11 +10241,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -9913,11 +10289,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -9959,11 +10337,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10005,11 +10385,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10051,11 +10433,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10097,11 +10481,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10143,11 +10529,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10189,11 +10577,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10235,11 +10625,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10281,11 +10673,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10327,11 +10721,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10373,11 +10769,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10419,11 +10817,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10465,11 +10865,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10511,11 +10913,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10557,11 +10961,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": "single_tactic_wrapper",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": "simp"
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10603,11 +11009,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10649,11 +11057,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10695,11 +11105,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10741,11 +11153,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10787,11 +11201,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10833,11 +11249,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10879,11 +11297,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10925,11 +11345,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -10971,11 +11393,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -11017,11 +11441,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -11063,11 +11489,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -11109,11 +11537,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -11155,11 +11585,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -11201,11 +11633,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -11247,11 +11681,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -11293,11 +11729,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -11339,11 +11777,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -11385,11 +11825,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -11431,11 +11873,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -11477,11 +11921,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -11523,11 +11969,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -11569,16 +12017,18 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
       "task_id": "lib_sets_logic_main_equiv_basic_04",
-      "task_input_hash": "1a4ececf4eab4e7ea9bc28b7da5a821bde96e7c8522b6f401fc399ad9fd0e8de",
+      "task_input_hash": "0f2c049001c54c266d07d1fc44ec8826b7143f6932271abd536b2211f642c746",
       "verification_request_hash": "4f24a48432bf9c3e59115dc24828d7b53ec1bbc14ebc5a004248413caef2b754"
     },
     "lib_sets_logic_main_equiv_basic_05": {
@@ -11615,11 +12065,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -11661,11 +12113,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -11707,11 +12161,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -11753,11 +12209,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -11799,11 +12257,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -11845,16 +12305,18 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
       "task_id": "lib_sets_logic_main_equiv_basic_10",
-      "task_input_hash": "18ada7d95476b28a59a7a8806fccc579742eb624dbe2e856f68494869b2ad13e",
+      "task_input_hash": "c12d20da7a5a4df3230a99828829f80b23a1f7ae65dad733b58175e3a29ab697",
       "verification_request_hash": "e790c173b2bb023848bbc5bdc8fc461508a19259fe4919d7705d93530007bbb2"
     },
     "lib_sets_logic_main_logic_relation_01": {
@@ -11891,11 +12353,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -11937,11 +12401,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -11983,11 +12449,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -12029,11 +12497,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -12075,11 +12545,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -12121,11 +12593,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -12167,11 +12641,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -12213,11 +12689,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -12259,11 +12737,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -12305,11 +12785,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -12351,11 +12833,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -12397,11 +12881,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -12443,11 +12929,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -12489,11 +12977,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -12535,11 +13025,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -12581,11 +13073,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -12627,11 +13121,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -12673,11 +13169,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -12719,11 +13217,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
-        "classification": null,
+        "classification": "single_tactic_wrapper",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": "grind"
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -12765,11 +13265,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
-        "classification": null,
+        "classification": "single_tactic_wrapper",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": "grind"
       },
       "split": "main",
       "stale_or_unmatched_reference_count": 0,
@@ -12811,11 +13313,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -12857,11 +13361,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -12903,11 +13409,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -12949,11 +13457,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -12995,11 +13505,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -13041,11 +13553,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -13087,11 +13601,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -13133,11 +13649,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": true,
       "reference_record_count": 1,
       "source_control": {
         "classification": "literal_reflexivity",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -13179,11 +13697,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": "single_tactic_wrapper",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": "ring"
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -13225,11 +13745,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -13271,11 +13793,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
-        "classification": null,
+        "classification": "single_tactic_wrapper",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": "nlinarith"
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -13317,11 +13841,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -13363,11 +13889,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "middle",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -13409,11 +13937,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -13455,11 +13985,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -13501,11 +14033,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "low",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": "single_tactic_wrapper",
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": "omega"
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -13547,11 +14081,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,
@@ -13593,11 +14129,13 @@
       "reference_evidence_complete": true,
       "reference_evidence_complete_for_recorded_pin": true,
       "reference_length_bin": "high",
+      "reference_proof_in_prompt": false,
       "reference_record_count": 1,
       "source_control": {
         "classification": null,
         "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty.",
-        "source_available": true
+        "source_available": true,
+        "tactic": null
       },
       "split": "pilot",
       "stale_or_unmatched_reference_count": 0,

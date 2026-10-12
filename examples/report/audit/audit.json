@@ -1,6 +1,7 @@
 {
-  "audit_version": "frozen_blinded_v1",
+  "audit_version": "frozen_blinded_v2",
   "blinding_limit": "Model and condition labels are hidden in review/. Proof text and mathematical task are preserved verbatim; they may reveal clues.",
+  "code_key": "private/code_key.json",
   "mechanism_labels": [
     "ordinary brevity",
     "useful existing-lemma reuse",
@@ -11,13 +12,14 @@
   ],
   "policy": "Manual labels explain metrics; they never override scores or remove valid outliers.",
   "review_index": "review/index.html",
+  "reviewer_scope": "Give reviewers review/ only; audit.json, private/ and the enclosing report reveal models and conditions.",
   "run_hash": "6122f5627920dd7875f20581dbb95a55cd03b218e39666b8059f80a4d1f5ad67",
   "seed": 20261012,
   "selected_tasks": [
     {
       "attempt_count": 3,
       "domain": "algebra_groups",
-      "evidence_directory": "review/task-95036cf69a329828",
+      "evidence_directory": "review/task-5808a6a856d61f22",
       "family_id": "pilot_ring_difference_square",
       "origin": "fresh",
       "paired_context": {
@@ -60,7 +62,7 @@
           "reason": "random_paired"
         }
       ],
-      "task_code": "task-95036cf69a329828",
+      "task_code": "task-5808a6a856d61f22",
       "task_id": "smoke_ag_01"
     }
   ],

@@ -1,13 +1,17 @@
 {
   "adapted_response": "by ring",
-  "attempt_id": "8ff366dbbb7b0c25c27049a68112b8ff306253378c38b6556c7edc63e7115f80",
+  "attempt_id": "11cf1cdae940992c8737e882889a6ad7a7370f7f0c01a314c9598a10f92e017f",
   "boundary_policy": "expand_mathlib_and_evaluator_v1",
   "boundary_policy_hash": "2cde2c8ba8e3544011aeca6417b4c2baf8abd0e1c6a64878af3da5350ab7c8c3",
-  "condition": "mathematical_compression",
+  "condition": "source_concision",
   "config_hash": "af90d8346044c1f7231d77b0147fb8bbc7f3c8c1efe51757f85bd4ff901778e8",
   "engine_hash": "3c093c02b7d907faad45ede5ed175e3527aeaa9dbb9ca2141293075aaeeaa343",
   "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
-  "evaluated_at": "2026-10-12T03:48:16.604520+00:00",
+  "evaluated_at": "2026-10-12T03:47:58.583920+00:00",
+  "evaluation_record": {
+    "path": "evaluations/v2/11cf1cdae940992c8737e882889a6ad7a7370f7f0c01a314c9598a10f92e017f.json",
+    "sha256": "1be3441ecdafd8852e86c82ce9f01cfcf9580b53240108eb156d4e67f0f118f1"
+  },
   "experiment": "lean_math_compression_v1",
   "extraction": {
     "axioms": [
@@ -21162,7 +21166,7 @@
     "resources": {
       "cpu_quota": null,
       "credentials_inherited": false,
-      "elapsed_seconds": 7.936087334062904,
+      "elapsed_seconds": 8.991037874948233,
       "heartbeats_limit": 2000000,
       "heartbeats_used": null,
       "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
@@ -21173,7 +21177,7 @@
       "network": "disabled",
       "peak_memory_mib": null,
       "peak_memory_reason": "not_instrumented",
-      "profile_hash": "3990348d2f17760b60d03c7a93d0fd02638fc66e531f4fb2d3e0752e3d6ccb35",
+      "profile_hash": "5f454eecbe897e4e7d0beca0f1aed534decd4e62aae4205184a7215dfa73f57d",
       "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
       "wall_seconds_limit": 60
     },
@@ -21532,18 +21536,18 @@
     "validity_status": "success"
   },
   "generation": {
-    "attempt_id": "8ff366dbbb7b0c25c27049a68112b8ff306253378c38b6556c7edc63e7115f80",
-    "created_at": "2026-10-12T03:41:34.135213+00:00",
+    "attempt_id": "11cf1cdae940992c8737e882889a6ad7a7370f7f0c01a314c9598a10f92e017f",
+    "created_at": "2026-10-12T03:41:34.134639+00:00",
     "generation_settings": null,
     "generation_status": "completed",
-    "prompt_hash": "722ff53076c4972753748356c7f01c77c3e555b753b0bcf7c6bd5324d66cb9ee",
+    "prompt_hash": "37fc1c176a6f1623ae048ffffbbe6b6aee39b3ed6f7ea6233e6370902352d7ac",
     "provenance": "Same trusted reference replayed in every arm to exercise the pipeline. No model was called.",
     "provider": "import",
     "raw_response": "by ring",
     "raw_response_hash": "6040cba174e3001bdb1468a8ea2c12392b245a386552bba84bea90676ed1cacc",
     "usage": null
   },
-  "generation_hash": "0b4ad2ce21eabd95f99b130522b48e8b5db06967e1ed820678ac40de98792e8c",
+  "generation_hash": "ce62dd67f9ae18fc11c271f98a3fde94ce0ea61481dfe1d5d8299db4f7251bca",
   "graph_hash": "21cc2109097a1201bfbb12270427ac0095fe7418bdf798054aac34fb74afb0ed",
   "metric_status": "available",
   "metrics": {
@@ -21781,10 +21785,10 @@
   ],
   "primitive_manifest_hash": "4e22c8c1720a001c21af660e577eeb55f23db840d92db976c3256426980c9e79",
   "primitive_manifest_scope": "reachable closure; boundary policy and environment define shared corpus boundary",
-  "prompt_hash": "722ff53076c4972753748356c7f01c77c3e555b753b0bcf7c6bd5324d66cb9ee",
+  "prompt_hash": "37fc1c176a6f1623ae048ffffbbe6b6aee39b3ed6f7ea6233e6370902352d7ac",
   "protocol_version": "pipeline_fixture_v1",
   "sample_index": 0,
-  "schedule_index": 2,
+  "schedule_index": 1,
   "source_hash": "6040cba174e3001bdb1468a8ea2c12392b245a386552bba84bea90676ed1cacc",
   "source_token_policy_hash": "82278aac4f6faa62bcbabe626b0ca3c486cb3f2a6e213f12c9587341b3dbed61",
   "task_hash": "2e7f042d423d9de12251ad8ad144f7359458c0796e30c8a2f1de82393f58e93c",
@@ -21818,7 +21822,7 @@
     "resources": {
       "cpu_quota": null,
       "credentials_inherited": false,
-      "elapsed_seconds": 9.01370850019157,
+      "elapsed_seconds": 7.572982291691005,
       "heartbeats_limit": 2000000,
       "heartbeats_used": null,
       "heartbeats_used_reason": "pinned_driver_does_not_export_counter",
@@ -21829,7 +21833,7 @@
       "network": "disabled",
       "peak_memory_mib": null,
       "peak_memory_reason": "not_instrumented",
-      "profile_hash": "23e19fd92b62045ca30a9ee95b557b8a9714616044026673defcf47f95383951",
+      "profile_hash": "6d37a793e9cd1a12424d14fb5d97e5ba514eb73cc06e6f9bc2d60f6d0c45ab57",
       "profile_scope": "development; system reads permitted; no enforced CPU quota or memory cap",
       "wall_seconds_limit": 60
     },
