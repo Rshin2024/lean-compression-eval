@@ -10,19 +10,19 @@ import subprocess
 import tempfile
 import unittest
 
+try:
+    from lean_runtime import pinned_runtime
+except ModuleNotFoundError:  # python3 -m unittest tests.test_lean_integration, run from the repository root
+    from tests.lean_runtime import pinned_runtime
+
 ROOT = Path(__file__).resolve().parents[1]
-MANIFEST = ROOT / "configs" / "environment.local.json"
+MANIFEST = None  # A fixed manifest path; None follows LEAN_COMPRESSION_ENVIRONMENT when the fixtures start.
 
 
 class LeanIntegrationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        if not MANIFEST.exists():
-            raise unittest.SkipTest("Prepare the pinned Lean environment first")
-        cls.environment = json.loads(MANIFEST.read_text())
-        cls.lean = cls.environment["lean_binary"]
-        if not Path(cls.lean).exists():
-            raise unittest.SkipTest("Pinned local Lean binary is unavailable")
+        cls.environment, cls.lean = pinned_runtime(MANIFEST)
         cls.process_env = {**os.environ, "LEAN_PATH": os.pathsep.join(cls.environment["lean_search_paths"]),
                            "PATH": str(Path(cls.lean).parent) + os.pathsep + os.environ.get("PATH", "")}
 

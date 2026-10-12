@@ -1,7 +1,8 @@
 """Content-addressed imported-environment index from verified closures.
 
 Only imported declarations enter the reusable index. Evaluator-owned context,
-candidate roots and auxiliaries stay private to their individual extraction.
+candidate roots and auxiliaries stay private to their individual extraction;
+a merge takes from the index only the names a candidate's closure imports.
 """
 from __future__ import annotations
 
@@ -11,7 +12,7 @@ from pathlib import Path
 from .io import digest, write_json
 from .metrics import decimal, exact_int, log2_int
 
-INDEX_VERSION = "verified_imported_closure_index_v2"
+INDEX_VERSION = "verified_imported_closure_index_v3"
 
 
 def _normalize_nodes(value) -> dict:
@@ -57,14 +58,22 @@ def _normalize_nodes(value) -> dict:
     return result
 
 
-def _node_key(node: dict, environment_hash: str, policy_hash: str) -> str:
+def _node_key(node: dict, environment_hash: str, policy_hash: str, engine_hash: str) -> str:
     # Lean's Expr hash alone is not a cryptographic identity. Include every
-    # weighted reference, both value/type hashes, ownership and boundary flag.
+    # weighted reference, both value/type hashes, the boundary flag and the
+    # extractor. Ownership is not content: Lean attributes on-demand auxiliaries
+    # (e.g. equation lemmas) to whichever imported module first realized them.
     return digest({"environment_hash": environment_hash, "boundary_policy_hash": policy_hash,
-                   **{key: node[key] for key in ("name", "owner_module", "primitive", "type_hash",
+                   "engine_hash": engine_hash,
+                   **{key: node[key] for key in ("name", "primitive", "type_hash",
                                                 "value_hash", "signature", "body")},
                    "histogram_status": node.get("histogram_status"),
                    "body_present": node.get("body_present")})
+
+
+def _evaluator_owned(node: dict) -> bool:
+    owner = node["owner_module"]
+    return owner == "EvaluatorCandidate" or owner.startswith("EvaluatorCandidate.")
 
 
 def _body_state(node):
@@ -73,7 +82,7 @@ def _body_state(node):
     return "absent" if node["body"] is None else "present"
 
 
-def _require_provenance(record: dict, environment_hash: str, policy_hash: str):
+def _require_provenance(record: dict, environment_hash: str, policy_hash: str, engine_hash: str):
     if record.get("environment_hash") != environment_hash:
         raise ValueError("record environment_hash does not match the trusted index")
     supplied_hash = record.get("boundary_policy_hash")
@@ -83,6 +92,8 @@ def _require_provenance(record: dict, environment_hash: str, policy_hash: str):
         raise ValueError("record boundary_policy_hash does not match the trusted index")
     if "boundary_policy" in record and digest(record["boundary_policy"]) != policy_hash:
         raise ValueError("record boundary policy and its digest disagree")
+    if record.get("engine_hash") != engine_hash:
+        raise ValueError("record engine_hash does not match the trusted index")
 
 
 def _base_metrics(nodes: dict) -> dict:
@@ -140,44 +151,54 @@ def _base_metrics(nodes: dict) -> dict:
 
 
 def index_verified_closures(records: list[dict], environment_hash: str,
-                            boundary_policy: dict | str) -> dict:
+                            boundary_policy: dict | str, engine_hash: str | None = None) -> dict:
     """Merge imported nodes from matching, independently verified references.
 
     A reference may have unavailable root metrics (e.g. cycle) as long as its
     proof is verified and its extractor supplied the graph. Such base states
     remain unavailable. No source costs are synthesized for indexed nodes.
+    One extractor engine produced every indexed histogram; without an explicit
+    engine_hash, the records must agree on one.
     """
     if (not isinstance(environment_hash, str) or not environment_hash
             or not isinstance(boundary_policy, (dict, str)) or not boundary_policy):
         raise ValueError("a nonempty environment hash and explicit boundary policy object or version string are required")
     policy_hash = digest(boundary_policy)
-    nodes, keys, sources = {}, {}, []
+    records = list(records)
+    if engine_hash is None:
+        engines = {record.get("engine_hash") for record in records}
+        engine_hash = engines.pop() if len(engines) == 1 else None
+    if not isinstance(engine_hash, str) or not engine_hash:
+        raise ValueError("verified closures must share one nonempty extractor engine_hash")
+    nodes, keys, owners, sources = {}, {}, {}, []
     excluded = set()
     for record in records:
         if record.get("validity_status") != "success":
             raise ValueError("environment indexing requires a verified reference record")
-        _require_provenance(record, environment_hash, policy_hash)
+        _require_provenance(record, environment_hash, policy_hash, engine_hash)
         extraction = record.get("extraction", record)
         if extraction.get("metric_status") != "available" or "nodes" not in extraction:
             raise ValueError("verified reference has no successfully extracted dependency graph")
         for name, node in _normalize_nodes(extraction["nodes"]).items():
-            owner = node["owner_module"]
-            if owner == "EvaluatorCandidate" or owner.startswith("EvaluatorCandidate."):
+            if _evaluator_owned(node):
                 excluded.add(name)
                 continue
-            key = _node_key(node, environment_hash, policy_hash)
+            key = _node_key(node, environment_hash, policy_hash, engine_hash)
             if name in keys and keys[name] != key:
                 raise ValueError("conflicting imported declaration in verified closures: " + name)
             nodes[name], keys[name] = node, key
+            owners.setdefault(name, set()).add(node["owner_module"])
         sources.append({"task_id": record.get("task_id"), "source_hash": record.get("source_hash"),
                         "engine_hash": record.get("engine_hash"), "graph_hash": digest(extraction["nodes"])})
-    nodes = dict(sorted(nodes.items()))
+    # Module ownership depends on each task's imports; keep it as metadata.
+    nodes = {name: {**{key: value for key, value in node.items() if key != "owner_module"},
+                    "observed_owner_modules": sorted(owners[name])} for name, node in sorted(nodes.items())}
     computed = _base_metrics(nodes)
     cache = {name: {"cache_key": keys[name], "metrics": computed[name]} for name in nodes}
     primitives = sorted(name for name, node in nodes.items() if node["primitive"])
     index = {"index_version": INDEX_VERSION, "environment_hash": environment_hash,
              "boundary_policy": boundary_policy, "boundary_policy_hash": policy_hash,
-             "nodes": nodes, "base_cache": cache,
+             "engine_hash": engine_hash, "nodes": nodes, "base_cache": cache,
              "primitive_manifest": primitives, "primitive_manifest_hash": digest(primitives),
              "primitive_manifest_scope": "union of imported reachable reference closures; not a full-corpus manifest",
              "excluded_evaluator_node_names": sorted(excluded), "sources": sorted(sources, key=digest),
@@ -195,6 +216,8 @@ def _verify_index(index):
         raise ValueError("environment index content hash mismatch")
     if index.get("boundary_policy_hash") != digest(index.get("boundary_policy")):
         raise ValueError("environment index boundary policy mismatch")
+    if not isinstance(index.get("engine_hash"), str) or not index["engine_hash"]:
+        raise ValueError("environment index lacks its extractor engine_hash")
 
 
 def write_index(index: dict, path: str | Path) -> None:
@@ -207,18 +230,31 @@ def merge_candidate(index: dict, candidate_nodes: dict) -> dict:
     """Return a merged graph after matching a provenance-bearing envelope.
 
     The envelope must contain environment_hash, boundary_policy_hash (or the
-    exact boundary_policy), and nodes. Bare node lists intentionally lack enough
-    provenance to enter the cache. The immutable index itself is never changed.
+    exact boundary_policy), engine_hash, nodes and imported_node_names. Nodes
+    must include every evaluator-owned declaration of the candidate's closure;
+    these stay private, so a task's context may redeclare a name that another
+    task imports. Only the listed imported names are taken from the index, and
+    supplied imported nodes must match it. Bare node lists intentionally lack
+    enough provenance to enter the cache. The immutable index itself is never
+    changed.
     """
     _verify_index(index)
     if not isinstance(candidate_nodes, dict) or "nodes" not in candidate_nodes:
         raise ValueError("candidate nodes require an environment/boundary provenance envelope")
-    _require_provenance(candidate_nodes, index["environment_hash"], index["boundary_policy_hash"])
+    _require_provenance(candidate_nodes, index["environment_hash"], index["boundary_policy_hash"],
+                        index["engine_hash"])
+    imported = candidate_nodes.get("imported_node_names")
+    if not isinstance(imported, list) or any(not isinstance(name, str) for name in imported):
+        raise ValueError("candidate envelope requires the imported_node_names of its closure")
+    imported = set(imported)
     candidate = _normalize_nodes(candidate_nodes["nodes"])
-    merged = dict(index["nodes"])
+    merged = {name: index["nodes"][name] for name in sorted(imported & index["nodes"].keys())}
     for name, node in candidate.items():
-        if name in merged:
-            key = _node_key(node, index["environment_hash"], index["boundary_policy_hash"])
+        if _evaluator_owned(node):
+            if name in imported:
+                raise ValueError("candidate lists its own declaration as imported: " + name)
+        elif name in index["nodes"]:
+            key = _node_key(node, index["environment_hash"], index["boundary_policy_hash"], index["engine_hash"])
             if key != index["base_cache"][name]["cache_key"]:
                 raise ValueError("candidate conflicts with trusted imported declaration: " + name)
         merged[name] = node

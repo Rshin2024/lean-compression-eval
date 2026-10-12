@@ -11,7 +11,7 @@
     "max_output_tokens": 8192, "temperature": 0.7,
     "response_adapter": "identity_v1", "timeout_seconds": 180,
     "context_byte_cap": 64000,
-    "retry": {"max_transport_attempts": 3, "backoff_seconds": [1, 4]},
+    "retry": {"max_transport_attempts": 3, "backoff_seconds": [1, 4], "max_consecutive_prompt_rejections": 3},
     "notes": "Resolve a pinned model and its supported sampling parameters before generation. OpenAI max_output_tokens includes reasoning tokens. Null temperature means deliberately omit it, never silently retry with changed settings."
   },
   "environment": {
@@ -33,6 +33,6 @@
     "primary_contrasts": ["compression_vs_standard", "compression_vs_concision"]
   },
   "schedule_seed": 20261011,
-  "tactic_portfolio": "by first | rfl | assumption | simp_all | omega | aesop",
+  "tactic_portfolio": "by first | rfl | assumption | (simp_all; done) | omega | aesop",
   "tactic_portfolio_total_wall_seconds": 60
 }

@@ -6,15 +6,17 @@ from fractions import Fraction
 import html
 import json
 from pathlib import Path
+import re
 
 from .analysis import _distribution
-from .dataset import validate_manifest
+from .dataset import ANSWER_ACCESS_MIN_CHARS, SHORT_EXACT_MATCH_MIN_CHARS, reference_in_prompt, validate_manifest
 from .io import digest, task_input_hash, verification_request_hash, write_json
 from .metrics import exact_int
 
 AUDIT_FLAGS = ("reference_verified", "explicit_signature_frozen", "answer_access_audited",
                "family_reviewed", "metric_closure_verified")
 DEFAULT_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
+_SINGLE_TACTIC = re.compile(r"by ([A-Za-z_][A-Za-z0-9_]*[?!]?)")
 
 
 def _body_source(record):
@@ -37,13 +39,15 @@ def _source_control(record):
     if source is None:
         return {"classification": None, "source_available": False}
     compact = " ".join(source.split())
+    single = _SINGLE_TACTIC.fullmatch(compact)
     if compact in ("rfl", "Iff.rfl", "by rfl", "by exact rfl", "by exact Iff.rfl"):
         classification = "literal_reflexivity"
-    elif compact in ("by simp", "by aesop", "by omega", "by ring", "by group", "by trivial", "by decide"):
+    elif single:
         classification = "single_tactic_wrapper"
     else:
         classification = None
     return {"classification": classification, "source_available": True,
+            "tactic": single.group(1) if classification == "single_tactic_wrapper" else None,
             "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty."}
 
 
@@ -82,7 +86,8 @@ def _identity(record, task):
 
 
 def build_readiness_report(tasks: list[dict], verified_records: list[dict] | dict,
-                           config: dict | None = None) -> dict:
+                           config: dict | None = None, *, task_file_sha256: str | None = None,
+                           ignored_records: list[dict] | None = None) -> dict:
     """Report concrete dataset evidence and provisional source/depth coverage.
 
     Runtime verification hashes can link evidence after prompt-only presentation
@@ -90,20 +95,23 @@ def build_readiness_report(tasks: list[dict], verified_records: list[dict] | dic
     alone never counts as independent kernel replay. A legacy
     record without task_input_hash is accepted only if its complete task_hash
     exactly equals the current task object, and this identity method is visible.
+    Rows without a string task_id appear only as structural errors.
     """
     config = dict(config or {})
     settings = {**config, **config.get("readiness", {})}
-    structural = validate_manifest(tasks, enforce_quotas=settings.get("enforce_quotas", True))
-    task_map = {task["task_id"]: task for task in tasks}
-    if len(task_map) != len(tasks):
+    quotas = bool(settings.get("enforce_quotas", True))
+    structural = validate_manifest(tasks, enforce_quotas=quotas)
+    identified = [task for task in tasks if isinstance(task, dict) and isinstance(task.get("task_id"), str)]
+    task_map = {task["task_id"]: task for task in identified}
+    if len(task_map) != len(identified):
         raise ValueError("readiness requires unambiguous unique task IDs")
     if isinstance(verified_records, dict):
         verified_records = list(verified_records.values())
     by_task = defaultdict(list)
     seen_record_hashes = set()
-    ignored = []
+    ignored = list(ignored_records or [])
     for record in verified_records:
-        if not isinstance(record, dict) or "task_id" not in record:
+        if not isinstance(record, dict) or not isinstance(record.get("task_id"), str):
             ignored.append({"reason": "not_a_task_reference_record"})
             continue
         if record["task_id"] not in task_map:
@@ -123,6 +131,7 @@ def build_readiness_report(tasks: list[dict], verified_records: list[dict] | dic
         expected["boundary_policy_hash"] = digest(config["environment"]["boundary_policy"])
     per_task, observed_provenance = {}, defaultdict(set)
     controls = defaultdict(list)
+    exact_match_chars = {}
     for task_id, task in task_map.items():
         candidates = by_task[task_id]
         matching = [(record, _identity(record, task)) for record in candidates if _identity(record, task)]
@@ -185,9 +194,15 @@ def build_readiness_report(tasks: list[dict], verified_records: list[dict] | dic
             control = _source_control(record)
             if control["classification"]:
                 controls[control["classification"]].append(task_id)
+            source = _body_source(record)
+            exposed = reference_in_prompt(task, source)
+            if exposed:
+                exact_match_chars[task_id] = len(" ".join(source.split()))
         else:
             control = {"classification": None, "source_available": False}
-        audits = {flag: task.get("audit", {}).get(flag) is True for flag in AUDIT_FLAGS}
+            exposed = None
+        audit = task.get("audit")
+        audits = {flag: isinstance(audit, dict) and audit.get(flag) is True for flag in AUDIT_FLAGS}
         pending = [flag for flag, passed in audits.items() if not passed]
         evidence_complete = bool(record) and not reasons
         per_task[task_id] = {"task_id": task_id, "split": task.get("split"), "domain": task.get("domain"),
@@ -201,6 +216,7 @@ def build_readiness_report(tasks: list[dict], verified_records: list[dict] | dic
             "independent_kernel_verified": kernel_verified, "metrics_complete": metric_complete,
             "reference_evidence_complete": evidence_complete, "missing_evidence": reasons,
             "audit_flags": audits, "pending_audits": pending, "source_control": control,
+            "reference_proof_in_prompt": exposed,
             "reference_W_B": wb, "reference_D": depth, "provenance": evidence_provenance,
             "eligible_for_strata": kernel_verified and metric_complete and evidence_complete}
 
@@ -262,7 +278,7 @@ def build_readiness_report(tasks: list[dict], verified_records: list[dict] | dic
         measured = [row for row in selected if row["eligible_for_strata"]]
         matrix = Counter((row["reference_length_bin"], row["reference_depth_bin"]) for row in measured
                          if row["reference_length_bin"] and row["reference_depth_bin"])
-        return {"tasks": len(ids), "families": len({row["family_id"] for row in selected}),
+        return {"tasks": len(ids), "families": len({str(row["family_id"]) for row in selected}),
                 "kernel_verified_references": sum(row["independent_kernel_verified"] for row in selected),
                 "complete_reference_evidence": sum(row["reference_evidence_complete"] for row in selected),
                 "audit_complete_tasks": sum(not row["pending_audits"] for row in selected),
@@ -277,22 +293,30 @@ def build_readiness_report(tasks: list[dict], verified_records: list[dict] | dic
 
     groups = {"all": summarize(list(task_map))}
     for dimensions in (("split",), ("domain",), ("origin",), ("split", "domain", "origin")):
-        keys = sorted({tuple(task.get(dimension, "unknown") for dimension in dimensions) for task in tasks})
+        keys = sorted({tuple(str(task.get(dimension, "unknown")) for dimension in dimensions) for task in identified})
         for values in keys:
             name = "/".join(f"{dimension}:{value}" for dimension, value in zip(dimensions, values))
-            groups[name] = summarize([t["task_id"] for t in tasks
-                if tuple(t.get(dimension, "unknown") for dimension in dimensions) == values])
+            groups[name] = summarize([t["task_id"] for t in identified
+                if tuple(str(t.get(dimension, "unknown")) for dimension in dimensions) == values])
     family_domains, family_splits = defaultdict(set), defaultdict(set)
-    for task in tasks:
-        family_domains[task["family_id"]].add(task["domain"])
-        family_splits[task["family_id"]].add(task["split"])
+    for task in identified:
+        family_domains[str(task.get("family_id"))].add(str(task.get("domain")))
+        family_splits[str(task.get("family_id"))].add(str(task.get("split")))
+    cutpoint_source = "caller_supplied" if fixed else "observed_reference_25th_and_75th_percentiles"
+    # Only exact matches of at least ANSWER_ACCESS_MIN_CHARS gate; shorter ones stay listed.
+    flagged = [t for t, chars in exact_match_chars.items() if chars >= ANSWER_ACCESS_MIN_CHARS]
+    unchecked = [t for t, row in per_task.items() if row["reference_proof_in_prompt"] is None]
     gates = {"structural_manifest_valid": not structural,
-             "all_reference_evidence_complete": bool(tasks) and all(row["reference_evidence_complete"] for row in per_task.values()),
-             "all_required_audits_complete": bool(tasks) and all(not row["pending_audits"] for row in per_task.values()),
+             "quotas_enforced": quotas,
+             "all_reference_evidence_complete": bool(per_task) and all(row["reference_evidence_complete"] for row in per_task.values()),
+             "all_required_audits_complete": bool(per_task) and all(not row["pending_audits"] for row in per_task.values()),
+             "reference_proofs_absent_from_prompts": bool(per_task) and not flagged and not unchecked,
              "reference_provenance_consistent": not mixed,
              "length_depth_cutpoints_frozen": fixed and settings.get("strata_frozen") is True,
              "difficulty_coverage_reviewed": settings.get("difficulty_review_complete") is True}
-    report = {"readiness_version": "reference_evidence_readiness_v1", "task_manifest_hash": digest(tasks),
+    report = {"readiness_version": "reference_evidence_readiness_v2", "task_manifest_hash": digest(tasks),
+              "task_manifest_hash_method": "sha256_of_canonical_json_of_parsed_task_list",
+              "task_file_sha256": task_file_sha256,
               "status": "ready_for_dataset_freeze" if all(gates.values()) else "not_ready_for_dataset_freeze",
               "scope": "Dataset evidence only; model pin, budget, infrastructure and preregistration gates are separate.",
               "gates": gates, "structural_errors": structural, "groups": groups, "tasks": per_task,
@@ -302,16 +326,28 @@ def build_readiness_report(tasks: list[dict], verified_records: list[dict] | dic
               "reference_cohorts": reference_cohorts,
               "mixed_provenance": mixed, "expected_provenance": expected,
               "ignored_reference_records": ignored,
+              "readiness_settings": {"enforce_quotas": quotas, "strata_fit_split": fit_split, "cutpoint_source": cutpoint_source,
+                  "supplied_pins": {field: settings.get(field) for field in expected},
+                  "readiness_config_hash": digest(config.get("readiness", {})), "config_hash": digest(config)},
+              "answer_access_screen": {
+                  "rule": f"whitespace-normalized reference proof of at least {ANSWER_ACCESS_MIN_CHARS} characters occurs in the model-visible prompt",
+                  "flagged_task_ids": flagged,
+                  "short_exact_match_task_ids": [t for t, chars in exact_match_chars.items()
+                                                 if SHORT_EXACT_MATCH_MIN_CHARS <= chars < ANSWER_ACCESS_MIN_CHARS],
+                  "unchecked_task_ids": unchecked,
+                  "interpretation": "A flag marks a copyable answer for the answer-access audit; exact matches of "
+                                    f"{SHORT_EXACT_MATCH_MIN_CHARS}-{ANSWER_ACCESS_MIN_CHARS - 1} characters are listed for that "
+                                    "audit without blocking the gate; an unflagged task is not thereby cleared."},
               "source_only_controls": dict(controls),
               "family_structure": {"families": len(family_domains),
                   "cross_domain_families": {family: sorted(domains) for family, domains in family_domains.items() if len(domains)>1},
                   "cross_split_families": {family: sorted(splits) for family, splits in family_splits.items() if len(splits)>1}},
               "proposed_reference_strata": {
                   "status": "frozen_by_config" if gates["length_depth_cutpoints_frozen"] else "provisional_do_not_treat_as_difficulty",
-                  "method": "caller_supplied" if fixed else "observed_reference_25th_and_75th_percentiles",
+                  "method": cutpoint_source,
                   "fit_split": fit_split, "fit_task_ids": fit_ids,
                   "fit_population_complete": bool(fit_ids) and len(fit_ids) == sum(
-                      fit_split == "all" or task["split"] == fit_split for task in tasks),
+                      fit_split == "all" or task.get("split") == fit_split for task in identified),
                   "source_length_cutpoints": None if cuts["reference_W_B"] is None else list(map(_serialize_fraction, cuts["reference_W_B"])),
                   "dependency_depth_cutpoints": None if cuts["reference_D"] is None else list(map(_serialize_fraction, cuts["reference_D"])),
                   "bin_rule": "low <= first cut; first < middle <= second cut; high > second cut; preserve ties",
@@ -336,8 +372,18 @@ def write_readiness_report(report: dict, destination: str | Path) -> dict:
             "th{background:#edf2f5}.notice{background:#fff3d3;padding:1rem}code{overflow-wrap:anywhere}summary{cursor:pointer}</style>",
             "<h1>Dataset readiness</h1><p class='notice'><strong>" + html.escape(report["status"].replace("_", " ")) +
             "</strong>. Reference evidence and curation diagnostic; no model outcomes are included.</p>",
-            "<p>Source: supplied public task manifest and independent reference records. Manifest hash: <code>" +
-            report["task_manifest_hash"] + "</code>.</p><h2>Dataset gates</h2><table><tr><th>Gate</th><th>Status</th></tr>"]
+            "<p>Source: supplied public task manifest and independent reference records. Canonical task-list digest "
+            "(SHA-256 of canonical JSON of the parsed tasks, not of the file bytes): <code>" + report["task_manifest_hash"] +
+            "</code>. Task file SHA-256: <code>" + html.escape(str(report.get("task_file_sha256") or "not recorded")) + "</code>.</p>"]
+    settings = report.get("readiness_settings")
+    if settings:
+        page.append("<p>Effective settings: quotas " + ("enforced" if settings["enforce_quotas"] else "<strong>not enforced</strong>") +
+                    "; strata fit split " + html.escape(str(settings["strata_fit_split"])) + "; cutpoint source " +
+                    html.escape(str(settings["cutpoint_source"])) + "; supplied pins " +
+                    html.escape(json.dumps(settings["supplied_pins"], sort_keys=True)) + "; readiness configuration digest <code>" +
+                    html.escape(str(settings["readiness_config_hash"])) + "</code>; full configuration digest <code>" +
+                    html.escape(str(settings["config_hash"])) + "</code>.</p>")
+    page.append("<h2>Dataset gates</h2><table><tr><th>Gate</th><th>Status</th></tr>")
     for gate, passed in report["gates"].items():
         page.append("<tr><td>" + html.escape(gate.replace("_", " ")) + "</td><td>" + ("Complete" if passed else "Pending") + "</td></tr>")
     page.append("</table><h2>Population and measured reference coverage</h2><table><tr><th>Population</th><th>Tasks</th>"
@@ -356,7 +402,10 @@ def write_readiness_report(report: dict, destination: str | Path) -> dict:
         page.append("<tr><td>" + length + "</td>" + "".join(f"<td>{cells[depth]}</td>" for depth in ("low", "middle", "high")) + "</tr>")
     page.append("</table><h2>Source-shape controls</h2><p>These source labels do not establish mathematical difficulty.</p><ul>")
     for classification, ids in report["source_only_controls"].items():
-        page.append("<li>" + html.escape(classification) + ": " + str(len(ids)) + " tasks</li>")
+        tactics = Counter(report["tasks"][t]["source_control"].get("tactic") for t in ids)
+        detail = ", ".join(f"{name} {count}" for name, count in sorted(tactics.items()) if name)
+        page.append("<li>" + html.escape(classification) + ": " + str(len(ids)) + " tasks" +
+                    (" (" + html.escape(detail) + ")" if detail else "") + "</li>")
     page.append("</ul><h2>Homogeneous reference cohorts</h2><p>Archived measurements under different pins are shown separately; "
                 "they are not pooled into the proposed strata.</p><table><tr><th>Cohort</th><th>Tasks</th><th>Engine</th>"
                 "<th>Token policy</th><th>Median W_B</th><th>Median D</th></tr>")
@@ -365,7 +414,14 @@ def write_readiness_report(report: dict, destination: str | Path) -> dict:
                   str(cohort["provenance"]["source_token_policy_hash"])[:12],
                   cohort["reference_W_B"]["median"], cohort["reference_D"]["median"])
         page.append("<tr>" + "".join("<td>" + html.escape(str(value)) + "</td>" for value in values) + "</tr>")
-    page.append("</table><h2>Task-level pending evidence</h2>")
+    page.append("</table>")
+    screen = report.get("answer_access_screen")
+    if screen:
+        page.append("<h2>Answer-access screen</h2><p>Flagged when a " + html.escape(screen["rule"]) + ": " +
+                    (html.escape(", ".join(screen["flagged_task_ids"])) or "none") + ". Shorter exact matches: " +
+                    (html.escape(", ".join(screen["short_exact_match_task_ids"])) or "none") + ". Unchecked: " +
+                    str(len(screen["unchecked_task_ids"])) + " tasks. " + html.escape(screen["interpretation"]) + "</p>")
+    page.append("<h2>Task-level pending evidence</h2>")
     for task_id, row in report["tasks"].items():
         if row["missing_evidence"] or row["pending_audits"]:
             page.append("<details><summary>" + html.escape(task_id) + "</summary><p>Evidence: " +
@@ -374,7 +430,7 @@ def write_readiness_report(report: dict, destination: str | Path) -> dict:
     page.append("<p><a href='readiness.json'>Complete distributions, cross-strata, identities and missing-evidence records</a></p></html>")
     content = "\n".join(page)
     target = directory / "readiness.html"
-    if target.exists() and target.read_text() != content:
+    if target.exists() and target.read_text(encoding="utf-8") != content:
         raise FileExistsError("Refusing to overwrite a different readiness report: " + str(target))
-    target.write_text(content)
+    target.write_text(content, encoding="utf-8")
     return {"json": str(directory / "readiness.json"), "html": str(target)}

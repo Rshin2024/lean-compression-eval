@@ -31,6 +31,8 @@ def sha256_text(value: str) -> str:
 def load_tasks(path: str | Path) -> list[dict[str, Any]]:
     """Read a JSON array (or {tasks: [...]}) or newline-delimited JSON records."""
     path = Path(path)
+    if path.is_dir():
+        raise ValueError(f"{path}: expected a task manifest file, found a directory")
     text = path.read_text(encoding="utf-8")
     if not text.strip():
         return []
@@ -42,10 +44,15 @@ def load_tasks(path: str | Path) -> list[dict[str, Any]]:
             raise ValueError("JSON manifest must contain a list of task objects")
         return value
     result = []
-    for line_no, line in enumerate(text.splitlines(), 1):
+    # read_text turns "\r\n" and "\r" into "\n"; records end there only: splitlines()
+    # also splits U+2028/U+2029/U+0085, which JSON allows raw inside strings.
+    for line_no, line in enumerate(text.split("\n"), 1):
         if not line.strip():
             continue
-        value = json.loads(line)
+        try:
+            value = json.loads(line)
+        except json.JSONDecodeError as error:
+            raise ValueError(f"{path}:{line_no}: {error}") from error
         if not isinstance(value, dict):
             raise ValueError(f"{path}:{line_no}: expected a task object")
         result.append(value)
@@ -166,9 +173,18 @@ def validate_manifest(tasks: Iterable[dict[str, Any]], enforce_quotas: bool = Fa
 
 def readiness_errors(tasks: Iterable[dict[str, Any]]) -> list[str]:
     """Fail closed for the preregistered run; collection and smoke have lower gates."""
+    tasks = list(tasks)
+    if not tasks:
+        return ["manifest contains no tasks"]
     result = []
-    for task in tasks:
+    for index, task in enumerate(tasks, 1):
+        if not isinstance(task, dict):
+            result.append(f"row {index}: expected a task object")
+            continue
         audit = task.get("audit", {})
+        if not isinstance(audit, dict):
+            result.append(f"{task.get('task_id', '?')}: audit must be an object")
+            continue
         for field in ("reference_verified", "explicit_signature_frozen", "answer_access_audited", "family_reviewed", "metric_closure_verified"):
             if audit.get(field) is not True:
                 result.append(f"{task.get('task_id', '?')}: {field} is not true")
@@ -176,11 +192,19 @@ def readiness_errors(tasks: Iterable[dict[str, Any]]) -> list[str]:
 
 
 def validate_references(tasks: Iterable[dict[str, Any]], references: Iterable[dict[str, Any]]) -> list[str]:
-    """Check one nonempty private proof per task; Lean checking is separate."""
-    task_ids = {t["task_id"] for t in tasks}
-    refs = list(references)
-    counts = Counter(r.get("task_id") for r in refs)
-    errors = []
+    """Check one nonempty private proof per task; Lean checking is separate.
+
+    Task rows without a string task_id cannot be mapped; validate_manifest reports them.
+    Reference rows without one are reported here.
+    """
+    task_ids = {t["task_id"] for t in tasks if isinstance(t, dict) and isinstance(t.get("task_id"), str)}
+    refs, errors = [], []
+    for index, ref in enumerate(references, 1):
+        if isinstance(ref, dict) and isinstance(ref.get("task_id"), str):
+            refs.append(ref)
+        else:
+            errors.append(f"reference row {index}: expected an object with a string task_id")
+    counts = Counter(r["task_id"] for r in refs)
     for task_id in sorted(task_ids):
         if counts[task_id] != 1:
             errors.append(f"{task_id}: expected one private reference, found {counts[task_id]}")
@@ -190,3 +214,43 @@ def validate_references(tasks: Iterable[dict[str, Any]], references: Iterable[di
         if not isinstance(ref.get("proof"), str) or not ref["proof"].strip():
             errors.append(f"{ref.get('task_id')}: empty private reference")
     return errors
+
+
+# Normalized proof length from which an exact match in the task's own prompt is answer
+# access: the rule of the recorded answer-access amendment (dataset_amendments.jsonl rows
+# 417-424), which on the pre-amendment tasks flags exactly the 8 it amended, down to
+# "dite_eq_right h" (15 characters).  Shorter exact matches from SHORT_EXACT_MATCH_MIN_CHARS
+# up ("dite_eq_left h", 14) are listed for the human audit; below that the committed matches
+# are generic ("h", "hf", "rfl", "by simp", "by grind").
+ANSWER_ACCESS_MIN_CHARS = 15
+SHORT_EXACT_MATCH_MIN_CHARS = 9
+
+
+def reference_in_prompt(task: dict[str, Any], proof: Any) -> bool | None:
+    """Whether a private proof's whitespace-normalized text occurs in the task's prompt, at any length.
+
+    The prompt is every message prompts.messages() renders for each condition.  None
+    means the check could not run: no proof text, or a task that cannot be rendered.
+    Only matches of at least ANSWER_ACCESS_MIN_CHARS characters are answer access.
+    """
+    from .prompts import CONDITIONS, messages
+    compact = " ".join(proof.split()) if isinstance(proof, str) else ""
+    if not compact:
+        return None
+    try:
+        shown = [message["content"] for condition in CONDITIONS for message in messages(task, condition, "")]
+    except (KeyError, TypeError, AttributeError):
+        return None
+    return any(compact in " ".join(text.split()) for text in shown)
+
+
+def answer_access_errors(tasks: Iterable[dict[str, Any]], references: Iterable[dict[str, Any]]) -> list[str]:
+    """Flag tasks whose private reference proof is copyable from their own prompt."""
+    proofs: dict[str, list[Any]] = defaultdict(list)
+    for ref in references:
+        if isinstance(ref, dict) and isinstance(ref.get("task_id"), str):
+            proofs[ref["task_id"]].append(ref.get("proof"))
+    return [f"{task['task_id']}: private reference proof occurs in the model-visible prompt (answer access)"
+            for task in tasks if isinstance(task, dict) and isinstance(task.get("task_id"), str)
+            and any(isinstance(proof, str) and len(" ".join(proof.split())) >= ANSWER_ACCESS_MIN_CHARS
+                    and reference_in_prompt(task, proof) for proof in proofs[task["task_id"]])]

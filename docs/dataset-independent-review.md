@@ -104,6 +104,9 @@ The reviewed repairs are now saved in public manifest SHA-256
 `372118415c4454e3e7b87d8afdaa2467c858e68ddc36fc496cd7dddd23b363a4`.
 The amendment log is `data/private/dataset_amendments.jsonl`, SHA-256
 `c00468798aef07061519ad2665d059d9a78ade2f48d71a39ad891d670b5bd986`.
+That hash covers the log's first 226 rows, as reviewed here; with the 315 rows
+appended on 2026-10-12, the current file's SHA-256 is
+`17e6dfaa7759d387a13868533e07981f710f0a23508de8d10f014f81e62691d3`.
 An independent read of that patched manifest confirmed 250 public tasks,
 250 one-to-one private reference records, 74 provisional families, and passing
 structural quota, exact signature-duplicate, and reference-mapping checks.

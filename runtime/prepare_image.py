@@ -13,6 +13,7 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
+from lean_compression.integrity import is_content_digest
 from lean_compression.io import digest, read_json, write_json
 
 p = argparse.ArgumentParser()
@@ -26,8 +27,8 @@ if not args.image_id:
         image = idfile.read_text().strip()
 else:
     image = args.image_id
-if not image.startswith("sha256:"):
-    raise SystemExit("Use the immutable sha256: image ID")
+if not is_content_digest(image):
+    raise SystemExit("Use an immutable content digest: sha256: and 64 lowercase hex digits, optionally after name@")
 raw = subprocess.check_output(["docker", "run", "--rm", "--network", "none", "--read-only", image,
                                "cat", "/opt/eval/build-environment.json"], text=True)
 env = json.loads(raw)

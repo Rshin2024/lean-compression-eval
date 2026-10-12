@@ -1,26 +1,61 @@
 """Frozen qualitative review samples and condition-blinded proof evidence.
 
 This is an evidence packet, not a subjective score or an exclusion mechanism.
-The unblinding key is deliberately outside the reviewer-facing directory.
+The unblinding key is deliberately outside the reviewer-facing directory, as is
+the random per-bundle secret that keys every task and proof code.
 """
 from __future__ import annotations
 
 from collections import defaultdict
 import csv
 import hashlib
+import hmac
 import html
 import json
 from pathlib import Path
 import random
+import re
+import secrets
 
-from .io import digest, write_json
+from .io import digest, read_json, write_json
+from .store import with_graph
 
 MECHANISMS = ("ordinary brevity", "useful existing-lemma reuse", "local factoring",
               "automation", "irrelevant dependency growth", "suspected answer access")
+KEY_FILE = "private/code_key.json"
+CODE_SCHEME = "hmac-sha256(key, run_hash|seed|kind|identity)[:16]"
 
 
-def _opaque_id(kind: str, run_hash: str, identity: str, seed: int) -> str:
-    return kind + "-" + hashlib.sha256(f"{run_hash}|{seed}|{kind}|{identity}".encode()).hexdigest()[:16]
+def _opaque_id(kind: str, run_hash: str, identity: str, seed: int, key: bytes | None = None) -> str:
+    # Run hash, seed and attempt IDs are public; only the private bundle key blinds codes.
+    if not key:
+        raise ValueError("Blinded audit codes require the bundle's private code key")
+    return kind + "-" + hmac.new(key, f"{run_hash}|{seed}|{kind}|{identity}".encode(), hashlib.sha256).hexdigest()[:16]
+
+
+def _code_key(directory: Path) -> bytes:
+    """Reuse the bundle's random code key; create one only for a new bundle."""
+    path = directory / KEY_FILE
+    if not path.exists():
+        if any((directory / name).exists() for name in ("audit.json", "review", "private")):
+            raise FileExistsError("Audit bundle has no private code key; write a new directory: " + str(directory))
+        (directory / "private").mkdir(mode=0o700, parents=True)
+        write_json(path, {"scheme": CODE_SCHEME, "key": secrets.token_hex(32)})
+    value = read_json(path)
+    if not (isinstance(value, dict) and value.get("scheme") == CODE_SCHEME and isinstance(value.get("key"), str)
+            and re.fullmatch("[0-9a-f]{64}", value["key"])):
+        raise ValueError("Unrecognized audit code key: " + str(path))
+    return bytes.fromhex(value["key"])
+
+
+def _import_lines(task: dict) -> str:
+    # Mirrors prompts.messages(): target.lean shows the import lines the model saw.
+    if task.get("import_specs"):
+        return "\n".join(("public " if spec.get("is_exported") else "") +
+                         ("meta " if spec.get("is_meta") else "") + "import " +
+                         ("all " if spec.get("import_all") else "") + spec["module"]
+                         for spec in task["import_specs"])
+    return "\n".join("import " + name for name in task.get("imports", []))
 
 
 def _write_text(path: Path, text: str):
@@ -34,13 +69,15 @@ def _write_text(path: Path, text: str):
 
 
 def write_audit_bundle(manifest: dict, rows: list[dict], result: dict,
-                       path: str | Path) -> dict:
+                       path: str | Path, run: str | Path | None = None) -> dict:
     """Package selected tasks with every available condition/sample outcome.
 
     Selection comes from paired task effects: the ten largest strictly positive
     and ten most negative changes, plus twenty uniformly sampled paired tasks
     per model/contrast, using the frozen audit seed. Tasks selected more than
     once are reviewed once, while all selection reasons remain recorded.
+    Rows read without graphs reload them, one exported attempt at a time, from
+    the run directory ``run``.
     """
     directory = Path(path)
     config = manifest.get("config", {})
@@ -91,37 +128,50 @@ def write_audit_bundle(manifest: dict, rows: list[dict], result: dict,
                 "validity_status": "missing_record", "metric_status": "unavailable", "metrics": None})
             identity_seen.add(identity)
 
-    index = {"audit_version": "frozen_blinded_v1", "run_hash": run_hash, "seed": seed,
+    code_key = _code_key(directory)
+    # Check an existing bundle before writing: a replaced key, run hash or seed would otherwise add review/ directories.
+    labels_file = directory / "private" / "labels.json"
+    for code, label in (read_json(labels_file) if labels_file.exists() else {}).items():
+        if (code, label["task_code"]) != (_opaque_id("proof", run_hash, label["attempt_id"], seed, code_key),
+                                          _opaque_id("task", run_hash, label["task_id"], seed, code_key)):
+            raise FileExistsError("Audit codes do not match this bundle's key, run hash and seed: " + str(directory))
+    index = {"audit_version": "frozen_blinded_v2", "run_hash": run_hash, "seed": seed,
              "selection_rule": "10 strictly positive, 10 strictly negative, 20 random paired tasks per model/contrast",
              "selection_by_contrast": selection_by_contrast, "selected_tasks": [],
              "mechanism_labels": list(MECHANISMS),
              "policy": "Manual labels explain metrics; they never override scores or remove valid outliers.",
              "blinding_limit": "Model and condition labels are hidden in review/. Proof text and mathematical task are preserved verbatim; they may reveal clues.",
-             "unblinding_key": "private/labels.json", "review_index": "review/index.html"}
+             "unblinding_key": "private/labels.json", "code_key": KEY_FILE,
+             "reviewer_scope": "Give reviewers review/ only; audit.json, private/ and the enclosing report reveal models and conditions.",
+             "review_index": "review/index.html"}
     labels, review_tasks, annotation_rows = {}, [], []
     for task_id in sorted(selected):
         task = tasks[task_id]
-        task_code = _opaque_id("task", run_hash, task_id, seed)
+        task_code = _opaque_id("task", run_hash, task_id, seed, code_key)
         task_path = directory / "review" / task_code
         ordered_rows = sorted(rows_by_task[task_id], key=lambda row: _opaque_id(
             "proof", run_hash, row.get("attempt_id", digest({key: row.get(key) for key in
-                ("model_snapshot", "task_id", "condition", "sample_index")})), seed))
+                ("model_snapshot", "task_id", "condition", "sample_index")})), seed, code_key))
         proof_items = []
         # This context is the same frozen context for all condition outputs.
         context = {key: task.get(key) for key in
-                   ("imports", "context", "premise_context", "binders", "proposition", "target_name")}
+                   ("imports", "import_specs", "context", "premise_context", "binders", "proposition", "target_name")}
         write_json(task_path / "target.json", context)
-        target_text = ("\n".join("import " + name for name in task.get("imports", [])) + "\n\n" +
+        # Lean accepts public/meta import flags only after a `module` header; the import lines stay as prompted.
+        target_text = (("module\n\n" if task.get("import_specs") else "") + _import_lines(task) + "\n\n" +
                        task.get("context", "") + "\n\n" +
                        f"theorem {task.get('target_name', 'evaluation_target')} {task.get('binders', '')} :\n"
                        f"  {task.get('proposition', '')} := <PROOF>\n")
         _write_text(task_path / "target.lean", target_text)
         for row in ordered_rows:
+            row = with_graph(run, row)
             attempt_identity = row.get("attempt_id", digest({key: row.get(key) for key in
                 ("model_snapshot", "task_id", "condition", "sample_index")}))
-            code = _opaque_id("proof", run_hash, attempt_identity, seed)
+            code = _opaque_id("proof", run_hash, attempt_identity, seed, code_key)
             generation = row.get("generation") or {}
-            raw = generation.get("raw_response", row.get("raw_response"))
+            # A malformed response's text is the provider's entire reply, which can name the model; only private/ keeps it.
+            raw = (None if generation.get("generation_status") == "malformed_response"
+                   else generation.get("raw_response", row.get("raw_response")))
             adapted = row.get("adapted_response", raw)
             extraction = row.get("extraction") or {}
             evidence = task_path / code
@@ -185,8 +235,8 @@ def write_audit_bundle(manifest: dict, rows: list[dict], result: dict,
         page.append("<p class='notice'>" + html.escape(result["run_provenance"]["label"]) + "</p>")
     for task_item in review_tasks:
         task_code = task_item["task_code"]
-        page.append(f"<h2>{task_code}</h2><p><a href='{task_code}/target.lean'>Exact target</a> · "
-                    f"<a href='{task_code}/target.json'>Fixed context and imports</a></p>")
+        page.append(f"<h2>{task_code}</h2><p><a href='{task_code}/target.lean'>Target template</a> · "
+                    f"<a href='{task_code}/target.json'>Fixed context and import flags</a></p>")
         for proof in task_item["proofs"]:
             code = proof["proof_code"]
             page.append(f"<article><h3>{code}</h3><p>Validity: {html.escape(proof['validity_status'])}; "

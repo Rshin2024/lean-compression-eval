@@ -20,7 +20,7 @@ wall-time allocation. The benchmark did not change the Lean source or the task.
 | Evidence | Value |
 | --- | --- |
 | Lean version | `leanprover/lean4:v4.34.0-rc1` |
-| Evaluator source SHA-256 | `83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7` |
+| Lean engine (`Evaluator.lean`) SHA-256 | `83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7` |
 | Environment hash | `4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f` |
 | Request hash | `509cb62eeaef1acb33140ba744b38fdd0de7cc553a93b55f70411afa0ff0652d` |
 | Native executable SHA-256 | `5d9a6ba30ce64cee84799b66ef358708869d490202b86ef4ea2b08ccbcd4c5e1` |

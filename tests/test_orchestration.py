@@ -155,8 +155,8 @@ class OrchestrationTests(unittest.TestCase):
         self.env.update(runtime_backend="docker", docker_image=image,
                         source_exclusion_audit={"lean_sources": 0, "git_directories": 0})
         self.freeze()
-        reply = io.StringIO(json.dumps({"id": "mock-response", "model": "different-snapshot", "status": "completed",
-                                        "output": [{"type": "message", "content": [{"type": "output_text", "text": "by exact h"}]}]}))
+        reply = io.BytesIO(json.dumps({"id": "mock-response", "model": "different-snapshot", "status": "completed",
+                                       "output": [{"type": "message", "content": [{"type": "output_text", "text": "by exact h"}]}]}).encode())
         reply.headers = {}
         with patch.dict(os.environ, {"OPENAI_API_KEY": "unit-test-only"}), \
              patch("lean_compression.providers.subprocess.run", return_value=SimpleNamespace(returncode=0)), \

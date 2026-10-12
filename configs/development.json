@@ -46,6 +46,7 @@
         1,
         4
       ],
+      "max_consecutive_prompt_rejections": 3,
       "max_transport_attempts": 3
     },
     "snapshot_pinned": false,
@@ -56,7 +57,7 @@
   "protocol_version": "draft_v1",
   "samples_per_goal_condition": 4,
   "schedule_seed": 20261011,
-  "tactic_portfolio": "by first | rfl | assumption | simp_all | omega | aesop",
+  "tactic_portfolio": "by first | rfl | assumption | (simp_all; done) | omega | aesop",
   "tactic_portfolio_total_wall_seconds": 60,
   "validation": {
     "cpu_quota": 1,

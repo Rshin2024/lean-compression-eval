@@ -17,6 +17,7 @@ from statistics import mean
 from typing import Any
 
 from .metrics import decimal, exact_int, log2_int
+from .outcomes import outcome_class
 
 CONDITIONS = ("standard", "mathematical_compression", "source_concision")
 CONTRASTS = {"compression_vs_standard": ("mathematical_compression", "standard"),
@@ -67,6 +68,11 @@ def _distribution(values):
                               "median": _quantile(positive_logs, .5),
                               "q1": _quantile(positive_logs, .25),
                               "q3": _quantile(positive_logs, .75)}}
+
+
+def _unresolved(attempt):
+    """Unfinished, checker, transport and unrecognized outcomes are never model failures."""
+    return bool(attempt.get("scheduled_outcome_incomplete")) or outcome_class(attempt.get("validity_status")) == "incomplete"
 
 
 def _measurement(attempt):
@@ -125,6 +131,12 @@ def _reference_log(reference):
     return None if value is None else log2_int(value[0]) - log2_int(value[1])
 
 
+def scorer_identity(record) -> str:
+    """The metric code that scored a record; records scored before it was stamped share one legacy identity."""
+    metrics = record.get("metrics", record) if isinstance(record, dict) else None
+    return str(metrics.get("scorer_hash") or "legacy") if isinstance(metrics, dict) else "legacy"
+
+
 def _composition(ids, task_map):
     return {"task_count": len(ids),
             "family_count": len({task_map[task_id]["family_id"] for task_id in ids}),
@@ -176,8 +188,16 @@ def _peak_memory_mib(resources):
     return None, False
 
 
+def _usage_mapping(value):
+    """Absent usage is missing; a recorded usage value that is not an object is invalid."""
+    if value is None:
+        return {}, False
+    return (value, False) if isinstance(value, dict) else ({}, True)
+
+
 def _resource_summary(records):
     names = {"validation_elapsed_seconds": "seconds", "extraction_elapsed_seconds": "seconds",
+             "validation_heartbeats": "maxHeartbeats",
              "generation_elapsed_seconds": "seconds", "validation_peak_memory_mib": "MiB",
              "extraction_peak_memory_mib": "MiB", "input_tokens": "tokens", "output_tokens": "tokens",
              "reasoning_tokens": "tokens"}
@@ -187,15 +207,18 @@ def _resource_summary(records):
         validation = (record.get("validation") or {}).get("resources") or {}
         extraction = (record.get("extraction") or {}).get("resources") or {}
         generation = record.get("generation") or {}
-        usage = generation.get("usage") or {}
+        usage, invalid_usage = _usage_mapping(generation.get("usage"))
         generation_resources = generation.get("resources") or {}
         latency = _first_recorded(generation, ("generation_elapsed_seconds", "elapsed_seconds", "latency_seconds"))
         if latency is None:
             latency = generation_resources.get("elapsed_seconds")
-        output_details = usage.get("output_tokens_details") or usage.get("completion_tokens_details") or {}
+        # As before, an absent or empty details object defers to the next; a non-object is invalid.
+        output_details, invalid_details = _usage_mapping(next((usage[key] for key in (
+            "output_tokens_details", "completion_tokens_details") if usage.get(key) not in (None, {})), None))
         values = {
             "validation_elapsed_seconds": _resource_number(validation.get("elapsed_seconds")),
             "extraction_elapsed_seconds": _resource_number(extraction.get("elapsed_seconds")),
+            "validation_heartbeats": _resource_number(validation.get("heartbeats_used")),
             "generation_elapsed_seconds": _resource_number(latency),
             "validation_peak_memory_mib": _peak_memory_mib(validation),
             "extraction_peak_memory_mib": _peak_memory_mib(extraction),
@@ -203,6 +226,10 @@ def _resource_summary(records):
             "output_tokens": _resource_number(_first_recorded(usage, ("output_tokens", "completion_tokens")), integral=True),
             "reasoning_tokens": _resource_number(usage.get("reasoning_tokens")
                 if usage.get("reasoning_tokens") is not None else output_details.get("reasoning_tokens"), integral=True)}
+        if invalid_usage:
+            values.update(input_tokens=(None, True), output_tokens=(None, True), reasoning_tokens=(None, True))
+        elif invalid_details and usage.get("reasoning_tokens") is None:
+            values["reasoning_tokens"] = (None, True)
         for name, (value, invalid) in values.items():
             if value is not None:
                 observed[name].append(value)
@@ -218,6 +245,11 @@ def _resource_summary(records):
                          "reason": "no_recorded_measurements" if not values else None}
         if name == "generation_elapsed_seconds":
             summary[name]["description"] = "Recorded generation workflow wall time, including retries/backoff for the built-in provider; not model-only compute."
+        elif name == "validation_heartbeats":
+            summary[name]["description"] = ("Lean heartbeats (maxHeartbeats units) of candidate elaboration, including the "
+                                             "elaborator's own kernel checks, plus kernel replay in the validation run; not "
+                                             "bounded by or comparable with validation.max_heartbeats. Engines that report "
+                                             "them do so for successful checks only.")
     return {"population": "all_scheduled_attempts_including_failures", "scheduled_attempts": len(records),
             "measurements": summary,
             "notes": ["Missing or unrecorded values are not zero; extraction may not have run after a validation failure.",
@@ -241,6 +273,96 @@ def _interval(point, replicates, confidence, requested, task_count, family_count
             "uncertainty_warning": "fewer_than_two_supported_families" if family_count < 2 else None}
 
 
+def _protocol_provenance(provenance, records, pins):
+    """Seed frozen protocol pins; recorded pins and checker identities must agree."""
+    for field in ("lean_toolchain", "mathlib_commit"):
+        if pins.get(field) is not None:
+            if provenance.get(field) not in (None, str(pins[field])):
+                raise ValueError("recorded " + field + " differs from the frozen protocol environment")
+            provenance[field] = str(pins[field])
+    # Failures and unmeasurable verdicts carry no token-policy hash, so the engine is checked directly.
+    for field in ("engine_hash", "evaluator_source_hash"):
+        values = {str(record[field]) for record in records
+                  if isinstance(record, dict) and record.get(field) is not None}
+        if len(values) > 1:
+            raise ValueError("cannot combine different " + field + " values in one analysis")
+        provenance[field] = next(iter(values)) if values else None
+
+
+EASY_CONTROL_STRATA = ("easy", "provisional_easy")
+STRATUM_STATISTICS = ("success_rate_difference", "mean_log2_T0_difference")
+
+
+def _easy_control_strata(settings):
+    labels = settings.get("easy_control_strata", EASY_CONTROL_STRATA)
+    labels = [labels] if isinstance(labels, str) else labels
+    if not isinstance(labels, (list, tuple)) or not all(isinstance(label, str) for label in labels):
+        raise ValueError("easy_control_strata must list frozen stratum labels")
+    return sorted(set(labels))
+
+
+def _stratum_groups(task_ids, task_map, settings):
+    """Nonempty task groups by frozen stratum label and by easy-control class."""
+    easy = _easy_control_strata(settings)
+    stratum = {task_id: str(task_map[task_id].get("stratum") or "unknown") for task_id in task_ids}
+    groups = {"stratum_class:easy_control": [t for t in task_ids if stratum[t] in easy],
+              "stratum_class:non_control": [t for t in task_ids if stratum[t] not in easy]}
+    for value in sorted(set(stratum.values())):
+        groups["stratum:" + value] = [t for t in task_ids if stratum[t] == value]
+    return {group: ids for group, ids in groups.items() if ids}
+
+
+def _family_bootstrap(vectors, clusters, families, replicates, seed):
+    """Replay the pooled family draws from the same seed for additional statistics."""
+    rng = random.Random(seed)
+    boot_values = {key: [] for key in vectors}
+    support_minimum = {key: None for key in vectors}
+    for _ in range(replicates):
+        family_weights = Counter()
+        for cluster_ids in clusters.values():
+            family_weights.update(rng.choices(cluster_ids, k=len(cluster_ids)))
+        task_weights = {task_id: multiplicity for family, multiplicity in family_weights.items()
+                        for task_id in families[family]}
+        for key, values in vectors.items():
+            denominator = sum(task_weights.get(task_id, 0) for task_id in values)
+            if denominator:
+                boot_values[key].append(sum(value * task_weights.get(task_id, 0)
+                                            for task_id, value in values.items()) / denominator)
+            minimum = support_minimum[key]
+            support_minimum[key] = denominator if minimum is None else min(minimum, denominator)
+    return boot_values, support_minimum
+
+
+def _stratum_breakdown(vectors, task_ids, task_map, families, clusters, bootstrap, settings):
+    """Primary paired contrasts within each frozen stratum and the easy-control class.
+
+    Exploratory subgroups restrict the pooled per-task vectors and resample the same
+    theorem families as the pooled bootstrap; pooled estimates are not changed.
+    """
+    groups = {"stratum_class:easy_control": [], "stratum_class:non_control": [],
+              **_stratum_groups(task_ids, task_map, settings)}
+    subgroup = {(group, name, label): {task_id: values[task_id] for task_id in ids if task_id in values}
+                for group, ids in groups.items()
+                for (name, label), values in vectors.items() if label in STRATUM_STATISTICS}
+    boot_values, support_minimum = _family_bootstrap(subgroup, clusters, families,
+                                                     bootstrap["replicates"], bootstrap["seed"])
+    breakdown = {"field": "stratum", "easy_control_strata": _easy_control_strata(settings),
+                 "status": "exploratory_subgroups_not_separately_powered",
+                 "groups": {group: {"composition": _composition(ids, task_map), "task_ids": ids,
+                                    "distribution_group": group if ids else None, "contrasts": {}}
+                            for group, ids in groups.items()}}
+    for (group, name, label), values in subgroup.items():
+        result = _interval(_average(list(values.values())), boot_values[group, name, label],
+                           bootstrap["confidence_level"], bootstrap["replicates"], len(values),
+                           len({task_map[task_id]["family_id"] for task_id in values}))
+        result["minimum_bootstrap_task_multiplicity"] = support_minimum[group, name, label]
+        if "log2" in label:
+            result["geometric_ratio"] = _exp2(result["estimate"])
+            result["geometric_ratio_interval"] = [_exp2(value) for value in result["confidence_interval"]]
+        breakdown["groups"][group]["contrasts"].setdefault(name, {})[label] = result
+    return breakdown
+
+
 def analyze(tasks: list[dict], attempts: list[dict], references: dict,
             config: dict | None = None) -> dict:
     """Analyze a frozen schedule, counting missing slots in its denominator.
@@ -250,6 +372,11 @@ def analyze(tasks: list[dict], attempts: list[dict], references: dict,
     (10000), bootstrap_seed (20261011), confidence_level (.95), split (optional),
     model_snapshots (optional). Every model is analyzed independently. Duplicate
     schedule identities and unknown task/condition/sample identities are errors.
+    easy_control_strata (easy, provisional_easy) names the easy-control values of
+    the optional task ``stratum`` label. The frozen ``config["environment"]``
+    lean_toolchain and mathlib_commit pins seed the provenance; pooled records
+    that disagree with them, or mix engine_hash or evaluator_source_hash values,
+    are errors.
     """
     config = dict(config or {})
     settings = {**config, **config.get("analysis", {})}
@@ -354,6 +481,15 @@ def analyze(tasks: list[dict], attempts: list[dict], references: dict,
     boundary_config = config.get("environment", {}).get("boundary_policy",
         config.get("metric_policy", config.get("metrics", config.get("extraction", {}))))
     report["provenance"]["configured_boundary_policy"] = boundary_config
+    # Attainment compares attempt and reference metrics, so both must come from one scorer.
+    scorers = sorted({scorer_identity(a) for a in lookup.values() if _measurement(a)[0] is not None}
+                     | {scorer_identity(r) for r in references.values() if _reference_ratio(r) is not None})
+    if len(scorers) > 1:
+        raise ValueError("cannot combine metrics from different scorers (" + ", ".join(scorers) + ") in one analysis; "
+                         "rescore the evaluation version with the current metric code")
+    report["provenance"]["scorer_hash"] = scorers[0] if scorers else None
+    _protocol_provenance(report["provenance"], list(lookup.values()) + list(references.values()),
+                         config.get("environment") or {})
 
     for model in models:
         grouped, per_task, measured_rows, signature_values = {}, {}, [], defaultdict(set)
@@ -379,9 +515,7 @@ def analyze(tasks: list[dict], attempts: list[dict], references: dict,
                                               "sample_index": sample_index})
                         attempt = {"validity_status": "missing_record", "sample_index": sample_index}
                     records.append(attempt)
-                    if attempt.get("scheduled_outcome_incomplete") or attempt.get("validity_status") in (
-                            "not_generated", "not_evaluated", "transport_error", "missing_record",
-                            "model_version_mismatch", "provider_failure"):
+                    if _unresolved(attempt):
                         incomplete_slots.append({"task_id": task_id, "condition": condition,
                                                  "sample_index": sample_index,
                                                  "status": attempt.get("validity_status")})
@@ -420,11 +554,13 @@ def analyze(tasks: list[dict], attempts: list[dict], references: dict,
             scheduled = len(task_ids) * sample_count
             valid_count = sum(item["valid_count"] for item in summaries)
             measurable_count = sum(item["measurable_count"] for item in summaries)
-            failures, missing_reasons = Counter(), Counter()
+            failures, unresolved, missing_reasons = Counter(), Counter(), Counter()
             for task_id in task_ids:
-                failures.update(record.get("validity_status", "missing_status")
-                                for record in grouped[task_id, condition]
-                                if record.get("validity_status") != "success")
+                for record in grouped[task_id, condition]:
+                    if record.get("validity_status") != "success":
+                        failures[record.get("validity_status", "missing_status")] += 1
+                        if _unresolved(record):
+                            unresolved[record.get("validity_status", "missing_status")] += 1
                 missing_reasons.update(per_task[task_id][condition]["missing_metric_reasons"])
             conditions[condition] = {
                 "scheduled_attempts": scheduled, "valid_attempts": valid_count,
@@ -439,6 +575,8 @@ def analyze(tasks: list[dict], attempts: list[dict], references: dict,
                 "metric_coverage_among_valid": measurable_count / valid_count if valid_count else None,
                 "metric_coverage_among_scheduled": measurable_count / scheduled,
                 "missing_metric_reasons": dict(missing_reasons), "failure_statuses": dict(failures),
+                "failure_breakdown": {"model_failures": dict(failures - unresolved),
+                                      "unresolved_outcomes": dict(unresolved)},
                 "attainment": {str(t): {"rate": None if missing_refs else
                     mean(item["attainment"][str(t)] for item in summaries),
                     "denominator_scheduled_attempts": scheduled,
@@ -540,6 +678,7 @@ def analyze(tasks: list[dict], attempts: list[dict], references: dict,
             for value in sorted({task_map[t].get(category, "unknown") for t in task_ids}):
                 distribution_groups[f"{category}:{value}"] = [t for t in task_ids
                     if task_map[t].get(category, "unknown") == value]
+        distribution_groups.update(_stratum_groups(task_ids, task_map, settings))
         distributions = {}
         for group, ids in distribution_groups.items():
             selected = set(ids)
@@ -584,6 +723,8 @@ def analyze(tasks: list[dict], attempts: list[dict], references: dict,
                                        all(item["metric_coverage_among_valid"] == 1 or item["valid_attempts"] == 0
                                            for item in conditions.values()),
                                    "distributions": distributions, "audit_sample": audit}
+        report["models"][model]["stratum_breakdown"] = _stratum_breakdown(
+            vectors, task_ids, task_map, families, strata, report["bootstrap"], settings)
     return report
 
 
@@ -673,7 +814,9 @@ def _paired_effects_svg(model_report):
     for index, (name, contrast) in enumerate(contrasts):
         yy = 116 + index * 133
         effect = contrast["mean_log2_T0_difference"]
-        svg.append(f"<text x='70' y='{yy-45}'>{html.escape(name)} · {effect['task_count']} paired tasks / {effect['family_count']} families</text>")
+        estimable = effect["family_count"] >= 2
+        svg.append(f"<text x='70' y='{yy-45}'>{html.escape(name)} · {effect['task_count']} paired tasks / {effect['family_count']} families"
+                   + ("" if estimable else " · interval not estimable (&lt;2 families)") + "</text>")
         for row in model_report["paired_tasks"]:
             if row["contrast"] != name:
                 continue
@@ -682,7 +825,7 @@ def _paired_effects_svg(model_report):
             svg.append(f"<circle cx='{x(value):.2f}' cy='{yy+jitter}' r='3.5' fill='#6388a4' opacity='.45'><title>"
                        f"{html.escape(row['task_id'])}: {value:.5g} log2 T0 change</title></circle>")
         lo, hi = effect["confidence_interval"]
-        if lo is not None and hi is not None:
+        if estimable and lo is not None and hi is not None:
             svg.append(f"<path d='M{x(lo):.2f},{yy}H{x(hi):.2f}' stroke='#b34c20' stroke-width='4'/>")
         if effect["estimate"] is not None:
             xx = x(effect["estimate"])
@@ -725,6 +868,136 @@ def _success_compression_svg(model_report):
     return "".join(svg)
 
 
+def _status_counts(counts):
+    return html.escape(", ".join(f"{status}: {count}" for status, count in (counts or {}).items())) or "none"
+
+
+def _pending_logs(run_provenance):
+    """Name the logged checker incidents and provider outages that leave slots pending."""
+    text = ""
+    incidents = run_provenance.get("checker_incidents") or {}
+    if incidents.get("unresolved_attempts"):
+        text += (f" Attempts with unresolved checker incidents: {incidents['unresolved_attempts']} (" +
+                 _status_counts(incidents.get("unresolved_statuses")) + "; phases: " +
+                 _status_counts(incidents.get("unresolved_phases")) + "), logged in <code>" +
+                 html.escape(str(incidents.get("log"))) + "</code>; rerunning evaluate retries them.")
+    inherited = run_provenance.get("inherited_checker_incidents") or {}
+    if inherited.get("unresolved_attempts"):
+        text += (f" Attempts still pending after checker incidents in source version <code>" +
+                 html.escape(str(inherited.get("source_version"))) + f"</code>: {inherited['unresolved_attempts']} (" +
+                 _status_counts(inherited.get("unresolved_statuses")) + "; phases: " +
+                 _status_counts(inherited.get("unresolved_phases")) + "), logged in <code>" +
+                 html.escape(str(inherited.get("log"))) + "</code>; rescore copies only records, so rerun evaluate on "
+                 "that version and rescore it into a new version.")
+    outages = run_provenance.get("provider_outages") or {}
+    if outages.get("unresolved_attempts"):
+        text += (f" Attempts whose provider calls have no recorded model outcome: {outages['unresolved_attempts']}, "
+                 "logged in <code>" + html.escape(str(outages.get("log"))) + "</code>.")
+        if outages.get("prompt_rejected_attempts"):
+            text += (f" Of these, {outages['prompt_rejected_attempts']} have a prompt the provider rejected as "
+                     "<code>invalid_prompt</code>; <code>generate</code> sends them again only with "
+                     "<code>--retry-rejected</code>.")
+    unreadable = sum(log.get("unreadable_lines") or 0 for log in (incidents, inherited, outages))
+    if unreadable:
+        text += f" Unreadable log lines, whose events are not counted here: {unreadable}."
+    return text
+
+
+def _interval_text(effect):
+    """Estimate and interval; unsupported family resampling is never shown as precision."""
+    number = lambda value: "undefined" if value is None else f"{value:.4g}"
+    if effect["family_count"] < 2:
+        interval = "not estimable (<2 families)"
+    else:
+        interval = ", ".join(map(number, effect["confidence_interval"]))
+    return html.escape(number(effect["estimate"]) + " [" + interval + "]")
+
+
+def _replicates_text(effect):
+    return f"{effect['bootstrap_defined']} / {effect['bootstrap_defined'] + effect['bootstrap_undefined']}"
+
+
+def _bootstrap_note(bootstrap):
+    note = (f"Intervals are {bootstrap['confidence_level'] * 100:g}% percentile intervals over "
+            f"{bootstrap['replicates']} requested theorem-family bootstrap replicates. Replicates that resample "
+            "no supporting task are undefined and excluded; effects supported by fewer than two families are "
+            "not estimable.")
+    if bootstrap.get("singleton_strata"):
+        note += (" Single-family bootstrap strata, which resampling cannot vary: " +
+                 ", ".join(sorted(bootstrap["singleton_strata"])) + ".")
+    return "<p>" + html.escape(note) + "</p>"
+
+
+def _stratum_html(model_report, level):
+    """Easy controls are reported separately from the remaining tasks."""
+    breakdown = model_report.get("stratum_breakdown")
+    if not breakdown:
+        return ""
+    classes = ("stratum_class:easy_control", "stratum_class:non_control")
+    body = ["<h3>Easy controls and other strata (exploratory)</h3><p>Classes use the frozen task stratum labels; "
+            "easy-control labels: <code>" + html.escape(", ".join(breakdown["easy_control_strata"])) + "</code>. "
+            "The pooled results above include every task; these subgroups are not separately powered. "
+            "Per-label tables: <a href='correctness_by_stratum.csv'>correctness by stratum</a> · "
+            "<a href='contrasts_by_stratum.csv'>contrasts by stratum</a>.</p>",
+            "<table><tr><th>Class</th><th>Tasks / families</th><th>Condition</th><th>Valid / scheduled</th>"
+            "<th>Success</th><th>First attempt</th><th>Any of scheduled samples</th></tr>"]
+    for group in classes:
+        label, composition = html.escape(group.split(":", 1)[1]), breakdown["groups"][group]["composition"]
+        size = f"{composition['task_count']} / {composition['family_count']}"
+        rates = model_report["distributions"].get(group, {}).get("correctness_by_condition", {})
+        if not rates:
+            body.append(f"<tr><td>{label}</td><td>{size}</td><td colspan='5'>No analyzed task belongs to this class.</td></tr>")
+        for condition, rate in rates.items():
+            body.append(f"<tr><td>{label}</td><td>{size}</td><td>{html.escape(condition)}</td>"
+                        f"<td>{rate['valid_attempts']} / {rate['scheduled_attempts']}</td><td>{rate['success_rate']:.1%}</td>"
+                        f"<td>{rate['first_attempt_success_rate']:.1%}</td><td>{rate['any_sample_success_rate']:.1%}</td></tr>")
+    body.append("</table><table><tr><th>Class</th><th>Contrast</th><th>Success-rate difference [" + level + " interval]</th>"
+                "<th>Paired tasks / families</th><th>Mean log2 T0 change [" + level + " interval]</th>"
+                "<th>T0 bootstrap defined / requested</th></tr>")
+    for group in classes:
+        for name, effects in breakdown["groups"][group]["contrasts"].items():
+            effect = effects["mean_log2_T0_difference"]
+            body.append("<tr><td>" + html.escape(group.split(":", 1)[1]) + "</td><td>" + html.escape(name) + "</td><td>" +
+                        _interval_text(effects["success_rate_difference"]) + "</td><td>" +
+                        f"{effect['task_count']} / {effect['family_count']}</td><td>" + _interval_text(effect) +
+                        "</td><td>" + _replicates_text(effect) + "</td></tr>")
+    body.append("</table>")
+    return "".join(body)
+
+
+def _write_stratum_csvs(report, directory):
+    """Per-stratum correctness and paired contrasts; the pooled tables are unchanged."""
+    tables = {"correctness_by_stratum": [], "contrasts_by_stratum": []}
+    for model, model_report in report["models"].items():
+        for group, distribution in model_report.get("distributions", {}).items():
+            if group.startswith(("stratum:", "stratum_class:")):
+                tables["correctness_by_stratum"].extend(
+                    {"model": model, "group": group, "condition": condition,
+                     "task_count": distribution["composition"]["task_count"],
+                     "family_count": distribution["composition"]["family_count"], **rate}
+                    for condition, rate in distribution["correctness_by_condition"].items())
+        for group, value in model_report.get("stratum_breakdown", {}).get("groups", {}).items():
+            for name, effects in value["contrasts"].items():
+                for statistic, effect in effects.items():
+                    low, high = effect["confidence_interval"]
+                    tables["contrasts_by_stratum"].append({
+                        "model": model, "group": group, "contrast": name, "statistic": statistic,
+                        "estimate": effect["estimate"], "interval_low": low, "interval_high": high,
+                        "confidence_level": effect["confidence_level"], "task_count": effect["task_count"],
+                        "family_count": effect["family_count"], "bootstrap_defined": effect["bootstrap_defined"],
+                        "bootstrap_undefined": effect["bootstrap_undefined"],
+                        "uncertainty_warning": effect["uncertainty_warning"],
+                        "geometric_ratio": effect.get("geometric_ratio")})
+    paths = {key: directory / (key + ".csv") for key in tables}
+    for key, rows in tables.items():
+        with paths[key].open("w", newline="", encoding="utf-8") as handle:
+            if rows:
+                writer = csv.DictWriter(handle, list(rows[0]))
+                writer.writeheader()
+                writer.writerows(rows)
+    return paths
+
+
 def write_report(report: dict, destination: str | Path) -> dict[str, str]:
     """Write reanalysis JSON and human-readable tables without external deps."""
     directory = Path(destination)
@@ -732,26 +1005,32 @@ def write_report(report: dict, destination: str | Path) -> dict[str, str]:
     paths = {"json": directory / "analysis.json", "correctness": directory / "correctness.csv",
              "paired": directory / "paired_tasks.csv", "resources": directory / "resource_usage.csv",
              "html": directory / "report.html"}
-    paths["json"].write_text(json.dumps(report, indent=2, allow_nan=False) + "\n")
+    paths["json"].write_text(json.dumps(report, indent=2, allow_nan=False) + "\n", encoding="utf-8")
     correctness_rows, paired_rows, resource_rows = [], [], []
     for model, model_report in report["models"].items():
         for condition, summary in model_report["conditions"].items():
+            breakdown = summary.get("failure_breakdown", {})
             correctness_rows.append({"model": model, "condition": condition,
                 **{key: summary.get(key) for key in ("scheduled_attempts", "valid_attempts",
                     "success_rate", "first_attempt_success_rate", "four_sample_success_rate",
-                    "any_sample_success_rate", "metric_coverage_among_valid")}})
+                    "any_sample_success_rate", "metric_coverage_among_valid")},
+                "model_failure_attempts": sum(breakdown.get("model_failures", {}).values()),
+                "unresolved_attempts": sum(breakdown.get("unresolved_outcomes", {}).values())})
             for measurement, resource in summary.get("resources", {}).get("measurements", {}).items():
                 resource_rows.append({"model": model, "condition": condition, "measurement": measurement,
                                       "population": "all_scheduled_attempts_including_failures",
                                       "scheduled_attempts": summary["scheduled_attempts"], **resource,
                                       "description": resource.get("description", "")})
         paired_rows.extend({"model": model, **row} for row in model_report["paired_tasks"])
+    paths.update(_write_stratum_csvs(report, directory))
     for key, rows in (("correctness", correctness_rows), ("paired", paired_rows), ("resources", resource_rows)):
-        with paths[key].open("w", newline="") as handle:
+        with paths[key].open("w", newline="", encoding="utf-8") as handle:
             if rows:
                 writer = csv.DictWriter(handle, list(rows[0]))
                 writer.writeheader()
                 writer.writerows(rows)
+    from .baseline import baseline_html, write_baseline_csv
+    paths.update(write_baseline_csv(report, directory))
     body = ["<!doctype html><html><meta charset='utf-8'><title>Lean compression evaluation</title>",
             "<style>body{max-width:1100px;margin:3rem auto;font:16px system-ui;padding:0 1rem;color:#17212b}"
             "table{border-collapse:collapse;width:100%;margin:1rem 0}th,td{padding:.6rem;text-align:left;border-bottom:1px solid #ccd5df}"
@@ -777,35 +1056,44 @@ def write_report(report: dict, destination: str | Path) -> dict[str, str]:
     for model, model_report in report["models"].items():
         body.append("<h2>" + html.escape(model) + "</h2>")
         if model_report.get("incomplete_scheduled_outcomes"):
-            statuses = Counter(row["status"] for row in model_report["incomplete_scheduled_outcomes"])
+            statuses = Counter(str(row["status"]) for row in model_report["incomplete_scheduled_outcomes"])
             body.append("<p class='notice'><strong>Run incomplete:</strong> " +
                 str(len(model_report["incomplete_scheduled_outcomes"])) + " scheduled outcomes remain unresolved (" +
                 html.escape(", ".join(f"{status}: {count}" for status, count in sorted(statuses.items()))) +
                 "). The all-slot proportions below are provisional accounting, not completed reliability estimates. "
-                "Provider failures or a returned model mismatch are not classified as incorrect mathematical proofs.</p>")
+                "Checker or infrastructure errors, provider failures, unrecognized statuses and a returned model mismatch "
+                "are not classified as incorrect mathematical proofs." + _pending_logs(run_provenance) + "</p>")
         if not model_report["compression_conclusions_ready"]:
             body.append("<p class='notice'>Coverage or signature/reference checks remain unresolved; see analysis.json.</p>")
         body.append("<h3>Correctness: all scheduled attempts</h3><table><tr><th>Condition</th><th>Valid / scheduled</th>"
-                    "<th>Success</th><th>First attempt</th><th>Any of scheduled samples</th><th>Metric coverage among valid</th></tr>")
+                    "<th>Success</th><th>First attempt</th><th>Any of scheduled samples</th><th>Metric coverage among valid</th>"
+                    "<th>Model failures</th><th>Unresolved outcomes</th></tr>")
         for condition, summary in model_report["conditions"].items():
             coverage = summary["metric_coverage_among_valid"]
+            breakdown = summary.get("failure_breakdown", {})
             body.append("<tr><td>" + html.escape(condition) + "</td><td>" +
                 f"{summary['valid_attempts']} / {summary['scheduled_attempts']}</td><td>{summary['success_rate']:.1%}</td>"
                 f"<td>{summary['first_attempt_success_rate']:.1%}</td><td>" +
                 f"{summary.get('four_sample_success_rate', summary.get('any_sample_success_rate')):.1%}</td><td>" +
-                ("undefined" if coverage is None else f"{coverage:.1%}") + "</td></tr>")
+                ("undefined" if coverage is None else f"{coverage:.1%}") + "</td><td>" +
+                _status_counts(breakdown.get("model_failures")) + "</td><td>" +
+                _status_counts(breakdown.get("unresolved_outcomes")) + "</td></tr>")
+        level = f"{report['bootstrap']['confidence_level'] * 100:g}%"
         body.append("</table><h3>Compression: paired measurable tasks</h3><table><tr><th>Contrast</th><th>Tasks</th>"
-                    "<th>Mean log2 T0 change [interval]</th><th>Geometric ratio</th><th>Mean log2 U change</th><th>Mean log2 W change</th></tr>")
+                    "<th>Families</th><th>Mean log2 T0 change [" + level + " interval]</th><th>Bootstrap defined / requested</th>"
+                    "<th>Geometric ratio</th><th>Mean log2 U change</th><th>Mean log2 W change</th></tr>")
         for name, contrast in model_report["contrasts"].items():
             value = contrast["mean_log2_T0_difference"]
             def format_number(number):
                 return "undefined" if number is None else f"{number:.4g}"
             body.append("<tr><td>" + html.escape(name) + "</td><td>" + str(value["task_count"]) + "</td><td>" +
-                format_number(value["estimate"]) + " [" + ", ".join(map(format_number, value["confidence_interval"])) + "]</td><td>" +
+                str(value["family_count"]) + "</td><td>" + _interval_text(value) + "</td><td>" + _replicates_text(value) + "</td><td>" +
                 format_number(value["geometric_ratio"]) + "</td><td>" +
                 format_number(contrast["mean_log2_U_difference"]["estimate"]) + "</td><td>" +
                 format_number(contrast["mean_log2_W_difference"]["estimate"]) + "</td></tr>")
         body.append("</table>")
+        body.append(_bootstrap_note(report["bootstrap"]))
+        body.append(_stratum_html(model_report, level))
         body.append("<h3>Resource use: all scheduled attempts</h3><p>Failures are included. Missing observations are unavailable, "
                     "never zero; peak memory uses recorded peaks, not requested limits. Token columns are separate provider counts "
                     "and must not be added together. No API cost is inferred.</p><table><tr><th>Condition</th><th>Measurement</th>"
@@ -840,8 +1128,9 @@ def write_report(report: dict, destination: str | Path) -> dict[str, str]:
                     "the vertical axis averages task mean log T0 only where an arm has measurable valid samples. "
                     "Arm-specific populations can differ. This descriptive plot is not a combined quality score.</p>")
         body.append(_success_compression_svg(model_report))
+    body.append(baseline_html(report))
     body.append("<p><a href='analysis.json'>Full analysis and missing-population accounting</a> · "
                 "<a href='correctness.csv'>Correctness table</a> · <a href='paired_tasks.csv'>Paired task table</a> · "
                 "<a href='resource_usage.csv'>Resource usage</a></p></html>")
-    paths["html"].write_text("\n".join(body))
+    paths["html"].write_text("\n".join(body), encoding="utf-8")
     return {key: str(value) for key, value in paths.items()}

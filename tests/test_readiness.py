@@ -130,7 +130,9 @@ class ReadinessTests(unittest.TestCase):
         t = task("ready")
         result = report([t], [reference(t)], source_length_cutpoints=[2, 20],
                         dependency_depth_cutpoints=[3, 30], strata_frozen=True, difficulty_review_complete=True)
-        self.assertEqual(result["status"], "ready_for_dataset_freeze")
+        # This one-task fixture disables quotas, so that gate alone stays pending.
+        self.assertEqual(result["status"], "not_ready_for_dataset_freeze")
+        self.assertEqual([gate for gate, passed in result["gates"].items() if not passed], ["quotas_enforced"])
         with tempfile.TemporaryDirectory() as directory:
             paths = write_readiness_report(result, directory)
             self.assertEqual(json.loads(Path(paths["json"]).read_text()), result)

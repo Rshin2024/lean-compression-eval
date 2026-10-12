@@ -19,7 +19,7 @@ def node(name, body=None, signature=None, owner="Mathlib.Test", primitive=False)
 
 def record(nodes, task_id="task"):
     return {"task_id": task_id, "validity_status": "success", "environment_hash": "environment",
-            "boundary_policy_hash": digest(POLICY), "source_hash": "source",
+            "boundary_policy_hash": digest(POLICY), "engine_hash": "engine", "source_hash": "source",
             "extraction": {"metric_status": "available", "nodes": nodes}}
 
 
@@ -39,6 +39,7 @@ class GraphCacheTests(unittest.TestCase):
         self.assertEqual(index["primitive_manifest"], ["p", "q"])
         self.assertNotIn("W_S", index["base_cache"]["B"]["metrics"])
         candidate = {"environment_hash": "environment", "boundary_policy_hash": digest(POLICY),
+                     "engine_hash": "engine", "imported_node_names": ["A", "B", "p", "q"],
                      "nodes": [nodes[-1]]}
         merged = merge_candidate(index, candidate)
         self.assertEqual(score_graph(merged, "target", 5, 8)["U_decimal"], "29")
@@ -102,6 +103,7 @@ class GraphCacheTests(unittest.TestCase):
         index = index_verified_closures([rec], "environment", policy)
         self.assertEqual(index["boundary_policy"], policy)
         merged = merge_candidate(index, {"environment_hash": "environment", "boundary_policy": policy,
+                                         "engine_hash": "engine", "imported_node_names": ["A", "B", "p", "q"],
                                          "nodes": [self.weighted_graph()[-1]]})
         self.assertEqual(score_graph(merged, "target", 5, 8)["U_decimal"], "29")
         with self.assertRaisesRegex(ValueError, "boundary_policy_hash"):
@@ -111,7 +113,8 @@ class GraphCacheTests(unittest.TestCase):
         index = index_verified_closures([record(self.weighted_graph())], "environment", POLICY)
         bad = node("A", {"p": 999})
         with self.assertRaisesRegex(ValueError, "conflicts with trusted"):
-            merge_candidate(index, {"environment_hash": "environment", "boundary_policy": POLICY, "nodes": [bad]})
+            merge_candidate(index, {"environment_hash": "environment", "boundary_policy": POLICY, "engine_hash": "engine",
+                                    "imported_node_names": ["A"], "nodes": [bad]})
         index["base_cache"]["A"]["metrics"]["U_decimal"] = "999"
         with self.assertRaisesRegex(ValueError, "content hash mismatch"):
             merge_candidate(index, {"environment_hash": "environment", "boundary_policy": POLICY, "nodes": []})

@@ -45,6 +45,7 @@ def adapt_response(raw: str, policy: str = "identity_v1") -> str:
         match = re.fullmatch(r"\s*```(?:lean|lean4)?\s*\n(.*?)\n```\s*", raw, re.DOTALL)
         # An optional mechanical wrapper removal only; never choose a proof.
         if match and "```" not in match.group(1):
-            return match.group(1)
+            # \s* already absorbs an opening CRLF's CR; drop a closing CRLF's CR too (Lean rejects isolated CRs).
+            return match.group(1).removesuffix("\r")
         return raw
     raise ValueError(f"Unknown response adapter: {policy}")

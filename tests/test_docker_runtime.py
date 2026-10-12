@@ -6,15 +6,16 @@ trusted test wrapper probes the same container that runs the real evaluator.
 from __future__ import annotations
 
 import json
+import math
 import os
 from pathlib import Path
-import re
 import shutil
 import subprocess
 import tempfile
 import unittest
 
-from lean_compression.runner import execute_engine
+from lean_compression.integrity import is_content_digest
+from lean_compression.runner import docker_cli_env, execute_engine
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -55,6 +56,7 @@ PROBE = r'''import errno
 import json
 import os
 from pathlib import Path
+import resource
 import socket
 import sys
 
@@ -142,7 +144,7 @@ def collect():
         "network_interfaces": interfaces, "default_routes": default_routes,
         "external_route_lookup": route_lookup,
         "cpu": cpu, "memory": memory, "swap": swap, "pids": pids,
-        "process_status": status,
+        "process_status": status, "cpu_time_limit": list(resource.getrlimit(resource.RLIMIT_CPU)),
         "package_audit": {"root": str(package), "exists": package.is_dir(),
                           "lean_source_count": len(lean_sources), "git_entry_count": len(git_entries),
                           "lean_source_examples": lean_sources[:20], "git_entry_examples": git_entries[:20],
@@ -179,6 +181,7 @@ class DockerRuntimeAcceptanceTests(unittest.TestCase):
 
     MEMORY_MIB = 1024
     CPU_QUOTA = 0.5
+    WALL_SECONDS = 120
 
     @classmethod
     def setUpClass(cls):
@@ -191,8 +194,9 @@ class DockerRuntimeAcceptanceTests(unittest.TestCase):
         docker = shutil.which("docker")
         if not docker:
             raise unittest.SkipTest("Docker CLI is unavailable; acceptance test never installs it")
+        # Query the daemon the runner will use, through the same client environment.
         try:
-            daemon = subprocess.run([docker, "info", "--format", "{{.ServerVersion}}"],
+            daemon = subprocess.run([docker, "info", "--format", "{{.ServerVersion}}"], env=docker_cli_env(),
                                     capture_output=True, text=True, timeout=10)
         except subprocess.TimeoutExpired:
             raise unittest.SkipTest("Docker daemon availability check timed out")
@@ -202,10 +206,10 @@ class DockerRuntimeAcceptanceTests(unittest.TestCase):
         image = cls.environment.get("docker_image", "")
         if cls.environment.get("runtime_backend") != "docker":
             raise ValueError("the supplied manifest must describe runtime_backend=docker")
-        if not re.search(r"(?:^|@)sha256:[0-9a-f]{64}$", image):
+        if not is_content_digest(image):
             raise ValueError("docker_image must be an immutable sha256 image ID or repository digest")
         try:
-            available = subprocess.run([docker, "image", "inspect", image],
+            available = subprocess.run([docker, "image", "inspect", image], env=docker_cli_env(),
                                        capture_output=True, text=True, timeout=10)
         except subprocess.TimeoutExpired:
             raise unittest.SkipTest("local Docker image availability check timed out")
@@ -216,17 +220,22 @@ class DockerRuntimeAcceptanceTests(unittest.TestCase):
             raise FileNotFoundError(engine)
         with tempfile.TemporaryDirectory(prefix="lean-runtime-acceptance-") as directory:
             fixture = Path(directory)
-            (fixture / "Evaluator.lean").write_text(WRAPPER)
+            # A non-default name checks that the runner executes the engine it was given.
+            (fixture / "AcceptanceWrapper.lean").write_text(WRAPPER)
             (fixture / "runtime_probe.py").write_text(PROBE)
             shutil.copyfile(engine, fixture / "ProductionEvaluator.lean")
+            # Mounted at /engine like a checkout: readable by capability-less container root.
+            fixture.chmod(0o755)
+            for path in fixture.iterdir():
+                path.chmod(0o644)
             request = {"imports": ["Init"], "target_name": "dockerAcceptanceTrue",
                        "binders": "", "proposition": "True", "proof": "True.intro",
                        "context": "", "forbidden_declarations": [],
                        "permitted_axioms": [], "max_heartbeats": 2_000_000}
             policy = {"isolation": "docker", "docker_image": image,
                       "memory_mib": cls.MEMORY_MIB, "cpu_quota": cls.CPU_QUOTA}
-            cls.result = execute_engine(request, cls.environment, fixture / "Evaluator.lean",
-                                        policy, mode="validate", wall_seconds=120)
+            cls.result = execute_engine(request, cls.environment, fixture / "AcceptanceWrapper.lean",
+                                        policy, mode="validate", wall_seconds=cls.WALL_SECONDS)
         if cls.result.get("validity_status") != "success":
             raise AssertionError("real Init proof failed in Docker: " + json.dumps(cls.result, ensure_ascii=False))
         cls.probe = cls.result.get("runtime_acceptance_probe")
@@ -265,6 +274,8 @@ class DockerRuntimeAcceptanceTests(unittest.TestCase):
         self.assertEqual(int(pids["value"]), 64)
         self.assertEqual(int(self.probe["process_status"]["CapEff"], 16), 0)
         self.assertEqual(self.probe["process_status"]["NoNewPrivs"], "1")
+        backstop = math.ceil(self.WALL_SECONDS * max(1, self.CPU_QUOTA)) + 1
+        self.assertEqual(self.probe["cpu_time_limit"], [backstop, backstop + 1])
 
     def test_image_excludes_package_source_and_git(self):
         audit = self.probe["package_audit"]

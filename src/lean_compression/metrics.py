@@ -9,7 +9,11 @@ from collections import deque
 import math
 from typing import Any, Mapping
 
+from .io import file_hash
+
 PROFILE = "paper_aligned_v1"
+# Identity of this scoring code. Metrics from different scorers are never pooled.
+SCORER_HASH = file_hash(__file__)
 
 
 def exact_int(value: Any, label: str = "count") -> int:
@@ -90,7 +94,7 @@ def score_graph(graph: Any, root: str, W_S: int | str, W_B: int | str) -> dict:
     nodes, malformed evidence, cycles and zero-reference nonprimitives make the
     expansion unavailable without changing independent proof validity.
     """
-    result = {"metric_profile": PROFILE, "metric_status": "unavailable",
+    result = {"metric_profile": PROFILE, "scorer_hash": SCORER_HASH, "metric_status": "unavailable",
               "W_S": None, "W_B": None, "U_S_decimal": None,
               "U_B_decimal": None, "U_decimal": None, "D": None,
               "T0": None, "I0": None, "log2_T0": None, "log2_I0": None,
@@ -150,7 +154,8 @@ def score_graph(graph: Any, root: str, W_S: int | str, W_B: int | str) -> dict:
         deps = {dep for dep, count in sig.items() if count}
         deps.update(dep for dep, count in (body or {}).items() if count)
         dependencies[name], histograms[name] = deps, (sig, body)
-        for dep in deps:
+        # Sorted, so the first defect reported does not depend on string hash randomization.
+        for dep in sorted(deps):
             parents.setdefault(dep, []).append(name)
             pending.append(dep)
 

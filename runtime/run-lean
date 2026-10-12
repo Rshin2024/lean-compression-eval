@@ -1,5 +1,7 @@
 #!/bin/sh
 set -eu
+# The host user may differ from this uid (rootful Docker); keep results it must read world-readable.
+umask 022
 LEAN_PATH=$(cat /opt/eval/lean-path)
 export LEAN_PATH
 LEAN_SYSROOT=$(dirname "$(dirname "$(cat /opt/eval/lean-binary)")")
@@ -9,10 +11,27 @@ export PATH
 set +e
 "$LEAN_SYSROOT/bin/lean" --run "$@"
 lean_exit=$?
+# The host user may not own what was created under /job. As container init, stop anything Lean left
+# running, so nothing changes /job after this point, then copy the evidence and open every directory
+# there (world-writable, not sticky) so the host can remove it.
+if [ "$$" = 1 ]; then
+    kill -KILL -1 2>/dev/null
+fi
+# Drop whatever the evaluated code left under these names, so an unreadable cgroup file leaves its values null.
+rm -f /job/peak_memory_bytes /job/memory_stat
+# cgroup v2, then v1: the high-water mark of all memory charged to the container, page cache included.
 for counter in /sys/fs/cgroup/memory.peak /sys/fs/cgroup/memory/memory.max_usage_in_bytes; do
     if [ -r "$counter" ]; then
         cat "$counter" > /job/peak_memory_bytes
         break
     fi
 done
+# Likewise memory.stat: what is still charged now that Lean has exited, and the major fault count.
+for counter in /sys/fs/cgroup/memory.stat /sys/fs/cgroup/memory/memory.stat; do
+    if [ -r "$counter" ]; then
+        cat "$counter" > /job/memory_stat
+        break
+    fi
+done
+chmod -R a+rwX,a-t /job 2>/dev/null
 exit "$lean_exit"
