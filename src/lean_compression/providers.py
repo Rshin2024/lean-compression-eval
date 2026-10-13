@@ -331,6 +331,17 @@ def _generate(run: Path, held: contextlib.ExitStack, limit: int | None, retry_re
     headers = {"Content-Type": "application/json", **(
         {"x-api-key": key, "anthropic-version": "2023-06-01"} if provider == "anthropic" else
         {"Authorization": f"Bearer {key}"})}
+    workspace = os.environ.get("ANTHROPIC_WORKSPACE_ID", "") if provider == "anthropic" else ""
+    if workspace:
+        if not (workspace.isascii() and workspace.isprintable()) or " " in workspace:
+            raise ValueError("ANTHROPIC_WORKSPACE_ID contains whitespace, control or non-ASCII characters; "
+                             "fix the runtime workspace setting (value not shown)")
+        headers["anthropic-workspace-id"] = workspace
+
+    def redacted(message: str) -> str:
+        message = message.replace(key, "[REDACTED_API_KEY]")
+        return message.replace(workspace, "[REDACTED_WORKSPACE_ID]") if workspace else message
+
     # Resolve provider mapping before acquiring a marker or logging any request.
     for slot in manifest["slots"]:
         response_payload(slot, settings)
@@ -403,7 +414,7 @@ def _generate(run: Path, held: contextlib.ExitStack, limit: int | None, retry_re
                 # The provider answered without a model outcome. Retain diagnostics, not authorization headers.
                 # A 400 never changes settings.
                 try:
-                    body = error.read(65536).decode(errors="replace").replace(key, "[REDACTED_API_KEY]")
+                    body = redacted(error.read(65536).decode(errors="replace"))
                 except (OSError, ValueError, http.client.HTTPException):
                     body = None
                 finally:
@@ -417,12 +428,12 @@ def _generate(run: Path, held: contextlib.ExitStack, limit: int | None, retry_re
                     break
             except urllib.error.URLError as error:
                 # urllib raises this only while connecting or writing the request, before the provider has it.
-                last_error = {"type": type(error).__name__, "message": str(error).replace(key, "[REDACTED_API_KEY]")}
+                last_error = {"type": type(error).__name__, "message": redacted(str(error))}
                 append_event(transport, {**event, "event": "request_not_sent", **last_error})
             except (OSError, http.client.HTTPException, ValueError) as error:
                 # A lost or unreadable response may have been billed. Do not silently create a second completion.
                 append_event(transport, {**event, "event": "outcome_unknown", "type": type(error).__name__,
-                             "message": str(error).replace(key, "[REDACTED_API_KEY]")})
+                             "message": redacted(str(error))})
                 raise RuntimeError("Provider outcome is unknown; the in-flight marker and transport evidence were retained "
                                    "for reconcile")
             if transport_index + 1 < maximum:

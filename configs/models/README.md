@@ -19,18 +19,18 @@ These are the documented versioned API identifiers; do not append guessed date s
 
 ## Credentials and a development smoke run
 
-Run from the repository root in the **same terminal where the two keys were exported**. The `doctor` command displays presence booleans, never values:
+Use the **same terminal where the two keys were exported**. From the repository root, the launcher handles Python setup and chooses the existing `colima-lce-eval` Docker context unless you explicitly set `DOCKER_HOST` or `DOCKER_CONTEXT`. The `doctor` command displays presence booleans, never values:
 
 ```sh
-export PYTHONPATH=src
-export DOCKER_CONTEXT=colima-lce-eval
-python3 -m lean_compression doctor
+./run-eval doctor
 ```
+
+From any other directory, replace `./run-eval` with `/absolute/path/to/lean-compression-eval/run-eval`; relative file arguments still resolve from the repository.
 
 For each model, use its matching config and a distinct run directory. For example, after checking the smoke references inside the pinned runtime as described in the main README:
 
 ```sh
-python3 -m lean_compression freeze --development \
+./run-eval freeze --development \
   --tasks data/public/smoke.jsonl \
   --environment configs/environment.docker.json \
   --config configs/models/gpt-6.1-sol.json \
@@ -42,7 +42,7 @@ python3 -m lean_compression freeze --development \
 Only `generate` makes paid model requests. The following sends at most one pending attempt, allowing account access and response handling to be checked first:
 
 ```sh
-python3 -m lean_compression generate --run runs/smoke-gpt-6.1-sol-high --limit 1
+./run-eval generate --run runs/smoke-gpt-6.1-sol-high --limit 1
 ```
 
 Repeat with the matching model, config, and run directory for each cohort member. Resume an existing frozen run with `generate`; do not freeze it again or edit its manifest. A full ten-goal smoke schedule is 120 generations per model, 960 across eight models. A development run does not qualify as the formal pilot required for the main experiment.

@@ -8,7 +8,7 @@ This is a **paper-aligned implementation**, not an exact reproduction of the aut
 
 The package includes the Lean checker/extractor, exact metric engine, immutable run scheduler, OpenAI Responses and Anthropic Messages adapters, offline response import, environment hashing, statistical reports, and blinded proof-audit exports. The candidate dataset contains 50 pilot and 200 main goals, including the requested 150 library/50 fresh main split across five domains.
 
-**The candidate collection is not a released, audited benchmark.** Task audit fields and the reference evidence distinguish compilation, independent verification, metric availability, explicit signatures, and unresolved family/answer-access review. The main experiment must remain unfrozen until those gates pass. No paid model generations have been made. Eight models are selected and configured with common high effort in [`configs/models`](configs/models/README.md); account access still requires a live check.
+**The candidate collection is not a released, audited benchmark.** Task audit fields and the reference evidence distinguish compilation, independent verification, metric availability, explicit signatures, and unresolved family/answer-access review. The main experiment must remain unfrozen until those gates pass. All 960 model responses for the eight-model development smoke evaluation have been collected with common high effort; Lean verification is in progress. Profiles are in [`configs/models`](configs/models/README.md). This development run does not satisfy the formal pilot or main-study gates.
 
 Local reference checks with `configs/development.json` run the existing Lean/Mathlib installation through a macOS development sandbox. That profile blocks network access and restricts user/private file reads, but permits system IPC and does not enforce a CPU quota or memory ceiling. Paths containing control characters are rejected, because the profile cannot quote them. **It is for trusted reference fixtures only.** The direct real-Lean fixtures and the audit compile check listed under [Start here](#start-here) run `lean` without this sandbox. The CLI requires a container for live model generations and generated-proof evaluation. Production freezing additionally requires a content-addressed Docker image, environment hashes collected in that image, enforced resource limits, and completed dataset audits. The container recipe is included; use it with a running Docker daemon.
 
@@ -16,15 +16,18 @@ See `BUILD_STATUS.json` for checked counts and remaining gates, and [the dataset
 
 ## Start here
 
-Python 3.11+ is sufficient; the core has no third-party Python dependencies. Run commands from this directory:
+Python 3.11+ is sufficient; the core has no third-party Python dependencies. The executable `run-eval` launcher sets up the local package and resolves relative file arguments from this repository. Run these examples here:
 
 ```sh
-export PYTHONPATH=src
-python3 -m lean_compression doctor
-python3 -m unittest discover -s tests -v
-python3 -m lean_compression validate-dataset \
+./run-eval doctor
+PYTHONPATH=src python3 -m unittest discover -s tests -v
+./run-eval validate-dataset \
   --tasks data/public/tasks.jsonl --references data/private/references.jsonl --enforce-quotas
 ```
+
+From another directory, use `/absolute/path/to/lean-compression-eval/run-eval doctor` (or any other command). The launcher uses the existing `colima-lce-eval` Docker context when available, unless `DOCKER_HOST` or `DOCKER_CONTEXT` is explicitly set. It does not change your saved Docker context or install dependencies. For direct Python invocation instead, set `PYTHONPATH` to this repository’s absolute `src` path and run `python3 -m lean_compression`.
+
+The launcher also sets `TMPDIR` to private, repository-local `runs/tmp` (permissions `700`). Colima can access this shared home-directory path when Docker mounts checker inputs; macOS's default temporary directory is outside that share.
 
 The real-Lean fixtures that run `lean` directly in `tests/test_lean_integration.py`, `tests/test_lean_metric_stress.py`, `tests/test_lean_engine_fixes.py`, `tests/test_heartbeats.py`, `tests/test_statement_auxiliaries.py` and `tests/test_round3.py`, the audit `target.lean` compile check in `tests/test_audit_minor.py`, and the sandboxed Lean checks in `tests/test_outcome_taxonomy.py`, `tests/test_docker_command.py`, `tests/test_baseline_portfolio.py`, `tests/test_baseline_tactics.py`, `tests/test_heartbeats.py`, `tests/test_review_followups.py`, `tests/test_statement_auxiliaries.py` and `tests/test_runner_remaining.py` read the pinned compiler and library paths from the environment manifest named by `LEAN_COMPRESSION_ENVIRONMENT` (default `configs/environment.local.json`; relative paths resolve from this directory). They skip when that manifest or its Lean binary is missing; set `REQUIRE_LEAN=1` to make that a failure. The sandboxed checks also skip off macOS. The opt-in container checks in `tests/test_docker_runtime.py` and `tests/test_runner_remaining.py` run Lean in an existing image instead and skip unless `LEAN_COMPRESSION_DOCKER_ENV` names the environment record of an image available to a running Docker daemon (`docs/runtime-validation.md`). `tests/test_environment_integrity.py` checks the committed environment records against the local installation without running Lean, and skips that check when the Lean binary that `configs/environment.local.json` names is missing. The other arithmetic, analysis, audit, dataset, and orchestration tests need no Lean.
 
@@ -33,11 +36,11 @@ The CLI reports invalid input or evidence as an error message without a tracebac
 The current pin is Mathlib `274ed6d67d9b226c557813b9ce437574cccdce11`, whose declared toolchain is `leanprover/lean4:v4.34.0-rc1`. `configs/environment.local.json` records this machine's installed dependency locations; `configs/environment.hashed.json` additionally hashes source and compiled artifacts. To use a different checkout, regenerate the environment record rather than editing the hashes, and point the tests at it:
 
 ```sh
-python3 -m lean_compression prepare-environment \
+./run-eval prepare-environment \
   --package-root /absolute/path/to/a/locked/lean/project \
   --output configs/environment.new.json
 LEAN_COMPRESSION_ENVIRONMENT=configs/environment.new.json REQUIRE_LEAN=1 \
-  python3 -m unittest discover -s tests -v
+  PYTHONPATH=src python3 -m unittest discover -s tests -v
 ```
 
 Commands that take `--environment` refuse a record whose `environment_hash` no longer matches its contents and, for host records, re-check the Lean binary, the toolchain shared libraries recorded by full-hash records, that the library directories exist, and the locked package revisions. `evaluate` re-verifies the run's embedded environment record before running Lean. `freeze`, `verify-references` and `baseline` require a record collected in Docker (`runtime_backend` `docker`) exactly when `validation.isolation` is `docker`, and then one whose `docker_image` is `validation.docker_image`; an absent `isolation` counts as `docker`, the runner's default. `freeze` also requires that image to be a content digest (`sha256:...` or `name@sha256:...`). Schema 2 records hash every library file Lean may load, including `.ir`/`.ir.sig`, except `.trace`/`.hash`/`.ilean`/`.a`. The committed schema 1 records stay valid; `environment.hashed.json` prints a note that its compiled hash omits that IR.
@@ -47,7 +50,7 @@ Commands that take `--environment` refuse a record whose `environment_hash` no l
 `validate-dataset --references` takes the private references JSONL; it also lists, among the readiness errors, any task whose reference proof is copyable from its own prompt (answer access): its whitespace-normalized text occurs there with at least 15 characters, or 9-14 characters unless it is a generic shape (a literal reflexivity proof, one bare tactic, or a name the target binds), or a premise-context proof component (a declaration value, or a constructor component, field value, fun body, tactic, tactic term or rewrite rule inside one) copies near-verbatim a reference of at least 9 characters that is not a generic shape: at most 3 token edits, or one per 6 reference tokens if that is more (tokens are runs without whitespace, brackets, commas or semicolons, and a swap of two adjacent tokens is one edit), changing at most a third of its name components, rounded. `readiness` instead reads verify-references output directories; its `answer_access_screen` lists these tasks as `flagged_task_ids`, `short_exact_match_task_ids` and `near_verbatim_task_ids` (the closest match is in `near_verbatim_matches`), which block its gate, and generic 9-14-character matches as `generic_short_exact_match_task_ids`, which do not. This command rebuilds the dataset readiness report from the committed evidence without Lean or model calls:
 
 ```sh
-python3 -m lean_compression readiness --tasks data/public/tasks.jsonl \
+./run-eval readiness --tasks data/public/tasks.jsonl \
   --references data/private/library-verified-final --references data/private/fresh-verified-final \
   --references data/private/smoke-verified-final \
   --original-tasks data/private/library-before-premise-context.jsonl \
@@ -58,7 +61,7 @@ python3 -m lean_compression readiness --tasks data/public/tasks.jsonl \
 ## Check references locally
 
 ```sh
-python3 -m lean_compression verify-references \
+./run-eval verify-references \
   --tasks data/public/smoke.jsonl \
   --references data/private/smoke_references.jsonl \
   --environment configs/environment.hashed.json \
@@ -71,7 +74,7 @@ Each reference has two separate fresh processes: verification, then extraction. 
 Build a reusable imported-declaration index from those verified closures:
 
 ```sh
-python3 -m lean_compression index-closures \
+./run-eval index-closures \
   --references work/reference-checks --environment configs/environment.hashed.json \
   --config configs/development.json --output work/environment-index
 ```
@@ -84,7 +87,7 @@ The index covers observed closures, not every Mathlib declaration. Unknown depen
 
 ```sh
 for worker in 1 2 3; do
-  python3 -m lean_compression verify-references \
+  ./run-eval verify-references \
     --tasks data/public/smoke.jsonl \
     --references data/private/smoke_references.jsonl \
     --environment configs/environment.hashed.json \
@@ -105,7 +108,7 @@ Two kinds of file keep a task or slot from every worker, whatever any lock, unti
 `baseline` runs the frozen tactic portfolio once per task through the same checker and writes `trusted_tactic_baseline` records. `tactic_portfolio_tactics` lists its alternatives in order, and each is checked as its own proof `by <tactic>` until one succeeds. The alternatives share the `tactic_portfolio_total_wall_seconds` budget. Each check gets what the earlier checks' elapsed times, process start-up included, left of it, and none starts once it is spent. An alternative that cannot parse (such as `aesop` under imports without Aesop), is rejected, runs out of heartbeats or hits a resource limit leaves the rest of the budget to the next. One that reaches its wall-clock limit has spent the budget, so no later alternative runs; the frozen order therefore matters. `policy.json` records the budget as `portfolio_validation_wall_seconds` and the alternatives as `portfolio_tactics`. A record is the deciding check (the success, or else the last alternative attempted), and its `portfolio_alternatives` give each attempted alternative's tactic, validity status, elapsed seconds and wall-clock limit, with the evidence of its check: `failure_reason`, `error`, `process_returncode`, the last 4096 characters of its stderr (`stderr_tail`) and its `resources`. A checker incident in any alternative leaves the task pending; a rerun checks its whole portfolio again. Metric extraction of the proof that succeeded keeps `extraction.wall_seconds`, as for references and model proofs. A configuration with only the older `tactic_portfolio` string still has that string checked as one proof under the whole budget, so runs frozen with it keep a matching baseline, which `analyze` labels `legacy_single_proof`; there one tactic unknown under a task's imports fails every alternative. `freeze`, `baseline` and `analyze --baseline` apply one check to the portfolio, so a run is never frozen with a configuration no baseline could match: they refuse a configuration that names both keys (even with a null value), a malformed list, no portfolio, or no positive budget. Give `baseline` the task file, environment record, and configuration that froze the run you will analyze; for the pilot development run below:
 
 ```sh
-python3 -m lean_compression baseline --tasks data/public/smoke.jsonl \
+./run-eval baseline --tasks data/public/smoke.jsonl \
   --environment configs/environment.docker.json --config configs/pilot-ready.json \
   --output work/baseline-pilot
 ```
@@ -118,22 +121,24 @@ The selected eight-model cohort has complete profiles in [`configs/models`](conf
 
 `configs/pilot.json` intentionally leaves `generation.model_snapshot` and `reasoning_setting` unresolved. Set a supported pinned model, explicitly select its reasoning/sampling settings, and set `snapshot_pinned` and `settings_resolved` only when those claims are supported. Some models do not accept `temperature`; set it to `null` to omit it deliberately. The adapter never retries a bad request with changed settings. OpenAI's output limit includes reasoning tokens, and reported reasoning usage is retained.
 
-Configure `OPENAI_API_KEY` and `ANTHROPIC_API_KEY` in the shell that launches generation or a secret manager. Do not put them in project files. An export in another terminal does not update an already-running Codex process. `python3 -m lean_compression doctor` reports only whether each key is present. The checker process never inherits API credentials. A Codex subscription is not treated as API access.
+Configure `OPENAI_API_KEY` and `ANTHROPIC_API_KEY` in the shell that launches generation or a secret manager. Do not put them in project files. An export in another terminal does not update an already-running Codex process. `./run-eval doctor` reports only whether each key is present. The checker process never inherits API credentials. A Codex subscription is not treated as API access.
+
+If an Anthropic user key requires a workspace, also export `ANTHROPIC_WORKSPACE_ID` in that shell. The adapter sends it only to Anthropic as `anthropic-workspace-id`; it is a runtime routing setting and does not change frozen prompts or request payload hashes.
 
 For a live pilot development run with a small task manifest, first create the container runtime below and save its image/settings as `configs/pilot-ready.json`. Attainment anchors must be checked in the run's environment and measurement settings, and host checks are not interchangeable with container ones. A development run frozen without `--reference-checks` binds no anchors; unlike production, a bound development anchor may be verified but unmeasurable. Check the references again inside the runtime, into their own directory, and bind them to the run when freezing. `freeze` refuses checks made in another environment or with other measurement settings, and it refuses an incomplete set: every task needs a verified record with its checked proof, so rerun `verify-references` until it reports no checker incidents before freezing. A rerun keeps existing records, so a reference proof that failed (or, in production, cannot be measured) must be corrected or its task left out, and the references checked into a new directory:
 
 ```sh
-python3 -m lean_compression verify-references \
+./run-eval verify-references \
   --tasks data/public/smoke.jsonl \
   --references data/private/smoke_references.jsonl \
   --environment configs/environment.docker.json \
   --config configs/pilot-ready.json \
   --output work/reference-checks-pilot
-python3 -m lean_compression freeze --development \
+./run-eval freeze --development \
   --tasks data/public/smoke.jsonl --environment configs/environment.docker.json \
   --config configs/models/gpt-6.1-sol.json --split pilot --model gpt-6.1-sol \
   --reference-checks work/reference-checks-pilot --run runs/pilot-development
-python3 -m lean_compression export-prompts \
+./run-eval export-prompts \
   --run runs/pilot-development --output work/prompts.json
 ```
 
@@ -144,14 +149,14 @@ The same `generate` command dispatches by the frozen `generation.provider`. Anth
 Only this next command makes model API calls:
 
 ```sh
-python3 -m lean_compression generate --run runs/pilot-development --limit 120
+./run-eval generate --run runs/pilot-development --limit 120
 ```
 
 It starts a fresh request for each slot with no tools, prior responses, reference proofs, or validator feedback. Raw messages, responses, usage, provider IDs, timestamps, transport retries, and refusal/truncation statuses are retained. Model-version mismatches cannot be silently pooled. An ambiguous lost response retains its in-flight marker until `reconcile` (below) resolves it, avoiding an automatic second completion. The body of every non-error HTTP response is first read in full and appended to the run's `captures/<attempt_id>.jsonl` as base64, with its SHA-256 and transport attempt; its `transport.jsonl` event, and any generation recorded from it, name that capture. Only a `completed` or `incomplete` response from the pinned model whose own output or refusal text holds a value a stored record cannot (such as a lone surrogate) is recorded as `malformed_response`, a model-attempt failure whose `raw_response` is the body text with undecodable bytes escaped, kept with the response's ID, model, status, usage and `incomplete_details`; the command then stops so the provider can be checked, and rerunning `generate` continues with the next slot. A body that is not a JSON object, or a `completed` or `incomplete` response that cannot otherwise be read or stored as received (an unexpected shape, NaN or a lone surrogate outside the model's text, or such text from another model), records nothing: its `outcome_unknown` event names the capture and, as for a lost response, the in-flight marker is kept for reconciliation and the command stops. HTTP errors, connections that fail before the request is sent, and provider `failed` responses, whatever their output holds, are not model outcomes; nor is a response with another status that cannot be read or stored as received. Their `no_model_outcome` event names the capture of the body it was read from (`capture`, null when no response body was captured, as for an HTTP error) and holds the response itself when a record can (`provider_response`, null otherwise). Transient ones are retried under the frozen policy, honoring `Retry-After` (seconds or an HTTP date) up to `retry.max_retry_after_seconds` (60 in the shipped configs, and when a config leaves it out). After that the error stays in `transport.jsonl`, nothing is recorded for the slot, and the command stops; rerunning `generate` retries the same attempt ID. The exception is a provider rejection of one prompt itself (error code `invalid_prompt`, in an HTTP 400 or a `failed` response, whatever else that response holds). It is not a model refusal and does not stop the command: it is logged as `no_model_outcome` with `prompt_rejected: true` and counted in `prompt_rejections`, which count toward `--limit`, and nothing is recorded. The samples of a task and condition share one prompt, so the rejection is remembered per prompt hash from `transport.jsonl`: none of that prompt's slots is sent again, in this or any later `generate`, until a generation of one of them is recorded after the rejection, and each one passed over is counted in `skipped_rejected_prompt_slots`. They all stay pending, so the run stays incomplete, and `analyze` counts them as provider outages (`prompt_rejected_attempts`). `generate --retry-rejected` sends them again after the other pending slots, the prompt rejected longest ago first, so a retry that `--limit` or the stop below cuts short moves on to the others next time; a prompt rejected again in that command still gets only one request. Rejections of different prompts one after another are systemic, as when shared prompt text is flagged: after 3 with no generation between them (`retry.max_consecutive_prompt_rejections`, frozen with the config), including prompts `--retry-rejected` sent again, the command stops with an error and exit status 2, and their slots stay pending. Without `--retry-rejected`, remembered prompts are never sent, so a rerun always moves on to slots not yet requested.
 
 ```sh
-python3 -m lean_compression reconcile --run runs/pilot-development
-python3 -m lean_compression inspect-capture --run runs/pilot-development --attempt ATTEMPT_ID
+./run-eval reconcile --run runs/pilot-development
+./run-eval inspect-capture --run runs/pilot-development --attempt ATTEMPT_ID
 ```
 
 A kept in-flight marker (`inflight/<attempt_id>.json`) stops every later `generate` at its slot without a request. `reconcile` resolves such markers from the run's own evidence and never makes a model call. Without `--apply` it changes nothing: for each marker, or the one `--attempt` names, it reports the call's `transport.jsonl` events, the decoded captures it considered and the action `--apply` would take. While a call runs, its command holds a lock on the marker, and a marker still locked by a running `generate` or `reconcile` is left alone; markers written before this lock existed have none, so do not reconcile while an older `generate` runs. A marker whose attempt already has a generation, or whose call already has the `no_model_outcome` event `generate` logs (logged after the marker was written), as when a command stopped just after recording or logging it, is removed; nothing is logged in `transport.jsonl` again. Otherwise the attempt's captured bodies are decoded, less those `no_model_outcome` events resolved: each resolves one captured line of the body it names, the earliest, so a later call's byte-identical body is still read. The first that is intact (a JSON line naming the attempt whose decoded bytes match its SHA-256), answers a request logged at its transport index (every request logged for the attempt must carry the frozen payload's hash), and reads as a model outcome (`completed`, `refusal`, `truncated_output` or `malformed_response`) of the pinned snapshot is recorded as the generation, as `generate` would have recorded it: `response_capture` names the capture and `reconciliation` the marker, transport attempt, request ID, capture time and request hash, while `generation_elapsed_seconds` stays unrecorded. Anything else keeps the marker: no captured body (a lost response or an interrupted command), an unreadable body, a provider failure, another model's response, or evidence that does not match. Only `--release-unreadable` with `--apply` releases it: the call is logged in `transport.jsonl` as `no_model_outcome`, as `generate` would log it, naming the newest of those captures, the last HTTP or connection error the call logged (`last_error`) and the reason, the marker is removed, and the next `generate` sends the same attempt ID again, unless the captured body or a logged HTTP 400 rejected the prompt as `invalid_prompt`, which is then remembered like any rejection. Each change is first appended to `amendments.jsonl` as an `in_flight_reconciliation` row with the marker and a `resolution`: `generation_recorded` with the capture, `released_without_model_outcome` with the reason and capture, `generation_already_recorded` or `outcome_already_logged`. `inspect-capture` is read-only: for each captured body, or only those of `--attempt`, it prints its integrity, transport index, request ID, size, the provider's response ID, model, status, usage and error code, how it reads, whether `reconcile` could record it, which `transport.jsonl` events name it and whether it is the recorded generation, never the model's text or a credential.
@@ -161,8 +166,8 @@ Other providers can supply JSONL records to `import-responses`; every record mus
 ## Verify, report, and reproduce
 
 ```sh
-python3 -m lean_compression evaluate --run runs/pilot-development --version v1
-python3 -m lean_compression analyze --run runs/pilot-development --version v1 \
+./run-eval evaluate --run runs/pilot-development --version v1
+./run-eval analyze --run runs/pilot-development --version v1 \
   --references work/reference-checks-pilot --output reports/pilot-development
 ```
 

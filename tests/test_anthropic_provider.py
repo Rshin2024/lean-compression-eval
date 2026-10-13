@@ -109,6 +109,53 @@ class AnthropicProviderTests(RunFixture):
                 self.assertNotIn("invalid secret", str(caught.exception))
                 self.assertEqual(self.markers(), [])
 
+    def test_workspace_routes_anthropic_without_changing_payload_or_hash(self):
+        settings = self.manifest["config"]["generation"]
+        expected = response_payload(self.slots[0], settings)
+        with self.provider(lambda request: reply(response())), \
+             patch.dict(os.environ, {"ANTHROPIC_WORKSPACE_ID": "workspace-unit-test"}):
+            self.assertEqual(generate_run(self.run, limit=1)["new_generation_records"], 1)
+        headers = {key.lower(): value for key, value in self.requests[0].header_items()}
+        self.assertEqual(headers["anthropic-workspace-id"], "workspace-unit-test")
+        self.assertEqual(json.loads(self.requests[0].data), expected)
+        self.assertEqual(self.transport()[0]["request_hash"], digest(expected))
+        self.assertNotIn("workspace-unit-test", json.dumps(self.generation()))
+
+    def test_workspace_validation_fails_before_requests_without_printing_values(self):
+        for workspace in (" leading", "trailing ", "bad\r\nheader", "bad\ttab", "nonascii-α"):
+            with self.subTest(case=workspace.encode("unicode_escape")):
+                with self.provider(lambda request: reply(response())), \
+                     patch.dict(os.environ, {"ANTHROPIC_WORKSPACE_ID": workspace}):
+                    with self.assertRaisesRegex(ValueError, "ANTHROPIC_WORKSPACE_ID.*value not shown") as caught:
+                        generate_run(self.run, limit=1)
+                self.assertNotIn(workspace, str(caught.exception))
+                self.assertEqual((self.requests, self.markers()), ([], []))
+
+    def test_openai_ignores_anthropic_workspace_setting(self):
+        config = json.loads(json.dumps(self.manifest["config"]))
+        config["generation"]["provider"] = "openai"
+        self.run = self.run.parent / "openai-with-workspace"
+        self.manifest = create_run(self.run, self.manifest["tasks"], config, self.manifest["environment"],
+                                   split="pilot", model=MODEL, development=True)
+        data = json.dumps({"id": "resp_test", "model": MODEL, "status": "completed", "output": [
+            {"type": "message", "content": [{"type": "output_text", "text": "by exact h"}]}]}).encode()
+        with self.provider(lambda request: reply(data)), \
+             patch.dict(os.environ, {"ANTHROPIC_WORKSPACE_ID": "invalid workspace"}):
+            self.assertEqual(generate_run(self.run, limit=1)["new_generation_records"], 1)
+        headers = {key.lower(): value for key, value in self.requests[0].header_items()}
+        self.assertNotIn("anthropic-workspace-id", headers)
+        self.assertEqual(headers["authorization"], "Bearer openai-must-not-be-used")
+
+    def test_provider_diagnostics_redact_the_runtime_workspace(self):
+        workspace = "workspace-unit-test"
+        def rejected(request):
+            raise urllib.error.HTTPError(request.full_url, 400, "workspace error", {}, io.BytesIO(workspace.encode()))
+        with self.provider(rejected), patch.dict(os.environ, {"ANTHROPIC_WORKSPACE_ID": workspace}):
+            with self.assertRaisesRegex(RuntimeError, "configuration or access"):
+                generate_run(self.run, limit=1)
+        self.assertNotIn(workspace, (self.run / "transport.jsonl").read_text())
+        self.assertIn("[REDACTED_WORKSPACE_ID]", (self.run / "transport.jsonl").read_text())
+
     def test_unresolved_thinking_or_sampling_settings_fail_before_request_or_marker(self):
         baseline = self.manifest["config"]["generation"]
         for name, value in (("thinking", None), ("reasoning_setting", None), ("temperature", 0.7),

@@ -1,0 +1,23 @@
+#!/bin/sh
+# Run the local package with repository-relative paths from any working directory.
+set -eu
+
+eval_repo_root=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
+cd "$eval_repo_root"
+export PYTHONPATH="$eval_repo_root/src${PYTHONPATH:+:$PYTHONPATH}"
+
+# Colima shares the home directory, but not macOS's default /private/var/folders temp paths.
+# Keep Docker bind-mount inputs private and visible to the runtime VM.
+eval_temp_root="$eval_repo_root/runs/tmp"
+(umask 077; mkdir -p "$eval_temp_root")
+chmod 700 "$eval_temp_root"
+export TMPDIR="$eval_temp_root"
+
+# Respect an explicitly selected daemon; otherwise use this project's existing context.
+if [ "${DOCKER_HOST+x}" != x ] && [ "${DOCKER_CONTEXT+x}" != x ] &&
+   command -v docker >/dev/null 2>&1 &&
+   docker context inspect colima-lce-eval >/dev/null 2>&1; then
+    export DOCKER_CONTEXT=colima-lce-eval
+fi
+
+exec python3 -m lean_compression "$@"
