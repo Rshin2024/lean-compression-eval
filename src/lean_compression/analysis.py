@@ -264,7 +264,8 @@ def _resource_summary(records):
             "input_tokens": _resource_number(_first_recorded(usage, ("input_tokens", "prompt_tokens")), integral=True),
             "output_tokens": _resource_number(_first_recorded(usage, ("output_tokens", "completion_tokens")), integral=True),
             "reasoning_tokens": _resource_number(usage.get("reasoning_tokens")
-                if usage.get("reasoning_tokens") is not None else output_details.get("reasoning_tokens"), integral=True)}
+                if usage.get("reasoning_tokens") is not None else
+                _first_recorded(output_details, ("reasoning_tokens", "thinking_tokens")), integral=True)}
         if invalid_usage:
             values.update(input_tokens=(None, True), output_tokens=(None, True), reasoning_tokens=(None, True))
         elif invalid_details and usage.get("reasoning_tokens") is None:

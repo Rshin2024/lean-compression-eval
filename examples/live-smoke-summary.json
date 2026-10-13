@@ -1,0 +1,313 @@
+{
+  "completed_at": "2026-10-13T08:10:04.658369+00:00",
+  "conditions": [
+    "standard",
+    "mathematical_compression",
+    "source_concision"
+  ],
+  "goals": 10,
+  "limitations": [
+    "This ten-goal development smoke is not a formal pilot or main study.",
+    "Observed validity combines output-format compliance and Lean proof correctness; many Haiku/Sonnet failures are parsing failures.",
+    "The shared effort label and token ceiling do not imply equal compute across providers."
+  ],
+  "max_output_tokens": 8192,
+  "models": {
+    "claude-fable-5-1": {
+      "analysis_sha256": "6bcd534d0f51af8f6fa316457164d628e9a90479ccbda0ac0bf6d77e9411563b",
+      "conditions": {
+        "mathematical_compression": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 30,
+          "validity_rate": 0.75
+        },
+        "source_concision": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 31,
+          "validity_rate": 0.775
+        },
+        "standard": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 35,
+          "validity_rate": 0.875
+        }
+      },
+      "metric_available_proofs": 93,
+      "outcomes": {
+        "elaboration_failure": 5,
+        "parse_failure": 14,
+        "success": 96,
+        "verification_timeout": 5
+      },
+      "scheduled_attempts": 120,
+      "token_usage": {
+        "input_tokens": 44008,
+        "output_tokens": 25592,
+        "reasoning_tokens": 21269
+      },
+      "valid_proofs": 96
+    },
+    "claude-haiku-5-5": {
+      "analysis_sha256": "1cdc21690b18d416c70a56476f8003d435d0f9fd0b5991d726436cee6a4a9d04",
+      "conditions": {
+        "mathematical_compression": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 1,
+          "validity_rate": 0.025
+        },
+        "source_concision": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 1,
+          "validity_rate": 0.025
+        },
+        "standard": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 1,
+          "validity_rate": 0.025
+        }
+      },
+      "metric_available_proofs": 3,
+      "outcomes": {
+        "parse_failure": 117,
+        "success": 3
+      },
+      "scheduled_attempts": 120,
+      "token_usage": {
+        "input_tokens": 44008,
+        "output_tokens": 49822,
+        "reasoning_tokens": 42723
+      },
+      "valid_proofs": 3
+    },
+    "claude-opus-5-5": {
+      "analysis_sha256": "92b61b58b7162c394a5ddcaf1d5cc17ddb808b8c5ebdb1257a94ae7b8917b838",
+      "conditions": {
+        "mathematical_compression": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 37,
+          "validity_rate": 0.925
+        },
+        "source_concision": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 39,
+          "validity_rate": 0.975
+        },
+        "standard": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 35,
+          "validity_rate": 0.875
+        }
+      },
+      "metric_available_proofs": 110,
+      "outcomes": {
+        "parse_failure": 6,
+        "success": 111,
+        "verification_timeout": 3
+      },
+      "scheduled_attempts": 120,
+      "token_usage": {
+        "input_tokens": 44008,
+        "output_tokens": 33004,
+        "reasoning_tokens": 27681
+      },
+      "valid_proofs": 111
+    },
+    "claude-sonnet-5-5": {
+      "analysis_sha256": "480d65524ec5938ff1dac8f9436cee5e55a74b9a87748d24bc0f7b35623180b5",
+      "conditions": {
+        "mathematical_compression": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 7,
+          "validity_rate": 0.175
+        },
+        "source_concision": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 6,
+          "validity_rate": 0.15
+        },
+        "standard": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 26,
+          "validity_rate": 0.65
+        }
+      },
+      "metric_available_proofs": 39,
+      "outcomes": {
+        "parse_failure": 77,
+        "success": 39,
+        "truncated_output": 1,
+        "verification_timeout": 3
+      },
+      "scheduled_attempts": 120,
+      "token_usage": {
+        "input_tokens": 44008,
+        "output_tokens": 27999,
+        "reasoning_tokens": 677
+      },
+      "valid_proofs": 39
+    },
+    "gpt-6-astra": {
+      "analysis_sha256": "c2bb2a1dec7912667ba75227e888bc4dda1ae7e52ee817075a4aea889f46213b",
+      "conditions": {
+        "mathematical_compression": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 27,
+          "validity_rate": 0.675
+        },
+        "source_concision": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 37,
+          "validity_rate": 0.925
+        },
+        "standard": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 32,
+          "validity_rate": 0.8
+        }
+      },
+      "metric_available_proofs": 94,
+      "outcomes": {
+        "elaboration_failure": 22,
+        "success": 96,
+        "verification_resource_limit": 1,
+        "verification_timeout": 1
+      },
+      "scheduled_attempts": 120,
+      "token_usage": {
+        "input_tokens": 27612,
+        "output_tokens": 28121,
+        "reasoning_tokens": 24539
+      },
+      "valid_proofs": 96
+    },
+    "gpt-6-luna": {
+      "analysis_sha256": "b46b4be09772b92836493087a59abe527ff93f0609f28e456572d37512677e21",
+      "conditions": {
+        "mathematical_compression": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 23,
+          "validity_rate": 0.575
+        },
+        "source_concision": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 29,
+          "validity_rate": 0.725
+        },
+        "standard": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 29,
+          "validity_rate": 0.725
+        }
+      },
+      "metric_available_proofs": 80,
+      "outcomes": {
+        "elaboration_failure": 28,
+        "parse_failure": 3,
+        "success": 81,
+        "verification_timeout": 8
+      },
+      "scheduled_attempts": 120,
+      "token_usage": {
+        "input_tokens": 27612,
+        "output_tokens": 40900,
+        "reasoning_tokens": 36040
+      },
+      "valid_proofs": 81
+    },
+    "gpt-6-sol": {
+      "analysis_sha256": "231621d2e276e884a4fe96488c30ec61a923b8fbcc17eb5dae1a7046e5ac0a43",
+      "conditions": {
+        "mathematical_compression": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 32,
+          "validity_rate": 0.8
+        },
+        "source_concision": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 30,
+          "validity_rate": 0.75
+        },
+        "standard": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 33,
+          "validity_rate": 0.825
+        }
+      },
+      "metric_available_proofs": 95,
+      "outcomes": {
+        "elaboration_failure": 20,
+        "success": 95,
+        "verification_timeout": 5
+      },
+      "scheduled_attempts": 120,
+      "token_usage": {
+        "input_tokens": 27612,
+        "output_tokens": 40282,
+        "reasoning_tokens": 35648
+      },
+      "valid_proofs": 95
+    },
+    "gpt-6.1-sol": {
+      "analysis_sha256": "f7cbf3c6b91f2b53ae72fc80f2f0191fbb8a91a8d0dd0d48ac21c73b22aed18a",
+      "conditions": {
+        "mathematical_compression": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 26,
+          "validity_rate": 0.65
+        },
+        "source_concision": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 32,
+          "validity_rate": 0.8
+        },
+        "standard": {
+          "scheduled_attempts": 40,
+          "valid_proofs": 30,
+          "validity_rate": 0.75
+        }
+      },
+      "metric_available_proofs": 88,
+      "outcomes": {
+        "elaboration_failure": 28,
+        "success": 88,
+        "verification_timeout": 4
+      },
+      "scheduled_attempts": 120,
+      "token_usage": {
+        "input_tokens": 27612,
+        "output_tokens": 29684,
+        "reasoning_tokens": 25910
+      },
+      "valid_proofs": 88
+    }
+  },
+  "reasoning_effort": "high",
+  "response_adapter": "identity_v1",
+  "runtime_note": "Per-proof1CPU/4GiB/60-second validation and extraction stages remained fixed. The local VM was resized from10CPU/24GiB to12CPU/28GiB at user request; completed records were preserved.",
+  "samples_per_goal_condition": 4,
+  "schema_version": 1,
+  "study_type": "development_smoke",
+  "totals": {
+    "evaluation_records": 960,
+    "generation_records": 960,
+    "metric_available_proofs": 602,
+    "outcomes": {
+      "elaboration_failure": 103,
+      "parse_failure": 217,
+      "success": 609,
+      "truncated_output": 1,
+      "verification_resource_limit": 1,
+      "verification_timeout": 29
+    },
+    "scheduled_attempts": 960,
+    "token_usage": {
+      "input_tokens": 286480,
+      "output_tokens": 275404,
+      "reasoning_tokens": 214487
+    },
+    "unresolved_checker_incidents": 0,
+    "unresolved_provider_outcomes": 0,
+    "valid_but_metrics_unavailable": 7,
+    "valid_proofs": 609
+  }
+}

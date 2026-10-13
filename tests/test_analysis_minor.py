@@ -217,6 +217,41 @@ class ResourceShapeTests(unittest.TestCase):
             result = self.measurements(usage)["reasoning_tokens"]
             self.assertEqual((result["sum"], result["invalid_count"]), expected, usage)
 
+    def test_anthropic_thinking_tokens_are_reported_without_altering_native_usage(self):
+        # Native shape observed in a captured Anthropic Message: output includes thinking, so never add them.
+        usage = {"input_tokens": 417, "output_tokens": 463, "output_tokens_details": {"thinking_tokens": 425}}
+        before = json.dumps(usage, sort_keys=True)
+        value = attempt("a", CONDITIONS[0], generation={"usage": usage})
+        report = run([task("a")], [value])
+        resources = report["models"]["model-frozen"]["conditions"][CONDITIONS[0]]["resources"]["measurements"]
+        self.assertEqual((resources["output_tokens"]["sum"], resources["reasoning_tokens"]["sum"]), (463, 425))
+        self.assertEqual(json.dumps(usage, sort_keys=True), before)
+        with tempfile.TemporaryDirectory() as directory:
+            path = write_report(report, directory)["resources"]
+            with open(path, encoding="utf-8", newline="") as handle:
+                rows = {row["measurement"]: row for row in csv.DictReader(handle) if row["condition"] == CONDITIONS[0]}
+        self.assertEqual((rows["reasoning_tokens"]["sum"], rows["reasoning_tokens"]["observed_count"],
+                          rows["reasoning_tokens"]["missing_count"], rows["output_tokens"]["sum"]),
+                         ("425", "1", "0", "463"))
+
+    def test_thinking_fallback_preserves_reasoning_precedence_zero_and_missingness(self):
+        cases = [({"output_tokens_details": {"thinking_tokens": 0}}, (0, 1, 0, 0)),
+                 ({"reasoning_tokens": 0, "output_tokens_details": {"thinking_tokens": 25}}, (0, 1, 0, 0)),
+                 ({"output_tokens_details": {"reasoning_tokens": 0, "thinking_tokens": 25}}, (0, 1, 0, 0)),
+                 ({"output_tokens_details": {"reasoning_tokens": 7, "thinking_tokens": 25}}, (7, 1, 0, 0)),
+                 ({"output_tokens_details": {"reasoning_tokens": None, "thinking_tokens": 25}}, (25, 1, 0, 0)),
+                 ({"output_tokens_details": {"thinking_tokens": None}}, (None, 0, 1, 0)),
+                 ({"output_tokens_details": {}}, (None, 0, 1, 0)),
+                 ({"output_tokens_details": {"thinking_tokens": -1}}, (None, 0, 1, 1)),
+                 ({"output_tokens_details": {"thinking_tokens": "25"}}, (25, 1, 0, 0)),
+                 ({"output_tokens_details": {"thinking_tokens": "unknown"}}, (None, 0, 1, 1)),
+                 ({"output_tokens_details": {"reasoning_tokens": -1, "thinking_tokens": 25}}, (None, 0, 1, 1))]
+        for usage, expected in cases:
+            with self.subTest(usage=usage):
+                result = self.measurements(usage)["reasoning_tokens"]
+                self.assertEqual(tuple(result[key] for key in ("sum", "observed_count", "missing_count", "invalid_count")),
+                                 expected)
+
 
 class StratumTests(unittest.TestCase):
     def mixed(self, labelled=True):

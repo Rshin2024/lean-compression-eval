@@ -1,6 +1,6 @@
 # Validation and release scope
 
-The delivered software implements the core three-condition experiment. All 960 responses for an eight-model development smoke comparison have been collected; Lean verification is in progress. No formal pilot or main study has been completed.
+The delivered software implements the core three-condition experiment. The eight-model development smoke comparison is complete: 960 responses checked, 609 valid proofs, and 602 measurable proofs. Seven valid proofs hit the extraction time limit; no provider or checker incidents remain unresolved. See [results and limitations](smoke-results.md). No formal pilot or main study has been completed.
 
 ## Executed checks
 

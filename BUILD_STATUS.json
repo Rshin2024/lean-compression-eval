@@ -28,18 +28,25 @@
   "docker_runtime": "pinned_image_built_and_acceptance_tested_locally_2026-10-12",
   "environment_hash": "4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f",
   "evaluation_api_calls_made": 960,
-  "evaluator_source_hash": "1270f8d203956828e30a024e10a70a28523db8cc877c4c814bf7bddb126e354f",
+  "evaluator_source_hash": "28561054f0149dba81f452514ec7cbf4041f2dd04187374d98de3391f2b61828",
   "example_report": "examples/report/report.html",
   "live_smoke_evaluation": {
-    "evaluation_records": 187,
+    "evaluation_records": 960,
     "evidence_location": "runs/smoke-*-high and runs/smoke-suite-high-20261012 (git-ignored)",
     "formal_pilot": false,
     "generation_records": 960,
+    "local_index": "runs/smoke-suite-high-20261012/index.html",
+    "metric_available_proofs": 602,
     "models": 8,
-    "observed_at": "2026-10-13T06:27:45.958325+00:00",
+    "observed_at": "2026-10-13T08:10:04.658369+00:00",
     "reasoning_effort": "high",
     "scheduled_attempts": 960,
-    "status": "verification_in_progress"
+    "status": "complete",
+    "summary": "examples/live-smoke-summary.json",
+    "unresolved_checker_incidents": 0,
+    "unresolved_provider_outcomes": 0,
+    "valid_but_metrics_unavailable": 7,
+    "valid_proofs": 609
   },
   "local_container_validation": {
     "date": "2026-10-12",
@@ -93,7 +100,7 @@
       "all_eight_profiles_freeze_with_checked_smoke_references": true,
       "anthropic_mocked_tests_passed": 13,
       "common_effort_payload_mapping_verified": true,
-      "model_requests_made": 0,
+      "model_requests_made_during_dry_run": 0,
       "regression_suite": "613 tests run successfully; 2 optional Docker acceptance groups skipped",
       "scheduled_attempts_per_model": 120
     }
@@ -110,7 +117,7 @@
     "complete construction-family and reference-length/depth/difficulty review",
     "broader known-equivalent/alias review and the human answer-access audit (residual cases in data/private/answer-access-review.json)",
     "publish the container reference evidence (verified locally 2026-10-12 under runs/reference-checks-docker-v2) and re-time caps on the target host",
-    "live API access verification, pilot calibration, and preregistration before main generation"
+    "formal pilot calibration, and preregistration before main generation"
   ],
   "rendered_browser_qa": "not_available_local_file_URL_policy; HTML/data_verified",
   "tests": {
@@ -119,6 +126,7 @@
     "followup_checks": {
       "initial_live_generations_and_checker_decisions": 8,
       "launcher_from_other_working_directory": "passed",
+      "reporting_token_normalization_tests_passed": 45,
       "workspace_provider_and_reconciliation_tests_passed": 42
     },
     "log": "docs/test-results.txt",
