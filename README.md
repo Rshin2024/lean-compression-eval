@@ -6,9 +6,9 @@ This is a **paper-aligned implementation**, not an exact reproduction of the aut
 
 ## Current status
 
-The package includes the Lean checker/extractor, exact metric engine, immutable run scheduler, OpenAI Responses adapter, offline response import, environment hashing, statistical reports, and blinded proof-audit exports. The candidate dataset contains 50 pilot and 200 main goals, including the requested 150 library/50 fresh main split across five domains.
+The package includes the Lean checker/extractor, exact metric engine, immutable run scheduler, OpenAI Responses and Anthropic Messages adapters, offline response import, environment hashing, statistical reports, and blinded proof-audit exports. The candidate dataset contains 50 pilot and 200 main goals, including the requested 150 library/50 fresh main split across five domains.
 
-**The candidate collection is not a released, audited benchmark.** Task audit fields and the reference evidence distinguish compilation, independent verification, metric availability, explicit signatures, and unresolved family/answer-access review. The main experiment must remain unfrozen until those gates pass. No paid model generations have been made, and no model is selected.
+**The candidate collection is not a released, audited benchmark.** Task audit fields and the reference evidence distinguish compilation, independent verification, metric availability, explicit signatures, and unresolved family/answer-access review. The main experiment must remain unfrozen until those gates pass. No paid model generations have been made. Eight models are selected and configured with common high effort in [`configs/models`](configs/models/README.md); account access still requires a live check.
 
 Local reference checks with `configs/development.json` run the existing Lean/Mathlib installation through a macOS development sandbox. That profile blocks network access and restricts user/private file reads, but permits system IPC and does not enforce a CPU quota or memory ceiling. Paths containing control characters are rejected, because the profile cannot quote them. **It is for trusted reference fixtures only.** The direct real-Lean fixtures and the audit compile check listed under [Start here](#start-here) run `lean` without this sandbox. The CLI requires a container for live model generations and generated-proof evaluation. Production freezing additionally requires a content-addressed Docker image, environment hashes collected in that image, enforced resource limits, and completed dataset audits. The container recipe is included; use it with a running Docker daemon.
 
@@ -112,11 +112,13 @@ python3 -m lean_compression baseline --tasks data/public/smoke.jsonl \
 
 Then add `--baseline work/baseline-pilot` to `analyze`. The report adds portfolio solve rates overall and by domain, the tasks each alternative solved, per-task outcomes with every attempted alternative, and each condition's success and compression on portfolio-solved versus unsolved tasks (also in `automation_baseline.csv`). This is a descriptive anchor, not a preregistered decision quantity. A baseline from another environment, configuration, or checker engine, without that recorded budget, or with mismatched records, is refused. Tasks without a record stay visible and mark the section incomplete. Without `--baseline`, `analysis.json` records that none was supplied.
 
-## Choose a model later
+## Model configuration
+
+The selected eight-model cohort has complete profiles in [`configs/models`](configs/models/README.md). All use explicit `high` effort, an 8,192-token cap including reasoning and answer tokens, and omitted temperature. The shared effort label does not imply identical compute or tokenization across providers. Keep the common cap fixed for comparisons and inspect truncation rates during the development smoke run. These profiles resolve API settings; they do not mark the dataset audits or production pilot gates complete.
 
 `configs/pilot.json` intentionally leaves `generation.model_snapshot` and `reasoning_setting` unresolved. Set a supported pinned model, explicitly select its reasoning/sampling settings, and set `snapshot_pinned` and `settings_resolved` only when those claims are supported. Some models do not accept `temperature`; set it to `null` to omit it deliberately. The adapter never retries a bad request with changed settings. OpenAI's output limit includes reasoning tokens, and reported reasoning usage is retained.
 
-Configure `OPENAI_API_KEY` in your shell or secret manager. Do not put it in project files. The checker process never inherits API credentials. A Codex subscription is not treated as API access.
+Configure `OPENAI_API_KEY` and `ANTHROPIC_API_KEY` in the shell that launches generation or a secret manager. Do not put them in project files. An export in another terminal does not update an already-running Codex process. `python3 -m lean_compression doctor` reports only whether each key is present. The checker process never inherits API credentials. A Codex subscription is not treated as API access.
 
 For a live pilot development run with a small task manifest, first create the container runtime below and save its image/settings as `configs/pilot-ready.json`. Attainment anchors must be checked in the run's environment and measurement settings, and host checks are not interchangeable with container ones. A development run frozen without `--reference-checks` binds no anchors; unlike production, a bound development anchor may be verified but unmeasurable. Check the references again inside the runtime, into their own directory, and bind them to the run when freezing. `freeze` refuses checks made in another environment or with other measurement settings, and it refuses an incomplete set: every task needs a verified record with its checked proof, so rerun `verify-references` until it reports no checker incidents before freezing. A rerun keeps existing records, so a reference proof that failed (or, in production, cannot be measured) must be corrected or its task left out, and the references checked into a new directory:
 
@@ -129,13 +131,15 @@ python3 -m lean_compression verify-references \
   --output work/reference-checks-pilot
 python3 -m lean_compression freeze --development \
   --tasks data/public/smoke.jsonl --environment configs/environment.docker.json \
-  --config configs/pilot-ready.json --split pilot --model YOUR_PINNED_MODEL \
+  --config configs/models/gpt-6.1-sol.json --split pilot --model gpt-6.1-sol \
   --reference-checks work/reference-checks-pilot --run runs/pilot-development
 python3 -m lean_compression export-prompts \
   --run runs/pilot-development --output work/prompts.json
 ```
 
 `freeze` records the SHA-256 of its `--engine` (default `lean/Evaluator.lean`, as for `evaluate`) as the manifest's `engine_hash`, and `evaluate` refuses any other engine except through the re-check described under "Verify, report, and reproduce"; with `--reference-checks`, `--engine` must be the engine that made them. A manifest frozen before this field existed keeps its earlier engine checks. The manifest's `evaluator_source_hash` identifies only the Python package (a digest of `src/lean_compression/*.py`), not the Lean engine. `freeze` also refuses a `generation.response_adapter` that `evaluate` could not apply.
+
+The same `generate` command dispatches by the frozen `generation.provider`. Anthropic uses the Messages API and `ANTHROPIC_API_KEY`, preserving the system and user text. It requires explicit adaptive thinking and effort, and rejects non-null sampling overrides. Only returned text blocks become the proof candidate; thinking blocks, usage, stop reasons, and the complete response are retained as evidence. `end_turn`, `max_tokens`, and `refusal` map to completed, truncated, and refused generations. An unfamiliar stop reason or malformed message keeps the call unresolved for reconciliation, rather than automatically requesting another completion.
 
 Only this next command makes model API calls:
 

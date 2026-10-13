@@ -18,7 +18,7 @@ See `test-results.txt`, the reference index in `data/private/reference-index.jso
 
 The dataset remains a candidate benchmark. The targeted review repaired known aliases and related constructions crossing splits, but a broader family, known-equivalent-statement, and difficulty/length/depth review remains open. Readiness flags deliberately preserve these gaps.
 
-Select the model snapshot and supported generation settings, configure API access, and use the acceptance-tested pinned container (rebuild and re-verify references if the engine, image or host changes). Host and container environment hashes are distinct. Run the pilot, assess metric coverage/runtime/precision, and freeze the protocol and strata before main generation.
+Eight model profiles now select the API identifiers and supported high-effort settings in `configs/models`. Confirm API access from the process launching generation and use the acceptance-tested pinned container (rebuild and re-verify references if the engine, image or host changes). Host and container environment hashes are distinct. Run the pilot, assess metric coverage/runtime/precision, and freeze the protocol and strata before main generation.
 
 The generated report's data and HTML structure were checked. Rendered browser inspection was unavailable because the in-app browser rejected local file URLs. No browser-security workaround was used.
 

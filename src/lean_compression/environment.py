@@ -161,5 +161,6 @@ def doctor() -> dict:
         "docker_installed": bool(docker), "docker_running": docker_live,
         "macos_sandbox_available": Path("/usr/bin/sandbox-exec").exists(),
         "openai_api_key_configured": bool(os.environ.get("OPENAI_API_KEY")),
+        "anthropic_api_key_configured": bool(os.environ.get("ANTHROPIC_API_KEY")),
         "note": "API credentials are never printed or inherited by Lean subprocesses.",
     }

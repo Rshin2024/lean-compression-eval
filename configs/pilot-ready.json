@@ -37,9 +37,9 @@
     "max_output_tokens": 8192,
     "mode": "single_shot",
     "model_snapshot": null,
-    "notes": "Resolve a pinned model and its supported sampling parameters before generation. OpenAI max_output_tokens includes reasoning tokens. Null temperature means deliberately omit it, never silently retry with changed settings.",
+    "notes": "The selected eight-model cohort uses high effort, an 8192-token reasoning-plus-answer cap, and omitted temperature. Use a complete model profile in configs/models for live generation. High is a common requested effort label, not an equal-compute guarantee across providers.",
     "provider": "openai",
-    "reasoning_setting": null,
+    "reasoning_setting": "high",
     "response_adapter": "identity_v1",
     "retry": {
       "backoff_seconds": [
@@ -52,7 +52,7 @@
     },
     "settings_resolved": false,
     "snapshot_pinned": false,
-    "temperature": 0.7,
+    "temperature": null,
     "timeout_seconds": 180
   },
   "metric_profile": "paper_aligned_v1",

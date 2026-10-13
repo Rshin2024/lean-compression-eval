@@ -29,6 +29,10 @@ MAX_IMPORT_NESTING = 64
 PROMPT_REJECTIONS = ("invalid_prompt",)
 # The transport event fields reconcile shows of a call; an http_error body stays in transport.jsonl.
 CALL_FIELDS = ("event", "transport_index", "recorded_at", "http_status", "request_id", "type", "message", "reason")
+LIVE_PROVIDERS = {
+    "openai": ("https://api.openai.com/v1/responses", "OPENAI_API_KEY", "x-request-id"),
+    "anthropic": ("https://api.anthropic.com/v1/messages", "ANTHROPIC_API_KEY", "request-id"),
+}
 
 
 def nesting_depth(value, limit: int | None = None) -> int:
@@ -57,6 +61,8 @@ def nesting_depth(value, limit: int | None = None) -> int:
 
 
 def response_payload(slot: dict, settings: dict) -> dict:
+    if settings.get("provider", "openai") == "anthropic":
+        return anthropic_payload(slot, settings)
     payload = {
         "model": slot["model_snapshot"], "input": slot["messages"],
         "max_output_tokens": settings["max_output_tokens"],
@@ -67,6 +73,24 @@ def response_payload(slot: dict, settings: dict) -> dict:
     if settings.get("reasoning_setting") is not None:
         payload["reasoning"] = {"effort": settings["reasoning_setting"]}
     return payload
+
+
+def anthropic_payload(slot: dict, settings: dict) -> dict:
+    """Map the frozen system/user prompt into Messages without adding history or sampling overrides."""
+    if settings.get("thinking") != {"type": "adaptive"}:
+        raise ValueError("Anthropic generation requires explicit thinking: {type: adaptive}")
+    if not isinstance(settings.get("reasoning_setting"), str) or not settings["reasoning_setting"]:
+        raise ValueError("Anthropic generation requires an explicit reasoning_setting for output_config.effort")
+    if any(settings.get(name) is not None for name in ("temperature", "top_p", "top_k")):
+        raise ValueError("Anthropic adaptive thinking requires temperature, top_p and top_k to be omitted (null)")
+    prompt = slot["messages"]
+    if (len(prompt) != 2 or [item.get("role") for item in prompt] != ["system", "user"]
+            or any(not isinstance(item.get("content"), str) for item in prompt)):
+        raise ValueError("Anthropic generation requires the frozen system/user text prompt")
+    return {"model": slot["model_snapshot"], "system": prompt[0]["content"],
+            "messages": [{"role": "user", "content": prompt[1]["content"]}],
+            "max_tokens": settings["max_output_tokens"], "thinking": settings["thinking"],
+            "output_config": {"effort": settings["reasoning_setting"]}}
 
 
 def listed(value, name: str) -> list:
@@ -126,7 +150,7 @@ def without_model_text(response: dict) -> dict:
     return {**response, "output": output}
 
 
-def parse_body(body: bytes, model: str) -> dict:
+def parse_body(body: bytes, model: str, provider: str = "openai") -> dict:
     """Parse a received body that is already captured; never raise on its content.
 
     A response that parse_response reads and a stored record can hold is returned as parsed. Of the
@@ -146,6 +170,10 @@ def parse_body(body: bytes, model: str) -> dict:
         return {"generation_status": None, "unreadable": f"{type(error).__name__}: {error}"}
     if not isinstance(response, dict):
         return {"generation_status": None, "unreadable": "the body is not a JSON object"}
+    if provider == "anthropic":
+        return parse_anthropic_body(response, body, model)
+    if provider != "openai":
+        return {"generation_status": None, "unreadable": f"unsupported provider: {provider}"}
     status = response.get("status")
     try:
         parsed = parse_response(response)
@@ -167,6 +195,50 @@ def parse_body(body: bytes, model: str) -> dict:
     return {"raw_response": body.decode("utf-8", "backslashreplace"), "generation_status": "malformed_response",
             "malformed_reason": problem, "provider_response_id": response.get("id"), "returned_model": response.get("model"),
             "usage": response.get("usage"), "provider_status": status, "incomplete_details": response.get("incomplete_details")}
+
+
+def parse_anthropic_body(response: dict, body: bytes, model: str) -> dict:
+    """Read only completed Messages responses. Unknown stops and malformed shapes keep the call held.
+
+    Thinking blocks are retained in provider_response and the byte capture but never become a proof candidate.
+    Only explicit error objects are provider failures; an unfamiliar possibly billed response is never retried.
+    """
+    if response.get("type") == "error" and isinstance(response.get("error"), dict):
+        return {"generation_status": "provider_failure", "provider_response": response if unstorable(response) is None else None}
+    stop = response.get("stop_reason")
+    statuses = {"end_turn": "completed", "max_tokens": "truncated_output", "refusal": "refusal"}
+    try:
+        if response.get("type") != "message" or response.get("role") != "assistant":
+            raise TypeError("the body is not an assistant Message")
+        if not isinstance(stop, str) or stop not in statuses:
+            raise TypeError("the Message has an unsupported or absent stop_reason")
+        parts, outside_content = [], []
+        for block in listed(response.get("content"), "content"):
+            kind = block.get("type")
+            if kind == "text":
+                if not isinstance(block.get("text"), str):
+                    raise TypeError("a text block has no string text")
+                parts.append(block["text"])
+                outside_content.append({**block, "text": ""})
+            elif kind in ("thinking", "redacted_thinking"):
+                outside_content.append(block)
+            else:
+                raise TypeError("the Message has an unsupported content block")
+    except (TypeError, AttributeError) as error:
+        return {"generation_status": None, "unreadable": f"{type(error).__name__}: {error}"}
+    metadata = {"provider_response_id": response.get("id"), "returned_model": response.get("model"),
+                "usage": response.get("usage"), "provider_status": stop, "stop_reason": stop,
+                "stop_sequence": response.get("stop_sequence"), "incomplete_details": None}
+    parsed = {"raw_response": "\n".join(parts), "generation_status": statuses[stop],
+              **metadata, "refusals": parts.copy() if stop == "refusal" else [], "provider_response": response}
+    problem = unstorable(parsed)
+    if problem is None:
+        return parsed
+    outside = unstorable({**response, "content": outside_content})
+    if outside is not None or response.get("model") != model:
+        return {"generation_status": None, "unreadable": outside or f"the returned model is not the pinned snapshot; {problem}"}
+    return {"raw_response": body.decode("utf-8", "backslashreplace"), "generation_status": "malformed_response",
+            "malformed_reason": problem, **metadata}
 
 
 def retry_after_seconds(value) -> float:
@@ -240,20 +312,28 @@ def _generate(run: Path, held: contextlib.ExitStack, limit: int | None, retry_re
     settings = manifest["config"]["generation"]
     if manifest["config"]["validation"].get("isolation") != "docker":
         raise ValueError("Live model generations require the container runtime profile; native development is for trusted references only")
-    if settings.get("provider") != "openai":
-        raise ValueError("Built-in live provider is OpenAI; use import-responses for other providers")
+    provider = settings.get("provider", "openai")
+    if provider not in LIVE_PROVIDERS:
+        raise ValueError("Built-in live providers are OpenAI and Anthropic; use import-responses for other providers")
+    endpoint, key_name, request_id_header = LIVE_PROVIDERS[provider]
     if manifest["model_snapshot"] in ("reference_fixture", "RESOLVE_BEFORE_RUN", "unconfigured"):
         raise ValueError("Set a real model snapshot before requesting live generations")
     if not settings.get("snapshot_pinned"):
         raise ValueError("A pinned model snapshot is required, including for live development runs")
     if not settings.get("settings_resolved"):
         raise ValueError("Mark reasoning and sampling settings resolved before live generation")
-    key = os.environ.get("OPENAI_API_KEY", "").strip()
+    key = os.environ.get(key_name, "").strip()
     if not key:
-        raise ValueError("OPENAI_API_KEY is not configured. Set it outside the repository; never put it in config files.")
+        raise ValueError(f"{key_name} is not configured. Set it outside the repository; never put it in config files.")
     if not (key.isascii() and key.isprintable()) or " " in key:
         # Header construction would otherwise fail with the key in its message. Never echo it.
-        raise ValueError("OPENAI_API_KEY contains whitespace, control or non-ASCII characters; fix the stored secret (value not shown)")
+        raise ValueError(f"{key_name} contains whitespace, control or non-ASCII characters; fix the stored secret (value not shown)")
+    headers = {"Content-Type": "application/json", **(
+        {"x-api-key": key, "anthropic-version": "2023-06-01"} if provider == "anthropic" else
+        {"Authorization": f"Bearer {key}"})}
+    # Resolve provider mapping before acquiring a marker or logging any request.
+    for slot in manifest["slots"]:
+        response_payload(slot, settings)
     image = manifest["config"]["validation"].get("docker_image", "")
     try:
         ready = subprocess.run(["docker", "image", "inspect", image], env=docker_cli_env(), capture_output=True, timeout=10)
@@ -303,15 +383,15 @@ def _generate(run: Path, held: contextlib.ExitStack, limit: int | None, retry_re
         for transport_index in range(maximum):
             event = {"attempt_id": slot["attempt_id"], "transport_index": transport_index}
             append_event(transport, {**event, "event": "request_started", "request_hash": digest(payload)})
-            request = urllib.request.Request("https://api.openai.com/v1/responses",
+            request = urllib.request.Request(endpoint,
                        data=json.dumps(payload).encode(), method="POST",
-                       headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+                       headers=headers)
             started = time.monotonic()
             retry_after = 0
             try:
                 with urllib.request.urlopen(request, timeout=settings.get("timeout_seconds", 180)) as reply:
                     received = reply.read()
-                    request_id = reply.headers.get("x-request-id")
+                    request_id = reply.headers.get(request_id_header)
                 # Append the received, possibly billed, bytes to the attempt's capture before anything reads them.
                 capture = {"path": f"captures/{slot['attempt_id']}.jsonl", "body_sha256": hashlib.sha256(received).hexdigest()}
                 append_event(run / capture["path"], {**event, "request_id": request_id, "body_sha256": capture["body_sha256"],
@@ -330,7 +410,7 @@ def _generate(run: Path, held: contextlib.ExitStack, limit: int | None, retry_re
                     error.close()
                 last_error = {"http_status": error.code, "body": body, "retry_after": (error.headers or {}).get("Retry-After")}
                 append_event(transport, {**event, "event": "http_error", **last_error})
-                if error.code not in (408, 429, 500, 502, 503, 504):
+                if error.code not in (408, 429, 500, 502, 503, 504) and not (provider == "anthropic" and error.code == 529):
                     break
                 retry_after = retry_after_seconds(last_error["retry_after"])
                 if retry_after > retry.get("max_retry_after_seconds", 60):
@@ -348,7 +428,7 @@ def _generate(run: Path, held: contextlib.ExitStack, limit: int | None, retry_re
             if transport_index + 1 < maximum:
                 backoffs = retry.get("backoff_seconds", [1, 4])
                 time.sleep(max(backoffs[min(transport_index, len(backoffs) - 1)], retry_after))
-        parsed = None if received is None else parse_body(received, slot["model_snapshot"])
+        parsed = None if received is None else parse_body(received, slot["model_snapshot"], provider)
         if parsed is not None and parsed["generation_status"] is None:
             # Possibly billed but unreadable: never resend it automatically. Keep the marker, as for a lost response.
             append_event(transport, {"attempt_id": slot["attempt_id"], "event": "outcome_unknown", "capture": capture,
@@ -458,7 +538,7 @@ def _shown(value):
     return value if problem is None else {"unstorable": problem}
 
 
-def _body_metadata(body: bytes) -> dict:
+def _body_metadata(body: bytes, provider: str = "openai") -> dict:
     """A captured body's size and, for a JSON object, its provider metadata; never its text."""
     try:
         response = json.loads(body)
@@ -469,9 +549,12 @@ def _body_metadata(body: bytes) -> dict:
     error = response.get("error") if isinstance(response.get("error"), dict) else {}
     return {"bytes": len(body), "json_object": True, **{key: _shown(value) for key, value in (
         ("provider_response_id", response.get("id")), ("returned_model", response.get("model")),
-        ("provider_status", response.get("status")), ("usage", response.get("usage")),
+        ("provider_status", response.get("stop_reason") if provider == "anthropic" else response.get("status")),
+        ("usage", response.get("usage")),
         ("incomplete_details", response.get("incomplete_details")), ("error_code", error.get("code")),
-        ("error_type", error.get("type")))}}
+        ("error_type", error.get("type")))}, **(
+            {"stop_reason": _shown(response.get("stop_reason")), "stop_sequence": _shown(response.get("stop_sequence"))}
+            if provider == "anthropic" else {})}
 
 
 def _named(event: dict) -> str | None:
@@ -532,13 +615,14 @@ def _capture_entries(run: Path, slot: dict, settings: dict, requests: list):
         except (TypeError, ValueError):
             pass
         summary = {"entry": entry, **{key: _shown(line.get(key)) for key in ("transport_index", "request_id", "body_sha256")},
-                   "captured_at": _shown(line.get("recorded_at")), **({} if body is None else _body_metadata(body))}
+                   "captured_at": _shown(line.get("recorded_at")), **({} if body is None else
+                   _body_metadata(body, settings.get("provider", "openai")))}
         problem = ("the capture line is not a JSON object" if not line else
                    "the capture line names another attempt" if line.get("attempt_id") != attempt else
                    "its body_base64 does not decode" if body is None else
                    "the body does not match its body_sha256" if hashlib.sha256(body).hexdigest() != line.get("body_sha256") else None)
         if problem is None:
-            parsed = parse_body(body, model)
+            parsed = parse_body(body, model, settings.get("provider", "openai"))
             status = summary["generation_status"] = parsed["generation_status"]
             if status == "provider_failure":
                 summary["prompt_rejected"] = bool(parsed.get("prompt_rejected") or prompt_rejected(parsed["provider_response"], None))
