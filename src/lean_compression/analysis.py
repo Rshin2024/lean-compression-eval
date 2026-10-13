@@ -176,16 +176,27 @@ def _first_recorded(mapping, keys):
     return None
 
 
-def _peak_memory_mib(resources):
-    value = _first_recorded(resources, ("peak_memory_mib", "peak_rss_mib", "max_rss_mib"))
-    if value is not None:
-        return _resource_number(value)
-    value = _first_recorded(resources, ("peak_memory_bytes", "peak_rss_bytes", "max_rss_bytes"))
-    if value is not None:
-        parsed, invalid = _resource_number(value)
-        return (parsed / (1024 * 1024) if parsed is not None else None), invalid
-    # In particular, memory_mib_requested is not a measured peak.
-    return None, False
+# Peak memory by scope, never pooled. The Docker runner records the container's cgroup high-water mark, with this
+# peak_memory_scope (older Docker records omit it). No runner here records a process's peak RSS, and native runs record
+# no peak; peak_rss/max_rss fields are read only from records that supply them.
+CONTAINER_PEAK_SCOPE = "cgroup high-water mark of all memory charged to the container, page cache included"
+PEAK_FIELDS = {"container": (("peak_memory_mib",), ("peak_memory_bytes",)),
+               "process_rss": (("peak_rss_mib", "max_rss_mib"), ("peak_rss_bytes", "max_rss_bytes"))}
+
+
+def _peak_memory_mib(resources, scope="container"):
+    """A recorded peak of this scope in MiB; a container peak whose record states another scope is invalid, not pooled."""
+    mib, octets = PEAK_FIELDS[scope]
+    value, divisor = _first_recorded(resources, mib), 1
+    if value is None:
+        value, divisor = _first_recorded(resources, octets), 1024 * 1024
+    if value is None:
+        # In particular, memory_mib_requested is not a measured peak.
+        return None, False
+    if scope == "container" and resources.get("peak_memory_scope") not in (None, CONTAINER_PEAK_SCOPE):
+        return None, True
+    parsed, invalid = _resource_number(value)
+    return (parsed / divisor if parsed is not None else None), invalid
 
 
 def _usage_mapping(value):
@@ -195,12 +206,37 @@ def _usage_mapping(value):
     return (value, False) if isinstance(value, dict) else ({}, True)
 
 
+HEARTBEATS = ("Lean heartbeats (maxHeartbeats units) of candidate elaboration, including the elaborator's own kernel "
+              "checks, plus kernel replay in the {} run; not bounded by or comparable with validation.max_heartbeats. "
+              "Engines that report them do so for successful checks only.")
+DESCRIPTIONS = {
+    "validation_heartbeats": HEARTBEATS.format("validation"),
+    "extraction_heartbeats": HEARTBEATS.format("extraction") + " The extraction run repeats that check before it builds "
+                             "the graph, so this is a second reading of the validation work, not the cost of extraction; "
+                             "never add it to validation_heartbeats.",
+    "generation_elapsed_seconds": "Recorded generation workflow wall time, including retries/backoff for the built-in "
+                                  "provider; not model-only compute.",
+    **{stage + "_peak_memory_mib": "Container peak: the " + CONTAINER_PEAK_SCOPE + " (Docker). Never pooled with "
+       "process RSS peaks; a peak recorded under another peak_memory_scope is invalid." for stage in ("validation", "extraction")},
+    **{stage + "_peak_rss_mib": "Process peak: a Lean process's peak resident set size, from peak_rss/max_rss fields "
+       "of records that supply them; no runner of this harness records them (native runs record no peak: "
+       "peak_memory_reason not_instrumented). Not the memory charged to a container. Never pooled with container peaks."
+       for stage in ("validation", "extraction")}}
+# Report labels that name each measurement's scope where its key alone would not.
+RESOURCE_LABELS = {"generation_elapsed_seconds": "generation workflow wall seconds",
+                   "extraction_heartbeats": "extraction heartbeats (a repeat of the validation check; not additive)",
+                   **{f"{stage}_peak_memory_mib": f"{stage} peak memory MiB, container (page cache included)"
+                      for stage in ("validation", "extraction")},
+                   **{f"{stage}_peak_rss_mib": f"{stage} peak RSS MiB, Lean process (not recorded by this harness)"
+                      for stage in ("validation", "extraction")}}
+
+
 def _resource_summary(records):
     names = {"validation_elapsed_seconds": "seconds", "extraction_elapsed_seconds": "seconds",
-             "validation_heartbeats": "maxHeartbeats",
+             "validation_heartbeats": "maxHeartbeats", "extraction_heartbeats": "maxHeartbeats",
              "generation_elapsed_seconds": "seconds", "validation_peak_memory_mib": "MiB",
-             "extraction_peak_memory_mib": "MiB", "input_tokens": "tokens", "output_tokens": "tokens",
-             "reasoning_tokens": "tokens"}
+             "extraction_peak_memory_mib": "MiB", "validation_peak_rss_mib": "MiB", "extraction_peak_rss_mib": "MiB",
+             "input_tokens": "tokens", "output_tokens": "tokens", "reasoning_tokens": "tokens"}
     observed = {name: [] for name in names}
     invalid_counts = Counter()
     for record in records:
@@ -219,9 +255,12 @@ def _resource_summary(records):
             "validation_elapsed_seconds": _resource_number(validation.get("elapsed_seconds")),
             "extraction_elapsed_seconds": _resource_number(extraction.get("elapsed_seconds")),
             "validation_heartbeats": _resource_number(validation.get("heartbeats_used")),
+            "extraction_heartbeats": _resource_number(extraction.get("heartbeats_used")),
             "generation_elapsed_seconds": _resource_number(latency),
             "validation_peak_memory_mib": _peak_memory_mib(validation),
             "extraction_peak_memory_mib": _peak_memory_mib(extraction),
+            "validation_peak_rss_mib": _peak_memory_mib(validation, "process_rss"),
+            "extraction_peak_rss_mib": _peak_memory_mib(extraction, "process_rss"),
             "input_tokens": _resource_number(_first_recorded(usage, ("input_tokens", "prompt_tokens")), integral=True),
             "output_tokens": _resource_number(_first_recorded(usage, ("output_tokens", "completion_tokens")), integral=True),
             "reasoning_tokens": _resource_number(usage.get("reasoning_tokens")
@@ -243,18 +282,17 @@ def _resource_summary(records):
                          "max": max(values) if values else None,
                          "sum_scope": "not_applicable_for_peak_memory" if names[name] == "MiB" else "observed_records_only",
                          "reason": "no_recorded_measurements" if not values else None}
-        if name == "generation_elapsed_seconds":
-            summary[name]["description"] = "Recorded generation workflow wall time, including retries/backoff for the built-in provider; not model-only compute."
-        elif name == "validation_heartbeats":
-            summary[name]["description"] = ("Lean heartbeats (maxHeartbeats units) of candidate elaboration, including the "
-                                             "elaborator's own kernel checks, plus kernel replay in the validation run; not "
-                                             "bounded by or comparable with validation.max_heartbeats. Engines that report "
-                                             "them do so for successful checks only.")
+        if name in DESCRIPTIONS:
+            summary[name]["description"] = DESCRIPTIONS[name]
     return {"population": "all_scheduled_attempts_including_failures", "scheduled_attempts": len(records),
             "measurements": summary,
             "notes": ["Missing or unrecorded values are not zero; extraction may not have run after a validation failure.",
                       "Elapsed sums and quantiles include only observed records; sums are not whole-run totals when coverage is incomplete.",
                       "Requested memory limits are not peak-memory measurements.",
+                      "Container high-water marks (page cache included) and Lean-process RSS peaks are separate "
+                      "measurements and are never pooled.",
+                      "Extraction heartbeats are the extraction run's second reading of the validation check; they are not "
+                      "added to validation heartbeats.",
                       "Generation latency is unavailable unless explicitly stored on the generation record; it is not inferred from timestamps or transport logs.",
                       "Built-in provider generation_elapsed_seconds measures the entire generation workflow, including fixed transport retries/backoff, not model-only computation.",
                       "Reasoning-token counts may already be included in provider output-token counts; these columns must not be added together.",
@@ -313,7 +351,10 @@ def _stratum_groups(task_ids, task_map, settings):
 
 
 def _family_bootstrap(vectors, clusters, families, replicates, seed):
-    """Replay the pooled family draws from the same seed for additional statistics."""
+    """Task-weighted means of each vector over whole-family resamples within each cluster, and their least support.
+
+    The draws depend only on the clusters and the seed, so the pooled contrasts and their stratum subgroups share them.
+    """
     rng = random.Random(seed)
     boot_values = {key: [] for key in vectors}
     support_minimum = {key: None for key in vectors}
@@ -642,22 +683,7 @@ def analyze(tasks: list[dict], attempts: list[dict], references: dict,
         # Resample each domain's families, preserving all task/sample/arm rows.
         # A large family contributes more tasks to the statistic, as in the
         # equal-task point estimand; it does not receive equal-family weight.
-        rng = random.Random(seed)
-        boot_values = {key: [] for key in vectors}
-        support_minimum = {key: None for key in vectors}
-        for _ in range(replicates):
-            family_weights = Counter()
-            for cluster_ids in strata.values():
-                family_weights.update(rng.choices(cluster_ids, k=len(cluster_ids)))
-            task_weights = {task_id: multiplicity for family, multiplicity in family_weights.items()
-                            for task_id in families[family]}
-            for key, values in vectors.items():
-                denominator = sum(task_weights.get(task_id, 0) for task_id in values)
-                if denominator:
-                    boot_values[key].append(sum(value * task_weights.get(task_id, 0)
-                                                for task_id, value in values.items()) / denominator)
-                minimum = support_minimum[key]
-                support_minimum[key] = denominator if minimum is None else min(minimum, denominator)
+        boot_values, support_minimum = _family_bootstrap(vectors, strata, families, replicates, seed)
         for (name, label), values in vectors.items():
             family_count = len({task_map[task_id]["family_id"] for task_id in values})
             result = _interval(_average(list(values.values())), boot_values[name, label], confidence,
@@ -1095,7 +1121,10 @@ def write_report(report: dict, destination: str | Path) -> dict[str, str]:
         body.append(_bootstrap_note(report["bootstrap"]))
         body.append(_stratum_html(model_report, level))
         body.append("<h3>Resource use: all scheduled attempts</h3><p>Failures are included. Missing observations are unavailable, "
-                    "never zero; peak memory uses recorded peaks, not requested limits. Token columns are separate provider counts "
+                    "never zero; peak memory uses recorded peaks, not requested limits. A container's cgroup high-water mark, "
+                    "page cache included, and a Lean process's peak RSS are different scopes, shown in separate rows and never "
+                    "pooled. Extraction heartbeats are the extraction run's repeat of the validation check, not extra work, and "
+                    "are never added to validation heartbeats. Token columns are separate provider counts "
                     "and must not be added together. No API cost is inferred.</p><table><tr><th>Condition</th><th>Measurement</th>"
                     "<th>Observed / scheduled</th><th>Median</th><th>p95</th><th>Observed sum</th></tr>")
         for condition, summary in model_report["conditions"].items():
@@ -1105,8 +1134,7 @@ def write_report(report: dict, destination: str | Path) -> dict[str, str]:
                         return "unavailable"
                     return f"{value:,}" if isinstance(value, int) else f"{value:,.4g}"
                 body.append("<tr><td>" + html.escape(condition) + "</td><td>" +
-                    html.escape("generation workflow wall seconds" if measurement == "generation_elapsed_seconds"
-                                else measurement.replace("_", " ")) + "</td><td>" +
+                    html.escape(RESOURCE_LABELS.get(measurement, measurement.replace("_", " "))) + "</td><td>" +
                     f"{resource['observed_count']} / {summary['scheduled_attempts']}</td><td>" +
                     resource_number(resource["median"]) + "</td><td>" + resource_number(resource["p95"]) +
                     "</td><td>" + ("not applicable" if resource["unit"] == "MiB" else resource_number(resource["sum"])) + "</td></tr>")

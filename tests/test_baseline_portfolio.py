@@ -1,9 +1,11 @@
 """The trusted tactic portfolio reaches every alternative.
 
 `first` commits to the first alternative that does not fail. A simp_all that only
-rewrites hypotheses therefore ended the old portfolio with unsolved goals, and
-omega and aesop never ran. The Lean class runs the real `baseline` command and
-skips without the pinned local runtime and the macOS development sandbox.
+rewrites hypotheses therefore ended the old single-proof portfolio with unsolved
+goals, and omega and aesop never ran. The listed alternatives are now separate
+proofs, so such a simp_all is one failed check and the next alternatives still run.
+The Lean class runs the real `baseline` command and skips without the pinned local
+runtime and the macOS development sandbox.
 """
 import contextlib
 import io
@@ -23,7 +25,7 @@ except ModuleNotFoundError:  # python3 -m unittest tests.test_baseline_portfolio
 
 PROJECT = Path(__file__).resolve().parents[1]
 ENGINE = PROJECT / "lean/Evaluator.lean"
-PORTFOLIO = "by first | rfl | assumption | (simp_all; done) | omega | aesop"
+TACTICS = ["rfl", "assumption", "(simp_all; done)", "omega", "aesop"]
 COMMITTING = "by first | rfl | assumption | simp_all | omega | aesop"
 FIXTURE = {"split": "pilot", "origin": "fresh", "stratum": "provisional_easy", "imports": ["Aesop"],
            "context": "", "premise_context": "", "forbidden_declarations": []}
@@ -37,9 +39,11 @@ TASKS = [{**FIXTURE, "task_id": "portfolio_omega", "family_id": "portfolio_omega
 
 
 class PortfolioConfigTests(unittest.TestCase):
-    def test_shipped_portfolios_make_every_alternative_terminal(self):
-        for name in ("configs/development.json", "configs/pilot.json"):
-            self.assertEqual(read_json(PROJECT / name)["tactic_portfolio"], PORTFOLIO, name)
+    def test_shipped_configs_list_terminal_alternatives_instead_of_one_proof(self):
+        for name in ("configs/development.json", "configs/pilot.json", "configs/pilot-ready.json"):
+            config = read_json(PROJECT / name)
+            self.assertEqual(config["tactic_portfolio_tactics"], TACTICS, name)
+            self.assertNotIn("tactic_portfolio", config, name)
 
 
 class PortfolioLeanTests(unittest.TestCase):
@@ -62,18 +66,24 @@ class PortfolioLeanTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             (root / "tasks.jsonl").write_text("".join(json.dumps(task) + "\n" for task in TASKS))
-            write_json(root / "committing.json", {**read_json(PROJECT / "configs/development.json"),
-                                                  "tactic_portfolio": COMMITTING})
+            legacy = {key: value for key, value in read_json(PROJECT / "configs/development.json").items()
+                      if key != "tactic_portfolio_tactics"}
+            write_json(root / "committing.json", {**legacy, "tactic_portfolio": COMMITTING})
             before = self.baseline(root, root / "committing.json", "committing")
             after = self.baseline(root, PROJECT / "configs/development.json", "portfolio")
-        for task in TASKS:
+        for task, solver in zip(TASKS, ("omega", "aesop")):
             with self.subTest(task["task_id"]):
                 old, new = before[task["task_id"]], after[task["task_id"]]
                 self.assertEqual(old["validity_status"], "elaboration_failure", old["validation"])
                 self.assertIn("unsolved goals", old["validation"]["failure_reason"])
                 self.assertEqual((new["validity_status"], new["record_kind"], new["proof"]),
-                                 ("success", "trusted_tactic_baseline", PORTFOLIO), new["validation"])
+                                 ("success", "trusted_tactic_baseline", "by " + solver), new["validation"])
                 self.assertTrue(new["validation"]["kernel_replay"])
+                attempts = new["portfolio_alternatives"]
+                self.assertEqual([attempt["tactic"] for attempt in attempts], TACTICS[:TACTICS.index(solver) + 1])
+                self.assertEqual([attempt["validity_status"] for attempt in attempts],
+                                 ["elaboration_failure"] * TACTICS.index(solver) + ["success"])
+                self.assertIn("unsolved goals", attempts[2]["failure_reason"])
 
 
 if __name__ == "__main__":

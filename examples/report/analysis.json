@@ -116,6 +116,19 @@
                 "reason": "no_recorded_measurements",
                 "description": "Lean heartbeats (maxHeartbeats units) of candidate elaboration, including the elaborator's own kernel checks, plus kernel replay in the validation run; not bounded by or comparable with validation.max_heartbeats. Engines that report them do so for successful checks only."
               },
+              "extraction_heartbeats": {
+                "unit": "maxHeartbeats",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "observed_records_only",
+                "reason": "no_recorded_measurements",
+                "description": "Lean heartbeats (maxHeartbeats units) of candidate elaboration, including the elaborator's own kernel checks, plus kernel replay in the extraction run; not bounded by or comparable with validation.max_heartbeats. Engines that report them do so for successful checks only. The extraction run repeats that check before it builds the graph, so this is a second reading of the validation work, not the cost of extraction; never add it to validation_heartbeats."
+              },
               "generation_elapsed_seconds": {
                 "unit": "seconds",
                 "observed_count": 0,
@@ -139,7 +152,8 @@
                 "p95": null,
                 "max": null,
                 "sum_scope": "not_applicable_for_peak_memory",
-                "reason": "no_recorded_measurements"
+                "reason": "no_recorded_measurements",
+                "description": "Container peak: the cgroup high-water mark of all memory charged to the container, page cache included (Docker). Never pooled with process RSS peaks; a peak recorded under another peak_memory_scope is invalid."
               },
               "extraction_peak_memory_mib": {
                 "unit": "MiB",
@@ -151,7 +165,34 @@
                 "p95": null,
                 "max": null,
                 "sum_scope": "not_applicable_for_peak_memory",
-                "reason": "no_recorded_measurements"
+                "reason": "no_recorded_measurements",
+                "description": "Container peak: the cgroup high-water mark of all memory charged to the container, page cache included (Docker). Never pooled with process RSS peaks; a peak recorded under another peak_memory_scope is invalid."
+              },
+              "validation_peak_rss_mib": {
+                "unit": "MiB",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "not_applicable_for_peak_memory",
+                "reason": "no_recorded_measurements",
+                "description": "Process peak: a Lean process's peak resident set size, from peak_rss/max_rss fields of records that supply them; no runner of this harness records them (native runs record no peak: peak_memory_reason not_instrumented). Not the memory charged to a container. Never pooled with container peaks."
+              },
+              "extraction_peak_rss_mib": {
+                "unit": "MiB",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "not_applicable_for_peak_memory",
+                "reason": "no_recorded_measurements",
+                "description": "Process peak: a Lean process's peak resident set size, from peak_rss/max_rss fields of records that supply them; no runner of this harness records them (native runs record no peak: peak_memory_reason not_instrumented). Not the memory charged to a container. Never pooled with container peaks."
               },
               "input_tokens": {
                 "unit": "tokens",
@@ -194,6 +235,8 @@
               "Missing or unrecorded values are not zero; extraction may not have run after a validation failure.",
               "Elapsed sums and quantiles include only observed records; sums are not whole-run totals when coverage is incomplete.",
               "Requested memory limits are not peak-memory measurements.",
+              "Container high-water marks (page cache included) and Lean-process RSS peaks are separate measurements and are never pooled.",
+              "Extraction heartbeats are the extraction run's second reading of the validation check; they are not added to validation heartbeats.",
               "Generation latency is unavailable unless explicitly stored on the generation record; it is not inferred from timestamps or transport logs.",
               "Built-in provider generation_elapsed_seconds measures the entire generation workflow, including fixed transport retries/backoff, not model-only computation.",
               "Reasoning-token counts may already be included in provider output-token counts; these columns must not be added together.",
@@ -282,6 +325,19 @@
                 "reason": "no_recorded_measurements",
                 "description": "Lean heartbeats (maxHeartbeats units) of candidate elaboration, including the elaborator's own kernel checks, plus kernel replay in the validation run; not bounded by or comparable with validation.max_heartbeats. Engines that report them do so for successful checks only."
               },
+              "extraction_heartbeats": {
+                "unit": "maxHeartbeats",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "observed_records_only",
+                "reason": "no_recorded_measurements",
+                "description": "Lean heartbeats (maxHeartbeats units) of candidate elaboration, including the elaborator's own kernel checks, plus kernel replay in the extraction run; not bounded by or comparable with validation.max_heartbeats. Engines that report them do so for successful checks only. The extraction run repeats that check before it builds the graph, so this is a second reading of the validation work, not the cost of extraction; never add it to validation_heartbeats."
+              },
               "generation_elapsed_seconds": {
                 "unit": "seconds",
                 "observed_count": 0,
@@ -305,7 +361,8 @@
                 "p95": null,
                 "max": null,
                 "sum_scope": "not_applicable_for_peak_memory",
-                "reason": "no_recorded_measurements"
+                "reason": "no_recorded_measurements",
+                "description": "Container peak: the cgroup high-water mark of all memory charged to the container, page cache included (Docker). Never pooled with process RSS peaks; a peak recorded under another peak_memory_scope is invalid."
               },
               "extraction_peak_memory_mib": {
                 "unit": "MiB",
@@ -317,7 +374,34 @@
                 "p95": null,
                 "max": null,
                 "sum_scope": "not_applicable_for_peak_memory",
-                "reason": "no_recorded_measurements"
+                "reason": "no_recorded_measurements",
+                "description": "Container peak: the cgroup high-water mark of all memory charged to the container, page cache included (Docker). Never pooled with process RSS peaks; a peak recorded under another peak_memory_scope is invalid."
+              },
+              "validation_peak_rss_mib": {
+                "unit": "MiB",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "not_applicable_for_peak_memory",
+                "reason": "no_recorded_measurements",
+                "description": "Process peak: a Lean process's peak resident set size, from peak_rss/max_rss fields of records that supply them; no runner of this harness records them (native runs record no peak: peak_memory_reason not_instrumented). Not the memory charged to a container. Never pooled with container peaks."
+              },
+              "extraction_peak_rss_mib": {
+                "unit": "MiB",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "not_applicable_for_peak_memory",
+                "reason": "no_recorded_measurements",
+                "description": "Process peak: a Lean process's peak resident set size, from peak_rss/max_rss fields of records that supply them; no runner of this harness records them (native runs record no peak: peak_memory_reason not_instrumented). Not the memory charged to a container. Never pooled with container peaks."
               },
               "input_tokens": {
                 "unit": "tokens",
@@ -360,6 +444,8 @@
               "Missing or unrecorded values are not zero; extraction may not have run after a validation failure.",
               "Elapsed sums and quantiles include only observed records; sums are not whole-run totals when coverage is incomplete.",
               "Requested memory limits are not peak-memory measurements.",
+              "Container high-water marks (page cache included) and Lean-process RSS peaks are separate measurements and are never pooled.",
+              "Extraction heartbeats are the extraction run's second reading of the validation check; they are not added to validation heartbeats.",
               "Generation latency is unavailable unless explicitly stored on the generation record; it is not inferred from timestamps or transport logs.",
               "Built-in provider generation_elapsed_seconds measures the entire generation workflow, including fixed transport retries/backoff, not model-only computation.",
               "Reasoning-token counts may already be included in provider output-token counts; these columns must not be added together.",
@@ -448,6 +534,19 @@
                 "reason": "no_recorded_measurements",
                 "description": "Lean heartbeats (maxHeartbeats units) of candidate elaboration, including the elaborator's own kernel checks, plus kernel replay in the validation run; not bounded by or comparable with validation.max_heartbeats. Engines that report them do so for successful checks only."
               },
+              "extraction_heartbeats": {
+                "unit": "maxHeartbeats",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "observed_records_only",
+                "reason": "no_recorded_measurements",
+                "description": "Lean heartbeats (maxHeartbeats units) of candidate elaboration, including the elaborator's own kernel checks, plus kernel replay in the extraction run; not bounded by or comparable with validation.max_heartbeats. Engines that report them do so for successful checks only. The extraction run repeats that check before it builds the graph, so this is a second reading of the validation work, not the cost of extraction; never add it to validation_heartbeats."
+              },
               "generation_elapsed_seconds": {
                 "unit": "seconds",
                 "observed_count": 0,
@@ -471,7 +570,8 @@
                 "p95": null,
                 "max": null,
                 "sum_scope": "not_applicable_for_peak_memory",
-                "reason": "no_recorded_measurements"
+                "reason": "no_recorded_measurements",
+                "description": "Container peak: the cgroup high-water mark of all memory charged to the container, page cache included (Docker). Never pooled with process RSS peaks; a peak recorded under another peak_memory_scope is invalid."
               },
               "extraction_peak_memory_mib": {
                 "unit": "MiB",
@@ -483,7 +583,34 @@
                 "p95": null,
                 "max": null,
                 "sum_scope": "not_applicable_for_peak_memory",
-                "reason": "no_recorded_measurements"
+                "reason": "no_recorded_measurements",
+                "description": "Container peak: the cgroup high-water mark of all memory charged to the container, page cache included (Docker). Never pooled with process RSS peaks; a peak recorded under another peak_memory_scope is invalid."
+              },
+              "validation_peak_rss_mib": {
+                "unit": "MiB",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "not_applicable_for_peak_memory",
+                "reason": "no_recorded_measurements",
+                "description": "Process peak: a Lean process's peak resident set size, from peak_rss/max_rss fields of records that supply them; no runner of this harness records them (native runs record no peak: peak_memory_reason not_instrumented). Not the memory charged to a container. Never pooled with container peaks."
+              },
+              "extraction_peak_rss_mib": {
+                "unit": "MiB",
+                "observed_count": 0,
+                "missing_count": 1,
+                "invalid_count": 0,
+                "sum": null,
+                "median": null,
+                "p95": null,
+                "max": null,
+                "sum_scope": "not_applicable_for_peak_memory",
+                "reason": "no_recorded_measurements",
+                "description": "Process peak: a Lean process's peak resident set size, from peak_rss/max_rss fields of records that supply them; no runner of this harness records them (native runs record no peak: peak_memory_reason not_instrumented). Not the memory charged to a container. Never pooled with container peaks."
               },
               "input_tokens": {
                 "unit": "tokens",
@@ -526,6 +653,8 @@
               "Missing or unrecorded values are not zero; extraction may not have run after a validation failure.",
               "Elapsed sums and quantiles include only observed records; sums are not whole-run totals when coverage is incomplete.",
               "Requested memory limits are not peak-memory measurements.",
+              "Container high-water marks (page cache included) and Lean-process RSS peaks are separate measurements and are never pooled.",
+              "Extraction heartbeats are the extraction run's second reading of the validation check; they are not added to validation heartbeats.",
               "Generation latency is unavailable unless explicitly stored on the generation record; it is not inferred from timestamps or transport logs.",
               "Built-in provider generation_elapsed_seconds measures the entire generation workflow, including fixed transport retries/backoff, not model-only computation.",
               "Reasoning-token counts may already be included in provider output-token counts; these columns must not be added together.",

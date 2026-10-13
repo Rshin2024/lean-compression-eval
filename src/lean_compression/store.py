@@ -6,9 +6,11 @@ import json
 import random
 import re
 from collections import Counter
+from collections.abc import KeysView
+from datetime import datetime
 from pathlib import Path
 
-from .integrity import is_content_digest, require_completed_pilot, require_implemented_policy, same_stored_response, verified_generation
+from .integrity import frozen_portfolio, is_content_digest, require_completed_pilot, require_implemented_policy, same_stored_response, verified_generation
 from .io import digest, evaluator_hash, measurement_hash, now, read_json, reference_matches_task, same_measurement, task_input_hash, write_json
 from .outcomes import GENERATION_OUTCOMES, PROVIDER_STATUSES, outcome_class
 from .prompts import CONDITIONS, adapt_response, messages, prompt_policy_hash
@@ -151,6 +153,8 @@ def create_run(path: Path, tasks: list[dict], config: dict, environment: dict, *
     if path.exists() and (path / "manifest.json").exists():
         raise FileExistsError(f"Run already frozen: {path}; use the existing run to resume")
     require_implemented_policy(config)
+    # As baseline and analyze --baseline will check it: otherwise no baseline could ever match the run.
+    frozen_portfolio(config)
     adapter = config["generation"].get("response_adapter")
     try:
         adapt_response("", adapter)
@@ -349,47 +353,91 @@ def records(path: Path, evaluation_version: str = "v1", *, graphs: bool = True) 
     return output
 
 
-def _log_events(path: Path) -> tuple[list[dict], int]:
-    """Events of an append-only JSONL log; lines that are not JSON objects are counted, never guessed.
+def _log_lines(path: Path):
+    """Each non-blank line of an append-only JSONL log, read one at a time: its event, or None for a line that is
+    not a JSON object, which callers count and never guess at. Memory is bounded by the longest line, not the log.
 
     Only "\\n" ends an event: JSON text keeps U+2028, U+2029 and U+0085 raw, which str.splitlines() would split.
     """
-    events, unreadable = [], 0
-    for line in (path.read_bytes().split(b"\n") if path.exists() else []):
-        if not line.strip():
-            continue
-        try:
-            event = json.loads(line.decode("utf-8", errors="replace"))
-        except (ValueError, RecursionError):
-            event = None
-        if isinstance(event, dict):
-            events.append(event)
-        else:
-            unreadable += 1
-    return events, unreadable
+    if not path.exists():
+        return
+    with path.open("rb") as stream:
+        for line in stream:
+            if not line.strip():
+                continue
+            try:
+                event = json.loads(line.decode("utf-8", errors="replace"))
+            except (ValueError, RecursionError):
+                event = None
+            yield event if isinstance(event, dict) else None
 
 
-def rejected_prompts(path: Path, slots: list[dict], transport: list[dict] | None = None) -> set[str]:
-    """Prompt hashes of slots whose request the provider rejected as invalid_prompt, per the run's transport.jsonl.
+def logged_evaluations(path: Path, evaluation_version: str) -> set[str]:
+    """The attempts whose attempt_evaluated event of this version the run's events.jsonl holds, streamed."""
+    return {event["attempt_id"] for event in _log_lines(path / "events.jsonl")
+            if event is not None and event.get("event") == "attempt_evaluated"
+            and event.get("evaluation_version") == evaluation_version and isinstance(event.get("attempt_id"), str)}
 
-    The samples of a task and condition share a prompt, so one rejection stands for all of its slots.
-    transport is that log's already-parsed events, if the caller has them.
-    """
-    if transport is None:
-        transport, _ = _log_events(path / "transport.jsonl")
+
+def _log_events(path: Path) -> tuple[list[dict], int]:
+    """Events of an append-only JSONL log, and the number of lines that are not JSON objects."""
+    events = list(_log_lines(path))
+    return [event for event in events if event is not None], events.count(None)
+
+
+def _provider_log(path: Path, slots: list[dict], events=None) -> dict:
+    """One pass over the run's transport.jsonl (streamed unless its events are given): counts of events without a
+    model outcome, unreadable lines, the scheduled attempts they name and, for each prompt rejected as invalid_prompt,
+    its latest rejection time, ordered by that rejection, oldest first."""
     prompt_of = {slot["attempt_id"]: slot["prompt_hash"] for slot in slots}
-    return {prompt_of[event["attempt_id"]] for event in transport
-            if event.get("event") == "no_model_outcome" and event.get("prompt_rejected") is True
-            and isinstance(event.get("attempt_id"), str) and event["attempt_id"] in prompt_of}
+    summary = {"no_model_outcome": 0, "outcome_unknown": 0, "unreadable": 0, "outages": set(), "refused": {}}
+    for event in _log_lines(path / "transport.jsonl") if events is None else events:
+        if event is None:
+            summary["unreadable"] += 1
+            continue
+        kind, attempt_id = event.get("event"), event.get("attempt_id")
+        if kind not in ("no_model_outcome", "outcome_unknown"):
+            continue
+        summary[kind] += 1
+        if isinstance(attempt_id, str) and attempt_id in prompt_of:
+            summary["outages"].add(attempt_id)
+            if kind == "no_model_outcome" and event.get("prompt_rejected") is True:
+                prompt = prompt_of[attempt_id]
+                summary["refused"].pop(prompt, None)  # in the order of each prompt's latest rejection
+                summary["refused"][prompt] = event.get("recorded_at")
+    return summary
+
+
+def _still_refused(path: Path, slots: list[dict], refused: dict) -> KeysView[str]:
+    """The refused prompts none of whose slots has a generation recorded after the prompt's latest rejection."""
+    def taken(slot):
+        """Whether this slot's generation was recorded after its prompt's latest rejection; not if a time is unreadable."""
+        target = generation_path(path, slot["attempt_id"])
+        try:
+            return target.exists() and (datetime.fromisoformat(read_json(target)["created_at"])
+                                        > datetime.fromisoformat(refused[slot["prompt_hash"]]))
+        except (OSError, ValueError, TypeError, KeyError):
+            return False
+
+    accepted = {slot["prompt_hash"] for slot in slots if slot["prompt_hash"] in refused and taken(slot)}
+    return dict.fromkeys(prompt for prompt in refused if prompt not in accepted).keys()
+
+
+def rejected_prompts(path: Path, slots: list[dict], transport: list[dict] | None = None) -> KeysView[str]:
+    """Prompt hashes the provider rejected as invalid_prompt, per the run's transport.jsonl, and has not taken since.
+
+    The samples of a task and condition share a prompt, so one rejection stands for all of its slots until a generation
+    of any of them is recorded after it. The set is ordered by each prompt's latest rejection, oldest first.
+    transport is that log's already-parsed events, if the caller has them; otherwise the log is streamed.
+    """
+    return _still_refused(path, slots, _provider_log(path, slots, transport)["refused"])
 
 
 def _incident_summary(path: Path, log: Path, directory: Path, scheduled: set) -> dict:
-    """A checker incident log's events, and the latest incident of each attempt still without a record in directory."""
-    incidents, unreadable = _log_events(log)
-    attempt = lambda event: event.get("attempt_id") if isinstance(event.get("attempt_id"), str) else None
-    latest = {attempt(event): event for event in incidents if attempt(event) in scheduled}
-    pending = [event for attempt_id, event in latest.items() if not (directory / f"{attempt_id}.json").exists()]
+    """A checker incident log's events, and the latest incident of each attempt still without a record in directory.
 
+    The log is streamed: only counts and each scheduled attempt's latest status, phase and reason are kept.
+    """
     def reason(event):
         phase = event.get("extraction" if event.get("failure_phase") == "extraction" else "validation")
         phase = phase if isinstance(phase, dict) else {}
@@ -397,11 +445,22 @@ def _incident_summary(path: Path, log: Path, directory: Path, scheduled: set) ->
                    or event.get("error") or "").strip()
         return text.splitlines()[0][:200] if text else "unreported"
 
-    return {"log": log.relative_to(path).as_posix(), "events": len(incidents), "unreadable_lines": unreadable,
+    events = unreadable = 0
+    latest = {}
+    for event in _log_lines(log):
+        if event is None:
+            unreadable += 1
+            continue
+        events += 1
+        attempt_id = event.get("attempt_id")
+        if isinstance(attempt_id, str) and attempt_id in scheduled:
+            latest[attempt_id] = (str(event.get("validity_status")), str(event.get("failure_phase", "validation")), reason(event))
+    pending = [state for attempt_id, state in latest.items() if not (directory / f"{attempt_id}.json").exists()]
+    return {"log": log.relative_to(path).as_posix(), "events": events, "unreadable_lines": unreadable,
             "attempts": len(latest), "unresolved_attempts": len(pending),
-            "unresolved_statuses": dict(sorted(Counter(str(e.get("validity_status")) for e in pending).items())),
-            "unresolved_phases": dict(sorted(Counter(str(e.get("failure_phase", "validation")) for e in pending).items())),
-            "unresolved_reasons": dict(sorted(Counter(reason(e) for e in pending).items()))}
+            "unresolved_statuses": dict(sorted(Counter(status for status, _, _ in pending).items())),
+            "unresolved_phases": dict(sorted(Counter(phase for _, phase, _ in pending).items())),
+            "unresolved_reasons": dict(sorted(Counter(text for _, _, text in pending).items()))}
 
 
 def logged_outages(path: Path, evaluation_version: str = "v1") -> dict:
@@ -410,7 +469,8 @@ def logged_outages(path: Path, evaluation_version: str = "v1") -> dict:
     Such a slot has no evaluation or generation record, so records() calls it not_evaluated or
     not_generated. An attempt is unresolved while it still lacks that record. A rescored version copies
     records, never incidents, so the evaluated version it was rescored from reports the incidents it inherits.
-    Every slot of a prompt the provider rejected is a provider outage, including those generate did not send.
+    Every slot of a prompt the provider rejected is a provider outage, including those generate did not send,
+    until a generation of that prompt is recorded after the rejection.
     """
     slots = load_run(path)["slots"]
     scheduled = {slot["attempt_id"] for slot in slots}
@@ -422,19 +482,16 @@ def logged_outages(path: Path, evaluation_version: str = "v1") -> dict:
             break
         seen.add(policy["source_version"])
         source = evaluation_directory(path, policy["source_version"])
-    attempt = lambda event: event.get("attempt_id") if isinstance(event.get("attempt_id"), str) else None
-    transport, unreadable_transport = _log_events(path / "transport.jsonl")
-    kinds = Counter(str(event.get("event")) for event in transport)
-    outages = {attempt(event) for event in transport if event.get("event") in ("no_model_outcome", "outcome_unknown")}
-    refused = rejected_prompts(path, slots, transport)
+    transport = _provider_log(path, slots)
+    refused = _still_refused(path, slots, transport["refused"])
     rejected = {slot["attempt_id"] for slot in slots if slot["prompt_hash"] in refused}
     pending = lambda attempts: sum(not generation_path(path, a).exists() for a in attempts)
     return {"checker_incidents": _incident_summary(path, directory / "incidents.jsonl", directory, scheduled),
             "inherited_checker_incidents": None if source == directory else {
                 "source_version": source.name, **_incident_summary(path, source / "incidents.jsonl", directory, scheduled)},
             "provider_outages": {
-                "log": "transport.jsonl", "no_model_outcome_events": kinds["no_model_outcome"],
-                "outcome_unknown_events": kinds["outcome_unknown"], "unreadable_lines": unreadable_transport,
-                "unresolved_attempts": pending((outages & scheduled) | rejected),
+                "log": "transport.jsonl", "no_model_outcome_events": transport["no_model_outcome"],
+                "outcome_unknown_events": transport["outcome_unknown"], "unreadable_lines": transport["unreadable"],
+                "unresolved_attempts": pending(transport["outages"] | rejected),
                 "prompt_rejected_attempts": pending(rejected),
                 "in_flight_markers": len(list((path / "inflight").glob("*.json")))}}

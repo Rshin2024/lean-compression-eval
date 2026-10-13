@@ -59,16 +59,49 @@ def same_stored_response(existing: dict, slot: dict, raw: str) -> bool:
 
 
 def portfolio_config(config: dict) -> dict:
-    """Give the baseline's single portfolio check the frozen total portfolio budget.
+    """Give the baseline's portfolio checks the frozen total portfolio budget as their validation budget.
 
-    The portfolio is one `first | ...` proof, so its total verification budget is the
-    validation wall budget. Metric extraction is outside it and keeps
-    extraction.wall_seconds, as for references and model proofs.
+    A legacy portfolio is one `first | ...` proof checked under all of it; separate alternatives share
+    it (baseline.run_portfolio). Metric extraction is outside it and keeps extraction.wall_seconds,
+    as for references and model proofs.
     """
     budget = config.get("tactic_portfolio_total_wall_seconds")
     if isinstance(budget, bool) or not isinstance(budget, (int, float)) or not 0 < budget < math.inf:
         raise ValueError("baseline requires a positive tactic_portfolio_total_wall_seconds")
     return {**config, "validation": {**config["validation"], "wall_seconds": budget}}
+
+
+def portfolio_tactics(config: dict) -> list | None:
+    """The frozen portfolio's alternatives, each checked as its own proof `by <tactic>` in this order.
+
+    None means a legacy configuration, whose one tactic_portfolio string is checked as a single proof:
+    there a tactic unknown under a task's imports is a parse failure of every alternative. A
+    configuration that names both keys, even with a null value, cannot say which was meant.
+    """
+    if "tactic_portfolio_tactics" not in config:
+        if not isinstance(config.get("tactic_portfolio"), str) or not config["tactic_portfolio"].strip():
+            raise ValueError("The configuration names no tactic portfolio: set tactic_portfolio_tactics, "
+                             "a non-empty list of tactics")
+        return None
+    if "tactic_portfolio" in config:
+        raise ValueError("The configuration names both tactic_portfolio_tactics and the legacy tactic_portfolio "
+                         "string; keep only tactic_portfolio_tactics")
+    tactics = config["tactic_portfolio_tactics"]
+    if not (isinstance(tactics, list) and tactics and all(isinstance(tactic, str) and tactic.strip() for tactic in tactics)
+            and len(set(tactics)) == len(tactics)):
+        raise ValueError("tactic_portfolio_tactics must be a non-empty list of distinct, non-blank tactics")
+    return tactics
+
+
+def frozen_portfolio(config: dict) -> list | None:
+    """The one portfolio check of freeze, baseline and analyze --baseline; portfolio_tactics' result.
+
+    config_hash binds a baseline to the run's frozen configuration, so freeze refuses what the other two
+    would: a run frozen without one well-formed portfolio and a positive total budget could never get one.
+    """
+    tactics = portfolio_tactics(config)
+    portfolio_config(config)
+    return tactics
 
 
 def require_reference_directory(path: Path) -> None:

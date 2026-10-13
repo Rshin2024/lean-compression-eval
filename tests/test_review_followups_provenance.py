@@ -305,14 +305,14 @@ class EngineFixAmendmentTests(Pipeline):
     def test_a_version_started_by_several_workers_logs_its_amendment_once(self):
         policy = self.root / "run/evaluations/v3/policy.json"
         def stopped(path, value, **options):
-            # This worker stops after logging the amendment and before publishing the version, where another
-            # worker starting the version alongside it would find it.
+            # This worker stops before publishing the version, so it logs no amendment: a worker starting the
+            # version alongside it may publish another binding.
             if path == policy:
                 raise OSError("worker stopped")
             return write_json(path, value, **options)
         with patch("lean_compression.runner.write_json", side_effect=stopped):
             self.assertEqual(self.evaluate("v3", engine="E2", checks="rechecks")[:2], (2, None))
-        self.assertEqual((len(self.amendments()), policy.exists()), (1, False))
+        self.assertEqual((len(self.amendments()), policy.exists()), (0, False))
         code, result, log, checks = self.evaluate("v3", engine="E2", checks="rechecks")
         self.assertEqual((code, result["new_evaluations"], checks), (0, 6, 6), log)
         self.assertEqual(len(self.amendments()), 1)

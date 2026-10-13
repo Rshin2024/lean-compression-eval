@@ -131,21 +131,20 @@ class RejectedPromptTests(provider_fixtures.RunFixture):
         result, log = self.command(self.rejecting())
         self.assertEqual(result, {"new_generation_records": 20 - self.positions[0], "prompt_rejections": 0,
                                   "skipped_rejected_prompt_slots": 4, "scheduled_attempts": 24})
-        # Rejected again: one request for that prompt, and no stop even at a cap of 1, because it is no news.
-        result, log = self.command(self.rejecting(), "--retry-rejected")
-        self.assertEqual(result, {"new_generation_records": 0, "prompt_rejections": 1,
-                                  "skipped_rejected_prompt_slots": 3, "scheduled_attempts": 24})
-        self.assertEqual(self.asked(), [self.prompt])
-        # Accepted at last. Without the option, the remembered rejection still holds for the rest.
+        # Rejected again: one request for that prompt, which counts toward the stop like any rejection, so a cap of 1
+        # stops the command.
+        code, log = self.command(self.rejecting(), "--retry-rejected")
+        self.assertEqual((code, self.asked()), (2, [self.prompt]))
+        self.assertIn("Provider rejected a prompt again as invalid_prompt", log)
+        # Accepted at last. That generation ends the remembered rejection, so the rest go without the option.
         result, log = self.command(lambda request: reply(), "--retry-rejected", "--limit", "1")
         self.assertEqual((result["new_generation_records"], len(self.requests)), (1, 1))
         result, log = self.command(lambda request: reply())
-        self.assertEqual((result["skipped_rejected_prompt_slots"], self.requests), (3, []))
-        result, log = self.command(lambda request: reply(), "--retry-rejected")
-        self.assertEqual((result["new_generation_records"], len(self.requests)), (3, 3))
+        self.assertEqual((result["new_generation_records"], result["skipped_rejected_prompt_slots"], len(self.requests)),
+                         (3, 0, 3))
         self.assertEqual((self.pending(), len(self.generations())), (set(), 24))
 
-    def test_the_breaker_counts_different_new_prompts_only(self):
+    def test_the_breaker_counts_different_prompts_and_reruns_move_on(self):
         seen = []
         for _ in range(2):
             code, log = self.command(self.rejecting(EVERY))
@@ -156,11 +155,12 @@ class RejectedPromptTests(provider_fixtures.RunFixture):
         self.assertEqual(len(set(seen)), 6)  # the second command moved on to prompts not yet asked
         result, log = self.command(self.rejecting(EVERY))
         self.assertEqual((result["skipped_rejected_prompt_slots"], self.requests), (24, []))
-        # Rejected again, the known prompts never stop the command: one request each, none of them news.
-        result, log = self.command(self.rejecting(EVERY), "--retry-rejected")
-        self.assertEqual(result, {"new_generation_records": 0, "prompt_rejections": 6,
-                                  "skipped_rejected_prompt_slots": 18, "scheduled_attempts": 24})
-        self.assertEqual(sorted(self.asked()), sorted(set(seen)))
+        # Rejected again, known prompts count toward the stop as well, and each retry moves on to those rejected
+        # longest ago.
+        for expected in (seen[:3], seen[3:], seen[:3]):
+            code, log = self.command(self.rejecting(EVERY), "--retry-rejected")
+            self.assertEqual((code, self.asked()), (2, expected))
+            self.assertIn("Provider rejected 3 different prompts in a row (3 of them again) as invalid_prompt", log)
         self.assertEqual(self.markers(), [])
 
     def test_rejections_use_up_the_limit_and_passed_over_slots_do_not(self):

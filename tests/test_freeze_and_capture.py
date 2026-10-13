@@ -309,11 +309,20 @@ class FrozenEngineTests(unittest.TestCase):
             evaluate_run(self.root / "run", ENGINE)
         self.assertFalse((self.root / "run/evaluations").exists())
         self.assertEqual(evaluate_run(self.root / "run", self.engine)["new_evaluations"], 0)
-        # Without --engine, freeze binds lean/Evaluator.lean, as evaluate's own default names it.
-        with contextlib.chdir(PROJECT):
+        # Without --engine, freeze binds lean/Evaluator.lean in the working directory, as evaluate's own default
+        # names it. A working directory with its own engine keeps this independent of where the tests run from.
+        defaults = [cli.parser().parse_args(argv).engine for argv in (
+            ["freeze", "--tasks", "t", "--environment", "e", "--config", "c", "--run", "r", "--split", "pilot", "--model", "m"],
+            ["evaluate", "--run", "r"])]
+        self.assertEqual(defaults, [Path("lean/Evaluator.lean")] * 2)
+        workdir = self.root / "workdir"
+        (workdir / "lean").mkdir(parents=True)
+        (workdir / "lean/Evaluator.lean").write_text("-- the working directory's engine\n")
+        with contextlib.chdir(workdir):
             code, result, log = self.freeze("default")
         self.assertEqual(code, 0, log)
-        self.assertEqual(read_json(self.root / "default/manifest.json")["engine_hash"], file_hash(ENGINE))
+        self.assertEqual(read_json(self.root / "default/manifest.json")["engine_hash"],
+                         file_hash(workdir / "lean/Evaluator.lean"))
         # Manifests frozen before the field existed keep today's behavior.
         legacy = {key: value for key, value in manifest.items() if key not in ("engine_hash", "run_hash")}
         write_json(self.root / "legacy/manifest.json", {**legacy, "run_hash": digest(legacy)})

@@ -24,23 +24,31 @@ TOTALS = {"a1": (8, 32, 8), "a2": (8, None, None), "n1": (None, 16, 8), "n2": (8
 
 
 def checked(status, budget):
-    return {"validity_status": status, "resources": {"wall_seconds_limit": budget}}
+    return {"validity_status": status, "resources": {"wall_seconds_limit": budget, "elapsed_seconds": budget}}
 
 
 def baseline_record(task, manifest, engine, status="success", **changes):
+    config = manifest["config"]
+    budget, tactics = config["tactic_portfolio_total_wall_seconds"], config.get("tactic_portfolio_tactics")
+    # Separate checks (configs/pilot.json): the first alternative decides, spending the whole budget.
+    portfolio = {"proof": config["tactic_portfolio"]} if tactics is None else {
+        "proof": "by " + tactics[0], "portfolio_tactics": tactics,
+        "portfolio_alternatives": [{"tactic": tactics[0], "validity_status": status, "elapsed_seconds": budget,
+                                    "wall_seconds_limit": budget, "failure_reason": None}]}
     return {"record_kind": "trusted_tactic_baseline", "task_id": task["task_id"], "validity_status": status,
-            "metric_status": "unavailable", "metrics": None,
-            "validation": checked(status, manifest["config"]["tactic_portfolio_total_wall_seconds"]),
+            "metric_status": "unavailable", "metrics": None, "validation": checked(status, budget),
             "environment_hash": manifest["environment"]["environment_hash"], "engine_hash": engine,
-            "proof": manifest["config"]["tactic_portfolio"], "task_hash": digest(task),
+            **portfolio, "task_hash": digest(task),
             "task_input_hash": task_input_hash(task), "verification_request_hash": verification_request_hash(task),
             **changes}
 
 
 def write_baseline(directory, manifest, engine, records, **changes):
+    tactics = manifest["config"].get("tactic_portfolio_tactics")
     policy = {"kind": "baseline", "engine_hash": engine, "environment_hash": manifest["environment"]["environment_hash"],
               "config_hash": manifest["config_hash"], "tasks_hash": "fixture", "references_hash": "fixture",
-              "portfolio_validation_wall_seconds": manifest["config"]["tactic_portfolio_total_wall_seconds"], **changes}
+              "portfolio_validation_wall_seconds": manifest["config"]["tactic_portfolio_total_wall_seconds"],
+              **({} if tactics is None else {"portfolio_tactics": tactics}), **changes}
     write_json(directory / "policy.json", {key: value for key, value in policy.items() if value is not ABSENT})
     for index, record in enumerate(records):
         write_json(directory / f"{index}-{digest(record['task_id'])}.json", record)
@@ -270,7 +278,7 @@ class CrossTabTests(unittest.TestCase):
                  "missing": ([], ["n2"], []),
                  "unresolved": ([record("n2", "infrastructure_error")], [], ["n2"]),
                  # Only the Lean verdict makes a success: none recorded, or the engine changed after it.
-                 "no-verdict": ([record("n2", validation={"resources": {"wall_seconds_limit": budget}})], [], ["n2"]),
+                 "no-verdict": ([record("n2", validation={"resources": checked("success", budget)["resources"]})], [], ["n2"]),
                  "engine-changed": ([record("n2", "infrastructure_error", validation=checked("success", budget))], [], ["n2"])}
         for name, (extra, missing, unresolved) in cases.items():
             with self.subTest(name):

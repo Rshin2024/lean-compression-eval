@@ -213,7 +213,18 @@ include every scheduled attempt, including failures. Validation and extraction
 elapsed seconds, recorded peak memory, generation workflow wall time, and input,
 output, and reasoning tokens each have observed/missing/invalid counts, median,
 p95, and maximum. Elapsed-time and token sums cover observed records only; peak
-memory is not summed. Requested memory limits are never treated as measured
+memory is not summed. Peak memory keeps its two scopes apart in each stage.
+`<stage>_peak_memory_mib` is a container's cgroup high-water mark of all memory
+charged to it, page cache included, as the Docker runner records it
+(`peak_memory_mib` with that `peak_memory_scope`, which older Docker records
+omit). `<stage>_peak_rss_mib` is one Lean process's peak resident set size, from
+`peak_rss`/`max_rss` fields where a record supplies them. No runner of this
+harness records them: native (macOS sandbox) runs record no peak
+(`peak_memory_reason: not_instrumented`), so these rows stay unobserved for the
+harness's own records. The two are never pooled, and a container peak recorded
+under any other `peak_memory_scope` counts as invalid. Their descriptions in
+`resource_usage.csv` and their HTML row labels
+name the scope. Requested memory limits are never treated as measured
 peaks. Zero tokens are valid recorded zeros; absent usage is unavailable.
 A recorded `usage` or token-details value that is not an object counts as an
 invalid observation of the token fields it would supply. An absent or empty
@@ -226,6 +237,15 @@ replay, in `maxHeartbeats` units (1000 raw heartbeats). They are not bounded by
 or comparable with `validation.max_heartbeats`, in total or in either phase. The
 engine reports them for successful checks only, so failed checks and records
 from engines that predate the measurement count as missing, never as zero.
+A result record whose `heartbeats` value is neither null nor the engine's nested
+object is unreadable: the check is a checker incident, not a record counted as
+missing.
+`extraction_heartbeats` summarizes each extraction run's
+`resources.heartbeats_used` in the same way, where one was recorded. That run
+repeats the candidate's elaboration and kernel replay before it builds the
+graph, so its reading is a second measurement of the validation work, not the
+cost of graph extraction, and it is never added to `validation_heartbeats`. Its
+description in `resource_usage.csv` and its HTML row label say so.
 
 The built-in provider's `generation.generation_elapsed_seconds` includes the
 entire workflow, including fixed transport retries and backoff. It is not
@@ -261,7 +281,8 @@ evaluated version. `provider_outages` counts `no_model_outcome` and `outcome_unk
 events in `transport.jsonl`, the attempts still without a generation after
 them, and in-flight markers. A prompt the provider rejected as `invalid_prompt`
 is shared by every sample of its task and condition, and `generate` sends none
-of them again without `--retry-rejected`, so all of its attempts still without a
+of them again without `--retry-rejected` until one of them is generated after
+the rejection, so until then all of its attempts still without a
 generation count as unresolved, sent or not; `prompt_rejected_attempts` counts
 them, and the notice names the remedy. Events end only at a newline, never at U+2028,
 U+2029 or U+0085, and an append first ends a line a killed writer left
@@ -284,20 +305,49 @@ by the `baseline` command, as `automation_baseline` in `analysis.json`, as
 `DIR/policy.json` has kind `baseline`, the run's environment, configuration,
 and evaluated engine hashes, and the frozen `tactic_portfolio_total_wall_seconds`
 as its `portfolio_validation_wall_seconds`, and every record is a
-`trusted_tactic_baseline` for the frozen portfolio, checked under that budget
-(`validation.resources.wall_seconds_limit`), whose task identity matches its
-frozen task. An evaluation version that records no checker engine (neither a
-`policy.json` nor an evaluated record with `engine_hash`) is refused, and so is
-malformed JSON in `DIR`, with the file named. Records for tasks outside the run
-are counted, not used. `automation_baseline.policy` keeps only the checked
-policy fields: `kind`, `engine_hash`, `environment_hash`, `config_hash`, and
-`portfolio_validation_wall_seconds`. The HTML section states that validation
-budget. A portfolio `success` is solved only when its Lean verdict
-(`validation.validity_status`) is also `success`; checker rejections and
+`trusted_tactic_baseline` for the frozen portfolio, checked under that budget,
+whose task identity matches its frozen task. When the run's configuration lists
+`tactic_portfolio_tactics`, the policy must record them as `portfolio_tactics`,
+and each record must carry them and follow the portfolio rule. Its
+`portfolio_alternatives` are the frozen alternatives in order. Each was given
+what the earlier ones' recorded `elapsed_seconds` left of the budget, and only
+while some was left. Every alternative before the last was a checker rejection
+(a parse or elaboration failure, an exhausted heartbeat limit, a resource
+limit, and so on) that left some budget; one that reaches its wall-clock limit
+has spent the budget, so it is always the last. A run ends before the list
+does only at a success or with the budget spent. The record's `proof`,
+`validity_status`, and `validation` limit and elapsed time are those of that
+last check. A configuration with only the older `tactic_portfolio` string, and
+no list, must have that string as every record's `proof`, checked once under
+the whole budget (`validation.resources.wall_seconds_limit`). A configuration
+that names both keys (even with a null value), a malformed list, no portfolio
+or no positive budget is refused, here as by `freeze` and `baseline`, which
+apply the same check. An evaluation version that records no checker engine
+(neither a `policy.json` nor an evaluated record with `engine_hash`) is
+refused, and so is malformed JSON in `DIR`, with the file named. Records for
+tasks outside the run are counted, not used.
+`automation_baseline.policy` keeps only the checked policy fields: `kind`,
+`engine_hash`, `environment_hash`, `config_hash`,
+`portfolio_validation_wall_seconds` and, for listed alternatives,
+`portfolio_tactics`. `portfolio_semantics` is `separate_checks`, or
+`legacy_single_proof` for the older string, whose interpretation notes that a
+tactic unknown under a task's imports made that whole portfolio a parse
+failure. For separate checks, `solved_by_tactic` counts the tasks each
+alternative solved, and each `per_task` row adds `solved_by` and its attempted
+`alternatives` (tactic, validity status, elapsed seconds); its
+`validity_status` is then the last attempted alternative's.
+`automation_baseline.csv` adds `portfolio_solved_by`. The HTML section states
+that validation budget. A portfolio `success` is solved only when its Lean
+verdict (`validation.validity_status`) is also `success`; checker rejections and
 exhausted budgets are unsolved; checker, environment, and harness incidents, and
 a success without that verdict, are unresolved. The `baseline` command itself
-writes no record for a checker incident (it logs it in `incidents.jsonl`), so
-that task counts as missing until a rerun into the same directory checks it.
+writes no record for a checker incident but logs it in `DIR/incidents.jsonl`,
+which `analyze` reads: a task without a record whose latest logged check was a
+checker incident counts as unresolved, not missing, until a rerun into the same
+directory checks it. Its `per_task` row names that incident's status as
+`checker_incident`, `checker_incident_task_ids` lists such tasks, and
+`incident_log_unreadable_lines` counts lines of the log that cannot be read; a
+task only such a line names stays missing.
 Overall and per-domain solve rates use every run task as the denominator. Per
 model, each condition's task-weighted success rate and mean task log2 T0, U, and
 W, and each contrast's paired log2 T0 change, are split by portfolio-solved,
@@ -353,7 +403,10 @@ object; either form must match the exact recorded SHA-256 policy digest.
 The `index-closures` command is narrower: like `freeze`, `evaluate`,
 `verify-references`, and `baseline`, it refuses configured policy labels the
 pinned engine does not implement, so it accepts only the boundary policy
-`expand_mathlib_and_evaluator_v1`.
+`expand_mathlib_and_evaluator_v1`. Its `--references` must be a
+`verify-references` output directory, whose `policy.json` has that kind; a
+`baseline` directory, whose records are tactic proofs, or a policy of any other
+or no kind is refused before anything is indexed.
 For atomic boundaries where the extractor deliberately did not inspect the
 body histogram, the cached body state is `unmeasured_atomic`; it does not claim
 that the declaration lacks a body. Cache keys also include the extractor's
@@ -399,8 +452,13 @@ Literal reflexivity and single tactic wrappers are described by their source
 shape; neither is automatically labeled mathematically easy.
 
 `single_tactic_wrapper` labels any body `by <tactic>` with one identifier-like
-tactic name, optionally ending in `?` or `!`, and records the tactic; `by rfl`
-is literal reflexivity instead. Reports
+tactic name, optionally ending in `?` or `!`; `by rfl` is literal reflexivity
+instead. Neither a task's row nor the HTML names the tactic, because a
+one-tactic reference's tactic is its whole private answer: the report gives
+only the label and the number of labeled tasks. The report is still internal
+curation material: its per-task labels and `reference_proof_in_prompt` flags are
+derived from the private references and reveal facts about them, so it is not
+published with the benchmark. Reports
 record `readiness_settings`: `enforce_quotas`, the strata fit split, the
 cutpoint source, supplied pins, and SHA-256 digests of the readiness section and
 of the full configuration. Relaxing `enforce_quotas` leaves the `quotas_enforced`
@@ -409,15 +467,27 @@ gate pending, so such a report never claims `ready_for_dataset_freeze`.
 (`task_manifest_hash_method`); `task_file_sha256` is the input file's byte hash,
 which for the committed manifest equals `manifest_sha256` in
 `data/public/dataset_status.json`.
-The `reference_proofs_absent_from_prompts` gate stays pending while any task's
-whitespace-normalized reference proof of at least 15 characters
-(`ANSWER_ACCESS_MIN_CHARS`) occurs exactly in a prompt rendered by
-`prompts.messages()`, or while a task's proof text cannot be checked;
-`answer_access_screen` lists both sets of tasks. Shorter exact matches of at
-least 9 characters are listed in `short_exact_match_task_ids` without holding
-the gate. The screen does not detect near-verbatim copies, such as a sibling
-lemma's proof with one identifier changed, so the gate is a screen, not the
-human answer-access audit.
+The `reference_proofs_absent_from_prompts` gate stays pending while
+`answer_access_screen` lists a task in `flagged_task_ids` (its
+whitespace-normalized reference proof of at least 15 characters,
+`ANSWER_ACCESS_MIN_CHARS`, occurs exactly in a prompt rendered by
+`prompts.messages()`), `short_exact_match_task_ids` (such a match of 9-14
+characters, `SHORT_EXACT_MATCH_MIN_CHARS`, unless the proof is a generic shape:
+a literal reflexivity proof, one bare tactic, or a name the target binds;
+`generic_short_exact_match_task_ids` lists those without holding the gate),
+`near_verbatim_task_ids` (a premise-context proof component, that is a
+declaration value or a constructor component, field value, fun body, tactic,
+tactic term or rewrite rule inside one, within max(3, n/6 rounded up) token
+edits of a reference of n tokens and at least 9 characters that is not a
+generic shape, where tokens are runs without whitespace, brackets, commas or
+semicolons and a swap of two adjacent tokens is one edit, changing at most a
+third of its name components, rounded; the closest match is in
+`near_verbatim_matches` as its visible text, line and edit counts with the
+reference's token and component counts, never the reference's text), or
+`unchecked_task_ids` (proof text that cannot be checked). Exact matches under
+9 characters, near copies in headers, parenthesized arguments or farther from
+the reference, and paraphrases are not detected, so the gate is a screen, not
+the human answer-access audit.
 
 Evidence identity accepts, in order, a matching `verification_request_hash`,
 matching `task_input_hash`, or an exact legacy `task_hash == digest(task)` when

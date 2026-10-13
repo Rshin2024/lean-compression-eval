@@ -176,6 +176,11 @@ def owner? (env : Environment) (name : Name) : Option Name :=
   else if (env.find? name).isSome then some env.header.mainModule else none
 def isExpanded (owner : Name) (extra : Array String) : Bool :=
   (`Mathlib).isPrefixOf owner || owner == `EvaluatorCandidate || extra.contains owner.toString
+-- Declarations of `env` absent from `base`, in the order of `env`'s map.
+def added (env base : Environment) : Array Name :=
+  env.constants.foldStage2 (fun acc n _ => if (base.find? n).isNone then acc.push n else acc) #[]
+def sameDecl (a b : ConstantInfo) : Bool :=
+  a.levelParams == b.levelParams && a.type == b.type && a.value? (allowOpaque := true) == b.value? (allowOpaque := true)
 
 partial def graph (env : Environment) (root : Name) (extra : Array String) (cap : Nat) : Except String (Array Json) := do
   let rec visit (todo : List Name) (seen : NameSet) (labels : Std.HashMap String Name) (nodes : Array Json) : Except String (Array Json) := do
@@ -397,8 +402,6 @@ def run (request : Json) : IO Json := do
     | .ok value => pure value
     | .error e => return err (replayStatus e) e
   if !(Kernel.isDefEqGuarded comparable {} target.type trusted.type) then return err "target_mismatch" "elaborated target differs from trusted signature"
-  -- Both forks' statement auxiliaries: elaborated from the fixed statement, never by the proof.
-  let statementAuxiliaries := comparable.constants.foldStage2 (fun acc n _ => if (base.env.find? n).isNone then acc.push n.toString else acc) (#[] : Array String)
   let (axioms, closureSize) ← match auditClosure env targetName forbidden with
     | .ok result => pure result
     | .error e => return err (if e.startsWith "forbidden" then "forbidden_dependency" else "validation_error") e
@@ -413,11 +416,26 @@ def run (request : Json) : IO Json := do
     ("source", toJson decl), ("proof_offset", toJson proofStart), ("policy", toJson "lean_original_leaf_spans_v1")]
   let prettyType ← (Meta.ppExpr trusted.type).run' |>.toIO' { fileName := "trusted", fileMap := default, options := opts.set `pp.fullNames true |>.set `pp.universes true |>.set `pp.funBinderTypes true } { env := trustedState.commandState.env }
   let telescope ← (telescopeJson trusted.type).run' |>.toIO' { fileName := "trusted", fileMap := default, options := opts.set `pp.fullNames true |>.set `pp.universes true |>.set `pp.funBinderTypes true } { env := trustedState.commandState.env }
-  let generated := env.constants.foldStage2 (fun acc n _ => if (base.env.find? n).isNone then acc.push n.toString else acc) (#[] : Array String)
+  let generated := added env base.env
+  -- Statement auxiliaries come from the fixed statement, never from the proof: the trusted fork's additions
+  -- besides its axiom, and the candidate header's. A candidate declaration is one of these exactly when the
+  -- replayed type reaches it or when the header, elaborated alone as an axiom in a further fork after every
+  -- check, adds it identically. This covers declarations the statement realizes without mentioning them, such
+  -- as the equation lemmas of a nested `simp [f]`, and settles global names both forks may realize. Null if
+  -- that fork reports an error.
+  let header ← processOn base s!"axiom {rawName} {binders} :\n{prop}"
+  let headerEnv := header.commandState.env.setExporting false
+  let statementAuxiliaries : Option (Array String) := if header.commandState.messages.hasErrors then none else
+    let fromHeader := (added headerEnv base.env).filter fun n => match headerEnv.find? n, env.find? n with
+      | some a, some b => sameDecl a b
+      | _, _ => false
+    let trustedOwn := (added trustedEnv base.env).filter fun n => n != trustedName && (env.find? n).isNone
+    let names := added comparable base.env ++ trustedOwn ++ fromHeader
+    some ((names.map (·.toString)).qsort (· < ·)).eraseReps
   let basic := [("validity_status", toJson "success"), ("root", toJson targetName.toString),
     ("axioms", toJson axioms), ("kernel_replay", toJson true), ("heartbeats", heartbeatsJson elaborated kernelBeats),
-    ("candidate_declarations", toJson generated),
-    ("statement_auxiliaries", toJson (statementAuxiliaries.qsort (· < ·))),
+    ("candidate_declarations", toJson (generated.map (·.toString))),
+    ("statement_auxiliaries", toJson statementAuxiliaries),
     ("resolved_imports", toJson (imports.map fun item => obj [("module", toJson item.module.toString),
       ("is_meta", toJson item.isMeta), ("is_exported", toJson item.isExported), ("import_all", toJson item.importAll)])),
     ("proved_type_fingerprint", toJson (exprHash target.type)), ("fingerprint_kind", toJson "lean_expr_hash_noncryptographic"),

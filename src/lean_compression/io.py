@@ -146,6 +146,21 @@ def write_json(path: str | Path, value: Any, *, immutable: bool = True) -> None:
             os.unlink(temp)
 
 
+def temporary_files(directory: str | Path) -> dict[str, list[Path]]:
+    """write_json's temporary files in `directory`, by the name of the file each was for. A writer killed before
+    deleting one leaves it, whether or not it published the file. Only that file's sole writer, such as the holder
+    of its claim, may delete them: any other writer of the file may be using one."""
+    import re
+    found = {}
+    with suppress(FileNotFoundError), os.scandir(directory) as entries:
+        for entry in entries:
+            # mkstemp's names: the prefix, then 8 of its random characters.
+            named = re.fullmatch(r"\.(.+)\.[a-z0-9_]{8}", entry.name)
+            if named and entry.is_file(follow_symlinks=False):
+                found.setdefault(named[1], []).append(Path(entry.path))
+    return found
+
+
 def _logged(data: bytes, event: dict) -> bool:
     """Whether an append-only log already holds this event, its recorded_at aside."""
     expected = canonical(event)
@@ -183,17 +198,33 @@ def append_event(path: str | Path, event: dict, *, once: bool = False) -> None:
         os.close(fd)
 
 
-# Lock descriptors of the claims this worker holds. Checker processes inherit them (runner._run_engine),
-# so a claim stays live while its check runs, even after its worker was killed.
+# The claim protocol of this code, recorded in each claim and in the policy.json of every directory its workers
+# share, so that workers of code with another protocol are refused there. The first flock claims, which recorded
+# none, were protocol 1; 2 added retained claims (retain_claims), which code of protocol 1 would take over.
+CLAIM_PROTOCOL = 2
+# Lock descriptors of the claims this worker holds, and each with its claim. Checker processes inherit the locks
+# (runner._run_engine), so a claim stays live while its check runs, even after its worker was killed.
 claim_locks: ContextVar[tuple[int, ...]] = ContextVar("claim_locks", default=())
+_held_claims: ContextVar[tuple[tuple[int, Path], ...]] = ContextVar("held_claims", default=())
 
 
-def _abandoned(marker: Path) -> int | None:
-    """Lock the claim at `marker` if no process holds it; return the locked descriptor, or None.
+def _owner(fd: int) -> dict | None:
+    """The claim open at `fd`, or None if it is not a JSON object."""
+    try:
+        owner = json.loads(os.pread(fd, 1 << 20, 0))
+    except (OSError, ValueError, RecursionError):
+        return None
+    return owner if isinstance(owner, dict) else None
+
+
+def _abandoned(marker: Path, *, protocol: bool = True) -> int | None:
+    """Lock the claim at `marker` if it is abandoned; return the locked descriptor, or None.
 
     A worker locks its claim before publishing it and keeps the lock until it is done with it. The kernel
     drops the lock once that worker and every process that inherited the lock have exited, whatever process
-    ID or host the claim names, so a claim whose lock is free is abandoned.
+    ID or host the claim names, so a claim of this protocol whose lock is free is abandoned. A claim of another
+    protocol, or one that cannot be read, may be live without a lock: it is never abandoned (kept_claims).
+    In-flight markers (providers.in_flight) are not claims and record no protocol: protocol=False tests the lock alone.
     """
     import fcntl
     try:
@@ -204,7 +235,8 @@ def _abandoned(marker: Path) -> int | None:
     try:
         fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
         # The claim opened above may have been removed or taken over before it was locked.
-        locked = os.path.samestat(os.fstat(fd), os.stat(marker))
+        locked = (os.path.samestat(os.fstat(fd), os.stat(marker))
+                  and (not protocol or (_owner(fd) or {}).get("claim_protocol") == CLAIM_PROTOCOL))
     except (BlockingIOError, FileNotFoundError):
         pass
     finally:
@@ -213,15 +245,26 @@ def _abandoned(marker: Path) -> int | None:
     return fd if locked else None
 
 
+def _release(lock: int, marker: Path) -> None:
+    """Remove a held claim if it is still this worker's, unlinking before unlocking, so no taker finds it unlocked."""
+    try:
+        with suppress(FileNotFoundError):
+            if os.path.samestat(os.fstat(lock), os.stat(marker)):
+                marker.unlink()
+    finally:
+        os.close(lock)
+
+
 @contextmanager
 def claim(path: str | Path) -> Iterator[bool]:
     """Hold the exclusive right to produce `path` while the block runs; yield False if another worker has it.
 
-    The claim is `path` with suffix .claim, so *.json readers skip it. It names this worker's pid, host,
-    start time and command for people, and is published complete and already locked. Only its lock makes
-    it live: a claim whose lock is free is taken over under that lock, so racing workers cannot both take
-    it. Exiting the block removes the claim if it is still this worker's. An interrupt leaves it to its
-    lock, which a checker this worker started may still hold.
+    The claim is `path` with suffix .claim, so *.json readers skip it. It records this code's claim protocol
+    and names this worker's pid, host, start time and command for people, and is published complete and
+    already locked. Only its lock makes it live: a claim of this protocol whose lock is free is taken over
+    under that lock, so racing workers cannot both take it. Exiting the block removes the claim if it is
+    still this worker's. An interrupt leaves it to its lock, which a checker this worker started may still
+    hold. While `path` with suffix .retained exists (retain_claims), no worker holds the claim.
     """
     import fcntl
     import socket
@@ -233,7 +276,11 @@ def claim(path: str | Path) -> Iterator[bool]:
     lock, held = None, False
     try:
         with os.fdopen(fd, "w", encoding="utf-8") as out:
-            json.dump({"pid": os.getpid(), "host": socket.gethostname(), "started_at": now(), "command": sys.argv}, out)
+            json.dump({"claim_protocol": CLAIM_PROTOCOL, "pid": os.getpid(), "host": socket.gethostname(),
+                       "started_at": now(), "command": sys.argv}, out)
+            # Durable before it is published: after a crash an unreadable claim would be kept for an operator.
+            out.flush()
+            os.fsync(out.fileno())
         # Read-only is enough to lock, and a checker that inherits the lock cannot write the claim.
         lock = os.open(temp, os.O_RDONLY)
         fcntl.flock(lock, fcntl.LOCK_EX)
@@ -254,10 +301,16 @@ def claim(path: str | Path) -> Iterator[bool]:
             os.unlink(temp)
         if lock is not None and not held:
             os.close(lock)
+    if held and os.path.lexists(marker.with_suffix(".retained")):
+        # Looked for only once held: a worker keeps its claim before releasing it, so none is kept unseen.
+        _release(lock, marker)
+        held = False
     if not held:
         yield False
         return
-    token, interrupted = claim_locks.set((*claim_locks.get(), lock)), False
+    claim_locks.set((*claim_locks.get(), lock))
+    _held_claims.set((*_held_claims.get(), (lock, marker)))
+    interrupted = False
     try:
         yield True
     except KeyboardInterrupt:
@@ -265,13 +318,44 @@ def claim(path: str | Path) -> Iterator[bool]:
         interrupted = True
         raise
     finally:
-        claim_locks.reset(token)
-        if not interrupted:
-            # Unlink before unlocking, so no taker finds this claim unlocked, and only while it is still this worker's.
-            with suppress(FileNotFoundError):
-                if os.path.samestat(os.fstat(lock), os.stat(marker)):
-                    marker.unlink()
-        os.close(lock)
+        # By descriptor rather than by token, so that claims released out of order leave none of them behind.
+        claim_locks.set(tuple(fd for fd in claim_locks.get() if fd != lock))
+        _held_claims.set(tuple(entry for entry in _held_claims.get() if entry[0] != lock))
+        if interrupted:
+            os.close(lock)
+        else:
+            _release(lock, marker)
+
+
+def retain_claims(reason: dict) -> list[Path]:
+    """Keep the claims this worker holds beyond their lock, as for a container that may outlive it.
+
+    Beside each claim goes `<name>.retained`, holding `reason` and the claim, and no worker holds that
+    claim while it exists. An operator deletes it once the reason is gone (README, Parallel workers).
+    Returns the files written.
+    """
+    kept = []
+    for lock, marker in _held_claims.get():
+        write_json(marker.with_suffix(".retained"), {**reason, "retained_at": now(), "claim": _owner(lock)})
+        kept.append(marker.with_suffix(".retained"))
+    return kept
+
+
+def kept_claims(directory: str | Path) -> list[Path]:
+    """The files in `directory` that no worker removes and that keep their records unclaimed until an operator
+    deletes them: each `<name>.retained` (retain_claims), and each claim of another claim protocol, or unreadable,
+    which may be live without its lock."""
+    kept = set(Path(directory).glob("*.retained"))
+    for marker in Path(directory).glob("*.claim"):
+        try:
+            owner = read_json(marker)
+        except FileNotFoundError:
+            continue
+        except (OSError, ValueError, RecursionError):
+            owner = None
+        if not (isinstance(owner, dict) and owner.get("claim_protocol") == CLAIM_PROTOCOL):
+            kept.add(marker)
+    return sorted(kept)
 
 
 def remove_abandoned_claim(path: str | Path) -> None:

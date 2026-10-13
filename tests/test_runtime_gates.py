@@ -2,10 +2,10 @@
 
 runtime/run-lean runs for real under the local POSIX shells, with its container paths
 (/opt/eval, /sys/fs/cgroup, /job) moved into a temporary directory holding fake cgroup files
-and a stand-in for Lean. The runner's Docker branch then records what it copied. The CLI
-checks bind verify-references and baseline to the image that runs Lean, and index-closures
-to a verify-references directory. freeze, verify-references, baseline, the runner and
-runtime/prepare_image.py accept only a content digest as the image.
+and a stand-in for Lean. The runner's Docker branch then records what it returned on stdout.
+The CLI checks bind verify-references and baseline to the image that runs Lean, and
+index-closures to a verify-references directory. freeze, verify-references, baseline, the
+runner and runtime/prepare_image.py accept only a content digest as the image.
 """
 from __future__ import annotations
 
@@ -145,7 +145,7 @@ class RunLeanMemoryEvidenceTests(unittest.TestCase):
         # the user), so the order is checked in the script itself.
         lines = (ROOT / "runtime/run-lean").read_text().splitlines()
         steps = ["--run", "kill -KILL -1", "rm -f /job/peak_memory_bytes /job/memory_stat", "> /job/peak_memory_bytes",
-                 "> /job/memory_stat", "chmod -R a+rwX,a-t /job"]
+                 "> /job/memory_stat", "lean-compression-output v1"]
         order = [next(index for index, line in enumerate(lines) if step in line) for step in steps]
         self.assertEqual(order, sorted(order))
 
@@ -196,8 +196,13 @@ class DockerMemoryEvidenceTests(unittest.TestCase):
                 if flag == "--mount":
                     fields = dict(part.partition("=")[::2] for part in value.split(","))
                     mounts[fields["target"]] = fields["source"]
-            script = container(Path(tempfile.mkdtemp(dir=self.temp)), Path(mounts["/job"]), cgroup_files)
-            arguments = [mounts["/job"] + value[len("/job"):] if value.startswith("/job/") else value
+            # The container's /job is its own tmpfs holding the read-only request; run-lean returns on stdout.
+            root = Path(tempfile.mkdtemp(dir=self.temp))
+            job = root / "job"
+            job.mkdir()
+            shutil.copyfile(mounts["/job/request.json"], job / "request.json")
+            script = container(root / "container", job, cgroup_files)
+            arguments = [str(job) + value[len("/job"):] if value.startswith("/job/") else value
                          for value in cmd[cmd.index("/opt/eval/run-lean") + 1:]]
             return REAL_POPEN([SHELLS[-1], str(script), *arguments], *args,
                               **{**kwargs, "env": {"PATH": "/usr/bin:/bin", "LEAN_OUTCOME": outcome, "PLANT": plant,

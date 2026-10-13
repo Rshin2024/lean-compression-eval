@@ -32,9 +32,9 @@ independent. All 250 `family_reviewed` and `answer_access_audited` flags are fal
 
 | Records | Evidence | Minimum pre-freeze action |
 | --- | --- | --- |
-| `smoke_la_02` / `fresh_linear_algebra_combinatorics_09` | Pilot asks for a zero finite sum and invariance under adding a pointwise-zero summand; main asks for an all-one finite product and invariance under multiplying by a pointwise-one factor. References use `sum_eq_zero` plus `sum_congr` versus `prod_eq_one` plus `prod_congr`, followed by pointwise simplification. These are additive/multiplicative variants of the same two-part fold construction. | Treat as one construction family and place that family entirely in one split; replace the displaced quota slot before main outputs exist. |
-| `smoke_ag_02` / `fresh_algebra_groups_05` | Both start with the same group product equation, with orientation reversed, then substitute it and cancel inverses. The pilot reference is `by rw [← h]; simp [mul_assoc]`; the main reference is `by subst c; constructor <;> group`. The conclusions differ, but the proof construction overlaps directly. | Merge/review their construction family and separate it from main evaluation if already used in development. |
-| `fresh_sets_logic_06` / `fresh_linear_algebra_combinatorics_10` | The first proves injectivity of `fun x => (f x, g x)` from injectivity of `f`; the second uses exactly this injectivity subproof to establish image cardinalities. Both references contain `intro x y h; exact hf (congrArg Prod.fst h)`. They are currently separate families in separate domains, both within main. | Cluster together, or document a defensible family boundary. If kept as a cross-domain family, use the analysis implementation's unstratified family-bootstrap fallback. |
+| `smoke_la_02` / `fresh_linear_algebra_combinatorics_09` | Pilot asks for a zero finite sum and invariance under adding a pointwise-zero summand; main asks for an all-one finite product and invariance under multiplying by a pointwise-one factor. The references follow the same lemma pattern in additive and multiplicative form [private proof plan redacted]. These are additive/multiplicative variants of the same two-part fold construction. | Treat as one construction family and place that family entirely in one split; replace the displaced quota slot before main outputs exist. |
+| `smoke_ag_02` / `fresh_algebra_groups_05` | Both start with the same group product equation, with orientation reversed, and continue with the same construction [private proof plan redacted]. The pilot reference is [private reference proof redacted]; the main reference is [private reference proof redacted]. The conclusions differ, but the proof construction overlaps directly. | Merge/review their construction family and separate it from main evaluation if already used in development. |
+| `fresh_sets_logic_06` / `fresh_linear_algebra_combinatorics_10` | The first proves injectivity of `fun x => (f x, g x)` from injectivity of `f`; the second asks for image cardinalities, and its reference reuses the first one's argument [private proof plan redacted]. Both references share a subproof [private reference proof redacted]. They are currently separate families in separate domains, both within main. | Cluster together, or document a defensible family boundary. If kept as a cross-domain family, use the analysis implementation's unstratified family-bootstrap fallback. |
 | `fresh_algebra_groups_02` / `fresh_algebra_groups_04` | Both take `e * e = e` and ask for multiple consequences of idempotence. One concerns complement/orthogonality in a ring; the other higher powers in a monoid. | Review as a shared idempotence construction rather than automatically assigning each authored statement an independent family. |
 | `lib_sets_logic_main_logic_relation_07` / `_08` | `_07` is `Std.Symm.flip_eq`; `_08` states `Std.Symm.swap_eq`, and its entire reference proof is `Std.Symm.flip_eq`. `_08`'s predecessor context contains `_07`, but its forbidden list contains only `Std.Symm.swap_eq`. | `_08` is a concrete known equivalent/alias case for replacement or explicit exclusion. Do not mark answer access audited merely because its own declaration name is absent. |
 | `lib_sets_logic_main_logic_relation_09` / `_10` | `_09` is `flip_eq_iff`; `_10` is `swap_eq_iff` and its entire reference is `flip_eq_iff`, which is present in predecessor context. The forbidden list contains only `swap_eq_iff`. | Replace/exclude the duplicate variant before freeze, or update forbidden sets and supply an independently verified eligible reference. |
@@ -55,10 +55,9 @@ label is in pilot. These are provisional labels, not the frozen parser-token
 and dependency-depth strata required by the plan. The main records do not yet
 carry those measured stratum fields.
 
-The library reference file has 22 literal `rfl` proofs and one `Iff.rfl` proof;
-18 of those 23 belong to main. In particular, nine of the ten
-`lib_algebra_groups_main_hom_basic_*` references are literally `rfl`, while five
-of the eight `lib_sets_logic_pilot_set_basic_*` references are literally `rfl`.
+The library reference file has 23 literal reflexivity proofs; 18 of those 23
+belong to main, and most fall in two source families [per-family counts of
+private reference proofs redacted].
 Across all 190 library references, 112 have at most 40 source characters.
 Character length is reported only as a curation diagnostic, not as W or as a
 reliable measure of mathematical difficulty. A short tactic can conceal
@@ -104,9 +103,9 @@ The reviewed repairs are now saved in public manifest SHA-256
 `372118415c4454e3e7b87d8afdaa2467c858e68ddc36fc496cd7dddd23b363a4`.
 The amendment log is `data/private/dataset_amendments.jsonl`, SHA-256
 `c00468798aef07061519ad2665d059d9a78ade2f48d71a39ad891d670b5bd986`.
-That hash covers the log's first 226 rows, as reviewed here; with the 315 rows
+That hash covers the log's first 226 rows, as reviewed here; with the 491 rows
 appended on 2026-10-12, the current file's SHA-256 is
-`17e6dfaa7759d387a13868533e07981f710f0a23508de8d10f014f81e62691d3`.
+`8bf1ec820c7f32d9975b7e369745af2057e97352992729fd497c7cf254c56c08`.
 An independent read of that patched manifest confirmed 250 public tasks,
 250 one-to-one private reference records, 74 provisional families, and passing
 structural quota, exact signature-duplicate, and reference-mapping checks.

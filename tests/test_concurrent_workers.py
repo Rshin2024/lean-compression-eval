@@ -20,7 +20,7 @@ import unittest
 from unittest.mock import patch
 
 from lean_compression import cli
-from lean_compression.io import claim, claim_locks, digest, file_hash, read_json, read_jsonl, write_json
+from lean_compression.io import CLAIM_PROTOCOL, claim, claim_locks, digest, file_hash, read_json, read_jsonl, write_json
 from lean_compression.runner import evaluate_run
 from lean_compression.store import create_run, record_generation
 
@@ -29,6 +29,8 @@ ENGINE = PROJECT / "lean/Evaluator.lean"
 CONFIG = PROJECT / "examples/demo-config.json"
 LOCAL_ENV = PROJECT / "configs/environment.local.json"
 MODEL = "pinned-model-2026-01-01"
+# A claim of this protocol, as its worker publishes it.
+CLAIMED = json.dumps({"claim_protocol": CLAIM_PROTOCOL, "pid": 1, "host": "worker-host", "command": ["evaluate"]})
 TASKS = [{"task_id": f"tiny_{n}", "family_id": f"family_{n}", "domain": "sets_logic", "split": "pilot", "origin": "fresh",
           "stratum": "provisional_easy", "imports": ["Init"], "context": "", "premise_context": "",
           "forbidden_declarations": [], "target_name": f"tiny_target_{n}", "binders": "(P : Prop) (h : P)",
@@ -185,7 +187,7 @@ class ClaimTests(SharedDirectoryTest):
         """Leave a claim that no process holds, as a killed worker does."""
         exited = subprocess.Popen([sys.executable, "-c", ""])
         exited.wait()
-        self.marker.write_text(json.dumps({"pid": exited.pid, "host": socket.gethostname(),
+        self.marker.write_text(json.dumps({"claim_protocol": CLAIM_PROTOCOL, "pid": exited.pid, "host": socket.gethostname(),
                                            "started_at": "2026-10-12T00:00:00+00:00", "command": ["evaluate"]}))
         return exited.pid
 
@@ -235,10 +237,10 @@ class ClaimTests(SharedDirectoryTest):
 
     def test_only_its_lock_keeps_a_claim_live_whatever_process_or_host_it_names(self):
         dead, host = self.abandon(), socket.gethostname()
-        # The named process exited or its ID was reused (this one, pid 1), the host was renamed, or the claim is unreadable.
+        # The named process exited or its ID was reused (this one, pid 1), or the host was renamed.
         for owner in ({"pid": dead, "host": host}, {"pid": os.getpid(), "host": host}, {"pid": 1, "host": host},
-                      {"pid": dead, "host": "another-host"}, "{"):
-            text = owner if isinstance(owner, str) else json.dumps(owner)
+                      {"pid": dead, "host": "another-host"}):
+            text = json.dumps({"claim_protocol": CLAIM_PROTOCOL, **owner})
             for live in (True, False):
                 self.marker.write_text(text)
                 with self.subTest(owner=owner, live=live), open(self.marker, "rb") as worker:
@@ -463,8 +465,8 @@ class EvaluateWorkerTests(SharedDirectoryTest):
     def test_a_claim_left_beside_a_written_record_is_removed_unless_a_process_holds_it(self):
         self.evaluate()
         abandoned, live = (self.directory / f"{slot['attempt_id']}.claim" for slot in self.slots[:2])
-        abandoned.write_text("{}")  # Its worker was killed after writing the record.
-        live.write_text("{}")
+        abandoned.write_text(CLAIMED)  # Its worker was killed after writing the record.
+        live.write_text(CLAIMED)
         with open(live, "rb") as worker:  # Its worker has just written the record.
             fcntl.flock(worker.fileno(), fcntl.LOCK_EX)
             result, checked = self.evaluate()
@@ -486,7 +488,7 @@ class ReferenceWorkerTests(SharedDirectoryTest):
     def setUp(self):
         super().setUp()
         (self.root / "tasks.jsonl").write_text("".join(json.dumps(task) + "\n" for task in TASKS))
-        (self.root / "refs.jsonl").write_text("".join(json.dumps({"task_id": task["task_id"], "proof": "by simp [h]"}) + "\n"
+        (self.root / "refs.jsonl").write_text("".join(json.dumps({"task_id": task["task_id"], "proof": "by exact foo"}) + "\n"
                                                       for task in TASKS))
 
     def argv(self, command, output):
@@ -561,8 +563,8 @@ class ReferenceWorkerTests(SharedDirectoryTest):
             with self.subTest(command=command):
                 self.check(command)
                 abandoned, live = (output / f"{digest(task['task_id'])}.claim" for task in TASKS[:2])
-                abandoned.write_text("{}")  # Its worker was killed after writing the record.
-                live.write_text("{}")
+                abandoned.write_text(CLAIMED)  # Its worker was killed after writing the record.
+                live.write_text(CLAIMED)
                 with open(live, "rb") as worker:  # Its worker has just written the record.
                     fcntl.flock(worker.fileno(), fcntl.LOCK_EX)
                     result, checked = self.check(command)

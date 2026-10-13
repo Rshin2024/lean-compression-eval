@@ -15,7 +15,7 @@ from pathlib import Path
 
 from .dataset import load_tasks, readiness_errors, validate_manifest, validate_references
 from .environment import doctor, load_environment, prepare_environment
-from .integrity import is_content_digest, portfolio_config, require_implemented_policy, require_reference_directory
+from .integrity import frozen_portfolio, is_content_digest, portfolio_config, require_implemented_policy, require_reference_directory
 from .io import amend_reference_identity, append_event, canonical, digest, measurement_hash, read_json, read_jsonl, reference_matches_task, same_measurement, task_input_hash, write_json
 from .outcomes import outcome_class
 from .store import create_run, evaluation_directory, load_reference_checks, load_run, logged_outages, records, without_graph
@@ -79,6 +79,16 @@ def parser() -> argparse.ArgumentParser:
     q.add_argument("--limit", type=int)
     q.add_argument("--retry-rejected", action="store_true",
                    help="Also send slots whose prompt the provider already rejected as invalid_prompt; skipped by default")
+    q = sub.add_parser("reconcile", help="Resolve in-flight markers that generate kept, from captures and logs; no model calls")
+    q.add_argument("--run", type=Path, required=True)
+    q.add_argument("--attempt", help="Only this attempt ID's marker")
+    q.add_argument("--apply", action="store_true", help="Make the changes; without it, only report them")
+    q.add_argument("--release-unreadable", action="store_true",
+                   help="Also release markers with no recoverable model response, so a later generate may send those "
+                        "attempt IDs again")
+    q = sub.add_parser("inspect-capture", help="Decode captured response bodies' metadata; read-only, prints no model text")
+    q.add_argument("--run", type=Path, required=True)
+    q.add_argument("--attempt", help="Only this attempt ID's capture")
     q = sub.add_parser("evaluate")
     q.add_argument("--run", type=Path, required=True)
     q.add_argument("--engine", type=Path, default=Path("lean/Evaluator.lean"))
@@ -318,15 +328,19 @@ def dispatch(args: argparse.Namespace) -> dict:
         write_readiness_report(report, args.output)
         return {"output": str(args.output), "tasks": len(tasks), "reference_records": len(evidence)}
     if args.command in ("verify-references", "baseline"):
+        from .baseline import run_portfolio
         from .runner import evaluate_proof
-        from .io import claim, file_hash, remove_abandoned_claim
+        from .io import CLAIM_PROTOCOL, claim, evaluator_hash, file_hash, kept_claims, remove_abandoned_claim, temporary_files
         from .metrics import SCORER_HASH
         tasks = load_tasks(args.tasks)
         require_valid(tasks)
         env, config = load_environment(args.environment), read_json(args.config)
+        # Separate alternatives (run_portfolio), or None: a legacy portfolio string checked as one proof.
+        tactics = frozen_portfolio(config) if args.command == "baseline" else None
         references = (read_jsonl(args.references) if args.command == "verify-references" else
-                      [{"task_id": t["task_id"], "proof": config["tactic_portfolio"]} for t in tasks])
-        errors = validate_references(tasks, references)
+                      [{"task_id": t["task_id"], "proof": config["tactic_portfolio"] if tactics is None else tactics}
+                       for t in tasks])
+        errors = validate_references(tasks, references) if tactics is None else []
         if errors:
             raise ValueError("\n".join(errors))
         require_implemented_policy(config)
@@ -344,19 +358,47 @@ def dispatch(args: argparse.Namespace) -> dict:
                              "(sha256: and 64 lowercase hex digits, optionally after name@)")
         checker_config = portfolio_config(config) if args.command == "baseline" else config
         proofs = {r["task_id"]: r["proof"] for r in references}
+        # Workers of other code, or another claim protocol (io.CLAIM_PROTOCOL), are refused below.
         policy = {"tasks_hash": digest(tasks), "references_hash": digest(references),
                   "environment_hash": env["environment_hash"], "config_hash": digest(config),
                   "measurement_hash": measurement_hash(config), "scorer_hash": SCORER_HASH,
-                  "engine_hash": file_hash(args.engine), "kind": args.command}
+                  "engine_hash": file_hash(args.engine), "kind": args.command,
+                  "evaluator_source_hash": evaluator_hash(), "claim_protocol": CLAIM_PROTOCOL}
         if args.command == "baseline":
             policy["portfolio_validation_wall_seconds"] = checker_config["validation"]["wall_seconds"]
-        if (args.output / "policy.json").exists() and read_json(args.output / "policy.json") != policy:
-            raise FileExistsError(f"{args.output} was checked with other tasks, references, engine, settings or "
-                                  "metric code; use a new output directory")
-        write_json(args.output / "policy.json", policy)
+            if tactics is not None:
+                policy["portfolio_tactics"] = tactics
+            else:
+                print("Legacy tactic_portfolio string: checking it as one proof per task, so a tactic unknown under a "
+                      "task's imports fails the whole portfolio; list tactic_portfolio_tactics to check each "
+                      "alternative separately", file=sys.stderr, flush=True)
+        def refused(existing):
+            existing = existing if isinstance(existing, dict) else {}
+            changed = ", ".join(sorted(key for key in policy.keys() | existing.keys() if policy.get(key) != existing.get(key)))
+            return FileExistsError(f"{args.output} was checked with other tasks, references, engine, settings, metric "
+                                   f"code or harness code ({changed}); use a new output directory")
+        existing = read_json(args.output / "policy.json") if (args.output / "policy.json").exists() else None
+        if existing is not None and existing != policy:
+            raise refused(existing)
+        try:
+            write_json(args.output / "policy.json", policy)
+        except FileExistsError:
+            # Another worker published its policy after the check above.
+            if not (args.output / "policy.json").is_file():
+                raise
+            raise refused(read_json(args.output / "policy.json")) from None
         count = incidents = 0
+        # Temporary files of write_json that killed workers left; only a record's claim holder writes or deletes its own.
+        leftovers = temporary_files(args.output)
         for task in tasks:
             dest = args.output / f"{digest(task['task_id'])}.json"
+            stale = leftovers.get(dest.name, ())
+            if dest.exists() and stale:
+                with claim(dest) as held:
+                    if held:
+                        for path in stale:
+                            path.unlink(missing_ok=True)
+                continue
             if dest.exists():
                 # A worker killed after writing this record leaves its claim; remove it unless a process holds it.
                 remove_abandoned_claim(dest)
@@ -367,11 +409,16 @@ def dispatch(args: argparse.Namespace) -> dict:
                 # Another worker is checking this task, or recorded it after the check above.
                 if not held or dest.exists():
                     continue
-                value = evaluate_proof(task, proofs[task["task_id"]], env, args.engine, checker_config)
+                for path in stale:
+                    path.unlink(missing_ok=True)
+                if tactics is None:
+                    value = evaluate_proof(task, proofs[task["task_id"]], env, args.engine, checker_config)
+                    value["proof"] = proofs[task["task_id"]]
+                else:
+                    value = run_portfolio(task, tactics, env, args.engine, config)
                 if value["engine_hash"] != policy["engine_hash"]:
                     raise RuntimeError("Engine changed during this run; use a new output directory")
                 value["task_id"] = task["task_id"]
-                value["proof"] = proofs[task["task_id"]]
                 if outcome_class(value["validity_status"]) == "incomplete":
                     # A checker failure is not the proof's verdict. Keep its evidence and leave the task pending.
                     append_event(args.output / "incidents.jsonl", {"event": "checker_incident", **value})
@@ -382,19 +429,32 @@ def dispatch(args: argparse.Namespace) -> dict:
                 value["record_kind"] = ("trusted_tactic_baseline" if args.command == "baseline" else
                                         "verified_reference" if value["validity_status"] == "success" else "failed_reference")
                 write_json(dest, value)
-                print(f"{task['task_id']}: {value['validity_status']} / {value['metric_status']}", file=sys.stderr, flush=True)
+                attempts = "" if tactics is None else " (" + ", ".join(
+                    f"{attempt['tactic']}: {attempt['validity_status']}" for attempt in value["portfolio_alternatives"]) + ")"
+                print(f"{task['task_id']}: {value['validity_status']} / {value['metric_status']}{attempts}", file=sys.stderr, flush=True)
                 count += 1
         all_results = [read_json(p) for p in args.output.glob("*.json") if p.name != "policy.json"]
-        return {"new_checks": count, "scheduled_references": len(tasks), "checked": len(all_results),
-                "verified": sum(r["validity_status"] == "success" for r in all_results),
-                "measurable": sum(r["metric_status"] == "available" for r in all_results),
-                "checker_incidents": incidents, "output": str(args.output)}
+        summary = {"new_checks": count, "scheduled_references": len(tasks), "checked": len(all_results),
+                   "verified": sum(r["validity_status"] == "success" for r in all_results),
+                   "measurable": sum(r["metric_status"] == "available" for r in all_results),
+                   "checker_incidents": incidents, "output": str(args.output)}
+        if kept := kept_claims(args.output):
+            # Tasks no worker checks until an operator deletes these (README, Parallel workers).
+            summary["kept_claims"] = [str(path) for path in kept]
+        return summary
     if args.command == "index-closures":
         from .graph_cache import index_verified_closures, write_index
         env, config = load_environment(args.environment), read_json(args.config)
         require_reference_directory(args.references)
+        # Only verified references are closures to index; a baseline directory's records are tactic proofs.
+        policy = read_json(args.references / "policy.json")
+        kind = policy.get("kind") if isinstance(policy, dict) else None
+        if kind != "verify-references":
+            raise ValueError(f"--references must be a verify-references output directory, but its policy.json has kind "
+                             f"{kind!r}: {args.references}")
         checked = [read_json(p) for p in args.references.glob("*.json") if p.name != "policy.json"]
-        checked = [r for r in checked if r.get("validity_status") == "success" and r.get("metric_status") == "available"]
+        checked = [r for r in checked if isinstance(r, dict) and r.get("validity_status") == "success"
+                   and r.get("metric_status") == "available"]
         if not checked:
             raise ValueError("No verified measurable reference closures are available")
         require_implemented_policy(config)
@@ -429,6 +489,12 @@ def dispatch(args: argparse.Namespace) -> dict:
     if args.command == "generate":
         from .providers import generate_run
         return generate_run(args.run, limit=args.limit, retry_rejected=args.retry_rejected)
+    if args.command == "reconcile":
+        from .providers import reconcile_run
+        return reconcile_run(args.run, attempt=args.attempt, apply=args.apply, release_unreadable=args.release_unreadable)
+    if args.command == "inspect-capture":
+        from .providers import inspect_captures
+        return inspect_captures(args.run, attempt=args.attempt)
     if args.command == "evaluate":
         from .environment import verify_environment
         from .runner import evaluate_run

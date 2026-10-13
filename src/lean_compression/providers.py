@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import base64
+import contextlib
 import email.utils
 import hashlib
 import http.client
@@ -11,19 +12,23 @@ import subprocess
 import time
 import urllib.error
 import urllib.request
-from datetime import timezone
+from collections import Counter
+from datetime import datetime, timezone
 from pathlib import Path
 
-from .io import append_event, canonical, digest, json_text, now, read_json
+from .integrity import verified_generation
+from .io import _abandoned, append_event, canonical, digest, json_text, now, read_json
 from .outcomes import GENERATION_OUTCOMES
 from .runner import docker_cli_env
-from .store import generation_path, load_run, record_generation, rejected_prompts, stored_generation
+from .store import _log_lines, generation_path, load_run, record_generation, rejected_prompts, stored_generation
 
 IMPORT_FIELDS = ("attempt_id", "prompt_hash", "model_snapshot", "raw_response")
 # Far below any interpreter's recursion limit, so imported evidence is written and read alike on Python 3.11+.
 MAX_IMPORT_NESTING = 64
 # Documented provider error codes for refusing one prompt itself (a safety flag), not the run's settings or access.
 PROMPT_REJECTIONS = ("invalid_prompt",)
+# The transport event fields reconcile shows of a call; an http_error body stays in transport.jsonl.
+CALL_FIELDS = ("event", "transport_index", "recorded_at", "http_status", "request_id", "type", "message", "reason")
 
 
 def nesting_depth(value, limit: int | None = None) -> int:
@@ -126,7 +131,8 @@ def parse_body(body: bytes, model: str) -> dict:
 
     A response that parse_response reads and a stored record can hold is returned as parsed. Of the
     rest, one whose status is neither completed nor incomplete is a provider failure, whatever its
-    output holds. Only a completed or incomplete response from `model` whose own text alone holds
+    output holds; whether it rejects the prompt (prompt_rejected) is read before it is set aside, as
+    for any failed response. Only a completed or incomplete response from `model` whose own text alone holds
     what JSON admits but a stored record cannot (a lone surrogate such as half of 𝕜) is a malformed
     response: a model-attempt failure whose raw_response is the body text with undecodable bytes
     escaped, kept with the response's ID, model, status, usage and incomplete_details. Any other
@@ -151,8 +157,10 @@ def parse_body(body: bytes, model: str) -> dict:
     if problem is None:
         return parsed
     if status not in ("completed", "incomplete"):
-        # Not a model outcome; the transport log cannot hold this response, and its capture keeps it.
-        return {"generation_status": "provider_failure", "provider_response": None}
+        # Not a model outcome; the transport log cannot hold this response, and its capture keeps it. A value
+        # elsewhere in it never hides that the provider refused the prompt itself.
+        return {"generation_status": "provider_failure", "provider_response": None,
+                "prompt_rejected": prompt_rejected(response, None)}
     outside = unstorable(without_model_text(response))
     if outside is not None or response.get("model") != model:
         return {"generation_status": None, "unreadable": outside or f"the returned model is not the pinned snapshot; {problem}"}
@@ -189,13 +197,45 @@ def prompt_rejected(response: dict | None, last_error: dict | None) -> bool:
     return isinstance(detail, dict) and detail.get("code") in PROMPT_REJECTIONS
 
 
+def in_flight(marker: Path, attempt_id: str):
+    """Publish a call's in-flight marker already locked; return the open file that holds the lock.
+
+    A marker whose lock is free belongs to a command that has ended, so reconcile_run never takes a call in progress
+    for an abandoned one. Markers written before this lock existed are always free. FileExistsError if the attempt
+    already has a marker.
+    """
+    import fcntl
+    import tempfile
+    marker.parent.mkdir(parents=True, exist_ok=True)
+    fd, temp = tempfile.mkstemp(prefix=f".{marker.name}.", dir=marker.parent)
+    lock = os.fdopen(fd, "w", encoding="utf-8")
+    try:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        json.dump({"started_at": now(), "attempt_id": attempt_id}, lock)
+        lock.flush()
+        os.link(temp, marker)
+    except BaseException:
+        lock.close()
+        raise
+    finally:
+        os.unlink(temp)
+    return lock
+
+
 def generate_run(run: Path, *, limit: int | None = None, retry_rejected: bool = False) -> dict:
     """Request the frozen schedule's pending slots, one fresh single-shot call each.
 
     A prompt the provider rejected as invalid_prompt, in this command or as logged in transport.jsonl, is not sent
-    again: the samples of a task and condition share it, so its other slots stay pending without a request and are
-    counted in skipped_rejected_prompt_slots. retry_rejected sends the logged ones once more.
+    again until a generation of one of its slots is recorded after that: the samples of a task and condition share it,
+    so its other slots stay pending without a request and are counted in skipped_rejected_prompt_slots. retry_rejected
+    sends the logged ones once more, after the other pending slots and the one rejected longest ago first. A call's
+    in-flight marker stays locked until the call is resolved or the command ends (in_flight).
     """
+    with contextlib.ExitStack() as held:
+        return _generate(run, held, limit, retry_rejected)
+
+
+def _generate(run: Path, held: contextlib.ExitStack, limit: int | None, retry_rejected: bool) -> dict:
     manifest = load_run(run)
     settings = manifest["config"]["generation"]
     if manifest["config"]["validation"].get("isolation") != "docker":
@@ -225,21 +265,27 @@ def generate_run(run: Path, *, limit: int | None = None, retry_rejected: bool = 
     # A rejection is the provider's verdict on the prompt text, which every sample of a task and condition shares.
     earlier = rejected_prompts(run, manifest["slots"])
     unsent = set() if retry_rejected else set(earlier)
-    completed = rejected = skipped = consecutive = 0
+    # retry_rejected sends those prompts after every other pending slot, which keep the schedule's order, and the one
+    # rejected longest ago first, so they never hold up the rest, and a retry that --limit or the stop below cuts short
+    # moves on to the others next time.
+    turn = {prompt: index for index, prompt in enumerate(earlier)} if retry_rejected else {}
+    completed = rejected = skipped = 0
+    streak = []  # prompts rejected one after another in this command, with no generation between them
     transport = run / "transport.jsonl"
-    for slot in manifest["slots"]:
+    for slot in sorted(manifest["slots"], key=lambda item: turn.get(item["prompt_hash"], -1)):
         # Rejected prompts were requests too, so they count toward the limit. Skipped slots were not.
         if limit is not None and completed + rejected >= limit:
             break
         if generation_path(run, slot["attempt_id"]).exists():
             continue
         marker = run / "inflight" / f"{slot['attempt_id']}.json"
-        marker.parent.mkdir(parents=True, exist_ok=True)
         try:
-            with marker.open("x") as out:
-                json.dump({"started_at": now(), "attempt_id": slot["attempt_id"]}, out)
+            lock = in_flight(marker, slot["attempt_id"])
         except FileExistsError:
-            raise RuntimeError(f"Unresolved in-flight call for {slot['attempt_id']}; reconcile its transport log before resending")
+            raise RuntimeError(f"Unresolved in-flight call for {slot['attempt_id']}; nothing is sent for it until "
+                               f"reconcile --run {run} resolves it")
+        held.close()  # the previous call's lock; that call is resolved and its marker removed
+        held.enter_context(lock)
         # Another worker can finish between the first existence check and this
         # marker acquisition. Recheck under our exclusive marker before billing.
         if generation_path(run, slot["attempt_id"]).exists():
@@ -297,7 +343,8 @@ def generate_run(run: Path, *, limit: int | None = None, retry_rejected: bool = 
                 # A lost or unreadable response may have been billed. Do not silently create a second completion.
                 append_event(transport, {**event, "event": "outcome_unknown", "type": type(error).__name__,
                              "message": str(error).replace(key, "[REDACTED_API_KEY]")})
-                raise RuntimeError("Provider outcome is unknown; the in-flight marker and transport evidence were retained")
+                raise RuntimeError("Provider outcome is unknown; the in-flight marker and transport evidence were retained "
+                                   "for reconcile")
             if transport_index + 1 < maximum:
                 backoffs = retry.get("backoff_seconds", [1, 4])
                 time.sleep(max(backoffs[min(transport_index, len(backoffs) - 1)], retry_after))
@@ -307,31 +354,32 @@ def generate_run(run: Path, *, limit: int | None = None, retry_rejected: bool = 
             append_event(transport, {"attempt_id": slot["attempt_id"], "event": "outcome_unknown", "capture": capture,
                          "reason": parsed["unreadable"]})
             raise RuntimeError(f"Provider outcome is unknown ({parsed['unreadable']}); the in-flight marker and transport "
-                               f"evidence were retained, with the response in {capture['path']}")
+                               f"evidence were retained for reconcile, with the response in {capture['path']}")
         if parsed is None or parsed["generation_status"] == "provider_failure":
             # Not a model outcome, so no generation is recorded. A later generate resends this attempt ID, unless the
-            # provider rejected its prompt.
+            # provider rejected its prompt. A failed response the log cannot hold was classified when it was read.
             provider_response = None if parsed is None else parsed["provider_response"]
-            refused = prompt_rejected(provider_response, last_error)
-            append_event(transport, {"attempt_id": slot["attempt_id"], "event": "no_model_outcome",
+            refused = (parsed or {}).get("prompt_rejected") or prompt_rejected(provider_response, last_error)
+            append_event(transport, {"attempt_id": slot["attempt_id"], "event": "no_model_outcome", "capture": capture,
                          "provider_response": provider_response, "last_error": last_error, "prompt_rejected": refused})
             marker.unlink()
             if refused:
                 # Only this prompt was refused, not the run: its slots stay pending and the run incomplete.
                 rejected += 1
                 unsent.add(slot["prompt_hash"])
-                if slot["prompt_hash"] not in earlier:
-                    # Different prompts rejected one after another are systemic, so they never sweep the schedule.
-                    # A prompt rejected before this command is no news, so it never counts here.
-                    consecutive += 1
-                    if consecutive >= retry.get("max_consecutive_prompt_rejections", 3):
-                        count = "a prompt" if consecutive == 1 else f"{consecutive} different prompts in a row"
-                        raise RuntimeError(
-                            f"Provider rejected {count} as invalid_prompt (generation.retry."
-                            "max_consecutive_prompt_rejections), so further model calls stopped. Their slots stay pending "
-                            "with nothing recorded; the transport log has the details. Check the shared prompt text and "
-                            "the provider account. generate skips rejected prompts from now on; pass --retry-rejected "
-                            "to send them again")
+                streak.append(slot["prompt_hash"])
+                # Different prompts rejected one after another are systemic, so they never sweep the schedule; nor do
+                # prompts rejected before, sent again. A rejected prompt gets no further request here, so these differ.
+                if len(streak) >= retry.get("max_consecutive_prompt_rejections", 3):
+                    again = sum(prompt in earlier for prompt in streak)
+                    count = ("a prompt" if len(streak) == 1 else f"{len(streak)} different prompts in a row") + (
+                        "" if not again else " again" if len(streak) == 1 else f" ({again} of them again)")
+                    raise RuntimeError(
+                        f"Provider rejected {count} as invalid_prompt (generation.retry."
+                        "max_consecutive_prompt_rejections), so further model calls stopped. Their slots stay pending "
+                        "with nothing recorded; the transport log has the details. Check the shared prompt text and "
+                        "the provider account. generate skips rejected prompts from now on; pass --retry-rejected "
+                        "to send them again, those rejected longest ago first")
                 continue
             if last_error and last_error.get("http_status") in (400, 401, 403, 404, 422):
                 raise RuntimeError("Provider rejected the configuration or access; the error is logged in transport.jsonl and further model calls stopped")
@@ -346,7 +394,7 @@ def generate_run(run: Path, *, limit: int | None = None, retry_rejected: bool = 
                           generation_elapsed_seconds=time.monotonic() - generation_started)
         marker.unlink()
         completed += 1
-        consecutive = 0
+        streak = []
         if parsed.get("model_version_mismatch"):
             raise RuntimeError("Provider returned a different model snapshot; the response is preserved and further model calls stopped")
         if parsed["generation_status"] == "malformed_response":
@@ -402,3 +450,276 @@ def import_responses(run: Path, rows: list[dict]) -> dict:
     for slot, raw, metadata in pending:
         record_generation(run, slot, raw, **metadata)
     return {"imported": len(pending), "already_imported": len(seen) - len(pending)}
+
+
+def _shown(value):
+    """The value, if it is strict JSON the CLI can print; otherwise why it is not."""
+    problem = unstorable(value)
+    return value if problem is None else {"unstorable": problem}
+
+
+def _body_metadata(body: bytes) -> dict:
+    """A captured body's size and, for a JSON object, its provider metadata; never its text."""
+    try:
+        response = json.loads(body)
+    except (ValueError, RecursionError):
+        response = None
+    if not isinstance(response, dict):
+        return {"bytes": len(body), "json_object": False}
+    error = response.get("error") if isinstance(response.get("error"), dict) else {}
+    return {"bytes": len(body), "json_object": True, **{key: _shown(value) for key, value in (
+        ("provider_response_id", response.get("id")), ("returned_model", response.get("model")),
+        ("provider_status", response.get("status")), ("usage", response.get("usage")),
+        ("incomplete_details", response.get("incomplete_details")), ("error_code", error.get("code")),
+        ("error_type", error.get("type")))}}
+
+
+def _named(event: dict) -> str | None:
+    """The SHA-256 of the captured body a transport event names, if any."""
+    capture = event.get("capture")
+    return capture["body_sha256"] if isinstance(capture, dict) and isinstance(capture.get("body_sha256"), str) else None
+
+
+def _transport_evidence(run: Path, attempts) -> dict:
+    """One streamed pass over transport.jsonl for these attempts: each request logged (transport index, request hash),
+    the events of the latest call from its first request on, whether a no_model_outcome event ended it (ended), the
+    kinds of the events naming each captured body by its SHA-256, and how many captured lines of each body
+    no_model_outcome events resolved."""
+    evidence = {attempt: {"requests": [], "call": [], "open": False, "ended": None, "named": {}, "resolved": Counter()}
+                for attempt in attempts}
+    for event in _log_lines(run / "transport.jsonl"):
+        attempt = event.get("attempt_id") if event else None
+        if not isinstance(attempt, str) or attempt not in evidence:
+            continue
+        found, kind, sha = evidence[attempt], event.get("event"), _named(event)
+        if kind == "request_started":
+            found["requests"].append((event.get("transport_index"), event.get("request_hash")))
+            if event.get("transport_index") == 0:
+                found.update(call=[], open=True, ended=None)
+        found["call"].append(event)
+        if sha is not None:
+            found["named"].setdefault(sha, []).append(kind)
+        if kind == "no_model_outcome":
+            found.update(open=False, ended=event)
+            # It resolves one line of the body it names; one logged before these events named a capture, its call's body.
+            found["resolved"].update(set(filter(None, map(_named, [event] if "capture" in event else found["call"]))))
+    return evidence
+
+
+def _since(event: dict, started: dict | None) -> bool:
+    """Whether a transport event was logged once the in-flight marker had been written; False if either time is unread."""
+    try:
+        return datetime.fromisoformat(event["recorded_at"]) >= datetime.fromisoformat(started["started_at"])
+    except (KeyError, TypeError, ValueError):
+        return False
+
+
+def _capture_entries(run: Path, slot: dict, settings: dict, requests: list):
+    """Each body captured for the slot's attempt, in order: (its capture line, a summary of it without the model's
+    text, parse_body's reading of it or None).
+
+    A body is recoverable, so reconcile_run may record it as the generation, only if its line is intact and names the
+    attempt, every request logged for the attempt carries the frozen payload's hash and one was logged at its transport
+    index, and it reads as a model outcome of the pinned snapshot.
+    """
+    attempt, model = slot["attempt_id"], slot["model_snapshot"]
+    expected = digest(response_payload(slot, settings))
+    sent = {index for index, request_hash in requests if type(index) is int and request_hash == expected}
+    for entry, line in enumerate(_log_lines(run / "captures" / f"{attempt}.jsonl"), 1):
+        line, body, parsed = line or {}, None, None
+        try:
+            body = base64.b64decode(line.get("body_base64"), validate=True)
+        except (TypeError, ValueError):
+            pass
+        summary = {"entry": entry, **{key: _shown(line.get(key)) for key in ("transport_index", "request_id", "body_sha256")},
+                   "captured_at": _shown(line.get("recorded_at")), **({} if body is None else _body_metadata(body))}
+        problem = ("the capture line is not a JSON object" if not line else
+                   "the capture line names another attempt" if line.get("attempt_id") != attempt else
+                   "its body_base64 does not decode" if body is None else
+                   "the body does not match its body_sha256" if hashlib.sha256(body).hexdigest() != line.get("body_sha256") else None)
+        if problem is None:
+            parsed = parse_body(body, model)
+            status = summary["generation_status"] = parsed["generation_status"]
+            if status == "provider_failure":
+                summary["prompt_rejected"] = bool(parsed.get("prompt_rejected") or prompt_rejected(parsed["provider_response"], None))
+            problem = ("a logged request for this attempt is not the frozen one" if any(h != expected for _, h in requests) else
+                       "no request is logged at its transport index" if type(line.get("transport_index")) is not int
+                       or line["transport_index"] not in sent else
+                       f"unreadable: {parsed['unreadable']}" if status is None else
+                       "a provider failure, not a model outcome" if status not in GENERATION_OUTCOMES else
+                       f"the response is from {parsed.get('returned_model')!r}, not the pinned snapshot"
+                       if parsed.get("returned_model") != model else None)
+        summary.update(recoverable=problem is None, reason=problem)
+        yield line, summary, parsed
+
+
+def reconcile_run(run: Path, *, attempt: str | None = None, apply: bool = False, release_unreadable: bool = False) -> dict:
+    """Resolve the calls whose in-flight marker generate kept, from their logged evidence alone: no request is made.
+
+    Nothing changes unless apply. A marker locked by a running command is left alone, and one whose attempt already has
+    a generation, or whose call's no_model_outcome generate already logged, is removed. Otherwise the bodies captured
+    for the attempt that no_model_outcome events have not resolved, one line each, are decoded, and the first
+    recoverable one (_capture_entries) is recorded as the generation generate would have recorded, naming its capture.
+    Without one the call's outcome stays unknown and its marker held, unless release_unreadable: then the call is logged
+    as no_model_outcome as generate would log it, naming the newest of those bodies and the call's last logged error,
+    so a later generate sends the attempt ID again unless the prompt was rejected. Each change is first appended to
+    amendments.jsonl.
+    """
+    manifest = load_run(run)
+    slots = {slot["attempt_id"]: slot for slot in manifest["slots"]}
+    if attempt is not None and attempt not in slots:
+        raise ValueError(f"Not a scheduled attempt ID: {attempt}")
+    markers = [path for path in sorted((run / "inflight").glob("*.json")) if attempt in (None, path.stem)]
+    if attempt is not None and not markers:
+        raise ValueError(f"Attempt {attempt} has no in-flight marker")
+    with contextlib.ExitStack() as locks:
+        # Each abandoned marker is locked before its evidence is read, so no command can add to that evidence meanwhile.
+        abandoned = set()
+        for marker in markers:
+            lock = _abandoned(marker, protocol=False) if marker.stem in slots else None
+            if lock is not None:
+                locks.callback(os.close, lock)
+                abandoned.add(marker)
+        evidence = _transport_evidence(run, {marker.stem for marker in abandoned})
+        entries = []
+        for marker in markers:
+            if marker in abandoned:
+                entries.append(_reconcile(run, marker, slots[marker.stem], manifest["config"]["generation"],
+                                          evidence[marker.stem], apply=apply, release_unreadable=release_unreadable))
+            elif marker.stem not in slots:
+                entries.append({"attempt_id": marker.stem, "action": "none", "finding": "not a scheduled attempt"})
+            elif marker.exists():
+                entries.append({"attempt_id": marker.stem, "action": "none",
+                                "finding": "a running generate or reconcile holds its lock"})
+    return {"run": str(run), "applied": apply, "in_flight_markers": len(markers),
+            "actions": dict(sorted(Counter(entry["action"] for entry in entries).items())), "attempts": entries}
+
+
+def _reconcile(run: Path, marker: Path, slot: dict, settings: dict, evidence: dict, *, apply: bool,
+               release_unreadable: bool) -> dict:
+    """reconcile_run for one abandoned marker, whose lock the caller holds."""
+    attempt = slot["attempt_id"]
+    try:
+        started = read_json(marker)
+    except (OSError, ValueError):
+        started = None
+    started = started if isinstance(started, dict) and unstorable(started) is None else None
+    amend = lambda resolution, **fields: append_event(run / "amendments.jsonl", {
+        "kind": "in_flight_reconciliation", "attempt_id": attempt, "resolution": resolution, "marker": started,
+        **fields}, once=True)
+    ended = evidence["ended"]
+    # generate logged the outcome of the call this marker was written for, then stopped before removing it.
+    outcome_logged = ended is not None and "reconciliation" not in ended and _since(ended, started)
+    entry = {"attempt_id": attempt, "marker": started, "call": [{key: _shown(event[key]) for key in CALL_FIELDS if key in event}
+             for event in evidence["call"]] if evidence["open"] or outcome_logged else []}
+    target = generation_path(run, attempt)
+    if target.exists():
+        # A command stopped between recording the generation and removing the marker: nothing can be resent.
+        generation = verified_generation(read_json(target), slot)
+        entry.update(action="remove_marker", finding="the attempt already has a generation")
+        if apply:
+            amend("generation_already_recorded", raw_response_hash=generation["raw_response_hash"])
+            marker.unlink()
+        return entry
+    logged = ended.get("reconciliation") if ended else None
+    if started is not None and isinstance(logged, dict) and logged.get("marker") == started:
+        # A reconcile stopped between logging this marker's release and removing it.
+        entry.update(action="remove_marker", finding="transport.jsonl already logs its release")
+        if apply:
+            marker.unlink()
+        return entry
+    if outcome_logged:
+        # Its no_model_outcome event stands, as for a release: nothing is logged in transport.jsonl again.
+        entry.update(action="remove_marker", finding="transport.jsonl already logs its outcome")
+        if apply:
+            amend("outcome_already_logged")
+            marker.unlink()
+        return entry
+    # Each resolution is of one captured line, the earliest of its body, so a later call's identical bytes are still read.
+    resolved, considered = evidence["resolved"].copy(), []
+    for found in _capture_entries(run, slot, settings, evidence["requests"]):
+        sha = found[0].get("body_sha256")
+        if isinstance(sha, str) and resolved[sha] > 0:
+            resolved[sha] -= 1
+        else:
+            considered.append(found)
+    entry["captures"] = [summary for _, summary, _ in considered]
+    chosen = next((found for found in considered if found[1]["recoverable"]), None)
+    if chosen is not None:
+        line, summary, parsed = chosen
+        capture = {"path": f"captures/{attempt}.jsonl", "body_sha256": line["body_sha256"]}
+        provenance = {"marker": started, "transport_index": line["transport_index"], "request_id": line.get("request_id"),
+                      "captured_at": line.get("recorded_at"), "request_hash": digest(response_payload(slot, settings))}
+        entry.update(action="record", capture=capture, finding=f"captured entry {summary['entry']} reads as "
+                     f"{parsed['generation_status']!r} from the pinned snapshot")
+        if apply:
+            raw = parsed.pop("raw_response")
+            amend("generation_recorded", capture=capture, generation_status=parsed["generation_status"],
+                  raw_response_hash=digest(raw), **{key: provenance[key] for key in provenance if key != "marker"})
+            record_generation(run, slot, raw, **parsed, response_capture=capture, generation_settings=settings,
+                              reconciliation=provenance)
+            marker.unlink()
+        return entry
+    line, summary, parsed = considered[-1] if considered else ({}, None, None)
+    unknown = next((event for event in reversed(entry["call"]) if event.get("event") == "outcome_unknown"), None)
+    detail = unknown and (unknown.get("reason") or f"{unknown.get('type')}: {unknown.get('message')}")
+    # As generate would log the call: with the last error it logged, rejecting the prompt if the captured body or an
+    # HTTP 400 it logged did.
+    error = next((event for event in reversed(evidence["call"] if evidence["open"] else [])
+                  if event.get("event") in ("http_error", "request_not_sent")), None)
+    last_error = error and _shown({key: error[key] for key in error
+                                   if key not in ("attempt_id", "transport_index", "event", "recorded_at")})
+    failed = parsed is not None and parsed["generation_status"] == "provider_failure"
+    provider_response = parsed["provider_response"] if failed else None
+    refused = bool(failed and summary["prompt_rejected"]) or prompt_rejected(provider_response, last_error)
+    stopped = "no response body was captured, and the call stopped without a logged outcome" + (
+        "; its logged HTTP 400 rejected the prompt as invalid_prompt" if refused else "")
+    # Without an open call, none was sent since the marker was written, unless the marker cannot tell when that was.
+    finding = (summary["reason"] if summary else
+               f"no response body was captured; the call logged outcome_unknown ({detail})" if unknown else
+               stopped if evidence["open"] else
+               "no request is logged for this call, so none was sent" if started is not None or not evidence["requests"] else
+               "its marker cannot be read, so whether its call sent a request is unknown")
+    entry.update(action="release" if release_unreadable else "keep", finding=finding)
+    if not release_unreadable:
+        entry["next"] = "--apply --release-unreadable releases it, so a later generate may send this attempt ID again"
+    if not (apply and release_unreadable):
+        return entry
+    capture = {"path": f"captures/{attempt}.jsonl", "body_sha256": line["body_sha256"]} if isinstance(
+        line.get("body_sha256"), str) else None
+    amend("released_without_model_outcome", reason=finding, capture=capture)
+    # A later generate resends the attempt ID, unless the provider rejected the prompt itself.
+    append_event(run / "transport.jsonl", {
+        "attempt_id": attempt, "event": "no_model_outcome", "capture": capture, "last_error": last_error,
+        "provider_response": provider_response, "prompt_rejected": refused,
+        "reconciliation": {"marker": started, "reason": finding}})
+    marker.unlink()
+    return entry
+
+
+def inspect_captures(run: Path, *, attempt: str | None = None) -> dict:
+    """The run's captured response bodies decoded for people, read-only (_capture_entries), with the transport events
+    that name each one and whether it is the attempt's recorded generation; never the model's text or a credential."""
+    manifest = load_run(run)
+    slots = {slot["attempt_id"]: slot for slot in manifest["slots"]}
+    if attempt is not None and attempt not in slots:
+        raise ValueError(f"Not a scheduled attempt ID: {attempt}")
+    directory = run / "captures"
+    chosen = [slot for slot in manifest["slots"] if attempt in (None, slot["attempt_id"])
+              and (directory / f"{slot['attempt_id']}.jsonl").exists()]
+    evidence = _transport_evidence(run, {slot["attempt_id"] for slot in chosen})
+    captures = []
+    for slot in chosen:
+        found, target = evidence[slot["attempt_id"]], generation_path(run, slot["attempt_id"])
+        recorded = verified_generation(read_json(target), slot).get("response_capture") if target.exists() else None
+        entries = []
+        for line, summary, _ in _capture_entries(run, slot, manifest["config"]["generation"], found["requests"]):
+            sha = line.get("body_sha256") if isinstance(line.get("body_sha256"), str) else None
+            entries.append({**summary, "named_by": found["named"].get(sha, []),
+                            "recorded_as_generation": isinstance(recorded, dict) and sha is not None
+                            and recorded.get("body_sha256") == sha})
+        captures.append({"attempt_id": slot["attempt_id"], "path": f"captures/{slot['attempt_id']}.jsonl",
+                         "generation_recorded": target.exists(),
+                         "in_flight_marker": (run / "inflight" / f"{slot['attempt_id']}.json").exists(), "entries": entries})
+    unscheduled = sorted(path.name for path in directory.glob("*.jsonl") if path.stem not in slots) if attempt is None else []
+    return {"run": str(run), "captures": captures, "unscheduled_capture_files": unscheduled}

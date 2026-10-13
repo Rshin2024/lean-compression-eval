@@ -1,0 +1,5152 @@
+{
+  "cases": [
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                27,
+                27
+              ],
+              "task_id": "lib_algebra_groups_pilot_group_basic_03",
+              "token_edits": 0
+            },
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                31,
+                31
+              ],
+              "task_id": "lib_algebra_groups_pilot_group_basic_03",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/lean-out3/9d2c4b7b25808582172defadf9917a0d8929d5274ab5ec8541ffdeb63d50bbc4.json",
+              "proof": "by split_ifs <;> rfl",
+              "record_kind": "verified_reference",
+              "sha256": "1a0c0f3b380c1e7bb2b39d955d6cc975decb772631fa7a83afb6f34d5f69e3f9",
+              "task_id": "lib_algebra_groups_pilot_group_basic_03",
+              "validity_status": "success"
+            },
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round00/out/9d2c4b7b25808582172defadf9917a0d8929d5274ab5ec8541ffdeb63d50bbc4.json",
+              "proof": "by split_ifs <;> rfl",
+              "record_kind": "verified_reference",
+              "sha256": "35d67a793dd34776e913510a3fa9c19cabbc37ed9286357103e9d1f0b1a50b59",
+              "task_id": "lib_algebra_groups_pilot_group_basic_03",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by split_ifs <;> rfl",
+          "task_id": "lib_algebra_groups_pilot_group_basic_03"
+        },
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                27,
+                27
+              ],
+              "task_id": "lib_algebra_groups_pilot_group_basic_04",
+              "token_edits": 0
+            },
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                31,
+                31
+              ],
+              "task_id": "lib_algebra_groups_pilot_group_basic_04",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/lean-out3/b390c19120e2ede46360b777038992b021654f1dde61c5a45b75d04be783751a.json",
+              "proof": "by split_ifs <;> rfl",
+              "record_kind": "verified_reference",
+              "sha256": "84653dc6b4833498980aeca1129dd7f3e5e43534752e4165bc07a78365e266c9",
+              "task_id": "lib_algebra_groups_pilot_group_basic_04",
+              "validity_status": "success"
+            },
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round00/out/b390c19120e2ede46360b777038992b021654f1dde61c5a45b75d04be783751a.json",
+              "proof": "by split_ifs <;> rfl",
+              "record_kind": "verified_reference",
+              "sha256": "8e4d89fb82868bb292643099e9799f27acce887cdf6d2c4b7fa058f3e46a234c",
+              "task_id": "lib_algebra_groups_pilot_group_basic_04",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by split_ifs <;> rfl",
+          "task_id": "lib_algebra_groups_pilot_group_basic_04"
+        }
+      ],
+      "category": "lean_valid_alternative_visible",
+      "id": "R001",
+      "note": "A visible proof of a preceding lemma proves the target verbatim. The same text is the stored reference of group_basic_01 and _02 (rows 417-424 elided it in group_basic_02's prompt); here the stored references are lemma applications, so no exact rule applies. group_basic_04 was amended by row 686 for another copy.",
+      "stored_reference": {
+        "lib_algebra_groups_pilot_group_basic_03": {
+          "component_count": 6,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "pow_dite _ _ _ _",
+          "token_count": 5,
+          "token_edit_bound": 3
+        },
+        "lib_algebra_groups_pilot_group_basic_04": {
+          "component_count": 6,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "dite_pow _ _ _ _",
+          "token_count": 5,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_algebra_groups_pilot_group_basic_03",
+        "lib_algebra_groups_pilot_group_basic_04"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 6,
+            "token_edits": 5
+          },
+          "premise_context_lines": [
+            27,
+            27
+          ],
+          "snippet": "by split_ifs <;> rfl",
+          "task_id": "lib_algebra_groups_pilot_group_basic_03"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 6,
+            "token_edits": 5
+          },
+          "premise_context_lines": [
+            31,
+            31
+          ],
+          "snippet": "by split_ifs <;> rfl",
+          "task_id": "lib_algebra_groups_pilot_group_basic_03"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 6,
+            "token_edits": 5
+          },
+          "premise_context_lines": [
+            27,
+            27
+          ],
+          "snippet": "by split_ifs <;> rfl",
+          "task_id": "lib_algebra_groups_pilot_group_basic_04"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 6,
+            "token_edits": 5
+          },
+          "premise_context_lines": [
+            31,
+            31
+          ],
+          "snippet": "by split_ifs <;> rfl",
+          "task_id": "lib_algebra_groups_pilot_group_basic_04"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "two token edits of the visible proof",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 2,
+              "premise_context_lines": [
+                52,
+                54
+              ],
+              "task_id": "lib_analysis_inequalities_main_log_basic_04",
+              "token_edits": 2
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/lean-out/95c37bb036b7436182bc8085e43c621f6383cfa80f8868240e3923ebbebc9924.json",
+              "proof": "by\n  rw [exp_log_eq_abs hx.ne]\n  exact abs_of_neg hx",
+              "record_kind": "verified_reference",
+              "sha256": "307eb3d18e12e451db1d9602506198385dd44736b8a0c5e2e57c8c972bafec66",
+              "task_id": "lib_analysis_inequalities_main_log_basic_04",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by\n  rw [exp_log_eq_abs hx.ne]\n  exact abs_of_neg hx",
+          "task_id": "lib_analysis_inequalities_main_log_basic_04"
+        },
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                52,
+                54
+              ],
+              "task_id": "lib_analysis_inequalities_main_log_basic_04",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": false,
+          "lean_evidence": [
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round00/out/95c37bb036b7436182bc8085e43c621f6383cfa80f8868240e3923ebbebc9924.json",
+              "proof": "by rw [exp_log_eq_abs hx.ne'] exact abs_of_pos hx",
+              "record_kind": "failed_reference",
+              "sha256": "133e53a28223491b38be68c6c59b6a2a8cf3055e306eb8118c5a5532bda124cb",
+              "task_id": "lib_analysis_inequalities_main_log_basic_04",
+              "validity_status": "parse_failure"
+            },
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant2/round00/out/95c37bb036b7436182bc8085e43c621f6383cfa80f8868240e3923ebbebc9924.json",
+              "proof": "by\n  rw [exp_log_eq_abs hx.ne']\n  exact abs_of_pos hx",
+              "record_kind": "failed_reference",
+              "sha256": "dbdece59f7d697b7cf48ce38d220b2cfcdb27ee05fa5189fb43d9abe396154e6",
+              "task_id": "lib_analysis_inequalities_main_log_basic_04",
+              "validity_status": "elaboration_failure"
+            }
+          ],
+          "proof": "by rw [exp_log_eq_abs hx.ne'] exact abs_of_pos hx",
+          "task_id": "lib_analysis_inequalities_main_log_basic_04"
+        }
+      ],
+      "category": "lean_valid_alternative_visible",
+      "id": "R002",
+      "note": "The visible positive-case proof becomes a Lean-valid proof of the negative case with two token edits; the stored reference spells the hypothesis differently, so the screen counts 5 edits against its bound of 3.",
+      "stored_reference": {
+        "lib_analysis_inequalities_main_log_basic_04": {
+          "component_count": 19,
+          "component_edit_bound": 6,
+          "generic_shape": null,
+          "proof": "by\n  rw [exp_log_eq_abs (ne_of_lt hx)]\n  exact abs_of_neg hx",
+          "token_count": 12,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_analysis_inequalities_main_log_basic_04"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 6,
+            "token_edits": 5
+          },
+          "premise_context_lines": [
+            52,
+            54
+          ],
+          "snippet": "by rw [exp_log_eq_abs hx.ne'] exact abs_of_pos hx",
+          "task_id": "lib_analysis_inequalities_main_log_basic_04"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "two token edits of either visible proof",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 2,
+              "premise_context_lines": [
+                68,
+                68
+              ],
+              "task_id": "lib_analysis_inequalities_pilot_field_basic_04",
+              "token_edits": 2
+            },
+            {
+              "component_edits": 2,
+              "premise_context_lines": [
+                72,
+                72
+              ],
+              "task_id": "lib_analysis_inequalities_pilot_field_basic_04",
+              "token_edits": 2
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/lean-out2/a446b353242af454e0b86ac0fbd2cb37cf1f9bfd0a967d40b64c9721b092b9c0.json",
+              "proof": "map_inv₀ (nnnormHom : α →*₀ ℝ≥0) a",
+              "record_kind": "verified_reference",
+              "sha256": "acce4c3267c5ee4e5d1e4a0f602d0aedfd680945cec82395d18ead9af28aa788",
+              "task_id": "lib_analysis_inequalities_pilot_field_basic_04",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "map_inv₀ (nnnormHom : α →*₀ ℝ≥0) a",
+          "task_id": "lib_analysis_inequalities_pilot_field_basic_04"
+        }
+      ],
+      "category": "lean_valid_alternative_visible",
+      "id": "R003",
+      "note": "Two visible map_* proofs are each two token edits from a Lean-valid proof (the relations elided for field_basic_02 and _03 by rows 701-702); the stored reference is a different simp proof.",
+      "stored_reference": {
+        "lib_analysis_inequalities_pilot_field_basic_04": {
+          "component_count": 5,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "NNReal.eq <| by simp",
+          "token_count": 4,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_analysis_inequalities_pilot_field_basic_04"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 11,
+            "token_edits": 10
+          },
+          "premise_context_lines": [
+            68,
+            68
+          ],
+          "snippet": "map_div₀ (nnnormHom : α →*₀ ℝ≥0) a b",
+          "task_id": "lib_analysis_inequalities_pilot_field_basic_04"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 10,
+            "token_edits": 9
+          },
+          "premise_context_lines": [
+            72,
+            72
+          ],
+          "snippet": "map_inv₀ (normHom : α →*₀ ℝ) a",
+          "task_id": "lib_analysis_inequalities_pilot_field_basic_04"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "one token edit of the visible proof",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 2,
+              "premise_context_lines": [
+                63,
+                64
+              ],
+              "task_id": "lib_sets_logic_main_equiv_basic_03",
+              "token_edits": 1
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/lean-out3/8760e51ddc9043ab10d0b04961746b7012110c84949a929e4930846daaa4aa8e.json",
+              "proof": "by simp [Perm.subtypeCongr.apply, a.property]",
+              "record_kind": "verified_reference",
+              "sha256": "b22764f49a1ac21c47e062fb55d7637c353e24a0dfb9ae99210de941f31dd6f1",
+              "task_id": "lib_sets_logic_main_equiv_basic_03",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by simp [Perm.subtypeCongr.apply, a.property]",
+          "task_id": "lib_sets_logic_main_equiv_basic_03"
+        },
+        {
+          "description": "one token edit of the visible proof",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 2,
+              "premise_context_lines": [
+                63,
+                64
+              ],
+              "task_id": "lib_sets_logic_main_equiv_basic_05",
+              "token_edits": 1
+            },
+            {
+              "component_edits": 2,
+              "premise_context_lines": [
+                71,
+                72
+              ],
+              "task_id": "lib_sets_logic_main_equiv_basic_05",
+              "token_edits": 1
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/lean-out3/940fa4db9390954b7e98cc9f88da44fce793d8cdbf0dfca3f1bcf28219337780.json",
+              "proof": "by simp [Perm.subtypeCongr.apply, a.property]",
+              "record_kind": "verified_reference",
+              "sha256": "ec5c94e0cf06bd795253e5e6b98f045db2c9480ceb3821dfa211ec3e0f35c0b6",
+              "task_id": "lib_sets_logic_main_equiv_basic_05",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by simp [Perm.subtypeCongr.apply, a.property]",
+          "task_id": "lib_sets_logic_main_equiv_basic_05"
+        },
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                63,
+                64
+              ],
+              "task_id": "lib_sets_logic_main_equiv_basic_03",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": false,
+          "lean_evidence": [
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round02/out/8760e51ddc9043ab10d0b04961746b7012110c84949a929e4930846daaa4aa8e.json",
+              "proof": "by simp [Perm.subtypeCongr.apply, h]",
+              "record_kind": "failed_reference",
+              "sha256": "12ecdde5fa7dc009632e7de3196525bd82d2789bb0635d7b6f9399012a85a085",
+              "task_id": "lib_sets_logic_main_equiv_basic_03",
+              "validity_status": "elaboration_failure"
+            },
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant2/round00/out/8760e51ddc9043ab10d0b04961746b7012110c84949a929e4930846daaa4aa8e.json",
+              "proof": "by\n  simp [Perm.subtypeCongr.apply, h]",
+              "record_kind": "failed_reference",
+              "sha256": "a0f98129fd32d5a3e0963a3232463c3f24f5d261e111d9f48e96894e0accd9f0",
+              "task_id": "lib_sets_logic_main_equiv_basic_03",
+              "validity_status": "elaboration_failure"
+            }
+          ],
+          "proof": "by simp [Perm.subtypeCongr.apply, h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_03"
+        },
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                63,
+                64
+              ],
+              "task_id": "lib_sets_logic_main_equiv_basic_05",
+              "token_edits": 0
+            },
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                71,
+                72
+              ],
+              "task_id": "lib_sets_logic_main_equiv_basic_05",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": false,
+          "lean_evidence": [
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round02/out/940fa4db9390954b7e98cc9f88da44fce793d8cdbf0dfca3f1bcf28219337780.json",
+              "proof": "by simp [Perm.subtypeCongr.apply, h]",
+              "record_kind": "failed_reference",
+              "sha256": "307bc665bc5045837cd76aba10e408621d836b0c5b5625de63a78c4224b68c79",
+              "task_id": "lib_sets_logic_main_equiv_basic_05",
+              "validity_status": "elaboration_failure"
+            },
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant2/round00/out/940fa4db9390954b7e98cc9f88da44fce793d8cdbf0dfca3f1bcf28219337780.json",
+              "proof": "by\n  simp [Perm.subtypeCongr.apply, h]",
+              "record_kind": "failed_reference",
+              "sha256": "3c40337c8c22153379a639ea883668d8c9d263b1ac17a2fc7edabe6e5c1c768f",
+              "task_id": "lib_sets_logic_main_equiv_basic_05",
+              "validity_status": "elaboration_failure"
+            }
+          ],
+          "proof": "by simp [Perm.subtypeCongr.apply, h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_05"
+        }
+      ],
+      "category": "lean_valid_alternative_visible",
+      "id": "R004",
+      "note": "Replacing the hypothesis h of the visible simp proof by a.property (one token edit) proves the target; the stored references apply the lemma whose statement and proof are shown. equiv_basic_05 was amended by row 714.",
+      "stored_reference": {
+        "lib_sets_logic_main_equiv_basic_03": {
+          "component_count": 8,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "Perm.subtypeCongr.left_apply ep en a.property",
+          "token_count": 4,
+          "token_edit_bound": 3
+        },
+        "lib_sets_logic_main_equiv_basic_05": {
+          "component_count": 8,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "Perm.subtypeCongr.right_apply ep en a.property",
+          "token_count": 4,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_main_equiv_basic_03",
+        "lib_sets_logic_main_equiv_basic_05"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 8,
+            "token_edits": 7
+          },
+          "premise_context_lines": [
+            63,
+            64
+          ],
+          "snippet": "by simp [Perm.subtypeCongr.apply, h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_03"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 8,
+            "token_edits": 7
+          },
+          "premise_context_lines": [
+            63,
+            64
+          ],
+          "snippet": "by simp [Perm.subtypeCongr.apply, h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_05"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 8,
+            "token_edits": 7
+          },
+          "premise_context_lines": [
+            71,
+            72
+          ],
+          "snippet": "by simp [Perm.subtypeCongr.apply, h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_05"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "three token edits of the visible proof",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 3,
+              "premise_context_lines": [
+                59,
+                60
+              ],
+              "task_id": "lib_sets_logic_main_equiv_basic_06",
+              "token_edits": 3
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/lean-out/8612ce88a6bd48c745b52fced5a6b3798c40714bc2e76f5b787e9f7c47b25ba5.json",
+              "proof": "by\n  ext x\n  by_cases h : p x <;> simp [Perm.subtypeCongr, h]",
+              "record_kind": "verified_reference",
+              "sha256": "5ca09cdedcc07d920d9beb082c8ab1c5805b50e6177f34ed41d8696d90c68ac4",
+              "task_id": "lib_sets_logic_main_equiv_basic_06",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by\n  ext x\n  by_cases h : p x <;> simp [Perm.subtypeCongr, h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_06"
+        }
+      ],
+      "category": "lean_valid_alternative_visible",
+      "id": "R005",
+      "note": "Adding `ext x` and using `p x` (three token edits) turns the visible proof (the stored reference of equiv_basic_01, shown by design) into a Lean-valid proof.",
+      "stored_reference": {
+        "lib_sets_logic_main_equiv_basic_06": {
+          "component_count": 14,
+          "component_edit_bound": 5,
+          "generic_shape": null,
+          "proof": "by\n  ext x\n  by_cases h : p x <;> simp [h]",
+          "token_count": 13,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_main_equiv_basic_06"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 6,
+            "token_edits": 5
+          },
+          "premise_context_lines": [
+            59,
+            60
+          ],
+          "snippet": "by by_cases h : p a <;> simp [Perm.subtypeCongr, h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_06"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "verbatim (fails)",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                44,
+                45
+              ],
+              "task_id": "lib_sets_logic_main_set_function_04",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": false,
+          "lean_evidence": [
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/lean-out2/4ccd10db2f013f0085c449deac73ed6703f695e7f5adf721c3e851ea13e8a755.json",
+              "proof": "by\n  simp [Set.EqOn]",
+              "record_kind": "failed_reference",
+              "sha256": "932d06470fde783418cd3b56cfeae78680ca2fb34c5b28c6486bfc6353a9cddc",
+              "task_id": "lib_sets_logic_main_set_function_04",
+              "validity_status": "elaboration_failure"
+            },
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round00/out/4ccd10db2f013f0085c449deac73ed6703f695e7f5adf721c3e851ea13e8a755.json",
+              "proof": "by simp [Set.EqOn]",
+              "record_kind": "failed_reference",
+              "sha256": "ec585373bc25b7209716f216538715f40124fc02652448a57cb688f57d800dca",
+              "task_id": "lib_sets_logic_main_set_function_04",
+              "validity_status": "elaboration_failure"
+            },
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant2/round00/out/4ccd10db2f013f0085c449deac73ed6703f695e7f5adf721c3e851ea13e8a755.json",
+              "proof": "by\n  simp [Set.EqOn]",
+              "record_kind": "failed_reference",
+              "sha256": "56d117ee2abe01f6509c9b85009667d8dabab3048b0871689b16e27d90548917",
+              "task_id": "lib_sets_logic_main_set_function_04",
+              "validity_status": "elaboration_failure"
+            }
+          ],
+          "proof": "by\n  simp [Set.EqOn]",
+          "task_id": "lib_sets_logic_main_set_function_04"
+        },
+        {
+          "description": "two token edits of the visible proof",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 3,
+              "premise_context_lines": [
+                44,
+                45
+              ],
+              "task_id": "lib_sets_logic_main_set_function_04",
+              "token_edits": 2
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/lean-out4/4ccd10db2f013f0085c449deac73ed6703f695e7f5adf721c3e851ea13e8a755.json",
+              "proof": "by simp [Set.EqOn, funext_iff]",
+              "record_kind": "verified_reference",
+              "sha256": "77e88db0b9de55d36d14b9fb6f6d56310b7662167bf1be5b42fd3ce9f65c7e98",
+              "task_id": "lib_sets_logic_main_set_function_04",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by simp [Set.EqOn, funext_iff]",
+          "task_id": "lib_sets_logic_main_set_function_04"
+        }
+      ],
+      "category": "lean_valid_alternative_visible",
+      "id": "R006",
+      "note": "The visible simp proof fails verbatim; adding funext_iff (two token edits) is Lean-valid. Generic-leaning.",
+      "stored_reference": {
+        "lib_sets_logic_main_set_function_04": {
+          "component_count": 8,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "by\n  simp [EqOn, funext_iff]",
+          "token_count": 7,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_main_set_function_04"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 4,
+            "token_edits": 3
+          },
+          "premise_context_lines": [
+            44,
+            45
+          ],
+          "snippet": "by simp [Set.EqOn]",
+          "task_id": "lib_sets_logic_main_set_function_04"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "mirror keeping congr_arg _ (fails)",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 6,
+              "premise_context_lines": [
+                52,
+                53
+              ],
+              "task_id": "lib_algebra_groups_main_units_basic_05",
+              "token_edits": 5
+            }
+          ],
+          "lean_accepted": false,
+          "lean_evidence": [
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/lean-out/3547acb922512d04166263300108caebdbef0322334e6ccced58b4ad596c7fab.json",
+              "proof": "⟨fun h => by simpa only [mul_inv_cancel_right] using congr_arg (fun x : α => x * ↑(a⁻¹ : αˣ)) h, congr_arg _⟩",
+              "record_kind": "failed_reference",
+              "sha256": "0a9acce6ac1c4b68d5e38c2b87285269d06005b844a896788183350ce5f19470",
+              "task_id": "lib_algebra_groups_main_units_basic_05",
+              "validity_status": "elaboration_failure"
+            }
+          ],
+          "proof": "⟨fun h => by simpa only [mul_inv_cancel_right] using congr_arg (fun x : α => x * ↑(a⁻¹ : αˣ)) h, congr_arg _⟩",
+          "task_id": "lib_algebra_groups_main_units_basic_05"
+        },
+        {
+          "description": "mirror with congr_arg (· * _)",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 10,
+              "premise_context_lines": [
+                52,
+                53
+              ],
+              "task_id": "lib_algebra_groups_main_units_basic_05",
+              "token_edits": 9
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/lean-out2/3547acb922512d04166263300108caebdbef0322334e6ccced58b4ad596c7fab.json",
+              "proof": "⟨fun h => by simpa only [mul_inv_cancel_right] using congr_arg (fun x : α => x * ↑(a⁻¹ : αˣ)) h, congr_arg (· * _)⟩",
+              "record_kind": "verified_reference",
+              "sha256": "d33e071693e2d272ed63990b742f2baddfdea1f53c61b71eb2db25d6cb06111a",
+              "task_id": "lib_algebra_groups_main_units_basic_05",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "⟨fun h => by simpa only [mul_inv_cancel_right] using congr_arg (fun x : α => x * ↑(a⁻¹ : αˣ)) h, congr_arg (· * _)⟩",
+          "task_id": "lib_algebra_groups_main_units_basic_05"
+        }
+      ],
+      "category": "same_class_over_bounds",
+      "id": "R007",
+      "note": "The mirrored proof of mul_right_inj is 10 token edits from the stored reference (bound 6); the 1-edit-per-6-tokens bound was chosen to exclude it. A 9-edit mirror is Lean-valid; a shorter mirror ending in congr_arg _ fails.",
+      "stored_reference": {
+        "lib_algebra_groups_main_units_basic_05": {
+          "component_count": 42,
+          "component_edit_bound": 14,
+          "generic_shape": null,
+          "proof": "⟨fun h => by simpa only [mul_inv_cancel_right] using congr_arg (fun x : α => x * ↑(a⁻¹ : αˣ)) h,\n    congr_arg (· * a.val)⟩",
+          "token_count": 36,
+          "token_edit_bound": 6
+        }
+      },
+      "task_ids": [
+        "lib_algebra_groups_main_units_basic_05"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 12,
+            "token_edits": 10
+          },
+          "premise_context_lines": [
+            52,
+            53
+          ],
+          "snippet": "⟨fun h => by simpa only [inv_mul_cancel_left] using congr_arg (fun x : α => ↑(a⁻¹ : αˣ) * x) h, congr_arg _⟩",
+          "task_id": "lib_algebra_groups_main_units_basic_05"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "the visible proof with four tokens deleted (equals the stored reference)",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 5,
+              "premise_context_lines": [
+                87,
+                87
+              ],
+              "task_id": "lib_analysis_inequalities_main_log_basic_10",
+              "token_edits": 4
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/lean-out3/9fabf2305aaffe1e85eb5b54136ebc1cd2f3eed7e850fbbafc1d4baae5b75e1a.json",
+              "proof": "fun x => ⟨exp x, log_exp x⟩",
+              "record_kind": "verified_reference",
+              "sha256": "ffd4b37064341b7717ea69ea0c8cf06f2ffb1ed864f5ee85c012e378d14baf7b",
+              "task_id": "lib_analysis_inequalities_main_log_basic_10",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "fun x => ⟨exp x, log_exp x⟩",
+          "task_id": "lib_analysis_inequalities_main_log_basic_10"
+        }
+      ],
+      "category": "same_class_over_bounds",
+      "id": "R008",
+      "note": "The visible surjOn_log proof is the stored reference plus 4 tokens (bound 3); the verifier's Lean check of the shortened proof equals the stored reference.",
+      "stored_reference": {
+        "lib_analysis_inequalities_main_log_basic_10": {
+          "component_count": 11,
+          "component_edit_bound": 4,
+          "generic_shape": null,
+          "proof": "fun x => ⟨exp x, log_exp x⟩",
+          "token_count": 10,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_analysis_inequalities_main_log_basic_10"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 5,
+            "token_edits": 4
+          },
+          "premise_context_lines": [
+            87,
+            87
+          ],
+          "snippet": "fun x _ => ⟨exp x, exp_pos x, log_exp x⟩",
+          "task_id": "lib_analysis_inequalities_main_log_basic_10"
+        }
+      ]
+    },
+    {
+      "category": "same_class_over_bounds",
+      "id": "R009",
+      "lean": "not checked by the verifier: no transplant of these snippets or their edits was run; the stored references, 4-5 token edits away, are kernel-verified",
+      "note": "norm/nnnorm map_* compositions of the kind elided by rows 701-704, 4-5 token edits from the stored references (bound 3).",
+      "stored_reference": {
+        "lib_analysis_inequalities_pilot_field_basic_03": {
+          "component_count": 10,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "map_inv₀ (normHom : α →*₀ ℝ) a",
+          "token_count": 9,
+          "token_edit_bound": 3
+        },
+        "lib_analysis_inequalities_pilot_field_basic_06": {
+          "component_count": 9,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "map_zpow₀ (normHom : α →*₀ ℝ)",
+          "token_count": 8,
+          "token_edit_bound": 3
+        },
+        "lib_analysis_inequalities_pilot_field_basic_07": {
+          "component_count": 9,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "map_zpow₀ (nnnormHom : α →*₀ ℝ≥0)",
+          "token_count": 8,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_analysis_inequalities_pilot_field_basic_03",
+        "lib_analysis_inequalities_pilot_field_basic_06",
+        "lib_analysis_inequalities_pilot_field_basic_07"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 4,
+            "token_edits": 4
+          },
+          "premise_context_lines": [
+            68,
+            68
+          ],
+          "snippet": "map_div₀ (nnnormHom : α →*₀ ℝ≥0) a b",
+          "task_id": "lib_analysis_inequalities_pilot_field_basic_03"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 5,
+            "token_edits": 5
+          },
+          "premise_context_lines": [
+            68,
+            68
+          ],
+          "snippet": "map_div₀ (nnnormHom : α →*₀ ℝ≥0) a b",
+          "task_id": "lib_analysis_inequalities_pilot_field_basic_06"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 5,
+            "token_edits": 5
+          },
+          "premise_context_lines": [
+            64,
+            64
+          ],
+          "snippet": "map_div₀ (normHom : α →*₀ ℝ) a b",
+          "task_id": "lib_analysis_inequalities_pilot_field_basic_07"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 4,
+            "token_edits": 4
+          },
+          "premise_context_lines": [
+            72,
+            72
+          ],
+          "snippet": "map_inv₀ (normHom : α →*₀ ℝ) a",
+          "task_id": "lib_analysis_inequalities_pilot_field_basic_07"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                68,
+                69
+              ],
+              "task_id": "lib_algebra_groups_main_hom_basic_06",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round02/out/84bd868d18a62fd8ed76eb3be6251d057c9ed3505c4315294c535ca3bb101915.json",
+              "proof": "by ext; simp",
+              "record_kind": "verified_reference",
+              "sha256": "831dd1da924e4f5c61dcfc2f91ed0f7926f1030a6f10c255fbd3ada47227f19c",
+              "task_id": "lib_algebra_groups_main_hom_basic_06",
+              "validity_status": "success"
+            },
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant2/round00/out/84bd868d18a62fd8ed76eb3be6251d057c9ed3505c4315294c535ca3bb101915.json",
+              "proof": "by\n  ext; simp",
+              "record_kind": "verified_reference",
+              "sha256": "e7bb627dc61b06fd4b869b31f1cb8b019c329e8c29b536ddb76129f16360bd65",
+              "task_id": "lib_algebra_groups_main_hom_basic_06",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by ext; simp",
+          "task_id": "lib_algebra_groups_main_hom_basic_06"
+        },
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                68,
+                69
+              ],
+              "task_id": "lib_algebra_groups_main_hom_basic_09",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round02/out/5139d845ea5ef72fefac5babb769950f987b61142b8ef5bf71d482a8522e9c5b.json",
+              "proof": "by ext; simp",
+              "record_kind": "verified_reference",
+              "sha256": "b180ce401e9025b7b1ec0bc97346480f41c740942032ed651fcbf2c1269a1994",
+              "task_id": "lib_algebra_groups_main_hom_basic_09",
+              "validity_status": "success"
+            },
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant2/round00/out/5139d845ea5ef72fefac5babb769950f987b61142b8ef5bf71d482a8522e9c5b.json",
+              "proof": "by\n  ext; simp",
+              "record_kind": "verified_reference",
+              "sha256": "4395a0666c652afecbe7121269062ef03b09b93aa85857cde0b039b53ce7f78a",
+              "task_id": "lib_algebra_groups_main_hom_basic_09",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by ext; simp",
+          "task_id": "lib_algebra_groups_main_hom_basic_09"
+        }
+      ],
+      "category": "generic_automation_verbatim",
+      "id": "R010",
+      "note": "Generic `ext; simp`; Lean accepts it verbatim for both targets.",
+      "stored_reference": {
+        "lib_algebra_groups_main_hom_basic_06": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        },
+        "lib_algebra_groups_main_hom_basic_09": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_algebra_groups_main_hom_basic_06",
+        "lib_algebra_groups_main_hom_basic_09"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 4,
+            "token_edits": 4
+          },
+          "premise_context_lines": [
+            68,
+            69
+          ],
+          "snippet": "by ext; simp",
+          "task_id": "lib_algebra_groups_main_hom_basic_06"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 4,
+            "token_edits": 4
+          },
+          "premise_context_lines": [
+            68,
+            69
+          ],
+          "snippet": "by ext; simp",
+          "task_id": "lib_algebra_groups_main_hom_basic_09"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                98,
+                99
+              ],
+              "task_id": "lib_linear_algebra_combinatorics_main_finset_card_08",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round08/out/5e6716e2d5e2910c5add3120da2bca164f28be7032e71edca722713e138c6510.json",
+              "proof": "by grind [=_ cons_eq_insert]",
+              "record_kind": "verified_reference",
+              "sha256": "f56036bb422b8ccb3548dd129daaa8e5661d19c8df627acedfe023691a6fca45",
+              "task_id": "lib_linear_algebra_combinatorics_main_finset_card_08",
+              "validity_status": "success"
+            },
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant2/round00/out/5e6716e2d5e2910c5add3120da2bca164f28be7032e71edca722713e138c6510.json",
+              "proof": "by\n  grind [=_ cons_eq_insert]",
+              "record_kind": "verified_reference",
+              "sha256": "83fd52ae0da8afa6cdfcde41f37197749e088bad00a355ed2bee80b2eccb17ac",
+              "task_id": "lib_linear_algebra_combinatorics_main_finset_card_08",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by grind [=_ cons_eq_insert]",
+          "task_id": "lib_linear_algebra_combinatorics_main_finset_card_08"
+        },
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                98,
+                99
+              ],
+              "task_id": "lib_linear_algebra_combinatorics_main_finset_card_09",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round08/out/894bd6305270105ee79695dab80cb0bb33276b0a242f47e58f9cf800eeba4a08.json",
+              "proof": "by grind [=_ cons_eq_insert]",
+              "record_kind": "verified_reference",
+              "sha256": "9a72f9cca8df7490d7d6cbeb2927a305713d99e32ec2e9543e37a322bac20c86",
+              "task_id": "lib_linear_algebra_combinatorics_main_finset_card_09",
+              "validity_status": "success"
+            },
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant2/round00/out/894bd6305270105ee79695dab80cb0bb33276b0a242f47e58f9cf800eeba4a08.json",
+              "proof": "by\n  grind [=_ cons_eq_insert]",
+              "record_kind": "verified_reference",
+              "sha256": "cf88e26073fc6da30bd1b58c80cd467d926f9491478cf2238182af50d824b62d",
+              "task_id": "lib_linear_algebra_combinatorics_main_finset_card_09",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by grind [=_ cons_eq_insert]",
+          "task_id": "lib_linear_algebra_combinatorics_main_finset_card_09"
+        },
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                98,
+                99
+              ],
+              "task_id": "lib_linear_algebra_combinatorics_main_finset_card_10",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round08/out/94d5a58fe5f97997a15638bbe26904196f09e35faf069275de50cc7093b684e9.json",
+              "proof": "by grind [=_ cons_eq_insert]",
+              "record_kind": "verified_reference",
+              "sha256": "1252f3c7449d969722744160ebed882fbafff38bbc6957c69b00ce4db43da4e7",
+              "task_id": "lib_linear_algebra_combinatorics_main_finset_card_10",
+              "validity_status": "success"
+            },
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant2/round00/out/94d5a58fe5f97997a15638bbe26904196f09e35faf069275de50cc7093b684e9.json",
+              "proof": "by\n  grind [=_ cons_eq_insert]",
+              "record_kind": "verified_reference",
+              "sha256": "14b2cf2f282608cfffae1f96b3b4b9ead55eeeef10ec469ba884b742b024c83c",
+              "task_id": "lib_linear_algebra_combinatorics_main_finset_card_10",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by grind [=_ cons_eq_insert]",
+          "task_id": "lib_linear_algebra_combinatorics_main_finset_card_10"
+        }
+      ],
+      "category": "generic_automation_verbatim",
+      "id": "R011",
+      "note": "Generic grind call; Lean accepts it verbatim for all three targets.",
+      "stored_reference": {
+        "lib_linear_algebra_combinatorics_main_finset_card_08": {
+          "component_count": 9,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "by rw [insert_eq_of_mem h]",
+          "token_count": 6,
+          "token_edit_bound": 3
+        },
+        "lib_linear_algebra_combinatorics_main_finset_card_09": {
+          "component_count": 2,
+          "component_edit_bound": 1,
+          "generic_shape": "single_tactic",
+          "proof": "by grind",
+          "token_count": 2,
+          "token_edit_bound": 3
+        },
+        "lib_linear_algebra_combinatorics_main_finset_card_10": {
+          "component_count": 5,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "card_insert_le _ _",
+          "token_count": 3,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_linear_algebra_combinatorics_main_finset_card_08",
+        "lib_linear_algebra_combinatorics_main_finset_card_09",
+        "lib_linear_algebra_combinatorics_main_finset_card_10"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 6,
+            "token_edits": 3
+          },
+          "premise_context_lines": [
+            98,
+            99
+          ],
+          "snippet": "by grind [=_ cons_eq_insert]",
+          "task_id": "lib_linear_algebra_combinatorics_main_finset_card_08"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 6,
+            "token_edits": 4
+          },
+          "premise_context_lines": [
+            98,
+            99
+          ],
+          "snippet": "by grind [=_ cons_eq_insert]",
+          "task_id": "lib_linear_algebra_combinatorics_main_finset_card_09"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 8,
+            "token_edits": 6
+          },
+          "premise_context_lines": [
+            98,
+            99
+          ],
+          "snippet": "by grind [=_ cons_eq_insert]",
+          "task_id": "lib_linear_algebra_combinatorics_main_finset_card_10"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                78,
+                78
+              ],
+              "task_id": "lib_number_theory_main_numbertheory_divisors_10",
+              "token_edits": 0
+            },
+            {
+              "component_edits": 1,
+              "premise_context_lines": [
+                82,
+                82
+              ],
+              "task_id": "lib_number_theory_main_numbertheory_divisors_10",
+              "token_edits": 1
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round03/out/e870ae415b1867b9214569ce8f3acc4daadf8568227c0ede71e602098ca0ac8d.json",
+              "proof": "by simp [properDivisors]",
+              "record_kind": "verified_reference",
+              "sha256": "bece8736de9d067ed4118a7ab0bed1fa46c03a7c1f5570f52ddccb399a2c71af",
+              "task_id": "lib_number_theory_main_numbertheory_divisors_10",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by simp [properDivisors]",
+          "task_id": "lib_number_theory_main_numbertheory_divisors_10"
+        }
+      ],
+      "category": "generic_automation_verbatim",
+      "id": "R012",
+      "note": "Generic simp call (also the stored reference of numbertheory_divisors_03, shown by design); Lean accepts it verbatim.",
+      "stored_reference": {
+        "lib_number_theory_main_numbertheory_divisors_10": {
+          "component_count": 2,
+          "component_edit_bound": 1,
+          "generic_shape": "single_tactic",
+          "proof": "by simp",
+          "token_count": 2,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_number_theory_main_numbertheory_divisors_10"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 3,
+            "token_edits": 3
+          },
+          "premise_context_lines": [
+            78,
+            78
+          ],
+          "snippet": "by simp [properDivisors]",
+          "task_id": "lib_number_theory_main_numbertheory_divisors_10"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 4,
+            "token_edits": 4
+          },
+          "premise_context_lines": [
+            82,
+            82
+          ],
+          "snippet": "simp [properDivisors]",
+          "task_id": "lib_number_theory_main_numbertheory_divisors_10"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                63,
+                64
+              ],
+              "task_id": "lib_sets_logic_main_equiv_basic_09",
+              "token_edits": 0
+            },
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                71,
+                72
+              ],
+              "task_id": "lib_sets_logic_main_equiv_basic_09",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round06/out/fa0ec4a0b00697355d1637dd957198fc7940a89a017001be76f9e15eabf5a79d.json",
+              "proof": "by simp [Perm.subtypeCongr.apply, h]",
+              "record_kind": "verified_reference",
+              "sha256": "1efe6f4f9e4a76c343870e5e65fb6b5dc8eb0d0480104d06ca5cc9d71c561cd9",
+              "task_id": "lib_sets_logic_main_equiv_basic_09",
+              "validity_status": "success"
+            },
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant2/round01/out/fa0ec4a0b00697355d1637dd957198fc7940a89a017001be76f9e15eabf5a79d.json",
+              "proof": "by\n  simp [Perm.subtypeCongr.apply, h]",
+              "record_kind": "verified_reference",
+              "sha256": "de7a3f77f514a2f54ba0a91e9807a26cc358bef1cf80785cc6ac7f7f6370b72d",
+              "task_id": "lib_sets_logic_main_equiv_basic_09",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by simp [Perm.subtypeCongr.apply, h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_09"
+        },
+        {
+          "description": "generic",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 4,
+              "premise_context_lines": [
+                63,
+                64
+              ],
+              "task_id": "lib_sets_logic_main_equiv_basic_09",
+              "token_edits": 2
+            },
+            {
+              "component_edits": 4,
+              "premise_context_lines": [
+                71,
+                72
+              ],
+              "task_id": "lib_sets_logic_main_equiv_basic_09",
+              "token_edits": 2
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/lean-out4/fa0ec4a0b00697355d1637dd957198fc7940a89a017001be76f9e15eabf5a79d.json",
+              "proof": "by simp [h]",
+              "record_kind": "verified_reference",
+              "sha256": "fd31679b57ebf8f2401487e2c58afe237ec0e190e80f7b58e67b35fda4651e45",
+              "task_id": "lib_sets_logic_main_equiv_basic_09",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by simp [h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_09"
+        },
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                63,
+                64
+              ],
+              "task_id": "lib_sets_logic_main_equiv_basic_10",
+              "token_edits": 0
+            },
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                71,
+                72
+              ],
+              "task_id": "lib_sets_logic_main_equiv_basic_10",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round06/out/7fa8df6a25ac9ca33f431c4b736b9b2d4368d16fdbd7d09e52b469023e2f5065.json",
+              "proof": "by simp [Perm.subtypeCongr.apply, h]",
+              "record_kind": "verified_reference",
+              "sha256": "6e88efc784f47d43f0b7a91323e002aa5f8ce5cc0ec77dece95c19ad36251e35",
+              "task_id": "lib_sets_logic_main_equiv_basic_10",
+              "validity_status": "success"
+            },
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant2/round01/out/7fa8df6a25ac9ca33f431c4b736b9b2d4368d16fdbd7d09e52b469023e2f5065.json",
+              "proof": "by\n  simp [Perm.subtypeCongr.apply, h]",
+              "record_kind": "verified_reference",
+              "sha256": "5c94b1842ce3ca4c8099bf814ebb1e91d01b94f85e79578a19b95d52d3abca42",
+              "task_id": "lib_sets_logic_main_equiv_basic_10",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by simp [Perm.subtypeCongr.apply, h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_10"
+        },
+        {
+          "description": "generic",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 4,
+              "premise_context_lines": [
+                63,
+                64
+              ],
+              "task_id": "lib_sets_logic_main_equiv_basic_10",
+              "token_edits": 2
+            },
+            {
+              "component_edits": 4,
+              "premise_context_lines": [
+                71,
+                72
+              ],
+              "task_id": "lib_sets_logic_main_equiv_basic_10",
+              "token_edits": 2
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/lean-out4/7fa8df6a25ac9ca33f431c4b736b9b2d4368d16fdbd7d09e52b469023e2f5065.json",
+              "proof": "by simp [h]",
+              "record_kind": "verified_reference",
+              "sha256": "fbdedcd29f4695ed40af53b8c319bd1dfe31a67086f178d71cc4c1c2319538d1",
+              "task_id": "lib_sets_logic_main_equiv_basic_10",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by simp [h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_10"
+        }
+      ],
+      "category": "generic_automation_verbatim",
+      "id": "R013",
+      "note": "Generic simp call visible in two preceding proofs; Lean accepts it verbatim, and `by simp [h]` also works. Both tasks were amended by rows 715-716 for other copies.",
+      "stored_reference": {
+        "lib_sets_logic_main_equiv_basic_09": {
+          "component_count": 4,
+          "component_edit_bound": 1,
+          "generic_shape": null,
+          "proof": "dite_eq_left h",
+          "token_count": 2,
+          "token_edit_bound": 3
+        },
+        "lib_sets_logic_main_equiv_basic_10": {
+          "component_count": 4,
+          "component_edit_bound": 1,
+          "generic_shape": null,
+          "proof": "dite_eq_right h",
+          "token_count": 2,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_main_equiv_basic_09",
+        "lib_sets_logic_main_equiv_basic_10"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 8,
+            "token_edits": 6
+          },
+          "premise_context_lines": [
+            63,
+            64
+          ],
+          "snippet": "by simp [Perm.subtypeCongr.apply, h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_09"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 8,
+            "token_edits": 6
+          },
+          "premise_context_lines": [
+            71,
+            72
+          ],
+          "snippet": "by simp [Perm.subtypeCongr.apply, h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_09"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 8,
+            "token_edits": 6
+          },
+          "premise_context_lines": [
+            63,
+            64
+          ],
+          "snippet": "by simp [Perm.subtypeCongr.apply, h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_10"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 8,
+            "token_edits": 6
+          },
+          "premise_context_lines": [
+            71,
+            72
+          ],
+          "snippet": "by simp [Perm.subtypeCongr.apply, h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_10"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                60,
+                61
+              ],
+              "task_id": "lib_sets_logic_main_logic_relation_03",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round01/out/0827470611cac076a3ca9e14d1ec0f3a6c4b1d3d437f1e71faaa322b5a717fac.json",
+              "proof": "by grind [Std.Refl]",
+              "record_kind": "verified_reference",
+              "sha256": "a93310b64eb4e5ca6f9ba217cb8409aef01598930823fb86c0455f3760528298",
+              "task_id": "lib_sets_logic_main_logic_relation_03",
+              "validity_status": "success"
+            },
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant2/round00/out/0827470611cac076a3ca9e14d1ec0f3a6c4b1d3d437f1e71faaa322b5a717fac.json",
+              "proof": "by\n  grind [Std.Refl]",
+              "record_kind": "verified_reference",
+              "sha256": "cd4642bf1fa8c5c9a8f977734bf918da6880fca40e47945e26b2054636dba18a",
+              "task_id": "lib_sets_logic_main_logic_relation_03",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by grind [Std.Refl]",
+          "task_id": "lib_sets_logic_main_logic_relation_03"
+        }
+      ],
+      "category": "generic_automation_verbatim",
+      "id": "R014",
+      "note": "Generic grind call; Lean accepts it verbatim.",
+      "stored_reference": {
+        "lib_sets_logic_main_logic_relation_03": {
+          "component_count": 14,
+          "component_edit_bound": 5,
+          "generic_shape": null,
+          "proof": "⟨Std.Refl.rel_of_ne_imp, fun hr _ ↦ hr⟩",
+          "token_count": 9,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_main_logic_relation_03"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 14,
+            "token_edits": 9
+          },
+          "premise_context_lines": [
+            60,
+            61
+          ],
+          "snippet": "by grind [Std.Refl]",
+          "task_id": "lib_sets_logic_main_logic_relation_03"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                44,
+                45
+              ],
+              "task_id": "lib_sets_logic_main_set_function_07",
+              "token_edits": 0
+            },
+            {
+              "component_edits": 4,
+              "premise_context_lines": [
+                48,
+                49
+              ],
+              "task_id": "lib_sets_logic_main_set_function_07",
+              "token_edits": 3
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round01/out/0328dc214bcbfcb2515f60deb3cbd5731d508486d84d650649ae4fd64effacf9.json",
+              "proof": "by simp [Set.EqOn]",
+              "record_kind": "verified_reference",
+              "sha256": "bfd032b05ce60387cc62e685d0fb542b07c848305b3b8f4b05973f0d4dd93a51",
+              "task_id": "lib_sets_logic_main_set_function_07",
+              "validity_status": "success"
+            },
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant2/round01/out/0328dc214bcbfcb2515f60deb3cbd5731d508486d84d650649ae4fd64effacf9.json",
+              "proof": "by\n  simp [Set.EqOn]",
+              "record_kind": "verified_reference",
+              "sha256": "71f0708d945ad1946348be1694c1becde78639a6b107d50ab73b5fd35be4e914",
+              "task_id": "lib_sets_logic_main_set_function_07",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by simp [Set.EqOn]",
+          "task_id": "lib_sets_logic_main_set_function_07"
+        },
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 4,
+              "premise_context_lines": [
+                44,
+                45
+              ],
+              "task_id": "lib_sets_logic_main_set_function_07",
+              "token_edits": 3
+            },
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                48,
+                49
+              ],
+              "task_id": "lib_sets_logic_main_set_function_07",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": true,
+          "lean_evidence": [
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round00/out/0328dc214bcbfcb2515f60deb3cbd5731d508486d84d650649ae4fd64effacf9.json",
+              "proof": "by simp [EqOn, funext_iff]",
+              "record_kind": "verified_reference",
+              "sha256": "b05eb1d4e8bed8bf4b3e341da7e75204b38c54ad6467a2cc4592b0e6b73e8201",
+              "task_id": "lib_sets_logic_main_set_function_07",
+              "validity_status": "success"
+            },
+            {
+              "metric_status": "available",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant2/round00/out/0328dc214bcbfcb2515f60deb3cbd5731d508486d84d650649ae4fd64effacf9.json",
+              "proof": "by\n  simp [EqOn, funext_iff]",
+              "record_kind": "verified_reference",
+              "sha256": "ade9b19ae25719181568f46876d4f62dd5e8faabb608a2f3388ff69067907b90",
+              "task_id": "lib_sets_logic_main_set_function_07",
+              "validity_status": "success"
+            }
+          ],
+          "proof": "by simp [EqOn, funext_iff]",
+          "task_id": "lib_sets_logic_main_set_function_07"
+        }
+      ],
+      "category": "generic_automation_verbatim",
+      "id": "R015",
+      "note": "Two generic simp calls; Lean accepts both verbatim.",
+      "stored_reference": {
+        "lib_sets_logic_main_set_function_07": {
+          "component_count": 5,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "fun _ _ => rfl",
+          "token_count": 5,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_main_set_function_07"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 6,
+            "token_edits": 5
+          },
+          "premise_context_lines": [
+            44,
+            45
+          ],
+          "snippet": "by simp [Set.EqOn]",
+          "task_id": "lib_sets_logic_main_set_function_07"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 8,
+            "token_edits": 7
+          },
+          "premise_context_lines": [
+            48,
+            49
+          ],
+          "snippet": "by simp [EqOn, funext_iff]",
+          "task_id": "lib_sets_logic_main_set_function_07"
+        }
+      ]
+    },
+    {
+      "category": "analogous_proof",
+      "id": "R016",
+      "note": "A simp_rw proof of a related identity sharing most rewrite rules with the stored reference; not near-verbatim.",
+      "stored_reference": {
+        "lib_algebra_groups_main_commute_basic_09": {
+          "component_count": 32,
+          "component_edit_bound": 11,
+          "generic_shape": null,
+          "proof": "by\n  simp_rw [div_eq_mul_inv, mul_inv_rev, inv_inv, hbd.symm.eq, hcd.symm.eq,\n    hbc.inv_inv.mul_mul_mul_comm]",
+          "token_count": 15,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_algebra_groups_main_commute_basic_09"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 9,
+            "token_edits": 6
+          },
+          "premise_context_lines": [
+            56,
+            57
+          ],
+          "snippet": "by simp_rw [div_eq_mul_inv, mul_inv_rev, hbd.inv_inv.symm.eq, hbc.mul_mul_mul_comm]",
+          "task_id": "lib_algebra_groups_main_commute_basic_09"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                48,
+                48
+              ],
+              "task_id": "lib_algebra_groups_main_commute_basic_10",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": false,
+          "lean_evidence": [
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round03/out/7d49536060545f6b3e69e7ba9056d0e152317951f114e5ba9c75e849e4c98f67.json",
+              "proof": "SemiconjBy.inv_inv_symm",
+              "record_kind": "failed_reference",
+              "sha256": "38c43144bf1a571d3601386059e0b15054f72d535b35ad3aeb6fa5d3600d5f86",
+              "task_id": "lib_algebra_groups_main_commute_basic_10",
+              "validity_status": "elaboration_failure"
+            }
+          ],
+          "proof": "SemiconjBy.inv_inv_symm",
+          "task_id": "lib_algebra_groups_main_commute_basic_10"
+        }
+      ],
+      "category": "analogous_proof",
+      "id": "R017",
+      "note": "The sibling lemma name: one token edit but 3 of 5 name components (bound 2). Row 690 elided the closer sibling.",
+      "stored_reference": {
+        "lib_algebra_groups_main_commute_basic_10": {
+          "component_count": 5,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "SemiconjBy.inv_symm_left_iff",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_algebra_groups_main_commute_basic_10"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 3,
+            "token_edits": 1
+          },
+          "premise_context_lines": [
+            48,
+            48
+          ],
+          "snippet": "SemiconjBy.inv_inv_symm",
+          "task_id": "lib_algebra_groups_main_commute_basic_10"
+        }
+      ]
+    },
+    {
+      "category": "analogous_proof",
+      "id": "R018",
+      "note": "A case-split proof of a related exp inequality; 32 of 48 tokens differ.",
+      "stored_reference": {
+        "lib_analysis_inequalities_main_log_basic_08": {
+          "component_count": 80,
+          "component_edit_bound": 27,
+          "generic_shape": null,
+          "proof": "by\n  by_cases hx0 : x < 0\n  · exact le_trans (mul_nonpos_of_nonneg_of_nonpos (by simp only [Nat.ofNat_nonneg]) hx0.le)\n      (exp_nonneg x)\n  · apply le_trans (mul_le_mul_of_nonneg_right _ (le_of_not_gt hx0)) exp_one_mul_le_exp\n    have := Real.add_one_le_exp 1\n    rwa [one_add_one_eq_two] at this",
+          "token_count": 48,
+          "token_edit_bound": 8
+        }
+      },
+      "task_ids": [
+        "lib_analysis_inequalities_main_log_basic_08"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 47,
+            "token_edits": 32
+          },
+          "premise_context_lines": [
+            73,
+            77
+          ],
+          "snippet": "by by_cases hx0 : x ≤ 0 · apply le_trans (mul_nonpos_of_nonneg_of_nonpos (exp_pos 1).le hx0) (exp_nonneg x) · have h := add_one_le_exp (log x) rwa [← exp_le_exp, exp_add, exp_log (lt_of_not_ge hx0), mul_comm] at h",
+          "task_id": "lib_analysis_inequalities_main_log_basic_08"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                66,
+                66
+              ],
+              "task_id": "lib_analysis_inequalities_main_pow_real_10",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": false,
+          "lean_evidence": [
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round02/out/9f5c353bd6f8ff910e1b27a39f032bd3fa1b114ae30adf9d9c037c0a2ec6f20d.json",
+              "proof": "rpow_natCast x n",
+              "record_kind": "failed_reference",
+              "sha256": "7e5a9af06b23b99335fe36db99ff10676014cabe0bd4e1401bb26af541e0351f",
+              "task_id": "lib_analysis_inequalities_main_pow_real_10",
+              "validity_status": "elaboration_failure"
+            }
+          ],
+          "proof": "rpow_natCast x n",
+          "task_id": "lib_analysis_inequalities_main_pow_real_10"
+        }
+      ],
+      "category": "analogous_proof",
+      "id": "R019",
+      "note": "A sibling cast lemma application; 3 of 5 name components (bound 2).",
+      "stored_reference": {
+        "lib_analysis_inequalities_main_pow_real_10": {
+          "component_count": 5,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "rpow_neg_natCast _ _",
+          "token_count": 3,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_analysis_inequalities_main_pow_real_10"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 3,
+            "token_edits": 3
+          },
+          "premise_context_lines": [
+            66,
+            66
+          ],
+          "snippet": "rpow_natCast x n",
+          "task_id": "lib_analysis_inequalities_main_pow_real_10"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                124,
+                124
+              ],
+              "task_id": "lib_linear_algebra_combinatorics_main_basis_defs_06",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": false,
+          "lean_evidence": [
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round04/out/ec704934a76f2964be35dd30a04854fa2db99da0d7fc418af58806b942176ded.json",
+              "proof": "by rw [map_smul, repr_symm_single_one]",
+              "record_kind": "failed_reference",
+              "sha256": "f4434b4dbeb636588217663fde25b0bd89b38afc995ed7fe446a3e6a32fefb04",
+              "task_id": "lib_linear_algebra_combinatorics_main_basis_defs_06",
+              "validity_status": "elaboration_failure"
+            }
+          ],
+          "proof": "by rw [map_smul, repr_symm_single_one]",
+          "task_id": "lib_linear_algebra_combinatorics_main_basis_defs_06"
+        }
+      ],
+      "category": "analogous_proof",
+      "id": "R020",
+      "note": "A two-rule rewrite in a calc step; 2 token edits but 5 of 10 name components (bound 3).",
+      "stored_reference": {
+        "lib_linear_algebra_combinatorics_main_basis_defs_06": {
+          "component_count": 10,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "by\n  rw [repr_self, Finsupp.single_apply]",
+          "token_count": 7,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_linear_algebra_combinatorics_main_basis_defs_06"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 5,
+            "token_edits": 2
+          },
+          "premise_context_lines": [
+            124,
+            124
+          ],
+          "snippet": "by rw [map_smul, repr_symm_single_one]",
+          "task_id": "lib_linear_algebra_combinatorics_main_basis_defs_06"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                66,
+                66
+              ],
+              "task_id": "lib_number_theory_main_gcd_basic_04",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": false,
+          "lean_evidence": [
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round01/out/657301245bc1399819ed14ec2888f184703aa30df58bbee4a6e3d7e214f5e0f4.json",
+              "proof": "h.trans (dvd_lcm_left b c)",
+              "record_kind": "failed_reference",
+              "sha256": "6dacf81887e5ad325ec8635b741e8ad1e778af6f382a408e09e9dbb34999d67d",
+              "task_id": "lib_number_theory_main_gcd_basic_04",
+              "validity_status": "elaboration_failure"
+            }
+          ],
+          "proof": "h.trans (dvd_lcm_left b c)",
+          "task_id": "lib_number_theory_main_gcd_basic_04"
+        }
+      ],
+      "category": "analogous_proof",
+      "id": "R021",
+      "note": "A sibling lcm proof (the stored reference of gcd_basic_03, shown by design).",
+      "stored_reference": {
+        "lib_number_theory_main_gcd_basic_04": {
+          "component_count": 9,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "(dvd_lcm_left a b).trans h",
+          "token_count": 7,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_number_theory_main_gcd_basic_04"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 6,
+            "token_edits": 5
+          },
+          "premise_context_lines": [
+            66,
+            66
+          ],
+          "snippet": "h.trans (dvd_lcm_left b c)",
+          "task_id": "lib_number_theory_main_gcd_basic_04"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                71,
+                71
+              ],
+              "task_id": "lib_number_theory_main_gcd_basic_05",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": false,
+          "lean_evidence": [
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round00/out/a5dfa67fdd9529488753faf00152920182053345beae24e55551559c7fcefb14.json",
+              "proof": "(dvd_lcm_left a b).trans h",
+              "record_kind": "failed_reference",
+              "sha256": "673777fb7da10bb8761c51c2865636257da389715f68c11800e9f7521c64a2b7",
+              "task_id": "lib_number_theory_main_gcd_basic_05",
+              "validity_status": "elaboration_failure"
+            }
+          ],
+          "proof": "(dvd_lcm_left a b).trans h",
+          "task_id": "lib_number_theory_main_gcd_basic_05"
+        }
+      ],
+      "category": "analogous_proof",
+      "id": "R022",
+      "note": "A sibling lcm proof (the stored reference of gcd_basic_04, shown by design).",
+      "stored_reference": {
+        "lib_number_theory_main_gcd_basic_05": {
+          "component_count": 9,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "h.trans (dvd_lcm_right c b)",
+          "token_count": 6,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_number_theory_main_gcd_basic_05"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 6,
+            "token_edits": 5
+          },
+          "premise_context_lines": [
+            71,
+            71
+          ],
+          "snippet": "(dvd_lcm_left a b).trans h",
+          "task_id": "lib_number_theory_main_gcd_basic_05"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                66,
+                66
+              ],
+              "task_id": "lib_number_theory_main_gcd_basic_06",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": false,
+          "lean_evidence": [
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round02/out/c4c9266518e586973331792052b6fb8284c0ece32e92a5d61ed024a4e51eade4.json",
+              "proof": "h.trans (dvd_lcm_left b c)",
+              "record_kind": "failed_reference",
+              "sha256": "689b16c02752db89f21ab5032428c8a385d8d465079b740edff5756d634d82cd",
+              "task_id": "lib_number_theory_main_gcd_basic_06",
+              "validity_status": "elaboration_failure"
+            }
+          ],
+          "proof": "h.trans (dvd_lcm_left b c)",
+          "task_id": "lib_number_theory_main_gcd_basic_06"
+        }
+      ],
+      "category": "analogous_proof",
+      "id": "R023",
+      "note": "A sibling lcm proof (the stored reference of gcd_basic_03, shown by design).",
+      "stored_reference": {
+        "lib_number_theory_main_gcd_basic_06": {
+          "component_count": 9,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "(dvd_lcm_right a b).trans h",
+          "token_count": 7,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_number_theory_main_gcd_basic_06"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 7,
+            "token_edits": 6
+          },
+          "premise_context_lines": [
+            66,
+            66
+          ],
+          "snippet": "h.trans (dvd_lcm_left b c)",
+          "task_id": "lib_number_theory_main_gcd_basic_06"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                74,
+                74
+              ],
+              "task_id": "lib_number_theory_main_gcd_basic_06",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": false,
+          "lean_evidence": [
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round03/out/c4c9266518e586973331792052b6fb8284c0ece32e92a5d61ed024a4e51eade4.json",
+              "proof": "h.trans (dvd_lcm_right c b)",
+              "record_kind": "failed_reference",
+              "sha256": "26edf802a4f063be668fa238a951dbbf6395fb90c1b62ed2983fe96d8e5e9e7f",
+              "task_id": "lib_number_theory_main_gcd_basic_06",
+              "validity_status": "elaboration_failure"
+            }
+          ],
+          "proof": "h.trans (dvd_lcm_right c b)",
+          "task_id": "lib_number_theory_main_gcd_basic_06"
+        }
+      ],
+      "category": "analogous_proof",
+      "id": "R024",
+      "note": "A sibling lcm proof (the stored reference of gcd_basic_05, shown by design); its parenthesized argument is closer but is not a proof component.",
+      "stored_reference": {
+        "lib_number_theory_main_gcd_basic_06": {
+          "component_count": 9,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "(dvd_lcm_right a b).trans h",
+          "token_count": 7,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_number_theory_main_gcd_basic_06"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 5,
+            "token_edits": 4
+          },
+          "premise_context_lines": [
+            74,
+            74
+          ],
+          "snippet": "h.trans (dvd_lcm_right c b)",
+          "task_id": "lib_number_theory_main_gcd_basic_06"
+        }
+      ]
+    },
+    {
+      "category": "analogous_proof",
+      "id": "R025",
+      "note": "A three-rule rewrite with a different lemma set.",
+      "stored_reference": {
+        "lib_number_theory_main_gcd_basic_10": {
+          "component_count": 12,
+          "component_edit_bound": 4,
+          "generic_shape": null,
+          "proof": "by\n  rw [Coprime, Coprime, gcd_add_self_right]",
+          "token_count": 9,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_number_theory_main_gcd_basic_10"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 7,
+            "token_edits": 5
+          },
+          "premise_context_lines": [
+            33,
+            34
+          ],
+          "snippet": "by rw [gcd_assoc, gcd_assoc, gcd_comm b c]",
+          "task_id": "lib_number_theory_main_gcd_basic_10"
+        }
+      ]
+    },
+    {
+      "category": "analogous_proof",
+      "id": "R026",
+      "note": "The properDivisors analogue of the divisors proof; 16 of 43 tokens differ.",
+      "stored_reference": {
+        "lib_number_theory_main_numbertheory_divisors_07": {
+          "component_count": 64,
+          "component_edit_bound": 21,
+          "generic_shape": null,
+          "proof": "by\n  rcases eq_or_ne m 0 with (rfl | hm); · simp [divisors]\n  simp only [hm, Ne, not_false_iff, and_true, ← filter_dvd_eq_divisors hm, mem_filter,\n    mem_range, and_iff_right_iff_imp, Nat.lt_succ_iff]\n  exact le_of_dvd hm.bot_lt",
+          "token_count": 43,
+          "token_edit_bound": 8
+        }
+      },
+      "task_ids": [
+        "lib_number_theory_main_numbertheory_divisors_07"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 29,
+            "token_edits": 16
+          },
+          "premise_context_lines": [
+            81,
+            83
+          ],
+          "snippet": "by rcases eq_or_ne m 0 with (rfl | hm); · simp [properDivisors] simp only [and_comm, ← filter_dvd_eq_properDivisors hm, mem_filter, mem_range]",
+          "task_id": "lib_number_theory_main_numbertheory_divisors_07"
+        }
+      ]
+    },
+    {
+      "category": "analogous_proof",
+      "id": "R027",
+      "note": "The proof of prime_mul_iff, the lemma the stored reference simps with.",
+      "stored_reference": {
+        "lib_number_theory_main_prime_basic_02": {
+          "component_count": 9,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "by\n  simp [prime_mul_iff, *]",
+          "token_count": 7,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_number_theory_main_prime_basic_02"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 11,
+            "token_edits": 6
+          },
+          "premise_context_lines": [
+            19,
+            20
+          ],
+          "snippet": "by simp only [irreducible_mul_iff, ← irreducible_iff_nat_prime, Nat.isUnit_iff]",
+          "task_id": "lib_number_theory_main_prime_basic_02"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                63,
+                64
+              ],
+              "task_id": "lib_sets_logic_main_equiv_basic_08",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": false,
+          "lean_evidence": [
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round04/out/01d2b4df36c96950b550fc96b796a01b294c4a80430de44069560e829adf3345.json",
+              "proof": "by simp [Perm.subtypeCongr.apply, h]",
+              "record_kind": "failed_reference",
+              "sha256": "baeeba99436c1eee7a86063e4954c2199a3e3dac1f589a6eea527a306d6f4563",
+              "task_id": "lib_sets_logic_main_equiv_basic_08",
+              "validity_status": "elaboration_failure"
+            },
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant2/round00/out/01d2b4df36c96950b550fc96b796a01b294c4a80430de44069560e829adf3345.json",
+              "proof": "by\n  simp [Perm.subtypeCongr.apply, h]",
+              "record_kind": "failed_reference",
+              "sha256": "a97377e7a4999b9c226d73ed5c1a5cbd6bf0796a07abd98ff1448327dbf9a07f",
+              "task_id": "lib_sets_logic_main_equiv_basic_08",
+              "validity_status": "elaboration_failure"
+            }
+          ],
+          "proof": "by simp [Perm.subtypeCongr.apply, h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_08"
+        }
+      ],
+      "category": "analogous_proof",
+      "id": "R028",
+      "note": "A simp proof about Perm.subtypeCongr; the stored reference uses grind with other lemmas.",
+      "stored_reference": {
+        "lib_sets_logic_main_equiv_basic_08": {
+          "component_count": 12,
+          "component_edit_bound": 4,
+          "generic_shape": null,
+          "proof": "by\n  grind [Equiv.Perm.subtypeCongr.eq_def, coe_trans]",
+          "token_count": 7,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_main_equiv_basic_08"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 6,
+            "token_edits": 3
+          },
+          "premise_context_lines": [
+            63,
+            64
+          ],
+          "snippet": "by simp [Perm.subtypeCongr.apply, h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_08"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                71,
+                72
+              ],
+              "task_id": "lib_sets_logic_main_equiv_basic_08",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": false,
+          "lean_evidence": [
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round04/out/01d2b4df36c96950b550fc96b796a01b294c4a80430de44069560e829adf3345.json",
+              "proof": "by simp [Perm.subtypeCongr.apply, h]",
+              "record_kind": "failed_reference",
+              "sha256": "baeeba99436c1eee7a86063e4954c2199a3e3dac1f589a6eea527a306d6f4563",
+              "task_id": "lib_sets_logic_main_equiv_basic_08",
+              "validity_status": "elaboration_failure"
+            },
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant2/round00/out/01d2b4df36c96950b550fc96b796a01b294c4a80430de44069560e829adf3345.json",
+              "proof": "by\n  simp [Perm.subtypeCongr.apply, h]",
+              "record_kind": "failed_reference",
+              "sha256": "a97377e7a4999b9c226d73ed5c1a5cbd6bf0796a07abd98ff1448327dbf9a07f",
+              "task_id": "lib_sets_logic_main_equiv_basic_08",
+              "validity_status": "elaboration_failure"
+            }
+          ],
+          "proof": "by simp [Perm.subtypeCongr.apply, h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_08"
+        }
+      ],
+      "category": "analogous_proof",
+      "id": "R029",
+      "note": "As above, second occurrence.",
+      "stored_reference": {
+        "lib_sets_logic_main_equiv_basic_08": {
+          "component_count": 12,
+          "component_edit_bound": 4,
+          "generic_shape": null,
+          "proof": "by\n  grind [Equiv.Perm.subtypeCongr.eq_def, coe_trans]",
+          "token_count": 7,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_main_equiv_basic_08"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 6,
+            "token_edits": 3
+          },
+          "premise_context_lines": [
+            71,
+            72
+          ],
+          "snippet": "by simp [Perm.subtypeCongr.apply, h]",
+          "task_id": "lib_sets_logic_main_equiv_basic_08"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "verbatim (fails)",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                60,
+                61
+              ],
+              "task_id": "lib_sets_logic_main_logic_relation_04",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": false,
+          "lean_evidence": [
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/lean-out2/44806391e52d18e6b27ebb533f4bc42b185003d66bdde8aa824cfaadc5106707.json",
+              "proof": "by\n  grind [Std.Refl]",
+              "record_kind": "failed_reference",
+              "sha256": "e0c160c2dba59788d820b5f6c26ab0ec42c770a658855845756e50465802c862",
+              "task_id": "lib_sets_logic_main_logic_relation_04",
+              "validity_status": "elaboration_failure"
+            },
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round02/out/44806391e52d18e6b27ebb533f4bc42b185003d66bdde8aa824cfaadc5106707.json",
+              "proof": "by grind [Std.Refl]",
+              "record_kind": "failed_reference",
+              "sha256": "c53e6d78333d3643e180526e89089dc67e2e2be89674bea1b29ea05fbe9fda3c",
+              "task_id": "lib_sets_logic_main_logic_relation_04",
+              "validity_status": "elaboration_failure"
+            },
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant2/round00/out/44806391e52d18e6b27ebb533f4bc42b185003d66bdde8aa824cfaadc5106707.json",
+              "proof": "by\n  grind [Std.Refl]",
+              "record_kind": "failed_reference",
+              "sha256": "c46699f630c3842df93b7983b3fcb48eaf4beb4cd677f671691b9e4521610464",
+              "task_id": "lib_sets_logic_main_logic_relation_04",
+              "validity_status": "elaboration_failure"
+            }
+          ],
+          "proof": "by\n  grind [Std.Refl]",
+          "task_id": "lib_sets_logic_main_logic_relation_04"
+        }
+      ],
+      "category": "analogous_proof",
+      "id": "R030",
+      "note": "Lean rejects the visible grind call on this target.",
+      "stored_reference": {
+        "lib_sets_logic_main_logic_relation_04": {
+          "component_count": 11,
+          "component_edit_bound": 4,
+          "generic_shape": null,
+          "proof": "by\n  unfold Pi.hasLe Prop.le\n  grind [Std.Refl]",
+          "token_count": 8,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_main_logic_relation_04"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 5,
+            "token_edits": 3
+          },
+          "premise_context_lines": [
+            60,
+            61
+          ],
+          "snippet": "by grind [Std.Refl]",
+          "task_id": "lib_sets_logic_main_logic_relation_04"
+        }
+      ]
+    },
+    {
+      "alternative_proofs_checked_in_lean": [
+        {
+          "description": "one token edit (fails)",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 1,
+              "premise_context_lines": [
+                60,
+                61
+              ],
+              "task_id": "lib_sets_logic_main_logic_relation_05",
+              "token_edits": 1
+            }
+          ],
+          "lean_accepted": false,
+          "lean_evidence": [
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/lean-out2/958918ea16751323624ee6d320dd6eece6a9dbecb0760a378da2b99e8c69f51f.json",
+              "proof": "by\n  grind [Std.Irrefl]",
+              "record_kind": "failed_reference",
+              "sha256": "bed7e52ff9e1125156ccaa71d1f7ade77b27d3e3394328c7c52926878daa3df9",
+              "task_id": "lib_sets_logic_main_logic_relation_05",
+              "validity_status": "elaboration_failure"
+            }
+          ],
+          "proof": "by\n  grind [Std.Irrefl]",
+          "task_id": "lib_sets_logic_main_logic_relation_05"
+        },
+        {
+          "description": "verbatim",
+          "edits_from_visible_snippets": [
+            {
+              "component_edits": 0,
+              "premise_context_lines": [
+                60,
+                61
+              ],
+              "task_id": "lib_sets_logic_main_logic_relation_05",
+              "token_edits": 0
+            }
+          ],
+          "lean_accepted": false,
+          "lean_evidence": [
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant/round02/out/958918ea16751323624ee6d320dd6eece6a9dbecb0760a378da2b99e8c69f51f.json",
+              "proof": "by grind [Std.Refl]",
+              "record_kind": "failed_reference",
+              "sha256": "07fd557f03c294b5998f294fa695facf79d43e2a6d5ffa862f322c9f0b4fd945",
+              "task_id": "lib_sets_logic_main_logic_relation_05",
+              "validity_status": "elaboration_failure"
+            },
+            {
+              "metric_status": "unavailable",
+              "path": "/tmp/lce-minor/da3/verify-independent/transplant2/round00/out/958918ea16751323624ee6d320dd6eece6a9dbecb0760a378da2b99e8c69f51f.json",
+              "proof": "by\n  grind [Std.Refl]",
+              "record_kind": "failed_reference",
+              "sha256": "7b25d780190cb801c62a4ab0a41dca4c6d05aef80afcb7450556f4429be09f8c",
+              "task_id": "lib_sets_logic_main_logic_relation_05",
+              "validity_status": "elaboration_failure"
+            }
+          ],
+          "proof": "by grind [Std.Refl]",
+          "task_id": "lib_sets_logic_main_logic_relation_05"
+        }
+      ],
+      "category": "analogous_proof",
+      "id": "R031",
+      "note": "Lean rejects the visible grind call and its Irrefl variant on this target. Row 711 elided a closer proof.",
+      "stored_reference": {
+        "lib_sets_logic_main_logic_relation_05": {
+          "component_count": 11,
+          "component_edit_bound": 4,
+          "generic_shape": null,
+          "proof": "by\n  unfold Pi.hasLe Prop.le\n  grind [Std.Irrefl]",
+          "token_count": 8,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_main_logic_relation_05"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 6,
+            "token_edits": 4
+          },
+          "premise_context_lines": [
+            60,
+            61
+          ],
+          "snippet": "by grind [Std.Refl]",
+          "task_id": "lib_sets_logic_main_logic_relation_05"
+        }
+      ]
+    },
+    {
+      "category": "analogous_proof",
+      "id": "R032",
+      "note": "A pointwise EqOn proof of the same shape.",
+      "stored_reference": {
+        "lib_sets_logic_main_set_function_08": {
+          "component_count": 13,
+          "component_edit_bound": 4,
+          "generic_shape": null,
+          "proof": "fun _ hx =>\n  (h₁ hx).trans (h₂ hx)",
+          "token_count": 13,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_main_set_function_08"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 6,
+            "token_edits": 6
+          },
+          "premise_context_lines": [
+            52,
+            52
+          ],
+          "snippet": "fun _ hx => (h hx).symm",
+          "task_id": "lib_sets_logic_main_set_function_08"
+        }
+      ]
+    },
+    {
+      "category": "by_design_statement",
+      "id": "R033",
+      "note": "The stored reference applies this lemma, whose statement precedes the target.",
+      "stored_reference": {
+        "lib_algebra_groups_main_commute_basic_02": {
+          "component_count": 6,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "SemiconjBy.function_semiconj_mul_left h",
+          "token_count": 2,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_algebra_groups_main_commute_basic_02"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 1,
+            "token_edits": 1
+          },
+          "premise_context_lines": [
+            23,
+            23
+          ],
+          "snippet": "SemiconjBy.function_semiconj_mul_left",
+          "task_id": "lib_algebra_groups_main_commute_basic_02"
+        }
+      ]
+    },
+    {
+      "category": "by_design_statement",
+      "id": "R034",
+      "note": "The stored reference applies the lemma stated at line 31; line 23 is its left sibling. Row 688 elided the proof of the left dual of the target.",
+      "stored_reference": {
+        "lib_algebra_groups_main_commute_basic_04": {
+          "component_count": 7,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "SemiconjBy.function_semiconj_mul_right_swap h",
+          "token_count": 2,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_algebra_groups_main_commute_basic_04"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 1,
+            "token_edits": 1
+          },
+          "premise_context_lines": [
+            31,
+            31
+          ],
+          "snippet": "SemiconjBy.function_semiconj_mul_right_swap",
+          "task_id": "lib_algebra_groups_main_commute_basic_04"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 3,
+            "token_edits": 2
+          },
+          "premise_context_lines": [
+            23,
+            23
+          ],
+          "snippet": "SemiconjBy.function_semiconj_mul_left",
+          "task_id": "lib_algebra_groups_main_commute_basic_04"
+        }
+      ]
+    },
+    {
+      "category": "by_design_statement",
+      "id": "R035",
+      "note": "The stored reference uses this lemma.",
+      "stored_reference": {
+        "lib_analysis_inequalities_main_log_basic_06": {
+          "component_count": 10,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "exp_injective <| exp_log (exp_pos x)",
+          "token_count": 7,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_analysis_inequalities_main_log_basic_06"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 8,
+            "token_edits": 6
+          },
+          "premise_context_lines": [
+            52,
+            52
+          ],
+          "snippet": "exp_log",
+          "task_id": "lib_analysis_inequalities_main_log_basic_06"
+        }
+      ]
+    },
+    {
+      "category": "by_design_statement",
+      "id": "R036",
+      "note": "The stored reference uses this lemma in a simpa call.",
+      "stored_reference": {
+        "lib_analysis_inequalities_main_pow_real_07": {
+          "component_count": 7,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "by simpa using rpow_intCast x n",
+          "token_count": 6,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_analysis_inequalities_main_pow_real_07"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 5,
+            "token_edits": 5
+          },
+          "premise_context_lines": [
+            52,
+            52
+          ],
+          "snippet": "rpow_intCast",
+          "task_id": "lib_analysis_inequalities_main_pow_real_07"
+        }
+      ]
+    },
+    {
+      "category": "by_design_statement",
+      "id": "R037",
+      "note": "The stored reference applies this lemma; row 705 elided its proof.",
+      "stored_reference": {
+        "lib_analysis_inequalities_main_pow_real_09": {
+          "component_count": 4,
+          "component_edit_bound": 1,
+          "generic_shape": null,
+          "proof": "rpow_natCast x n",
+          "token_count": 3,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_analysis_inequalities_main_pow_real_09"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 2,
+            "token_edits": 2
+          },
+          "premise_context_lines": [
+            57,
+            57
+          ],
+          "snippet": "rpow_natCast",
+          "task_id": "lib_analysis_inequalities_main_pow_real_09"
+        }
+      ]
+    },
+    {
+      "category": "by_design_statement",
+      "id": "R038",
+      "note": "The stored reference applies this lemma.",
+      "stored_reference": {
+        "lib_analysis_inequalities_main_pow_real_10": {
+          "component_count": 5,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "rpow_neg_natCast _ _",
+          "token_count": 3,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_analysis_inequalities_main_pow_real_10"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 2,
+            "token_edits": 2
+          },
+          "premise_context_lines": [
+            60,
+            60
+          ],
+          "snippet": "rpow_neg_natCast",
+          "task_id": "lib_analysis_inequalities_main_pow_real_10"
+        }
+      ]
+    },
+    {
+      "category": "by_design_statement",
+      "id": "R039",
+      "note": "The stored reference applies this lemma (line 65 is a grind_pattern command).",
+      "stored_reference": {
+        "lib_linear_algebra_combinatorics_main_finset_card_04": {
+          "component_count": 5,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "by apply card_le_card",
+          "token_count": 3,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_linear_algebra_combinatorics_main_finset_card_04"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 2,
+            "token_edits": 2
+          },
+          "premise_context_lines": [
+            60,
+            60
+          ],
+          "snippet": "card_le_card",
+          "task_id": "lib_linear_algebra_combinatorics_main_finset_card_04"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 2,
+            "token_edits": 2
+          },
+          "premise_context_lines": [
+            65,
+            65
+          ],
+          "snippet": "card_le_card",
+          "task_id": "lib_linear_algebra_combinatorics_main_finset_card_04"
+        }
+      ]
+    },
+    {
+      "category": "by_design_statement",
+      "id": "R040",
+      "note": "The stored reference applies this lemma; line 91's `Multiset.card_cons _ _` is coincidental.",
+      "stored_reference": {
+        "lib_linear_algebra_combinatorics_main_finset_card_10": {
+          "component_count": 5,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "card_insert_le _ _",
+          "token_count": 3,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_linear_algebra_combinatorics_main_finset_card_10"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 2,
+            "token_edits": 2
+          },
+          "premise_context_lines": [
+            103,
+            103
+          ],
+          "snippet": "card_insert_le",
+          "task_id": "lib_linear_algebra_combinatorics_main_finset_card_10"
+        }
+      ]
+    },
+    {
+      "category": "by_design_statement",
+      "id": "R041",
+      "note": "The stored reference applies the lemma stated at line 52; lines 57 and 61 apply it (parenthesized arguments, not proof components).",
+      "stored_reference": {
+        "lib_linear_algebra_combinatorics_pilot_span_basic_04": {
+          "component_count": 6,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "image_span_subset f s N",
+          "token_count": 4,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_linear_algebra_combinatorics_pilot_span_basic_04"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 3,
+            "token_edits": 3
+          },
+          "premise_context_lines": [
+            52,
+            52
+          ],
+          "snippet": "image_span_subset",
+          "task_id": "lib_linear_algebra_combinatorics_pilot_span_basic_04"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 1,
+            "token_edits": 1
+          },
+          "premise_context_lines": [
+            57,
+            57
+          ],
+          "snippet": "image_span_subset f s _",
+          "task_id": "lib_linear_algebra_combinatorics_pilot_span_basic_04"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 2,
+            "token_edits": 2
+          },
+          "premise_context_lines": [
+            61,
+            61
+          ],
+          "snippet": "image_span_subset_span f s",
+          "task_id": "lib_linear_algebra_combinatorics_pilot_span_basic_04"
+        }
+      ]
+    },
+    {
+      "category": "by_design_statement",
+      "id": "R042",
+      "note": "The stored reference applies this lemma.",
+      "stored_reference": {
+        "lib_linear_algebra_combinatorics_pilot_span_basic_08": {
+          "component_count": 10,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "linearMap_eq_iff_of_span_eq_top f 0 hM",
+          "token_count": 4,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_linear_algebra_combinatorics_pilot_span_basic_08"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 3,
+            "token_edits": 3
+          },
+          "premise_context_lines": [
+            112,
+            112
+          ],
+          "snippet": "linearMap_eq_iff_of_span_eq_top",
+          "task_id": "lib_linear_algebra_combinatorics_pilot_span_basic_08"
+        }
+      ]
+    },
+    {
+      "category": "by_design_statement",
+      "id": "R043",
+      "note": "The stored reference applies this lemma.",
+      "stored_reference": {
+        "lib_number_theory_main_prime_basic_03": {
+          "component_count": 7,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "h ▸ not_prime_mul h₁ h₂",
+          "token_count": 5,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_number_theory_main_prime_basic_03"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 4,
+            "token_edits": 4
+          },
+          "premise_context_lines": [
+            22,
+            22
+          ],
+          "snippet": "not_prime_mul",
+          "task_id": "lib_number_theory_main_prime_basic_03"
+        }
+      ]
+    },
+    {
+      "category": "by_design_statement",
+      "id": "R044",
+      "note": "The stored reference applies this lemma.",
+      "stored_reference": {
+        "lib_sets_logic_main_equiv_basic_03": {
+          "component_count": 8,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "Perm.subtypeCongr.left_apply ep en a.property",
+          "token_count": 4,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_main_equiv_basic_03"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 4,
+            "token_edits": 3
+          },
+          "premise_context_lines": [
+            63,
+            63
+          ],
+          "snippet": "Perm.subtypeCongr.left_apply",
+          "task_id": "lib_sets_logic_main_equiv_basic_03"
+        }
+      ]
+    },
+    {
+      "category": "by_design_statement",
+      "id": "R045",
+      "note": "The stored reference applies the lemma stated at line 71; line 63 is its left sibling.",
+      "stored_reference": {
+        "lib_sets_logic_main_equiv_basic_05": {
+          "component_count": 8,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "Perm.subtypeCongr.right_apply ep en a.property",
+          "token_count": 4,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_main_equiv_basic_05"
+      ],
+      "visible": [
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 4,
+            "token_edits": 3
+          },
+          "premise_context_lines": [
+            71,
+            71
+          ],
+          "snippet": "Perm.subtypeCongr.right_apply",
+          "task_id": "lib_sets_logic_main_equiv_basic_05"
+        },
+        {
+          "edits_from_snippet_to_stored_reference": {
+            "component_edits": 5,
+            "token_edits": 4
+          },
+          "premise_context_lines": [
+            63,
+            63
+          ],
+          "snippet": "Perm.subtypeCongr.left_apply",
+          "task_id": "lib_sets_logic_main_equiv_basic_05"
+        }
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "literal_reflexivity",
+      "id": "R046",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        62
+      ],
+      "proof": "rfl",
+      "stored_reference": {
+        "lib_algebra_groups_main_hom_basic_02": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_algebra_groups_main_hom_basic_02"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "literal_reflexivity",
+      "id": "R047",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        62,
+        65
+      ],
+      "proof": "rfl",
+      "stored_reference": {
+        "lib_algebra_groups_main_hom_basic_04": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_algebra_groups_main_hom_basic_04"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "literal_reflexivity",
+      "id": "R048",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        62,
+        65,
+        85
+      ],
+      "proof": "rfl",
+      "stored_reference": {
+        "lib_algebra_groups_main_hom_basic_05": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_algebra_groups_main_hom_basic_05"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "literal_reflexivity",
+      "id": "R049",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        62,
+        65,
+        85,
+        89
+      ],
+      "proof": "rfl",
+      "stored_reference": {
+        "lib_algebra_groups_main_hom_basic_06": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_algebra_groups_main_hom_basic_06"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "literal_reflexivity",
+      "id": "R050",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        62,
+        65,
+        85,
+        89,
+        93
+      ],
+      "proof": "rfl",
+      "stored_reference": {
+        "lib_algebra_groups_main_hom_basic_07": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_algebra_groups_main_hom_basic_07"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "literal_reflexivity",
+      "id": "R051",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        62,
+        65,
+        85,
+        89,
+        93,
+        105
+      ],
+      "proof": "rfl",
+      "stored_reference": {
+        "lib_algebra_groups_main_hom_basic_08": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_algebra_groups_main_hom_basic_08"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "literal_reflexivity",
+      "id": "R052",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        62,
+        65,
+        85,
+        89,
+        93,
+        105,
+        109
+      ],
+      "proof": "rfl",
+      "stored_reference": {
+        "lib_algebra_groups_main_hom_basic_09": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_algebra_groups_main_hom_basic_09"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "literal_reflexivity",
+      "id": "R053",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        62,
+        65,
+        85,
+        89,
+        93,
+        105,
+        109,
+        113
+      ],
+      "proof": "rfl",
+      "stored_reference": {
+        "lib_algebra_groups_main_hom_basic_10": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_algebra_groups_main_hom_basic_10"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "binder_name",
+      "id": "R054",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [],
+      "proof": "hf",
+      "stored_reference": {
+        "lib_analysis_inequalities_main_convex_function_01": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "binder_name",
+          "proof": "hf",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_analysis_inequalities_main_convex_function_01"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "binder_name",
+      "id": "R055",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        71
+      ],
+      "proof": "hf",
+      "stored_reference": {
+        "lib_analysis_inequalities_main_convex_function_02": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "binder_name",
+          "proof": "hf",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_analysis_inequalities_main_convex_function_02"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "binder_name",
+      "id": "R056",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        71,
+        73
+      ],
+      "proof": "hf",
+      "stored_reference": {
+        "lib_analysis_inequalities_main_convex_function_03": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "binder_name",
+          "proof": "hf",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_analysis_inequalities_main_convex_function_03"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "binder_name",
+      "id": "R057",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        71,
+        73,
+        75
+      ],
+      "proof": "hf",
+      "stored_reference": {
+        "lib_analysis_inequalities_main_convex_function_04": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "binder_name",
+          "proof": "hf",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_analysis_inequalities_main_convex_function_04"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "literal_reflexivity",
+      "id": "R058",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        36
+      ],
+      "proof": "rfl",
+      "stored_reference": {
+        "lib_analysis_inequalities_main_pow_real_02": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_analysis_inequalities_main_pow_real_02"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "literal_reflexivity",
+      "id": "R059",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        112
+      ],
+      "proof": "rfl",
+      "stored_reference": {
+        "lib_linear_algebra_combinatorics_main_basis_defs_03": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_linear_algebra_combinatorics_main_basis_defs_03"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "literal_reflexivity",
+      "id": "R060",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        47,
+        49
+      ],
+      "proof": "rfl",
+      "stored_reference": {
+        "lib_linear_algebra_combinatorics_main_finset_card_02": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_linear_algebra_combinatorics_main_finset_card_02"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "literal_reflexivity",
+      "id": "R061",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        47,
+        49,
+        53
+      ],
+      "proof": "rfl",
+      "stored_reference": {
+        "lib_linear_algebra_combinatorics_main_finset_card_03": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_linear_algebra_combinatorics_main_finset_card_03"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "single_tactic",
+      "id": "R062",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        87
+      ],
+      "proof": "by grind",
+      "stored_reference": {
+        "lib_linear_algebra_combinatorics_main_finset_card_09": {
+          "component_count": 2,
+          "component_edit_bound": 1,
+          "generic_shape": "single_tactic",
+          "proof": "by grind",
+          "token_count": 2,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_linear_algebra_combinatorics_main_finset_card_09"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "binder_name",
+      "id": "R063",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [],
+      "proof": "h",
+      "stored_reference": {
+        "lib_linear_algebra_combinatorics_main_linearindependent_defs_01": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "binder_name",
+          "proof": "h",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_linear_algebra_combinatorics_main_linearindependent_defs_01"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "single_tactic",
+      "id": "R064",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        78
+      ],
+      "proof": "by simp",
+      "stored_reference": {
+        "lib_number_theory_main_numbertheory_divisors_10": {
+          "component_count": 2,
+          "component_edit_bound": 1,
+          "generic_shape": "single_tactic",
+          "proof": "by simp",
+          "token_count": 2,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_number_theory_main_numbertheory_divisors_10"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "literal_reflexivity",
+      "id": "R065",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        40
+      ],
+      "proof": "rfl",
+      "stored_reference": {
+        "lib_sets_logic_main_equiv_basic_07": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_main_equiv_basic_07"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "single_tactic",
+      "id": "R066",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        69
+      ],
+      "proof": "by grind",
+      "stored_reference": {
+        "lib_sets_logic_main_set_function_10": {
+          "component_count": 2,
+          "component_edit_bound": 1,
+          "generic_shape": "single_tactic",
+          "proof": "by grind",
+          "token_count": 2,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_main_set_function_10"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "literal_reflexivity",
+      "id": "R067",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        85
+      ],
+      "proof": "rfl",
+      "stored_reference": {
+        "lib_sets_logic_pilot_set_basic_05": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_pilot_set_basic_05"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "literal_reflexivity",
+      "id": "R068",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        85,
+        89
+      ],
+      "proof": "rfl",
+      "stored_reference": {
+        "lib_sets_logic_pilot_set_basic_06": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_pilot_set_basic_06"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "literal_reflexivity",
+      "id": "R069",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        85,
+        89,
+        93
+      ],
+      "proof": "rfl",
+      "stored_reference": {
+        "lib_sets_logic_pilot_set_basic_07": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_pilot_set_basic_07"
+      ]
+    },
+    {
+      "category": "generic_exact_under_9_chars",
+      "generic_shape": "literal_reflexivity",
+      "id": "R070",
+      "note": "Exact match below 9 characters; the screen does not gate matches this short, all generic shapes. Lines are those whose tokens contain the proof's tokens; the text may also occur outside premise_context (the statement or the system text).",
+      "premise_context_lines_containing_the_text": [
+        85,
+        89,
+        93,
+        97
+      ],
+      "proof": "rfl",
+      "stored_reference": {
+        "lib_sets_logic_pilot_set_basic_08": {
+          "component_count": 1,
+          "component_edit_bound": 0,
+          "generic_shape": "literal_reflexivity",
+          "proof": "rfl",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_pilot_set_basic_08"
+      ]
+    },
+    {
+      "category": "partial_window_noise",
+      "id": "R071",
+      "note": "Verifier's window screen: fragments of larger terms, not proofs. The fragment `<| by rw`.",
+      "stored_reference": {
+        "lib_analysis_inequalities_pilot_field_basic_04": {
+          "component_count": 5,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "NNReal.eq <| by simp",
+          "token_count": 4,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_analysis_inequalities_pilot_field_basic_04"
+      ],
+      "verifier_windows": [
+        {
+          "component_edits": 3,
+          "premise_context_line": 60,
+          "text": "<| by",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 3,
+          "premise_context_line": 60,
+          "text": "<| by rw",
+          "token_edits": 2
+        }
+      ]
+    },
+    {
+      "category": "partial_window_noise",
+      "id": "R072",
+      "note": "Verifier's window screen: fragments of larger terms, not proofs. `LinearEquiv.refl _ _` at line 95 (3 of 6 name components; not a copy).",
+      "stored_reference": {
+        "lib_linear_algebra_combinatorics_main_basis_defs_05": {
+          "component_count": 6,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "LinearEquiv.apply_symm_apply _ _",
+          "token_count": 3,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_linear_algebra_combinatorics_main_basis_defs_05"
+      ],
+      "verifier_windows": [
+        {
+          "component_edits": 3,
+          "premise_context_line": 95,
+          "text": "LinearEquiv.refl _ _",
+          "token_edits": 1
+        },
+        {
+          "component_edits": 4,
+          "premise_context_line": 95,
+          "text": "LinearEquiv.refl _",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 4,
+          "premise_context_line": 95,
+          "text": "LinearEquiv.refl _ _)",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 4,
+          "premise_context_line": 107,
+          "text": "LinearEquiv.symm_bijective",
+          "token_edits": 3
+        }
+      ]
+    },
+    {
+      "category": "partial_window_noise",
+      "id": "R073",
+      "note": "Verifier's window screen: fragments of larger terms, not proofs. Partial fun terms.",
+      "stored_reference": {
+        "lib_linear_algebra_combinatorics_main_basis_defs_08": {
+          "component_count": 10,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "LinearMap.ext fun v => b.repr_symm_apply v",
+          "token_count": 6,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_linear_algebra_combinatorics_main_basis_defs_08"
+      ],
+      "verifier_windows": [
+        {
+          "component_edits": 6,
+          "premise_context_line": 111,
+          "text": "fun i => e.symm",
+          "token_edits": 3
+        },
+        {
+          "component_edits": 6,
+          "premise_context_line": 111,
+          "text": "fun i => e.symm (",
+          "token_edits": 3
+        },
+        {
+          "component_edits": 5,
+          "premise_context_line": 137,
+          "text": "fun i vi => b.repr.symm",
+          "token_edits": 4
+        },
+        {
+          "component_edits": 5,
+          "premise_context_line": 137,
+          "text": "fun i vi => b.repr.symm (",
+          "token_edits": 4
+        }
+      ]
+    },
+    {
+      "category": "partial_window_noise",
+      "id": "R074",
+      "note": "Verifier's window screen: fragments of larger terms, not proofs. Binder fragments.",
+      "stored_reference": {
+        "lib_linear_algebra_combinatorics_pilot_span_basic_02": {
+          "component_count": 7,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "span_eq (p.restrictScalars S)",
+          "token_count": 5,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_linear_algebra_combinatorics_pilot_span_basic_02"
+      ],
+      "verifier_windows": [
+        {
+          "component_edits": 4,
+          "premise_context_line": 39,
+          "text": "(AddSubmonoid.closure s)",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 4,
+          "premise_context_line": 38,
+          "text": "(s : Set M)",
+          "token_edits": 3
+        }
+      ]
+    },
+    {
+      "category": "partial_window_noise",
+      "id": "R075",
+      "note": "Verifier's window screen: fragments of larger terms, not proofs. Parenthesized arguments `(gcd_dvd_left a b)`.",
+      "stored_reference": {
+        "lib_number_theory_main_gcd_basic_03": {
+          "component_count": 9,
+          "component_edit_bound": 3,
+          "generic_shape": null,
+          "proof": "h.trans (dvd_lcm_left b c)",
+          "token_count": 6,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_number_theory_main_gcd_basic_03"
+      ],
+      "verifier_windows": [
+        {
+          "component_edits": 4,
+          "premise_context_line": 31,
+          "text": "(gcd_dvd_left a b)",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 4,
+          "premise_context_line": 31,
+          "text": "(dvd_gcd hda hdb)",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 5,
+          "premise_context_line": 31,
+          "text": "(gcd_dvd_right a b)",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 5,
+          "premise_context_line": 33,
+          "text": "(gcd a b)",
+          "token_edits": 2
+        }
+      ]
+    },
+    {
+      "category": "partial_window_noise",
+      "id": "R076",
+      "note": "Verifier's window screen: fragments of larger terms, not proofs. Bracket fragments such as `[properDivisors`.",
+      "stored_reference": {
+        "lib_number_theory_main_numbertheory_divisors_03": {
+          "component_count": 5,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "by simp [properDivisors]",
+          "token_count": 5,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_number_theory_main_numbertheory_divisors_03"
+      ],
+      "verifier_windows": [
+        {
+          "component_edits": 3,
+          "premise_context_line": 30,
+          "text": "[expose]",
+          "token_edits": 3
+        },
+        {
+          "component_edits": 3,
+          "premise_context_line": 66,
+          "text": "simp]",
+          "token_edits": 3
+        },
+        {
+          "component_edits": 3,
+          "premise_context_line": 72,
+          "text": "simp]",
+          "token_edits": 3
+        },
+        {
+          "component_edits": 3,
+          "premise_context_line": 75,
+          "text": "[properDivisors",
+          "token_edits": 3
+        }
+      ]
+    },
+    {
+      "category": "partial_window_noise",
+      "id": "R077",
+      "note": "Verifier's window screen: fragments of larger terms, not proofs. Parenthesized arguments.",
+      "stored_reference": {
+        "lib_number_theory_main_numbertheory_divisors_08": {
+          "component_count": 7,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "(mem_divisors.mp h).1",
+          "token_count": 5,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_number_theory_main_numbertheory_divisors_08"
+      ],
+      "verifier_windows": [
+        {
+          "component_edits": 4,
+          "premise_context_line": 85,
+          "text": "(properDivisors n)",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 4,
+          "premise_context_line": 85,
+          "text": "(properDivisors n) =",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 4,
+          "premise_context_line": 88,
+          "text": "(dvd_refl n)",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 4,
+          "premise_context_line": 88,
+          "text": "(dvd_refl n)]",
+          "token_edits": 2
+        }
+      ]
+    },
+    {
+      "category": "partial_window_noise",
+      "id": "R078",
+      "note": "Verifier's window screen: fragments of larger terms, not proofs. Parenthesized arguments.",
+      "stored_reference": {
+        "lib_number_theory_main_numbertheory_divisors_09": {
+          "component_count": 7,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "(mem_divisors.mp h).2",
+          "token_count": 5,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_number_theory_main_numbertheory_divisors_09"
+      ],
+      "verifier_windows": [
+        {
+          "component_edits": 4,
+          "premise_context_line": 85,
+          "text": "(properDivisors n)",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 4,
+          "premise_context_line": 85,
+          "text": "(properDivisors n) =",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 4,
+          "premise_context_line": 88,
+          "text": "(dvd_refl n)",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 4,
+          "premise_context_line": 88,
+          "text": "(dvd_refl n)]",
+          "token_edits": 2
+        }
+      ]
+    },
+    {
+      "category": "partial_window_noise",
+      "id": "R079",
+      "note": "Verifier's window screen: fragments of larger terms, not proofs. Windows `@Nat.` inside statements.",
+      "stored_reference": {
+        "lib_number_theory_pilot_nat_basic_01": {
+          "component_count": 2,
+          "component_edit_bound": 1,
+          "generic_shape": null,
+          "proof": "@succ.inj",
+          "token_count": 1,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_number_theory_pilot_nat_basic_01"
+      ],
+      "verifier_windows": [
+        {
+          "component_edits": 2,
+          "premise_context_line": 28,
+          "text": "@Nat.",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 2,
+          "premise_context_line": 29,
+          "text": "@Nat.",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 2,
+          "premise_context_line": 30,
+          "text": "@Nat.",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 2,
+          "premise_context_line": 31,
+          "text": "@Nat.",
+          "token_edits": 2
+        }
+      ]
+    },
+    {
+      "category": "partial_window_noise",
+      "id": "R080",
+      "note": "Verifier's window screen: fragments of larger terms, not proofs. Partial fun binders `fun _ =>` and `fun _ hx =>`.",
+      "stored_reference": {
+        "lib_sets_logic_main_set_function_07": {
+          "component_count": 5,
+          "component_edit_bound": 2,
+          "generic_shape": null,
+          "proof": "fun _ _ => rfl",
+          "token_count": 5,
+          "token_edit_bound": 3
+        }
+      },
+      "task_ids": [
+        "lib_sets_logic_main_set_function_07"
+      ],
+      "verifier_windows": [
+        {
+          "component_edits": 2,
+          "premise_context_line": 41,
+          "text": "fun _ =>",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 2,
+          "premise_context_line": 41,
+          "text": "fun _ => False",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 2,
+          "premise_context_line": 52,
+          "text": "fun _ hx =>",
+          "token_edits": 2
+        },
+        {
+          "component_edits": 2,
+          "premise_context_line": 52,
+          "text": "fun _ hx => (",
+          "token_edits": 2
+        }
+      ]
+    }
+  ],
+  "categories": {
+    "analogous_proof": {
+      "cases": 17,
+      "description": "An analogous proof: a hint for the human audit, not a copy.",
+      "tasks": 15
+    },
+    "by_design_statement": {
+      "cases": 13,
+      "description": "The statement of a lemma that the stored reference applies, or its application as an argument, shown by design.",
+      "tasks": 13
+    },
+    "generic_automation_verbatim": {
+      "cases": 6,
+      "description": "Generic automation visible in a preceding proof that Lean accepts verbatim for the target.",
+      "tasks": 10
+    },
+    "generic_exact_under_9_chars": {
+      "cases": 25,
+      "description": "Exact match of the stored reference below 9 characters, a generic shape the screen does not gate.",
+      "tasks": 25
+    },
+    "lean_valid_alternative_visible": {
+      "cases": 6,
+      "description": "A Lean-checked alternative proof of the target is visible verbatim or within the screen's own edit bounds of visible text.",
+      "tasks": 8
+    },
+    "partial_window_noise": {
+      "cases": 10,
+      "description": "The verifier's window screen matched a fragment of a larger term; noise, kept for completeness.",
+      "tasks": 10
+    },
+    "same_class_over_bounds": {
+      "cases": 3,
+      "description": "Visible text of a kind elided elsewhere (a sibling or dual proof, or the reference plus tokens) just outside the bounds.",
+      "tasks": 5
+    }
+  },
+  "date": "2026-10-12",
+  "fields": {
+    "alternative_proofs_checked_in_lean": "proofs the verifier transplanted onto the target, with its records; lean_accepted is true when a record has validity_status success",
+    "edits_from_snippet_to_stored_reference": "token and name-component edits as the screen counts them",
+    "premise_context_lines": "1-based, first and last line of the current premise_context that hold the snippet",
+    "snippet": "whitespace-normalized visible text",
+    "stored_reference": "the private reference with its token and component counts and the screen's bounds"
+  },
+  "inputs": {
+    "data/private/dataset_amendments.jsonl": "8bf1ec820c7f32d9975b7e369745af2057e97352992729fd497c7cf254c56c08",
+    "data/private/references.jsonl": "f5f9c6d25fb4a76fbabf3182de47fd8b35446bc78b9569dfb2029bca33506b47",
+    "data/public/tasks.jsonl": "3ffced227e4305ef8bf96c08ff43b751dc8ba8032cd373c05583bcd9a98bdf3b"
+  },
+  "kind": "answer_access_review_queue",
+  "lean_evidence": {
+    "directory": "/tmp/lce-minor/da3/verify-independent",
+    "lean_out": "lean-out, lean-out2, lean-out3, lean-out4: hand-made variants (inputs in lean-input*)",
+    "report": "/tmp/lce-minor/reports/da3.json (verification.remaining_near_copies)",
+    "runs": "sequential verify-references with engine 83da0074473ce16de743f16eba380b4b78615e46718627eea2a210d39fc8d3f7, environment 4ce9bdfa4cfb0d3dc443acdf251867697ab3342d9f6743677f8331bba1a3666f, configs/development.json (config_hash 8348d456ac5106f0e8658fb54a3243022741dc880d99a2d0d103ca9ddb986c20)",
+    "source": "independent verifier scratch, not committed; record sha256 values pin the cited files",
+    "transplant": "transplant/round00-18: 835 verbatim transplant attempts of 154 distinct single-line visible proofs onto 166 later targets (13 succeeded); transplant2/round00-02: 145 attempts of 28 distinct multi-line visible proofs onto 91 targets (10 succeeded); candidates chosen per target in out/transplant-candidates.json; attempts in each directory's manifest.json"
+  },
+  "schema_version": 1,
+  "scope": "Cases left for the required human answer-access audit after amendment-log rows 686-717. Decision of 2026-10-12: ship the 32 near-verbatim premise amendments and elide nothing further; every remaining case is listed here. PRIVATE: this file names stored references and Lean-valid alternative proofs; never copy its contents into public files or prompts.",
+  "screen_near_misses": {
+    "components": {
+      "lib_algebra_groups_main_commute_basic_10": {
+        "c": 5,
+        "n": 1,
+        "near": [
+          {
+            "component_bound": 2,
+            "component_edits": 3,
+            "fails": "components",
+            "line": 48,
+            "snippet": "SemiconjBy.inv_inv_symm",
+            "token_bound": 3,
+            "token_edits": 1
+          }
+        ],
+        "proof": "SemiconjBy.inv_symm_left_iff"
+      },
+      "lib_algebra_groups_main_units_basic_05": {
+        "c": 42,
+        "n": 36,
+        "near": [
+          {
+            "component_bound": 14,
+            "component_edits": 12,
+            "fails": "tokens ",
+            "line": 52,
+            "snippet": "⟨fun h => by simpa only [inv_mul_cancel_left] using congr_arg (fun x : α => ↑(a⁻¹ : αˣ) * x) h, congr_arg _⟩",
+            "token_bound": 6,
+            "token_edits": 10
+          }
+        ],
+        "proof": "⟨fun h => by simpa only [mul_inv_cancel_right] using congr_arg (fun x : α => x * ↑(a⁻¹ : αˣ)) h, congr_arg (· * a.val)⟩"
+      },
+      "lib_analysis_inequalities_main_log_basic_04": {
+        "c": 19,
+        "n": 12,
+        "near": [
+          {
+            "component_bound": 6,
+            "component_edits": 6,
+            "fails": "tokens ",
+            "line": 52,
+            "snippet": "by rw [exp_log_eq_abs hx.ne'] exact abs_of_pos hx",
+            "token_bound": 3,
+            "token_edits": 5
+          }
+        ],
+        "proof": "by rw [exp_log_eq_abs (ne_of_lt hx)] exact abs_of_neg hx"
+      },
+      "lib_analysis_inequalities_main_log_basic_10": {
+        "c": 11,
+        "n": 10,
+        "near": [
+          {
+            "component_bound": 4,
+            "component_edits": 5,
+            "fails": "tokens components",
+            "line": 87,
+            "snippet": "fun x _ => ⟨exp x, exp_pos x, log_exp x⟩",
+            "token_bound": 3,
+            "token_edits": 4
+          },
+          {
+            "component_bound": 4,
+            "component_edits": 5,
+            "fails": "tokens components",
+            "line": 87,
+            "snippet": "⟨exp x, exp_pos x, log_exp x⟩",
+            "token_bound": 3,
+            "token_edits": 5
+          }
+        ],
+        "proof": "fun x => ⟨exp x, log_exp x⟩"
+      },
+      "lib_analysis_inequalities_main_pow_real_10": {
+        "c": 5,
+        "n": 3,
+        "near": [
+          {
+            "component_bound": 2,
+            "component_edits": 3,
+            "fails": "components",
+            "line": 66,
+            "snippet": "rpow_natCast x n",
+            "token_bound": 3,
+            "token_edits": 3
+          }
+        ],
+        "proof": "rpow_neg_natCast _ _"
+      },
+      "lib_analysis_inequalities_pilot_field_basic_03": {
+        "c": 10,
+        "n": 9,
+        "near": [
+          {
+            "component_bound": 3,
+            "component_edits": 4,
+            "fails": "tokens components",
+            "line": 68,
+            "snippet": "map_div₀ (nnnormHom : α →*₀ ℝ≥0) a b",
+            "token_bound": 3,
+            "token_edits": 4
+          }
+        ],
+        "proof": "map_inv₀ (normHom : α →*₀ ℝ) a"
+      },
+      "lib_analysis_inequalities_pilot_field_basic_06": {
+        "c": 9,
+        "n": 8,
+        "near": [
+          {
+            "component_bound": 3,
+            "component_edits": 5,
+            "fails": "tokens components",
+            "line": 68,
+            "snippet": "map_div₀ (nnnormHom : α →*₀ ℝ≥0) a b",
+            "token_bound": 3,
+            "token_edits": 5
+          }
+        ],
+        "proof": "map_zpow₀ (normHom : α →*₀ ℝ)"
+      },
+      "lib_analysis_inequalities_pilot_field_basic_07": {
+        "c": 9,
+        "n": 8,
+        "near": [
+          {
+            "component_bound": 3,
+            "component_edits": 5,
+            "fails": "tokens components",
+            "line": 64,
+            "snippet": "map_div₀ (normHom : α →*₀ ℝ) a b",
+            "token_bound": 3,
+            "token_edits": 5
+          },
+          {
+            "component_bound": 3,
+            "component_edits": 4,
+            "fails": "tokens components",
+            "line": 72,
+            "snippet": "map_inv₀ (normHom : α →*₀ ℝ) a",
+            "token_bound": 3,
+            "token_edits": 4
+          }
+        ],
+        "proof": "map_zpow₀ (nnnormHom : α →*₀ ℝ≥0)"
+      },
+      "lib_linear_algebra_combinatorics_main_basis_defs_06": {
+        "c": 10,
+        "n": 7,
+        "near": [
+          {
+            "component_bound": 3,
+            "component_edits": 5,
+            "fails": "components",
+            "line": 124,
+            "snippet": "by rw [map_smul, repr_symm_single_one]",
+            "token_bound": 3,
+            "token_edits": 2
+          },
+          {
+            "component_bound": 3,
+            "component_edits": 6,
+            "fails": "components",
+            "line": 124,
+            "snippet": "rw [map_smul, repr_symm_single_one]",
+            "token_bound": 3,
+            "token_edits": 3
+          }
+        ],
+        "proof": "by rw [repr_self, Finsupp.single_apply]"
+      },
+      "lib_linear_algebra_combinatorics_main_finset_card_10": {
+        "c": 5,
+        "n": 3,
+        "near": [
+          {
+            "component_bound": 2,
+            "component_edits": 3,
+            "fails": "components",
+            "line": 68,
+            "snippet": "card_le_card",
+            "token_bound": 3,
+            "token_edits": 3
+          },
+          {
+            "component_bound": 2,
+            "component_edits": 3,
+            "fails": "components",
+            "line": 91,
+            "snippet": "Multiset.card_cons _ _",
+            "token_bound": 3,
+            "token_edits": 1
+          }
+        ],
+        "proof": "card_insert_le _ _"
+      },
+      "lib_number_theory_main_gcd_basic_06": {
+        "c": 9,
+        "n": 7,
+        "near": [
+          {
+            "component_bound": 3,
+            "component_edits": 5,
+            "fails": "tokens components",
+            "line": 74,
+            "snippet": "h.trans (dvd_lcm_right c b)",
+            "token_bound": 3,
+            "token_edits": 4
+          }
+        ],
+        "proof": "(dvd_lcm_right a b).trans h"
+      },
+      "lib_number_theory_main_gcd_basic_10": {
+        "c": 12,
+        "n": 9,
+        "near": [
+          {
+            "component_bound": 4,
+            "component_edits": 7,
+            "fails": "tokens components",
+            "line": 33,
+            "snippet": "by rw [gcd_assoc, gcd_assoc, gcd_comm b c]",
+            "token_bound": 3,
+            "token_edits": 5
+          }
+        ],
+        "proof": "by rw [Coprime, Coprime, gcd_add_self_right]"
+      },
+      "lib_sets_logic_main_equiv_basic_03": {
+        "c": 8,
+        "n": 4,
+        "near": [
+          {
+            "component_bound": 3,
+            "component_edits": 5,
+            "fails": "tokens components",
+            "line": 64,
+            "snippet": "Perm.subtypeCongr.apply",
+            "token_bound": 3,
+            "token_edits": 4
+          }
+        ],
+        "proof": "Perm.subtypeCongr.left_apply ep en a.property"
+      },
+      "lib_sets_logic_main_equiv_basic_05": {
+        "c": 8,
+        "n": 4,
+        "near": [
+          {
+            "component_bound": 3,
+            "component_edits": 5,
+            "fails": "tokens components",
+            "line": 64,
+            "snippet": "Perm.subtypeCongr.apply",
+            "token_bound": 3,
+            "token_edits": 4
+          },
+          {
+            "component_bound": 3,
+            "component_edits": 5,
+            "fails": "tokens components",
+            "line": 72,
+            "snippet": "Perm.subtypeCongr.apply",
+            "token_bound": 3,
+            "token_edits": 4
+          }
+        ],
+        "proof": "Perm.subtypeCongr.right_apply ep en a.property"
+      },
+      "lib_sets_logic_main_equiv_basic_06": {
+        "c": 14,
+        "n": 13,
+        "near": [
+          {
+            "component_bound": 5,
+            "component_edits": 6,
+            "fails": "tokens components",
+            "line": 59,
+            "snippet": "by by_cases h : p a <;> simp [Perm.subtypeCongr, h]",
+            "token_bound": 3,
+            "token_edits": 5
+          }
+        ],
+        "proof": "by ext x by_cases h : p x <;> simp [h]"
+      },
+      "lib_sets_logic_main_equiv_basic_08": {
+        "c": 12,
+        "n": 7,
+        "near": [
+          {
+            "component_bound": 4,
+            "component_edits": 7,
+            "fails": "tokens components",
+            "line": 60,
+            "snippet": "simp [Perm.subtypeCongr, h]",
+            "token_bound": 3,
+            "token_edits": 4
+          },
+          {
+            "component_bound": 4,
+            "component_edits": 6,
+            "fails": "components",
+            "line": 63,
+            "snippet": "by simp [Perm.subtypeCongr.apply, h]",
+            "token_bound": 3,
+            "token_edits": 3
+          },
+          {
+            "component_bound": 4,
+            "component_edits": 7,
+            "fails": "tokens components",
+            "line": 64,
+            "snippet": "simp [Perm.subtypeCongr.apply, h]",
+            "token_bound": 3,
+            "token_edits": 4
+          },
+          {
+            "component_bound": 4,
+            "component_edits": 6,
+            "fails": "components",
+            "line": 71,
+            "snippet": "by simp [Perm.subtypeCongr.apply, h]",
+            "token_bound": 3,
+            "token_edits": 3
+          },
+          {
+            "component_bound": 4,
+            "component_edits": 7,
+            "fails": "tokens components",
+            "line": 72,
+            "snippet": "simp [Perm.subtypeCongr.apply, h]",
+            "token_bound": 3,
+            "token_edits": 4
+          }
+        ],
+        "proof": "by grind [Equiv.Perm.subtypeCongr.eq_def, coe_trans]"
+      },
+      "lib_sets_logic_main_logic_relation_04": {
+        "c": 11,
+        "n": 8,
+        "near": [
+          {
+            "component_bound": 4,
+            "component_edits": 5,
+            "fails": "components",
+            "line": 60,
+            "snippet": "by grind [Std.Refl]",
+            "token_bound": 3,
+            "token_edits": 3
+          },
+          {
+            "component_bound": 4,
+            "component_edits": 6,
+            "fails": "tokens components",
+            "line": 61,
+            "snippet": "grind [Std.Refl]",
+            "token_bound": 3,
+            "token_edits": 4
+          }
+        ],
+        "proof": "by unfold Pi.hasLe Prop.le grind [Std.Refl]"
+      },
+      "lib_sets_logic_main_logic_relation_05": {
+        "c": 11,
+        "n": 8,
+        "near": [
+          {
+            "component_bound": 4,
+            "component_edits": 6,
+            "fails": "tokens components",
+            "line": 60,
+            "snippet": "by grind [Std.Refl]",
+            "token_bound": 3,
+            "token_edits": 4
+          },
+          {
+            "component_bound": 4,
+            "component_edits": 7,
+            "fails": "tokens components",
+            "line": 61,
+            "snippet": "grind [Std.Refl]",
+            "token_bound": 3,
+            "token_edits": 5
+          }
+        ],
+        "proof": "by unfold Pi.hasLe Prop.le grind [Std.Irrefl]"
+      },
+      "lib_sets_logic_main_set_function_04": {
+        "c": 8,
+        "n": 7,
+        "near": [
+          {
+            "component_bound": 3,
+            "component_edits": 4,
+            "fails": "components",
+            "line": 44,
+            "snippet": "by simp [Set.EqOn]",
+            "token_bound": 3,
+            "token_edits": 3
+          },
+          {
+            "component_bound": 3,
+            "component_edits": 5,
+            "fails": "tokens components",
+            "line": 45,
+            "snippet": "simp [Set.EqOn]",
+            "token_bound": 3,
+            "token_edits": 4
+          }
+        ],
+        "proof": "by simp [EqOn, funext_iff]"
+      },
+      "lib_sets_logic_main_set_function_07": {
+        "c": 5,
+        "n": 5,
+        "near": [
+          {
+            "component_bound": 2,
+            "component_edits": 3,
+            "fails": "components",
+            "line": 41,
+            "snippet": "fun _ => False.elim",
+            "token_bound": 3,
+            "token_edits": 2
+          }
+        ],
+        "proof": "fun _ _ => rfl"
+      }
+    },
+    "counts": {
+      "components": 20,
+      "exact_unscreened": 25,
+      "positions": 15
+    },
+    "description": "The screen's own pass over all 250 current prompts (unchanged since the near-verbatim amendment): components = premise-context proof components outside the bounds but within token edits <= max(5, ceil(n/3)) and component edits <= round(0.6 c); positions = token windows within the bounds that are not proof components (headers, statements, parenthesized arguments, partial terms); exact_unscreened = exact matches the screen does not gate.",
+    "exact_unscreened": {
+      "lib_algebra_groups_main_hom_basic_02": {
+        "chars": 3,
+        "generic_shape": "literal_reflexivity",
+        "proof": "rfl"
+      },
+      "lib_algebra_groups_main_hom_basic_04": {
+        "chars": 3,
+        "generic_shape": "literal_reflexivity",
+        "proof": "rfl"
+      },
+      "lib_algebra_groups_main_hom_basic_05": {
+        "chars": 3,
+        "generic_shape": "literal_reflexivity",
+        "proof": "rfl"
+      },
+      "lib_algebra_groups_main_hom_basic_06": {
+        "chars": 3,
+        "generic_shape": "literal_reflexivity",
+        "proof": "rfl"
+      },
+      "lib_algebra_groups_main_hom_basic_07": {
+        "chars": 3,
+        "generic_shape": "literal_reflexivity",
+        "proof": "rfl"
+      },
+      "lib_algebra_groups_main_hom_basic_08": {
+        "chars": 3,
+        "generic_shape": "literal_reflexivity",
+        "proof": "rfl"
+      },
+      "lib_algebra_groups_main_hom_basic_09": {
+        "chars": 3,
+        "generic_shape": "literal_reflexivity",
+        "proof": "rfl"
+      },
+      "lib_algebra_groups_main_hom_basic_10": {
+        "chars": 3,
+        "generic_shape": "literal_reflexivity",
+        "proof": "rfl"
+      },
+      "lib_analysis_inequalities_main_convex_function_01": {
+        "chars": 2,
+        "generic_shape": "binder_name",
+        "proof": "hf"
+      },
+      "lib_analysis_inequalities_main_convex_function_02": {
+        "chars": 2,
+        "generic_shape": "binder_name",
+        "proof": "hf"
+      },
+      "lib_analysis_inequalities_main_convex_function_03": {
+        "chars": 2,
+        "generic_shape": "binder_name",
+        "proof": "hf"
+      },
+      "lib_analysis_inequalities_main_convex_function_04": {
+        "chars": 2,
+        "generic_shape": "binder_name",
+        "proof": "hf"
+      },
+      "lib_analysis_inequalities_main_pow_real_02": {
+        "chars": 3,
+        "generic_shape": "literal_reflexivity",
+        "proof": "rfl"
+      },
+      "lib_linear_algebra_combinatorics_main_basis_defs_03": {
+        "chars": 3,
+        "generic_shape": "literal_reflexivity",
+        "proof": "rfl"
+      },
+      "lib_linear_algebra_combinatorics_main_finset_card_02": {
+        "chars": 3,
+        "generic_shape": "literal_reflexivity",
+        "proof": "rfl"
+      },
+      "lib_linear_algebra_combinatorics_main_finset_card_03": {
+        "chars": 3,
+        "generic_shape": "literal_reflexivity",
+        "proof": "rfl"
+      },
+      "lib_linear_algebra_combinatorics_main_finset_card_09": {
+        "chars": 8,
+        "generic_shape": "single_tactic",
+        "proof": "by grind"
+      },
+      "lib_linear_algebra_combinatorics_main_linearindependent_defs_01": {
+        "chars": 1,
+        "generic_shape": "binder_name",
+        "proof": "h"
+      },
+      "lib_number_theory_main_numbertheory_divisors_10": {
+        "chars": 7,
+        "generic_shape": "single_tactic",
+        "proof": "by simp"
+      },
+      "lib_sets_logic_main_equiv_basic_07": {
+        "chars": 3,
+        "generic_shape": "literal_reflexivity",
+        "proof": "rfl"
+      },
+      "lib_sets_logic_main_set_function_10": {
+        "chars": 8,
+        "generic_shape": "single_tactic",
+        "proof": "by grind"
+      },
+      "lib_sets_logic_pilot_set_basic_05": {
+        "chars": 3,
+        "generic_shape": "literal_reflexivity",
+        "proof": "rfl"
+      },
+      "lib_sets_logic_pilot_set_basic_06": {
+        "chars": 3,
+        "generic_shape": "literal_reflexivity",
+        "proof": "rfl"
+      },
+      "lib_sets_logic_pilot_set_basic_07": {
+        "chars": 3,
+        "generic_shape": "literal_reflexivity",
+        "proof": "rfl"
+      },
+      "lib_sets_logic_pilot_set_basic_08": {
+        "chars": 3,
+        "generic_shape": "literal_reflexivity",
+        "proof": "rfl"
+      }
+    },
+    "positions": {
+      "lib_algebra_groups_main_commute_basic_02": {
+        "c": 6,
+        "n": 2,
+        "proof": "SemiconjBy.function_semiconj_mul_left h",
+        "windows": [
+          {
+            "component_edits": 1,
+            "kind": "premise text outside declaration values (header, statement, command)",
+            "line": 23,
+            "token_edits": 1,
+            "window": "SemiconjBy.function_semiconj_mul_left"
+          }
+        ]
+      },
+      "lib_algebra_groups_main_commute_basic_04": {
+        "c": 7,
+        "n": 2,
+        "proof": "SemiconjBy.function_semiconj_mul_right_swap h",
+        "windows": [
+          {
+            "component_edits": 1,
+            "kind": "premise text outside declaration values (header, statement, command)",
+            "line": 31,
+            "token_edits": 1,
+            "window": "SemiconjBy.function_semiconj_mul_right_swap"
+          }
+        ]
+      },
+      "lib_analysis_inequalities_main_log_basic_10": {
+        "c": 11,
+        "n": 10,
+        "proof": "fun x => ⟨exp x, log_exp x⟩",
+        "windows": [
+          {
+            "component_edits": 4,
+            "kind": "inside a declaration value, not a proof component",
+            "line": 87,
+            "token_edits": 3,
+            "window": "fun x _ => ⟨exp x, exp_pos x"
+          }
+        ]
+      },
+      "lib_analysis_inequalities_main_pow_real_10": {
+        "c": 5,
+        "n": 3,
+        "proof": "rpow_neg_natCast _ _",
+        "windows": [
+          {
+            "component_edits": 2,
+            "kind": "premise text outside declaration values (header, statement, command)",
+            "line": 60,
+            "token_edits": 2,
+            "window": "rpow_neg_natCast"
+          }
+        ]
+      },
+      "lib_analysis_inequalities_pilot_field_basic_03": {
+        "c": 10,
+        "n": 9,
+        "proof": "map_inv₀ (normHom : α →*₀ ℝ) a",
+        "windows": [
+          {
+            "component_edits": 3,
+            "kind": "inside a declaration value, not a proof component",
+            "line": 68,
+            "token_edits": 3,
+            "window": "map_div₀ (nnnormHom : α →*₀ ℝ≥0) a"
+          }
+        ]
+      },
+      "lib_analysis_inequalities_pilot_field_basic_06": {
+        "c": 9,
+        "n": 8,
+        "proof": "map_zpow₀ (normHom : α →*₀ ℝ)",
+        "windows": [
+          {
+            "component_edits": 3,
+            "kind": "inside a declaration value, not a proof component",
+            "line": 68,
+            "token_edits": 3,
+            "window": "map_div₀ (nnnormHom : α →*₀ ℝ≥0)"
+          }
+        ]
+      },
+      "lib_analysis_inequalities_pilot_field_basic_07": {
+        "c": 9,
+        "n": 8,
+        "proof": "map_zpow₀ (nnnormHom : α →*₀ ℝ≥0)",
+        "windows": [
+          {
+            "component_edits": 3,
+            "kind": "inside a declaration value, not a proof component",
+            "line": 64,
+            "token_edits": 3,
+            "window": "map_div₀ (normHom : α →*₀ ℝ)"
+          },
+          {
+            "component_edits": 3,
+            "kind": "inside a declaration value, not a proof component",
+            "line": 72,
+            "token_edits": 3,
+            "window": "map_inv₀ (normHom : α →*₀ ℝ)"
+          }
+        ]
+      },
+      "lib_linear_algebra_combinatorics_main_finset_card_04": {
+        "c": 5,
+        "n": 3,
+        "proof": "by apply card_le_card",
+        "windows": [
+          {
+            "component_edits": 2,
+            "kind": "premise text outside declaration values (header, statement, command)",
+            "line": 59,
+            "token_edits": 2,
+            "window": "] theorem card_le_card"
+          }
+        ]
+      },
+      "lib_linear_algebra_combinatorics_main_finset_card_10": {
+        "c": 5,
+        "n": 3,
+        "proof": "card_insert_le _ _",
+        "windows": [
+          {
+            "component_edits": 2,
+            "kind": "premise text outside declaration values (header, statement, command)",
+            "line": 103,
+            "token_edits": 2,
+            "window": "card_insert_le"
+          }
+        ]
+      },
+      "lib_linear_algebra_combinatorics_pilot_span_basic_04": {
+        "c": 6,
+        "n": 4,
+        "proof": "image_span_subset f s N",
+        "windows": [
+          {
+            "component_edits": 1,
+            "kind": "inside a declaration value, not a proof component",
+            "line": 57,
+            "token_edits": 1,
+            "window": "image_span_subset f s"
+          },
+          {
+            "component_edits": 2,
+            "kind": "inside a declaration value, not a proof component",
+            "line": 61,
+            "token_edits": 2,
+            "window": "image_span_subset_span f s"
+          }
+        ]
+      },
+      "lib_linear_algebra_combinatorics_pilot_span_basic_08": {
+        "c": 10,
+        "n": 4,
+        "proof": "linearMap_eq_iff_of_span_eq_top f 0 hM",
+        "windows": [
+          {
+            "component_edits": 3,
+            "kind": "premise text outside declaration values (header, statement, command)",
+            "line": 112,
+            "token_edits": 3,
+            "window": "linearMap_eq_iff_of_span_eq_top"
+          }
+        ]
+      },
+      "lib_number_theory_main_gcd_basic_06": {
+        "c": 9,
+        "n": 7,
+        "proof": "(dvd_lcm_right a b).trans h",
+        "windows": [
+          {
+            "component_edits": 3,
+            "kind": "inside a declaration value, not a proof component",
+            "line": 74,
+            "token_edits": 3,
+            "window": "(dvd_lcm_right c b)"
+          }
+        ]
+      },
+      "lib_sets_logic_main_equiv_basic_03": {
+        "c": 8,
+        "n": 4,
+        "proof": "Perm.subtypeCongr.left_apply ep en a.property",
+        "windows": [
+          {
+            "component_edits": 3,
+            "kind": "premise text outside declaration values (header, statement, command)",
+            "line": 63,
+            "token_edits": 3,
+            "window": "Perm.subtypeCongr.left_apply {a"
+          }
+        ]
+      },
+      "lib_sets_logic_main_equiv_basic_05": {
+        "c": 8,
+        "n": 4,
+        "proof": "Perm.subtypeCongr.right_apply ep en a.property",
+        "windows": [
+          {
+            "component_edits": 3,
+            "kind": "premise text outside declaration values (header, statement, command)",
+            "line": 71,
+            "token_edits": 3,
+            "window": "Perm.subtypeCongr.right_apply {a"
+          }
+        ]
+      },
+      "lib_sets_logic_main_set_function_07": {
+        "c": 5,
+        "n": 5,
+        "proof": "fun _ _ => rfl",
+        "windows": [
+          {
+            "component_edits": 2,
+            "kind": "inside a declaration value, not a proof component",
+            "line": 41,
+            "token_edits": 2,
+            "window": "fun _ =>"
+          },
+          {
+            "component_edits": 2,
+            "kind": "inside a declaration value, not a proof component",
+            "line": 52,
+            "token_edits": 2,
+            "window": "fun _ hx =>"
+          }
+        ]
+      }
+    }
+  },
+  "screen_rule": {
+    "component_edit_bound": "round(c/3) for c reference name components",
+    "current_data_result": "no task flagged; 25 generic exact matches under 9 characters",
+    "short_exact_match_min_chars": 9,
+    "source": "src/lean_compression/dataset.py (screen_answer_access, near_verbatim_matches)",
+    "token_edit_bound": "max(3, ceil(n/6)) for an n-token reference"
+  },
+  "status": "pending_human_answer_access_audit",
+  "tasks_with_any_case": 76
+}

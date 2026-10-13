@@ -6,17 +6,17 @@ from fractions import Fraction
 import html
 import json
 from pathlib import Path
-import re
 
 from .analysis import _distribution
-from .dataset import ANSWER_ACCESS_MIN_CHARS, SHORT_EXACT_MATCH_MIN_CHARS, reference_in_prompt, validate_manifest
+from .dataset import (ANSWER_ACCESS_MIN_CHARS, LITERAL_REFLEXIVITY, NEAR_VERBATIM_MAX_COMPONENT_FRACTION,
+                      NEAR_VERBATIM_MAX_TOKEN_EDITS, NEAR_VERBATIM_TOKENS_PER_EDIT, SHORT_EXACT_MATCH_MIN_CHARS,
+                      SINGLE_TACTIC, screen_answer_access, validate_manifest)
 from .io import digest, task_input_hash, verification_request_hash, write_json
 from .metrics import exact_int
 
 AUDIT_FLAGS = ("reference_verified", "explicit_signature_frozen", "answer_access_audited",
                "family_reviewed", "metric_closure_verified")
 DEFAULT_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
-_SINGLE_TACTIC = re.compile(r"by ([A-Za-z_][A-Za-z0-9_]*[?!]?)")
 
 
 def _body_source(record):
@@ -35,19 +35,23 @@ def _body_source(record):
 
 
 def _source_control(record):
+    """The source-shape label of a reference body, without any of its text.
+
+    The tactic of a single_tactic_wrapper is not recorded, per task or as a per-tactic tally: for
+    "by <tactic>" it is the whole private answer, and a tally over the labeled task IDs that the report
+    lists would leave each of them a handful of candidates to try.
+    """
     source = _body_source(record)
     if source is None:
         return {"classification": None, "source_available": False}
     compact = " ".join(source.split())
-    single = _SINGLE_TACTIC.fullmatch(compact)
-    if compact in ("rfl", "Iff.rfl", "by rfl", "by exact rfl", "by exact Iff.rfl"):
+    if compact in LITERAL_REFLEXIVITY:
         classification = "literal_reflexivity"
-    elif single:
+    elif SINGLE_TACTIC.fullmatch(compact):
         classification = "single_tactic_wrapper"
     else:
         classification = None
     return {"classification": classification, "source_available": True,
-            "tactic": single.group(1) if classification == "single_tactic_wrapper" else None,
             "interpretation": "Source shape only; neither brevity nor one tactic establishes mathematical difficulty."}
 
 
@@ -131,7 +135,7 @@ def build_readiness_report(tasks: list[dict], verified_records: list[dict] | dic
         expected["boundary_policy_hash"] = digest(config["environment"]["boundary_policy"])
     per_task, observed_provenance = {}, defaultdict(set)
     controls = defaultdict(list)
-    exact_match_chars = {}
+    exact_match_chars, generic_shapes, near_verbatim = {}, {}, {}
     for task_id, task in task_map.items():
         candidates = by_task[task_id]
         matching = [(record, _identity(record, task)) for record in candidates if _identity(record, task)]
@@ -194,10 +198,14 @@ def build_readiness_report(tasks: list[dict], verified_records: list[dict] | dic
             control = _source_control(record)
             if control["classification"]:
                 controls[control["classification"]].append(task_id)
-            source = _body_source(record)
-            exposed = reference_in_prompt(task, source)
+            screen = screen_answer_access(task, _body_source(record))
+            exposed = screen["exact_match"]
             if exposed:
-                exact_match_chars[task_id] = len(" ".join(source.split()))
+                exact_match_chars[task_id] = screen["exact_match_chars"]
+                if screen["generic_shape"]:
+                    generic_shapes[task_id] = screen["generic_shape"]
+            if screen["near_verbatim"]:
+                near_verbatim[task_id] = screen["near_verbatim"][0]
         else:
             control = {"classification": None, "source_available": False}
             exposed = None
@@ -303,14 +311,17 @@ def build_readiness_report(tasks: list[dict], verified_records: list[dict] | dic
         family_domains[str(task.get("family_id"))].add(str(task.get("domain")))
         family_splits[str(task.get("family_id"))].add(str(task.get("split")))
     cutpoint_source = "caller_supplied" if fixed else "observed_reference_25th_and_75th_percentiles"
-    # Only exact matches of at least ANSWER_ACCESS_MIN_CHARS gate; shorter ones stay listed.
+    # Exact matches gate from ANSWER_ACCESS_MIN_CHARS, and from SHORT_EXACT_MATCH_MIN_CHARS unless the
+    # proof is a generic shape (listed, not gated); near-verbatim proof components gate (dataset.py).
     flagged = [t for t, chars in exact_match_chars.items() if chars >= ANSWER_ACCESS_MIN_CHARS]
+    short = [t for t, chars in exact_match_chars.items() if SHORT_EXACT_MATCH_MIN_CHARS <= chars < ANSWER_ACCESS_MIN_CHARS]
     unchecked = [t for t, row in per_task.items() if row["reference_proof_in_prompt"] is None]
     gates = {"structural_manifest_valid": not structural,
              "quotas_enforced": quotas,
              "all_reference_evidence_complete": bool(per_task) and all(row["reference_evidence_complete"] for row in per_task.values()),
              "all_required_audits_complete": bool(per_task) and all(not row["pending_audits"] for row in per_task.values()),
-             "reference_proofs_absent_from_prompts": bool(per_task) and not flagged and not unchecked,
+             "reference_proofs_absent_from_prompts": bool(per_task) and not flagged and not unchecked and not near_verbatim
+                 and all(t in generic_shapes for t in short),
              "reference_provenance_consistent": not mixed,
              "length_depth_cutpoints_frozen": fixed and settings.get("strata_frozen") is True,
              "difficulty_coverage_reviewed": settings.get("difficulty_review_complete") is True}
@@ -332,12 +343,27 @@ def build_readiness_report(tasks: list[dict], verified_records: list[dict] | dic
               "answer_access_screen": {
                   "rule": f"whitespace-normalized reference proof of at least {ANSWER_ACCESS_MIN_CHARS} characters occurs in the model-visible prompt",
                   "flagged_task_ids": flagged,
-                  "short_exact_match_task_ids": [t for t, chars in exact_match_chars.items()
-                                                 if SHORT_EXACT_MATCH_MIN_CHARS <= chars < ANSWER_ACCESS_MIN_CHARS],
+                  "short_exact_match_rule": f"whitespace-normalized reference proof of {SHORT_EXACT_MATCH_MIN_CHARS}-"
+                                            f"{ANSWER_ACCESS_MIN_CHARS - 1} characters occurs in the model-visible prompt and "
+                                            "is not a generic shape (a literal reflexivity proof, one bare tactic, or a name "
+                                            "bound by the target's binders)",
+                  "short_exact_match_task_ids": [t for t in short if t not in generic_shapes],
+                  "generic_short_exact_match_task_ids": [t for t in short if t in generic_shapes],
+                  "near_verbatim_rule": "a premise-context proof component (a declaration value, or an anonymous-"
+                                        "constructor component, field value, fun body, tactic, tactic term or rewrite "
+                                        "rule inside one) is at most max("
+                                        f"{NEAR_VERBATIM_MAX_TOKEN_EDITS}, n/{NEAR_VERBATIM_TOKENS_PER_EDIT} rounded up) "
+                                        "token edits (insertions, deletions, substitutions or swaps of two adjacent "
+                                        "tokens, delimited by whitespace, brackets, commas and semicolons) from a "
+                                        f"reference proof of n tokens and at least {SHORT_EXACT_MATCH_MIN_CHARS} "
+                                        "characters that is not a generic shape, changing at most "
+                                        f"{NEAR_VERBATIM_MAX_COMPONENT_FRACTION} of its name components, rounded",
+                  "near_verbatim_task_ids": list(near_verbatim),
+                  "near_verbatim_matches": near_verbatim,
                   "unchecked_task_ids": unchecked,
-                  "interpretation": "A flag marks a copyable answer for the answer-access audit; exact matches of "
-                                    f"{SHORT_EXACT_MATCH_MIN_CHARS}-{ANSWER_ACCESS_MIN_CHARS - 1} characters are listed for that "
-                                    "audit without blocking the gate; an unflagged task is not thereby cleared."},
+                  "interpretation": "Flagged, short exact and near-verbatim tasks show a copyable answer and block the gate "
+                                    "until the answer-access audit resolves them; generic short exact matches are listed "
+                                    "without blocking it; an unflagged task is not thereby cleared."},
               "source_only_controls": dict(controls),
               "family_structure": {"families": len(family_domains),
                   "cross_domain_families": {family: sorted(domains) for family, domains in family_domains.items() if len(domains)>1},
@@ -400,12 +426,10 @@ def write_readiness_report(report: dict, destination: str | Path) -> dict:
                  "<table><tr><th>Reference W_B bin</th><th>Low D</th><th>Middle D</th><th>High D</th></tr>"])
     for length, cells in report["groups"]["all"]["length_depth_cross_strata"].items():
         page.append("<tr><td>" + length + "</td>" + "".join(f"<td>{cells[depth]}</td>" for depth in ("low", "middle", "high")) + "</tr>")
-    page.append("</table><h2>Source-shape controls</h2><p>These source labels do not establish mathematical difficulty.</p><ul>")
+    page.append("</table><h2>Source-shape controls</h2><p>These source labels do not establish mathematical difficulty. "
+                "Tactic names are not shown: a one-tactic reference's tactic is its whole private answer.</p><ul>")
     for classification, ids in report["source_only_controls"].items():
-        tactics = Counter(report["tasks"][t]["source_control"].get("tactic") for t in ids)
-        detail = ", ".join(f"{name} {count}" for name, count in sorted(tactics.items()) if name)
-        page.append("<li>" + html.escape(classification) + ": " + str(len(ids)) + " tasks" +
-                    (" (" + html.escape(detail) + ")" if detail else "") + "</li>")
+        page.append("<li>" + html.escape(classification) + ": " + str(len(ids)) + " tasks</li>")
     page.append("</ul><h2>Homogeneous reference cohorts</h2><p>Archived measurements under different pins are shown separately; "
                 "they are not pooled into the proposed strata.</p><table><tr><th>Cohort</th><th>Tasks</th><th>Engine</th>"
                 "<th>Token policy</th><th>Median W_B</th><th>Median D</th></tr>")
@@ -417,10 +441,19 @@ def write_readiness_report(report: dict, destination: str | Path) -> dict:
     page.append("</table>")
     screen = report.get("answer_access_screen")
     if screen:
+        near = screen.get("near_verbatim_matches") or {}
         page.append("<h2>Answer-access screen</h2><p>Flagged when a " + html.escape(screen["rule"]) + ": " +
-                    (html.escape(", ".join(screen["flagged_task_ids"])) or "none") + ". Shorter exact matches: " +
-                    (html.escape(", ".join(screen["short_exact_match_task_ids"])) or "none") + ". Unchecked: " +
-                    str(len(screen["unchecked_task_ids"])) + " tasks. " + html.escape(screen["interpretation"]) + "</p>")
+                    (html.escape(", ".join(screen["flagged_task_ids"])) or "none") + ". Short exact matches gated when a " +
+                    html.escape(screen.get("short_exact_match_rule", "")) + ": " +
+                    (html.escape(", ".join(screen["short_exact_match_task_ids"])) or "none") +
+                    ". Generic short exact matches, not gated: " +
+                    (html.escape(", ".join(screen.get("generic_short_exact_match_task_ids", []))) or "none") +
+                    ". Near-verbatim copies, gated when " + html.escape(screen.get("near_verbatim_rule", "")) + ": " +
+                    (html.escape("; ".join(f"{t} (line {m['premise_context_line']}, {m['token_edits']} token "
+                                           f"edit{'' if m['token_edits'] == 1 else 's'}: {m['snippet']})"
+                                           for t, m in near.items())) or "none") +
+                    ". Unchecked: " + str(len(screen["unchecked_task_ids"])) + " tasks. " +
+                    html.escape(screen["interpretation"]) + "</p>")
     page.append("<h2>Task-level pending evidence</h2>")
     for task_id, row in report["tasks"].items():
         if row["missing_evidence"] or row["pending_audits"]:

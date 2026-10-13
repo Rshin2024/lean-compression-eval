@@ -162,7 +162,8 @@ class EnvironmentIntegrityTests(unittest.TestCase):
         check = ["--tasks", tasks, "--config", config, "--engine", PROJECT / "lean/Evaluator.lean", "--limit", "0"]
         commands = {
             "freeze": ["freeze", "--development", "--tasks", tasks, "--environment", self.root / "edited.json",
-                       "--config", config, "--split", "pilot", "--model", "reference_fixture", "--run", self.root / "run"],
+                       "--config", config, "--split", "pilot", "--model", "reference_fixture", "--run", self.root / "run",
+                       "--engine", PROJECT / "lean/Evaluator.lean"],
             "verify-references": ["verify-references", *check, "--references", PROJECT / "data/private/smoke_references.jsonl",
                                   "--environment", self.root / "stale.json", "--output", self.root / "references"],
             "baseline": ["baseline", *check, "--environment", self.root / "stale.json", "--output", self.root / "baseline"],

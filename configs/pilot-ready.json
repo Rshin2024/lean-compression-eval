@@ -47,6 +47,7 @@
         4
       ],
       "max_consecutive_prompt_rejections": 3,
+      "max_retry_after_seconds": 60,
       "max_transport_attempts": 3
     },
     "settings_resolved": false,
@@ -58,11 +59,17 @@
   "protocol_version": "draft_v1",
   "samples_per_goal_condition": 4,
   "schedule_seed": 20261011,
-  "tactic_portfolio": "by first | rfl | assumption | (simp_all; done) | omega | aesop",
+  "tactic_portfolio_tactics": [
+    "rfl",
+    "assumption",
+    "(simp_all; done)",
+    "omega",
+    "aesop"
+  ],
   "tactic_portfolio_total_wall_seconds": 60,
   "validation": {
     "cpu_quota": 1,
-    "docker_image": "sha256:9e9d5ed714d5cd5d1374b214f36eff3ed2cce7efffc15374d3c0b2d7e03c799b",
+    "docker_image": "sha256:deecf6cadd22b8f6abd325f749538fad1cebad6ba40f01ded3d7249c7dd2b8f3",
     "isolation": "docker",
     "max_heartbeats": 2000000,
     "memory_mib": 4096,
