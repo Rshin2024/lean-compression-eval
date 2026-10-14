@@ -198,6 +198,34 @@
         "questions.html": "d19d304f2c97ab9d57934964b63d3a97b1015031c1cbc7cfa5d3ba32e65e8076",
         "questions-data.json": "70852b7a1ed7dfb79d4951d3bf5977e5fdfd22c5402bc94afcdd3019b7e22cd6"
       }
+    },
+    {
+      "at_utc": "2026-10-14T23:06:48.495666+00:00",
+      "request": "Explicit paper-metric rankings with adjustable variables",
+      "metrics": [
+        "T0",
+        "I0",
+        "exploratory_max_normalized_J0",
+        "W_B_concision"
+      ],
+      "model_aggregation": "average question rank or equal-question aggregate magnitude",
+      "controls": [
+        "beta",
+        "prompt",
+        "model coverage",
+        "minimum samples",
+        "fixed sample",
+        "proof token filter",
+        "question subset"
+      ],
+      "default_T0_order_and_ties_unchanged": true,
+      "all_comparison_observations_unchanged": true,
+      "artifact_hashes": {
+        "index.html": "888536727c216c8faf389620b812d9b1cbda961e306cd06bdd32bcc64c7fa056",
+        "comparison-data.json": "966400f6615884a55db3477317a9faa7be0c43aa352ee9cf2c432a73eaa4ac53",
+        "questions.html": "d19d304f2c97ab9d57934964b63d3a97b1015031c1cbc7cfa5d3ba32e65e8076",
+        "questions-data.json": "70852b7a1ed7dfb79d4951d3bf5977e5fdfd22c5402bc94afcdd3019b7e22cd6"
+      }
     }
   ]
 }

@@ -446,6 +446,10 @@ def build(suite, *, output=None, classification='observed', runs_root=None, clou
         for source in data['sources']:
             source['path'] = prefix + '/' + source['path']
     template = Path(__file__).with_name('comparison.html').read_text()
+    for marker, name in [('__PAPER_CSS__', 'paper_panel.css'), ('__PAPER_PANEL__', 'paper_panel.html'),
+                         ('__PAPER_ENGINE__', 'paper_rankings.js'), ('__PAPER_UI__', 'paper_panel.js')]:
+        require(template.count(marker) == 1, 'Paper ranking template marker missing or duplicated: ' + marker)
+        template = template.replace(marker, Path(__file__).with_name(name).read_text())
     require(template.count('__REVIEWED_DATA__') == 1, 'Template marker missing or duplicated')
     payload = json.dumps(data, ensure_ascii=False, allow_nan=False).replace('<', '\\u003c')
     output.mkdir(parents=True, exist_ok=True)

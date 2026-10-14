@@ -4,6 +4,20 @@ From the repository root, run `python3 reporting/build_comparison.py` after the 
 
 The generator checks complete, identical populations and reconciles scheduled attempts, validity, per-question measurement coverage and ranking values against the source analyses. Smoke denominators are 120 per model and 40 per condition; OM100 denominators are 1,200 and 400. It writes `index.html` and `comparison-data.json` inside the suite. Original reports, captured responses, evaluation records and frozen configurations are read-only inputs.
 
+## Adjustable paper-metric ranking
+
+The primary comparison uses the element-level definitions in [Compression is all you need, §5](https://arxiv.org/pdf/2603.20396#page=23), implemented with this evaluation's frozen source-token and dependency-reference counting rules. It offers T0 descending, I0 descending, and proof length W_B ascending. Higher I0 means a longer proof for a fixed statement; it is not proof concision.
+
+The optional J0 blend is `beta * normalized_T0 + (1-beta) * normalized_I0`. For each shared question, the same usable samples supply the geometric means of both metrics; each mean is divided by the largest respective mean among the compared models. Normalized values are evaluated as `exp2(log_mean - log_max)`. This maximum-based normalization is an explicit exploratory implementation choice, not a choice prescribed by the paper. It is not PageRank I1. The paper's graph-walk alpha requires a separately specified graph population and computation and is unavailable here.
+
+Controls select the metric, beta (0–1), prompt, model-coverage threshold, samples (all or a fixed sample number), minimum usable samples per question, proof-body token filter, and a question subset. Coverage is counted over the full source question set after sample and proof-length filters, before the question subset. A model/question qualifies only with enough successful, measurable outputs. All compared models use the intersection of qualifying selected questions. Cohorts with fewer than two models or no shared questions have no ranking. Fixed-sample selection resets the minimum to one and disables impossible larger sample requirements.
+
+Order by average question rank (default) or aggregate metric value. The former averages midranks equally across questions. The latter geometrically averages per-question values equally for T0/I0/W_B, or arithmetically averages normalized J0. Exact rational products and integer powers decide T0/I0/W_B comparisons; display logs and numbers are approximate. J0 uses floating arithmetic with an absolute 1e-12 tie tolerance. These model-level aggregations and filters are descriptive, post hoc analysis choices. They change no frozen measurement, model call, pricing or verification result. Failure outcomes remain missing for compression, with all scheduled attempts retained in validity totals.
+
+The chart displays explicit ordinal positions, mean ranks and underlying metric magnitudes. Its dot axis uses numeric ranks or log2 metric values (linear 0–1 for J0). An export records controls, source analysis hashes, exact ratio evidence, attempt IDs and per-question values. The previous T0 rank-points view and its diagnostics remain collapsed below as a reproducible baseline; their controls are independent of the primary paper-metric view.
+
+Implementation: `paper_rankings.js` is a pure analysis module; `paper_panel.html`, `.css`, and `.js` define the controls and presentation. The builder embeds these local sources into the single-file report; no remote scripts or new served routes are required.
+
 The self-contained page provides:
 
 - All-model validity and all three prompt conditions, with counts explicitly labeled as proof acceptance.

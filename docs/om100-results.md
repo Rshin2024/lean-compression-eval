@@ -64,3 +64,12 @@ python3 reporting/serve_comparison.py --suite runs/om100-suite-high-20261013
 ```
 
 The viewer binds only to `http://127.0.0.1:62772/`; it publishes nothing externally. Full records remain separate from the route allowlist. See [reporting instructions](../reporting/README.md) for the exact comparison build and exports.
+
+
+## Adjustable paper metrics
+
+The local comparison now opens with explicit T₀, I₀, exploratory J₀-blend, and proof-concision rankings. It retains the 25-question coverage default and average per-question T₀ ranking; the original rank-points view is available below. Model-level aggregation is a descriptive extension of the paper's element-level measures.
+
+The controls expose beta, prompt, model coverage, minimum usable samples, a fixed sample or all samples, maximum proof-body tokens, and question selection. Users can switch between average question rank and equal-question aggregate metric values. The same compared models and shared questions are used for every displayed rank in a view. Higher I₀ rewards longer proofs for these fixed statements. J₀ uses an explicitly labeled per-question maximum normalization; PageRank I₁/alpha is not measured. Exports include the controls and exact evidence. See [reporting methods](../reporting/README.md#adjustable-paper-metric-ranking).
+
+This presentation extension does not change the 9,600 historical outcomes, frozen prompts, metrics or costs, and initiates no new model calls.

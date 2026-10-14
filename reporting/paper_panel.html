@@ -1,0 +1,39 @@
+<section id="compression" class="paperPanel">
+<div class="paperHeading"><div><h2>Compression rankings</h2></div><a href="https://arxiv.org/pdf/2603.20396#page=23" target="_blank" rel="noopener">Original paper · §5 ↗</a></div>
+<div class="paperMetrics" role="group" aria-label="Ranking metric">
+ <button type="button" data-paper-metric="T0" aria-pressed="true"><b>T₀ · Reductive compression</b><small>(U<sub>S</sub> + U<sub>B</sub>) / (W<sub>S</sub> + W<sub>B</sub>)</small></button>
+ <button type="button" data-paper-metric="I0" aria-pressed="false"><b>I₀ · Deductive compression</b><small>W<sub>B</sub> / W<sub>S</sub></small></button>
+ <button type="button" data-paper-metric="J0" aria-pressed="false"><b>J₀ · Adjustable blend</b><small>β × normalized T₀ + (1 − β) × normalized I₀</small></button>
+ <button type="button" data-paper-metric="W_B" aria-pressed="false"><b>Proof concision</b><small>W<sub>B</sub> · fewer source tokens</small></button>
+</div>
+<p id="paperDefinition" class="paperDefinition"></p>
+<div id="paperBetaBox" class="paperBeta" hidden><label for="paperBeta">Weight on T₀ (β): <output id="paperBetaValue">50%</output></label><input type="range" id="paperBeta" min="0" max="100" value="50" step="5"><div class="paperEndpoints"><span>0% · I₀ only</span><span>100% · T₀ only</span></div><small>Exploratory normalization: divide each question’s model values by the largest value among the compared models. This is a local implementation of the proposed blend; it is not PageRank I₁.</small></div>
+<div class="controls paperControls">
+ <label>Prompt <select id="paperCondition"></select></label>
+ <label>Order models by <select id="paperAggregation"><option value="rank">Average question rank</option><option value="magnitude">Aggregate metric value</option></select></label>
+ <label>Model coverage <select id="paperCoverage"></select></label>
+ <button type="button" id="paperReset">Reset ranking controls</button>
+</div>
+<details id="paperFilters"><summary>Adjust samples, proof length and questions</summary>
+ <div class="controls">
+  <label>Samples used <select id="paperSample"><option value="all">All saved samples</option></select></label>
+  <label>Minimum usable samples per question <select id="paperMinSamples"></select></label>
+  <label>Maximum proof-body tokens <select id="paperMaxProof"><option value="none">No length filter</option><option value="128">128</option><option value="256">256</option><option value="512">512</option><option value="1024">1,024</option></select></label>
+ </div>
+ <div class="paperQuestionFilter"><label>Question selection <select id="paperQuestionMode"><option value="all">All shared questions</option><option value="custom">Choose questions…</option></select></label><div id="paperQuestionChoices" hidden><label for="paperQuestions">Questions to include (select one or several)</label><select id="paperQuestions" multiple size="6"></select><small>Use Command/Ctrl to select several. Only questions with enough usable samples for every compared model enter the ranking.</small></div></div>
+ <p class="muted">These controls filter existing results. They do not rerun models or change the original token cap. Coverage is counted across the full question set after sample and length filters, before your question selection. <a href="#models">Choose individual models above</a>.</p>
+</details>
+<div id="paperScope" class="paperScope" aria-live="polite"></div>
+<div id="paperLeaderboard"></div>
+<p id="paperExclusions" class="paperExclusions"></p>
+<p id="paperReading" class="paperReading"></p>
+<div class="controls"><button type="button" id="paperExport">Export this ranking + question values</button><span class="muted">Exports include the active controls and exact ratio evidence.</span></div>
+<details><summary>Question values, ranks and sample support</summary><div id="paperQuestionTable" class="details scroll"></div></details>
+<details class="paperMethods"><summary>What the metrics and adjustments mean</summary>
+ <p><b>T₀</b> compares expanded reference counts to statement-and-proof source length. <b>I₀</b> compares proof length to statement length; higher I₀ favors a longer proof for a fixed statement. These implement the paper’s §5 ratios using this evaluation’s frozen Lean measurement rules. <b>Proof concision</b> ranks W<sub>B</sub> in the opposite direction: shorter first.</p>
+ <p>Within a question, take the geometric mean across usable samples. <b>Average question rank</b> gives every shared question equal weight, with rank 1 for the largest T₀, I₀ or J₀, or the smallest W<sub>B</sub>. Ties share the occupied ranks. <b>Aggregate metric value</b> uses an equal-question geometric mean for T₀, I₀ and W<sub>B</sub>, and an arithmetic mean for J₀. The paper defines element-level measures; these model-level aggregation choices are ours.</p>
+ <p>For <b>J₀</b>, normalize each question’s geometric T₀ and I₀ by their respective maximum among compared models, then apply β. The paper leaves normalization open; our maximum-based choice is exploratory and depends on the compared models and usable samples. Aggregate scores also depend on the selected questions. J₀ uses floating-point calculations and a 10⁻¹² tie tolerance. T₀, I₀ and W<sub>B</sub> ordering uses exact integer products and powers; displayed values are rounded.</p>
+ <p><b>PageRank I₁ and its α parameter are not available in this report.</b> They require a separately specified dependency-graph population and graph analysis. The primitive boundary and library are frozen measurement choices, not display controls.</p>
+ <p>Failures have no invented compression values. These rankings are conditional on usable valid proofs; success counts retain all scheduled attempts. Increasing the sample requirement can reduce the shared question set. No confidence intervals or reliable-winner claims are attached. Library expansion can inflate T₀; high I₀ is not evidence of a concise proof.</p>
+</details>
+</section>
