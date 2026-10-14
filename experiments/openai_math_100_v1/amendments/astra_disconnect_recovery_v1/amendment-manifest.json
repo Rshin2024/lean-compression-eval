@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "kind": "user_authorized_outside_frozen_core_recovery",
+  "amendment_id": "astra_disconnect_recovery_v1",
+  "created_at_utc": "2026-10-14T18:20:42.832961+00:00",
+  "run_status_at_activation": "9534_recorded_66_remaining_not_complete",
+  "files": [
+    {
+      "source_path": "work/full-eval-100/operational-recovery/astra-disconnects/proposal-v1/common.py",
+      "path": "workspace/work/full-eval-100/operational-recovery/astra-disconnects/proposal-v1/common.py",
+      "bytes": 2230,
+      "sha256": "33374a6f79851b219ec4ec665cc30732b86a86f530419e31d0dc2051a0a0e505"
+    },
+    {
+      "source_path": "work/full-eval-100/operational-recovery/astra-disconnects/proposal-v1/contract.py",
+      "path": "workspace/work/full-eval-100/operational-recovery/astra-disconnects/proposal-v1/contract.py",
+      "bytes": 7329,
+      "sha256": "67c5ef30c9a13a946539dbca3b3bbf68a7f1551048c66acc61f0f9d183ed4128"
+    },
+    {
+      "source_path": "work/full-eval-100/operational-recovery/astra-disconnects/proposal-v1/recovery_helper.py",
+      "path": "workspace/work/full-eval-100/operational-recovery/astra-disconnects/proposal-v1/recovery_helper.py",
+      "bytes": 9233,
+      "sha256": "a396f33cac2a6ffa18e1b1e5f6a4a3f932861f0e9fbae7a80eb0e7f80f17ed52"
+    },
+    {
+      "source_path": "work/full-eval-100/operational-recovery/astra-disconnects/proposal-v1/audit_extension.py",
+      "path": "workspace/work/full-eval-100/operational-recovery/astra-disconnects/proposal-v1/audit_extension.py",
+      "bytes": 3693,
+      "sha256": "864c927bc559c836003e96b1977427e491a5c87424fae8716cb6aaac4527c534"
+    },
+    {
+      "source_path": "work/full-eval-100/operational-recovery/astra-disconnects/proposal-v1/test_proposal.py",
+      "path": "workspace/work/full-eval-100/operational-recovery/astra-disconnects/proposal-v1/test_proposal.py",
+      "bytes": 12490,
+      "sha256": "3887bb8709acea5f645575237e4fc6837b570ca6cf92d3e6d955dc47bb3b9a50"
+    }
+  ],
+  "readme_sha256": "715f2f49685f6dfa9706b97e3a8b31ff5f9e0b6665b2a27566233a70ed15d56d",
+  "proposal_sha256": "21707cb3f1a60da2111dd66d76a540d9a956881374f10494735ef552f42b3de0",
+  "private_approval_sha256": "e7ac9e8ec7a58497ae6e97d483cec162046bf14759d6e7091f994a422d84e628",
+  "explicit_unknown_release_allowlist": [
+    "0b58cb738a4aa21aae8fbad025cf76ea8d3821e283d8c42d8fcd9040ed2f9ce8",
+    "1774d2bc68bde86887cee647fdc2276d942f47f634a4270d24295926393c867e",
+    "7043bcf6d4cb30983278d6e6b01151bfa1965a87774475c4af725ab4a9afcdcd",
+    "7c0b014005a586b88f03c1c910167e615a5debbae1f9fe376160ad504e045fb6",
+    "8d3fdcb8d19b2b0b5ec5880109e178cff4887c0ca1a24aa523184538ef9812d6",
+    "f2ceab0958f9538c025dcb02748d8a4b2dea82264e3b1091413d6ab647407210"
+  ],
+  "unknown_release_limit_per_attempt": 1,
+  "source_pins": {
+    "core_source_hash": "958bc7676b5fef5700a71ddde93abcc76e7afd67a4622593b57f7836485504f1",
+    "files": {
+      "final-audit/audit_final_cohort.py": "c5736a1c593cae9db9f1cf649a5903667278a97840786c40e527a7810f0db326",
+      "final-audit/test_audit_final_cohort.py": "ed2299b2e5414b1c35a50b3c5ab53c91e40b22a651080531911ec24b7b65a4fe",
+      "recover_text_tool_stops.py": "871565a1d0b4bbafb584351c47fdef596179587ca9f590de7cfc116d655a7d74",
+      "run_full_evaluation.py": "f6ef0b86b22998106784d705930bd640fea117e553f491e746866f1ea107462c"
+    },
+    "lean_engine_hash": "2ff87da0a2eb9058c6400bcb07bb441e5e1683c684b8571384006be37da299a2"
+  },
+  "validation": {
+    "offline_tests_passed": 17,
+    "independent_initial_tests_passed": 14,
+    "independent_review_no_blocker": true,
+    "restored_archive_tests": {
+      "passed": 17,
+      "method": "Byte-identical archived helpers restored in a temporary workspace with copied frozen core and auditor; no live run files or network calls.",
+      "checked_at_utc": "2026-10-14T18:21:01.377390+00:00"
+    }
+  },
+  "activation": {
+    "parent_confirmed": true,
+    "stock_releases_completed": 6,
+    "existing_resume_control_published": true,
+    "no_direct_model_calls_by_helper": true
+  },
+  "frozen_core_changed": false,
+  "frozen_auditor_changed": false,
+  "original_generation_records_rewritten": false,
+  "unknown_original_request_cost_usd": null,
+  "exclusions": [
+    "private approval and proposal payloads",
+    "diagnostics and operational logs",
+    "generation/capture/evaluation records",
+    "baseline generation inventory",
+    "reference proofs and indices",
+    "API credentials and SSH/cloud access files",
+    "process IDs and live handoff/status files"
+  ]
+}
