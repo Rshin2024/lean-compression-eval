@@ -31,6 +31,12 @@ The primary comparison is between model outputs. For each question and condition
 
 T₀ = (U_S + U_B) / (W_S + W_B): expanded dependency-reference counts per statement-and-proof source token under the fixed library boundary. W_B is Lean proof-source length, not API token usage; I₀ = W_B / W_S. Higher T₀ need not mean a shorter, more factored or better-reasoned proof. A retained audit example has a longer valid proof with a higher T₀ because repeated helper references expand again. Read ranks alongside length, validity and coverage. Reference-proof attainment is an optional diagnostic, not the primary model comparison.
 
+### Clearer ranking view
+
+The presentation now opens with an explicitly labeled five-model comparison on 22 shared questions under the compression prompt. The default requires measurements on at least 25 questions per model; Luna, Sonnet and Haiku are named as outside this rank view and remain in the other results. Presets also show three models on 47 questions, seven models on three questions, or all eight models with no aggregate ranking.
+
+Bars show **rank points = 100 × (model count − average rank) / (model count − 1)**, alongside the original mean rank. Higher points mean better relative placement within the displayed group. This linear rescaling preserves the exact original ordering and ties; it is not percentage compression, and scores from different groups are not comparable. No proof outcome, T₀ measurement, question, prompt, model call or cost was changed by this presentation update.
+
 ## Protocol and limitations
 
 - The exact 100 supplied candidates were preserved, with three prompt conditions and four independent samples per model/condition/question. The frozen-input viewer contains 300 question/condition message sets and maps them exactly to all 9,600 slots.

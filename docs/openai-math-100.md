@@ -179,10 +179,13 @@ cap. This is a comparison conditioned on those supplied helper interfaces.
 Literal absence checks and prior-environment membership are useful audit evidence;
 they do not prove that no logically equivalent answer alias is available.
 
-The combined report defaults to all eight models on their shared measurable
-questions. Within-question ordering and ties use exact rational geometric means
-of T0; the question ranks are then averaged with equal question weights. If no
-question is measurable for every selected model, the page shows coverage and
+The combined report retains all eight models. Its initial rank view uses an
+explicit 25-question coverage threshold, displaying five models on 22 shared
+questions under the compression prompt; named exclusions and all-model presets
+remain visible. Within-question ordering and ties use exact rational geometric
+means of T0, then average ranks with equal question weights. The larger-is-better
+0–100 bars linearly rescale those same ranks and preserve their ordering. If no
+question is measurable for every compared model, the page shows coverage and
 pairwise comparisons without inventing an aggregate rank. See the
 [reporting definitions](../reporting/README.md).
 

@@ -413,7 +413,7 @@ def build(suite, *, output=None, classification='observed', runs_root=None, clou
     require(len(data['attempts']) == n * k * len(CONDS) * len(MODELS), 'Cohort schedule mismatch')
     data.update(taskCount=n, samplesPerQuestion=k, attemptsPerCondition=n * k,
         attemptsPerModel=n * k * len(CONDS), totalAttempts=len(data['attempts']), tasks=tasks,
-        cohortKind='om100' if n == 100 else 'smoke', rankCoverageDefault=0 if n == 100 else min(5, n),
+        cohortKind='om100' if n == 100 else 'smoke', rankCoverageDefault=25 if n == 100 else min(5, n),
         magnitudePopulationDefault='shared' if n == 100 else 'available')
     effort, cap = next(iter(generation_settings)) if len(generation_settings) == 1 else (None, None)
     data['generation'] = {'reasoningEffort': effort, 'outputTokenCap': cap}

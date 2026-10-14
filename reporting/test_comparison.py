@@ -16,7 +16,7 @@ def fixture(suite, count=100):
         rows, cost_rows, per_task, conditions = [], [], {}, {}
         for task in tasks:
             per_task[task] = {}
-            # The eighth model has no measurable output: default common cohort is empty.
+            # The eighth model has no measurable output: the all-eight common cohort is empty.
             good = mi < 7
             for condition in CONDS:
                 per_task[task][condition] = {'measurable_count': 4 if good else 0,
@@ -70,7 +70,7 @@ class ComparisonTests(unittest.TestCase):
     def test_full_population_cost_unknowns_and_answer_separation(self):
         result = self.build()
         self.assertEqual(result['totalAttempts'],9600)
-        self.assertEqual(result['rankCoverageDefault'],0)
+        self.assertEqual(result['rankCoverageDefault'],25)
         self.assertEqual(result['magnitudePopulationDefault'],'shared')
         self.assertEqual(sum(r['cost']['status']=='estimated' for r in result['attempts']),7200)
         self.assertTrue(all(r['cost']['total_usd'] is None for r in result['attempts'] if r['cost']['status']=='unavailable'))

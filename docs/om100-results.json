@@ -180,5 +180,24 @@
   "final_audit_summary_sha256": "f756623965c30810af71d4317d2e48e6f05ce1f6db82239880c677325de2c6d4",
   "full_v2_backup_checkpoint_sha256": "366d36b4630719b261c0cbeeed34991446bafe1c57c2bc76e4e7cefadde4e290",
   "local_artifact_directory": "runs/om100-suite-high-20261013",
-  "verification_count_definition": "9600 explicit terminal v2 outcomes; eligible completed proof candidates proceeded to Lean. Truncated and other ineligible outcomes did not launch Lean."
+  "verification_count_definition": "9600 explicit terminal v2 outcomes; eligible completed proof candidates proceeded to Lean. Truncated and other ineligible outcomes did not launch Lean.",
+  "comparison_artifact_hashes_scope": "Original completion snapshot, before later presentation-only revisions. Current view hashes are recorded in presentation_updates.",
+  "presentation_updates": [
+    {
+      "at_utc": "2026-10-14T20:13:57.186610+00:00",
+      "request": "Clearer visualization of model compression rankings",
+      "default_minimum_measurable_questions": 25,
+      "default_models": 5,
+      "default_shared_questions": 22,
+      "rank_points_formula": "100 * (model_count - average_rank) / (model_count - 1)",
+      "rank_order_and_ties_unchanged": true,
+      "all_other_comparison_data_unchanged": true,
+      "artifact_hashes": {
+        "index.html": "dfa483a86a10ddf1271f7865550eefb13b80bd95ea4a6eb2626c31bd32f72748",
+        "comparison-data.json": "04568f4081d5320b465ec5da3f7b4bb4ca90e2a56669759a82d7c3f717a49105",
+        "questions.html": "d19d304f2c97ab9d57934964b63d3a97b1015031c1cbc7cfa5d3ba32e65e8076",
+        "questions-data.json": "70852b7a1ed7dfb79d4951d3bf5977e5fdfd22c5402bc94afcdd3019b7e22cd6"
+      }
+    }
+  ]
 }
