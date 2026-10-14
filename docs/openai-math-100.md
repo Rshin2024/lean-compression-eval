@@ -33,13 +33,15 @@ All 100 final uniform-policy reference checks and model-visible premise audits
 have passed. **The 9,600-attempt evaluation launched on October 13, 2026 (Pacific
 time), after all eight manifests were frozen and the reviewed launch marker was
 published.** Both providers authenticated and every configured model has returned
-responses. Final results are pending; the immutable adoption status is not the
-live run status.
+responses. **All 9,600 attempts are now verified and reported under the uniform
+`v2_threads1` runtime.** See [completed results, costs and limitations](om100-results.md).
+The task’s Azure resources have been removed. The immutable adoption status is
+historical and is not the live run status.
 
 The cohort requests `high` effort with an 8,192-token reasoning-plus-answer cap,
 three conditions and four samples per question/model/condition. Truncated or
 invalid responses remain recorded outcomes under this fixed budget. API calls
-run in the local authenticated process; 48 verification workers run on the
+ran in the local authenticated process; up to 48 verification workers ran on the
 64-vCPU, 512-GiB Azure VM. Validation has a 180-second wall limit and measurement
 has a separate 900-second limit, each with a 2-CPU quota and 8-GiB memory ceiling.
 The core code snapshot is commit `eab82c85` (Python package hash beginning

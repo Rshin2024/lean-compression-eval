@@ -1,0 +1,184 @@
+{
+  "models": [
+    {
+      "model": "gpt-6.1-sol",
+      "scheduled": 1200,
+      "valid": 699,
+      "measurable": 699,
+      "valid_by_condition": {
+        "standard": 253,
+        "mathematical_compression": 227,
+        "source_concision": 219
+      },
+      "measurable_questions_by_condition": {
+        "standard": 79,
+        "mathematical_compression": 73,
+        "source_concision": 76
+      },
+      "truncated": 206,
+      "recorded_response_token_estimate_usd": "91.4009723"
+    },
+    {
+      "model": "gpt-6-sol",
+      "scheduled": 1200,
+      "valid": 347,
+      "measurable": 347,
+      "valid_by_condition": {
+        "standard": 112,
+        "mathematical_compression": 122,
+        "source_concision": 113
+      },
+      "measurable_questions_by_condition": {
+        "standard": 47,
+        "mathematical_compression": 50,
+        "source_concision": 43
+      },
+      "truncated": 473,
+      "recorded_response_token_estimate_usd": "112.0144026"
+    },
+    {
+      "model": "gpt-6-luna",
+      "scheduled": 1200,
+      "valid": 62,
+      "measurable": 62,
+      "valid_by_condition": {
+        "standard": 22,
+        "mathematical_compression": 21,
+        "source_concision": 19
+      },
+      "measurable_questions_by_condition": {
+        "standard": 13,
+        "mathematical_compression": 13,
+        "source_concision": 11
+      },
+      "truncated": 972,
+      "recorded_response_token_estimate_usd": "6.56900283"
+    },
+    {
+      "model": "gpt-6-astra",
+      "scheduled": 1200,
+      "valid": 729,
+      "measurable": 729,
+      "valid_by_condition": {
+        "standard": 267,
+        "mathematical_compression": 236,
+        "source_concision": 226
+      },
+      "measurable_questions_by_condition": {
+        "standard": 82,
+        "mathematical_compression": 73,
+        "source_concision": 74
+      },
+      "truncated": 219,
+      "recorded_response_token_estimate_usd": "468.9254925"
+    },
+    {
+      "model": "claude-haiku-5-5",
+      "scheduled": 1200,
+      "valid": 1,
+      "measurable": 1,
+      "valid_by_condition": {
+        "standard": 0,
+        "mathematical_compression": 0,
+        "source_concision": 1
+      },
+      "measurable_questions_by_condition": {
+        "standard": 0,
+        "mathematical_compression": 0,
+        "source_concision": 1
+      },
+      "truncated": 1166,
+      "recorded_response_token_estimate_usd": "7.9740503"
+    },
+    {
+      "model": "claude-sonnet-5-5",
+      "scheduled": 1200,
+      "valid": 54,
+      "measurable": 54,
+      "valid_by_condition": {
+        "standard": 18,
+        "mathematical_compression": 14,
+        "source_concision": 22
+      },
+      "measurable_questions_by_condition": {
+        "standard": 14,
+        "mathematical_compression": 9,
+        "source_concision": 15
+      },
+      "truncated": 485,
+      "recorded_response_token_estimate_usd": "131.857966"
+    },
+    {
+      "model": "claude-opus-5-5",
+      "scheduled": 1200,
+      "valid": 331,
+      "measurable": 331,
+      "valid_by_condition": {
+        "standard": 108,
+        "mathematical_compression": 84,
+        "source_concision": 139
+      },
+      "measurable_questions_by_condition": {
+        "standard": 45,
+        "mathematical_compression": 43,
+        "source_concision": 49
+      },
+      "truncated": 550,
+      "recorded_response_token_estimate_usd": "273.224772"
+    },
+    {
+      "model": "claude-fable-5-1",
+      "scheduled": 1200,
+      "valid": 222,
+      "measurable": 222,
+      "valid_by_condition": {
+        "standard": 83,
+        "mathematical_compression": 82,
+        "source_concision": 57
+      },
+      "measurable_questions_by_condition": {
+        "standard": 28,
+        "mathematical_compression": 34,
+        "source_concision": 27
+      },
+      "truncated": 896,
+      "recorded_response_token_estimate_usd": "756.46948"
+    }
+  ],
+  "total_valid": 2445,
+  "total_truncated": 4967,
+  "recorded_response_token_estimate_usd": "1848.43613853",
+  "all_request_invoice_total_usd": null,
+  "source": "completed phase-aware per-model reports",
+  "schema_version": 1,
+  "status": "complete",
+  "completed_at_utc": "2026-10-14T19:41:48.670121+00:00",
+  "scheduled_attempts": 9600,
+  "verified_attempts": 9600,
+  "question_count": 100,
+  "samples_per_question_condition_model": 4,
+  "reasoning_effort": "high",
+  "output_token_cap_including_reasoning": 8192,
+  "verification_version": "v2_threads1",
+  "reference_proofs_reverified": 100,
+  "all_eight_shared_measurable_questions": {
+    "standard": 0,
+    "mathematical_compression": 0,
+    "source_concision": 0
+  },
+  "cloud_compute_estimate_usd": "56.824433",
+  "cloud_invoice_total_usd": null,
+  "task_azure_resources_deleted": true,
+  "known_unpriced_transport_incidents": 7,
+  "comparison_core_sha256": "756275b381b87f1baeb69b2b22b86f8b371d4862f93300cdad0db3434de2cbc7",
+  "comparison_artifact_hashes": {
+    "index.html": "66393a391b91878bddbc93c97f521b9bc889e1e5b7240b13704bc7275ddcbf1d",
+    "comparison-data.json": "7cd6cfd3828efdc881f19fad9f000e5f512c9b9bc8ac3a6e60541aef896d01da",
+    "questions.html": "d19d304f2c97ab9d57934964b63d3a97b1015031c1cbc7cfa5d3ba32e65e8076",
+    "questions-data.json": "70852b7a1ed7dfb79d4951d3bf5977e5fdfd22c5402bc94afcdd3019b7e22cd6"
+  },
+  "final_audit_summary_sha256": "f756623965c30810af71d4317d2e48e6f05ce1f6db82239880c677325de2c6d4",
+  "full_v2_backup_checkpoint_sha256": "366d36b4630719b261c0cbeeed34991446bafe1c57c2bc76e4e7cefadde4e290",
+  "local_artifact_directory": "runs/om100-suite-high-20261013",
+  "verification_count_definition": "9600 explicit terminal v2 outcomes; eligible completed proof candidates proceeded to Lean. Truncated and other ineligible outcomes did not launch Lean."
+}
