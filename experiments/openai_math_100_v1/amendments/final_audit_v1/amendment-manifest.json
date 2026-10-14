@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "kind": "read_only_final_cohort_auditor",
+  "run_status": "ongoing_not_complete",
+  "files": [
+    {
+      "path": "workspace/work/full-eval-100/final-audit/audit_final_cohort.py",
+      "source": "work/full-eval-100/final-audit/audit_final_cohort.py",
+      "bytes": 29265,
+      "sha256": "c5736a1c593cae9db9f1cf649a5903667278a97840786c40e527a7810f0db326"
+    },
+    {
+      "path": "workspace/work/full-eval-100/final-audit/test_audit_final_cohort.py",
+      "source": "work/full-eval-100/final-audit/test_audit_final_cohort.py",
+      "bytes": 5614,
+      "sha256": "ed2299b2e5414b1c35a50b3c5ab53c91e40b22a651080531911ec24b7b65a4fe"
+    }
+  ],
+  "scope": [
+    "frozen schedule/model/prompt/effort/token settings",
+    "transport/request/capture/generation bindings and completed-response uniqueness",
+    "independent exact token-cost arithmetic and cost JSON/CSV exports",
+    "end-of-scan generation/capture byte-hash rechecks"
+  ],
+  "separate_final_gates": [
+    "phase-aware per-model proof and metric validation",
+    "exact cloud/local evaluation-file hashes",
+    "combined report and rendered-output validation"
+  ],
+  "tests_passed": 12,
+  "independent_review_approved": true,
+  "no_model_lean_or_network_calls": true,
+  "no_frozen_run_edits": true,
+  "excluded": [
+    "audit outputs and raw captures",
+    "generation and evaluation records",
+    "API credentials and SSH access files",
+    "reports and private reference proof/index data"
+  ]
+}
