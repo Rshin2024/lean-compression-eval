@@ -1,0 +1,28 @@
+ARG BASE_BUILD_IMAGE=lce-om100-build
+FROM ${BASE_BUILD_IMAGE} AS prepared
+COPY src /opt/eval/source
+COPY run-lean /opt/eval/run-lean
+WORKDIR /opt/eval/package
+RUN PYTHONPATH=/opt/eval/source python3 -m lean_compression prepare-environment \
+      --package-root /opt/eval/package --output /opt/eval/build-environment.json \
+    && PYTHONPATH=/opt/eval/source python3 -c 'from lean_compression.io import evaluator_hash; print(evaluator_hash())' > /opt/eval/evaluator-python-hash \
+    && find /opt/eval/package -type f -name '*.lean' -delete \
+    && find /opt/eval/package -type d -name .git -prune -exec rm -rf '{}' + \
+    && chmod 755 /opt/eval/run-lean \
+    && test -z "$(find /opt/eval/package -type f -name '*.lean' -print -quit)" \
+    && test -z "$(find /opt/eval/package -type d -name .git -print -quit)"
+
+FROM ubuntu:24.04
+RUN apt-get update && apt-get install -y --no-install-recommends python3 ca-certificates libgmp10 libatomic1 libstdc++6 zstd \
+    && rm -rf /var/lib/apt/lists/*
+COPY --from=prepared /opt/elan /opt/elan
+COPY --from=prepared /opt/eval /opt/eval
+ENV ELAN_HOME=/opt/elan
+ENV PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ENV LEAN_NUM_THREADS=1
+LABEL org.lean-compression.toolchain="leanprover/lean4:v4.34.1"
+LABEL org.lean-compression.mathlib="d13f23b723b8a846827a245b89c10fc7d3f11612"
+LABEL org.lean-compression.openai-math="adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+LABEL org.lean-compression.source-exclusion="root-OAI-and-package-Lean-sources-and-git-removed-after-hashing"
+LABEL org.lean-compression.role="source-stripped-evaluation-runtime"
+WORKDIR /job

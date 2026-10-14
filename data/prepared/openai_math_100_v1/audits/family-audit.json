@@ -1,0 +1,176 @@
+{
+  "kind": "selection_family_review_v1",
+  "passed": true,
+  "tasks_sha256": "ab0c715a38498bad4d5423b7b627499c6537a89ea557b892e38b398401b33f8b",
+  "selection_sha256": "d1e0396a1a3bda1340effbe87fe9a02db4e3db4be70bbd1913c1473335567e5c",
+  "task_count": 100,
+  "family_count": 19,
+  "families": {
+    "047": [
+      "OM100-001",
+      "OM100-002",
+      "OM100-003",
+      "OM100-004",
+      "OM100-005",
+      "OM100-006",
+      "OM100-007"
+    ],
+    "049": [
+      "OM100-008",
+      "OM100-009"
+    ],
+    "076": [
+      "OM100-010",
+      "OM100-011",
+      "OM100-012",
+      "OM100-013",
+      "OM100-014",
+      "OM100-015"
+    ],
+    "088": [
+      "OM100-016",
+      "OM100-017",
+      "OM100-018"
+    ],
+    "094": [
+      "OM100-019",
+      "OM100-020",
+      "OM100-021",
+      "OM100-022",
+      "OM100-023"
+    ],
+    "113": [
+      "OM100-024",
+      "OM100-025",
+      "OM100-026",
+      "OM100-027",
+      "OM100-028"
+    ],
+    "116": [
+      "OM100-029",
+      "OM100-030",
+      "OM100-031",
+      "OM100-032",
+      "OM100-033",
+      "OM100-034"
+    ],
+    "119": [
+      "OM100-035",
+      "OM100-036",
+      "OM100-037",
+      "OM100-038",
+      "OM100-039",
+      "OM100-040"
+    ],
+    "132": [
+      "OM100-041",
+      "OM100-042",
+      "OM100-043",
+      "OM100-044",
+      "OM100-045"
+    ],
+    "173": [
+      "OM100-046",
+      "OM100-047",
+      "OM100-048",
+      "OM100-049",
+      "OM100-050"
+    ],
+    "176": [
+      "OM100-051",
+      "OM100-052",
+      "OM100-053",
+      "OM100-054",
+      "OM100-055"
+    ],
+    "180": [
+      "OM100-056",
+      "OM100-057",
+      "OM100-058",
+      "OM100-059",
+      "OM100-060"
+    ],
+    "185": [
+      "OM100-061",
+      "OM100-062",
+      "OM100-063",
+      "OM100-064",
+      "OM100-065",
+      "OM100-066"
+    ],
+    "210": [
+      "OM100-067",
+      "OM100-068",
+      "OM100-069",
+      "OM100-070"
+    ],
+    "238": [
+      "OM100-071",
+      "OM100-072",
+      "OM100-073",
+      "OM100-074",
+      "OM100-075",
+      "OM100-076"
+    ],
+    "254": [
+      "OM100-077",
+      "OM100-078",
+      "OM100-079",
+      "OM100-080",
+      "OM100-081",
+      "OM100-082"
+    ],
+    "274": [
+      "OM100-083",
+      "OM100-084",
+      "OM100-085",
+      "OM100-086",
+      "OM100-087",
+      "OM100-088",
+      "OM100-089"
+    ],
+    "325": [
+      "OM100-090",
+      "OM100-091",
+      "OM100-092",
+      "OM100-093",
+      "OM100-094"
+    ],
+    "330": [
+      "OM100-095",
+      "OM100-096",
+      "OM100-097",
+      "OM100-098",
+      "OM100-099",
+      "OM100-100"
+    ]
+  },
+  "parent_by_family": {
+    "047": "complex-cancellation",
+    "049": "commuting-derivations",
+    "076": "asymptotically-minimal-littlewood",
+    "088": "projection-volume",
+    "094": "subpolynomial-lp",
+    "113": "matching-entropy",
+    "116": "formula-hitting",
+    "119": "courtade-kumar",
+    "132": "sensitivity-separation",
+    "173": "seymour-second-neighborhood",
+    "176": "second-kahn-kalai",
+    "180": "barnette-hamiltonian",
+    "185": "infinite-matroid",
+    "210": "foulkes-howe",
+    "238": "thorp-weighted-compatibility",
+    "254": "artin-cat0",
+    "274": "qac-parity",
+    "325": "direct-crouzeix",
+    "330": "discrete-lipschitz-free"
+  },
+  "split_policy": "All100 user-selected questions are evaluated; no train/pilot/test separation or question selection from model outcomes.",
+  "clustering_policy": "Preserve the supplied source-result family labels for clustered uncertainty; question ranks weight questions equally.",
+  "limits": [
+    "Related lemmas can share previous helper results within a family.",
+    "This review preserves provenance groups; it does not establish statistical independence between all mathematical families or absence from model training."
+  ],
+  "errors": []
+}

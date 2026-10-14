@@ -1,0 +1,25 @@
+FROM ubuntu:24.04
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates curl git build-essential zstd python3 \
+    && rm -rf /var/lib/apt/lists/*
+ENV ELAN_HOME=/opt/elan
+ENV PATH=/opt/elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ARG LEAN_BUILD_THREADS=6
+ENV LEAN_NUM_THREADS=${LEAN_BUILD_THREADS}
+RUN curl -sSfL https://raw.githubusercontent.com/leanprover/elan/v4.2.0/elan-init.sh -o /tmp/elan-init.sh \
+    && sh /tmp/elan-init.sh -y --default-toolchain leanprover/lean4:v4.34.1 \
+    && rm /tmp/elan-init.sh
+WORKDIR /opt/eval/package
+COPY package/lean-toolchain package/lakefile.lean ./
+RUN lake update && lake exe cache get
+COPY package/OAI ./OAI
+COPY package/RequiredImports.lean ./RequiredImports.lean
+COPY closure-manifest.json /opt/eval/closure-manifest.json
+RUN --network=none lake build RequiredImports
+RUN lake env printenv LEAN_PATH > /opt/eval/lean-path \
+    && elan which lean > /opt/eval/lean-binary \
+    && lean --version > /opt/eval/lean-version.txt
+LABEL org.lean-compression.toolchain="leanprover/lean4:v4.34.1"
+LABEL org.lean-compression.mathlib="d13f23b723b8a846827a245b89c10fc7d3f11612"
+LABEL org.lean-compression.openai-math="adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+LABEL org.lean-compression.role="private-builder-sources-present-not-evaluation-runtime"
+WORKDIR /job

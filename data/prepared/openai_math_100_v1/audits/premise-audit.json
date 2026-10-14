@@ -1,0 +1,2931 @@
+{
+  "accounted_count": 100,
+  "auditor_sha256": "ca4e2af592b7b458387e6774404c3d67554d3aa4f5d7fb5c5cd901b1472917b9",
+  "catalogue_input_sha256": "cbe0946fd15725146b1baf6f40a08a2e691aabc272022a44725a32c3d3d8ad8c",
+  "catalogue_summary_count": 100,
+  "export_policy_hash": "6d6fd8af0331e98ad5e0cb88faaaafe8f6ae18ff418ce9ebdc9c48ae252049a2",
+  "limitations": [
+    "No certified-unseen or training-exposure claim",
+    "Literal absence and prior environment membership do not exclude every logically equivalent theorem",
+    "Reference-informed retrieval is part of the fixed task presentation",
+    "Omission counts concern known candidates under the frozen caps"
+  ],
+  "model_calls": 0,
+  "model_generation_enabled": false,
+  "passed_count": 100,
+  "per_task": [
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 46551,
+      "export_record_hash": "3da6eb2c24c2faaa99627e443f06ddebfca734a84559c8d03a012fc807963fc4",
+      "findings": [],
+      "omitted_count": 73,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "ed70390701884129260569a9a74f5b28b40e83637a94f3126f1a92f1f2a2ebf1",
+      "prompt_bytes": {
+        "mathematical_compression": 47186,
+        "source_concision": 47007,
+        "standard": 46977
+      },
+      "result_hash": "a927a7bce0eae11f005b37e9e9603ee168a3d00434a658397a1f7672ad31aaf8",
+      "source_dep_count": 181,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-001"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55854,
+      "export_record_hash": "54ab0ed1b420e25c6b579a98d29efa1b36239302244d0ef5bd3dbc700f2e936a",
+      "findings": [],
+      "omitted_count": 200,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "9c0cc7197ee5511f07bdaf431a2a73bf2b2df338bfd650f0c3098f0f28d9a095",
+      "prompt_bytes": {
+        "mathematical_compression": 56737,
+        "source_concision": 56558,
+        "standard": 56528
+      },
+      "result_hash": "751af7a34dfdf2dfc9879a214a4944a9a89f7397650bdd694d3989a07056970c",
+      "source_dep_count": 335,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-002"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55613,
+      "export_record_hash": "b30ac479d3f0b33f52b9ee9185db4ddb7b8a3f0811d5a8a60c2f2f0bb53752d6",
+      "findings": [],
+      "omitted_count": 295,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "733e070f0ab862ee79918bd0d5e040ca16b52023efbf84b37f7d20ce51a5b654",
+      "prompt_bytes": {
+        "mathematical_compression": 56451,
+        "source_concision": 56272,
+        "standard": 56242
+      },
+      "result_hash": "8e6f9359b9557016a5b8fbabdeb2b157f5c501fb5e92675a359c726b73196842",
+      "source_dep_count": 305,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-003"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55847,
+      "export_record_hash": "c467a6b458e1a17934088dab0bd247c9ca72dd802562816ae3e2e854d05c3aa6",
+      "findings": [],
+      "omitted_count": 246,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "7c68d37006d93a1a59ac5671d5974cd9422da58cd5a4b01ccaf20ccc7286cb20",
+      "prompt_bytes": {
+        "mathematical_compression": 56694,
+        "source_concision": 56515,
+        "standard": 56485
+      },
+      "result_hash": "e6130e4a6b74929eb1adb208bb8a016baf8f9c62bbf44e1539ed0c1835daa0d8",
+      "source_dep_count": 265,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-004"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55887,
+      "export_record_hash": "486964962218c2583e2de1b0d6a23a741271244cd6c1b1fb7510ccb4fde1cecb",
+      "findings": [],
+      "omitted_count": 231,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "93e790768fc033d0b136b9623e06c8e6252281a00c9f8f950334a19db7f0d1b8",
+      "prompt_bytes": {
+        "mathematical_compression": 57116,
+        "source_concision": 56937,
+        "standard": 56907
+      },
+      "result_hash": "7040b2fcdb8a242d7e1badbf56ffa5a28eb314ba06c19017b9c94a7e1b77cd99",
+      "source_dep_count": 276,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-005"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 28918,
+      "export_record_hash": "7eb472ae4734607cd43acf2b0bde53646c09cb2fee835a755972e3c2cec95387",
+      "findings": [],
+      "omitted_count": 125,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "ee453dc61499ca00994b41ef671abbf8feb5be394e118d216cd1cddf71f86469",
+      "prompt_bytes": {
+        "mathematical_compression": 29691,
+        "source_concision": 29512,
+        "standard": 29482
+      },
+      "result_hash": "90bca1d125c6468cc5b72f0419930139cc7c48496354e8ad7b7cce0bda39a031",
+      "source_dep_count": 169,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-006"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 45810,
+      "export_record_hash": "fc37d9a7871302f30352c3b22935c2a6b114a03814ffb529120ff6d61f92613f",
+      "findings": [],
+      "omitted_count": 169,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "ccfcaba8d50061179c3ef823c0af6b2675aec328b54f865742dd03a38c59b7ab",
+      "prompt_bytes": {
+        "mathematical_compression": 46567,
+        "source_concision": 46388,
+        "standard": 46358
+      },
+      "result_hash": "d3fd06ce065b5228bb92d7dd2d217f94fc07bdd5e245666db1f4a5acffc0da16",
+      "source_dep_count": 298,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-007"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 42521,
+      "export_record_hash": "c768c1a5a0bd9faa432035e299b66653f84fa1e130af75067a35ea64cb14cccf",
+      "findings": [],
+      "omitted_count": 147,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "01dd3a5048e63ba16eaab1c522766e05d81490dc20637bfe19a0c22a1f5c5b23",
+      "prompt_bytes": {
+        "mathematical_compression": 43302,
+        "source_concision": 43123,
+        "standard": 43093
+      },
+      "result_hash": "5c90d59ff0da6b7fe210638fdffc937b192fc0476e5b53c3c6e5dcd75c2b20a6",
+      "source_dep_count": 198,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-008"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 27414,
+      "export_record_hash": "8ab4f6f807718101de130927df85717abf09f0443a4ce99dad608ae0cbc9e78d",
+      "findings": [],
+      "omitted_count": 103,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "43d7d0dc0501058f4729ac5a6fad455720a9ca43441d7b46c1a12d547698d9a7",
+      "prompt_bytes": {
+        "mathematical_compression": 28661,
+        "source_concision": 28482,
+        "standard": 28452
+      },
+      "result_hash": "0dacc71c73e05547e569a5293e1b07c680691c299855bf8fd0e2217cf8b8a808",
+      "source_dep_count": 157,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-009"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55839,
+      "export_record_hash": "4c891b897384b653f66348db5d599406578f2bcb1f0bb2f50af677f1b80b326e",
+      "findings": [],
+      "omitted_count": 315,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "95b39d39eda9c06b0bc3808db3287af4e43f820a22b9b1f5ff1d6be9e46299ae",
+      "prompt_bytes": {
+        "mathematical_compression": 56741,
+        "source_concision": 56562,
+        "standard": 56532
+      },
+      "result_hash": "be7e04102bda4d03d55e0a2387c15b329d2300ae0502a22d1fc2dc364f3c9392",
+      "source_dep_count": 320,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-010"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55900,
+      "export_record_hash": "ac239d90dd646cb1fb803166108e35081eb790a72fe13b8cbebfbd357f6ea5f0",
+      "findings": [],
+      "omitted_count": 425,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "9a54b1a78bd4e6801f2f305e6ef8fae99f7b18bb20dd438fb8da6826f22c620e",
+      "prompt_bytes": {
+        "mathematical_compression": 57085,
+        "source_concision": 56906,
+        "standard": 56876
+      },
+      "result_hash": "365e4903c1087b386164f3c0461ff3f60019bd4434507c29c967dcb3ee97755a",
+      "source_dep_count": 278,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-011"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 54919,
+      "export_record_hash": "2cce17a4a8bd616d264045b2f3d2d1897835656c6f315960a24a79b53689b6d5",
+      "findings": [],
+      "omitted_count": 191,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "c62979cc9824c495ae0ce32a5ddf68f768cd103102246877551070909d6444fb",
+      "prompt_bytes": {
+        "mathematical_compression": 55952,
+        "source_concision": 55773,
+        "standard": 55743
+      },
+      "result_hash": "534537545b9681b97903a8000c5cc86669388e95f5dd7d351d7eb7f612daa21a",
+      "source_dep_count": 392,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-012"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55890,
+      "export_record_hash": "ddce645ecdaeeb5600ea7ad2f707baba4e3028b165d17373c060f02287260b23",
+      "findings": [],
+      "omitted_count": 212,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "dabf101ba5fecec6cf302386f222b737194a223d4714d30f80a62169729bab5d",
+      "prompt_bytes": {
+        "mathematical_compression": 57042,
+        "source_concision": 56863,
+        "standard": 56833
+      },
+      "result_hash": "e22f98574374c39e919c3dba6d7813a8a11622ad1a79c38a4ac843e847abdbb9",
+      "source_dep_count": 403,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-013"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55787,
+      "export_record_hash": "07d30101ca541466d12ff64b79e02ee869d278f3e3089122929f81aa45f29844",
+      "findings": [],
+      "omitted_count": 318,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "ae2d5ce1cbbc984bffb5362c3ca6191c06188213b855404b927fc78c6c13d6d8",
+      "prompt_bytes": {
+        "mathematical_compression": 56524,
+        "source_concision": 56345,
+        "standard": 56315
+      },
+      "result_hash": "7744d292c6157ff4d93d12a41d6daf84a8e3cd3e74731c051b0b979cd6ff72fe",
+      "source_dep_count": 362,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-014"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55750,
+      "export_record_hash": "13088503e63212f08b9836c3acb025c87870fb059b86b6a25433c25f34e73d12",
+      "findings": [],
+      "omitted_count": 302,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "6207ee847402c3ecd87759cc150fc9b1b3010f9eed037a5c413b1bf783a9f22f",
+      "prompt_bytes": {
+        "mathematical_compression": 56638,
+        "source_concision": 56459,
+        "standard": 56429
+      },
+      "result_hash": "dcf2809dc2f04d028aff4be5f3c553b9fd2039087cc1e357b2e5314cc24e93ec",
+      "source_dep_count": 360,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-015"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 46952,
+      "export_record_hash": "af5e5810be140ca525a0b1f1f8a4c4cd08252a8f4b4d94addb4a0faeea57371f",
+      "findings": [],
+      "omitted_count": 283,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "8df4b68fd31accd33a33247843f8f119d35a76644d96e9746585982398f7f17a",
+      "prompt_bytes": {
+        "mathematical_compression": 47731,
+        "source_concision": 47552,
+        "standard": 47522
+      },
+      "result_hash": "66cc91b386a6a3ee7f8f3538860deb18e39199e0c014d33d805d18b21baa44a6",
+      "source_dep_count": 304,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-016"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 44341,
+      "export_record_hash": "9e8f918068711e294448b0cff55e280b1092301f8569c98c88b705bd41887fbe",
+      "findings": [],
+      "omitted_count": 200,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "66c06852885f7b3d1c1da7520aae4678832ad8c8207b2d0318d3f83f0cabd4be",
+      "prompt_bytes": {
+        "mathematical_compression": 45204,
+        "source_concision": 45025,
+        "standard": 44995
+      },
+      "result_hash": "4b23080e5e7e313bc3ea16ab1585cd9250e9bd1624993316e6c22284a093433b",
+      "source_dep_count": 284,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-017"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 43119,
+      "export_record_hash": "7689f37605b1a56d9f1e4f021cc506fefcf2fa1056281f9f86349355f0ad82f0",
+      "findings": [],
+      "omitted_count": 206,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "8be449979e28b5b6cd02713647e489f0c2635bab736d9346b9dad59a6a436033",
+      "prompt_bytes": {
+        "mathematical_compression": 43824,
+        "source_concision": 43645,
+        "standard": 43615
+      },
+      "result_hash": "39254906c33a8b2ba2692828c98e6a52d858a87c840bf3fca773b23214aae596",
+      "source_dep_count": 229,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-018"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55772,
+      "export_record_hash": "99acfed76e05d404c79bd7341c72e9d5272593e8dbb1a4ba92f69cc9b2788e84",
+      "findings": [],
+      "omitted_count": 193,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "7ab137285f09a758fd8252e1ff95e236a5fb6d0da751fa710d0b3860d2b76106",
+      "prompt_bytes": {
+        "mathematical_compression": 56476,
+        "source_concision": 56297,
+        "standard": 56267
+      },
+      "result_hash": "bc552813676fb3832410ba3fd9fff7c13a59179862eb43401f383fe42a66f4b7",
+      "source_dep_count": 383,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-019"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55917,
+      "export_record_hash": "9db8bf46846179fb403ad6938e6e4421e9531b2fef91ac567a83fd99007ed1d1",
+      "findings": [],
+      "omitted_count": 219,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "26cec82b4997b503caaf4b52f291ba9e2119034d735f8db81b3fcb311b292889",
+      "prompt_bytes": {
+        "mathematical_compression": 56969,
+        "source_concision": 56790,
+        "standard": 56760
+      },
+      "result_hash": "be001ea970bdfb511e1b8f477a539c2ca41d0da5af6706330a9b679d93ebff9b",
+      "source_dep_count": 315,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-020"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55997,
+      "export_record_hash": "e43be0a6ad672eecb67d66027e8af734f2d177559434be5dfedbc4c56dedd864",
+      "findings": [],
+      "omitted_count": 354,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "feb12c502e097d29611aa320ac4b22100aa484e7831bd48a2da8a214915473ea",
+      "prompt_bytes": {
+        "mathematical_compression": 57719,
+        "source_concision": 57540,
+        "standard": 57510
+      },
+      "result_hash": "978a6922876cb37bcb65acd401c6758c784a4ba607c67fa573e54343797f487b",
+      "source_dep_count": 259,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-021"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55831,
+      "export_record_hash": "2d8ec5d86fef8d851459f0a287f299c5f838c0f3c5e5a7b4bba58263a74816c3",
+      "findings": [],
+      "omitted_count": 387,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "d864a30247483845b6bb453e069dad48a2e0b2c486ff50b7893b6976fd977efd",
+      "prompt_bytes": {
+        "mathematical_compression": 57123,
+        "source_concision": 56944,
+        "standard": 56914
+      },
+      "result_hash": "b07af14df25ec4b16ad870b914afa71236f44bc3f6588c95d46c7e37480529bd",
+      "source_dep_count": 287,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-022"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55866,
+      "export_record_hash": "2b3ec65a59de3e49c87e9977b5950c6ee0aced9711e2e4ae98e1556f63f36b63",
+      "findings": [],
+      "omitted_count": 346,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "4c8c85a69f54ca563afab60c3588d4f4609cc5b2993a5f8be04f8d933515ea63",
+      "prompt_bytes": {
+        "mathematical_compression": 57588,
+        "source_concision": 57409,
+        "standard": 57379
+      },
+      "result_hash": "3da8c231e164726d9eb88b9b203c2f6bd650296bb7f34d4866fa1e035d3f24a9",
+      "source_dep_count": 280,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-023"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 26654,
+      "export_record_hash": "726ba4b426b3cfd34b69bfc481d5d9a62eb30bdc9bec722be3df6e82218dcd36",
+      "findings": [],
+      "omitted_count": 43,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "b58fd5151448923f10e97346d4c57378f2644464d16e49f8a15693695c35ac26",
+      "prompt_bytes": {
+        "mathematical_compression": 27731,
+        "source_concision": 27552,
+        "standard": 27522
+      },
+      "result_hash": "16faf024599841c5f5caf9b2d06281ecdf8dce43a5aa034062c9d3d6556031b7",
+      "source_dep_count": 98,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-024"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 33871,
+      "export_record_hash": "3d76aebea5043297d505a38e454debb992a2f20827e2e19e47ecff95efd02da3",
+      "findings": [],
+      "omitted_count": 99,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "b016fa44ff26101df72ecf5e9c3016f94fb35db8d2276851b272fd469dd6df2e",
+      "prompt_bytes": {
+        "mathematical_compression": 34907,
+        "source_concision": 34728,
+        "standard": 34698
+      },
+      "result_hash": "250dece9de6934c308094d0781534ca449b135b699efe94c96ceb721051574c6",
+      "source_dep_count": 130,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-025"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 33359,
+      "export_record_hash": "7244b39e7dca773e1ab67ef914f51efca45c523a71cbabb91c52c677f0ed95df",
+      "findings": [],
+      "omitted_count": 103,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "724a26d614f795d3622e9291a6bf147efbb160cbde57d7805fb5e10796b9e720",
+      "prompt_bytes": {
+        "mathematical_compression": 34032,
+        "source_concision": 33853,
+        "standard": 33823
+      },
+      "result_hash": "570621d7457149fc9b8cef479cd10e99e3381ffed9e4e906dcc7c52312fb88b4",
+      "source_dep_count": 188,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-026"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55900,
+      "export_record_hash": "1dfbda2d4437b8973ea9378e045eec9e81aaf7275362cabe136bd3e0b0b4ceca",
+      "findings": [],
+      "omitted_count": 172,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "ddac09b177f9276e249bf7c21f42d9a78c449287e218107b4b6fe68277d24936",
+      "prompt_bytes": {
+        "mathematical_compression": 57014,
+        "source_concision": 56835,
+        "standard": 56805
+      },
+      "result_hash": "2e9aba6565711551a1ad52782d0cf5f6c741dc95d56cf6a0ca1ab7fd3f05cdc3",
+      "source_dep_count": 302,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-027"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 51638,
+      "export_record_hash": "25485a98e6fcc84557f70393eb36ac058c5f3ac7cc8eba1e6dc1e0b26d5786c8",
+      "findings": [],
+      "omitted_count": 174,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "010167d5e02593e15b7a34098171428c2f33ec370fac13116ef05adcd12d38fd",
+      "prompt_bytes": {
+        "mathematical_compression": 52787,
+        "source_concision": 52608,
+        "standard": 52578
+      },
+      "result_hash": "5acfea44d833e04cfbe40e71fa451e2bf9c3695d2ca4675885c71f68c7ae54f6",
+      "source_dep_count": 274,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-028"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 38656,
+      "export_record_hash": "287183de8dcb30900060bc8e0e320306f67d4728423770e88bf409b553ee7174",
+      "findings": [],
+      "omitted_count": 147,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "0dbb02274c3e8bce4e14babda4b6dbf2cab050bd8819ac3571836d2bbf33ee4d",
+      "prompt_bytes": {
+        "mathematical_compression": 39664,
+        "source_concision": 39485,
+        "standard": 39455
+      },
+      "result_hash": "aefe45af79deb9b8dc0d5a63fb2b1684b6c2c9257215c8b53343b84c0f27df31",
+      "source_dep_count": 220,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-029"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 10077,
+      "export_record_hash": "622855574846e26e2dffa749aac8d80a9007078d24f5f85e3c32651e2c2b6298",
+      "findings": [],
+      "omitted_count": 38,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "c4d54f36bc5dc3d532b9f6f3c2f334c54c169e55dc0d39e57176dd8aa27f1aaa",
+      "prompt_bytes": {
+        "mathematical_compression": 11164,
+        "source_concision": 10985,
+        "standard": 10955
+      },
+      "result_hash": "7430dbad2ff09a6efe0c79e7b7b47a703c28c63a0e09f3e296922e70c5f96d08",
+      "source_dep_count": 67,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-030"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 49981,
+      "export_record_hash": "a412841e5b95b8d36ef51facc0b8a58c773348c22d76ecb855489c8894a43ce6",
+      "findings": [],
+      "omitted_count": 171,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "1ac21aa2f39f63f8085c020c1f185399899c94870d7202026286648eb612124d",
+      "prompt_bytes": {
+        "mathematical_compression": 51338,
+        "source_concision": 51159,
+        "standard": 51129
+      },
+      "result_hash": "d10e013d70c14ef8c781d0ae082108ed5a744ecf1a549f361f9e85caefe62910",
+      "source_dep_count": 304,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-031"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 24319,
+      "export_record_hash": "86e21707c0e9b8e2efb7e3cbf0d35369b450a65b3b5099ad41e713d15d2cebc8",
+      "findings": [],
+      "omitted_count": 114,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "4efa2cf8d34fe8fdb1caf654fce02dcef268678676520d0a2d77df4694598f5b",
+      "prompt_bytes": {
+        "mathematical_compression": 25186,
+        "source_concision": 25007,
+        "standard": 24977
+      },
+      "result_hash": "e1bd5247fba9da3fde21e873f5a7ac280666de0950a9ab34979b231fa9b72abf",
+      "source_dep_count": 119,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-032"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 34111,
+      "export_record_hash": "a63dd8c71315a3c7cdc4f51cca55f086a2984ab9c91e59479a5ffdc862c2b125",
+      "findings": [],
+      "omitted_count": 152,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "8e366a0426e85a04d26b55aaf8d64076b1350b9f34870b5b1534c1eac71309d4",
+      "prompt_bytes": {
+        "mathematical_compression": 35258,
+        "source_concision": 35079,
+        "standard": 35049
+      },
+      "result_hash": "75c5a2798e04cefdfd34ee68e96afd885ca8da6e8f1c69cea8d2b62886db1adf",
+      "source_dep_count": 187,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-033"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 54643,
+      "export_record_hash": "03470e6d26849aaf388cd29eecb9b7eee326665e43b6371a65dd01bf15665a5f",
+      "findings": [],
+      "omitted_count": 199,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "18dc332367a9ba330296ef1b791a840b9f24d3067a1aee05391165fa46a7f659",
+      "prompt_bytes": {
+        "mathematical_compression": 55457,
+        "source_concision": 55278,
+        "standard": 55248
+      },
+      "result_hash": "3c8d172e826859b4e26b0d48140c8d3ea0314a95f17d6ee52dde3b64bd90945c",
+      "source_dep_count": 334,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-034"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 34633,
+      "export_record_hash": "b85f8dc8f3717551dfd10da263ac86f8e562460e522746e795b5d0990b4acf4a",
+      "findings": [],
+      "omitted_count": 177,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "b60a0dc4406be8da1ac8e7803a19786943665e0f09d2281174d41c9a02844784",
+      "prompt_bytes": {
+        "mathematical_compression": 36473,
+        "source_concision": 36294,
+        "standard": 36264
+      },
+      "result_hash": "7b2065d85739cf899e6cedc91a0803590611d4641a3f7570dc48ef0bca71e71b",
+      "source_dep_count": 225,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-035"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 24848,
+      "export_record_hash": "8eec1cce37866dbcfc0494b72fed3b6c5897efaa15433a0b0e343a77ac61478a",
+      "findings": [],
+      "omitted_count": 72,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "c542f1a456868853947614b27f8de4da3dbdb1825805e67288c5412baaad6e0c",
+      "prompt_bytes": {
+        "mathematical_compression": 26102,
+        "source_concision": 25923,
+        "standard": 25893
+      },
+      "result_hash": "1fd39abe6a1f524e367d11c851460a3aea57e563c014157846cf1fb2e342f2e3",
+      "source_dep_count": 128,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-036"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 29480,
+      "export_record_hash": "95928d70788fff9ad8d8d28bd1a79b120b1c6b0b8b240771126b7cd3b38805cc",
+      "findings": [],
+      "omitted_count": 113,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "a1b46ec671025bcb4bf26236f9d1cc1194252f260ca3accab5ba7d82f7ba5227",
+      "prompt_bytes": {
+        "mathematical_compression": 30765,
+        "source_concision": 30586,
+        "standard": 30556
+      },
+      "result_hash": "fa8ff374c968041df9d7bb075985e1da982f8865d54738e13cf938b176adcf36",
+      "source_dep_count": 187,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-037"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 32286,
+      "export_record_hash": "434a4687a243434a6bc0113c92257bc07fb83378b888dd277af9376267c54e7d",
+      "findings": [],
+      "omitted_count": 81,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "3d3d433b11804672a8784672e1721e627d74fcba97739bb2be10413913c72dd5",
+      "prompt_bytes": {
+        "mathematical_compression": 33878,
+        "source_concision": 33699,
+        "standard": 33669
+      },
+      "result_hash": "24a2cc064a2de1a3369b2eee34df042cf539aece9ff9fe12b337734693ae2e05",
+      "source_dep_count": 111,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-038"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 29569,
+      "export_record_hash": "06dc2bce29729494b0fb6464acbed3a934bc7de09fd1aacee7876794cf225ccd",
+      "findings": [],
+      "omitted_count": 118,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "7e4d8b0acea52abdb35ec7569755933cd79264c9c3a70f3ecc3989362d51d7ba",
+      "prompt_bytes": {
+        "mathematical_compression": 30576,
+        "source_concision": 30397,
+        "standard": 30367
+      },
+      "result_hash": "1dbd9025d1a1a198b746f5219c89600bda3f8cc343edfed7923efd26fa46d4dc",
+      "source_dep_count": 198,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-039"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 28900,
+      "export_record_hash": "47826939988ff60f1423c296bcc0342fcda53f8ac63ee586520d65246077a1a1",
+      "findings": [],
+      "omitted_count": 117,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "eb1be5cf1e82cfd541c65253258d2f6cc28fe61c7072a64de683c1ac4a80db29",
+      "prompt_bytes": {
+        "mathematical_compression": 29788,
+        "source_concision": 29609,
+        "standard": 29579
+      },
+      "result_hash": "b2b9dc9da1f5fbb6485420b51ff5a7b745d6d44f7dad14266c04ab78cfd82ec3",
+      "source_dep_count": 174,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-040"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 53749,
+      "export_record_hash": "eb160b5054f79b7473d1072d60412e5d30ddfc4bb93d8b83c721a991d1522fb9",
+      "findings": [],
+      "omitted_count": 231,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "5572a4ba1729c91a99d00c20ccc1de0a44ab48603c339b4f79c72f584214dc14",
+      "prompt_bytes": {
+        "mathematical_compression": 55079,
+        "source_concision": 54900,
+        "standard": 54870
+      },
+      "result_hash": "b330d6871a5e4100787a1e3c0b6f7a073f3b9caf7af3ce92857978a47a4e6378",
+      "source_dep_count": 347,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-041"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 32264,
+      "export_record_hash": "649098d018b9b3a321d18b30a8303ae403aa1e7ea2d6a4b0f51e646dd7a651c6",
+      "findings": [],
+      "omitted_count": 63,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "22623af9b7940dc8ea05de7465cb4713d0164e29d21bec0ef901a5051a0deac3",
+      "prompt_bytes": {
+        "mathematical_compression": 33215,
+        "source_concision": 33036,
+        "standard": 33006
+      },
+      "result_hash": "29df0093b97e673a0995bf1dde5c63fb3cf6aee2e6247a990c12d28056e53d9c",
+      "source_dep_count": 150,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-042"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 23796,
+      "export_record_hash": "7eee673a8efe3da6256eb6c2a740e682b4d16e4eb816cc589d6d60be344e4eec",
+      "findings": [],
+      "omitted_count": 55,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "c4509952566f81fa7079e9fc7588068262823eac2217d60f3326f9d4ff6fca6b",
+      "prompt_bytes": {
+        "mathematical_compression": 24798,
+        "source_concision": 24619,
+        "standard": 24589
+      },
+      "result_hash": "6f9f135f52a0c8be484dd4b4475cb92ce61724dbe7681bb7c85410bf003fd8eb",
+      "source_dep_count": 133,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-043"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 16110,
+      "export_record_hash": "51c49fd316148a690f70fdecc615079a7ee7b131f9742981601b777b4f727e2a",
+      "findings": [],
+      "omitted_count": 31,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "a043f99722f81c9f6612db145a78ff4e39cff6a63f7ae3241c68d24e20a0d343",
+      "prompt_bytes": {
+        "mathematical_compression": 17264,
+        "source_concision": 17085,
+        "standard": 17055
+      },
+      "result_hash": "3bc1dd452e7247482fbfef8d173f2f14da3d967dd3999cc9b5638565eb077525",
+      "source_dep_count": 102,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-044"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 40751,
+      "export_record_hash": "8ce00730b706af853594475ef2df8a5efeeb449dd1ff218fc5e12143a8450e6f",
+      "findings": [],
+      "omitted_count": 77,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "91fec5a6c04ee0108798b29e7e26909a1d60cbe8e34b25e926772b773a77f410",
+      "prompt_bytes": {
+        "mathematical_compression": 41618,
+        "source_concision": 41439,
+        "standard": 41409
+      },
+      "result_hash": "f2bbfb6f67cd26e460b529a6866d37d5dcd21bead2b1e41cb7d26eae34af01ee",
+      "source_dep_count": 221,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-045"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 23295,
+      "export_record_hash": "a7c1330302767177eac2799b57e6bf200f31c50c89c5d05e020ca7b279915295",
+      "findings": [],
+      "omitted_count": 53,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "2acb937659e5777888c7d8f108e73ba084d7f6e43ef4aeafa6d602faab7a4b06",
+      "prompt_bytes": {
+        "mathematical_compression": 24221,
+        "source_concision": 24042,
+        "standard": 24012
+      },
+      "result_hash": "d9e727334cb062b348abb6a24d6249ba5118be3f8bfa163076aff2fbfa1ded37",
+      "source_dep_count": 162,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-046"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 27507,
+      "export_record_hash": "b8aca979ff95be845449e2d036d2c793b4248792af951989bb2f4552064dd12a",
+      "findings": [],
+      "omitted_count": 72,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "58890ec3382c6e431d06a2f82fb77ebd81e7dd72dc7fcebfe158d08bad3763c5",
+      "prompt_bytes": {
+        "mathematical_compression": 28927,
+        "source_concision": 28748,
+        "standard": 28718
+      },
+      "result_hash": "de4e97696140033a62e8cf6c521a4b0eb73902964fa5b0478644bd51069438ad",
+      "source_dep_count": 108,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-047"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 19976,
+      "export_record_hash": "e464efced43d224ee401cdcb1bb5a2ecf899a182a5f4a57eef080ec67b497d67",
+      "findings": [],
+      "omitted_count": 49,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "4578eb2dd65fc86c56da257ef66eb1620f14740d1b17c96d28865bd085c0cdeb",
+      "prompt_bytes": {
+        "mathematical_compression": 21076,
+        "source_concision": 20897,
+        "standard": 20867
+      },
+      "result_hash": "ac07c583e0d13076112ebbf2f63e34523dfec8e219cb5cba6356fd72299ec266",
+      "source_dep_count": 151,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-048"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 12622,
+      "export_record_hash": "8ab5acc7377d682b4903ddafac226e91c4dd31b3b4bd1997778ab02ea745db5c",
+      "findings": [],
+      "omitted_count": 48,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "05929a595cb22ffa22bc9887229e10b987caf7d8a689f29e964e4cf794fa89bd",
+      "prompt_bytes": {
+        "mathematical_compression": 13503,
+        "source_concision": 13324,
+        "standard": 13294
+      },
+      "result_hash": "a340e5bea82d0986a903e9e8f17d66766bda1fea03e9b87ed4d1b900a7d59486",
+      "source_dep_count": 81,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-049"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 21933,
+      "export_record_hash": "30441ff851b162daeda3741f1c1971ac1146d32279efa18888266e85ee65653d",
+      "findings": [],
+      "omitted_count": 63,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "a08091a8381053d449a06b299bf7c4978691784a7521110592eeccbe0a4d60e9",
+      "prompt_bytes": {
+        "mathematical_compression": 22681,
+        "source_concision": 22502,
+        "standard": 22472
+      },
+      "result_hash": "c5691a04d47d7a308cb1e460832222d46b4b4eb2ab2e35d2aa5dce324bbd9128",
+      "source_dep_count": 153,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-050"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 21909,
+      "export_record_hash": "7ae78411df7ed2b682ee821ab4d5c5c400e8c6c5d26cf796ea26f0351526ebbc",
+      "findings": [],
+      "omitted_count": 81,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "72b5137d9762e80dd9ab8ae0338e1330ba51f7871637d2b812747628a2bed436",
+      "prompt_bytes": {
+        "mathematical_compression": 22780,
+        "source_concision": 22601,
+        "standard": 22571
+      },
+      "result_hash": "1d25657bafd6a6515ea7495d26d42893cdbcd184623ee375aaabd9054872e256",
+      "source_dep_count": 172,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-051"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 38000,
+      "export_record_hash": "84cc6756a379331ea002aa5209ff6e3f42394c63324cf6c4300421014463bc17",
+      "findings": [],
+      "omitted_count": 120,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "1dfb49d6f28b98d2a3195c0bf8f7493d634562555a4f6777152a85946e4ab9d8",
+      "prompt_bytes": {
+        "mathematical_compression": 39371,
+        "source_concision": 39192,
+        "standard": 39162
+      },
+      "result_hash": "62e19856197089158fbe37d3b5badfb5d978639b675ede0fe25be70bbbe9a53e",
+      "source_dep_count": 220,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-052"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 32280,
+      "export_record_hash": "eedec806e3fed07c24b4f52deaf7dd0976a4d995540654d713a2f9c5b75ed810",
+      "findings": [],
+      "omitted_count": 101,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "92763cdfe9c341e5e1d7974e25de51cd8dae609d89e04840aa473fe28f0566c7",
+      "prompt_bytes": {
+        "mathematical_compression": 33520,
+        "source_concision": 33341,
+        "standard": 33311
+      },
+      "result_hash": "d0bc76e10706a5ec123efcee91c93e83bb59498c0946f579b4e82078932d6fd5",
+      "source_dep_count": 177,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-053"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55887,
+      "export_record_hash": "ff798af509d7079a6bbefb14edbda35246ec60a18f0e61cd14ac0c321f04cc09",
+      "findings": [],
+      "omitted_count": 115,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "16d52b0cf822a03f8734b99ad27a3f81a0970b002101ea1556a5054cb57fa85c",
+      "prompt_bytes": {
+        "mathematical_compression": 57159,
+        "source_concision": 56980,
+        "standard": 56950
+      },
+      "result_hash": "da59114f88ac0ae11f8e942a00f982d1cbda980cda88dfbdf76a814b4aa5b98c",
+      "source_dep_count": 191,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-054"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55110,
+      "export_record_hash": "533466cdf4f3433efe93376d23cf4a52e133542b0f87da24f6af525a4489a8f2",
+      "findings": [],
+      "omitted_count": 127,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "c38d17e852ec1e93f87131a8341103d2f0a28d0e1fb21b79368a2dcaff2dfea5",
+      "prompt_bytes": {
+        "mathematical_compression": 56456,
+        "source_concision": 56277,
+        "standard": 56247
+      },
+      "result_hash": "38cc14519282b8bc741cfa22078375c29edc634f108d6ca02eb82483ad41d712",
+      "source_dep_count": 201,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-055"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 28174,
+      "export_record_hash": "1dbd2b6cb6718053da8f66ef06c0d8be6a1e6d2f495e1bea176b46dd98707b1a",
+      "findings": [],
+      "omitted_count": 46,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "11ff6d06876d6c6402eb75551b7ad2520fb8805956165bd1b013ffc699453b8b",
+      "prompt_bytes": {
+        "mathematical_compression": 28975,
+        "source_concision": 28796,
+        "standard": 28766
+      },
+      "result_hash": "94b707b7ac2d75f89074e0004f189bc1139a766e2e68fa5596693b40b35f87ba",
+      "source_dep_count": 104,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-056"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 36455,
+      "export_record_hash": "07a0f5fcc6997a3a06e0de7eadd7d401753994912dc156ed6e249184dbda917b",
+      "findings": [],
+      "omitted_count": 102,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "1c269fc97d187deb6d9c686e1dc9733b0e42055bf1919333ae0d83a834dd5d3a",
+      "prompt_bytes": {
+        "mathematical_compression": 37509,
+        "source_concision": 37330,
+        "standard": 37300
+      },
+      "result_hash": "6e78a43ccdb64aceb74f199164207f66126c243bf3b1b8df75636a16df7c31b9",
+      "source_dep_count": 243,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-057"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 27927,
+      "export_record_hash": "bf4ac834923bf58fde7a198dfb884d49d51db8c1988595421dbd011e949760be",
+      "findings": [],
+      "omitted_count": 62,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "0f4624e3be1eccb222c9d72b3edc3367d543180b4e6dbc70032842441413fa61",
+      "prompt_bytes": {
+        "mathematical_compression": 29282,
+        "source_concision": 29103,
+        "standard": 29073
+      },
+      "result_hash": "11dd3d4ff0c37ef4c88515c1d2c4dda9d0763aa73bb1066e0780486698f9cf37",
+      "source_dep_count": 150,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-058"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 36649,
+      "export_record_hash": "c690634299ba2dea75e67f31ebc59ec03ee62234540ec07e036f8209a67fe738",
+      "findings": [],
+      "omitted_count": 125,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "193fcd31a941ac5265ffb925849245dc7e5a73c67a044a414a61c5e6d36ce428",
+      "prompt_bytes": {
+        "mathematical_compression": 37484,
+        "source_concision": 37305,
+        "standard": 37275
+      },
+      "result_hash": "a17b287f355e482a6befb35042c81769fbeba0bcf9a64dc492097b8386bbd53e",
+      "source_dep_count": 166,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-059"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 32406,
+      "export_record_hash": "a97e1d3dcc77bc9f5c2ae9f019e341153045435e528451a028e406f0d0f66d19",
+      "findings": [],
+      "omitted_count": 89,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "8c6358e1d0b8e0df442a4df58fdce7111f00b8fcff8cb709a715d778232b723c",
+      "prompt_bytes": {
+        "mathematical_compression": 33898,
+        "source_concision": 33719,
+        "standard": 33689
+      },
+      "result_hash": "463453b34c21df9eea5f3f78657f787e4bae0956a4c42fcce3c738ea418562dd",
+      "source_dep_count": 142,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-060"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 50694,
+      "export_record_hash": "9340edca6db4725bdbfdcb82b8b78598634bb1203304e9e0384f49a60de3cce0",
+      "findings": [],
+      "omitted_count": 217,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "80dc2ed64802a1be17bd30916a6f716497ebb78c92935f2587086232036e4ffa",
+      "prompt_bytes": {
+        "mathematical_compression": 51421,
+        "source_concision": 51242,
+        "standard": 51212
+      },
+      "result_hash": "ca48d1ca289cc9660ad85f4d05e092b63f9873d68554856fc2fff313d410c7a4",
+      "source_dep_count": 366,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-061"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 31594,
+      "export_record_hash": "bcc7eb53618bd525c22c4af0cbd33264b799a4f8cf3b88998b97cc08825ab179",
+      "findings": [],
+      "omitted_count": 121,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "4c715438dadaf425ee08cc39d90218670d91dc5259e25be3ac64249e5290e0ef",
+      "prompt_bytes": {
+        "mathematical_compression": 32584,
+        "source_concision": 32405,
+        "standard": 32375
+      },
+      "result_hash": "92583c9c3302ed2de10220a0408c1e0c74b54d98897ca3021eb01607e3c6a131",
+      "source_dep_count": 259,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-062"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55852,
+      "export_record_hash": "1a98b6cefb8a54024ca7f5e8d3a642f8e246a74693fb3184477f4372276948e7",
+      "findings": [],
+      "omitted_count": 185,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "235eb76d2498dbc23f58bb3f994e0f6ea57db7ccfb742fc0b4da259f193a6ce1",
+      "prompt_bytes": {
+        "mathematical_compression": 56876,
+        "source_concision": 56697,
+        "standard": 56667
+      },
+      "result_hash": "cdc1777e82187e6648491661f26bd4bb13bb854608ccf9e4561ac43371f0563a",
+      "source_dep_count": 397,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-063"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 28611,
+      "export_record_hash": "169ae29fe7fbb5113aa3e60e49f9d4431aed6f28fff7ebe0a8e058af9d776d2a",
+      "findings": [],
+      "omitted_count": 101,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "e24883d11680d1c88fbaebe2a70c1bf377202568bcf9570db686059049cb4db6",
+      "prompt_bytes": {
+        "mathematical_compression": 29543,
+        "source_concision": 29364,
+        "standard": 29334
+      },
+      "result_hash": "e082cfd1f2fd1a7172defc4506e0a3139fa330f2cff9d7cc6ead66ee0798de41",
+      "source_dep_count": 159,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-064"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 43867,
+      "export_record_hash": "fc26c1b6d4e7599af5312a64042e4a592c8bea885306060bf7ad53b45dba55fb",
+      "findings": [],
+      "omitted_count": 177,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "5b2eac545e5aff0639f5fcef2f0fb7060c70957dd59584e7e46f950c85b7db0a",
+      "prompt_bytes": {
+        "mathematical_compression": 44632,
+        "source_concision": 44453,
+        "standard": 44423
+      },
+      "result_hash": "e399a43322d1ae5650c9bde51ba725cc88859d5d36c2be2cab55f80c43a1c78f",
+      "source_dep_count": 323,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-065"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55796,
+      "export_record_hash": "3b10f85c9d71215e898d52014ad55faa9bd7889048ee880215c18dce35395aa1",
+      "findings": [],
+      "omitted_count": 261,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "b1f6990a9387fb51005f18ef29d0856678bc3815c63c85be535833e987b3d9d7",
+      "prompt_bytes": {
+        "mathematical_compression": 56408,
+        "source_concision": 56229,
+        "standard": 56199
+      },
+      "result_hash": "772bc71e78f9ec97005b2dff4a7e4b8d66010ae41b9850d5bd90ff5c5877ff5a",
+      "source_dep_count": 392,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-066"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 21212,
+      "export_record_hash": "9bb774225518895fea3c6457056c36b6cfba174be309dff6d252ccba0abd03a5",
+      "findings": [],
+      "omitted_count": 70,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "cc547742e33ebc32d0d5ade2089c1f0334616291930ad533054ac335579554eb",
+      "prompt_bytes": {
+        "mathematical_compression": 22383,
+        "source_concision": 22204,
+        "standard": 22174
+      },
+      "result_hash": "3f4b6d937a4cd0eba3f1ffd7610dfe85c3d019990c1c2a59d178231f9a32662d",
+      "source_dep_count": 113,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-067"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 23073,
+      "export_record_hash": "049499fa076e8f7851b99f7880b3bb9d4a889474c5ec570ab3169974d4ec2d78",
+      "findings": [],
+      "omitted_count": 144,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "a5ee452bcb3dc297ecbdb3bb524f4bb91e9bb4c63615e29a47f714f2a761f1d4",
+      "prompt_bytes": {
+        "mathematical_compression": 24243,
+        "source_concision": 24064,
+        "standard": 24034
+      },
+      "result_hash": "3cf9d8944331983329359fcc28314f47245b034773298639d6c9766f68a6718d",
+      "source_dep_count": 105,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-068"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 18266,
+      "export_record_hash": "c75c1f6b0bba9a2ab7e5375b176ca6fa1a5569cdf16da3c4a52538389803151e",
+      "findings": [],
+      "omitted_count": 129,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "77965c23cae931d56217e38f6f42d476af95e277fa270d624c309bf69fb85e4d",
+      "prompt_bytes": {
+        "mathematical_compression": 19476,
+        "source_concision": 19297,
+        "standard": 19267
+      },
+      "result_hash": "ecaf738257e979bf5f7c38a9717b36f04f7281ba4bccb9aa475f88e601621218",
+      "source_dep_count": 120,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-069"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 37292,
+      "export_record_hash": "702c7da53a53d1c2fdad39362cb57e2860517096383b38d7071f764b7db15c33",
+      "findings": [],
+      "omitted_count": 187,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "759627527848aafdc021221f26a4f86a59073ef0ec12e4465cf027c409401cda",
+      "prompt_bytes": {
+        "mathematical_compression": 39018,
+        "source_concision": 38839,
+        "standard": 38809
+      },
+      "result_hash": "3447a8c29f5427a79791623fee60c85a971391d5c83dcaa02f97634f74924d73",
+      "source_dep_count": 255,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-070"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55870,
+      "export_record_hash": "f4ce7092c793004bd7aa6787d74d891491d2252a5e0c45beae58590f86a073c5",
+      "findings": [],
+      "omitted_count": 166,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "91822db9d31db9ce0ad2d1e171621f1ecf5c741324001dd362af1ef7f27d2927",
+      "prompt_bytes": {
+        "mathematical_compression": 56903,
+        "source_concision": 56724,
+        "standard": 56694
+      },
+      "result_hash": "62801d9569e40c2e22a983cb29a1ce1452aeaf272d9e229226d5e3039a9476d4",
+      "source_dep_count": 341,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-071"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 22683,
+      "export_record_hash": "cd821efcec7af460ba739ab63811231390a33190d1fdc294a2665704579f3802",
+      "findings": [],
+      "omitted_count": 83,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "ffb21842890d8e0d90a5916ff1752ee37640366e75a61ac8e40891b592c23aa9",
+      "prompt_bytes": {
+        "mathematical_compression": 23593,
+        "source_concision": 23414,
+        "standard": 23384
+      },
+      "result_hash": "540ab72a11dde6dcb7b2f1333c48861c8aaf24e3ea1dc6abb204219a1ac5fc07",
+      "source_dep_count": 151,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-072"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 46019,
+      "export_record_hash": "3de5b481edc1bc590ba937c15d324518759170767f40495abf32e955f4e79347",
+      "findings": [],
+      "omitted_count": 144,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "5da80850cb556c53f6e5fee0c1ff3b59ae5b460437aa0ea4e6364e2c3c4f5441",
+      "prompt_bytes": {
+        "mathematical_compression": 46902,
+        "source_concision": 46723,
+        "standard": 46693
+      },
+      "result_hash": "fb35ed8e2b1ccc4d13dc6a277dd084a7ecb70d1278b2c179d851aeabd01bca92",
+      "source_dep_count": 264,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-073"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 26803,
+      "export_record_hash": "bc9947ab95d152ae2f26e4707791a4bff044ed62ea2baa91801fc594626281e1",
+      "findings": [],
+      "omitted_count": 103,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "12aaff8e656adf96ac78e0fca3614b51671e2d94979ac144bd64a254989d1ee9",
+      "prompt_bytes": {
+        "mathematical_compression": 27929,
+        "source_concision": 27750,
+        "standard": 27720
+      },
+      "result_hash": "0e64b811068fecde053f7a2b095ebd59775a7f928f860c69c687721ea46e2d2e",
+      "source_dep_count": 164,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-074"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 17254,
+      "export_record_hash": "ec0713e282a10feafa9c0503b2fffd39b9e01bce34bd9e861c277f8093bb94d4",
+      "findings": [],
+      "omitted_count": 100,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "4ca8e0ddf2eb94387dd7a1790ffda0b68357b64a22208b82e0c60efff49da733",
+      "prompt_bytes": {
+        "mathematical_compression": 17967,
+        "source_concision": 17788,
+        "standard": 17758
+      },
+      "result_hash": "e6b95a44081e3ca090b1893ffa123042594f0acc941e80b9d938ccbeaccf5652",
+      "source_dep_count": 133,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-075"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 40181,
+      "export_record_hash": "9a500fc7d35f5837e8b0763d3c1d409a45fc4fdbc1a1407ab9db7b6becb9e248",
+      "findings": [],
+      "omitted_count": 139,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "c75c70e162dfc54050b38ac16017e24f3344378c974dd634388a280a904287d4",
+      "prompt_bytes": {
+        "mathematical_compression": 41124,
+        "source_concision": 40945,
+        "standard": 40915
+      },
+      "result_hash": "6c0f1de543ba3c9446c004049f617014b3d5f8f35b71e4ab348832b1437a2b64",
+      "source_dep_count": 266,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-076"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55727,
+      "export_record_hash": "f2f22a235999b26f6bbaf05620184b99b8897ae2cd400e1e946195c8f8bf9c28",
+      "findings": [],
+      "omitted_count": 178,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "6f9ee72af37ea0a23f98184b4ffffce77e078852e3f2972560b1b18fb2d11e96",
+      "prompt_bytes": {
+        "mathematical_compression": 56558,
+        "source_concision": 56379,
+        "standard": 56349
+      },
+      "result_hash": "a4721875d13fec52e5204905809ed0fbe8fa77f73ccc96a15adfce0d72a67ec5",
+      "source_dep_count": 329,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-077"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55979,
+      "export_record_hash": "97bc8679e6790e4361837d88086e128cb9c33d2056b31f964063ab7c4d0cd2d1",
+      "findings": [],
+      "omitted_count": 223,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "6317984d1529dd81506f1a1a6668079818afab68c4beec9d6da7c088460bf881",
+      "prompt_bytes": {
+        "mathematical_compression": 58156,
+        "source_concision": 57977,
+        "standard": 57947
+      },
+      "result_hash": "183401e6000a15b1f4ae0bc728d5a161a368ba1a444173db0c3e0d7e5d1ab370",
+      "source_dep_count": 260,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-078"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 40550,
+      "export_record_hash": "d96f5cb1ec4e024da506a354452debb3c89c7b3155d6409c87e5e1e08e76bc71",
+      "findings": [],
+      "omitted_count": 147,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "0d45aecef37b9bfe07d9b9d7ba1f8624ecc606698ded0ea2845deaaf8345380e",
+      "prompt_bytes": {
+        "mathematical_compression": 41059,
+        "source_concision": 40880,
+        "standard": 40850
+      },
+      "result_hash": "3b4fbdfa13b344d3ff29a6dc6b64fb08add7fbfe8e302e2c6802e2650dfd025d",
+      "source_dep_count": 294,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-079"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 43735,
+      "export_record_hash": "3acb7779c6efa390e8472b4df3ad4fb7683e20fdd11e1f08b1b8d61fbd79258c",
+      "findings": [],
+      "omitted_count": 108,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "eafb27e1b2e6c9ac14f24f533687156de00494807a0ea77f151b22a49650fab3",
+      "prompt_bytes": {
+        "mathematical_compression": 44501,
+        "source_concision": 44322,
+        "standard": 44292
+      },
+      "result_hash": "6102d98eedadc61b3ffdc5e6cac5d645ae9e8fe888986f46a4ef544603119d51",
+      "source_dep_count": 230,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-080"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55894,
+      "export_record_hash": "810055a0495742f37466b3efabdab67a4dff1c7b0c9efcd2ec989ceb19a92092",
+      "findings": [],
+      "omitted_count": 197,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "adca7ba56404ff8d6ceeced4b1ef0521b6d18a3af857ff95f73d6c53cfd7b978",
+      "prompt_bytes": {
+        "mathematical_compression": 57469,
+        "source_concision": 57290,
+        "standard": 57260
+      },
+      "result_hash": "27d57ca1cc0c634fd8043eb638b7d51326da9e3c067df7456df069df40519993",
+      "source_dep_count": 260,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-081"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 40451,
+      "export_record_hash": "2a02e9cdf8d0c754f9a4d85080fc59d51269bcf0c779c27aea695f2eeae6ed1b",
+      "findings": [],
+      "omitted_count": 148,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "2f75796afac74ced449eed25d86fbdfe9453ba2dc7b3fa3bd1d905492da76323",
+      "prompt_bytes": {
+        "mathematical_compression": 41595,
+        "source_concision": 41416,
+        "standard": 41386
+      },
+      "result_hash": "cd66298733a062590fccfdef646b27125d57fd5abe3f8c8fb68f6561a701af7a",
+      "source_dep_count": 259,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-082"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 44219,
+      "export_record_hash": "c134e3fd9b79ac8ae2a0cb179b06a6dec91fbec2b3ecbacb79ec8e0cb7092e8d",
+      "findings": [],
+      "omitted_count": 155,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "ebda3fb5c47ff67efc02de5df83d08e46f87a78a0f805ad0966ffc07117d406d",
+      "prompt_bytes": {
+        "mathematical_compression": 45011,
+        "source_concision": 44832,
+        "standard": 44802
+      },
+      "result_hash": "aab3d6b45c301ce0253a845120e3fd89fba1ebe17e6256e72208555236302141",
+      "source_dep_count": 301,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-083"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 27645,
+      "export_record_hash": "5f7d32d410592fd4f42711eaeee9c4e652224a18b3826a25f32e293cd5570f09",
+      "findings": [],
+      "omitted_count": 149,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "b17278b06836ab5954f09ff0415eecfc42d2a3c880e85dfa18840ed11b5d72b0",
+      "prompt_bytes": {
+        "mathematical_compression": 28548,
+        "source_concision": 28369,
+        "standard": 28339
+      },
+      "result_hash": "06f851b40b509fcc05f1f9b1e8f659fc85e5b982b8c1a8dcaee41f3c3df37e35",
+      "source_dep_count": 189,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-084"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 29099,
+      "export_record_hash": "0e40d220d4c865bf90c02b499e0127078dff652b4df2336c4fd6d8c54a879dbd",
+      "findings": [],
+      "omitted_count": 165,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "c37a476d47e19c16a76a7052710aff4890bed61c40a4be6e7d9f736793d3edfe",
+      "prompt_bytes": {
+        "mathematical_compression": 29635,
+        "source_concision": 29456,
+        "standard": 29426
+      },
+      "result_hash": "a9e2baa7e6024cc9fc6180ffc80b4beb70145ea6c2f0bf70fd8d87a48d750c52",
+      "source_dep_count": 206,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-085"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 40353,
+      "export_record_hash": "168e330f1bc822ddc4ac5bbb8205be7adfd11c5a721d76eba5fdae3ea586edb4",
+      "findings": [],
+      "omitted_count": 210,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "28d710b2923d96bb4723db3c82311e15cc607b74043c60a4f5ae958466d83546",
+      "prompt_bytes": {
+        "mathematical_compression": 41266,
+        "source_concision": 41087,
+        "standard": 41057
+      },
+      "result_hash": "8e2d7ad68b6a066ee860cef8b8a3f679175e05115c35dece4fe9680ab0057b36",
+      "source_dep_count": 262,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-086"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 22856,
+      "export_record_hash": "e6a1abb36c7bc1c5fb40c1a219a639faabf75b24ea906bd5975cb1b1a67dc0d7",
+      "findings": [],
+      "omitted_count": 154,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "f3f2aeeacb683fd2640b9d4ed4eadb4082f71335cd728b3d2efe9d28a1df41ed",
+      "prompt_bytes": {
+        "mathematical_compression": 23728,
+        "source_concision": 23549,
+        "standard": 23519
+      },
+      "result_hash": "68db7a489fd02a89c63c71035203dcebb85d0f8c40817d26cc0ae28757ab664d",
+      "source_dep_count": 181,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-087"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 48603,
+      "export_record_hash": "36e76dfd2d4136e0015deb87e07a32b347f15cf4f47a57a1fcd1b868fe1c101f",
+      "findings": [],
+      "omitted_count": 148,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "012491e641ae7d66c1b764dc830161393051675810968dbbce6505d3c891f3aa",
+      "prompt_bytes": {
+        "mathematical_compression": 49489,
+        "source_concision": 49310,
+        "standard": 49280
+      },
+      "result_hash": "610c0cc7236c3dfbca0beff8768d5385299e2e410d250bc61b99e2e1931d0e4c",
+      "source_dep_count": 332,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-088"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 22843,
+      "export_record_hash": "b5d4e595e06677b3046fe43db620938c1b3a3dbea2592a0e5763f33b37b94862",
+      "findings": [],
+      "omitted_count": 152,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "7a402941522a96747d0cf3adb7f4eaae7e78ef90cdc0ceaa13e89080ee5b2e47",
+      "prompt_bytes": {
+        "mathematical_compression": 23822,
+        "source_concision": 23643,
+        "standard": 23613
+      },
+      "result_hash": "78a7eef01c53115713912afce0cdceb511cc27f9e6dc4feb428d30c1fdd2d467",
+      "source_dep_count": 158,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-089"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 39105,
+      "export_record_hash": "ab14dcc8192e94cb9cb5f54cb5e35fade23262b6f1365ad57661bbc0ae186c57",
+      "findings": [],
+      "omitted_count": 234,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "c400b0b3f83c27584d981ed8c7ee7deffe8dfbe04f5558f26a15f371023b0de0",
+      "prompt_bytes": {
+        "mathematical_compression": 39971,
+        "source_concision": 39792,
+        "standard": 39762
+      },
+      "result_hash": "e2ecf9073595deba454d1f9ef394f0bd6a97a899b2de64c9be6fcf14204d9711",
+      "source_dep_count": 251,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-090"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55844,
+      "export_record_hash": "70fd4b84cb11b020ee85fce4a880d9e2759f8f9e9a84e2016cc747d7b9e615ed",
+      "findings": [],
+      "omitted_count": 568,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "bfd166ad519de585f99232a82202329f190da281b3aeb723aa2935652f25f7cb",
+      "prompt_bytes": {
+        "mathematical_compression": 57280,
+        "source_concision": 57101,
+        "standard": 57071
+      },
+      "result_hash": "b8a23a385f9cb97ac4955720ef5ac02407c5658430f329ca6982a1d5f34fc647",
+      "source_dep_count": 285,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-091"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55747,
+      "export_record_hash": "26edb9c0be22896274188a2324846d18af19d9626dbf91f3dcc4d24d974cc52d",
+      "findings": [],
+      "omitted_count": 267,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "b99bc5067d3259743138e1a6cb7b46231fbd5c0107d72979853c82fbe6f86ae2",
+      "prompt_bytes": {
+        "mathematical_compression": 56646,
+        "source_concision": 56467,
+        "standard": 56437
+      },
+      "result_hash": "9e5a63b300806c73f6a6f3660038588c6b1e930b759245c8f6f4de4327c5ae05",
+      "source_dep_count": 344,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-092"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55771,
+      "export_record_hash": "9f1367c33a74998b8adb13863afff19d5c9ad4d8e9dc86c25ddbd24903478217",
+      "findings": [],
+      "omitted_count": 269,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "3a29d171208e76abda79ba6d7f5f8a14ba9ca04a1c8f64bc1d1c2472acf778f4",
+      "prompt_bytes": {
+        "mathematical_compression": 56893,
+        "source_concision": 56714,
+        "standard": 56684
+      },
+      "result_hash": "842d68bd97488c9560a358ecc9c474f61128b159ac1a19969c980a5fd9ca27e4",
+      "source_dep_count": 332,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-093"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55900,
+      "export_record_hash": "58a4eb783c0b9a736a8ce88776d2fd221f53d6b2324def7a6a79f46e9d36d952",
+      "findings": [],
+      "omitted_count": 303,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "86bdf0300aa6c8be4c0b25fbae01512e2b8dbc920547b139a733b30580633620",
+      "prompt_bytes": {
+        "mathematical_compression": 57879,
+        "source_concision": 57700,
+        "standard": 57670
+      },
+      "result_hash": "81df64411772c01d897093601b3337091e3f3553043e3746e1845b9e65634b3d",
+      "source_dep_count": 303,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-094"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55841,
+      "export_record_hash": "9e590a98e5bd8ea8767a070158595a32cd85fe43c089ad2e12bc7a2108434c32",
+      "findings": [],
+      "omitted_count": 434,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "ce96c158ca2123e7ae4d815a6b98b0d49aff168401355ea1dcc757466af28d16",
+      "prompt_bytes": {
+        "mathematical_compression": 56778,
+        "source_concision": 56599,
+        "standard": 56569
+      },
+      "result_hash": "654b8cc9ee5bd432dd90a08852887f3d60203ff307de4b6214856244f594acbf",
+      "source_dep_count": 235,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-095"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 35964,
+      "export_record_hash": "413de661bad1be2b3e095d969824f78c7ecbcf4b60c59c0fcaad17d2756bf9a9",
+      "findings": [],
+      "omitted_count": 105,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "eaea868acf8f7bc88519c81450228de6253c4812bb25e2ee8cb78e5c7d484b37",
+      "prompt_bytes": {
+        "mathematical_compression": 37267,
+        "source_concision": 37088,
+        "standard": 37058
+      },
+      "result_hash": "6b49c7fbd3ec195e110461f86ed4d048ba3aa17d2dab7a4526a886e713f79139",
+      "source_dep_count": 146,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-096"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 52681,
+      "export_record_hash": "a9f27c92424f2c5025a9d45e9e9c809ff96644177163603bbdc3aac84e54a478",
+      "findings": [],
+      "omitted_count": 186,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "8500ec4f82d3f646d93b1ddd6637bf6c529008a477f3885d0e631b49c7818bfa",
+      "prompt_bytes": {
+        "mathematical_compression": 53992,
+        "source_concision": 53813,
+        "standard": 53783
+      },
+      "result_hash": "117a1557911c97ef5d1c7dc05c7bbf3888756ed87dc690f3912eac2248ce294f",
+      "source_dep_count": 312,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-097"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 55752,
+      "export_record_hash": "6fef807b6161e7009fcc23df1be44bd3ac9f815aa5b4ae4c41bedd45bd110729",
+      "findings": [],
+      "omitted_count": 283,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "24bb33fc50d151fcb2471a8046a1614ed868f64031b2890f9de5d881cdf4cd83",
+      "prompt_bytes": {
+        "mathematical_compression": 56859,
+        "source_concision": 56680,
+        "standard": 56650
+      },
+      "result_hash": "61058191692d5a7eb833bedf9302aa0223889ce8d86de5c7a5edc60b8dec69f6",
+      "source_dep_count": 325,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-098"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 39047,
+      "export_record_hash": "6758f3b15b7d32791151e767345cbc748736482894f7b30dacb25c7d2b210ced",
+      "findings": [],
+      "omitted_count": 126,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "37759e2e24a422f6b2b30d4f2927fd421e8e6c0e873d45ab9c55deec4a4433fa",
+      "prompt_bytes": {
+        "mathematical_compression": 40385,
+        "source_concision": 40206,
+        "standard": 40176
+      },
+      "result_hash": "16f23cf79f7e18eb78c2574026831efd82b33871f4a5aaf9d11a2fe358e43ece",
+      "source_dep_count": 156,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-099"
+    },
+    {
+      "checks": {
+        "all_100_curator_summaries_absent": true,
+        "all_100_reference_bodies_absent": true,
+        "all_prompt_conditions_within_cap": true,
+        "bounded_context": true,
+        "no_inaccessible_imported_private_names": true,
+        "prior_environment_membership": true,
+        "reference_informed_policy_disclosed": true,
+        "source_identity_bound": true,
+        "target_names_excluded": true,
+        "theorem_implementations_omitted": true
+      },
+      "context_bytes": 45059,
+      "export_record_hash": "c6498bbbe45dd35d83c81e52fc27525bbf0ee1d57f515a4058a40869b0a105e2",
+      "findings": [],
+      "omitted_count": 163,
+      "omitted_imported_private_count": 0,
+      "premise_context_sha256": "5273b91ba75c7263692d078fb1acd02bb9ec2e6131facd2e913fbc79c053757b",
+      "prompt_bytes": {
+        "mathematical_compression": 46261,
+        "source_concision": 46082,
+        "standard": 46052
+      },
+      "result_hash": "f760b8b659a964d3f14978fbd63ea7a2d6874731ca9e0221d52a154f03867a03",
+      "source_dep_count": 305,
+      "status": "passed_implemented_interface_policy",
+      "task_id": "OM100-100"
+    }
+  ],
+  "references_input_sha256": "d88f5fa84437d6dda8f3bcdd0b413d16d864468d9f52534ab4596d14a5e19320",
+  "remaining_review": [
+    "Independent official reference validation records must match mathematical inputs",
+    "Review semantic equivalent-answer aliases and family/dependency policy",
+    "Root must approve final answer-access flags and frozen generation manifest"
+  ],
+  "scope": "Trusted pre-target membership and proof-implementation suppression; all selected literal reference bodies/curator summaries absent; bounded identical context for all models",
+  "selected_count": 100,
+  "statuses": {
+    "passed_implemented_interface_policy": 100
+  },
+  "tasks_input_sha256": "ab0c715a38498bad4d5423b7b627499c6537a89ea557b892e38b398401b33f8b",
+  "version": "om100_prior_interface_audit_v2"
+}

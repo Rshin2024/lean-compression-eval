@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "source_repository": "https://github.com/openai/math",
+  "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "fineenvs_dataset": "https://huggingface.co/datasets/FineEnvs/openai-math",
+  "fineenvs_revision": "d7056fd31c19fd1a0aed0a0bc3e99026d412b2ca",
+  "lean_toolchain": "leanprover/lean4:v4.34.1",
+  "lean_commit": "5045d0056413266e57c625dcd7c365b10e377c52",
+  "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "elan_installer_tag": "v4.2.0",
+  "observed_runtime_image_id": "sha256:07d4113f0330521740d2d9a3f97ef5f5d386b84b8d123119d97d1e05e3cebd29",
+  "observed_environment_hash": "81c9f9a5e9cb062d24f8aceb298d1111a95243f392df0b2712c99461ea0b94b3",
+  "evaluator_python_hash": "958bc7676b5fef5700a71ddde93abcc76e7afd67a4622593b57f7836485504f1",
+  "compiled_environment_hash": "8693af4402714d295e8fab9e776eab138de2fb1aacf992466ab9ee356269366d",
+  "source_environment_hash": "f48f67edc41be578e8df95c5f2352e9d5c4e146728ddcd4494658419df6bfeaf",
+  "closure_oai_modules": 457,
+  "verified_compiled_files": 57613,
+  "generated_runtime_provided": false,
+  "bit_identical_image_rebuild_claim": false,
+  "rebuild_limitations": [
+    "Ubuntu base tag and apt package snapshots are not pinned by immutable digest/version in the archived Dockerfiles.",
+    "Elan installer is selected by upstream version tag; downloaded toolchain binaries are not in this archive.",
+    "Rebuilding can produce a different image ID: regenerate environment evidence and freeze a new run against that actual ID."
+  ],
+  "repository_source_hashes": {
+    "lean/Evaluator.lean": "2ff87da0a2eb9058c6400bcb07bb441e5e1683c684b8571384006be37da299a2",
+    "runtime/run-lean": "336f3ef4026f86b3d279979a0a4f52d810265bb0a3ca5ac81df5b77b1d714663"
+  },
+  "harness_source_commit": "eab82c85b9715bcae66cf253b89e2e829e50d976",
+  "premise_export_policy": "reference_informed_prior_environment_interfaces_v3",
+  "premise_sources_sha256": {
+    "PremiseExporter.lean": "8d01585532f56434cf1023f1baa2f140eaa322dd9e888c8e62c622452b682da5",
+    "export_premises.py": "5c9947d4275bb37739ca40bec697057a15c4fe59eaaa9c38ccea2307f41ed50b",
+    "audit_exports.py": "ca4e2af592b7b458387e6774404c3d67554d3aa4f5d7fb5c5cd901b1472917b9"
+  }
+}
