@@ -7,6 +7,7 @@
 <main>
 
 <section id="compression"><h2>Compression ranked within each question</h2><p>Rank the models on each question, then average their places. Every question gets equal weight, so an enormous T₀ on one question cannot dominate the comparison.</p>
+<p class="note">T₀ measures expanded dependency references per statement-and-proof source token under a fixed library boundary. Repeated helper expansion can increase it, so a higher T₀ need not mean a shorter, more factored, or better-reasoned proof. Read these ranks alongside proof-body length, validity and shared-question coverage.</p>
 <div class="controls"><label>Prompt condition <select id="rankCondition"></select></label><label>Minimum model coverage <select id="rankCoverage"></select></label></div>
 <p id="rankBasis"></p>
 <h3>Average compression rank · lower is better</h3><p class="muted">On each question, higher T₀ earns a better rank. We rank each model’s geometric mean T₀ across valid measurable attempts using exact rational arithmetic. Ties share the average occupied place: two models tied for first each receive 1.5.</p>
