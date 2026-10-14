@@ -9,15 +9,37 @@ import re
 
 from .io import digest
 
-# The one policy the pinned engine and scorer apply: Evaluator.lean expands only
-# Mathlib- and EvaluatorCandidate-owned declarations (the runner sends no
-# expand_modules), counts original leaf spans and rejects unindexed dependencies;
-# metrics.py makes a reachable cycle unavailable. Records and cohort identities
-# carry these labels, so any other configured value would mislabel results.
+# The pinned engine expands Mathlib- and EvaluatorCandidate-owned declarations,
+# plus exact owner-module names supplied in expand_modules. The legacy policy
+# sends no additional modules; the v2 descriptor freezes their explicit list.
+# Source tokens, unknown dependencies and cycles retain their original policy.
 IMPLEMENTED_POLICY = {("environment", "boundary_policy"): "expand_mathlib_and_evaluator_v1",
                       ("environment", "source_token_policy"): "original_syntax_v1",
                       ("extraction", "unknown_dependency"): "error",
                       ("extraction", "dependency_cycle"): "metrics_unavailable"}
+EXPANDED_MODULE_POLICY = "expand_mathlib_and_evaluator_plus_modules_v2"
+_MODULE_NAME = re.compile(r"[A-Za-z_][A-Za-z0-9_']*(?:\.[A-Za-z_][A-Za-z0-9_']*)*\Z")
+
+
+def boundary_expansion_modules(policy: object) -> list[str] | None:
+    """Validate the frozen boundary and return exact additional owner modules.
+
+    None preserves the legacy engine request, including its absence of an
+    expand_modules field. A descriptor is canonical only with a sorted,
+    distinct, nonempty list; no prefix matching or wildcard expansion is added.
+    """
+    if policy == IMPLEMENTED_POLICY[("environment", "boundary_policy")]:
+        return None
+    if isinstance(policy, dict) and set(policy) == {"name", "extra_modules"}:
+        modules = policy["extra_modules"]
+        if (policy["name"] == EXPANDED_MODULE_POLICY and isinstance(modules, list) and modules
+                and all(isinstance(module, str) and _MODULE_NAME.fullmatch(module) for module in modules)
+                and modules == sorted(set(modules))):
+            return list(modules)
+    raise ValueError("Unsupported environment.boundary_policy: expected "
+                     "'expand_mathlib_and_evaluator_v1' or a descriptor with name "
+                     f"{EXPANDED_MODULE_POLICY!r} and a sorted, distinct, nonempty extra_modules list "
+                     "of valid module names, with no other fields")
 
 
 def require_implemented_policy(config: dict) -> None:
@@ -25,6 +47,9 @@ def require_implemented_policy(config: dict) -> None:
     for (section, key), implemented in IMPLEMENTED_POLICY.items():
         values = config.get(section)
         value = values.get(key) if isinstance(values, dict) else None
+        if (section, key) == ("environment", "boundary_policy"):
+            boundary_expansion_modules(value)
+            continue
         if value != implemented:
             raise ValueError(f"Unsupported {section}.{key} {value!r}: the pinned engine and scorer implement only {implemented!r}")
 

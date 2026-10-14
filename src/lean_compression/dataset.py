@@ -18,6 +18,9 @@ DOMAINS = (
     "algebra_groups", "number_theory", "analysis_inequalities", "sets_logic",
     "linear_algebra_combinatorics",
 )
+# Additional exploratory question sets need not use the preregistered domain
+# labels. Keep DOMAINS unchanged: it defines the original 50/200 quota design.
+SUPPORTED_DOMAINS = DOMAINS + ("algebra", "analysis", "combinatorics", "cs_probability")
 REQUIRED_FIELDS = (
     "task_id", "family_id", "domain", "split", "origin", "stratum", "imports",
     "context", "binders", "proposition", "target_name", "premise_context",
@@ -97,7 +100,7 @@ def validate_manifest(tasks: Iterable[dict[str, Any]], enforce_quotas: bool = Fa
         ids.add(task["task_id"])
         if not task["task_id"] or not isinstance(task["family_id"], str) or not task["family_id"]:
             errors.append(f"{label}: task_id and family_id must be nonempty")
-        if task["domain"] not in DOMAINS:
+        if task["domain"] not in SUPPORTED_DOMAINS:
             errors.append(f"{label}: unknown domain")
         if task["split"] not in ("pilot", "main"):
             errors.append(f"{label}: split must be pilot or main")

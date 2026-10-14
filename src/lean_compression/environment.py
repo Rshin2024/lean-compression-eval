@@ -77,6 +77,21 @@ def prepare_environment(package_root: Path, output: Path, *, full_hash: bool = T
                                          "sha256": file_hash(file)})
             if library.exists():
                 compiled_files.extend(library_files(library, item["name"]))
+    # A task-specific library (such as the pinned OAI corpus) can belong to the
+    # root Lake package rather than a dependency. Its compiled modules are just
+    # as executable as dependency modules and must be bound into the evidence.
+    root_library = package_root / ".lake/build/lib/lean"
+    if root_library.exists():
+        search_paths.append(str(root_library.resolve()))
+        package_evidence.append({"name": "__root__", "rev": None,
+                                 "path": str(package_root), "library_path": str(root_library)})
+        if full_hash:
+            compiled_files.extend(library_files(root_library, "__root__"))
+    if full_hash:
+        for file in sorted(package_root.rglob("*.lean")):
+            if ".lake" not in file.relative_to(package_root).parts:
+                source_files.append({"path": f"__root__/{file.relative_to(package_root)}",
+                                     "sha256": file_hash(file)})
     if full_hash:
         compiled_files.extend(library_files(prefix / "lib/lean", "toolchain"))
     manifest = {

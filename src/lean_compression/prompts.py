@@ -40,6 +40,15 @@ def prompt_policy_hash() -> str:
 def adapt_response(raw: str, policy: str = "identity_v1") -> str:
     if policy == "identity_v1":
         return raw
+    if policy == "single_outer_wrapper_v2":
+        import re
+        fenced = re.fullmatch(r"\s*```(?:lean|lean4)?\s*\n(.*?)\n```\s*", raw, re.DOTALL)
+        if fenced and "```" not in fenced[1]:
+            return fenced[1].removesuffix("\r")
+        tagged = re.fullmatch(r"\s*<PROOF>\s*\n?(.*?)\s*</PROOF>\s*", raw, re.DOTALL)
+        if tagged and "<PROOF>" not in tagged[1] and "</PROOF>" not in tagged[1]:
+            return tagged[1]
+        return raw
     if policy == "single_fence_v1":
         import re
         match = re.fullmatch(r"\s*```(?:lean|lean4)?\s*\n(.*?)\n```\s*", raw, re.DOTALL)

@@ -1,5 +1,11 @@
 # Eight-model cohort
 
+The next selected dataset is the [OpenAI Math 100 collection](../../docs/openai-math-100.md).
+These profiles retain the completed smoke run's Lean environment and legacy
+dataset design. Their model IDs and high-effort generation preferences remain
+the intended cohort, but the profiles must be adapted to the new validated
+environment and protocol before running the selected 100 questions.
+
 Selected from generally available text/code API releases on 2026-10-12. Each JSON file is a complete configuration based on `../pilot-ready.json`; pass it directly to `freeze --config` with the matching `--model` value.
 
 | Provider | Model ID / configuration filename stem |
@@ -16,6 +22,12 @@ Selected from generally available text/code API releases on 2026-10-12. Each JSO
 All eight explicitly request **high** effort. OpenAI sends `reasoning.effort`; Anthropic sends `output_config.effort` with `thinking.type=adaptive`. Temperature is deliberately omitted. The existing 8,192-token reasoning-plus-answer cap, 180-second HTTP timeout, four samples per goal/condition, prompts, schedule seed, and Lean validation limits are shared. Provider tokenizers and effort policies differ: this matches the requested setting and cap, not actual compute. Inspect truncation rates in the smoke run before freezing the formal pilot.
 
 These are the documented versioned API identifiers; do not append guessed date suffixes. The harness records and checks the model identifier returned by each provider. Availability to a particular account is established only by a successful request. Configuration readiness does not complete the dataset review or production gates.
+
+Each profile now has `cost_tracking_required: true` and an embedded USD rate card
+checked on October 13, 2026. New frozen runs retain that card and record token-cost
+estimates per generation. OpenAI profiles request `service_tier: default` to match
+standard pricing; the effective response tier is checked. Older frozen runs keep
+their original settings. See [cost tracking](../../docs/cost-tracking.md).
 
 ## Credentials and a development smoke run
 

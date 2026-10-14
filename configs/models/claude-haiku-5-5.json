@@ -15,6 +15,7 @@
     "mathematical_compression",
     "source_concision"
   ],
+  "cost_tracking_required": true,
   "dataset": {
     "main_goals": 200,
     "pilot_goals": 50,
@@ -53,12 +54,37 @@
     "settings_resolved": true,
     "snapshot_pinned": true,
     "temperature": null,
-    "timeout_seconds": 180,
     "thinking": {
       "type": "adaptive"
-    }
+    },
+    "timeout_seconds": 180
   },
   "metric_profile": "paper_aligned_v1",
+  "pricing": {
+    "as_of": "2026-10-13",
+    "currency": "USD",
+    "long_context": {
+      "input_multiplier": "5",
+      "output_multiplier": "5",
+      "threshold_input_tokens": 100000
+    },
+    "model": "claude-haiku-5-5",
+    "provider": "anthropic",
+    "rates_per_million": {
+      "cache_read": "0.01",
+      "cache_write": "0.125",
+      "cache_write_1h": "0.20",
+      "input": "0.10",
+      "output": "0.50"
+    },
+    "region": "global",
+    "schema_version": 1,
+    "service_tier": "standard",
+    "sources": [
+      "https://platform.claude.com/docs/en/about-claude/pricing",
+      "https://platform.claude.com/docs/en/build-with-claude/prompt-caching"
+    ]
+  },
   "protocol_version": "draft_v1",
   "samples_per_goal_condition": 4,
   "schedule_seed": 20261011,

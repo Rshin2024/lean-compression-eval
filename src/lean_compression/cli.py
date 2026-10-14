@@ -25,6 +25,15 @@ def parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Three-arm Lean compression evaluation")
     sub = p.add_subparsers(dest="command", required=True)
     sub.add_parser("doctor", help="Check local tools without revealing credentials")
+    q = sub.add_parser("select-questions", help="Adopt a curator selection without generating model prompts or calls")
+    q.add_argument("--candidates", type=Path, required=True)
+    q.add_argument("--catalogue", type=Path, required=True)
+    q.add_argument("--output", type=Path, required=True)
+    q.add_argument("--verify-upstream", action="store_true", help="Check pinned upstream source and declaration hashes")
+    q.add_argument("--active-config", type=Path, default=Path("configs/active-question-set.json"))
+    q = sub.add_parser("question-set", help="Inspect the selected questions and preparation status without model calls")
+    q.add_argument("--config", type=Path, default=Path("configs/active-question-set.json"))
+    q.add_argument("--require-ready", action="store_true")
     q = sub.add_parser("prepare-environment", help="Verify pins and hash source/build artifacts")
     q.add_argument("--package-root", type=Path, required=True)
     q.add_argument("--output", type=Path, required=True)
@@ -79,6 +88,8 @@ def parser() -> argparse.ArgumentParser:
     q.add_argument("--limit", type=int)
     q.add_argument("--retry-rejected", action="store_true",
                    help="Also send slots whose prompt the provider already rejected as invalid_prompt; skipped by default")
+    q.add_argument("--shard-index", type=int, default=0, help="Zero-based deterministic generation shard")
+    q.add_argument("--shard-count", type=int, default=1, help="Number of disjoint partitions of the frozen schedule")
     q = sub.add_parser("reconcile", help="Resolve in-flight markers that generate kept, from captures and logs; no model calls")
     q.add_argument("--run", type=Path, required=True)
     q.add_argument("--attempt", help="Only this attempt ID's marker")
@@ -102,6 +113,11 @@ def parser() -> argparse.ArgumentParser:
     q.add_argument("--version", default="v1")
     q.add_argument("--output", type=Path, required=True)
     q.add_argument("--baseline", type=Path, help="Directory produced by the baseline command")
+    q = sub.add_parser("costs", help="Export recorded-generation API cost estimates without model calls")
+    q.add_argument("--run", type=Path, required=True)
+    q.add_argument("--output", type=Path, required=True)
+    q.add_argument("--version", default="v1")
+    q.add_argument("--pricing", type=Path, help="Explicit rate card for a separate retrospective estimate; never changes the run")
     q = sub.add_parser("rescore", help="Recompute exact metrics from stored graphs in a new version")
     q.add_argument("--run", type=Path, required=True)
     q.add_argument("--from-version", required=True)
@@ -110,6 +126,10 @@ def parser() -> argparse.ArgumentParser:
 
 
 def require_valid(tasks: list[dict], *, quotas: bool = False) -> None:
+    if any(isinstance(task, dict) and task.get("record_kind") == "selected_question_v1" for task in tasks):
+        raise ValueError("This file is a selected-question catalogue, not an executable Lean task manifest. "
+                         "Run question-set to inspect preparation status; finish standalone extraction and "
+                         "validation before freezing a run.")
     errors = validate_manifest(tasks, enforce_quotas=quotas)
     if errors:
         raise ValueError("\n".join(errors))
@@ -276,6 +296,41 @@ def error_message(error: Exception) -> str:
 def dispatch(args: argparse.Namespace) -> dict:
     if args.command == "doctor":
         return doctor()
+    if args.command == "select-questions":
+        from .question_sets import adopt_question_set
+        adopted = adopt_question_set(args.candidates, args.catalogue, args.output,
+                                     verify_upstream=args.verify_upstream)
+        manifest_path = args.output.resolve() / "manifest.json"
+        # Keep the active pointer portable and independently bind its immutable manifest.
+        active = {"schema_version": 1, "kind": "active_question_set_v1",
+                  "question_set": os.path.relpath(args.output.resolve(), args.active_config.resolve().parent),
+                  "manifest_sha256": hashlib.sha256(manifest_path.read_bytes()).hexdigest()}
+        if args.active_config.exists():
+            previous = read_json(args.active_config)
+            if previous.get("kind") == "active_question_set_v1" and isinstance(previous.get("cost_tracking"), dict):
+                active["cost_tracking"] = previous["cost_tracking"]
+        write_json(args.active_config, active, immutable=False)
+        return {"active_config": str(args.active_config), "question_set": str(args.output),
+                "selected_questions": len(adopted["selection"]),
+                "status": {k: v for k, v in adopted["status"].items() if k != "per_task"},
+                "preparation_details": str(args.output / "status.json")}
+    if args.command == "question-set":
+        from .question_sets import load_question_set
+        active = read_json(args.config)
+        if active.get("kind") != "active_question_set_v1" or active.get("schema_version") != 1:
+            raise ValueError("Unsupported active question-set configuration")
+        root = (args.config.resolve().parent / active["question_set"]).resolve()
+        actual = hashlib.sha256((root / "manifest.json").read_bytes()).hexdigest()
+        if actual != active.get("manifest_sha256"):
+            raise ValueError("Selected question-set manifest changed; adopt a new version explicitly")
+        selected = load_question_set(root)
+        if args.require_ready and selected["status"].get("model_generation_enabled") is not True:
+            raise ValueError("The 100 questions are selected, but standalone Lean contexts, signature checks, "
+                             "answer-access review and metric validation are still required before generation")
+        return {"question_set": str(root), "manifest_sha256": actual,
+                "selected_questions": len(selected["selection"]),
+                "status": {k: v for k, v in selected["status"].items() if k != "per_task"},
+                "preparation_details": str(root / "status.json")}
     if args.command == "prepare-environment":
         env = prepare_environment(args.package_root, args.output, full_hash=not args.metadata_only)
         return {"path": str(args.output), "environment_hash": env["environment_hash"], "hash_mode": env["hash_mode"]}
@@ -488,7 +543,8 @@ def dispatch(args: argparse.Namespace) -> dict:
         return import_responses(args.run, read_jsonl(args.responses))
     if args.command == "generate":
         from .providers import generate_run
-        return generate_run(args.run, limit=args.limit, retry_rejected=args.retry_rejected)
+        return generate_run(args.run, limit=args.limit, retry_rejected=args.retry_rejected,
+                            shard_index=args.shard_index, shard_count=args.shard_count)
     if args.command == "reconcile":
         from .providers import reconcile_run
         return reconcile_run(args.run, attempt=args.attempt, apply=args.apply, release_unreadable=args.release_unreadable)
@@ -502,6 +558,55 @@ def dispatch(args: argparse.Namespace) -> dict:
         verify_environment(load_run(args.run)["environment"])
         return evaluate_run(args.run, args.engine, version=args.version, limit=args.limit,
                             reference_checks=args.reference_checks)
+    if args.command == "costs":
+        from collections import Counter
+        from .cost_reporting import build_cost_report, cost_html, write_cost_report
+        from .store import _log_lines
+        manifest = load_run(args.run)
+        pricing = manifest["config"].get("pricing")
+        basis = "frozen_run_pricing" if pricing is not None else "no_frozen_pricing"
+        if args.pricing is not None:
+            supplied = read_json(args.pricing)
+            pricing = supplied.get("models", {}).get(manifest["model_snapshot"]) if "models" in supplied else supplied
+            if pricing is None:
+                raise ValueError("The selected pricing schedule does not contain this run's model")
+            basis = "explicit_retrospective_pricing"
+        report = build_cost_report(records(args.run, args.version, graphs=False), pricing,
+            provider=manifest["config"]["generation"].get("provider", "openai"),
+            model=manifest["model_snapshot"])
+        report["pricing_basis"] = basis
+        report["run_hash"] = manifest["run_hash"]
+        report["run_created_at"] = manifest["created_at"]
+        transport_present = (args.run / "transport.jsonl").exists()
+        events = Counter(row.get("event", "unrecognized") if isinstance(row, dict) else "unreadable"
+                         for row in _log_lines(args.run / "transport.jsonl"))
+        report["transport_coverage"] = {
+            "transport_log_present": transport_present,
+            "logged_request_attempts": events["request_started"],
+            "http_error_events": events["http_error"],
+            "request_not_sent_events": events["request_not_sent"],
+            "outcome_unknown_events": events["outcome_unknown"],
+            "no_model_outcome_events": events["no_model_outcome"],
+            "unreadable_log_lines": events["unreadable"],
+            "scope": "Historical event counts, not counts of billable requests. Token estimates cover recorded "
+                     "generations only; other requests and unknown billing are not assigned zero cost.",
+            "invoice_reconciled": False,
+        }
+        if not transport_present:
+            for key in ("logged_request_attempts", "http_error_events", "request_not_sent_events",
+                        "outcome_unknown_events", "no_model_outcome_events", "unreadable_log_lines"):
+                report["transport_coverage"][key] = None
+        if args.output.exists() and (not args.output.is_dir() or any(args.output.iterdir())):
+            raise FileExistsError("Cost output must be a new or empty directory")
+        args.output.mkdir(parents=True, exist_ok=True)
+        paths = write_cost_report(report, args.output)
+        html_path = args.output / "costs.html"
+        html_path.write_text("<!doctype html><html lang='en'><meta charset='utf-8'><title>API cost estimates</title>"
+                             "<style>body{max-width:1100px;margin:2rem auto;font:15px system-ui;padding:1rem}"
+                             "table{border-collapse:collapse;width:100%}th,td{padding:8px;border-bottom:1px solid #ddd;"
+                             "text-align:left}</style><h1>API cost estimates</h1>" + cost_html(report) + "</html>", encoding="utf-8")
+        return {"output": str(args.output), "pricing_basis": basis, "summary": report["summary"],
+                "files": {**paths, "html": str(html_path)}}
     if args.command == "analyze":
         from .analysis import analyze, scorer_identity, write_report
         from .metrics import SCORER_HASH

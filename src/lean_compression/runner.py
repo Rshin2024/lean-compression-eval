@@ -14,7 +14,7 @@ import tempfile
 import time
 from pathlib import Path
 
-from .integrity import is_content_digest, require_implemented_policy, verified_generation
+from .integrity import boundary_expansion_modules, is_content_digest, require_implemented_policy, verified_generation
 from .io import (CLAIM_PROTOCOL, append_event, canonical, claim, claim_locks, digest, evaluator_hash, file_hash, kept_claims, now, read_json,
                  remove_abandoned_claim, retain_claims, task_input_hash, temporary_files, verification_request_hash, write_json)
 from .metrics import score_graph
@@ -428,6 +428,7 @@ def _run_engine(scratch: Path, request: dict, environment: dict, engine: Path, p
 
 def evaluate_proof(task: dict, proof: str, environment: dict, engine: Path, config: dict) -> dict:
     validation = config["validation"]
+    extra_modules = boundary_expansion_modules(config["environment"]["boundary_policy"])
     initial_engine_hash = file_hash(engine)
     request = {key: task.get(key, default) for key, default in
                (("imports", []), ("target_name", "evaluation_target"), ("binders", ""),
@@ -436,6 +437,8 @@ def evaluate_proof(task: dict, proof: str, environment: dict, engine: Path, conf
                    permitted_axioms=validation["permitted_axioms"])
     if task.get("import_specs"):
         request["import_specs"] = task["import_specs"]
+    if extra_modules is not None:
+        request["expand_modules"] = extra_modules
     checked = execute_engine(request, environment, engine, validation, mode="validate",
                              wall_seconds=validation["wall_seconds"])
     base = {"validity_status": checked.get("validity_status", "infrastructure_error"),

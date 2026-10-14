@@ -25,7 +25,8 @@ from lean_compression.store import create_run, record_generation, records, with_
 PROJECT = Path(__file__).resolve().parents[1]
 DEMO_RUN, DEMO_REFS = PROJECT / "examples/pipeline-demo", PROJECT / "examples/demo-reference-check"
 REPORT_FILES = ["all_scheduled_attempts.json", "analysis.json", "audit", "contrasts_by_stratum.csv", "correctness.csv",
-                "correctness_by_stratum.csv", "paired_tasks.csv", "report.html", "resource_usage.csv"]
+                "correctness_by_stratum.csv", "cost_attempts.csv", "cost_summary.csv", "costs.json",
+                "paired_tasks.csv", "report.html", "resource_usage.csv"]
 
 
 def run_cli(*argv):

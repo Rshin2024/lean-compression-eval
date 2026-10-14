@@ -153,6 +153,12 @@ def create_run(path: Path, tasks: list[dict], config: dict, environment: dict, *
     if path.exists() and (path / "manifest.json").exists():
         raise FileExistsError(f"Run already frozen: {path}; use the existing run to resume")
     require_implemented_policy(config)
+    pricing = config.get("pricing")
+    if config.get("cost_tracking_required") is True and pricing is None:
+        raise ValueError("Cost tracking requires an explicit pricing snapshot before freezing")
+    if pricing is not None:
+        from .costs import validate_pricing
+        validate_pricing(pricing, config["generation"].get("provider", "openai"), model)
     # As baseline and analyze --baseline will check it: otherwise no baseline could ever match the run.
     frozen_portfolio(config)
     adapter = config["generation"].get("response_adapter")
@@ -201,6 +207,8 @@ def create_run(path: Path, tasks: list[dict], config: dict, environment: dict, *
     selected = [t for t in tasks if t["split"] == split]
     if not selected:
         raise ValueError(f"No tasks in split {split}")
+    if any(task.get("model_generation_enabled") is False for task in selected):
+        raise ValueError("Selected tasks still explicitly disable model generation; finish their preparation before freezing")
     measurement = {"measurement_hash": measurement_hash(config), "config_hash": digest(config)}
     if not development and reference_records is None:
         raise ValueError("Production freezing requires actual verified reference records for this environment")
@@ -277,6 +285,15 @@ def record_generation(path: Path, slot: dict, raw: str, **metadata) -> dict:
         return existing
     value = {"attempt_id": slot["attempt_id"], "prompt_hash": slot["prompt_hash"],
              "created_at": now(), "raw_response": raw, "raw_response_hash": digest(raw), **metadata}
+    # Use only the run's immutable rate card; current configuration files cannot
+    # silently reprice a resumed run or change an already recorded response.
+    manifest = load_run(path)
+    pricing = manifest["config"].get("pricing")
+    if pricing is not None:
+        from .costs import estimate_cost
+        value["cost_estimate"] = estimate_cost(value, pricing,
+            provider=manifest["config"]["generation"].get("provider", "openai"),
+            model=slot["model_snapshot"])
     write_json(generation_path(path, slot["attempt_id"]), value)
     return value
 

@@ -18,6 +18,7 @@ from typing import Any
 
 from .metrics import decimal, exact_int, log2_int
 from .outcomes import outcome_class
+from .cost_reporting import build_cost_report, cost_html, write_cost_report
 
 CONDITIONS = ("standard", "mathematical_compression", "source_concision")
 CONTRASTS = {"compression_vs_standard": ("mathematical_compression", "standard"),
@@ -752,6 +753,18 @@ def analyze(tasks: list[dict], attempts: list[dict], references: dict,
                                    "distributions": distributions, "audit_sample": audit}
         report["models"][model]["stratum_breakdown"] = _stratum_breakdown(
             vectors, task_ids, task_map, families, strata, report["bootstrap"], settings)
+    cost_records = []
+    for model in models:
+        for task_id in task_ids:
+            for condition in CONDITIONS:
+                for sample_index in range(index_base, index_base + sample_count):
+                    attempt = lookup.get((model, task_id, condition, sample_index)) or {}
+                    cost_records.append({"attempt_id": attempt.get("attempt_id"), "task_id": task_id,
+                        "model_snapshot": model, "condition": condition, "sample_index": sample_index,
+                        "validity_status": attempt.get("validity_status", "missing_record"),
+                        "generation": attempt.get("generation")})
+    report["costs"] = build_cost_report(cost_records, config.get("pricing"),
+                                      provider=(config.get("generation") or {}).get("provider"))
     return report
 
 
@@ -1033,6 +1046,8 @@ def write_report(report: dict, destination: str | Path) -> dict[str, str]:
              "paired": directory / "paired_tasks.csv", "resources": directory / "resource_usage.csv",
              "html": directory / "report.html"}
     paths["json"].write_text(json.dumps(report, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+    if "costs" in report:
+        paths.update(write_cost_report(report["costs"], directory))
     correctness_rows, paired_rows, resource_rows = [], [], []
     for model, model_report in report["models"].items():
         for condition, summary in model_report["conditions"].items():
@@ -1080,6 +1095,8 @@ def write_report(report: dict, destination: str | Path) -> dict[str, str]:
     for field in ("run_hash", "evaluation_version", "model_snapshot"):
         if run_provenance.get(field):
             body.append("<p>" + html.escape(field) + ": <code>" + html.escape(str(run_provenance[field])) + "</code></p>")
+    if "costs" in report:
+        body.append(cost_html(report["costs"]))
     for model, model_report in report["models"].items():
         body.append("<h2>" + html.escape(model) + "</h2>")
         if model_report.get("incomplete_scheduled_outcomes"):
@@ -1126,7 +1143,8 @@ def write_report(report: dict, destination: str | Path) -> dict[str, str]:
                     "page cache included, and a Lean process's peak RSS are different scopes, shown in separate rows and never "
                     "pooled. Extraction heartbeats are the extraction run's repeat of the validation check, not extra work, and "
                     "are never added to validation heartbeats. Token columns are separate provider counts "
-                    "and must not be added together. No API cost is inferred.</p><table><tr><th>Condition</th><th>Measurement</th>"
+                    "and must not be added together. API token costs are estimated separately only from recorded usage "
+                    "and a frozen pricing schedule; missing evidence remains unavailable.</p><table><tr><th>Condition</th><th>Measurement</th>"
                     "<th>Observed / scheduled</th><th>Median</th><th>p95</th><th>Observed sum</th></tr>")
         for condition, summary in model_report["conditions"].items():
             for measurement, resource in summary.get("resources", {}).get("measurements", {}).items():

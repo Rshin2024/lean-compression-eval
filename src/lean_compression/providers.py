@@ -72,6 +72,8 @@ def response_payload(slot: dict, settings: dict) -> dict:
         payload["temperature"] = settings["temperature"]
     if settings.get("reasoning_setting") is not None:
         payload["reasoning"] = {"effort": settings["reasoning_setting"]}
+    if settings.get("service_tier") is not None:
+        payload["service_tier"] = settings["service_tier"]
     return payload
 
 
@@ -294,7 +296,8 @@ def in_flight(marker: Path, attempt_id: str):
     return lock
 
 
-def generate_run(run: Path, *, limit: int | None = None, retry_rejected: bool = False) -> dict:
+def generate_run(run: Path, *, limit: int | None = None, retry_rejected: bool = False,
+                 shard_index: int = 0, shard_count: int = 1) -> dict:
     """Request the frozen schedule's pending slots, one fresh single-shot call each.
 
     A prompt the provider rejected as invalid_prompt, in this command or as logged in transport.jsonl, is not sent
@@ -303,11 +306,15 @@ def generate_run(run: Path, *, limit: int | None = None, retry_rejected: bool = 
     sends the logged ones once more, after the other pending slots and the one rejected longest ago first. A call's
     in-flight marker stays locked until the call is resolved or the command ends (in_flight).
     """
+    if (type(shard_count) is not int or shard_count < 1 or type(shard_index) is not int
+            or not 0 <= shard_index < shard_count):
+        raise ValueError("Generation shard index must be between zero and shard_count - 1")
     with contextlib.ExitStack() as held:
-        return _generate(run, held, limit, retry_rejected)
+        return _generate(run, held, limit, retry_rejected, shard_index, shard_count)
 
 
-def _generate(run: Path, held: contextlib.ExitStack, limit: int | None, retry_rejected: bool) -> dict:
+def _generate(run: Path, held: contextlib.ExitStack, limit: int | None, retry_rejected: bool,
+              shard_index: int = 0, shard_count: int = 1) -> dict:
     manifest = load_run(run)
     settings = manifest["config"]["generation"]
     if manifest["config"]["validation"].get("isolation") != "docker":
@@ -363,7 +370,11 @@ def _generate(run: Path, held: contextlib.ExitStack, limit: int | None, retry_re
     completed = rejected = skipped = 0
     streak = []  # prompts rejected one after another in this command, with no generation between them
     transport = run / "transport.jsonl"
-    for slot in sorted(manifest["slots"], key=lambda item: turn.get(item["prompt_hash"], -1)):
+    # Partition the already-frozen schedule, never regenerate IDs or prompts.
+    # Stale/unknown calls still stop their owning shard until reconciled.
+    selected_slots = [slot for index, slot in enumerate(manifest["slots"])
+                      if index % shard_count == shard_index]
+    for slot in sorted(selected_slots, key=lambda item: turn.get(item["prompt_hash"], -1)):
         # Rejected prompts were requests too, so they count toward the limit. Skipped slots were not.
         if limit is not None and completed + rejected >= limit:
             break
