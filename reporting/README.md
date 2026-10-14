@@ -118,3 +118,19 @@ provider invoice; the producer's source-evidence audit remains necessary. It is
 not an exhaustive billing ledger. Keep raw request/response bodies, credentials,
 and private diagnostic payloads out of the disclosure and Git. The pinned phase
 adapter, per-model costs, and completed report bundles are never rewritten.
+
+## Local report viewer
+
+After the complete comparison is built, serve its interactive pages locally:
+
+```sh
+python3 reporting/serve_comparison.py --suite runs/om100-suite-high-20261013
+```
+
+The default address is `http://127.0.0.1:62772/`. The server binds only to
+loopback and requires a matching local Host header. Its explicit route list
+contains the comparison, frozen-prompt viewer, per-model summary pages, metric
+and cost exports, and phase-provenance indices. Raw `all_scheduled_attempts.json`
+files, run directories, credentials and directory listings are not served.
+Missing or linked artifacts prevent startup. The viewer makes no provider or
+Lean calls and does not publish files to an external service.
