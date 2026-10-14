@@ -26,7 +26,7 @@ CSV exports of individual attempts preserve exact large-integer U values and rat
 
 Serve the suite over loopback HTTP for browser preview; the page needs no network requests for its charts or filters. Model-report and source-analysis links remain local to the suite.
 
-The cost view sums exact decimal USD strings from per-attempt cost reports and reconciles them to the model subtotal before rendering. Model, prompt and question filters apply to both the view and its CSV. Failures and truncated responses remain billable observations; unpriced generations stay unavailable, and a complete total is shown only if every scheduled attempt in the view is priced. Pricing hashes, dates and source evidence are linked. Token usage fields also expose observation coverage rather than treating missing counts as zero. Optional `--cloud-costs PATH` adds a separate shared compute ledger; disk/IP/network and invoice totals remain unknown unless independently recorded. Shared cloud costs are not allocated to individual models.
+The cost view sums exact decimal USD strings from per-attempt cost reports and reconciles them to the model subtotal before rendering. Model, prompt and question filters apply to both the view and its CSV. Failures and truncated responses remain billable observations; unpriced generations stay unavailable, and the all-slots recorded-response estimate is shown only if every scheduled slot in the view has a priced response. This does not establish complete request billing: the all-request and provider-invoice totals always remain unavailable. Pricing hashes, dates and source evidence are linked. Token usage fields also expose observation coverage rather than treating missing counts as zero. Optional `--cloud-costs PATH` adds a separate shared compute ledger; disk/IP/network and invoice totals remain unknown unless independently recorded. Shared cloud costs are not allocated to individual models.
 
 If all eight matching manifests are available under `--runs-root PATH` (default `runs`), the builder verifies run and prompt hashes and exports `questions.html` plus `questions-data.json`. They contain only the exact frozen `slots.messages`, collapsed across identical models/samples into question-by-condition combinations. Prompt differences across models/samples cause a failure rather than being hidden. The viewer does not read private curator catalogues, reference proofs, captured responses or credentials. It records the run hashes and prompt hashes for inspection.
 
@@ -77,7 +77,44 @@ Full-suite comparison after all eight phase-aware reports finish:
 python3 reporting/build_comparison.py \
   --suite runs/om100-suite-high-20261013 \
   --runs-root runs \
-  --cloud-costs ../../work/full-eval-100/runtime/azure/cloud-costs.json
+  --cloud-costs ../../work/full-eval-100/runtime/azure/cloud-costs.json \
+  --transport-cost-disclosure ../../work/full-eval-100/reporting-proposals/transport-cost-disclosure-20261014.json
 ```
 
 Offline contract checks: `python3 -m unittest discover -s reporting -p 'test*.py'`. Synthetic QA fixtures must be built with `--classification synthetic_test_fixture`; this prints a prominent banner and suppresses the actual-input viewer. Such fixtures are development evidence, never evaluation results. Tests cover complete eight-model nested-record export, numeric precision, immutable generation identity, mixed-phase rejection, and incomplete truncated-response placeholders.
+
+## Unknown transport charges
+
+The optional `--transport-cost-disclosure PATH` supplies an operational incident
+snapshot separately from the frozen model reports. The comparison labels token
+estimates as costs of **recorded responses**. It shows listed disconnected requests
+and HTTP errors with unavailable usage separately, filtered by model, question and
+prompt condition. A later priced response for the same scheduled slot does not
+resolve the earlier request's unknown charge. No retry is authorized by this input.
+Omitting the file shows that incident-specific disclosure is absent; it never
+implies zero extra charges or complete billing. Per-model `transport_coverage`
+counts are retained when present, with a warning that historical unknown-outcome
+events can include captured responses later recovered and priced.
+
+The JSON schema is version 1, kind `unknown_transport_cost_disclosure`. Its
+`as_of_utc` timestamp must have a timezone, `scope` must be
+`known_incidents_not_exhaustive`, `invoice_reconciled` must be false, and
+`all_request_total_usd` must be null. Each item in `incidents` identifies a model,
+`attempt_id`, `task_id`, condition, and **one-based display `sample`**; convert from
+the frozen slot with `sample_index - sample_index_base + 1`. It also specifies
+`kind` (`disconnected_response` or `http_error`), nullable `http_status`,
+`recorded_at_utc`, `usage_available: false`, and `unknown_charge_usd: null`.
+Provenance fields are `source_run_hash`, `source_manifest_sha256`, and
+`transport_events_sha256`. The `evidence` list contains only `kind` and SHA-256
+pairs for a `disconnect_diagnostic` or `transport_log_snapshot`.
+
+The builder validates incident identities against compared attempts, original run
+hashes, and, for phase-aware reports, original manifest hashes. It checks count,
+timestamp, and unknown-billing semantics, rejects duplicate incidents, and exports
+only allowlisted fields. The exact supplied disclosure file's SHA-256 is retained
+in comparison-data.json and displayed on the page. This is a hash-bound supplied
+incident snapshot, not an independent reread of provider transport logs and not a
+provider invoice; the producer's source-evidence audit remains necessary. It is
+not an exhaustive billing ledger. Keep raw request/response bodies, credentials,
+and private diagnostic payloads out of the disclosure and Git. The pinned phase
+adapter, per-model costs, and completed report bundles are never rewritten.

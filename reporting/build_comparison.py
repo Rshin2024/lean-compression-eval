@@ -11,6 +11,7 @@ import json
 import math
 import os
 from pathlib import Path
+import re
 
 MODELS = ['gpt-6.1-sol', 'gpt-6-sol', 'gpt-6-luna', 'gpt-6-astra', 'claude-haiku-5-5',
           'claude-sonnet-5-5', 'claude-opus-5-5', 'claude-fable-5-1']
@@ -22,6 +23,8 @@ COST_FIELDS = ['status', 'total_usd', 'currency', 'usage_hash', 'pricing_hash', 
                'assumptions', 'reasons', 'input_total_tokens', 'long_context_applied']
 PHASE_COMMON = ('version','amendment_hash','environment_hash','docker_image','measurement_hash',
                 'engine_hash','evaluator_source_hash','reference_policy_hash','reference_index_sha256','limits')
+TRANSPORT_COUNTS = ('logged_request_attempts', 'http_error_events', 'request_not_sent_events',
+                    'outcome_unknown_events', 'no_model_outcome_events', 'unreadable_log_lines')
 
 
 def require(condition, message):
@@ -75,7 +78,7 @@ def phase_attempt_view(row,phase):
     link=row.get('verification_record') or {}
     require(link.get('path')==f'evaluations/{ver["version"]}/{row["attempt_id"]}.json' and link.get('sha256'),
             'Missing link to complete phase verification record')
-    return {**{k:identity[k] for k in ('task_id','condition','sample_index','model_snapshot')},
+    return {'attempt_id':row['attempt_id'], **{k:identity[k] for k in ('task_id','condition','sample_index','model_snapshot')},
         'validity_status':result['validity_status'],'metric_status':result['metric_status'],
         'metrics':result.get('metrics'),'generation':row['generation']}
 
@@ -162,6 +165,92 @@ def report_directory(suite, model):
     return report
 
 
+def transport_coverage_view(source):
+    """Keep only historical event counts; none establishes invoice completeness."""
+    if source is None:
+        return None
+    require(isinstance(source, dict), 'Malformed transport coverage')
+    result = {}
+    for key in TRANSPORT_COUNTS:
+        value = source.get(key)
+        require(value is None or type(value) is int and value >= 0, 'Invalid transport event count')
+        result[key] = value
+    reconciled = source.get('invoice_reconciled')
+    require(reconciled is None or type(reconciled) is bool, 'Invalid invoice reconciliation flag')
+    result['invoice_reconciled'] = reconciled
+    return result
+
+
+def read_transport_cost_disclosure(path, data):
+    """Read a separate, hashed incident snapshot without altering frozen reports.
+
+    This metadata records known requests with unavailable usage. It cannot turn
+    a recorded-response estimate into an invoice or authorize a retry.
+    """
+    if path is None:
+        return None
+    raw = Path(path).read_bytes()
+    require(len(raw) <= 1024 * 1024, 'Transport disclosure exceeds one MiB')
+    source = json.loads(raw)
+    require(source.get('schema_version') == 1 and source.get('kind') == 'unknown_transport_cost_disclosure',
+            'Unsupported transport cost disclosure')
+    require(source.get('scope') == 'known_incidents_not_exhaustive'
+            and source.get('invoice_reconciled') is False
+            and 'all_request_total_usd' in source and source['all_request_total_usd'] is None,
+            'Transport disclosure must retain unknown all-request billing')
+    at = source.get('as_of_utc')
+    require(isinstance(at, str) and datetime.fromisoformat(at).tzinfo is not None,
+            'Disclosure timestamp requires a timezone')
+    models = {m['id']: m for m in data['models']}
+    rows = {(r['model'], r['task'], r['condition'], r['sample']): r.get('attemptId') for r in data['attempts']}
+    sources = {s['model']: s for s in data['sources']}
+    incidents, seen = [], set()
+    require(isinstance(source.get('incidents'), list), 'Missing transport incidents')
+    for incident in source['incidents']:
+        require(isinstance(incident, dict), 'Malformed transport incident')
+        model, sample = incident.get('model'), incident.get('sample')
+        require(model in models and type(sample) is int and
+                (model, incident.get('task_id'), incident.get('condition'), sample) in rows,
+                'Transport incident does not match the compared schedule')
+        kind = incident.get('kind')
+        require(kind in {'disconnected_response', 'http_error'}, 'Unknown transport incident kind')
+        for key in ('attempt_id', 'source_run_hash', 'source_manifest_sha256', 'transport_events_sha256'):
+            require(isinstance(incident.get(key), str) and re.fullmatch('[0-9a-f]{64}', incident[key]),
+                    'Missing transport provenance hash: ' + key)
+        require(rows[(model, incident['task_id'], incident['condition'], sample)] == incident['attempt_id'],
+                'Transport incident belongs to another scheduled attempt')
+        phase = models[model].get('phaseProvenance')
+        run_hash = phase['generation']['run_hash'] if phase else sources[model].get('runHash')
+        require(run_hash == incident['source_run_hash'], 'Transport disclosure belongs to another run')
+        if phase:
+            require(phase['generation']['manifest_sha256'] == incident['source_manifest_sha256'],
+                    'Transport disclosure belongs to another manifest')
+        recorded = incident.get('recorded_at_utc')
+        require(isinstance(recorded, str) and datetime.fromisoformat(recorded).tzinfo is not None
+                and datetime.fromisoformat(recorded) <= datetime.fromisoformat(at), 'Invalid incident timestamp')
+        identity = (model, incident['attempt_id'], kind, recorded)
+        require(identity not in seen, 'Duplicate transport incident')
+        seen.add(identity)
+        require(incident.get('usage_available') is False and 'unknown_charge_usd' in incident
+                and incident['unknown_charge_usd'] is None, 'Unknown charges must remain unavailable')
+        status = incident.get('http_status')
+        require(status is None if kind == 'disconnected_response' else type(status) is int and 400 <= status <= 599,
+                'Invalid transport HTTP status')
+        incidents.append({key: incident.get(key) for key in ('model', 'attempt_id', 'task_id', 'condition', 'sample',
+            'kind', 'http_status', 'recorded_at_utc', 'usage_available', 'unknown_charge_usd',
+            'source_run_hash', 'source_manifest_sha256', 'transport_events_sha256')})
+    evidence = []
+    require(isinstance(source.get('evidence'), list) and source['evidence'], 'Missing disclosure evidence')
+    for item in source['evidence']:
+        require(isinstance(item, dict) and item.get('kind') in {'disconnect_diagnostic', 'transport_log_snapshot'}
+                and isinstance(item.get('sha256'), str) and re.fullmatch('[0-9a-f]{64}', item['sha256']),
+                'Malformed disclosure evidence')
+        evidence.append({'kind': item['kind'], 'sha256': item['sha256']})
+    return {'schemaVersion': 1, 'asOf': at, 'scope': source['scope'], 'invoiceReconciled': False,
+            'allRequestTotalUsd': None, 'incidents': incidents, 'evidence': evidence,
+            'sourceSha256': hashlib.sha256(raw).hexdigest()}
+
+
 def cost_map(report, analysis, model, expected_count):
     path = report / 'costs.json'
     source = json.loads(path.read_text()) if path.exists() else analysis.get('costs')
@@ -204,12 +293,15 @@ def cost_map(report, analysis, model, expected_count):
         'sha256': hashlib.sha256(path.read_bytes()).hexdigest() if path.exists() else None,
         'pricingHash': source.get('pricing_hash'), 'pricingAsOf': source.get('pricing_as_of'),
         'pricingBasis': source.get('pricing_basis', 'frozen_run_pricing' if source.get('pricing_hash') else 'no_frozen_pricing'),
+        'transportCoverage': transport_coverage_view(source.get('transport_coverage')),
+        'estimateScope': 'recorded_response_token_usage_only', 'allRequestTotalUsd': None,
         'summary': {k: summary.get(k) for k in ['status', 'scheduled_attempts', 'generated_attempts',
             'not_generated_attempts', 'priced_attempts', 'unavailable_generated_attempts',
             'total_usd', 'generated_total_usd', 'observed_sum_usd', 'complete']}}
 
 
-def build(suite, *, output=None, classification='observed', runs_root=None, cloud_costs=None):
+def build(suite, *, output=None, classification='observed', runs_root=None, cloud_costs=None,
+          transport_cost_disclosure=None):
     suite = Path(suite).resolve()
     output = Path(output).resolve() if output is not None else suite
     require(classification in {'observed', 'synthetic_test_fixture'}, 'Unknown data classification')
@@ -262,6 +354,7 @@ def build(suite, *, output=None, classification='observed', runs_root=None, clou
         data['models'].append({'id': model, 'conditions': conditions, 'perTask': m['per_task'],
             'contrasts': contrasts, 'report': report.name + '/report.html', 'costs': evidence,'phaseProvenance':phase})
         data['sources'].append({'model': model, 'path': report.name + '/analysis.json',
+            'runHash': analysis.get('run_provenance', {}).get('run_hash'),
             'sha256': hashlib.sha256(raw).hexdigest(),
             'description': f'Completed frozen-run analysis; {per_model:,} attempts; {n} questions.'})
         source_rows = json.loads((report / 'all_scheduled_attempts.json').read_text())
@@ -287,6 +380,7 @@ def build(suite, *, output=None, classification='observed', runs_root=None, clou
             require(cost['generated'] == (row.get('generation') is not None),
                     'Cost and attempt generation coverage differ')
             model_rows.append({'model': model, 'task': key[0], 'condition': key[1], 'sample': key[2] - base + 1,
+                'attemptId': row.get('attempt_id'),
                 'status': row['validity_status'], 'metricStatus': row.get('metric_status'),
                 'metrics': {field: metric.get(field) for field in METRICS}, 'cost': cost})
         for c in CONDS:
@@ -324,6 +418,9 @@ def build(suite, *, output=None, classification='observed', runs_root=None, clou
     effort, cap = next(iter(generation_settings)) if len(generation_settings) == 1 else (None, None)
     data['generation'] = {'reasoningEffort': effort, 'outputTokenCap': cap}
     data['verification']={key:phase['verification'][key] for key in PHASE_COMMON} if all(phases_seen) else None
+    data['transportCostDisclosure'] = read_transport_cost_disclosure(transport_cost_disclosure, data)
+    data['costScope'] = {'recordedResponseEstimatesOnly': True, 'allRequestTotalUsd': None,
+                        'providerInvoiceTotalUsd': None}
     data['questionViewer'] = (write_question_viewer(manifests, output, tasks, k) if len(manifests) == 8 else
         {'available': False, 'reason': 'All eight matching frozen manifests were not supplied, or this is synthetic QA.'})
     cloud_path = Path(cloud_costs) if cloud_costs is not None else suite / 'cloud-costs.json'
@@ -364,8 +461,11 @@ if __name__ == '__main__':
     parser.add_argument('--classification', choices=['observed', 'synthetic_test_fixture'], default='observed')
     parser.add_argument('--runs-root', type=Path, help='Frozen run manifests used for the exact question viewer')
     parser.add_argument('--cloud-costs', type=Path, help='Separate shared cloud cost ledger, never attributed to models')
+    parser.add_argument('--transport-cost-disclosure', type=Path,
+                        help='Separate source-hashed unknown-request charge disclosure; never changes response estimates')
     args = parser.parse_args()
     d = build(args.suite, output=args.output, classification=args.classification,
-              runs_root=args.runs_root, cloud_costs=args.cloud_costs)
+              runs_root=args.runs_root, cloud_costs=args.cloud_costs,
+              transport_cost_disclosure=args.transport_cost_disclosure)
     print(json.dumps({'output': str((args.output or args.suite) / 'index.html'), 'models': len(d['models']),
                       'questions': d['taskCount'], 'attempts': len(d['attempts']), 'classification': d['classification']}))
