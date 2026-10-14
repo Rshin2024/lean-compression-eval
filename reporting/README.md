@@ -148,3 +148,18 @@ and cost exports, and phase-provenance indices. Raw `all_scheduled_attempts.json
 files, run directories, credentials and directory listings are not served.
 Missing or linked artifacts prevent startup. The viewer makes no provider or
 Lean calls and does not publish files to an external service.
+
+
+## Compression and validity associations
+
+The `Compression vs correctness` section reuses the primary paper ranking's model cohort, shared questions, prompt, sample choices and measurement filters. All four metrics are shown in a correlation overview on the same support. Its scatter plot can show one point per model or one point per model/question. The x-axis can use the existing preferred-order rank points or log2 metric magnitude (linear normalized values for J0). Magnitude W_B increases with proof length; rank-points W_B increases with concision. Pearson uses the displayed x transformation. Spearman uses exact ratio ordering and midrank ties for T0/I0/W_B, exact rank-sum ordering for model rank points, and the disclosed 1e-12 descending-anchor tie rule for J0 magnitude.
+
+The y-coordinate is `valid / scheduled` over every selected original sample slot on those shared questions. Failed and truncated attempts remain in the denominator. A length filter restricts x and eligibility only: it does not drop a long valid proof or a failure from the retained question's denominator. Unresolved statuses, missing schedule rows and duplicate slots fail closed. An independent pure module, `compression_validity.js`, consumes the frozen DTO and the exact paper-ranking result without modifying either.
+
+A direct attempt-level compression/correctness correlation cannot be estimated: compression is observed only for accepted measurable proofs, whose validity is uniformly true. These new coefficients describe selected groups with at least one measurable success, not an unselected proof population or held-out predictions. Model/question observations repeat models and questions. No ordinary independence-based p-values or confidence intervals are reported. At least three plotted observations and variation in both axes are required; otherwise the coefficient is unavailable rather than zero. Fixed-sample selections and minimum-four-sample eligibility can force all observed validity fractions to one.
+
+The question-level view also shows within-question Pearson r, computed after subtracting each question's across-model mean from x and y. It removes between-question mean differences only; it does not remove model effects, selection bias or within-question scale differences. The Spearman column always describes the original plotted coordinates, not these residuals.
+
+Default compression prompt, gate25, min1, all samples: five models,22shared questions,88scheduled attempts each. Valid counts: GPT6.1Sol83, GPT6Sol64, Astra79, Opus48, Fable56. T0 rank-points correlation is Pearson -0.345561995235 and Spearman -0.7; using log2 T0 magnitude gives Pearson -0.558275861770 and Spearman -0.7. The question-level within-question-centered log2 T0 Pearson is -0.098767029948. These are descriptive post hoc associations, not evidence that compression causes lower correctness.
+
+The JSON export records source analysis hashes, the active ranking/correlation controls, all four plotted point sets and coefficients, selected scheduled attempt IDs, metric-supplying attempt IDs, denominators and interpretation metadata. Inspectable plot labels and a keyboard-accessible details area expose the same values as the export. Source measurements, the 9,600 outcomes, API costs and frozen questions remain unchanged.

@@ -48,6 +48,7 @@ function renderPaperRanking(){
   '';
  paperNode('paperExclusions').textContent=labels.length?`Below ${o.minCoverage}-question model coverage: ${labels.join(' · ')}. These models remain in the full validity and cost views.`:'';
  paperNode('paperExport').disabled=!r.rows.length;
+ renderCompressionValidity();
  if(!r.rows.length){
   paperNode('paperLeaderboard').innerHTML='<p class="empty">'+(r.cohort.length<2?'At least two models must meet the coverage requirement. Lower model coverage or relax the sample/length filters.':'No selected questions have enough usable samples for every compared model. Choose fewer models or relax the filters; no ranking is assigned.')+'</p>';
   paperNode('paperReading').textContent='Missing or invalid proofs receive no compression score. An empty shared question set cannot support an aggregate comparison.';

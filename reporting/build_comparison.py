@@ -447,7 +447,9 @@ def build(suite, *, output=None, classification='observed', runs_root=None, clou
             source['path'] = prefix + '/' + source['path']
     template = Path(__file__).with_name('comparison.html').read_text()
     for marker, name in [('__PAPER_CSS__', 'paper_panel.css'), ('__PAPER_PANEL__', 'paper_panel.html'),
-                         ('__PAPER_ENGINE__', 'paper_rankings.js'), ('__PAPER_UI__', 'paper_panel.js')]:
+                         ('__PAPER_ENGINE__', 'paper_rankings.js'), ('__PAPER_UI__', 'paper_panel.js'),
+                         ('__CORR_CSS__', 'correlation_panel.css'), ('__CORR_PANEL__', 'correlation_panel.html'),
+                         ('__CORR_ENGINE__', 'compression_validity.js'), ('__CORR_UI__', 'correlation_panel.js')]:
         require(template.count(marker) == 1, 'Paper ranking template marker missing or duplicated: ' + marker)
         template = template.replace(marker, Path(__file__).with_name(name).read_text())
     require(template.count('__REVIEWED_DATA__') == 1, 'Template marker missing or duplicated')

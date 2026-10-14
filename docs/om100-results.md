@@ -73,3 +73,10 @@ The local comparison now opens with explicit T₀, I₀, exploratory J₀-blend,
 The controls expose beta, prompt, model coverage, minimum usable samples, a fixed sample or all samples, maximum proof-body tokens, and question selection. Users can switch between average question rank and equal-question aggregate metric values. The same compared models and shared questions are used for every displayed rank in a view. Higher I₀ rewards longer proofs for these fixed statements. J₀ uses an explicitly labeled per-question maximum normalization; PageRank I₁/alpha is not measured. Exports include the controls and exact evidence. See [reporting methods](../reporting/README.md#adjustable-paper-metric-ranking).
 
 This presentation extension does not change the 9,600 historical outcomes, frozen prompts, metrics or costs, and initiates no new model calls.
+
+
+## Compression and correctness
+
+The local report includes an interactive compression/Lean-acceptance scatter plot, correlations for all four metrics, and model-level or model/question-level views. The default five-model/22-shared-question T0 rank comparison has Pearson r=-0.346 and Spearman rho=-0.700 against acceptance over88scheduled attempts per model. With log2 T0 magnitudes, model-level r=-0.558; after centering within questions, the question-level r=-0.099. The comparisons are conditional on measurable successful proofs, so they do not establish that individual-proof compression predicts correctness or causes a trade-off.
+
+Failures and truncated outputs stay in validity denominators, including when proof-length filters are active. Constant-validity and insufficient-support selections show unavailable coefficients. See [correlation definitions and limitations](../reporting/README.md#compression-and-validity-associations). No measurements or evaluation outcomes changed.

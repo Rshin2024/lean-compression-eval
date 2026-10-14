@@ -226,6 +226,35 @@
         "questions.html": "d19d304f2c97ab9d57934964b63d3a97b1015031c1cbc7cfa5d3ba32e65e8076",
         "questions-data.json": "70852b7a1ed7dfb79d4951d3bf5977e5fdfd22c5402bc94afcdd3019b7e22cd6"
       }
+    },
+    {
+      "at_utc": "2026-10-14T23:48:39.782567+00:00",
+      "request": "Compression metrics correlated with validity/correctness",
+      "views": [
+        "model aggregates",
+        "model by question groups"
+      ],
+      "x_coordinates": [
+        "preferred_order_rank_points",
+        "log2_metric_magnitude_or_linear_J0"
+      ],
+      "validity_denominator": "all original selected sample slots on the same shared questions; failures retained",
+      "default_T0_rank_correlations": {
+        "Pearson": -0.345561995234994,
+        "Spearman": -0.7,
+        "models": 5,
+        "shared_questions": 22,
+        "attempts_per_model": 88
+      },
+      "question_centered_log2_T0_Pearson": -0.0987670299481876,
+      "interpretation": "descriptive selected-group association; compression unmeasured on failures; not individual proof prediction or causal evidence",
+      "all_evaluation_observations_unchanged": true,
+      "artifact_hashes": {
+        "index.html": "d32dd6a63f413b097b0494e1f4c9c0aa16b27b8d98612a2daf17f49d175ac3b1",
+        "comparison-data.json": "85eab53b24818ab3a1bbbe30ebc1eb836713209d76115d9dfec5b91e8a56f6ec",
+        "questions.html": "d19d304f2c97ab9d57934964b63d3a97b1015031c1cbc7cfa5d3ba32e65e8076",
+        "questions-data.json": "70852b7a1ed7dfb79d4951d3bf5977e5fdfd22c5402bc94afcdd3019b7e22cd6"
+      }
     }
   ]
 }
