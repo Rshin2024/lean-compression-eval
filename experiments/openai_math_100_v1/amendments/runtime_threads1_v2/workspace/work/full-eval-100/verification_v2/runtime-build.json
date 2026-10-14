@@ -1,0 +1,31 @@
+{
+  "base_layers": [
+    "sha256:d81fb2a7c6ee3be05fdefaa7fd223be219c1ab172083ec1b994c3ecda33ac0a8",
+    "sha256:bb263d5ecf0e1fc261e550f4deb3207da4e86c2226075f8e0ae9d055b8e328de",
+    "sha256:d8161d55384e6a34d29210d2a652b271723c14032b6a9f3c8c2fc2f516b23772",
+    "sha256:e3f9382fa4e2d313830534c6804e91730688ec9190e455850395a4d9ac842b17",
+    "sha256:288a0938baf1ad9092c6da01bfc2cb8cc882bf3bc3b183fb98425c5c929d2eba"
+  ],
+  "core_hash": "958bc7676b5fef5700a71ddde93abcc76e7afd67a4622593b57f7836485504f1",
+  "diff": "--- v1/run-lean\n+++ v2_threads1/run-lean\n@@ -9,7 +9,7 @@\n PATH=\"$LEAN_SYSROOT/bin:/usr/bin:/bin\"\n export PATH\n set +e\n-\"$LEAN_SYSROOT/bin/lean\" --run \"$@\"\n+\"$LEAN_SYSROOT/bin/lean\" -j1 --run \"$@\"\n lean_exit=$?\n # As container init, stop anything Lean left running, so nothing changes /job or this script's output after\n # this point, then copy the evidence and return it with the result.\n",
+  "docker_image": "sha256:3889fa8d304ace87a58cc24fadb4fd68709c7f27167f75cf33736d9883114978",
+  "kind": "explicit_lean_thread_limit",
+  "lean_threads": 1,
+  "model_calls": 0,
+  "new_layers": [
+    "sha256:d81fb2a7c6ee3be05fdefaa7fd223be219c1ab172083ec1b994c3ecda33ac0a8",
+    "sha256:bb263d5ecf0e1fc261e550f4deb3207da4e86c2226075f8e0ae9d055b8e328de",
+    "sha256:d8161d55384e6a34d29210d2a652b271723c14032b6a9f3c8c2fc2f516b23772",
+    "sha256:e3f9382fa4e2d313830534c6804e91730688ec9190e455850395a4d9ac842b17",
+    "sha256:288a0938baf1ad9092c6da01bfc2cb8cc882bf3bc3b183fb98425c5c929d2eba",
+    "sha256:631f46045233a15bbe0a385998f0a2d01fa8e48699911d1b01e154d9b56e02cc"
+  ],
+  "official_v2_checks_started": false,
+  "source_docker_image": "sha256:07d4113f0330521740d2d9a3f97ef5f5d386b84b8d123119d97d1e05e3cebd29",
+  "source_environment_hash": "81c9f9a5e9cb062d24f8aceb298d1111a95243f392df0b2712c99461ea0b94b3",
+  "source_wrapper_sha256": "336f3ef4026f86b3d279979a0a4f52d810265bb0a3ca5ac81df5b77b1d714663",
+  "validation_budgets_unchanged": true,
+  "verification_environment_hash": "4fd89c0042a31c59cdd991585254b77d47a2210e77f9f5f82b57411a414e7dc0",
+  "version": "v2_threads1",
+  "wrapper_sha256": "c8f23f1389a27bc38bdadce706671668a810f282d20a336651b8d143b372209d"
+}

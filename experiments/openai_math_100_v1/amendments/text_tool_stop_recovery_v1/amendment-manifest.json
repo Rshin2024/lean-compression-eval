@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "kind": "outside_frozen_core_operational_amendment",
+  "amendment_id": "text_tool_stop_recovery_v1",
+  "created_at_utc": "2026-10-14T06:09:46.001911+00:00",
+  "base_source_manifest_sha256": "c676b397f54a739079034d969741e927c27e16a5c3cdfc96930e8902033292a0",
+  "files": [
+    {
+      "source_path": "work/full-eval-100/recover_text_tool_stops.py",
+      "path": "workspace/work/full-eval-100/recover_text_tool_stops.py",
+      "sha256": "871565a1d0b4bbafb584351c47fdef596179587ca9f590de7cfc116d655a7d74",
+      "bytes": 12826
+    },
+    {
+      "source_path": "work/full-eval-100/watch_text_tool_stops.py",
+      "path": "workspace/work/full-eval-100/watch_text_tool_stops.py",
+      "sha256": "6e0af210d4ce24219418d8d80ec77ddf4a3bfd96be0f711f8e3d448637704c61",
+      "bytes": 12869
+    },
+    {
+      "source_path": "work/full-eval-100/test_recover_text_tool_stops.py",
+      "path": "workspace/work/full-eval-100/test_recover_text_tool_stops.py",
+      "sha256": "141ed8fff6227fd8ecab829593ad773c6f6cde8238686ff101b71e8c82636c1e",
+      "bytes": 9417
+    },
+    {
+      "source_path": "work/full-eval-100/test_watch_text_tool_stops.py",
+      "path": "workspace/work/full-eval-100/test_watch_text_tool_stops.py",
+      "sha256": "4a7fb7268517eb112327431962c99a2a112dc5b6f45d3ec526bc8525250dd251",
+      "bytes": 8481
+    },
+    {
+      "source_path": "work/full-eval-100/operational-recovery/historical/recover_text_tool_stops_v1.py",
+      "path": "workspace/work/full-eval-100/operational-recovery/historical/recover_text_tool_stops_v1.py",
+      "sha256": "c3fe7b1593ecfe659fbe20a12a1925561289c17cec6755513ba087b0dce9e707",
+      "bytes": 6064
+    }
+  ],
+  "readme_sha256": "352b116bf2fbb7b1bb816c1f2f8c8d5be82d3910744732246a51eb52f12cc651",
+  "frozen_core_changed": false,
+  "existing_generation_records_rewritten": false,
+  "watchdog_makes_model_calls": false,
+  "watchdog_executes_tools": false,
+  "unit_tests_passed": 18,
+  "activation": "Parent task reviewed final source pins and dry run before activation; launch logs remain private",
+  "exclusions": [
+    "API credentials",
+    "SSH/cloud access material",
+    "provider responses or reasoning",
+    "private runtime/audit logs",
+    "run manifests",
+    "generation/evaluation records"
+  ]
+}

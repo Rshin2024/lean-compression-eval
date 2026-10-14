@@ -20,6 +20,8 @@ USAGE = ['input_tokens', 'output_tokens', 'reasoning_tokens', 'generation_elapse
          'validation_elapsed_seconds', 'extraction_elapsed_seconds']
 COST_FIELDS = ['status', 'total_usd', 'currency', 'usage_hash', 'pricing_hash', 'pricing_as_of',
                'assumptions', 'reasons', 'input_total_tokens', 'long_context_applied']
+PHASE_COMMON = ('version','amendment_hash','environment_hash','docker_image','measurement_hash',
+                'engine_hash','evaluator_source_hash','reference_policy_hash','reference_index_sha256','limits')
 
 
 def require(condition, message):
@@ -30,6 +32,52 @@ def require(condition, message):
 def canonical_hash(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(',', ':'),
         ensure_ascii=False, allow_nan=False).encode()).hexdigest()
+
+
+def reviewed_phase(analysis, report, n, classification):
+    phase=analysis.get('phase_provenance')
+    if phase is None:
+        require(n!=100 or classification=='synthetic_test_fixture',
+                'The observed OM100 comparison requires uniform phase-separated v2 verification reports')
+        return None
+    require(phase.get('schema_version')==1 and phase.get('kind')=='separate_generation_and_verification',
+            'Unknown report phase schema')
+    gen,ver=phase['generation'],phase['verification']
+    provenance=analysis.get('run_provenance',{})
+    require(gen['run_hash']==provenance.get('run_hash') and ver['version']==provenance.get('evaluation_version')=='v2_threads1',
+            'Generation and verification provenance were relabeled')
+    require(phase['cohort_hash']==canonical_hash({k:ver[k] for k in PHASE_COMMON}), 'Verification cohort hash mismatch')
+    policy=json.loads((report/'verification-policy.json').read_text())
+    require(canonical_hash(policy)==ver['policy_hash'], 'Verification policy artifact mismatch')
+    for key,expected in {'source_run_hash':gen['run_hash'],'source_manifest_sha256':gen['manifest_sha256'],
+        'generation_environment_hash':gen['environment_hash'],'amendment_hash':ver['amendment_hash'],
+        'verification_environment_hash':ver['environment_hash'],'verification_docker_image':ver['docker_image'],
+        'measurement_hash':ver['measurement_hash'],'reference_index_sha256':ver['reference_index_sha256'],
+        'reference_policy_hash':ver['reference_policy_hash'],'version':ver['version']}.items():
+        require(policy.get(key)==expected, 'Verification phase policy binding mismatch: '+key)
+    require(ver['limits'].get('lean_threads')==1, 'The amended verification must explicitly use one Lean thread')
+    return phase
+
+
+def phase_attempt_view(row,phase):
+    """Read the two-phase schema without changing or exporting a relabeled record."""
+    gen,ver=phase['generation'],phase['verification']
+    require(row.get('record_kind')=='phase_separated_verified_attempt', 'Pending phase records cannot enter a completed comparison')
+    require(row.get('evaluation_version')==ver['version'] and row.get('verification_policy_hash')==ver['policy_hash']
+        and row.get('source_run_hash')==gen['run_hash'] and row.get('verification_environment_hash')==ver['environment_hash'],
+        'Attempt uses a different generation or verification phase')
+    identity,result=row['generation_identity'],row['verification_result']
+    require(identity.get('environment_hash')==gen['environment_hash'], 'Original generation environment identity changed')
+    require(row.get('generation') is not None and canonical_hash(row['generation'])==row.get('generation_hash'),
+            'Phase attempt generation hash mismatch')
+    require(row.get('validity_status')==result.get('validity_status') and row.get('metric_status')==result.get('metric_status'),
+            'Phase attempt summary differs from verification result')
+    link=row.get('verification_record') or {}
+    require(link.get('path')==f'evaluations/{ver["version"]}/{row["attempt_id"]}.json' and link.get('sha256'),
+            'Missing link to complete phase verification record')
+    return {**{k:identity[k] for k in ('task_id','condition','sample_index','model_snapshot')},
+        'validity_status':result['validity_status'],'metric_status':result['metric_status'],
+        'metrics':result.get('metrics'),'generation':row['generation']}
 
 
 def exact_geometric_t0(rows):
@@ -168,7 +216,8 @@ def build(suite, *, output=None, classification='observed', runs_root=None, clou
     data = {'models': [], 'conditions': CONDS, 'attempts': [], 'sources': [],
             'built': datetime.now(timezone.utc).isoformat(), 'buildStatus': 'complete',
             'classification': classification}
-    population, generation_settings, manifests = None, set(), []
+    population, generation_settings, manifests, cohort = None, set(), [], None
+    phases_seen=[]
     runs_root = Path(runs_root) if runs_root is not None else Path(__file__).resolve().parents[1] / 'runs'
     for model in MODELS:
         report = report_directory(suite, model)
@@ -188,6 +237,12 @@ def build(suite, *, output=None, classification='observed', runs_root=None, clou
         if n == 100:
             require(tasks == [f'OM100-{i:03d}' for i in range(1, 101)] and k == 4,
                     'OM100 must retain every selected question and four samples')
+        phase=reviewed_phase(analysis,report,n,classification)
+        phases_seen.append(phase is not None)
+        if phase is not None:
+            identity=(phase['cohort_hash'],phase['generation']['environment_hash'])
+            require(cohort is None or cohort==identity, 'Models use mixed verification amendments/environments')
+            cohort=identity
         manifest = runs_root / (('om100-' if n == 100 else 'smoke-') + model + '-high') / 'manifest.json'
         if manifest.is_file() and classification == 'observed':
             manifests.append((model, manifest, analysis.get('run_provenance', {}).get('run_hash')))
@@ -205,7 +260,7 @@ def build(suite, *, output=None, classification='observed', runs_root=None, clou
                             'tasks': v['paired_population']['task_count']} for name, v in m['contrasts'].items()}
         costs, evidence = cost_map(report, analysis, model, per_model)
         data['models'].append({'id': model, 'conditions': conditions, 'perTask': m['per_task'],
-            'contrasts': contrasts, 'report': report.name + '/report.html', 'costs': evidence})
+            'contrasts': contrasts, 'report': report.name + '/report.html', 'costs': evidence,'phaseProvenance':phase})
         data['sources'].append({'model': model, 'path': report.name + '/analysis.json',
             'sha256': hashlib.sha256(raw).hexdigest(),
             'description': f'Completed frozen-run analysis; {per_model:,} attempts; {n} questions.'})
@@ -214,6 +269,8 @@ def build(suite, *, output=None, classification='observed', runs_root=None, clou
         seen, model_rows = set(), []
         base = analysis.get('sample_index_base', 0)
         for row in source_rows:
+            if phase is not None:
+                row=phase_attempt_view(row,phase)
             key = (row['task_id'], row['condition'], row['sample_index'])
             require(key not in seen, 'Duplicate scheduled attempt')
             seen.add(key)
@@ -258,6 +315,7 @@ def build(suite, *, output=None, classification='observed', runs_root=None, clou
                             'Question ranking metric does not reconcile')
         data['attempts'].extend(model_rows)
     tasks, n, k = population
+    require(not any(phases_seen) or all(phases_seen), 'Cannot mix legacy and phase-separated verification reports')
     require(len(data['attempts']) == n * k * len(CONDS) * len(MODELS), 'Cohort schedule mismatch')
     data.update(taskCount=n, samplesPerQuestion=k, attemptsPerCondition=n * k,
         attemptsPerModel=n * k * len(CONDS), totalAttempts=len(data['attempts']), tasks=tasks,
@@ -265,6 +323,7 @@ def build(suite, *, output=None, classification='observed', runs_root=None, clou
         magnitudePopulationDefault='shared' if n == 100 else 'available')
     effort, cap = next(iter(generation_settings)) if len(generation_settings) == 1 else (None, None)
     data['generation'] = {'reasoningEffort': effort, 'outputTokenCap': cap}
+    data['verification']={key:phase['verification'][key] for key in PHASE_COMMON} if all(phases_seen) else None
     data['questionViewer'] = (write_question_viewer(manifests, output, tasks, k) if len(manifests) == 8 else
         {'available': False, 'reason': 'All eight matching frozen manifests were not supplied, or this is synthetic QA.'})
     cloud_path = Path(cloud_costs) if cloud_costs is not None else suite / 'cloud-costs.json'

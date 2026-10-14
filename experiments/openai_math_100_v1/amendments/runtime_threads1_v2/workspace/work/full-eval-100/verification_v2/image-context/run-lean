@@ -1,0 +1,58 @@
+#!/bin/sh
+set -eu
+# Container root has no capabilities, so the files Lean and this script create must stay readable by their owner.
+umask 022
+LEAN_PATH=$(cat /opt/eval/lean-path)
+export LEAN_PATH
+LEAN_SYSROOT=$(dirname "$(dirname "$(cat /opt/eval/lean-binary)")")
+export LEAN_SYSROOT
+PATH="$LEAN_SYSROOT/bin:/usr/bin:/bin"
+export PATH
+set +e
+"$LEAN_SYSROOT/bin/lean" -j1 --run "$@"
+lean_exit=$?
+# As container init, stop anything Lean left running, so nothing changes /job or this script's output after
+# this point, then copy the evidence and return it with the result.
+if [ "$$" = 1 ]; then
+    kill -KILL -1 2>/dev/null
+fi
+# Drop whatever the evaluated code left under these names, so an unreadable cgroup file leaves its values null.
+rm -f /job/peak_memory_bytes /job/memory_stat
+# cgroup v2, then v1: the high-water mark of all memory charged to the container, page cache included.
+for counter in /sys/fs/cgroup/memory.peak /sys/fs/cgroup/memory/memory.max_usage_in_bytes; do
+    if [ -r "$counter" ]; then
+        head -c 65537 "$counter" > /job/peak_memory_bytes
+        break
+    fi
+done
+# Likewise memory.stat: what is still charged now that Lean has exited, and the major fault count.
+for counter in /sys/fs/cgroup/memory.stat /sys/fs/cgroup/memory/memory.stat; do
+    if [ -r "$counter" ]; then
+        head -c 65537 "$counter" > /job/memory_stat
+        break
+    fi
+done
+# No host directory is writable (/job is memory), so return the result (the last argument) and the evidence on
+# stdout, after whatever Lean printed: each readable regular file's bytes, at most the 256 MiB file-size limit
+# plus one, then a trailer line of their sizes, "-" for an absent file and "!" for anything else.
+result=
+for result in "$@"; do :; done
+sizes=
+for file in "$result" /job/peak_memory_bytes /job/memory_stat; do
+    size=
+    if [ ! -h "$file" ] && [ -f "$file" ] && [ -r "$file" ]; then
+        size=$(wc -c < "$file")
+        size=${size##* }
+    fi
+    case "$size" in
+        '' | *[!0-9]*)
+            if [ -h "$file" ] || [ -e "$file" ]; then size='!'; else size=-; fi ;;
+        0) ;;
+        *)
+            if [ "$size" -gt 268435456 ]; then size=268435457; fi
+            head -c "$size" "$file" ;;
+    esac
+    sizes="$sizes $size"
+done
+printf 'lean-compression-output v1%s\n' "$sizes"
+exit "$lean_exit"

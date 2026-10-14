@@ -1,0 +1,64 @@
+{
+  "cases": [
+    {
+      "attempt_id": "476835adc79d2590578dac727d1e3b93f7c55abfbb22095def662fc4f65560a9",
+      "case": "original_pid_incident",
+      "checker_executed": true,
+      "metric_status": "unavailable",
+      "source_generation_file_sha256": "444ced6dc09eb9be97191d2b7c04b0c772b270958517720c8c2c66fe1a118527",
+      "source_run_hash": "afc4a2977e9803170ffe7ef849a9b3a43991ff757b76e162274a16227fa93501",
+      "task_id": "OM100-081",
+      "thread_abort": false,
+      "validation_peak_memory_mib": 4210.76953125,
+      "validation_seconds": 52.99331922700003,
+      "validity_status": "elaboration_failure",
+      "verification_environment_hash": "4fd89c0042a31c59cdd991585254b77d47a2210e77f9f5f82b57411a414e7dc0"
+    },
+    {
+      "attempt_id": "8ec9797be0095bda81cb7d61842eca17c5aece2418611b1f3edd802145a6667f",
+      "case": "parse_failure",
+      "checker_executed": true,
+      "metric_status": "unavailable",
+      "source_generation_file_sha256": "25668c130ed805b69ee1d8326f435ad7235d930fe55167ae0fc1ed723cb0cd6d",
+      "source_run_hash": "ad046f6e4a6399d37a75de867840b428d9960adc7b1ac3b8e5c4e46d5502ed41",
+      "task_id": "OM100-050",
+      "thread_abort": false,
+      "validation_peak_memory_mib": 1593.5859375,
+      "validation_seconds": 6.324409849999938,
+      "validity_status": "parse_failure",
+      "verification_environment_hash": "4fd89c0042a31c59cdd991585254b77d47a2210e77f9f5f82b57411a414e7dc0"
+    },
+    {
+      "attempt_id": "b482c92615cedb190aca2a155c151912c944e67851461d1ad8c0d3646aef1e26",
+      "case": "success",
+      "checker_executed": true,
+      "metric_status": "available",
+      "source_generation_file_sha256": "1a1ebc388b0c132970d8fb34749f68d46defa296ea60bc29406c700bf60b514e",
+      "source_run_hash": "ad046f6e4a6399d37a75de867840b428d9960adc7b1ac3b8e5c4e46d5502ed41",
+      "task_id": "OM100-051",
+      "thread_abort": false,
+      "validation_peak_memory_mib": 1857.8359375,
+      "validation_seconds": 8.856454151000435,
+      "validity_status": "success",
+      "verification_environment_hash": "4fd89c0042a31c59cdd991585254b77d47a2210e77f9f5f82b57411a414e7dc0"
+    },
+    {
+      "attempt_id": "871025e41979ac90317eacf68fb77002e019ecdee9ca1e786f25a784179ca77f",
+      "case": "truncated_output",
+      "checker_executed": false,
+      "metric_status": "unavailable",
+      "source_generation_file_sha256": "b7a6e35029b2344895307d5cc907359f277c37cab43dc95ea8afcaf0359c52ed",
+      "source_run_hash": "ad046f6e4a6399d37a75de867840b428d9960adc7b1ac3b8e5c4e46d5502ed41",
+      "task_id": "OM100-019",
+      "thread_abort": false,
+      "validation_peak_memory_mib": null,
+      "validation_seconds": null,
+      "validity_status": "truncated_output",
+      "verification_environment_hash": "4fd89c0042a31c59cdd991585254b77d47a2210e77f9f5f82b57411a414e7dc0"
+    }
+  ],
+  "generation_files_unchanged": true,
+  "new_model_calls": 0,
+  "official_v2_records_written": 0,
+  "status": "pass"
+}

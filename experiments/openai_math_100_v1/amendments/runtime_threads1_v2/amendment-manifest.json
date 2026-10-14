@@ -1,0 +1,261 @@
+{
+  "amendment_id": "runtime_threads1_v2",
+  "base_source_manifest_sha256": "c676b397f54a739079034d969741e927c27e16a5c3cdfc96930e8902033292a0",
+  "checker_calls": 0,
+  "excluded": [
+    "hidden reference index/proofs/source spans",
+    "full reference checks/dependency graphs",
+    "diagnostic result bodies",
+    "provider responses/captures/reasoning",
+    "API credentials",
+    "SSH folder and cloud access metadata",
+    "container images/tars",
+    "runtime/event/status logs"
+  ],
+  "excluded_reference_index": {
+    "path": "verification_v2/reference-index.json",
+    "sha256": "5c44821af7cc67e72b3776c4ea03d922d0c00976932e437176ad5a9cbb54e003"
+  },
+  "files": [
+    {
+      "bytes": 6122,
+      "kind": "documentation",
+      "path": "README.md",
+      "sha256": "441407d72a13fce89c81c433d3fcc5dc505a51c1de411f5c5a931872073527fc"
+    },
+    {
+      "bytes": 7933,
+      "copy_mode": "exact_bytes",
+      "kind": "source",
+      "path": "package_amendment.py",
+      "sha256": "1c90e5ad648e3015167244583ac06aa0ba579ed709d83ff5b399a2e0d63f60a8",
+      "source_path": "work/full-eval-100/runtime_amendment_archive/package_amendment.py"
+    },
+    {
+      "bytes": 10331,
+      "copy_mode": "exact_bytes",
+      "kind": "source",
+      "path": "repository/reporting/README.md",
+      "sha256": "b35f592181da31408e1e058993bf79ec022fb80bd73f448e7585c7a253408a74",
+      "source_path": "outputs/lean-compression-eval/reporting/README.md"
+    },
+    {
+      "bytes": 26419,
+      "copy_mode": "exact_bytes",
+      "kind": "source",
+      "path": "repository/reporting/build_comparison.py",
+      "sha256": "268528f10f80b368f575051482df666281fe8c2f495124df9b5881a6bbb6b39d",
+      "source_path": "outputs/lean-compression-eval/reporting/build_comparison.py"
+    },
+    {
+      "bytes": 52768,
+      "copy_mode": "exact_bytes",
+      "kind": "source",
+      "path": "repository/reporting/comparison.html",
+      "sha256": "0578d2b5c667687db276cf2cc24371d88a222d97136e31756c03e7428512a565",
+      "source_path": "outputs/lean-compression-eval/reporting/comparison.html"
+    },
+    {
+      "bytes": 11996,
+      "copy_mode": "exact_bytes",
+      "kind": "source",
+      "path": "repository/reporting/report_verification_v2.py",
+      "sha256": "e84d22a566a123e47c21ed1cd204a42a0a935c779b8051205dfa3f6bba7fd490",
+      "source_path": "outputs/lean-compression-eval/reporting/report_verification_v2.py"
+    },
+    {
+      "bytes": 10866,
+      "copy_mode": "exact_bytes",
+      "kind": "source",
+      "path": "repository/reporting/test_phase_reporting.py",
+      "sha256": "a7a9d973cc9249c312059e1260c2ef5abcb58c8845b7e6a7e7e2ac6accbdeb4a",
+      "source_path": "outputs/lean-compression-eval/reporting/test_phase_reporting.py"
+    },
+    {
+      "bytes": 10161,
+      "copy_mode": "exact_bytes",
+      "kind": "source",
+      "path": "workspace/work/full-eval-100/live/index.html",
+      "sha256": "99e7fb8e83aadf075169b1ca5fe3b5950043bea9bcc913097ef849a02d95a3e9",
+      "source_path": "work/full-eval-100/live/index.html"
+    },
+    {
+      "bytes": 6858,
+      "copy_mode": "exact_bytes",
+      "kind": "source",
+      "path": "workspace/work/full-eval-100/live/server.py",
+      "sha256": "b5d913a07abe370cefa18d835d4dfafa50df9b5887101347bf0c9765156e0c1e",
+      "source_path": "work/full-eval-100/live/server.py"
+    },
+    {
+      "bytes": 6146,
+      "copy_mode": "exact_bytes",
+      "kind": "metadata",
+      "path": "workspace/work/full-eval-100/runtime-amendment-v2.json",
+      "sha256": "a9b8e3254e7f61138837e06a87ee68ea21d89802a9693671c49717ccb5e367b0",
+      "source_path": "work/full-eval-100/runtime-amendment-v2.json"
+    },
+    {
+      "bytes": 2461,
+      "copy_mode": "exact_bytes",
+      "kind": "source",
+      "path": "workspace/work/full-eval-100/snapshot_verification_files.py",
+      "sha256": "24a09f8dbb8ebba983f1cc414046f4e4a126e63ca887ea895d39db26ae579132",
+      "source_path": "work/full-eval-100/snapshot_verification_files.py"
+    },
+    {
+      "bytes": 9434,
+      "copy_mode": "exact_bytes",
+      "kind": "source",
+      "path": "workspace/work/full-eval-100/supervise_verification_v2.py",
+      "sha256": "30beed2a54dcf91f9f3e0a17a192c691beee024d338096ffec6f6460c9fbffcc",
+      "source_path": "work/full-eval-100/supervise_verification_v2.py"
+    },
+    {
+      "bytes": 3683,
+      "copy_mode": "exact_bytes",
+      "kind": "source",
+      "path": "workspace/work/full-eval-100/test_verification_supervision.py",
+      "sha256": "51688fb9c95625419ea74aea48c0b564b7bcafc418cb1c65a680a5d2dea13d84",
+      "source_path": "work/full-eval-100/test_verification_supervision.py"
+    },
+    {
+      "bytes": 1569,
+      "copy_mode": "exact_bytes",
+      "kind": "metadata",
+      "path": "workspace/work/full-eval-100/verification-launch-v2.json",
+      "sha256": "d02e5eee1308e5146c51cd741fc36199e5dd592d72f5be0e0f9392cff6d892ac",
+      "source_path": "work/full-eval-100/verification-launch-v2.json"
+    },
+    {
+      "bytes": 4915,
+      "copy_mode": "exact_bytes",
+      "kind": "source",
+      "path": "workspace/work/full-eval-100/verification_v2/build_runtime.py",
+      "sha256": "f6196dc9b3dfd91f23e8aa68a42fdede93a6025c9e53c6f0edb96cf65b64d389",
+      "source_path": "work/full-eval-100/verification_v2/build_runtime.py"
+    },
+    {
+      "bytes": 3649,
+      "copy_mode": "exact_bytes",
+      "kind": "source",
+      "path": "workspace/work/full-eval-100/verification_v2/diagnose_replay.py",
+      "sha256": "704567d1bd49f031a22b23f807f2c91bf6381f8ebcb0c99d1fc9c61d879bb5ad",
+      "source_path": "work/full-eval-100/verification_v2/diagnose_replay.py"
+    },
+    {
+      "bytes": 2949,
+      "copy_mode": "exact_bytes",
+      "kind": "metadata",
+      "path": "workspace/work/full-eval-100/verification_v2/diagnostic-summary.json",
+      "sha256": "11070d01dc5ddb3816a248ff94998bf7bd8d7f8688bd7dd7cb5ae00cf39538c2",
+      "source_path": "work/full-eval-100/verification_v2/diagnostic-summary.json"
+    },
+    {
+      "bytes": 11348621,
+      "copy_mode": "exact_bytes",
+      "kind": "metadata",
+      "path": "workspace/work/full-eval-100/verification_v2/environment.json",
+      "sha256": "5f3ac0e87b2548de1afe604f00903449381046a7d853ec6a4d0fd9ef64b7b2ed",
+      "source_path": "work/full-eval-100/verification_v2/environment.json"
+    },
+    {
+      "bytes": 204,
+      "copy_mode": "exact_bytes",
+      "kind": "metadata",
+      "path": "workspace/work/full-eval-100/verification_v2/image-context/Dockerfile",
+      "sha256": "cff44f819d765867e1a7a635f1913beb4698871c0a24f818c5d4e7ae741816d3",
+      "source_path": "work/full-eval-100/verification_v2/image-context/Dockerfile"
+    },
+    {
+      "bytes": 2318,
+      "copy_mode": "exact_bytes",
+      "kind": "metadata",
+      "path": "workspace/work/full-eval-100/verification_v2/image-context/run-lean",
+      "sha256": "c8f23f1389a27bc38bdadce706671668a810f282d20a336651b8d143b372209d",
+      "source_path": "work/full-eval-100/verification_v2/image-context/run-lean"
+    },
+    {
+      "bytes": 1763,
+      "copy_mode": "exact_bytes",
+      "kind": "metadata",
+      "path": "workspace/work/full-eval-100/verification_v2/preflight.json",
+      "sha256": "725cdc2a97ba90b99939646840e97355ac996dc51ce0a32e6275b975933ecfb8",
+      "source_path": "work/full-eval-100/verification_v2/preflight.json"
+    },
+    {
+      "bytes": 5983,
+      "copy_mode": "exact_bytes",
+      "kind": "source",
+      "path": "workspace/work/full-eval-100/verification_v2/prepare_amendment.py",
+      "sha256": "27ee4cd4d8341d6013eb6de81df19b2ca5542d2bd77ca6c9dbd69d7a1435c559",
+      "source_path": "work/full-eval-100/verification_v2/prepare_amendment.py"
+    },
+    {
+      "bytes": 29236,
+      "copy_mode": "exact_bytes",
+      "kind": "metadata",
+      "path": "workspace/work/full-eval-100/verification_v2/reference-config.json",
+      "sha256": "c9c9134e437965e015969029ed400b771b3b5aa27f47e32e507b69ef2e3b08da",
+      "source_path": "work/full-eval-100/verification_v2/reference-config.json"
+    },
+    {
+      "bytes": 2187,
+      "copy_mode": "exact_bytes",
+      "kind": "metadata",
+      "path": "workspace/work/full-eval-100/verification_v2/runtime-build.json",
+      "sha256": "195e3ebac7d9485207cd1b7c8413fb5936494403e3c7814f89f7e748a9495d45",
+      "source_path": "work/full-eval-100/verification_v2/runtime-build.json"
+    },
+    {
+      "bytes": 538,
+      "copy_mode": "exact_bytes",
+      "kind": "metadata",
+      "path": "workspace/work/full-eval-100/verification_v2/runtime-verification.json",
+      "sha256": "b0e2e2c70e32ccfc44194c533f09621b6e064cfa04317038b59542c2141a7ea4",
+      "source_path": "work/full-eval-100/verification_v2/runtime-verification.json"
+    },
+    {
+      "bytes": 11934,
+      "copy_mode": "exact_bytes",
+      "kind": "source",
+      "path": "workspace/work/full-eval-100/verification_v2/test_verifier.py",
+      "sha256": "1e6413cda3be7e07c01436a490b1b701d754d8ceeee723b8501b6f732dc56815",
+      "source_path": "work/full-eval-100/verification_v2/test_verifier.py"
+    },
+    {
+      "bytes": 24207,
+      "copy_mode": "exact_bytes",
+      "kind": "source",
+      "path": "workspace/work/full-eval-100/verify_runtime_v2.py",
+      "sha256": "55f5931a9d4a2cfa92338e4079206477abd7d792a94b758b75b61237d33a5ac0",
+      "source_path": "work/full-eval-100/verify_runtime_v2.py"
+    }
+  ],
+  "full_run_completion_claimed": false,
+  "generation_core_changed": false,
+  "generation_manifests_and_responses_unchanged": true,
+  "kind": "outside_frozen_core_verification_amendment",
+  "launch_performed_by_packager": false,
+  "model_calls": 0,
+  "optional_metadata_not_present_locally": [
+    "verification_v2/reference-workers/summary.json",
+    "verification_v2/reference-checks/policy.json"
+  ],
+  "reporting_freeze": {
+    "files": {
+      "reporting/README.md": "b35f592181da31408e1e058993bf79ec022fb80bd73f448e7585c7a253408a74",
+      "reporting/build_comparison.py": "268528f10f80b368f575051482df666281fe8c2f495124df9b5881a6bbb6b39d",
+      "reporting/comparison.html": "0578d2b5c667687db276cf2cc24371d88a222d97136e31756c03e7428512a565",
+      "reporting/report_verification_v2.py": "e84d22a566a123e47c21ed1cd204a42a0a935c779b8051205dfa3f6bba7fd490",
+      "reporting/test_phase_reporting.py": "a7a9d973cc9249c312059e1260c2ef5abcb58c8845b7e6a7e7e2ac6accbdeb4a"
+    },
+    "offline_tests_passed": 14,
+    "owner": "fresh_math_datasets",
+    "state": "source_frozen",
+    "synthetic_coverage": "8 models / 9600 scheduled rows, phase export and mixed-amendment rejection"
+  },
+  "schema_version": 1,
+  "verification_amendment_sha256": "a9b8e3254e7f61138837e06a87ee68ea21d89802a9693671c49717ccb5e367b0",
+  "verification_launch_sha256": "d02e5eee1308e5146c51cd741fc36199e5dd592d72f5be0e0f9392cff6d892ac"
+}

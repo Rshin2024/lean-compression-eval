@@ -30,7 +30,48 @@ The cost view sums exact decimal USD strings from per-attempt cost reports and r
 
 If all eight matching manifests are available under `--runs-root PATH` (default `runs`), the builder verifies run and prompt hashes and exports `questions.html` plus `questions-data.json`. They contain only the exact frozen `slots.messages`, collapsed across identical models/samples into question-by-condition combinations. Prompt differences across models/samples cause a failure rather than being hidden. The viewer does not read private curator catalogues, reference proofs, captured responses or credentials. It records the run hashes and prompt hashes for inspection.
 
-Full-suite example after all checks finish:
+## Amended OM100 verification
+
+The OM100 final comparison uses `v2_threads1`: the original generation runs and
+responses are unchanged, while every scheduled outcome and all 100 reference
+proofs are checked under the separately frozen one-thread Lean runtime amendment.
+Earlier v1 records remain historical evidence and are excluded from this final
+comparison. The report builder rejects legacy OM100 reports, mixed verification
+versions, mixed amendments/environments and phase records with different policy
+bindings. The original ten-question smoke report remains supported unchanged.
+
+Use the external phase-aware adapter after a model has all 1,200 explicit v2
+terminal records, including records for truncated/failed generations:
+
+```sh
+python3 reporting/report_verification_v2.py \
+  --run runs/om100-gpt-6.1-sol-high \
+  --amendment ../../work/full-eval-100/runtime-amendment-v2.json \
+  --output runs/om100-suite-high-20261013/report-gpt-6.1-sol
+```
+
+Repeat for the other seven models. The validated external reader checks the
+original generation bytes and separate verification policy before statistics
+are computed. The adapter creates temporary analysis projections in memory;
+`all_scheduled_attempts.json` retains the actual two-phase schema with unchanged
+`generation_identity` and nested `verification_result`. A terminal-looking
+generation failure with no stored v2 record still blocks final reporting.
+No source slot, generation, run manifest or prior result is rewritten.
+
+`verification-phase.json`, `verification-policy.json` and the HTML describe the
+original generation environment separately from the amended verification
+environment. The question viewer remains tied to the exact original frozen
+messages. API costs are calculated once from the original generation records;
+the verification replay adds no model calls. `phase-audit-index.json` identifies
+the selected proof-audit records and hashes of their full graph-bearing files;
+the legacy single-phase graph-restoration exporter is deliberately not used.
+
+The adapter requires the bound private reference index and runtime amendment
+artifacts. Git source archives can record their hashes without including the
+reference proofs or full verification records. Keep those operational artifacts
+and complete source records for independent replay and audit.
+
+Full-suite comparison after all eight phase-aware reports finish:
 
 ```sh
 python3 reporting/build_comparison.py \
@@ -39,4 +80,4 @@ python3 reporting/build_comparison.py \
   --cloud-costs ../../work/full-eval-100/runtime/azure/cloud-costs.json
 ```
 
-Offline contract checks: `python3 -m unittest discover -s reporting -p test_comparison.py`. Synthetic QA fixtures must be built with `--classification synthetic_test_fixture`; this prints a prominent banner and suppresses the actual-input viewer. Such fixtures are development evidence, never evaluation results.
+Offline contract checks: `python3 -m unittest discover -s reporting -p 'test*.py'`. Synthetic QA fixtures must be built with `--classification synthetic_test_fixture`; this prints a prominent banner and suppresses the actual-input viewer. Such fixtures are development evidence, never evaluation results. Tests cover complete eight-model nested-record export, numeric precision, immutable generation identity, mixed-phase rejection, and incomplete truncated-response placeholders.
