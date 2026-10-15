@@ -1,0 +1,547 @@
+{
+  "scope": "Post hoc all-condition all-model min/max T0 in provider-maximum cohort for two named questions; only saved submitted text and recorded dependency graphs examined. Not blinded; no Lean reruns; no outputs removed.",
+  "records": [
+    {
+      "task": "OM100-065",
+      "model": "gpt-6-sol",
+      "condition": "standard",
+      "sample": 3,
+      "attemptId": "5138f5ed3a12515d55f598c9f246bc69b67464a57b9ac388909551ff028848f4",
+      "metrics": {
+        "W_S": 114,
+        "W_B": 1669,
+        "U_S_decimal": "591094103355020322806266552131978",
+        "U_B_decimal": "12569573231392935585110902223260006",
+        "T0": {
+          "denominator_decimal": "1783",
+          "log2": 102.54169688385875,
+          "numerator_decimal": "13160667334747955907917168775391984"
+        },
+        "I0": {
+          "denominator_decimal": "114",
+          "log2": 3.8718782251978574,
+          "numerator_decimal": "1669"
+        },
+        "D": 77,
+        "log2_T0": 102.54169688385875,
+        "log2_I0": 3.8718782251978574
+      },
+      "direction": "min",
+      "record_path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/runs/om100-max-gpt-6-sol-high-20261014/evaluations/v2_threads1/5138f5ed3a12515d55f598c9f246bc69b67464a57b9ac388909551ff028848f4.json",
+      "record_sha256": "164ab384205c40435c0a57f4a3a43bfb94455dabde502de3771e24594426a611",
+      "submitted_proof_path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/methods/OM100-065-min-submitted.lean",
+      "submitted_proof_sha256": "87e80e693d39c053d9f32c4dc12997b593f47fda613af0dcc919ec7f6bbc75dc",
+      "validation_status": "success",
+      "kernel_replay": true,
+      "node_count": 7227,
+      "top_direct_body_dependencies": [
+        {
+          "name": "instOrderTopologyReal",
+          "owner_module": "Mathlib.Topology.MetricSpace.Pseudo.Lemmas",
+          "multiplicity": 1,
+          "expanded_per_reference": "5426501504673015235789498506430289",
+          "body_contribution": "5426501504673015235789498506430289",
+          "body_fraction": 0.43171724328079364
+        },
+        {
+          "name": "Real.pseudoMetricSpace",
+          "owner_module": "Mathlib.Topology.MetricSpace.Pseudo.Defs",
+          "multiplicity": 11,
+          "expanded_per_reference": "295533050844639004019191332486027",
+          "body_contribution": "3250863559291029044211104657346297",
+          "body_fraction": 0.258629589043794
+        },
+        {
+          "name": "OAI.InfiniteMatroidCounterexample.Small",
+          "owner_module": "OAI.Combinatorics.InfiniteMatroid.BlockDensity",
+          "multiplicity": 7,
+          "expanded_per_reference": "295542384733219767228108793725735",
+          "body_contribution": "2068796693132538370596761556080145",
+          "body_fraction": 0.16458766380115822
+        },
+        {
+          "name": "Real.dist_eq",
+          "owner_module": "Mathlib.Topology.MetricSpace.Pseudo.Defs",
+          "multiplicity": 1,
+          "expanded_per_reference": "591066265450869112937140972267614",
+          "body_contribution": "591066265450869112937140972267614",
+          "body_fraction": 0.04702357467273917
+        },
+        {
+          "name": "Metric.tendsto_atTop",
+          "owner_module": "Mathlib.Topology.MetricSpace.Pseudo.Defs",
+          "multiplicity": 1,
+          "expanded_per_reference": "402401485431184045288838085121639",
+          "body_contribution": "402401485431184045288838085121639",
+          "body_fraction": 0.03201393380852205
+        },
+        {
+          "name": "Real.instField",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 240,
+          "expanded_per_reference": "1622950172831302333888519645193",
+          "body_contribution": "389508041479512560133244714846320",
+          "body_fraction": 0.030988167562181267
+        },
+        {
+          "name": "Real.instFloorRing",
+          "owner_module": "Mathlib.Algebra.Order.Archimedean.Real.Basic",
+          "multiplicity": 11,
+          "expanded_per_reference": "31071371733888731606116521041427",
+          "body_contribution": "341785089072776047667281731455697",
+          "body_fraction": 0.027191463288439754
+        },
+        {
+          "name": "OAI.InfiniteMatroidCounterexample.block_card_atTop",
+          "owner_module": "EvaluatorCandidate",
+          "multiplicity": 1,
+          "expanded_per_reference": "93279126878471094609294552061905",
+          "body_contribution": "93279126878471094609294552061905",
+          "body_fraction": 0.00742102577082755
+        },
+        {
+          "name": "OAI.InfiniteMatroidCounterexample.finiteDensity_nonneg",
+          "owner_module": "OAI.Combinatorics.InfiniteMatroid.BlockDensity",
+          "multiplicity": 1,
+          "expanded_per_reference": "1740200897863922917814282509371",
+          "body_contribution": "1740200897863922917814282509371",
+          "body_fraction": 0.0001384455037437319
+        },
+        {
+          "name": "OAI.InfiniteMatroidCounterexample.density",
+          "owner_module": "OAI.Combinatorics.InfiniteMatroid.BlockDensity",
+          "multiplicity": 140,
+          "expanded_per_reference": "9333888580763071027751400648",
+          "body_contribution": "1306744401306829943885196090720",
+          "body_fraction": 0.00010396092033126403
+        },
+        {
+          "name": "Real.instDivInvMonoid",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 75,
+          "expanded_per_reference": "9333888580763019278204700066",
+          "body_contribution": "700041643557226445865352504950",
+          "body_fraction": 5.5693350177462565e-05
+        },
+        {
+          "name": "Real.instIsOrderedRing",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 15,
+          "expanded_per_reference": "35863774704322820009880543201",
+          "body_contribution": "537956620564842300148208148015",
+          "body_fraction": 4.279832025014798e-05
+        }
+      ],
+      "fresh_python_weighted_recomputation_matches": true
+    },
+    {
+      "task": "OM100-065",
+      "model": "gpt-6-sol",
+      "condition": "mathematical_compression",
+      "sample": 4,
+      "attemptId": "6cb7221d63ae72e34815c627f21f2d926f6c293579ae6e6f52959184c1a935f5",
+      "metrics": {
+        "W_S": 114,
+        "W_B": 1198,
+        "U_S_decimal": "591094103355020322806266552131978",
+        "U_B_decimal": "72592441491651434700809783082200277038861498833663",
+        "T0": {
+          "denominator_decimal": "1312",
+          "log2": 155.2767439838523,
+          "numerator_decimal": "72592441491651435291903886437220599845128050965641"
+        },
+        "I0": {
+          "denominator_decimal": "114",
+          "log2": 3.3935221786240444,
+          "numerator_decimal": "1198"
+        },
+        "D": 120,
+        "log2_T0": 155.2767439838523,
+        "log2_I0": 3.3935221786240444
+      },
+      "direction": "max",
+      "record_path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/runs/om100-max-gpt-6-sol-high-20261014/evaluations/v2_threads1/6cb7221d63ae72e34815c627f21f2d926f6c293579ae6e6f52959184c1a935f5.json",
+      "record_sha256": "d3b89d9cbee1da78b3e43f2b3bef17618474348dbcd827f7517783ea213a5016",
+      "submitted_proof_path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/methods/OM100-065-max-submitted.lean",
+      "submitted_proof_sha256": "b4c6860e0034bf4fd8c760a26a2b2639dc70fa628abb08d0fd622c8c8f0f84ed",
+      "validation_status": "success",
+      "kernel_replay": true,
+      "node_count": 9829,
+      "top_direct_body_dependencies": [
+        {
+          "name": "Real.normedField",
+          "owner_module": "Mathlib.Analysis.Normed.Field.Basic",
+          "multiplicity": 2,
+          "expanded_per_reference": "18148110372912851597741413840798016011615981342530",
+          "body_contribution": "36296220745825703195482827681596032023231962685060",
+          "body_fraction": 0.4999999999999998
+        },
+        {
+          "name": "Real.normedCommRing",
+          "owner_module": "Mathlib.Analysis.Normed.Ring.Basic",
+          "multiplicity": 2,
+          "expanded_per_reference": "18148110372912851534453889872237583550274697438804",
+          "body_contribution": "36296220745825703068907779744475167100549394877608",
+          "body_fraction": 0.4999999999999998
+        },
+        {
+          "name": "instOrderTopologyReal",
+          "owner_module": "Mathlib.Topology.MetricSpace.Pseudo.Lemmas",
+          "multiplicity": 3,
+          "expanded_per_reference": "5426501504673015235789498506430289",
+          "body_contribution": "16279504514019045707368495519290867",
+          "body_fraction": 2.2425894734359207e-16
+        },
+        {
+          "name": "Real.pseudoMetricSpace",
+          "owner_module": "Mathlib.Topology.MetricSpace.Pseudo.Defs",
+          "multiplicity": 17,
+          "expanded_per_reference": "295533050844639004019191332486027",
+          "body_contribution": "5024061864358863068326252652262459",
+          "body_fraction": 6.920915953676335e-17
+        },
+        {
+          "name": "OAI.InfiniteMatroidCounterexample.Small",
+          "owner_module": "OAI.Combinatorics.InfiniteMatroid.BlockDensity",
+          "multiplicity": 7,
+          "expanded_per_reference": "295542384733219767228108793725735",
+          "body_contribution": "2068796693132538370596761556080145",
+          "body_fraction": 2.8498789276435377e-17
+        },
+        {
+          "name": "Real.instField",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 1144,
+          "expanded_per_reference": "1622950172831302333888519645193",
+          "body_contribution": "1856654997719009869968466474100792",
+          "body_fraction": 2.55764231036717e-17
+        },
+        {
+          "name": "Real.instFloorRing",
+          "owner_module": "Mathlib.Algebra.Order.Archimedean.Real.Basic",
+          "multiplicity": 56,
+          "expanded_per_reference": "31071371733888731606116521041427",
+          "body_contribution": "1739996817097768969942525178319912",
+          "body_fraction": 2.3969393801114667e-17
+        },
+        {
+          "name": "Real.dist_eq",
+          "owner_module": "Mathlib.Topology.MetricSpace.Pseudo.Defs",
+          "multiplicity": 1,
+          "expanded_per_reference": "591066265450869112937140972267614",
+          "body_contribution": "591066265450869112937140972267614",
+          "body_fraction": 8.142256319052793e-18
+        },
+        {
+          "name": "Metric.tendsto_atTop",
+          "owner_module": "Mathlib.Topology.MetricSpace.Pseudo.Defs",
+          "multiplicity": 1,
+          "expanded_per_reference": "402401485431184045288838085121639",
+          "body_contribution": "402401485431184045288838085121639",
+          "body_fraction": 5.5432973070269665e-18
+        },
+        {
+          "name": "NormMulClass.toNoZeroDivisors",
+          "owner_module": "Mathlib.Analysis.Normed.Ring.Basic",
+          "multiplicity": 2,
+          "expanded_per_reference": "186880698586740845186504752797231",
+          "body_contribution": "373761397173481690373009505594462",
+          "body_fraction": 5.1487646577704164e-18
+        },
+        {
+          "name": "OAI.InfiniteMatroidCounterexample.block_card_atTop",
+          "owner_module": "EvaluatorCandidate",
+          "multiplicity": 1,
+          "expanded_per_reference": "93279126878471094609294552061905",
+          "body_contribution": "93279126878471094609294552061905",
+          "body_fraction": 1.2849702387981915e-18
+        },
+        {
+          "name": "OAI.InfiniteMatroidCounterexample.density",
+          "owner_module": "OAI.Combinatorics.InfiniteMatroid.BlockDensity",
+          "multiplicity": 228,
+          "expanded_per_reference": "9333888580763071027751400648",
+          "body_contribution": "2128126596413980194327319347744",
+          "body_fraction": 2.9316090665702814e-20
+        }
+      ],
+      "fresh_python_weighted_recomputation_matches": true,
+      "vs_min_same_task": {
+        "delta_log2_T0": 52.73504709999355,
+        "delta_log2_U": 52.29250811698664,
+        "minus_delta_log2_W": 0.4425389830069104
+      }
+    },
+    {
+      "task": "OM100-100",
+      "model": "gpt-6-luna",
+      "condition": "mathematical_compression",
+      "sample": 4,
+      "attemptId": "fc206e101fb21973f50fc9b42e69fb610d2178d4703a9afd48270812bb8d3f09",
+      "metrics": {
+        "W_S": 270,
+        "W_B": 1051,
+        "U_S_decimal": "10316430126863402644501290796",
+        "U_B_decimal": "1563337239217276265479972051532029",
+        "T0": {
+          "denominator_decimal": "1321",
+          "log2": 99.9008509268117,
+          "numerator_decimal": "1563347555647403128882616552822825"
+        },
+        "I0": {
+          "denominator_decimal": "270",
+          "log2": 1.9607313569113458,
+          "numerator_decimal": "1051"
+        },
+        "D": 71,
+        "log2_T0": 99.9008509268117,
+        "log2_I0": 1.9607313569113458
+      },
+      "direction": "min",
+      "record_path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/runs/om100-max-gpt-6-luna-high-20261014/evaluations/v2_threads1/fc206e101fb21973f50fc9b42e69fb610d2178d4703a9afd48270812bb8d3f09.json",
+      "record_sha256": "983083e3e84bc982eb10a6f094635ee566f1a12e8367e28b369c2f6371b9709b",
+      "submitted_proof_path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/methods/OM100-100-min-submitted.lean",
+      "submitted_proof_sha256": "eee77a4e7379a950e7135671d05598afa812880c23c8f56b0f79f7efb1978e28",
+      "validation_status": "success",
+      "kernel_replay": true,
+      "node_count": 5242,
+      "top_direct_body_dependencies": [
+        {
+          "name": "Real.instField",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 575,
+          "expanded_per_reference": "1622950172831302333888519645193",
+          "body_contribution": "933196349377998841985898795985975",
+          "body_fraction": 0.596925810994707
+        },
+        {
+          "name": "Real.instFloorRing",
+          "owner_module": "Mathlib.Algebra.Order.Archimedean.Real.Basic",
+          "multiplicity": 20,
+          "expanded_per_reference": "31071371733888731606116521041427",
+          "body_contribution": "621427434677774632122330420828540",
+          "body_fraction": 0.39750056423456515
+        },
+        {
+          "name": "Real.instCommSemiring",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 25408,
+          "expanded_per_reference": "163752257583508975560364416",
+          "body_contribution": "4160617360681796051037739081728",
+          "body_fraction": 0.0026613690612045503
+        },
+        {
+          "name": "Real.instIsOrderedRing",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 69,
+          "expanded_per_reference": "35863774704322820009880543201",
+          "body_contribution": "2474600454598274580681757480869",
+          "body_fraction": 0.0015828961228079265
+        },
+        {
+          "name": "Real.instIsStrictOrderedRing",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 25,
+          "expanded_per_reference": "35372517924478822591693448139",
+          "body_contribution": "884312948111970564792336203475",
+          "body_fraction": 0.0005656571889471038
+        },
+        {
+          "name": "Real.commRing",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 1783,
+          "expanded_per_reference": "163752257583508975560364271",
+          "body_contribution": "291970275271396503424129495193",
+          "body_fraction": 0.00018676090349998873
+        },
+        {
+          "name": "OAI.DiscreteFree.sum_variationOn_le",
+          "owner_module": "EvaluatorCandidate",
+          "multiplicity": 1,
+          "expanded_per_reference": "176034378282924462550800127191",
+          "body_contribution": "176034378282924462550800127191",
+          "body_fraction": 0.00011260166640120493
+        },
+        {
+          "name": "Real.semiring",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 823,
+          "expanded_per_reference": "163752257583508975560364432",
+          "body_contribution": "134768107991227886886179927536",
+          "body_fraction": 8.620539740913669e-05
+        },
+        {
+          "name": "Real.instIsOrderedAddMonoid",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 4,
+          "expanded_per_reference": "30949176943609327435588174451",
+          "body_contribution": "123796707774437309742352697804",
+          "body_fraction": 7.918746171262396e-05
+        },
+        {
+          "name": "OAI.DiscreteFree.variationOn",
+          "owner_module": "EvaluatorCandidate",
+          "multiplicity": 373,
+          "expanded_per_reference": "327513848686778869880222099",
+          "body_contribution": "122162665560168518465322842927",
+          "body_fraction": 7.814223476268774e-05
+        },
+        {
+          "name": "Real.instRing",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 672,
+          "expanded_per_reference": "163752257583508975560364287",
+          "body_contribution": "110041517096118031576564800864",
+          "body_fraction": 7.038885426359642e-05
+        },
+        {
+          "name": "OAI.DiscreteFree.variationOn_le",
+          "owner_module": "EvaluatorCandidate",
+          "multiplicity": 1,
+          "expanded_per_reference": "101035517102832258677885111853",
+          "body_contribution": "101035517102832258677885111853",
+          "body_fraction": 6.462810107013008e-05
+        }
+      ],
+      "fresh_python_weighted_recomputation_matches": true
+    },
+    {
+      "task": "OM100-100",
+      "model": "claude-fable-5-1",
+      "condition": "source_concision",
+      "sample": 2,
+      "attemptId": "836b3b459ad3b254f536e899bb5b746bedf748cd7b61babda97896cb7ee583d4",
+      "metrics": {
+        "W_S": 270,
+        "W_B": 313,
+        "U_S_decimal": "10316430126863402644501290796",
+        "U_B_decimal": "40618394024995443103732512306193860821175",
+        "T0": {
+          "denominator_decimal": "583",
+          "log2": 125.71190492160402,
+          "numerator_decimal": "40618394025005759533859375708838362111971"
+        },
+        "I0": {
+          "denominator_decimal": "270",
+          "log2": 0.2132032498817864,
+          "numerator_decimal": "313"
+        },
+        "D": 90,
+        "log2_T0": 125.71190492160402,
+        "log2_I0": 0.2132032498817864
+      },
+      "direction": "max",
+      "record_path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/runs/om100-max-claude-fable-5-1-high-20261014/evaluations/v2_threads1/836b3b459ad3b254f536e899bb5b746bedf748cd7b61babda97896cb7ee583d4.json",
+      "record_sha256": "b7b7a7aba23a9627f1b907ababee639e054559ebe4c3b030911619eaf803cd14",
+      "submitted_proof_path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/methods/OM100-100-max-submitted.lean",
+      "submitted_proof_sha256": "7cbc87ca60a0fc60f4a5eb52fd26b6a185130873e42417b67670b34a97f1b5d8",
+      "validation_status": "success",
+      "kernel_replay": true,
+      "node_count": 8402,
+      "top_direct_body_dependencies": [
+        {
+          "name": "Real.instStarOrderedRing",
+          "owner_module": "Mathlib.Algebra.Order.Star.Real",
+          "multiplicity": 1,
+          "expanded_per_reference": "40618391265386195078533924889963202492245",
+          "body_contribution": "40618391265386195078533924889963202492245",
+          "body_fraction": 0.9999999320601094
+        },
+        {
+          "name": "Real.instField",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 1353,
+          "expanded_per_reference": "1622950172831302333888519645193",
+          "body_contribution": "2195851583840752057751167079946129",
+          "body_fraction": 5.4060522001177234e-08
+        },
+        {
+          "name": "Real.instFloorRing",
+          "owner_module": "Mathlib.Algebra.Order.Archimedean.Real.Basic",
+          "multiplicity": 18,
+          "expanded_per_reference": "31071371733888731606116521041427",
+          "body_contribution": "559284691209997168910097378745686",
+          "body_fraction": 1.376924678178632e-08
+        },
+        {
+          "name": "Real.instCommSemiring",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 8875,
+          "expanded_per_reference": "163752257583508975560364416",
+          "body_contribution": "1453301286053642158098234192000",
+          "body_fraction": 3.577938815501471e-11
+        },
+        {
+          "name": "Real.instIsOrderedRing",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 23,
+          "expanded_per_reference": "35863774704322820009880543201",
+          "body_contribution": "824866818199424860227252493623",
+          "body_fraction": 2.0307716196061924e-11
+        },
+        {
+          "name": "Real.instDivInvMonoid",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 67,
+          "expanded_per_reference": "9333888580763019278204700066",
+          "body_contribution": "625370534911122291639714904422",
+          "body_fraction": 1.539623980520467e-11
+        },
+        {
+          "name": "Real.instIsStrictOrderedRing",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 14,
+          "expanded_per_reference": "35372517924478822591693448139",
+          "body_contribution": "495215250942703516283708273946",
+          "body_fraction": 1.219189637674896e-11
+        },
+        {
+          "name": "Real.instIsOrderedAddMonoid",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 8,
+          "expanded_per_reference": "30949176943609327435588174451",
+          "body_contribution": "247593415548874619484705395608",
+          "body_fraction": 6.095598348780418e-12
+        },
+        {
+          "name": "Real.semiring",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 1369,
+          "expanded_per_reference": "163752257583508975560364432",
+          "body_contribution": "224176840631823787542138907408",
+          "body_fraction": 5.519096606672128e-12
+        },
+        {
+          "name": "OAI.DiscreteFree.sum_variationOn_le",
+          "owner_module": "EvaluatorCandidate",
+          "multiplicity": 1,
+          "expanded_per_reference": "176034378282924462550800127191",
+          "body_contribution": "176034378282924462550800127191",
+          "body_fraction": 4.333858649719084e-12
+        },
+        {
+          "name": "Real.commRing",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 823,
+          "expanded_per_reference": "163752257583508975560364271",
+          "body_contribution": "134768107991227886886179795033",
+          "body_fraction": 3.317908332572068e-12
+        },
+        {
+          "name": "Real.instAddCommMonoid",
+          "owner_module": "Mathlib.Basic.Real.Basic",
+          "multiplicity": 626,
+          "expanded_per_reference": "163752257583508975560364448",
+          "body_contribution": "102508913247276618700788144448",
+          "body_fraction": 2.523706702539629e-12
+        }
+      ],
+      "fresh_python_weighted_recomputation_matches": true,
+      "vs_min_same_task": {
+        "delta_log2_T0": 25.811053994792317,
+        "delta_log2_U": 24.630991316746005,
+        "minus_delta_log2_W": 1.1800626780463315
+      }
+    }
+  ]
+}

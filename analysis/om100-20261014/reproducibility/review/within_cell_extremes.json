@@ -1,0 +1,461 @@
+{
+  "input_sha256": "4ddf80101317bb6158bd13a435eccae899684479dfd74b91c2047c81c550f264",
+  "script_sha256": "c86023c1a499801a406f9927af7f9e94e6740875ebb679a1afa892335a9dc45c",
+  "examples": [
+    {
+      "model": "gpt-6-sol",
+      "task": "OM100-065",
+      "condition": "standard",
+      "log2_T0_range": 52.55538070407303,
+      "T0_ratio": 6618293540439102.0,
+      "W_B_ratio": 0.8220491312162972,
+      "log2_U_ratio": 52.29250811698664,
+      "minimum": {
+        "sample": 3,
+        "attemptId": "5138f5ed3a12515d55f598c9f246bc69b67464a57b9ac388909551ff028848f4",
+        "metrics": {
+          "W_S": 114,
+          "W_B": 1669,
+          "U_S_decimal": "591094103355020322806266552131978",
+          "U_B_decimal": "12569573231392935585110902223260006",
+          "T0": {
+            "denominator_decimal": "1783",
+            "log2": 102.54169688385875,
+            "numerator_decimal": "13160667334747955907917168775391984"
+          },
+          "I0": {
+            "denominator_decimal": "114",
+            "log2": 3.8718782251978574,
+            "numerator_decimal": "1669"
+          },
+          "D": 77,
+          "log2_T0": 102.54169688385875,
+          "log2_I0": 3.8718782251978574
+        },
+        "sourceLength": {
+          "rawCharacters": 5608,
+          "rawUtf8Bytes": 5971,
+          "sourceCharacters": 5608,
+          "sourceNonWhitespaceCharacters": 3852,
+          "sourceUtf8Bytes": 5971,
+          "sourceLines": 148,
+          "available": true,
+          "sourceKind": "submitted_text",
+          "truncated": false,
+          "status": "success",
+          "responseStatus": "completed",
+          "sourceTextSha256": "87e80e693d39c053d9f32c4dc12997b593f47fda613af0dcc919ec7f6bbc75dc",
+          "rawResponseHash": "7c5ae522755817c6f295e2ac8e2c8aafbb8e4d2c01d93dc2482614251c7e6fd4",
+          "adapter": "single_outer_wrapper_v2",
+          "wrapperRemoved": false,
+          "unavailableReason": null
+        }
+      },
+      "maximum": {
+        "sample": 4,
+        "attemptId": "bc588af0f380e762832a0ab106b5e12c9721d53151188833632284ce85788dae",
+        "metrics": {
+          "W_S": 114,
+          "W_B": 1372,
+          "U_S_decimal": "591094103355020322806266552131978",
+          "U_B_decimal": "72592441491651435003822187050666094134793100722065",
+          "T0": {
+            "denominator_decimal": "1486",
+            "log2": 155.09707758793178,
+            "numerator_decimal": "72592441491651435594916290405686416941059652854043"
+          },
+          "I0": {
+            "denominator_decimal": "114",
+            "log2": 3.5891747520080717,
+            "numerator_decimal": "1372"
+          },
+          "D": 120,
+          "log2_T0": 155.09707758793178,
+          "log2_I0": 3.5891747520080717
+        },
+        "sourceLength": {
+          "rawCharacters": 4915,
+          "rawUtf8Bytes": 5179,
+          "sourceCharacters": 4915,
+          "sourceNonWhitespaceCharacters": 3282,
+          "sourceUtf8Bytes": 5179,
+          "sourceLines": 136,
+          "available": true,
+          "sourceKind": "submitted_text",
+          "truncated": false,
+          "status": "success",
+          "responseStatus": "completed",
+          "sourceTextSha256": "2824f9c90baa7c6c9d434f621a507ac330012b60c0a28a618ca963f7e8e1f66e",
+          "rawResponseHash": "e80ec81d6f4361e2226893269a877aa0a6a4be00cf043eae4c3aa3f278a443e3",
+          "adapter": "single_outer_wrapper_v2",
+          "wrapperRemoved": false,
+          "unavailableReason": null
+        }
+      }
+    },
+    {
+      "model": "claude-fable-5-1",
+      "task": "OM100-100",
+      "condition": "source_concision",
+      "log2_T0_range": 24.23915134251351,
+      "T0_ratio": 19802117.06114534,
+      "W_B_ratio": 1.1178571428571429,
+      "log2_U_ratio": 24.32321560730199,
+      "minimum": {
+        "sample": 3,
+        "attemptId": "d0ba1a05be4536f3ee6e83a13c78dfca69d7830064237364c0e61adc01c2c357",
+        "metrics": {
+          "W_S": 270,
+          "W_B": 280,
+          "U_S_decimal": "10316430126863402644501290796",
+          "U_B_decimal": "1935097911034083688242189655410798",
+          "T0": {
+            "denominator_decimal": "550",
+            "log2": 101.47275357909051,
+            "numerator_decimal": "1935108227464210551644834156701594"
+          },
+          "I0": {
+            "denominator_decimal": "270",
+            "log2": 0.0524674198941355,
+            "numerator_decimal": "280"
+          },
+          "D": 71,
+          "log2_T0": 101.47275357909051,
+          "log2_I0": 0.0524674198941355
+        },
+        "sourceLength": {
+          "rawCharacters": 1355,
+          "rawUtf8Bytes": 1378,
+          "sourceCharacters": 1343,
+          "sourceNonWhitespaceCharacters": 1096,
+          "sourceUtf8Bytes": 1366,
+          "sourceLines": 22,
+          "available": true,
+          "sourceKind": "submitted_text",
+          "truncated": false,
+          "status": "success",
+          "responseStatus": "completed",
+          "sourceTextSha256": "4b265c12775baf25336a6f9e96e91792d17ddccaa8339184ddb1c218f764a213",
+          "rawResponseHash": "d6a850f98c6b3a1377e6afbda33cc4439a50d74a240479bcd4516fb45de87849",
+          "adapter": "single_outer_wrapper_v2",
+          "wrapperRemoved": true,
+          "unavailableReason": null
+        }
+      },
+      "maximum": {
+        "sample": 2,
+        "attemptId": "836b3b459ad3b254f536e899bb5b746bedf748cd7b61babda97896cb7ee583d4",
+        "metrics": {
+          "W_S": 270,
+          "W_B": 313,
+          "U_S_decimal": "10316430126863402644501290796",
+          "U_B_decimal": "40618394024995443103732512306193860821175",
+          "T0": {
+            "denominator_decimal": "583",
+            "log2": 125.71190492160402,
+            "numerator_decimal": "40618394025005759533859375708838362111971"
+          },
+          "I0": {
+            "denominator_decimal": "270",
+            "log2": 0.2132032498817864,
+            "numerator_decimal": "313"
+          },
+          "D": 90,
+          "log2_T0": 125.71190492160402,
+          "log2_I0": 0.2132032498817864
+        },
+        "sourceLength": {
+          "rawCharacters": 1287,
+          "rawUtf8Bytes": 1333,
+          "sourceCharacters": 1275,
+          "sourceNonWhitespaceCharacters": 993,
+          "sourceUtf8Bytes": 1321,
+          "sourceLines": 23,
+          "available": true,
+          "sourceKind": "submitted_text",
+          "truncated": false,
+          "status": "success",
+          "responseStatus": "completed",
+          "sourceTextSha256": "7cbc87ca60a0fc60f4a5eb52fd26b6a185130873e42417b67670b34a97f1b5d8",
+          "rawResponseHash": "7df7a0792c271a7705b42f8fad25406982510b86c02331f882a08e921763aabc",
+          "adapter": "single_outer_wrapper_v2",
+          "wrapperRemoved": true,
+          "unavailableReason": null
+        }
+      }
+    },
+    {
+      "model": "gpt-6-sol",
+      "task": "OM100-100",
+      "condition": "mathematical_compression",
+      "log2_T0_range": 23.38906311194009,
+      "T0_ratio": 10985240.444278253,
+      "W_B_ratio": 1.0081190798376185,
+      "log2_U_ratio": 23.39761666490628,
+      "minimum": {
+        "sample": 4,
+        "attemptId": "6021ed9f9d0766639adbd7ef6ed2a5b56d59680a6d5fa67fa31fee1c3745604f",
+        "metrics": {
+          "W_S": 270,
+          "W_B": 739,
+          "U_S_decimal": "10316430126863402644501290796",
+          "U_B_decimal": "3675674859686346386967370456920499",
+          "T0": {
+            "denominator_decimal": "1009",
+            "log2": 101.52292987669638,
+            "numerator_decimal": "3675685176116473250370014958211295"
+          },
+          "I0": {
+            "denominator_decimal": "270",
+            "log2": 1.452614957095319,
+            "numerator_decimal": "739"
+          },
+          "D": 71,
+          "log2_T0": 101.52292987669638,
+          "log2_I0": 1.452614957095319
+        },
+        "sourceLength": {
+          "rawCharacters": 2569,
+          "rawUtf8Bytes": 2674,
+          "sourceCharacters": 2569,
+          "sourceNonWhitespaceCharacters": 1703,
+          "sourceUtf8Bytes": 2674,
+          "sourceLines": 70,
+          "available": true,
+          "sourceKind": "submitted_text",
+          "truncated": false,
+          "status": "success",
+          "responseStatus": "completed",
+          "sourceTextSha256": "c36e58dd81b40271e462255d59ee45a6bfec5448200ba9c5f64aaaf292e9306e",
+          "rawResponseHash": "ea7f798344d1e4a28a577936db149833a7333832de9245fbac4ced1ecb91a377",
+          "adapter": "single_outer_wrapper_v2",
+          "wrapperRemoved": false,
+          "unavailableReason": null
+        }
+      },
+      "maximum": {
+        "sample": 1,
+        "attemptId": "4957101df5347619527d8631724351a80598648bb89d3d592f5ff053155de233",
+        "metrics": {
+          "W_S": 270,
+          "W_B": 745,
+          "U_S_decimal": "10316430126863402644501290796",
+          "U_B_decimal": "40618394191233759831761865151179089925233",
+          "T0": {
+            "denominator_decimal": "1015",
+            "log2": 124.91199298863647,
+            "numerator_decimal": "40618394191244076261888728553823591216029"
+          },
+          "I0": {
+            "denominator_decimal": "270",
+            "log2": 1.464281018298692,
+            "numerator_decimal": "745"
+          },
+          "D": 90,
+          "log2_T0": 124.91199298863647,
+          "log2_I0": 1.464281018298692
+        },
+        "sourceLength": {
+          "rawCharacters": 2735,
+          "rawUtf8Bytes": 2845,
+          "sourceCharacters": 2735,
+          "sourceNonWhitespaceCharacters": 1825,
+          "sourceUtf8Bytes": 2845,
+          "sourceLines": 71,
+          "available": true,
+          "sourceKind": "submitted_text",
+          "truncated": false,
+          "status": "success",
+          "responseStatus": "completed",
+          "sourceTextSha256": "e85faa3d9b479917faad15f260586392aa1f6508f90c46f29365d99057b1ebea",
+          "rawResponseHash": "c1f786d304d546af057c70bcdc6ecd578b930dcfaf3f0871f4af4676bb4926f8",
+          "adapter": "single_outer_wrapper_v2",
+          "wrapperRemoved": false,
+          "unavailableReason": null
+        }
+      }
+    },
+    {
+      "model": "claude-opus-5-5",
+      "task": "OM100-100",
+      "condition": "standard",
+      "log2_T0_range": 23.34955255668811,
+      "T0_ratio": 10688473.993875993,
+      "W_B_ratio": 1.101302460202605,
+      "log2_U_ratio": 23.45098855328247,
+      "minimum": {
+        "sample": 1,
+        "attemptId": "5d34afa66ac707dfe43888c4ac6dc0d9816ddf85114c8926a9176f20c7d60bfb",
+        "metrics": {
+          "W_S": 270,
+          "W_B": 691,
+          "U_S_decimal": "10316430126863402644501290796",
+          "U_B_decimal": "3542179169934807295757487770441595",
+          "T0": {
+            "denominator_decimal": "961",
+            "log2": 101.53987590038757,
+            "numerator_decimal": "3542189486364934159160132271732391"
+          },
+          "I0": {
+            "denominator_decimal": "270",
+            "log2": 1.355726303337427,
+            "numerator_decimal": "691"
+          },
+          "D": 71,
+          "log2_T0": 101.53987590038757,
+          "log2_I0": 1.355726303337427
+        },
+        "sourceLength": {
+          "rawCharacters": 2438,
+          "rawUtf8Bytes": 2552,
+          "sourceCharacters": 2438,
+          "sourceNonWhitespaceCharacters": 1797,
+          "sourceUtf8Bytes": 2552,
+          "sourceLines": 45,
+          "available": true,
+          "sourceKind": "submitted_text",
+          "truncated": false,
+          "status": "success",
+          "responseStatus": "completed",
+          "sourceTextSha256": "bfe523decbb1f944285e52714b3857551854752cd9b8c3dda68bc64940526984",
+          "rawResponseHash": "64a27e5b7d89ca725ceeda245cc6182281247491a9729d5c93dd7219fb82d276",
+          "adapter": "single_outer_wrapper_v2",
+          "wrapperRemoved": false,
+          "unavailableReason": null
+        }
+      },
+      "maximum": {
+        "sample": 2,
+        "attemptId": "812e7d3576ca31cc62763fa558bfa05e562b4e2bac3ac380f9511f270fd29b4a",
+        "metrics": {
+          "W_S": 270,
+          "W_B": 761,
+          "U_S_decimal": "10316430126863402644501290796",
+          "U_B_decimal": "40618396267202037422074130607625297524261",
+          "T0": {
+            "denominator_decimal": "1031",
+            "log2": 124.88942845707568,
+            "numerator_decimal": "40618396267212353852200994010269798815057"
+          },
+          "I0": {
+            "denominator_decimal": "270",
+            "log2": 1.4949370464527139,
+            "numerator_decimal": "761"
+          },
+          "D": 90,
+          "log2_T0": 124.88942845707568,
+          "log2_I0": 1.4949370464527139
+        },
+        "sourceLength": {
+          "rawCharacters": 2443,
+          "rawUtf8Bytes": 2555,
+          "sourceCharacters": 2443,
+          "sourceNonWhitespaceCharacters": 1774,
+          "sourceUtf8Bytes": 2555,
+          "sourceLines": 48,
+          "available": true,
+          "sourceKind": "submitted_text",
+          "truncated": false,
+          "status": "success",
+          "responseStatus": "completed",
+          "sourceTextSha256": "dab79a9142297a7b9186d320b2f474c5868cf329ef508630f64a91e039a32af4",
+          "rawResponseHash": "1000edc1f74bbc288d1279eb780cbe205a8462d19c80a20b7af5194678e640a1",
+          "adapter": "single_outer_wrapper_v2",
+          "wrapperRemoved": false,
+          "unavailableReason": null
+        }
+      }
+    },
+    {
+      "model": "claude-fable-5-1",
+      "task": "OM100-100",
+      "condition": "mathematical_compression",
+      "log2_T0_range": 23.347192365072942,
+      "T0_ratio": 10671002.371547733,
+      "W_B_ratio": 0.7722007722007722,
+      "log2_U_ratio": 23.11315783096171,
+      "minimum": {
+        "sample": 3,
+        "attemptId": "1e65f68d9c6af36bb8259789507c14d1ce499d95ae96c767ea54bd28fededd32",
+        "metrics": {
+          "W_S": 270,
+          "W_B": 518,
+          "U_S_decimal": "10316430126863402644501290796",
+          "U_B_decimal": "4476802794668954905314879309389879",
+          "T0": {
+            "denominator_decimal": "788",
+            "log2": 102.1640474046228,
+            "numerator_decimal": "4476813111099081768717523810680675"
+          },
+          "I0": {
+            "denominator_decimal": "270",
+            "log2": 0.939992690635723,
+            "numerator_decimal": "518"
+          },
+          "D": 71,
+          "log2_T0": 102.1640474046228,
+          "log2_I0": 0.939992690635723
+        },
+        "sourceLength": {
+          "rawCharacters": 1912,
+          "rawUtf8Bytes": 1979,
+          "sourceCharacters": 1900,
+          "sourceNonWhitespaceCharacters": 1431,
+          "sourceUtf8Bytes": 1967,
+          "sourceLines": 35,
+          "available": true,
+          "sourceKind": "submitted_text",
+          "truncated": false,
+          "status": "success",
+          "responseStatus": "completed",
+          "sourceTextSha256": "5adbdbc2ff77e2ccae15a440dcf1b346a6b33deec69c5f46f63039f7dc572966",
+          "rawResponseHash": "cbbd3bae5a2022ffb8472232a0331601946ee2d12ac83e74c34f535568a3f2f3",
+          "adapter": "single_outer_wrapper_v2",
+          "wrapperRemoved": true,
+          "unavailableReason": null
+        }
+      },
+      "maximum": {
+        "sample": 4,
+        "attemptId": "648a3118485652e2a326da7e120df5f92eb7cc6e4752b66489650960d8a34164",
+        "metrics": {
+          "W_S": 270,
+          "W_B": 400,
+          "U_S_decimal": "10316430126863402644501290796",
+          "U_B_decimal": "40618395720922614472373567385266299536952",
+          "T0": {
+            "denominator_decimal": "670",
+            "log2": 125.51123976969575,
+            "numerator_decimal": "40618395720932930902500430787910800827748"
+          },
+          "I0": {
+            "denominator_decimal": "270",
+            "log2": 0.5670405927238935,
+            "numerator_decimal": "400"
+          },
+          "D": 90,
+          "log2_T0": 125.51123976969575,
+          "log2_I0": 0.5670405927238935
+        },
+        "sourceLength": {
+          "rawCharacters": 1717,
+          "rawUtf8Bytes": 1766,
+          "sourceCharacters": 1717,
+          "sourceNonWhitespaceCharacters": 1235,
+          "sourceUtf8Bytes": 1766,
+          "sourceLines": 32,
+          "available": true,
+          "sourceKind": "submitted_text",
+          "truncated": false,
+          "status": "success",
+          "responseStatus": "completed",
+          "sourceTextSha256": "ce28edc680db4ec4efb3550bb1894edeb4e7312f279478716ac4f4bfef7ea4c9",
+          "rawResponseHash": "6d7a5f08831381e0914bc95cb912437defcd0e52b291a8e1ded66bd2bbc1fc23",
+          "adapter": "single_outer_wrapper_v2",
+          "wrapperRemoved": false,
+          "unavailableReason": null
+        }
+      }
+    }
+  ]
+}

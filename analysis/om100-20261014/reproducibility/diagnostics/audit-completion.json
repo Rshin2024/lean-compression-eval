@@ -1,0 +1,38 @@
+{
+  "state": "methods_audit_complete",
+  "at_utc": "2026-10-15T05:29:06.946388+00:00",
+  "files": {
+    "OM100-100-min-submitted.lean": "eee77a4e7379a950e7135671d05598afa812880c23c8f56b0f79f7efb1978e28",
+    "parse-failure-audit.json": "26e85c1b39dd653a6d592c5d8e39ad1a90ea111324b747b21cf6818d3cd15f0d",
+    "OM100-065-min-submitted.lean": "87e80e693d39c053d9f32c4dc12997b593f47fda613af0dcc919ec7f6bbc75dc",
+    "metric-mechanism-audit.py": "8e7cc2ba88abf4b35df4cbf4df7cfae269c7858a3238f40aae56bb5d364562d3",
+    "OM100-065-max-submitted.lean": "b4c6860e0034bf4fd8c760a26a2b2639dc70fa628abb08d0fd622c8c8f0f84ed",
+    "outlier-audit.py": "2b792ea0a1559a37811b82ffb654d239528854d35cc8d0778512987771fa0a3c",
+    "OM100-100-max-submitted.lean": "7cbc87ca60a0fc60f4a5eb52fd26b6a185130873e42417b67670b34a97f1b5d8",
+    "methods-audit.md": "43c302e21c476a1494be6ca822a93c681224bd5924b45f206d563116f17b1e2e",
+    "source-citations.json": "46cd665bc0afc6382002af90b78226f84e923b16a5204a540269654066e8ef03",
+    "parse-failure-audit.py": "ecd16d0ebfca123ab3b089832ff524c7831361c0833cb2a89b48d0bf540e0cce",
+    "metric-mechanism-audit.json": "0e395a4b6ffa5dfe52cd8cf82f0faa530d32a7ef93f69748e8800755954cf18e",
+    "prompt-specification.json": "7d6265aa90bc3b8ee8545d7952cc6f0b2621439e1dfde256ebe55576e9569cbe",
+    "outlier-audit.json": "7d97e4cd1e45acdde2e3d6242504bbc7df02f30984b87a49d7b443605336e1d6"
+  },
+  "checks": {
+    "all_file_evidence_hashes_current": true,
+    "all_citation_ids_resolve": true,
+    "external_verbatim_quotes_each_at_most25_words": true,
+    "prompt_policy_verified_all24_frozen_manifests": true,
+    "new_and_historical_statistical_specifications_distinguished": true,
+    "outlier_graph_counts_recomputed_exactly_four_records": true,
+    "parse_diagnostics_counted_all_three_models": true,
+    "visible_answer_sample_reviewed": 30
+  },
+  "limits": [
+    "Primary FineEnvs web dataset card unavailable; retained pinned provenance only.",
+    "New analysis source hashes are the as-of audit state; rehash if parent subsequently edits its source.",
+    "No full mathematical proof-quality review, alternate-boundary experiment, parser repair or Lean rerun."
+  ],
+  "model_calls": 0,
+  "lean_calls": 0,
+  "cloud_actions": 0,
+  "existing_source_or_results_modified": false
+}

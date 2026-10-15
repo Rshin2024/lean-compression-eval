@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "status": "pass_static_metric_source_and_integration_review",
+  "reviewed_at_utc": "2026-10-15T08:17:44.697670+00:00",
+  "source_hashes": {
+    "outputs/lean-compression-paper-20261014/analysis-report/src/content/report/CompressionExplorer.jsx": "5fbedacf07cbcfe8014a0c9f05ef1596d2f7463f8a26823aa7d18df771b93c47",
+    "outputs/lean-compression-paper-20261014/analysis-report/src/content/report/compression-explorer.css": "0ee093d23a8dc390aa5f7213df640f8bd7ab0c7847e8c693e94f95ac53c80475",
+    "outputs/lean-compression-paper-20261014/analysis-report/src/content/report/compression-ranking.mjs": "6440b8a85a979b3826a9d87a849017e6d747c8ab4b2e265ecf4cec99d3cea20e",
+    "outputs/lean-compression-paper-20261014/analysis-report/src/data.json": "c67565320506a6b1eb93707ae1356b0a02cefa931f0767461a5dc8d4ff324772",
+    "outputs/lean-compression-paper-20261014/analysis-report/src/components/DataTable.jsx": "dbaa4b2de52daefdbe288032efca399fedf9e03f53313746553077e21465adde",
+    "outputs/lean-compression-paper-20261014/analysis-report/src/charting/table-data.js": "2e61118fccdba5c565e1995fab213da44750817d9a7da85593776d5793234ef2",
+    "work/paper-analysis-20261014/compression-explorer-v1/queries-addon.json": "503bba9d58c86e1b4ba8eb1296be776cc7cedddc1b26569f0d3a79439dcdf65d",
+    "work/paper-analysis-20261014/compression-explorer-v1/math/test_rankings.mjs": "6ed559aa687010218622ce7656939b39d99409cadf60b139a2a2580efec944d8",
+    "work/paper-analysis-20261014/compression-explorer-v1/review/addon-review.json": "36abeeec2debf7af71e660dca46002c457e8aa59018958bb4a0a82e603865ae8",
+    "work/paper-analysis-20261014/compression-explorer-v1/review/expected-default.json": "4041a41b47f277cc12cb74df295e44737db66aa7ea465401a8dcf0c2a6c94738"
+  },
+  "verified": {
+    "integrated_query_rows_equal_reviewed_addon": true,
+    "default_exact_model_rank_rows": 6,
+    "default_exact_question_ranks": 138,
+    "default_shared_questions": 23,
+    "all_eight_compression_shared_questions": 0,
+    "all_scheduled_attempts_retained": 9600,
+    "measurable_outputs": 3831,
+    "missing_metric_rows_null": 5769,
+    "ranking_helper_exactly_matches_tested_source": true,
+    "offline_tests_passed": 23,
+    "offline_tests_failed": 0,
+    "all_T0_WB_oracle_cases_tested": 24,
+    "all_T0_WB_question_midranks_tested": 4264,
+    "source_bindings": {
+      "aggregate": "All 100 candidate cells per selected model/prompt support coverage and common-intersection reconstruction; shared support is explicit in the calculation.",
+      "question": "All eight question cells plus one selected question metadata row.",
+      "output_table": "Complete question/prompt groups before model, status or sample display filters, supporting the fixed 32-slot ranking scope.",
+      "output_detail": "Complete selected question/prompt group plus displayed attempt identity."
+    },
+    "resolved_findings": [
+      "Aggregate Source evidence expanded from shared cells only to all candidate cells, supporting measured/100 coverage.",
+      "Selected question metadata is now explicitly bound alongside cell measurements.",
+      "All-outputs action increments a reset key that remounts DataTable and clears its internal search.",
+      "Inventory wording now describes outputs in selected filters instead of claiming all are simultaneously shown."
+    ],
+    "missingness_and_metric_direction": "T0 higher and WB lower rank first; exact rational ordering; tied midranks; no invented ranks for failed outputs; M=1 has no normalized competitive points.",
+    "four_output_drilldown": "Filters complete attempts by model, question and condition, rather than measured-only cell attempt IDs.",
+    "null_sort": "Shared table comparator keeps null measurements last in both directions."
+  },
+  "rendered_qa": {
+    "owner": "parent /root",
+    "independent_browser_review_by_this_agent": false,
+    "parent_reported_checks": [
+      "Source inspector shows 600 default candidate cells and provenance.",
+      "All eight models produce zero shared questions and unavailable aggregate scores.",
+      "Question 007 shows seven measured selected models and Sonnet unavailable when all models are selected.",
+      "Sonnet drill-down retains exactly four failed outputs.",
+      "All-outputs view reaches 9600 records and 3831 measurements.",
+      "Accepted detail exact ratio 74009768822/304 and rank 7/19.",
+      "WB switch changes ordering and Fable score to 78.26.",
+      "View state survives reload."
+    ],
+    "responsive_visual_qa_owned_by_parent": true
+  },
+  "scope_limits": [
+    "Static/data review and offline helper tests only; no independently certified browser interaction or responsive screenshot assessment.",
+    "Raw T0 scientific display is approximate; exact values and ordering remain separately retained.",
+    "The inspector exposes selected compression fields and does not include depth D."
+  ],
+  "actions": {
+    "app_or_data_files_modified": false,
+    "model_calls": 0,
+    "lean_calls": 0,
+    "cloud_calls": 0
+  }
+}

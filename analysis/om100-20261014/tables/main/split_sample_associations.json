@@ -1,0 +1,62 @@
+[
+  {
+    "split": "forward",
+    "metric": "log2_T0",
+    "groups": 1216,
+    "questions": 100,
+    "families": 19,
+    "coefficient_probability_per_bit": 0.007621941961891609,
+    "ci_family_low": -0.01125230685443037,
+    "ci_family_high": 0.026496190778213587,
+    "p_family": 0.4073509399238495,
+    "design_rank": 124,
+    "selection": "At least one valid measurable response in the early half; held-out yield over both later scheduled samples.",
+    "holm_family_size": 4,
+    "p_holm": 1
+  },
+  {
+    "split": "forward",
+    "metric": "log2_W_B",
+    "groups": 1216,
+    "questions": 100,
+    "families": 19,
+    "coefficient_probability_per_bit": 0.003103718684572151,
+    "ci_family_low": -0.06468638135970445,
+    "ci_family_high": 0.07089381872884876,
+    "p_family": 0.9244332135722955,
+    "design_rank": 124,
+    "selection": "At least one valid measurable response in the early half; held-out yield over both later scheduled samples.",
+    "holm_family_size": 4,
+    "p_holm": 1
+  },
+  {
+    "split": "reverse",
+    "metric": "log2_T0",
+    "groups": 1197,
+    "questions": 100,
+    "families": 19,
+    "coefficient_probability_per_bit": -0.002249610629888399,
+    "ci_family_low": -0.012124203235039249,
+    "ci_family_high": 0.00762498197526245,
+    "p_family": 0.6379655714594531,
+    "design_rank": 124,
+    "selection": "At least one valid measurable response in the early half; held-out yield over both later scheduled samples.",
+    "holm_family_size": 4,
+    "p_holm": 1
+  },
+  {
+    "split": "reverse",
+    "metric": "log2_W_B",
+    "groups": 1197,
+    "questions": 100,
+    "families": 19,
+    "coefficient_probability_per_bit": 0.0629836770245898,
+    "ci_family_low": -0.0036666071375555803,
+    "ci_family_high": 0.1296339611867352,
+    "p_family": 0.06255717114808465,
+    "design_rank": 124,
+    "selection": "At least one valid measurable response in the early half; held-out yield over both later scheduled samples.",
+    "holm_family_size": 4,
+    "p_holm": 0.2502286845923386
+  }
+]

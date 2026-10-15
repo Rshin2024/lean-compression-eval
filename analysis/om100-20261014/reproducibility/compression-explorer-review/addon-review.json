@@ -1,0 +1,39 @@
+{
+  "status": "pass",
+  "addon_sha256": "503bba9d58c86e1b4ba8eb1296be776cc7cedddc1b26569f0d3a79439dcdf65d",
+  "comparison_sha256": "4ddf80101317bb6158bd13a435eccae899684479dfd74b91c2047c81c550f264",
+  "review_script_sha256": "03067668baa6e87ba04cdf63b13ace433ad6ee2b6374164dcff5429d8d19f140",
+  "checks": {
+    "complete_attempt_identity": 1,
+    "attempt_metadata": 9600,
+    "attempt_status_flags": 9600,
+    "exact_attempt_ratios": 3831,
+    "exact_components": 3831,
+    "scientific_display_precision": 3831,
+    "attempt_log": 3831,
+    "missing_metrics_null": 5769,
+    "complete_cell_identity": 1,
+    "cell_counts": 2400,
+    "cell_measured_id_membership": 2400,
+    "cell_exact_products": 1406,
+    "cell_mean_logs": 1406,
+    "cell_extrema_identity": 1406,
+    "cell_extrema_values": 2812,
+    "empty_cell_nulls": 994,
+    "coverage_counts": 24,
+    "metadata_dimensions": 1,
+    "default_scope": 1,
+    "default_exact_question_ranks": 138,
+    "default_exact_aggregate_points": 6,
+    "source_evidence_present": 1,
+    "source_hash_binding": 4
+  },
+  "errors": [],
+  "integration_cautions": [
+    "Cell attemptIds/sampleIndices include measured samples only; use model/task/condition to open all four scheduled outputs.",
+    "Exact products exceed Number precision/range; use BigInt cross-power comparison for ranks.",
+    "Final Source evidence component bindings and displayed scope require the built app review.",
+    "Depth D is not projected; describe the inspector as selected compression metrics unless that field is intentionally added."
+  ],
+  "source_content_scope": "No raw response/reference bodies are present in the allowlisted projected row schemas. Source query definitions are present; rendered Source-panel relevance is not yet verified."
+}

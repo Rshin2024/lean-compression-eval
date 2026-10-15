@@ -90,7 +90,23 @@ Transport and processing tiers also differ between runs, so the table does not i
 
 128,000 tokens is still a provider ceiling. No question in that run has measurable outputs from all eight models under the compression prompt, so a ranking across all eight is unavailable. Smaller comparison groups have their own shared questions. Training-data overlap is unknown.
 
-Full experiment responses, proof graphs, and report bundles are kept outside Git. If you have the completed report bundle locally, open it with:
+The [complete analysis package](analysis/om100-20261014/README.md) includes the
+[26-page paper](analysis/om100-20261014/lean-compression-study.pdf), executed
+notebook, statistical tables, reviewed inputs, benchmark cards, and the updated
+compression explorer. Open the dashboard from this checkout with:
+
+```sh
+python3 -m http.server 62775 --bind 127.0.0.1 \
+  --directory analysis/om100-20261014/analysis-report/dist
+```
+
+Visit <http://127.0.0.1:62775/?view=1#compression-explorer>, or download the
+[self-contained offline report](analysis/om100-20261014/compression-explorer-offline.html).
+The explorer shows exact per-output measurements, per-question ranks, and
+rankings aggregated over the same shared questions for each selected model.
+
+Full raw experiment responses, private transport logs, and proof graphs remain
+outside Git. If you have the original experiment report bundle locally, open it with:
 
 ```sh
 python3 reporting/serve_comparison.py \

@@ -1,0 +1,32 @@
+{
+  "state": "pass_rendered_qa",
+  "at_utc": "2026-10-15T05:56:54.809252+00:00",
+  "url": "http://127.0.0.1:62775/?view=1",
+  "html_sha256": "8a53a385955e2243802fd2df4819a947c8e27eaf56ab739cea2f4201a8de32ab",
+  "desktop": {
+    "width": 1552,
+    "document_width": 1537
+  },
+  "mobile": {
+    "width": 390,
+    "document_width": 375,
+    "viewport_reset": true
+  },
+  "evidence_components_rendered": 8,
+  "narratives_reviewed": 9,
+  "tests": [
+    "All8charts/tables captured via native card exports and visually inspected",
+    "Instruction switched compression->concision and metricT0->WB with correct rows, thenreset",
+    "Source panel opened;8standard rows anddefinitions matchedrevieweddata",
+    "Costs distinguishas-ofbaselinefromclosedrerun anddateOct14PDT",
+    "Studyboundariesexpanded;nocertifiedunseen/equalcomputeguarantee",
+    "No browser consoleerrors"
+  ],
+  "screenshot": "analysis-report-preview.png",
+  "screenshot_sha256": "cb347fa2acb82db64f85c6f26e00d9627bfcf4b6e30017af9507a0028d048c64",
+  "controls_not_changed": [
+    "Publish",
+    "externalsharing",
+    "editsourcevalues"
+  ]
+}

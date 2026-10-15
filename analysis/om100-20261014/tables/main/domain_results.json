@@ -1,0 +1,962 @@
+[
+  {
+    "model": "claude-fable-5-1",
+    "condition": "mathematical_compression",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.83,
+    "pass4": 0.92,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-fable-5-1",
+    "condition": "mathematical_compression",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.58,
+    "pass4": 0.8,
+    "truncation": 0.08
+  },
+  {
+    "model": "claude-fable-5-1",
+    "condition": "mathematical_compression",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.69,
+    "pass4": 0.96,
+    "truncation": 0.01
+  },
+  {
+    "model": "claude-fable-5-1",
+    "condition": "mathematical_compression",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.73,
+    "pass4": 0.88,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-fable-5-1",
+    "condition": "source_concision",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.79,
+    "pass4": 0.96,
+    "truncation": 0.06
+  },
+  {
+    "model": "claude-fable-5-1",
+    "condition": "source_concision",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.54,
+    "pass4": 0.8,
+    "truncation": 0.15
+  },
+  {
+    "model": "claude-fable-5-1",
+    "condition": "source_concision",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.69,
+    "pass4": 0.96,
+    "truncation": 0.04
+  },
+  {
+    "model": "claude-fable-5-1",
+    "condition": "source_concision",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.7,
+    "pass4": 0.88,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-fable-5-1",
+    "condition": "standard",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.81,
+    "pass4": 0.96,
+    "truncation": 0.02
+  },
+  {
+    "model": "claude-fable-5-1",
+    "condition": "standard",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.67,
+    "pass4": 0.96,
+    "truncation": 0.04
+  },
+  {
+    "model": "claude-fable-5-1",
+    "condition": "standard",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.81,
+    "pass4": 1.0,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-fable-5-1",
+    "condition": "standard",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.79,
+    "pass4": 0.92,
+    "truncation": 0.01
+  },
+  {
+    "model": "claude-haiku-5-5",
+    "condition": "mathematical_compression",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.09,
+    "pass4": 0.28,
+    "truncation": 0.02
+  },
+  {
+    "model": "claude-haiku-5-5",
+    "condition": "mathematical_compression",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.09,
+    "pass4": 0.28,
+    "truncation": 0.12
+  },
+  {
+    "model": "claude-haiku-5-5",
+    "condition": "mathematical_compression",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.03,
+    "pass4": 0.12,
+    "truncation": 0.03
+  },
+  {
+    "model": "claude-haiku-5-5",
+    "condition": "mathematical_compression",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.03,
+    "pass4": 0.12,
+    "truncation": 0.01
+  },
+  {
+    "model": "claude-haiku-5-5",
+    "condition": "source_concision",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.04,
+    "pass4": 0.12,
+    "truncation": 0.03
+  },
+  {
+    "model": "claude-haiku-5-5",
+    "condition": "source_concision",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.02,
+    "pass4": 0.08,
+    "truncation": 0.12
+  },
+  {
+    "model": "claude-haiku-5-5",
+    "condition": "source_concision",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.03,
+    "pass4": 0.12,
+    "truncation": 0.06
+  },
+  {
+    "model": "claude-haiku-5-5",
+    "condition": "source_concision",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.04,
+    "pass4": 0.12,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-haiku-5-5",
+    "condition": "standard",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.04,
+    "pass4": 0.16,
+    "truncation": 0.06
+  },
+  {
+    "model": "claude-haiku-5-5",
+    "condition": "standard",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.03,
+    "pass4": 0.12,
+    "truncation": 0.18
+  },
+  {
+    "model": "claude-haiku-5-5",
+    "condition": "standard",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.06,
+    "pass4": 0.24,
+    "truncation": 0.07
+  },
+  {
+    "model": "claude-haiku-5-5",
+    "condition": "standard",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.07,
+    "pass4": 0.24,
+    "truncation": 0.02
+  },
+  {
+    "model": "claude-opus-5-5",
+    "condition": "mathematical_compression",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.46,
+    "pass4": 0.8,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-opus-5-5",
+    "condition": "mathematical_compression",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.46,
+    "pass4": 0.84,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-opus-5-5",
+    "condition": "mathematical_compression",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.57,
+    "pass4": 0.96,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-opus-5-5",
+    "condition": "mathematical_compression",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.44,
+    "pass4": 0.72,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-opus-5-5",
+    "condition": "source_concision",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.72,
+    "pass4": 0.88,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-opus-5-5",
+    "condition": "source_concision",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.71,
+    "pass4": 0.96,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-opus-5-5",
+    "condition": "source_concision",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.76,
+    "pass4": 0.96,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-opus-5-5",
+    "condition": "source_concision",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.65,
+    "pass4": 0.88,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-opus-5-5",
+    "condition": "standard",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.51,
+    "pass4": 0.84,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-opus-5-5",
+    "condition": "standard",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.43,
+    "pass4": 0.76,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-opus-5-5",
+    "condition": "standard",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.5,
+    "pass4": 0.8,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-opus-5-5",
+    "condition": "standard",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.57,
+    "pass4": 0.84,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-sonnet-5-5",
+    "condition": "mathematical_compression",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.01,
+    "pass4": 0.04,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-sonnet-5-5",
+    "condition": "mathematical_compression",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.0,
+    "pass4": 0.0,
+    "truncation": 0.01
+  },
+  {
+    "model": "claude-sonnet-5-5",
+    "condition": "mathematical_compression",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.06,
+    "pass4": 0.2,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-sonnet-5-5",
+    "condition": "mathematical_compression",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.09,
+    "pass4": 0.2,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-sonnet-5-5",
+    "condition": "source_concision",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.05,
+    "pass4": 0.16,
+    "truncation": 0.03
+  },
+  {
+    "model": "claude-sonnet-5-5",
+    "condition": "source_concision",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.04,
+    "pass4": 0.16,
+    "truncation": 0.02
+  },
+  {
+    "model": "claude-sonnet-5-5",
+    "condition": "source_concision",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.08,
+    "pass4": 0.24,
+    "truncation": 0.01
+  },
+  {
+    "model": "claude-sonnet-5-5",
+    "condition": "source_concision",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.12,
+    "pass4": 0.24,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-sonnet-5-5",
+    "condition": "standard",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.05,
+    "pass4": 0.2,
+    "truncation": 0.01
+  },
+  {
+    "model": "claude-sonnet-5-5",
+    "condition": "standard",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.02,
+    "pass4": 0.08,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-sonnet-5-5",
+    "condition": "standard",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.09,
+    "pass4": 0.2,
+    "truncation": 0.0
+  },
+  {
+    "model": "claude-sonnet-5-5",
+    "condition": "standard",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.04,
+    "pass4": 0.16,
+    "truncation": 0.02
+  },
+  {
+    "model": "gpt-6-astra",
+    "condition": "mathematical_compression",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.69,
+    "pass4": 0.88,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-astra",
+    "condition": "mathematical_compression",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.49,
+    "pass4": 0.64,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-astra",
+    "condition": "mathematical_compression",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.74,
+    "pass4": 0.92,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-astra",
+    "condition": "mathematical_compression",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.77,
+    "pass4": 0.92,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-astra",
+    "condition": "source_concision",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.58,
+    "pass4": 0.88,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-astra",
+    "condition": "source_concision",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.44,
+    "pass4": 0.68,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-astra",
+    "condition": "source_concision",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.72,
+    "pass4": 0.84,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-astra",
+    "condition": "source_concision",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.77,
+    "pass4": 0.88,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-astra",
+    "condition": "standard",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.81,
+    "pass4": 1.0,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-astra",
+    "condition": "standard",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.49,
+    "pass4": 0.68,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-astra",
+    "condition": "standard",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.82,
+    "pass4": 0.92,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-astra",
+    "condition": "standard",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.89,
+    "pass4": 0.96,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-luna",
+    "condition": "mathematical_compression",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.19,
+    "pass4": 0.36,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-luna",
+    "condition": "mathematical_compression",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.09,
+    "pass4": 0.2,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-luna",
+    "condition": "mathematical_compression",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.15,
+    "pass4": 0.52,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-luna",
+    "condition": "mathematical_compression",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.13,
+    "pass4": 0.4,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-luna",
+    "condition": "source_concision",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.18,
+    "pass4": 0.32,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-luna",
+    "condition": "source_concision",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.13,
+    "pass4": 0.24,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-luna",
+    "condition": "source_concision",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.07,
+    "pass4": 0.16,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-luna",
+    "condition": "source_concision",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.09,
+    "pass4": 0.16,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-luna",
+    "condition": "standard",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.14,
+    "pass4": 0.32,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-luna",
+    "condition": "standard",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.08,
+    "pass4": 0.24,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-luna",
+    "condition": "standard",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.11,
+    "pass4": 0.36,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-luna",
+    "condition": "standard",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.13,
+    "pass4": 0.28,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-sol",
+    "condition": "mathematical_compression",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.38,
+    "pass4": 0.68,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-sol",
+    "condition": "mathematical_compression",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.2,
+    "pass4": 0.4,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-sol",
+    "condition": "mathematical_compression",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.4,
+    "pass4": 0.84,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-sol",
+    "condition": "mathematical_compression",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.42,
+    "pass4": 0.76,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-sol",
+    "condition": "source_concision",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.42,
+    "pass4": 0.64,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-sol",
+    "condition": "source_concision",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.17,
+    "pass4": 0.36,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-sol",
+    "condition": "source_concision",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.37,
+    "pass4": 0.64,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-sol",
+    "condition": "source_concision",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.42,
+    "pass4": 0.64,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-sol",
+    "condition": "standard",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.54,
+    "pass4": 0.8,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-sol",
+    "condition": "standard",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.19,
+    "pass4": 0.4,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-sol",
+    "condition": "standard",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.4,
+    "pass4": 0.72,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6-sol",
+    "condition": "standard",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.49,
+    "pass4": 0.76,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6.1-sol",
+    "condition": "mathematical_compression",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.69,
+    "pass4": 0.88,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6.1-sol",
+    "condition": "mathematical_compression",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.39,
+    "pass4": 0.56,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6.1-sol",
+    "condition": "mathematical_compression",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.68,
+    "pass4": 0.88,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6.1-sol",
+    "condition": "mathematical_compression",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.75,
+    "pass4": 0.88,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6.1-sol",
+    "condition": "source_concision",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.62,
+    "pass4": 0.84,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6.1-sol",
+    "condition": "source_concision",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.38,
+    "pass4": 0.6,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6.1-sol",
+    "condition": "source_concision",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.63,
+    "pass4": 0.8,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6.1-sol",
+    "condition": "source_concision",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.67,
+    "pass4": 0.92,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6.1-sol",
+    "condition": "standard",
+    "domain": "algebra",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.7,
+    "pass4": 0.88,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6.1-sol",
+    "condition": "standard",
+    "domain": "analysis",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.46,
+    "pass4": 0.64,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6.1-sol",
+    "condition": "standard",
+    "domain": "combinatorics",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.8,
+    "pass4": 0.92,
+    "truncation": 0.0
+  },
+  {
+    "model": "gpt-6.1-sol",
+    "condition": "standard",
+    "domain": "cs_probability",
+    "questions": 25,
+    "attempts": 100,
+    "valid_yield": 0.81,
+    "pass4": 0.92,
+    "truncation": 0.0
+  }
+]

@@ -1,0 +1,70 @@
+{
+  "state": "independent_checks_pass",
+  "method": "Direct family-level counts indexed by saved family draws, independently from question-weight matrix multiplication used by main analysis",
+  "family_ci_crosschecks": [
+    {
+      "model": "ALL_MODELS",
+      "condition": "ALL_CONDITIONS",
+      "metric": "scheduled_success_rate",
+      "point_and_family_ci_match": true
+    },
+    {
+      "model": "ALL_MODELS",
+      "condition": "ALL_CONDITIONS",
+      "metric": "completed_acceptance_rate",
+      "point_and_family_ci_match": true
+    },
+    {
+      "model": "ALL_MODELS",
+      "condition": "ALL_CONDITIONS",
+      "metric": "empirical_pass_at_4",
+      "point_and_family_ci_match": true
+    },
+    {
+      "model": "claude-fable-5-1",
+      "condition": "ALL_CONDITIONS",
+      "metric": "scheduled_success_rate",
+      "point_and_family_ci_match": true
+    },
+    {
+      "model": "claude-fable-5-1",
+      "condition": "ALL_CONDITIONS",
+      "metric": "completed_acceptance_rate",
+      "point_and_family_ci_match": true
+    },
+    {
+      "model": "claude-fable-5-1",
+      "condition": "ALL_CONDITIONS",
+      "metric": "empirical_pass_at_4",
+      "point_and_family_ci_match": true
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "mathematical_compression",
+      "metric": "scheduled_success_rate",
+      "point_and_family_ci_match": true
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "mathematical_compression",
+      "metric": "completed_acceptance_rate",
+      "point_and_family_ci_match": true
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "mathematical_compression",
+      "metric": "empirical_pass_at_4",
+      "point_and_family_ci_match": true
+    }
+  ],
+  "normalized_rows": 19200,
+  "matched_slots": 9600,
+  "question_cells": 4800,
+  "input_hashes": 36,
+  "missing_reasoning_rows": 9600,
+  "missing_reasoning_exactly_anthropic": true,
+  "all_output_manifest_hashes_match": true,
+  "paired_run_samples_independent_generations": true,
+  "new_model_calls": 0,
+  "lean_calls": 0
+}

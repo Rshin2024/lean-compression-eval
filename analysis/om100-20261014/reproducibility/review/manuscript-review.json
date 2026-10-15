@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "status": "pass_scientific_and_numerical_review_with_stated_limits",
+  "reviewed_at_utc": "2026-10-15T05:45:36.965363+00:00",
+  "manuscript": "outputs/lean-compression-paper-20261014/paper/paper.tex",
+  "manuscript_sha256": "4694526cdbd447504d453f2158b537b615de8307c2c6c4d7331afd4a3951cdf5",
+  "reviewer": "compression_visual_audit",
+  "final_revision_check": {
+    "kind": "targeted_check_only_no_full_review_rerun",
+    "pooled_pair_denominator_and_noncausal_association_wording": {
+      "line": 246,
+      "verified": true,
+      "concordant": 75603,
+      "non_tied": 83774,
+      "excluded_ties": 304
+    },
+    "parse_failure_sensitivity_wording": {
+      "line": 267,
+      "verified": true
+    }
+  },
+  "prior_completed_checks": {
+    "appendix_prompt_contrast_rows": 48,
+    "appendix_check_scope": "Estimates, paired-question and family supports, interval bounds/signs, and printed adjusted p-values matched main/results.",
+    "cross_run_model_yield_rows": 8,
+    "pooled_cross_run_yield_difference": "14.4375 percentage points; family interval approximately 11.6605 to 17.1876 points",
+    "standard_yield_and_four_sample_coverage": "Matched all eight models; scheduled versus completed denominators kept distinct.",
+    "conditional_pairwise_T0": "Selected point estimates, pair-specific supports and reversed confidence bounds matched.",
+    "smoke_accepted_and_measurable": [
+      609,
+      602
+    ],
+    "recorded_cost_components": "Both API estimates and historical initial/closed rerun cloud estimates reconciled; priced subtotal 6334.30743955094778 USD is not total invoiced spend.",
+    "joint_contest": "Exact score/decomposition table matched; explicitly supplemental and post hoc.",
+    "metric_mechanisms": "Variance decomposition, pair concordance and four retained outlier metric records matched methods diagnostics.",
+    "inference_and_interpretation": "Cluster units, sparse support, selection, multiplicity, source-format sensitivity, I0 meaning, unknown training exposure and noncausal budget interpretation reviewed."
+  },
+  "linked_independent_numerical_review": {
+    "path": "work/paper-analysis-20261014/review/primary-results-review.json",
+    "sha256": "968af1b950740c02c3342db7bc23a4ff097d16963199a509906074d669ae4e0a"
+  },
+  "scope_limits": [
+    "This record verifies manuscript claims against saved data and prior independent calculations, not a fresh Lean/kernel check or new graph extraction.",
+    "The final revision check covered only the two requested wording changes; previous full source review was reused.",
+    "PDF compilation, page rendering, visual layout and final 26-page QA are owned by the parent and are not certified by this record.",
+    "External citations were not independently reopened in this final revision check."
+  ],
+  "actions": {
+    "manuscript_modified": false,
+    "model_calls": 0,
+    "lean_calls": 0,
+    "cloud_calls": 0,
+    "publication": false
+  }
+}

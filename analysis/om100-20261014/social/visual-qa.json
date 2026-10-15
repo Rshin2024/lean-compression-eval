@@ -1,0 +1,76 @@
+{
+  "status": "pass_visual_and_numerical_QA",
+  "publication_status": "draft_not_published",
+  "reviewed_renderings": [
+    "01-questions-solved.png",
+    "02-compression-head-to-head.png"
+  ],
+  "visual_observations": [
+    "White backgrounds, all eight model labels and values visible on Card1.",
+    "Card2 full model versions, exact pair-specific supports, point estimates and uncertainty intervals are visible.",
+    "Earlier model-version/reference-line overlap corrected and final images viewed.",
+    "Both charts use 0\u2013100 axes; direct labels and interval marks do not rely on color alone.",
+    "All displayed values and intervals independently recomputed in build_cards.py."
+  ],
+  "dimensions": {
+    "01-questions-solved.png": [
+      1600,
+      1000
+    ],
+    "01-questions-solved.svg": [
+      "1600px",
+      "1000px"
+    ],
+    "02-compression-head-to-head.png": [
+      1600,
+      1000
+    ],
+    "02-compression-head-to-head.svg": [
+      "1600px",
+      "1000px"
+    ]
+  },
+  "draft_post_character_counts": [
+    234,
+    276
+  ],
+  "files": {
+    "01-questions-solved.png": {
+      "sha256": "9cabed86f6f5586581dc95be56e1e3a1b098b43327e2019505097feffcb5ad1c",
+      "bytes": 116325
+    },
+    "01-questions-solved.svg": {
+      "sha256": "9d8d3181b988fd008667d23a2fac5f78371050f7266e180f19a74dfa37c8de83",
+      "bytes": 15337
+    },
+    "02-compression-head-to-head.png": {
+      "sha256": "4b6e616f6be3f7dd17b6ae00d2b7c009c3d868ae71e5ab258cf5b01bd5dc652a",
+      "bytes": 153853
+    },
+    "02-compression-head-to-head.svg": {
+      "sha256": "5e87b082c551a1e87a5b6b743133f878c6b7dc93423a571cda2e014ae4116284",
+      "bytes": 13090
+    },
+    "benchmark-definition.md": {
+      "sha256": "a0f1a271818ee1bdfdf7ef38558b7229b39884ad8afa9536e0b00fdf5fc523db",
+      "bytes": 6954
+    },
+    "build_cards.py": {
+      "sha256": "7dfe8d420f769eb744c8669a3f224740891536352ec7bf19b92c9024fde475bd",
+      "bytes": 10309
+    },
+    "card-data.json": {
+      "sha256": "2a711bdbd76fda22f05632d1c2f41ce9be5ee0661c030ca3f74a58c268eb4d29",
+      "bytes": 8844
+    },
+    "draft-posts.md": {
+      "sha256": "e74462bf011eabb52e02009a2ec7f0bbfd3afae254155cf1ffda749343e18961",
+      "bytes": 612
+    }
+  },
+  "scope_limits": [
+    "PNG renderings visually inspected; SVG geometry generated from the same figures and dimensions checked, but not separately rendered in a browser.",
+    "No social platform upload or rendering test; no publication.",
+    "Optional J0 beta sweep omitted; no undefined supplemental metric introduced."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "bootstrap_replicates": 10000,
+  "seed": 20261014,
+  "unit": "19 problem-family blocks primary; 100 question clusters sensitivity; same resampling indices across runs/models/conditions",
+  "family_block_estimand": "Question-weighted ratio-of-sums with all questions retained in each selected family; uneven block sizes do not become equal-family weights",
+  "family_count": 19,
+  "question_count": 100,
+  "interval": "95% percentile; numpy.quantile linear",
+  "paired_join": [
+    "model",
+    "task",
+    "condition",
+    "sample"
+  ],
+  "pairing_is_same_question_design_not_same_random_seed": true,
+  "unmatched_keys": 0,
+  "attempt_ids_reused": 0,
+  "causal_token_cap_effect_claimed": false,
+  "smoke_pooled_with_main": false,
+  "unknown_fields_imputed_as_zero": false,
+  "pass_at_1": "Average of four observed success indicators per question",
+  "pass_at_4": "Indicator of >=1 accepted proof among four samples for each question/model/condition; averages across selected cells",
+  "conditional_compression": "Equal-question average log2 change over shared measurable questions; selected-outcome comparison; exact rational products for tie/win comparisons",
+  "confidence_scope": "Problem-family and question-mix bootstrap on curated fixed dataset; not population-wide inference or independent-attempt confidence",
+  "multiplicity": "Exploratory intervals, no confirmatory multiple-testing claims",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "script_sha256": "efcff1345d949dbc886f0b2066d6c0a3db437ffa5fe3e3f6e345f69bd9777496"
+}

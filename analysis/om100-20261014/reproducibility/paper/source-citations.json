@@ -1,0 +1,442 @@
+{
+  "created_at_utc": "2026-10-15T05:26:10.433569+00:00",
+  "scope": "Methods/provenance audit and new read-only diagnostics. No author attribution or preregistration claim for the new analysis. No raw hidden reasoning used.",
+  "external_sources": [
+    {
+      "id": "S1",
+      "title": "Compression is all you need: Modeling Mathematics",
+      "authors": [
+        "Vitaly Aksenov",
+        "Eve Bodnia",
+        "Michael H. Freedman",
+        "Michael Mulligan"
+      ],
+      "url": "https://arxiv.org/abs/2603.20396",
+      "versioned_pdf_url": "https://arxiv.org/pdf/2603.20396v1",
+      "sections_read": [
+        "3.1",
+        "3.2",
+        "3.4",
+        "3.7",
+        "5",
+        "5.1",
+        "5.2"
+      ],
+      "pinpoint": "PDF pp13-15 and23-25; equations T0/I0/J0/P(v,u)/I1",
+      "local_pdf": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/methods/sources/compression-paper-v1.pdf",
+      "sha256": "4147506b3162fe998a62486da5efde941bb58e754eff8317ab7d394eb7eb1718",
+      "visually_checked_pages": [
+        24,
+        25
+      ],
+      "short_quote": null,
+      "quote_note": "No verbatim quotation used.",
+      "verified_via_web": true,
+      "version_note": "arXiv abstract says v1 submitted20Mar2026; PDF date and experimental HTML date differ. Formulas checked against downloaded versioned PDF, not inferred from HTML date."
+    },
+    {
+      "id": "S2",
+      "title": "OpenAI math source repository README at selected commit",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/README.md",
+      "verified_fetch_url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/README.md",
+      "pinpoint": "README lines2-7,11,31-37",
+      "short_quote": "mathematical manuscripts and supporting proof artifacts produced by an internal OpenAI model",
+      "quote_word_count": 12,
+      "verified_via_web": true,
+      "supports": "Provenance is an internal-model research collection, not certified unseen human-authored tasks; uneven verification status."
+    },
+    {
+      "id": "S3",
+      "title": "FineEnvs OpenAI Math dataset provenance",
+      "url": "https://huggingface.co/datasets/FineEnvs/openai-math",
+      "revision": "d7056fd31c19fd1a0aed0a0bc3e99026d412b2ca",
+      "verified_via_web": false,
+      "short_quote": null,
+      "limitation": "Direct primary page, pinned blob and resolve fetches were unavailable; this reference is documented by the retained experiment pins/candidates only. No new claims about dataset card contents or oracle validity."
+    },
+    {
+      "id": "S4",
+      "title": "OpenAI math pinned Apache2.0 LICENSE",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/LICENSE",
+      "verified_fetch_url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/LICENSE",
+      "pinpoint": "Header, lines0-2",
+      "short_quote": "Apache License Version 2.0, January 2004",
+      "quote_word_count": 6,
+      "verified_via_web": true
+    }
+  ],
+  "file_evidence": {
+    "E01": {
+      "claim": "Original supplied design; proposal rather than completed preregistration",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Downloads/Evaluation plan for mathematical compression in Lean.md",
+          "sha256": "08354f86d3de85461fb71d54de3cd208a7f256aa96298e81b76c904ebdec606a",
+          "locator": "Sections: Tasks and sampling; Generation budget and baselines; Comparisons and statistical reporting"
+        }
+      ]
+    },
+    "E02": {
+      "claim": "Completed initial OM100 experiment",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/full-eval-100/completion.json",
+          "sha256": "4fa0991132455058df7aa09a661975ff0d5c48219a0a03886798637982edb1d9",
+          "locator": "scheduled_attempts; terminal_v2_outcomes; valid_measurable_proofs; costs"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/docs/om100-results.md",
+          "sha256": "c30cd2a37d8e77d81be336fd6ef754c8b48cc51fce75b7861a46fa04039f5a97",
+          "locator": "Results and costs; Protocol and limitations"
+        }
+      ]
+    },
+    "E03": {
+      "claim": "Completed provider-maximum experiment",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/completion.json",
+          "sha256": "b221408510879a6ac79d41e596d8abfe36aa37a45d9a1944c7866a5f8d9697b0",
+          "locator": "counts; prices; material_limitations; evidence"
+        }
+      ]
+    },
+    "E04": {
+      "claim": "Initial OM100 frozen schedule, settings and prepared tasks",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/runs/om100-gpt-6.1-sol-high/manifest.json",
+          "sha256": "015468727db61ecc315f8efb9ad8c28a8384c36b1c88eb0ee6fb886c247936a3",
+          "locator": "development; config; tasks; slots"
+        }
+      ]
+    },
+    "E05": {
+      "claim": "Provider-maximum frozen settings, unchanged prompts and source bindings",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/runs/om100-max-gpt-6.1-sol-high-20261014/manifest.json",
+          "sha256": "a46a56917f3d822a56086a848784c16b8880f297e4ab902a725967bf19df3cae",
+          "locator": "development; config; tasks; slots"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/launch_ready.json",
+          "sha256": "241c35772e32ea8780d2df307300ba7c2bb7ae38ca12537f6cf06481c7b19d53",
+          "locator": "max_output_tokens; reasoning_effort; old_run_immutability_and_prompt_comparison; runs; operational_source_hashes"
+        }
+      ]
+    },
+    "E06": {
+      "claim": "User-provided candidate metadata; not independently established training exposure",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Downloads/openai_math_100_candidates.jsonl",
+          "sha256": "cbe0946fd15725146b1baf6f40a08a2e691aabc272022a44725a32c3d3d8ad8c",
+          "locator": "100 lines: id; source_commit; source_url; collection_public_release_date; training_exposure_status; record_use"
+        }
+      ]
+    },
+    "E07": {
+      "claim": "Selected task/source/family counts",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/data/question_sets/openai_math_100_v1/manifest.json",
+          "sha256": "dcf0036cc54d2c5fbb085ee7a18d3ba5a1bbeec2752401ac04e32c81ed03a9b8",
+          "locator": "counts; source pin and file SHA map"
+        }
+      ]
+    },
+    "E08": {
+      "claim": "Family groupings and source/runtime pins",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/full-eval-100/family-audit.json",
+          "sha256": "bf6ecf174370cb9d9bbeb3ccb7688150c1bae60dff0cb915c1702500848acd3e",
+          "locator": "families; split_policy; clustering_policy; limits"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/experiments/openai_math_100_v1/pins.json",
+          "sha256": "8bd46094a5aa2649c367119e7a9548e0c43ef14ae9b1372c5a9ecd4a7bd71ed4",
+          "locator": "source_repository; source_commit; fineenvs_revision; toolchain; compiled files; rebuild_limitations"
+        }
+      ]
+    },
+    "E09": {
+      "claim": "Final prepared input review, reference integrity and answer-access limits",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/full-eval-100/ready_v1/root-review.json",
+          "sha256": "b71ce2e4cc6b6f2c3dd5568b2bdb797e13a3fa8aae36284ce31ecb64be47807d",
+          "locator": "all_100_ready; original_reference_proofs_unchanged; model_calls_before_freeze; limitations"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/data/prepared/openai_math_100_v1/README.md",
+          "sha256": "9fb9496dcdce6543ec14c6a15d89ada2470b2fa797911488562e828e0ee05e89",
+          "locator": "compiler versus model-facing data; anchor retention; disclosure"
+        }
+      ]
+    },
+    "E10": {
+      "claim": "Signature repairs and full mathematical-input audits",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/full-eval-100/final-input-independent-audit.json",
+          "sha256": "167f8adfcb7f42678cbacef8c0828e909aae228c8e919f9fd44fda77f0cf5a6f",
+          "locator": "failures; official_anchors; limitations; task reviews"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/data/prepared/openai_math_100_v1/private/tasks.jsonl",
+          "sha256": "97b6829fcc701f72410aad4d7ed6dc7599c6817f2c3b6fe67f29cc20ecf2308e",
+          "locator": "OM100-041/094 provenance.proposition_layout_transform; OM100-048/078 provenance.signature_materialization"
+        }
+      ]
+    },
+    "E11": {
+      "claim": "Pre-target compiler construction",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/full-eval-100/preparation/README.md",
+          "sha256": "3acab2e372a88be2bdeac0003e1542ea5260507b057457dee511849fefdd1493",
+          "locator": "Outputs; Scope and limits"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/data/prepared/openai_math_100_v1/audits/materialization-summary.json",
+          "sha256": "36c0f368576985d1c3776183714b6382380a0857bdd6306d07910642e7503bc8",
+          "locator": "accounted_count; materialized_measurable; task_evidence"
+        }
+      ]
+    },
+    "E12": {
+      "claim": "Exact prompts and final premise policy",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/src/lean_compression/prompts.py",
+          "sha256": "ca8d7ec0b80cbd1b09813773e26e45934ea2df869cf343e9dd7f32e772c0d4cf",
+          "locator": "lines1-69: SYSTEM, CONDITIONS, messages, adapt_response"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/data/prepared/openai_math_100_v1/audits/premise-export-policy.json",
+          "sha256": "3972d277ba49a13b610ed881a6b5634598a45564f4c36adc0e372e629a745329",
+          "locator": "version; reference_informed_retrieval; max_context_bytes; max_constants"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/data/prepared/openai_math_100_v1/audits/premise-audit.json",
+          "sha256": "d3e86727ca603b350124bc1d2b03f863642d14c2b9faac0be3cd8055ff728ae9",
+          "locator": "Final task/interface screening results"
+        }
+      ]
+    },
+    "E13": {
+      "claim": "Exact scoring algebra and unavailable cases",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/src/lean_compression/metrics.py",
+          "sha256": "cdd3c7f0d364c421b85486d8a77a525202ed3cd589b04218f6df8ee00e1f1796",
+          "locator": "score_graph lines86-214; ratio; exact_int; log2_int"
+        }
+      ]
+    },
+    "E14": {
+      "claim": "Lean parser/token spans, weighted counts, module boundary and kernel audit",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/lean/Evaluator.lean",
+          "sha256": "2ff87da0a2eb9058c6400bcb07bb441e5e1683c684b8571384006be37da299a2",
+          "locator": "parseOriginal20; leafSpans47; countExpr87-153; nodeJson156; isExpanded177; graph185; auditClosure214; replay239; run328-451"
+        }
+      ]
+    },
+    "E15": {
+      "claim": "Isolation, validation and separate extraction budgets",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/src/lean_compression/runner.py",
+          "sha256": "1f21267e7688eb6c69eecc49ad68e9bc93ad052f26af8d536e747df2f90a52c5",
+          "locator": "execute_engine Docker args306-318; evaluate_proof429-487"
+        }
+      ]
+    },
+    "E16": {
+      "claim": "Exploratory relative ranking and J0 normalization",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/reporting/paper_rankings.js",
+          "sha256": "fc6fa1b2324c08f834f0d53f72676fa4db661238278eb68300b94ca3b3a78dbc",
+          "locator": "prepare/evaluate; lines136-178; j0Formula; normalization"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/reporting/README.md",
+          "sha256": "47df66a0f8e4379abf86519294073d80ebf84e55a3efd4a90b55d49e36b9327a",
+          "locator": "Adjustable paper-metric ranking; completed submissions versus scheduled attempts"
+        }
+      ]
+    },
+    "E17": {
+      "claim": "Independent metric-mechanism numerical audit",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/methods/metric-mechanism-audit.py",
+          "sha256": "8e7cc2ba88abf4b35df4cbf4df7cfae269c7858a3238f40aae56bb5d364562d3",
+          "locator": "complete read-only diagnostic algorithm"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/methods/metric-mechanism-audit.json",
+          "sha256": "0e395a4b6ffa5dfe52cd8cf82f0faa530d32a7ef93f69748e8800755954cf18e",
+          "locator": "cohorts: invariance; exact range thresholds; sums of squares; pair-order counts"
+        }
+      ]
+    },
+    "E18": {
+      "claim": "Saved submitted-proof outliers and independent graph recomputation",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/methods/outlier-audit.py",
+          "sha256": "2b792ea0a1559a37811b82ffb654d239528854d35cc8d0778512987771fa0a3c",
+          "locator": "four selected saved records; lru_cache weighted recursion"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/methods/outlier-audit.json",
+          "sha256": "7d97e4cd1e45acdde2e3d6242504bbc7df02f30984b87a49d7b443605336e1d6",
+          "locator": "records; exact metrics; top_direct_body_dependencies; vs_min_same_task"
+        }
+      ]
+    },
+    "E19": {
+      "claim": "Explicit v2 runtime provenance and reference binding",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/full-eval-100/runtime-amendment-v2.json",
+          "sha256": "a9b8e3254e7f61138837e06a87ee68ea21d89802a9693671c49717ccb5e367b0",
+          "locator": "reason; verification_change; source_core_hash; references; generation_runs"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/runtime-amendment-v2.json",
+          "sha256": "66206c978036e2a5a26c227042437607b013242357ba6c649221aa6fc93fdde7",
+          "locator": "reference_reuse; limits; verification_environment; uniform_full_replay"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/verify_runtime_v2.py",
+          "sha256": "55f5931a9d4a2cfa92338e4079206477abd7d792a94b758b75b61237d33a5ac0",
+          "locator": "load_verification_context; verify_result; load_records"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/full-eval-100/backup-runtime.json",
+          "sha256": "35ed0dd3113a1aa39b238d7028580d985d2446721cb890dfcff31ea4cb94037a",
+          "locator": "images and references retention"
+        }
+      ]
+    },
+    "E20": {
+      "claim": "Retired v1 checks are historical, not new samples",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/full-eval-100/v1-retirement.json",
+          "sha256": "cbf694bee7958a066f049aa0fa8a9e880eae75862222e2f9bc76a14e49b73941",
+          "locator": "retired scheduler; final records preserved"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/full-eval-100/verification_v2/reference-index.json",
+          "sha256": "5c44821af7cc67e72b3776c4ea03d922d0c00976932e437176ad5a9cbb54e003",
+          "locator": "record_count100; source_policy; record_bindings"
+        }
+      ]
+    },
+    "E21": {
+      "claim": "Post hoc source-length definitions and binding checks",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/reporting/source_lengths.py",
+          "sha256": "507523744306f0cac98640e85775fe3d8cb77d61f094b68757dbd58acf6b2f92",
+          "locator": "VERSION19; _measure45-61; measure_report64-164"
+        }
+      ]
+    },
+    "E22": {
+      "claim": "Higher-run complete stream/cost audit and closed compute ledger",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/reporting/audit-results/final-20261015T043842Z/summary.json",
+          "sha256": "2e83f32ec7a512b7541f73ab9529c87df296b348d90117f4fd6fc13f4e553cc4",
+          "locator": "pass_complete; unique_provider_response_ids; priced_generations; original uncertain charges"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/cloud-costs.json",
+          "sha256": "c1d143d064d750dbcd454182c834f5e0fd8e2f20c258ce17acf0227b0645002f",
+          "locator": "compute_allocations_closed; excluded_unknown_items; vms"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/preparation/priority_costs.py",
+          "sha256": "ca0e6a73a60d0b8d7f9ef784204d36b1a7ac42528f95284a5cb46bce0769c36a",
+          "locator": "delivered tier pricing and missing-tier unavailability"
+        }
+      ]
+    },
+    "E23": {
+      "claim": "Initial-run bounded recovery and final audit",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/full-eval-100/operational-recovery/astra-disconnects/proposal-v1/audit-results/audit-20261014T192312.141602Z/summary.json",
+          "sha256": "f756623965c30810af71d4317d2e48e6f05ce1f6db82239880c677325de2c6d4",
+          "locator": "complete cohort, evidence bindings, exception scope"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/provider-limits/protocol-note.md",
+          "sha256": "f929ac693bc2d628e34f24683166a129a029d7c960412eebd6f6c00c95e56158",
+          "locator": "Token ceilings; Keep the scientific comparison interpretable; Transport and recovery"
+        }
+      ]
+    },
+    "E24": {
+      "claim": "Implemented paired task means and family uncertainty",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/src/lean_compression/analysis.py",
+          "sha256": "1a69013e12a0499a2400d5763fdc5602e3ae1f4bdf03356c42fb59453037a7ab",
+          "locator": "_family_bootstrap355; analyze409; contrasts634-677"
+        }
+      ]
+    },
+    "E25": {
+      "claim": "Strict parse-gate and visible-answer format audit",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/methods/parse-failure-audit.py",
+          "sha256": "ecd16d0ebfca123ab3b089832ff524c7831361c0833cb2a89b48d0bf540e0cce",
+          "locator": "all three full diagnostic inventories; deterministic stratified sample"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/methods/parse-failure-audit.json",
+          "sha256": "26e85c1b39dd653a6d592c5d8e39ad1a90ea111324b747b21cf6818d3cd15f0d",
+          "locator": "models.*.counts; diagnostic_histogram; samples; condition_statuses"
+        }
+      ]
+    },
+    "E26": {
+      "claim": "New post hoc paper analysis differs from historical frozen report uncertainty specification",
+      "files": [
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/analysis-plan.md",
+          "sha256": "2415d3f0b3d04ccca61df71ed2f4b44827750426d9ea1ad5c6c3293d37af7ab1",
+          "locator": "numbered specification1-10"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/main/analyze_primary.py",
+          "sha256": "084c6ace04929c43b568cfbef032b856f74d2b01710f4b03596440533d3b52bb",
+          "locator": "SEED18; summary49-66; Holm grouping116; analysis_manifest235"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/cross-run/results-v1/methods.json",
+          "sha256": "e56b70a9a7af9e893bb15813f92189f3c7d698f3d2c0c084c3b7d4f2a9f8d0f8",
+          "locator": "bootstrap and matched-question interpretation"
+        },
+        {
+          "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/methods/prompt-specification.json",
+          "sha256": "7d6265aa90bc3b8ee8545d7952cc6f0b2621439e1dfde256ebe55576e9569cbe",
+          "locator": "exact prompts and provenance hashes"
+        }
+      ]
+    }
+  },
+  "source_quote_policy": "No more than25verbatim words per external source. User-supplied plan and generated submitted-proof excerpts are separate user-provided material.",
+  "at_utc_finalized": "2026-10-15T05:27:41.527609+00:00"
+}

@@ -1,0 +1,3 @@
+# Keep the published hash-verified analysis artifacts byte-identical on checkout.
+# In particular, preserve the original CSV CRLF bytes used by the audit manifests.
+analysis/om100-20261014/** -text

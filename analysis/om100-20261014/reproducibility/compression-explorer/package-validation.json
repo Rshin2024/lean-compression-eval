@@ -1,0 +1,70 @@
+{
+  "state": "pass",
+  "at_utc": "2026-10-15T08:38:40.211944+00:00",
+  "javascript_tests": {
+    "passed": 23,
+    "failed": 0,
+    "skipped": 0
+  },
+  "python_tests": {
+    "passed": 12,
+    "failed": 0
+  },
+  "full_rebuild": {
+    "schedule": 9600,
+    "measurable": 3831,
+    "cells": 2400,
+    "rank_cases": 36,
+    "within_question_rank_rows": 6396,
+    "aggregate_rank_rows": 180,
+    "new_output_directory_enforced": true,
+    "existing_output_refused_without_change": true,
+    "query_rows_equal_published_app": {
+      "compression_attempts": 9600,
+      "compression_cells": 2400,
+      "compression_coverage": 24,
+      "compression_questions": 100
+    },
+    "published_component_bindings_match": true
+  },
+  "helper_byte_identical_to_historical": true,
+  "source_files": {
+    "README.md": "ab955e9a19295e8902210fc7270bf81ce23cce6ad8463621c4f3c8b202e0d85e",
+    "fixtures/expected-default.json": "4041a41b47f277cc12cb74df295e44737db66aa7ea465401a8dcf0c2a6c94738",
+    "prepare_queries.py": "39532918f86649c861cc33d3bdc754df99c01f145a32c4b231dc3e7c16a1220b",
+    "rankings.mjs": "6440b8a85a979b3826a9d87a849017e6d747c8ab4b2e265ecf4cec99d3cea20e",
+    "test_queries.py": "ca364597d44186484be8d9ae115a5b06b0270cefcac44f1112a4831c04f925dc",
+    "test_rankings.mjs": "ffd831eae643f2f9360acebfbbf36950c186f56f4aa94d98038522e0c521536d"
+  },
+  "published_inputs": {
+    "inputs/om100-max-suite-high-20261014/comparison-data.json": {
+      "bytes": 20636577,
+      "sha256": "4ddf80101317bb6158bd13a435eccae899684479dfd74b91c2047c81c550f264"
+    },
+    "tables/main/analysis_manifest.json": {
+      "bytes": 1069,
+      "sha256": "786be0f376ffa68690683d0d51c1f11aa2cfa2f23593d4ad9d34c50ec5890f86"
+    },
+    "tables/main/conditional_ranks.json": {
+      "bytes": 91536,
+      "sha256": "57ced183f7c0ceb9002f876ed1b91c7f145f9ffa4e71d993030e3b7a39e0bc62"
+    },
+    "tables/main/conditional_ranks_by_question.json": {
+      "bytes": 1034840,
+      "sha256": "2e4fa72a32c01fc2431374de65ed1353d69410ae0df0c0373ea00dd9cf143a32"
+    },
+    "tables/main/coverage.json": {
+      "bytes": 12027,
+      "sha256": "74b1f1891eec059bf6513b74c8f0ad4f47f77831dd88ba0acd3d15e989988b9c"
+    },
+    "tables/main/task_metadata.json": {
+      "bytes": 43220,
+      "sha256": "0f9be8201e8b843da0fca3d38ecc8b75b4d58a09b898529d011e80fc62b07085"
+    }
+  },
+  "app_snapshot_sha256": "336a16b8a2dc32142b91cfe034a427d3e099653a54d755332e25b7fb67adfa58",
+  "no_duplicate_addon_in_source_package": true,
+  "no_absolute_user_paths_in_source_package": true,
+  "repo_or_live_app_modified": false,
+  "provider_lean_cloud_calls": 0
+}

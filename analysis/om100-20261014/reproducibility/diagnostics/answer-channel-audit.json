@@ -1,0 +1,59 @@
+{
+  "at_utc": "2026-10-15T05:34:58.317193+00:00",
+  "state": "pass_bounded_answer_channel_audit",
+  "source_checks": {
+    "providers_parse_anthropic_body": "Only type=text fields are joined; thinking/redacted_thinking retained as metadata and excluded from raw_response (providers.py202-235).",
+    "stream_reconstructor": "text_delta and thinking_delta update separate named fields in separately indexed content blocks (streaming_adapter.py167-202)."
+  },
+  "source_sha256": {
+    "providers.py": "8c1e67295a9859c9244e6df232b7bd20884cef40b11d15f971151641832516db",
+    "streaming_adapter.py": "fe6ac1bbf67006f3ab6e02c1a6845de382112711d8295e47bb72706b8ad90d00"
+  },
+  "checks": [
+    {
+      "model": "claude-haiku-5-5",
+      "attempt_id": "b4b51aa85e94380ad730dd18426bd4e28401490a80b272e91f0df60d8fb96db7",
+      "provider_stop_reason": "end_turn",
+      "content_block_types": {
+        "thinking": 1,
+        "text": 1
+      },
+      "text_block_characters": [
+        4813
+      ],
+      "joined_text_equals_raw_response": true,
+      "raw_hash_binding_pass": true,
+      "captured_response_matches_saved_response": true,
+      "frozen_adapter_matches_submitted_text": true,
+      "visible_text_contains_markdown_heading": true,
+      "visible_text_contains_literal_invoke_xml": false,
+      "nontext_content_exported": false,
+      "generation_file_sha256": "6842ea457b2b8b880d66dad09f198eb8019861c37fbc659c47ff4e4f06c6070a",
+      "capture_file_sha256": "5d181826c5a89e2d0f6f0973ed702ae82d53b6277d13663510b41536cd02acd5",
+      "verification_file_sha256": "5fde080af4304580927fe9786e0dc6753e7cb56c567ddb7f7effb375a5b0c159"
+    },
+    {
+      "model": "claude-sonnet-5-5",
+      "attempt_id": "128b5add854af450151b6a244cd586884469d53240ad24799acfbae63a8d1897",
+      "provider_stop_reason": "end_turn",
+      "content_block_types": {
+        "thinking": 1,
+        "text": 1
+      },
+      "text_block_characters": [
+        2053
+      ],
+      "joined_text_equals_raw_response": true,
+      "raw_hash_binding_pass": true,
+      "captured_response_matches_saved_response": true,
+      "frozen_adapter_matches_submitted_text": true,
+      "visible_text_contains_markdown_heading": false,
+      "visible_text_contains_literal_invoke_xml": true,
+      "nontext_content_exported": false,
+      "generation_file_sha256": "3be9a9b0c73cfc13ec7fd99e6f3480d0a4044c5c16c5c6ecf2f0e071de2b29c8",
+      "capture_file_sha256": "4b74b5231792443431e796b8aec99ab7ff313421499acd2b0106df09a28cf28a",
+      "verification_file_sha256": "1b9f82c90fae4ce83c844486b1ce1f48d9b4c04f3bee3eebd724d836c88f5add"
+    }
+  ],
+  "scope": "Two deterministic saved response samples plus frozen extraction/reconstruction source inspection, not a new full-cohort SSE audit. No hidden thinking content printed or copied; only block-type counts exported. No model or Lean calls."
+}

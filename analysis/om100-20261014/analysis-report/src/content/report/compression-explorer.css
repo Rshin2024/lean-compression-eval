@@ -1,0 +1,35 @@
+.paper-report .report-hero h1 { font-size: 32px; }
+.paper-report { gap: 28px; }
+.paper-report .report-hero { gap: 12px; }
+.compression-explorer { display: grid; gap: 16px; min-width: 0; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+.compression-explorer > * { min-width: 0; }
+.compression-explorer .compression-inventory { margin: 12px 0 0; font-size: 13px; color: var(--secondary); }
+.compression-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; }
+.compression-controls > *, .compression-question-picker > * { max-width: 100%; }
+.compression-scope { display: grid; gap: 5px; font-size: 14px; }
+.compression-scope strong { color: var(--text); font-size: 18px; font-weight: 600; }
+.compression-scope span { color: var(--secondary); line-height: 1.5; }
+.compression-podium { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+.compression-podium-detail { font-size: 12px; color: var(--secondary); line-height: 1.5; margin-top: 6px; }
+.compression-roster { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+.compression-roster label { display: flex; gap: 10px; align-items: start; font-size: 14px; }
+.compression-roster input { margin-top: 4px; }
+.compression-roster small { display: block; color: var(--secondary); font-size: 12px; line-height: 1.5; }
+.compression-note { font-size: 13px; color: var(--secondary); line-height: 1.6; margin: 0; }
+.compression-empty { border: 1px solid var(--border); border-radius: 12px; padding: 20px; line-height: 1.5; }
+.compression-empty p { margin: 8px 0 16px; }
+.compression-action { font: inherit; font-size: 13px; color: var(--text); border: 1px solid var(--border); background: var(--background); border-radius: 8px; padding: 8px 12px; cursor: pointer; }
+.compression-action:hover { background: var(--surface); }
+.compression-action:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+.compression-empty .compression-action + .compression-action { margin-inline-start: 8px; }
+.compression-question-picker { display: flex; gap: 8px; flex-wrap: wrap; align-items: end; }
+.compression-output-detail dl { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px 24px; margin: 0; }
+.compression-output-detail dt { color: var(--secondary); font-size: 12px; margin-bottom: 5px; }
+.compression-output-detail dd { color: var(--text); margin: 0; font-size: 14px; overflow-wrap: anywhere; line-height: 1.5; }
+.compression-output-detail code { white-space: normal; }
+@media (max-width: 720px) {
+  .compression-podium { grid-template-columns: 1fr; }
+  .compression-roster, .compression-output-detail dl { grid-template-columns: 1fr; }
+  .compression-controls { align-items: start; }
+  .paper-report .report-hero h1 { font-size: 27px; }
+}

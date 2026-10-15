@@ -1,0 +1,87 @@
+{
+  "revision": "compression-explorer-v1",
+  "completedAtUTC": "2026-10-15T08:21:24.323910+00:00",
+  "url": "http://127.0.0.1:62775/?view=1#compression-explorer",
+  "appId": "report:b4fce0e3-0ea8-43c3-b4f1-707081c8b286",
+  "buildStatus": "complete",
+  "build": {
+    "version": 1,
+    "kind": "separate-data-v1",
+    "html": {
+      "path": "index.html",
+      "sha256": "f746a9e0f3851b82a34b04e5a13e020dab470d6963f3663296acb2126e7c4d8f",
+      "bytes": 2912050
+    },
+    "snapshot": {
+      "path": "snapshot.336a16b8a2dc32142b91cfe034a427d3e099653a54d755332e25b7fb67adfa58.json",
+      "sha256": "336a16b8a2dc32142b91cfe034a427d3e099653a54d755332e25b7fb67adfa58",
+      "bytes": 8243331
+    },
+    "runtimeSha256": "9e3ede84b28aded3c7379b6e6a5611f0d95b9977eb0f781e279ceefabfcbd27e",
+    "sourceSnapshotSha256": "336a16b8a2dc32142b91cfe034a427d3e099653a54d755332e25b7fb67adfa58"
+  },
+  "sourceSha256": {
+    "src/data.json": "336a16b8a2dc32142b91cfe034a427d3e099653a54d755332e25b7fb67adfa58",
+    "src/content/report/CompressionExplorer.jsx": "468e86019399e30e0ae6d1dfa1de177da43fa85fd16561de267874cfaf570185",
+    "src/content/report/compression-explorer.css": "0ee093d23a8dc390aa5f7213df640f8bd7ab0c7847e8c693e94f95ac53c80475",
+    "src/content/report/compression-ranking.mjs": "6440b8a85a979b3826a9d87a849017e6d747c8ab4b2e265ecf4cec99d3cea20e",
+    "src/content/report/ReportContent.jsx": "35dadf9424ed0a4d6a2c0cd3d729a0d7562bd77d6f9c25d4eff437ad0f24b151",
+    "dist/index.html": "f746a9e0f3851b82a34b04e5a13e020dab470d6963f3663296acb2126e7c4d8f",
+    "dist/data-app-build.json": "875cb33b6b8515ffde4297c8992821bcd24953dd0d83de4d1d475368240de0c4"
+  },
+  "originalQueriesPreserved": true,
+  "frozenInputHashesVerified": {
+    "outputs/lean-compression-eval/runs/om100-max-suite-high-20261014/comparison-data.json": {
+      "bytes": 20636577,
+      "sha256": "4ddf80101317bb6158bd13a435eccae899684479dfd74b91c2047c81c550f264"
+    },
+    "work/paper-analysis-20261014/main/results/analysis_manifest.json": {
+      "bytes": 1069,
+      "sha256": "786be0f376ffa68690683d0d51c1f11aa2cfa2f23593d4ad9d34c50ec5890f86"
+    },
+    "work/paper-analysis-20261014/main/results/conditional_ranks.json": {
+      "bytes": 91536,
+      "sha256": "57ced183f7c0ceb9002f876ed1b91c7f145f9ffa4e71d993030e3b7a39e0bc62"
+    },
+    "work/paper-analysis-20261014/main/results/conditional_ranks_by_question.json": {
+      "bytes": 1034840,
+      "sha256": "2e4fa72a32c01fc2431374de65ed1353d69410ae0df0c0373ea00dd9cf143a32"
+    },
+    "work/paper-analysis-20261014/main/results/coverage.json": {
+      "bytes": 12027,
+      "sha256": "74b1f1891eec059bf6513b74c8f0ad4f47f77831dd88ba0acd3d15e989988b9c"
+    },
+    "work/paper-analysis-20261014/main/results/task_metadata.json": {
+      "bytes": 43220,
+      "sha256": "0f9be8201e8b843da0fca3d38ecc8b75b4d58a09b898529d011e80fc62b07085"
+    }
+  },
+  "validation": {
+    "independentDataReview": "review/addon-review.json",
+    "independentIntegrationReview": "review/integration-review.json",
+    "rankingTestsPassed": 23,
+    "browserChecks": [
+      "default6models23questions and all6scores",
+      "all8models zero-shared-question aggregate unavailable",
+      "Q007 all8comparison7measured and Sonnetunavailable",
+      "Sonnet4failed outputs retained",
+      "all9600outputs3831measured",
+      "accepted exactT0 74009768822/304 andrank7/19",
+      "WBmetric updatesranking Fable78.26 Astra74.78 Opus71.30",
+      "view and selected detail survive reload",
+      "Source preview600candidate cells supports coverage and shared intersection",
+      "searchOM100-100 gives96, alloutputs clearssearch restores9600",
+      "390px model and output views have no explorer overflow; shortenedtabsfit",
+      "no browserconsoleerrors",
+      "finalHTTPhtml andsnapshot bytes matchdist",
+      "complete state rendered and final screenshot captured"
+    ],
+    "postReviewChanges": "Shortened view labels for narrow screens; complete build status. No arithmetic changes."
+  },
+  "delivery": {
+    "offline": "compression-explorer-offline.html",
+    "offlineSha256": "dbe5736101bc783b883dac5999de788e86c7cd3e5422c25b96a1b7ff12e5b8f9",
+    "screenshot": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/compression-explorer-v1/compression-explorer-final.jpg"
+  },
+  "historicalArtifacts": "Original paper, analysis results, artifact-manifest.json and zip bundle remain unchanged; this receipt versions the live-report revision."
+}

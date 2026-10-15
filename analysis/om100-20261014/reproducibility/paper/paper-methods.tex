@@ -1,0 +1,131 @@
+% Methods fragment. No preamble, packages, or document environment required.
+% The appendix material begins at the explicit marker near the end.
+\section{Study design and task construction}
+\label{sec:methods-design}
+
+We analyze three completed cohorts separately: an engineering smoke test, an initial evaluation of 100 selected Lean goals, and a second evaluation of the same goals with a larger generation ceiling. Table~\ref{tab:methods-cohorts} summarizes their design. Every cohort crossed eight model identifiers with three prompt conditions and four responses per question. The 20,160 scheduled outcomes therefore comprise three experiments, not one homogeneous sample. The provider-maximum cohort is the principal dataset for this paper; the initial cohort supplies a matched-question sensitivity comparison, while the smoke test remains a development result.
+
+\begin{table}[tbp]
+\centering
+\small
+\begin{tabular}{lrrrr}
+\hline
+Cohort & Goals & Attempts & Output ceiling & Accepted/measurable \\
+\hline
+Smoke & 10 & 960 & 8,192 & 609/602 \\
+Initial OM100 & 100 & 9,600 & 8,192 & 2,445/2,445 \\
+Provider-maximum OM100 & 100 & 9,600 & 128,000 & 3,831/3,831 \\
+\hline
+\end{tabular}
+\caption{Separate cohorts. Each contains eight models, three prompts and four responses per goal. ``Measurable'' denotes available dependency-compression metrics; the seven accepted smoke proofs without measurements retain their acceptance status. Output ceilings count provider generation tokens, not Lean source tokens.}
+\label{tab:methods-cohorts}
+\end{table}
+
+The OM100 set preserves the user's 100 selected component lemmas from 92 files in 19 research-result families. Four supplied groups---algebra, analysis, combinatorics, and computer science/probability---contain 25 questions each. These are subproblems within larger developments, not 100 complete open research problems or a random sample of mathematics. Related questions share constructions and preceding lemmas. The source is the pinned OpenAI mathematics repository, whose artifacts were produced by an internal model~\cite{openaimath}; FineEnvs metadata supplied additional provenance. We independently verified the selected reference proofs within the evaluation environment rather than relying solely on upstream verification claims.
+
+This purposive selection differs from the original planning document's proposed 50-goal pilot and disjoint 200-goal main study. The executed OM100 manifests explicitly identify an exploratory evaluation, with no pilot/test family separation. The present analysis specification was written after collection and is not a preregistration. The smoke goals are easy constructed controls, not evidence of training novelty. Neither a recent public release nor removal of a theorem from the checker establishes that a model has never encountered its statement, an equivalent result, or an earlier private version. Upstream model provenance creates a possible provider asymmetry whose effect these data cannot identify.
+
+\subsection{Reconstructed targets and reference-informed scaffolding}
+\label{sec:methods-inputs}
+
+For each target, preparation reconstructed the environment immediately preceding its source declaration, excluding the original target and its defining module from permitted imports. Legitimate preceding proofs remained trusted compiler inputs. Explicit binders and universe parameters were materialized, and original and reconstructed whole types were compared by the kernel. All 100 candidates were retained; failed preparation stages were repaired before generation rather than excluded after model outcomes.
+
+Four exceptional transformations were recorded. OM100-041 and OM100-094 required parentheses and restored indentation around multiline \texttt{let} propositions, adding two signature tokens while preserving reference proof bytes. OM100-048 and OM100-078 required closing original variable scopes and reopening the namespace and active opens to avoid duplicated section parameters. Each transformation retained type-equivalence evidence and a successful reference check.
+
+Models received the toolchain, approved imports, fixed premise interfaces, a condition instruction, and an explicit theorem ending in \texttt{<PROOF>}. They did not receive the target reference proof, numerical scores, previous attempts, validator feedback, live retrieval or execution tools. However, premise selection was \emph{reference-informed}: names from the trusted reference and source context helped select relevant interfaces. Earlier theorem bodies were omitted from the model-facing interface, while suitable computational definitions were included. Exported context was capped at 56,000 bytes within a configured 64,000-byte context allowance. Every model and condition received identical task-specific context bytes. This is scaffolded library proof generation, not unaided discovery. Target-absence and dependency audits do not exclude every semantically equivalent theorem in the available library.
+
+\section{Generation and formal verification}
+\label{sec:methods-protocol}
+
+The frozen identifiers were \texttt{gpt-6.1-sol}, \texttt{gpt-6-sol}, \texttt{gpt-6-luna}, \texttt{gpt-6-astra}, \texttt{claude-haiku-5-5}, \texttt{claude-sonnet-5-5}, \texttt{claude-opus-5-5}, and \texttt{claude-fable-5-1}. All requested \texttt{high} effort and omitted temperature; Claude used adaptive thinking. Each sample began from the same frozen task prompt in a fresh conversation, without a repair loop or best-of-four selection. Requested model identifiers were fixed, but the records do not independently certify immutable provider weights. Equal effort labels and token ceilings do not imply equal inference compute or tokenization.
+
+The standard condition requested a correct proof; mathematical compression requested compact use of existing definitions, lemmas and local factoring, without irrelevant expansion; source concision requested the fewest Lean source tokens. The exact instructions appear in Appendix~\ref{app:exact-prompts}. The compression prompt did not instruct models to maximize $T_0$ numerically. OM100 used one frozen mechanical adapter that removed only a single complete outer fence or \texttt{<PROOF>} wrapper. Prose surrounding a proof, multiple answers and replacement declarations were not repaired or selectively extracted. The smoke test used an identity adapter. Inspection of the frozen response parser and two archived Claude responses confirmed that only answer-text blocks became proof candidates; separate thinking blocks were excluded. The sampled Markdown and literal tool-invocation text were present in provider answer blocks, not introduced by concatenating hidden reasoning.
+
+The larger-ceiling run retained the OM100 prompts, targets and effort setting, but used 128,000 rather than 8,192 generation tokens, streaming transport, and OpenAI priority service rather than the initial default tier. Its 600-second network setting was an idle timeout, not a total generation deadline. Because budget, transport, service tier and collection time changed together, cross-run differences do not isolate a causal token-budget effect.
+
+The checker parsed the complete submitted term, elaborated it inside the fixed declaration, compared its type with a separately elaborated trusted signature, audited dependencies and axioms, and replayed it through the kernel. Permitted foundational axioms were \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}. Admissions, altered targets, prohibited dependencies, new axioms and restricted executable metaprogramming were rejected. Trusted tactics remained available, so a short answer could delegate substantial work to automation.
+
+OM100 fixed Lean 4.34.1 and the selected Mathlib/OAI artifacts. Each fresh checker container had no network, a read-only filesystem, dropped capabilities, a 64-PID limit, two CPU quota units and 8 GiB memory. Validation and extraction had separate 180- and 900-second wall limits; the configured elaboration option was \texttt{maxHeartbeats=10000000}. These limits define formal acceptance under resources, not mathematical truth or falsity. The earlier smoke environment used Lean 4.34.0-rc1, different library pins, one CPU quota unit, 4 GiB, and 60 seconds per phase.
+
+Initial OM100 verification exposed a thread-pool/PID infrastructure problem. A versioned runtime amendment added explicit \texttt{-j1}, without changing mathematical sources or scoring code. All 9,600 initial outcomes and 100 references were processed uniformly under \texttt{v2\_threads1}; 1,474 retired v1 records remain historical, not additional samples. The larger run used this same amended runtime and reused the 100 reference records by hash. Generation identity and verification provenance are bound separately. Truncated answers receive terminal records without being passed to Lean; infrastructure incidents are not silently converted into incorrect proofs.
+
+\section{Compression, length and outcome definitions}
+\label{sec:methods-measures}
+
+The motivating paper studies weighted dependency expansion and proposes reductive compression $T_0$, deductive compression $I_0$, and a PageRank-style refinement~\cite{compression}. Our evaluation adapts these measures to submitted proofs. It is paper-aligned rather than a numerical replication: library snapshots, source-span rules, primitive boundaries and cycle handling are explicitly implementation-specific. No corpus-wide PageRank or optimal-compression search was performed.
+
+For a target signature $S$ and submitted body $B$, $W_S$ and $W_B$ count distinct original parser-leaf source spans before elaboration. Signature binders and proposition belong to $W_S$; tactics, arguments and local helper statements/proofs belong to $W_B$. Fixed declaration scaffolding, whitespace, comments and synthetic syntax are excluded. These counts are neither provider billing tokens nor character counts.
+
+The elaborated type and body yield separate histograms $c_S(u,v)$ and $c_B(u,v)$ of constant references and a distinguished \texttt{Sort} reference. Multiplicity is preserved through applications, binders, lets, metadata and projections. With primitive boundary nodes assigned $U(p)=1$, acyclic dependencies determine
+\begin{equation}
+ U_S(u)=\sum_v c_S(u,v)U(v),\qquad
+ U_B(u)=\sum_v c_B(u,v)U(v),\qquad
+ U(u)=U_S(u)+U_B(u).
+\label{eq:methods-expansion}
+\end{equation}
+Both type and available body contribute when an expanded declaration is referenced. Mathlib modules, evaluator-owned mathematics, candidate-generated declarations and 457 listed OAI modules are expanded. Other frozen packages, including Init, Lean, Std and Batteries, are atomic, as is \texttt{Sort}. Ownership follows module metadata, not identifier spelling. Unindexed declarations, cycles and zero-reference nonprimitive closures yield unavailable metrics, rather than invented primitive counts.
+
+Counts use arbitrary-precision integers, with exact rational representations of
+\begin{equation}
+ T_0=\frac{U_S+U_B}{W_S+W_B},\qquad I_0=\frac{W_B}{W_S}.
+\label{eq:methods-ratios}
+\end{equation}
+Depth is the longest dependency path to the fixed boundary. Expansion counts are not unique dependencies, expression-tree size, normalized proof length, or mathematical information content. At fixed $W_S$, larger $I_0$ means a longer source proof. Larger $T_0$ may reflect smaller source, larger inherited dependency expansion, or both; comparisons therefore retain the decomposition
+\begin{equation}
+ \Delta\log_2 T_0=\Delta\log_2(U_S+U_B)-\Delta\log_2(W_S+W_B)
+\label{eq:methods-decomposition}
+\end{equation}
+with identical samples and weights. Implicit typeclass infrastructure can materially affect the numerator.
+
+Scheduled accepted-proof yield, nonempty completion, and acceptance conditional on completion are reported separately. Compression is defined only for accepted, measurable proofs; failures are not assigned zero compression. Four-response question coverage records whether at least one saved sample succeeded, not the success probability of a new four-call run. Completed source-length analysis separately counts Unicode non-whitespace characters across successful and unsuccessful answers, retaining prose and comments. Truncated partials are excluded by default and examined separately; empty answers have unavailable proof length. These character measurements are not substituted for parser-token $W_B$. Parse failures include output-format violations and unsupported syntax and cannot alone establish mathematical inability.
+
+\section{Statistical analysis and cost accounting}
+\label{sec:methods-statistics}
+
+The new post hoc analysis uses seed 20261014 and 10,000 bootstrap replicates. Questions receive equal point-estimate weight. The primary uncertainty calculation samples all 19 source-result families globally with replacement, retaining every question and response within sampled blocks; it is not domain-stratified. Each replicate recomputes its numerator and support denominator, so unequal family sizes do not become equal-family point weights. A bootstrap over 100 question clusters provides sensitivity intervals. Undefined-support replicates are recorded. Dependence and few-cluster limitations remain substantive~\cite{cluster}: nineteen curated families neither guarantee asymptotic accuracy nor establish representativeness of all mathematics. Historical reports used seed 20261011 and domain-stratified family resampling where applicable; those retained intervals are distinct from this paper's analysis.
+
+Within each model, we contrast compression with standard, concision with standard, and compression with concision. Yield differences use all questions. Log-metric differences use questions with at least one measurable accepted proof in both conditions, first averaging valid sample logs within each question/condition and then averaging question differences. Thus these effects condition on successful outputs. Exact rational arithmetic determines within-question $T_0$ ordering and ties. Cross-model geometric-mean rankings use explicit shared-question intersections; no all-eight pure-compression ranking is reported when that intersection is empty.
+
+Exploratory paired-difference tests use CR1 family-cluster standard errors and Student $t$ reference distributions with $G-1$ degrees of freedom for represented families. Supports with fewer than five families receive no inferential $p$-value. Holm correction is applied to 24 model-by-prompt contrasts per outcome, 28 pairwise model-yield tests per condition, and 28 differences in the designated compression contest. Effect sizes and sensitivity intervals receive priority over threshold declarations.
+
+Source-length associations demean log-length and acceptance within model--question--condition cells and estimate the pooled covariance-to-variance slope; this is not an equal-question mean effect. To reduce reuse of the same outcomes, split-sample regressions relate mean compression among accepted responses 1--2 to scheduled acceptance in responses 3--4, then reverse the halves. They include question fixed effects and model-by-condition effects, with family-clustered CR1/$t$ inference and Holm correction across four regressions. Selection on an early accepted proof remains; these are associations, not effects of shortening or compression.
+
+Supplemental joint contests compare every pair of four saved responses: acceptance beats failure, accepted proofs are ordered by the selected metric, and ties or double failures split a point. All 16 pairs are averaged before question-level inference. Such pairs are dependent, and the roster-specific score deliberately mixes reliability with compression; its components and source-concision sensitivity are reported separately.
+
+Costs multiply recorded usage by frozen provider rates, including unsuccessful and truncated responses, and use delivered service tier for priority pricing. Closed cloud estimates use observed allocation intervals. Neither is an invoice. Original charges remain unknown for six disconnected requests and one HTTP 520 incident in the initial run, and 30 failed requests in the larger run. Authorized recoveries retained original evidence; no recorded completed answer was repeated or selected against. Storage, network, tax and credit adjustments remain outside known compute estimates.
+
+% BEGIN APPENDIX MATERIAL: place after the parent manuscript's appendix command.
+\section{Exact prompts and operational provenance}
+\label{app:exact-prompts}
+
+The common system message was:
+\begin{verbatim}
+You are completing a Lean theorem in the supplied fixed environment.
+Return exactly one Lean proof term that fills <PROOF> in the target.
+A tactic proof beginning with "by" is allowed.
+Prove the exact target using its stated assumptions and the supplied imports.
+Do not return Markdown fences, prose, a replacement declaration, imports,
+top-level commands, new axioms, sorry, admit, or custom metaprogramming.
+Ordinary local have and let expressions are allowed.
+\end{verbatim}
+The three condition instructions follow. Line wrapping here is typographic; the archived specification retains the exact original bytes.
+
+\paragraph{Standard.}
+\begin{verbatim}
+Produce a correct Lean proof of the target.
+\end{verbatim}
+\paragraph{Mathematical compression.}
+\begin{verbatim}
+Produce a correct Lean proof in the most mathematically compressed form you
+can. Use suitable existing definitions and lemmas, and factor repeated
+reasoning locally, to express the argument compactly. Avoid irrelevant
+reasoning or artificial expansion.
+\end{verbatim}
+\paragraph{Source concision.}
+\begin{verbatim}
+Produce a correct Lean proof using as few Lean source tokens as possible.
+\end{verbatim}
+
+The smoke cohort preceded OM100 development. Initial OM100 manifests were frozen on 14 October 2026 UTC, with completion recorded at 19:46 UTC. The separate provider-maximum manifests were frozen on 15 October at 02:38 UTC; final validation passed at 04:42 UTC. Six checker VMs were confirmed deallocated at approximately 04:51 UTC, and the task resource group was confirmed absent at 04:56:17 UTC. These operational events changed neither proof outcomes nor source metrics.
+
+Short provenance prefixes identify retained full hashes: OpenAI source commit \texttt{adc7f1241b42}; Lean commit \texttt{5045d0056413}; Mathlib commit \texttt{d13f23b723b8}; frozen Python evaluator \texttt{958bc7676b5f}; Lean evaluator \texttt{2ff87da0a2eb}; scorer \texttt{cdd3c7f0d364}; prompt policy \texttt{e768e4350173}; v2 image \texttt{3889fa8d304a}; reference index \texttt{5c44821af7cc}; provider-maximum comparison data \texttt{4ddf80101317}; and post hoc analysis specification \texttt{2415d3f0b3d0}. Full values, manifests, raw-response and verification evidence, source-span policies, and the preserved runtime archive are recorded in the companion provenance files. Source-only rebuilding is not claimed to reproduce the image digest bit for bit.

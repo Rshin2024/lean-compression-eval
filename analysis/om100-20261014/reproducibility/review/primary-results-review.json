@@ -1,0 +1,66 @@
+{
+  "status": "pass",
+  "comparison_data_sha256": "4ddf80101317bb6158bd13a435eccae899684479dfd74b91c2047c81c550f264",
+  "analysis_source_sha256": "084c6ace04929c43b568cfbef032b856f74d2b01710f4b03596440533d3b52bb",
+  "review_source_sha256": "62a6747a890d0408c78ec11fc94146fa2197f135e92626b4cc0a24faa631b908",
+  "input_result_hashes": {
+    "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/main/results/rates.json": "fd1ed525d4ad240a136ee968f8b5740066957e273ee9cca56f83e273ecdeef29",
+    "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/main/results/prompt_effects.json": "9ba16446faf5eed23c428355a1072c5f3dbbc8b91d510d91eab811bf6c8e9b77",
+    "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/main/results/joint_contest.json": "515c54e662712e7b775284bfaf826fca0d89026887bd4ae0e396874956cfbe26",
+    "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/main/results/conditional_ranks_by_question.json": "2e4fa72a32c01fc2431374de65ed1353d69410ae0df0c0373ea00dd9cf143a32",
+    "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/main/results/source_length_associations.json": "a925e9e33d41d43ca877d39c2d013e130386003da500ecff2cd2c1c677003b3b",
+    "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/main/results/split_sample_associations.json": "7110617e250f169f5466306d51439c06882ac808b69f809c6c6233edaaafe129",
+    "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/main/results/model_yield_differences.json": "a8cb7bd42ae264f5a03bc1e4fda2d962c73a2d62cc9d17124e0e0cad4be190d5",
+    "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/paper-analysis-20261014/main/results/joint_contest_differences.json": "8b3d854384303a7293200f2b2504338416abde9c6a4920428bf4f8997f7d2499"
+  },
+  "checks": {
+    "rate_mean": 152,
+    "family_boot_CI": 112,
+    "family_boot_empty": 56,
+    "no_zero_null_rate_test": 152,
+    "prompt_mean": 144,
+    "prompt_support": 144,
+    "prompt_CR1_p": 144,
+    "contest": 8,
+    "contest_reliability": 8,
+    "contest_compression": 8,
+    "exact_rank": 6396,
+    "fixed_cell_slope": 12,
+    "split_coef": 4,
+    "split_CI": 8,
+    "split_sample_count": 4,
+    "holm_adjustment": 260
+  },
+  "errors": [],
+  "split_independent_results": [
+    {
+      "split": "forward",
+      "metric": "log2_T0",
+      "coefficient": 0.007621941961896038,
+      "se": 0.008983793046483305,
+      "design_rank": 124
+    },
+    {
+      "split": "forward",
+      "metric": "log2_W_B",
+      "coefficient": 0.0031037186845730685,
+      "se": 0.032266832726691286,
+      "design_rank": 124
+    },
+    {
+      "split": "reverse",
+      "metric": "log2_T0",
+      "coefficient": -0.0022496106298884985,
+      "se": 0.004700123286830642,
+      "design_rank": 124
+    },
+    {
+      "split": "reverse",
+      "metric": "log2_W_B",
+      "coefficient": 0.06298367702458942,
+      "se": 0.03172430146646419,
+      "design_rank": 124
+    }
+  ],
+  "scope": "Point estimates, all exact per-question ranks, raw-vs-adapted units, manual CR1 split regression. Family-bootstrap CIs independently checked for standard yield and all yield/T0 prompt contrasts using family-level sums/counts. Question-bootstrap CIs and other bootstrap endpoints reviewed by source, not independently replayed."
+}

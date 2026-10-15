@@ -1,0 +1,147 @@
+{
+  "scope": "Full saved diagnostic counts for three models; lexical prefix flags are descriptive patterns, not regraded proof verdicts. Samples use submitted visible adapted_response only, never provider hidden thinking. No Lean calls or proof repairs.",
+  "sample_rule": "SHA256(parse-audit-v1:attempt_id), six first-line and four other-location failures per model when present.",
+  "models": {
+    "claude-haiku-5-5": {
+      "source": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/runs/om100-max-suite-high-20261014/report-claude-haiku-5-5/all_scheduled_attempts.json",
+      "source_sha256": "373fcb43341e7167bb7313fb3dbd8267250da10ac70fd9ef554d4c4fe039c84a",
+      "scheduled": 1200,
+      "parse_failures": 1051,
+      "counts": {
+        "at_first_line": 970,
+        "markdown_heading_prefix": 629,
+        "contains_proof_tag_anywhere": 914,
+        "engine_process_returncode_zero": 1051,
+        "explicit_english_prefix_regex": 361,
+        "later_line_or_other": 81,
+        "code_fence_prefix_not_removed": 56,
+        "contains_fence_anywhere": 80,
+        "by_prefix": 4
+      },
+      "diagnostic_histogram": {
+        "expected term": 511,
+        "expected end of input": 464,
+        "expected identifier": 56,
+        "expected 'in'": 11,
+        "'`'; expected '`('": 4,
+        "unknown tactic": 3,
+        "expected ')', ',' or ':'": 1,
+        "expected ','": 1
+      },
+      "condition_statuses": {
+        "standard": {
+          "parse_failure": 342,
+          "truncated_output": 33,
+          "success": 20,
+          "elaboration_failure": 5
+        },
+        "source_concision": {
+          "parse_failure": 359,
+          "truncated_output": 21,
+          "disallowed_axiom": 1,
+          "success": 13,
+          "elaboration_failure": 6
+        },
+        "mathematical_compression": {
+          "parse_failure": 350,
+          "success": 24,
+          "elaboration_failure": 8,
+          "truncated_output": 18
+        }
+      }
+    },
+    "claude-sonnet-5-5": {
+      "source": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/runs/om100-max-suite-high-20261014/report-claude-sonnet-5-5/all_scheduled_attempts.json",
+      "source_sha256": "247efad556255fb338003554ecd08792d1709c16764cb116da2d6c0798fd936e",
+      "scheduled": 1200,
+      "parse_failures": 1088,
+      "counts": {
+        "at_first_line": 983,
+        "explicit_english_prefix_regex": 527,
+        "contains_fence_anywhere": 940,
+        "engine_process_returncode_zero": 1088,
+        "later_line_or_other": 105,
+        "code_fence_prefix_not_removed": 49,
+        "contains_proof_tag_anywhere": 13,
+        "by_prefix": 9
+      },
+      "diagnostic_histogram": {
+        "expected end of input": 931,
+        "expected term": 94,
+        "expected identifier": 49,
+        "unknown tactic": 5,
+        "'`'; expected '`('": 4,
+        "expected token": 2,
+        "expected 'in'": 2,
+        "expected ','": 1
+      },
+      "condition_statuses": {
+        "standard": {
+          "parse_failure": 363,
+          "success": 20,
+          "elaboration_failure": 13,
+          "truncated_output": 3,
+          "disallowed_axiom": 1
+        },
+        "source_concision": {
+          "parse_failure": 349,
+          "success": 29,
+          "elaboration_failure": 15,
+          "truncated_output": 6,
+          "verification_timeout": 1
+        },
+        "mathematical_compression": {
+          "parse_failure": 376,
+          "elaboration_failure": 7,
+          "success": 16,
+          "truncated_output": 1
+        }
+      }
+    },
+    "claude-opus-5-5": {
+      "source": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/runs/om100-max-suite-high-20261014/report-claude-opus-5-5/all_scheduled_attempts.json",
+      "source_sha256": "72839370669dffae53c12f36bd0626a3120b3274dd80ccd4a0ce577cd1aefdc8",
+      "scheduled": 1200,
+      "parse_failures": 314,
+      "counts": {
+        "at_first_line": 287,
+        "explicit_english_prefix_regex": 221,
+        "engine_process_returncode_zero": 314,
+        "contains_fence_anywhere": 8,
+        "later_line_or_other": 27,
+        "by_prefix": 21
+      },
+      "diagnostic_histogram": {
+        "expected end of input": 273,
+        "expected term": 16,
+        "unknown tactic": 13,
+        "expected '|' or '|\u2098'": 3,
+        "'`'; expected '`('": 3,
+        "expected ')'": 2,
+        "expected ')', ',' or ':'": 2,
+        "expected ')', '\u2191', '\u21a5', '\u21d1' or term": 1,
+        "expected ',' or binderPred": 1
+      },
+      "condition_statuses": {
+        "standard": {
+          "success": 201,
+          "elaboration_failure": 51,
+          "parse_failure": 146,
+          "verification_timeout": 2
+        },
+        "source_concision": {
+          "parse_failure": 31,
+          "success": 284,
+          "elaboration_failure": 83,
+          "verification_timeout": 2
+        },
+        "mathematical_compression": {
+          "success": 193,
+          "parse_failure": 137,
+          "elaboration_failure": 62,
+          "verification_timeout": 8
+        }
+      }
+    }
+  }
+}

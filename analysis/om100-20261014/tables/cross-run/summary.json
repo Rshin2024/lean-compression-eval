@@ -1,0 +1,120 @@
+{
+  "state": "analysis_complete",
+  "at_utc": "2026-10-15T05:19:14.864442+00:00",
+  "cohorts": {
+    "cap8192": {
+      "scheduled": 9600,
+      "valid": 2445,
+      "completed": 4633,
+      "truncated": 4967,
+      "empty": 4416,
+      "measured": 2445,
+      "cost_usd": "1848.436138530",
+      "input_total_tokens": 208567448,
+      "output_tokens": 61023383,
+      "status_counts": {
+        "truncated_output": 4967,
+        "success": 2445,
+        "elaboration_failure": 1171,
+        "parse_failure": 976,
+        "verification_timeout": 38,
+        "output_format_failure": 1,
+        "disallowed_axiom": 2
+      },
+      "delivered_tier_counts": {
+        "standard": 4800,
+        "default": 4800
+      },
+      "unknown_original_charge_incidents": 7
+    },
+    "cap128000": {
+      "scheduled": 9600,
+      "valid": 3831,
+      "completed": 9477,
+      "truncated": 123,
+      "empty": 99,
+      "measured": 3831,
+      "cost_usd": "4369.71831081",
+      "input_total_tokens": 208589680,
+      "output_tokens": 172094823,
+      "status_counts": {
+        "success": 3831,
+        "elaboration_failure": 2865,
+        "truncated_output": 123,
+        "parse_failure": 2668,
+        "verification_timeout": 96,
+        "disallowed_axiom": 16,
+        "verification_resource_limit": 1
+      },
+      "delivered_tier_counts": {
+        "standard": 4800,
+        "priority": 4800
+      },
+      "unknown_original_charge_incidents": 30
+    }
+  },
+  "matched_slots": 9600,
+  "methods": {
+    "bootstrap_replicates": 10000,
+    "seed": 20261014,
+    "unit": "19 problem-family blocks primary; 100 question clusters sensitivity; same resampling indices across runs/models/conditions",
+    "family_block_estimand": "Question-weighted ratio-of-sums with all questions retained in each selected family; uneven block sizes do not become equal-family weights",
+    "family_count": 19,
+    "question_count": 100,
+    "interval": "95% percentile; numpy.quantile linear",
+    "paired_join": [
+      "model",
+      "task",
+      "condition",
+      "sample"
+    ],
+    "pairing_is_same_question_design_not_same_random_seed": true,
+    "unmatched_keys": 0,
+    "attempt_ids_reused": 0,
+    "causal_token_cap_effect_claimed": false,
+    "smoke_pooled_with_main": false,
+    "unknown_fields_imputed_as_zero": false,
+    "pass_at_1": "Average of four observed success indicators per question",
+    "pass_at_4": "Indicator of >=1 accepted proof among four samples for each question/model/condition; averages across selected cells",
+    "conditional_compression": "Equal-question average log2 change over shared measurable questions; selected-outcome comparison; exact rational products for tie/win comparisons",
+    "confidence_scope": "Problem-family and question-mix bootstrap on curated fixed dataset; not population-wide inference or independent-attempt confidence",
+    "multiplicity": "Exploratory intervals, no confirmatory multiple-testing claims",
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "script_sha256": "efcff1345d949dbc886f0b2066d6c0a3db437ffa5fe3e3f6e345f69bd9777496"
+  },
+  "smoke": {
+    "scheduled": 960,
+    "questions": [
+      "smoke_ag_01",
+      "smoke_ag_02",
+      "smoke_an_01",
+      "smoke_an_02",
+      "smoke_la_01",
+      "smoke_la_02",
+      "smoke_nt_01",
+      "smoke_nt_02",
+      "smoke_sl_01",
+      "smoke_sl_02"
+    ],
+    "models": [
+      "gpt-6.1-sol",
+      "gpt-6-sol",
+      "gpt-6-luna",
+      "gpt-6-astra",
+      "claude-haiku-5-5",
+      "claude-sonnet-5-5",
+      "claude-opus-5-5",
+      "claude-fable-5-1"
+    ],
+    "conditions": [
+      "standard",
+      "mathematical_compression",
+      "source_concision"
+    ],
+    "scope": "Separate descriptive smoke test on ten much simpler questions; no pooled inference with main cohorts."
+  },
+  "model_calls": 0,
+  "lean_calls": 0,
+  "cloud_calls": 0
+}
