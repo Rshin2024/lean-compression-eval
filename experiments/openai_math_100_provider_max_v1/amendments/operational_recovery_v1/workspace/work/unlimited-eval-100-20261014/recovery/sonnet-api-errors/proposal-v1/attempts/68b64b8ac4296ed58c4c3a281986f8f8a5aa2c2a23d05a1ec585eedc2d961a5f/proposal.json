@@ -1,0 +1,20 @@
+{
+  "attempt_id": "68b64b8ac4296ed58c4c3a281986f8f8a5aa2c2a23d05a1ec585eedc2d961a5f",
+  "authorization_source": "root agent instruction in current task; not a direct exact-attempt human approval",
+  "created_at": "2026-10-15T03:16:00.589257+00:00",
+  "evidence_file": "evidence.json",
+  "evidence_sha256": "bcaeafb6eb0d55a50481f739107a67d2f4de22eb64b96f04625b0332bc254824",
+  "helper_sha256": "42a1036166f0bc586650098cfa84ee2849228773fc9bd430dfd1e8610ab20fac",
+  "kind": "one_use_terminal_partial_api_error_release_v1",
+  "launch_plan_sha256": "241c35772e32ea8780d2df307300ba7c2bb7ae38ca12537f6cf06481c7b19d53",
+  "maximum_release_count": 1,
+  "model": "claude-sonnet-5-5",
+  "new_model_calls_by_release_helper": 0,
+  "original_charge_usd": null,
+  "original_outcome": "unknown",
+  "preserved_original_stream_file": "original-failed-stream.sse",
+  "preserved_partial_answer_file": "partial-answer.txt",
+  "reason": "terminal provider api_error after partial text; no final response; charge unknown",
+  "root_scope_authorization": "Root authorized one replacement for each of these exact six terminal Sonnet api_error outcomes with incomplete partial text under the user\u2019s new full rerun instruction: cost is not an issue and complete as fast as possible. All original partial text remains preserved; no expansion to another uncertain outcome is authorized.",
+  "status": "prepared_for_root_review_not_applied"
+}

@@ -1,0 +1,120 @@
+{
+  "attempt_id": "fb6e512ee5aea4245f7391677c7f6f9b2621c31a1c6fc7a2f740b859e208cb84",
+  "final_message_stop_present": false,
+  "manifest_sha256": "3b6a2b7c6bdec78daf7be698dde3c23d3967bf9067d0ab63bd0e89b3eaa6c121",
+  "marker": {
+    "attempt_id": "fb6e512ee5aea4245f7391677c7f6f9b2621c31a1c6fc7a2f740b859e208cb84",
+    "started_at": "2026-10-15T02:51:45.310439+00:00"
+  },
+  "marker_sha256": "1de40b40077a1b7391147c750acfa10d192399791238edd2cdc1e7f6bdd6d4d8",
+  "model": "claude-opus-5-5",
+  "no_answer_text": true,
+  "original_charge_usd": null,
+  "original_outcome": "unknown",
+  "provider_response_id": "msg_011Cg3GJcUmjqyF5EFLpD8a9",
+  "request_hash": "353bc2aca392dc5738cac4930cb37d216e06392cd4e63ccf093cce9097fe83b3",
+  "run_directory": "om100-max-claude-opus-5-5-high-20261014",
+  "run_hash": "2dfc7a8515ad4471c4500c61e21c7056c8506c51a77a59e1fa2f8b4ae426452f",
+  "slot_identity": {
+    "attempt_id": "fb6e512ee5aea4245f7391677c7f6f9b2621c31a1c6fc7a2f740b859e208cb84",
+    "condition": "mathematical_compression",
+    "config_hash": "cd33a694818e43161624489bcd7a86a1e9e4d9842bfa58d5aa45ff1184ebcdcd",
+    "environment_hash": "81c9f9a5e9cb062d24f8aceb298d1111a95243f392df0b2712c99461ea0b94b3",
+    "experiment": "openai_math_100_provider_max_v2_20261014",
+    "model_snapshot": "claude-opus-5-5",
+    "prompt_hash": "7bccf78e1c488c716278b05c2cf691ff71b4fef15627741366a27a33ae6a3b9b",
+    "protocol_version": "om100_direct_output_v1",
+    "sample_index": 2,
+    "schedule_index": 283,
+    "task_hash": "3402cbe93b0ffec9e888396f27a3f5146dccfb1309308a4d58f2d18ff19937e1",
+    "task_id": "OM100-019"
+  },
+  "stream_bytes": 987,
+  "stream_events": [
+    {
+      "attempt_id": "fb6e512ee5aea4245f7391677c7f6f9b2621c31a1c6fc7a2f740b859e208cb84",
+      "complete": false,
+      "event": "stream_opened",
+      "headers": {
+        "Content-Type": "text/event-stream; charset=utf-8",
+        "anthropic-ratelimit-input-tokens-limit": "10000000",
+        "anthropic-ratelimit-input-tokens-remaining": "8558000",
+        "anthropic-ratelimit-input-tokens-reset": "2026-10-15T02:51:54Z",
+        "anthropic-ratelimit-output-tokens-limit": "2000000",
+        "anthropic-ratelimit-output-tokens-remaining": "1974000",
+        "anthropic-ratelimit-output-tokens-reset": "2026-10-15T02:51:46Z",
+        "anthropic-ratelimit-requests-limit": "10000",
+        "anthropic-ratelimit-requests-remaining": "9999",
+        "anthropic-ratelimit-requests-reset": "2026-10-15T02:51:45Z",
+        "anthropic-ratelimit-tokens-limit": "12000000",
+        "anthropic-ratelimit-tokens-remaining": "10532000",
+        "anthropic-ratelimit-tokens-reset": "2026-10-15T02:51:46Z",
+        "request-id": "req_011Cg3GJc9RUNDtMU3f3o396"
+      },
+      "path": "stream-captures/fb6e512ee5aea4245f7391677c7f6f9b2621c31a1c6fc7a2f740b859e208cb84/1792032706827986000.sse",
+      "provider": "anthropic",
+      "recorded_at": "2026-10-15T02:51:46.828118+00:00",
+      "started_at": 1792032706.828063,
+      "streaming": true
+    },
+    {
+      "attempt_id": "fb6e512ee5aea4245f7391677c7f6f9b2621c31a1c6fc7a2f740b859e208cb84",
+      "bytes": 987,
+      "complete": false,
+      "event": "stream_closed",
+      "finished_at": 1792032801.510609,
+      "headers": {
+        "Content-Type": "text/event-stream; charset=utf-8",
+        "anthropic-ratelimit-input-tokens-limit": "10000000",
+        "anthropic-ratelimit-input-tokens-remaining": "8558000",
+        "anthropic-ratelimit-input-tokens-reset": "2026-10-15T02:51:54Z",
+        "anthropic-ratelimit-output-tokens-limit": "2000000",
+        "anthropic-ratelimit-output-tokens-remaining": "1974000",
+        "anthropic-ratelimit-output-tokens-reset": "2026-10-15T02:51:46Z",
+        "anthropic-ratelimit-requests-limit": "10000",
+        "anthropic-ratelimit-requests-remaining": "9999",
+        "anthropic-ratelimit-requests-reset": "2026-10-15T02:51:45Z",
+        "anthropic-ratelimit-tokens-limit": "12000000",
+        "anthropic-ratelimit-tokens-remaining": "10532000",
+        "anthropic-ratelimit-tokens-reset": "2026-10-15T02:51:46Z",
+        "request-id": "req_011Cg3GJc9RUNDtMU3f3o396"
+      },
+      "path": "stream-captures/fb6e512ee5aea4245f7391677c7f6f9b2621c31a1c6fc7a2f740b859e208cb84/1792032706827986000.sse",
+      "provider": "anthropic",
+      "recorded_at": "2026-10-15T02:53:21.510935+00:00",
+      "sha256": "2f44acb37d03c18f475831045427be53bff3be772fd76ffa8f6095c2f0620d6e",
+      "started_at": 1792032706.828063,
+      "streaming": true
+    }
+  ],
+  "stream_events_hash": "9cdcf287515df39bd22ed9e19fe8a00ed0d5ed617cde79bcbaff35e87b3398d3",
+  "stream_path": "stream-captures/fb6e512ee5aea4245f7391677c7f6f9b2621c31a1c6fc7a2f740b859e208cb84/1792032706827986000.sse",
+  "stream_sha256": "2f44acb37d03c18f475831045427be53bff3be772fd76ffa8f6095c2f0620d6e",
+  "terminal_error": {
+    "error": {
+      "details": null,
+      "message": "Overloaded",
+      "type": "overloaded_error"
+    },
+    "request_id": "req_011Cg3GJc9RUNDtMU3f3o396",
+    "type": "error"
+  },
+  "transport_prefix": [
+    {
+      "attempt_id": "fb6e512ee5aea4245f7391677c7f6f9b2621c31a1c6fc7a2f740b859e208cb84",
+      "event": "request_started",
+      "recorded_at": "2026-10-15T02:51:45.313063+00:00",
+      "request_hash": "353bc2aca392dc5738cac4930cb37d216e06392cd4e63ccf093cce9097fe83b3",
+      "transport_index": 0
+    },
+    {
+      "attempt_id": "fb6e512ee5aea4245f7391677c7f6f9b2621c31a1c6fc7a2f740b859e208cb84",
+      "event": "outcome_unknown",
+      "message": "Provider emitted an SSE error; possibly billed outcome retained",
+      "recorded_at": "2026-10-15T02:53:21.512195+00:00",
+      "transport_index": 0,
+      "type": "ValueError"
+    }
+  ],
+  "transport_prefix_hash": "e422b191a3d41c6ec4b8f09e3b06013a816b811413ce6534dbeb1a5b1aee20e1"
+}

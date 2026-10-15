@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "kind": "scoped_parallel_report_execution_v1",
+  "state": "prepared_and_equivalence_validated",
+  "allowed_models": [
+    "claude-opus-5-5",
+    "claude-sonnet-5-5",
+    "claude-fable-5-1"
+  ],
+  "workers": 16,
+  "source_sha256": {
+    "reporting/parallel_records.py": "f42383eeb7da491d2615caefa50fdfeb35015d23a4ed1d98999d5412a4abd2e6",
+    "reporting/run_report_parallel.py": "9e5283a8072c6e37e1725d2e89134ae2cb6e295af8ef68137f7389397a63a028",
+    "reporting/cloud_report_job_v3.py": "c9982c16c6fbc76ca542df8fff6091ba1598a94f73b6fa1bc4af60ba67beb73b"
+  },
+  "full_equivalence": {
+    "path": "reporting/parallel-full-equivalence.json",
+    "sha256": "b625b685b21094c086be9451790287cf36e6dfde1c19213db72f7ff63dc20610"
+  },
+  "mixed_status_equivalence": {
+    "path": "reporting/parallel-equivalence.json",
+    "sha256": "425a8a8595146e14ec19458310fa5a0aaa6ead78c315826c0797490d39841200"
+  },
+  "original_verifier_unchanged": true,
+  "original_core_unchanged": true,
+  "generation_changes": false,
+  "lean_executions": 0,
+  "record_validator": "exact hash-pinned verifier AST loop body; return each validated record instead of list append",
+  "canonical_order_preserved": true,
+  "current_astra_and_6_1_report_jobs_untouched": true,
+  "activation_gate": "replace only still-waiting report watcher after process stop/reread confirms no build started; otherwise leave currentjobrunning"
+}

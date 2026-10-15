@@ -1,0 +1,43 @@
+{
+  "status": "pass_isolated_viewer_validation",
+  "at_utc": "2026-10-15T04:17:46.405426+00:00",
+  "tests": [
+    {
+      "variant": "baseline",
+      "tests": 2,
+      "exit_code": 0,
+      "log": "baseline-tests-2.log",
+      "log_sha256": "e3f009f00e6db606b77a0e7f8d50bd66d3415782a26700dfbebf2a329acf3301",
+      "uses_only_synthetic_temporary_files": true,
+      "network": "loopback ephemeral test server only"
+    },
+    {
+      "variant": "current",
+      "tests": 3,
+      "exit_code": 0,
+      "log": "current-tests.log",
+      "log_sha256": "957ff94ef3262d636931afb2a3ac24b9e387506aab56a2789bf244efe6242deb",
+      "uses_only_synthetic_temporary_files": true,
+      "network": "loopback ephemeral test server only"
+    }
+  ],
+  "route_comparison": {
+    "baseline_route_count": 109,
+    "candidate_route_count_with_all_optional_files": 112,
+    "added_routes": [
+      "/operational-disclosure.json",
+      "/suite-build-receipt.json",
+      "/transport-cost-disclosure.json"
+    ],
+    "removed_routes": [],
+    "unlisted_private_stream_and_review_paths_excluded": true
+  },
+  "model_calls": 0,
+  "lean_calls": 0,
+  "live_controller_changes": 0,
+  "hardlinks_created": 0,
+  "prior_fixture_failure": {
+    "log": "baseline-tests.log",
+    "reason": "Initial isolated fixture omitted source_lengths.py import closure. Added exact-byte dependency copies; no live source or report was changed."
+  }
+}

@@ -20,11 +20,14 @@ REPORT_FILES = (
     'contrasts_by_stratum.csv', 'paired_tasks.csv', 'resource_usage.csv',
     'verification-phase.json', 'verification-policy.json', 'phase-audit-index.json',
 )
+OPTIONAL_SUITE_FILES = ('operational-disclosure.json', 'transport-cost-disclosure.json',
+                        'suite-build-receipt.json')
 
 
 def routes_for(suite):
     suite = Path(suite).resolve(strict=True)
     names = ['index.html', 'comparison-data.json', 'questions.html', 'questions-data.json']
+    names += [name for name in OPTIONAL_SUITE_FILES if (suite / name).exists() or (suite / name).is_symlink()]
     names += [f'report-{model}/{name}' for model in MODELS for name in REPORT_FILES]
     routes = {}
     for name in names:

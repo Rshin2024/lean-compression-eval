@@ -1,0 +1,17 @@
+{
+  "state": "UNAPPLIED_CANCELLED",
+  "cancelled_at_utc": "2026-10-15T03:53:44.580944+00:00",
+  "reason": "Root cancelled interruption: one original completed naturally after58minutes; silence alone was insufficient to assume dead generation. Remaining originals continue unchanged.",
+  "signals_sent": 0,
+  "claims_released": 0,
+  "new_model_calls": 0,
+  "preserve_completed_attempt": "20360533dfca49348d7dfbbff81d0fc8a49a31aee710524d9fe1acc4784aef4e",
+  "source_sha256": {
+    "stall_guard.py": "a1106275872cbea531a6de10e679e65d00c81259b75bb46ab60f2d9f7564ae2f",
+    "controlled_stop.py": "6507d6005e337dbf6550227a03aeab15f82d1b9742e33c782b3a895e26a057d4",
+    "test_stall_guard.py": "1badc0ad7e0bb07e3792c6fd0bea52ec311a06bf7631fb7df9799ff52cc5a2cd",
+    "test_controlled_stop.py": "94ff2e2f223a29796aeb5d753a67d1e186dab64ae4caffbdfdf2a023b5fc1592"
+  },
+  "execution_authorization_present": false,
+  "stop_intent_present": false
+}

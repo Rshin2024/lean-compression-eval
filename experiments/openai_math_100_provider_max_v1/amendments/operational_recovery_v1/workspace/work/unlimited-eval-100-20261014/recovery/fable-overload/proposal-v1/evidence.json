@@ -1,0 +1,120 @@
+{
+  "attempt_id": "3932f38e255ba6ef806b0110719bacbb05c0bbba4ae9a5b2e3e75ff5417045ea",
+  "final_message_stop_present": false,
+  "manifest_sha256": "a60f19aee510cf16b246ba335947dfc177ba387085f06db2d1b11f87851e6558",
+  "marker": {
+    "attempt_id": "3932f38e255ba6ef806b0110719bacbb05c0bbba4ae9a5b2e3e75ff5417045ea",
+    "started_at": "2026-10-15T02:51:23.317708+00:00"
+  },
+  "marker_sha256": "7c8b34471e726d5f2385744c089992ad7f28de814f96c1b534eb2cc9b5dbb044",
+  "model": "claude-fable-5-1",
+  "no_answer_text": true,
+  "original_charge_usd": null,
+  "original_outcome": "unknown",
+  "provider_response_id": "msg_011Cg3GH4SfMCa4q4LMf796q",
+  "request_hash": "a6fdc1c7257a0219c74d12777765a2f696078ce84b3fcbd115980453dd37fd59",
+  "run_directory": "om100-max-claude-fable-5-1-high-20261014",
+  "run_hash": "f2528b9a953ea0a07f99af1e85228f817fd219b622a95e42d2b338737ad2d74c",
+  "slot_identity": {
+    "attempt_id": "3932f38e255ba6ef806b0110719bacbb05c0bbba4ae9a5b2e3e75ff5417045ea",
+    "condition": "source_concision",
+    "config_hash": "137e95aaa2f2e793f88e9973e42193247087ddbba3b0b793ac2239367f8edebf",
+    "environment_hash": "81c9f9a5e9cb062d24f8aceb298d1111a95243f392df0b2712c99461ea0b94b3",
+    "experiment": "openai_math_100_provider_max_v2_20261014",
+    "model_snapshot": "claude-fable-5-1",
+    "prompt_hash": "2dddcc487873150f911026ca6b0e162d9a8eb1cca51b6cc500ee8451bac9e16e",
+    "protocol_version": "om100_direct_output_v1",
+    "sample_index": 2,
+    "schedule_index": 130,
+    "task_hash": "6120e1279b0faeb33b60efb0ebab9ce34919037b88af16c84b003f2a7c2ef781",
+    "task_id": "OM100-081"
+  },
+  "stream_bytes": 1694,
+  "stream_events": [
+    {
+      "attempt_id": "3932f38e255ba6ef806b0110719bacbb05c0bbba4ae9a5b2e3e75ff5417045ea",
+      "complete": false,
+      "event": "stream_opened",
+      "headers": {
+        "Content-Type": "text/event-stream; charset=utf-8",
+        "anthropic-ratelimit-input-tokens-limit": "4000000",
+        "anthropic-ratelimit-input-tokens-remaining": "2840000",
+        "anthropic-ratelimit-input-tokens-reset": "2026-10-15T02:51:41Z",
+        "anthropic-ratelimit-output-tokens-limit": "800000",
+        "anthropic-ratelimit-output-tokens-remaining": "774000",
+        "anthropic-ratelimit-output-tokens-reset": "2026-10-15T02:51:26Z",
+        "anthropic-ratelimit-requests-limit": "4000",
+        "anthropic-ratelimit-requests-remaining": "3999",
+        "anthropic-ratelimit-requests-reset": "2026-10-15T02:51:24Z",
+        "anthropic-ratelimit-tokens-limit": "4800000",
+        "anthropic-ratelimit-tokens-remaining": "3614000",
+        "anthropic-ratelimit-tokens-reset": "2026-10-15T02:51:26Z",
+        "request-id": "req_011Cg3GH48ZeLWL1hjt5R12d"
+      },
+      "path": "stream-captures/3932f38e255ba6ef806b0110719bacbb05c0bbba4ae9a5b2e3e75ff5417045ea/1792032686528581000.sse",
+      "provider": "anthropic",
+      "recorded_at": "2026-10-15T02:51:26.528799+00:00",
+      "started_at": 1792032686.5286138,
+      "streaming": true
+    },
+    {
+      "attempt_id": "3932f38e255ba6ef806b0110719bacbb05c0bbba4ae9a5b2e3e75ff5417045ea",
+      "bytes": 1694,
+      "complete": false,
+      "event": "stream_closed",
+      "finished_at": 1792033402.00914,
+      "headers": {
+        "Content-Type": "text/event-stream; charset=utf-8",
+        "anthropic-ratelimit-input-tokens-limit": "4000000",
+        "anthropic-ratelimit-input-tokens-remaining": "2840000",
+        "anthropic-ratelimit-input-tokens-reset": "2026-10-15T02:51:41Z",
+        "anthropic-ratelimit-output-tokens-limit": "800000",
+        "anthropic-ratelimit-output-tokens-remaining": "774000",
+        "anthropic-ratelimit-output-tokens-reset": "2026-10-15T02:51:26Z",
+        "anthropic-ratelimit-requests-limit": "4000",
+        "anthropic-ratelimit-requests-remaining": "3999",
+        "anthropic-ratelimit-requests-reset": "2026-10-15T02:51:24Z",
+        "anthropic-ratelimit-tokens-limit": "4800000",
+        "anthropic-ratelimit-tokens-remaining": "3614000",
+        "anthropic-ratelimit-tokens-reset": "2026-10-15T02:51:26Z",
+        "request-id": "req_011Cg3GH48ZeLWL1hjt5R12d"
+      },
+      "path": "stream-captures/3932f38e255ba6ef806b0110719bacbb05c0bbba4ae9a5b2e3e75ff5417045ea/1792032686528581000.sse",
+      "provider": "anthropic",
+      "recorded_at": "2026-10-15T03:03:22.009535+00:00",
+      "sha256": "f0dc34077cbcbaf393e8d05d6dc1bce6c3810a7d055e8410ea1f8f86fa7aae1e",
+      "started_at": 1792032686.5286138,
+      "streaming": true
+    }
+  ],
+  "stream_events_hash": "09d84ceb5aedfb9f73c0eae7d12ccf853c7ad60732f290752d85b34114518460",
+  "stream_path": "stream-captures/3932f38e255ba6ef806b0110719bacbb05c0bbba4ae9a5b2e3e75ff5417045ea/1792032686528581000.sse",
+  "stream_sha256": "f0dc34077cbcbaf393e8d05d6dc1bce6c3810a7d055e8410ea1f8f86fa7aae1e",
+  "terminal_error": {
+    "error": {
+      "details": null,
+      "message": "Overloaded",
+      "type": "overloaded_error"
+    },
+    "request_id": "req_011Cg3GH48ZeLWL1hjt5R12d",
+    "type": "error"
+  },
+  "transport_prefix": [
+    {
+      "attempt_id": "3932f38e255ba6ef806b0110719bacbb05c0bbba4ae9a5b2e3e75ff5417045ea",
+      "event": "request_started",
+      "recorded_at": "2026-10-15T02:51:23.318372+00:00",
+      "request_hash": "a6fdc1c7257a0219c74d12777765a2f696078ce84b3fcbd115980453dd37fd59",
+      "transport_index": 0
+    },
+    {
+      "attempt_id": "3932f38e255ba6ef806b0110719bacbb05c0bbba4ae9a5b2e3e75ff5417045ea",
+      "event": "outcome_unknown",
+      "message": "Provider emitted an SSE error; possibly billed outcome retained",
+      "recorded_at": "2026-10-15T03:03:22.010357+00:00",
+      "transport_index": 0,
+      "type": "ValueError"
+    }
+  ],
+  "transport_prefix_hash": "6b481e448e53b9d12cdcb0c41ef9ee33e2ad7ba0a1e50c5407f4b4896540cdda"
+}

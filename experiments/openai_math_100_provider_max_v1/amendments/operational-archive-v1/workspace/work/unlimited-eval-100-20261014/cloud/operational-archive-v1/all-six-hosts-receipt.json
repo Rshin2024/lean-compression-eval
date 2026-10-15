@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "state": "all_six_authorized_hosts_verified",
+  "at_utc": "2026-10-15T04:43:12.787128+00:00",
+  "resource_group": "lce-om100-unlimited-20261014",
+  "plan_sha256": "b734d952f4b91474d07f65d574f8b216b734ebcf5f6b2fdcf3437520231f1bb0",
+  "root_review_sha256": "674e17408d870a0af0fc4ee9b23e4e346c5c31d1075a7879aa8530dc45320953",
+  "centralus_root_review_sha256": "e290c5e4243795fe6ed219ba6288b567b1925801149d16347664a19ac9b321d6",
+  "five_hosts_receipt": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/five-hosts-receipt.json",
+  "five_hosts_receipt_sha256": "00ae18963502a3aecba9a55cbd4d18f7552bf929c3208d245f97343879b4c781",
+  "hosts": [
+    {
+      "host": "lce-u100-eastus2",
+      "archive": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/receipts/lce-u100-eastus2/20261015T043705.180874Z/operational.tar.gz",
+      "archive_sha256": "c04044804a43185cb81579e43e013d4b3f3548d63aae47a6d4bb688bf190e989",
+      "archive_bytes": 8219112,
+      "inventory": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/receipts/lce-u100-eastus2/20261015T043705.180874Z/inventory.json",
+      "inventory_sha256": "a96c6bdd483506c12b7ff16bad27b1372e8fbf1450032d034a98af9c61c62b66",
+      "files": 35,
+      "uncompressed_bytes": 56668753,
+      "local_gates": [
+        {
+          "graph_backup_receipt_sha256": "1cd59d6b87b23fdef7c796cb22ab145e738be5adc2e087641a64df2950332571",
+          "graph_scope": "Existing full-hash receipt plus current file-set/size/link and mtime-not-newer corroboration; not a new graph rehash.",
+          "local_generation_receipt_sha256": "91e1c45c59bb0bf3c96e53ad667c08f731b1981b9699b3f6edb8c923389c5eec",
+          "local_report_job_sha256": "14a91a4e01cc34e83c00c6389dbf49b0b30b69551d40945b6cfc2a50cd3e3b7e",
+          "model": "claude-opus-5-5",
+          "report_manifest_sha256": "98e30093588ffc427e9430754a68611885180260e733883b3d834c6e12456ae3"
+        }
+      ],
+      "receipt": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/receipts/lce-u100-eastus2/20261015T043705.180874Z/receipt.json",
+      "receipt_sha256": "7c92059ddf4452744f70aeb1f33ba690b921afff00b36fddf14aa30e6c39a210"
+    },
+    {
+      "host": "lce-u100-northcentralus",
+      "archive": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/receipts/lce-u100-northcentralus/20261015T043812.244950Z/operational.tar.gz",
+      "archive_sha256": "d60d0feee21c8fd34636291791fe44480cb6f6f0894abeb36c646df857d2d08b",
+      "archive_bytes": 8215424,
+      "inventory": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/receipts/lce-u100-northcentralus/20261015T043812.244950Z/inventory.json",
+      "inventory_sha256": "775d1f38a3335da374a2f06e670c4a8cdf42d81cdfcb6ccfee89e9ee086adc22",
+      "files": 27,
+      "uncompressed_bytes": 56662578,
+      "local_gates": [
+        {
+          "graph_backup_receipt_sha256": "df6488de89b28d36f91f2bc0393e8de5041ec9a77d63afca91262223760b5546",
+          "graph_scope": "Existing full-hash receipt plus current file-set/size/link and mtime-not-newer corroboration; not a new graph rehash.",
+          "local_generation_receipt_sha256": "8b0f60fd77043b410c9f4e13a050888cbdcfd75faa5a445a3202fd970942eb12",
+          "local_report_job_sha256": "4abe6eebb32b5fb71aaa7be67d343607cd719b611a7debfe83959b24559c87d9",
+          "model": "gpt-6.1-sol",
+          "report_manifest_sha256": "8b08c8ddfa8d63cf955c13887544e6a8d47f89b4d6b9348b46312d7d7c75313a"
+        }
+      ],
+      "receipt": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/receipts/lce-u100-northcentralus/20261015T043812.244950Z/receipt.json",
+      "receipt_sha256": "95e003ee3fec69677ac258fc22322060ac4a2b282010d05f5d49a0e2f566e71f"
+    },
+    {
+      "host": "lce-u100-southcentralus",
+      "archive": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/receipts/lce-u100-southcentralus/20261015T043813.097173Z/operational.tar.gz",
+      "archive_sha256": "b01a9befd59bf910978e7f046c339820ae34237e6ce19c1e52af7a69d0f6600d",
+      "archive_bytes": 8234752,
+      "inventory": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/receipts/lce-u100-southcentralus/20261015T043813.097173Z/inventory.json",
+      "inventory_sha256": "a19c5ab400af307fb8386c33ff731f4c220baaa11f00f41bece8b9652ecc0bfd",
+      "files": 50,
+      "uncompressed_bytes": 56834956,
+      "local_gates": [
+        {
+          "graph_backup_receipt_sha256": "0037078cf9a55b047a55aabc141dd8fa623c2e35f8cac426d987ae763b76ff1c",
+          "graph_scope": "Existing full-hash receipt plus current file-set/size/link and mtime-not-newer corroboration; not a new graph rehash.",
+          "local_generation_receipt_sha256": "a56eb87c2eb8075d8f3f9f42f5cf1c9f8cd7d9650159ba545febc9dc4da3805a",
+          "local_report_job_sha256": "a747fce87a0cc388a2b2b0fd6b4838616bed012970dae941bf03c6693f95c167",
+          "model": "gpt-6-sol",
+          "report_manifest_sha256": "4b246cef62608808fd314e3243cced30181ad4f91762d74915ba6b42353f793b"
+        },
+        {
+          "graph_backup_receipt_sha256": "d9cf65c28b3b70e1699e0b72d7f0640d7b03a378d6c4d5de9932ea653d0a6c7d",
+          "graph_scope": "Existing full-hash receipt plus current file-set/size/link and mtime-not-newer corroboration; not a new graph rehash.",
+          "local_generation_receipt_sha256": "7c5f586dcbf9ca151189a285c2e1038f0b696c8871214aed38313ca3bc2c6de6",
+          "local_report_job_sha256": "abfefb07273c8709d0ceb84143ef7adb9907219f28fd263c6fafa76689e99ed6",
+          "model": "gpt-6-luna",
+          "report_manifest_sha256": "e1c494e428aae1e6e266fdbcf33dc1e9278dc220bae762696b00ce30c99ceb92"
+        }
+      ],
+      "receipt": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/receipts/lce-u100-southcentralus/20261015T043813.097173Z/receipt.json",
+      "receipt_sha256": "d7b02de4e7115974cd7051f8dbb871b05641d413228b5de44b2f1a586fc4f740"
+    },
+    {
+      "host": "lce-u100-westus",
+      "archive": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/receipts/lce-u100-westus/20261015T043820.558837Z/operational.tar.gz",
+      "archive_sha256": "d6e5aa89e05df2b280353c2312dc9beebf23575d94720cd75b11cb1ff72f1e0f",
+      "archive_bytes": 8246083,
+      "inventory": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/receipts/lce-u100-westus/20261015T043820.558837Z/inventory.json",
+      "inventory_sha256": "e840cbec3e7108cb24a20b71b8b90b8e74f037b19a6f5a82282ad67b55bd33f6",
+      "files": 48,
+      "uncompressed_bytes": 57097654,
+      "local_gates": [
+        {
+          "graph_backup_receipt_sha256": "01b5da7746f73e6209eeb5d005edf7c3da406982da33cbae008adc7c206935cb",
+          "graph_scope": "Existing full-hash receipt plus current file-set/size/link and mtime-not-newer corroboration; not a new graph rehash.",
+          "local_generation_receipt_sha256": "1e2d810d0592d4767c002d9bc5c4b02e6b1776d126a02b0b6e5333cf6bc256f1",
+          "local_report_job_sha256": "4b4589dd00e7cb6adb6eaeecff4bb4687889f8d33a1d3d33c75689c5ff4f7e9c",
+          "model": "claude-haiku-5-5",
+          "report_manifest_sha256": "4ce7e76bdd3e5469b15e09b6c22348ea330c7facf7bad4054e46c46d7902458d"
+        },
+        {
+          "graph_backup_receipt_sha256": "a554bf3cc66147d335452dbb093d35299d82d62fbe1483636fc28c8b8af278d0",
+          "graph_scope": "Existing full-hash receipt plus current file-set/size/link and mtime-not-newer corroboration; not a new graph rehash.",
+          "local_generation_receipt_sha256": "4e1683cfc718136d5cd0a5faeb906ee78056c2c8c7479dcc0ac55a14a970f16b",
+          "local_report_job_sha256": "0e1f0c929b4f0e0880e7151288ed0685525cdf20a9b4d436470ef531dc40c766",
+          "model": "claude-sonnet-5-5",
+          "report_manifest_sha256": "1f1fbb1058abab3ae8864074807cf091f8290d94b953a2ac7987906819df2c69"
+        }
+      ],
+      "receipt": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/receipts/lce-u100-westus/20261015T043820.558837Z/receipt.json",
+      "receipt_sha256": "6962b6af41e73d248ec634a2a79636e09a53cdca799f98328f45171678c2fd6c"
+    },
+    {
+      "host": "lce-u100-westus2",
+      "archive": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/receipts/lce-u100-westus2/20261015T043821.498377Z/operational.tar.gz",
+      "archive_sha256": "21488f522d21235649d3dacff453cc5523909f3086d803926893de52c3a5ce7d",
+      "archive_bytes": 8215084,
+      "inventory": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/receipts/lce-u100-westus2/20261015T043821.498377Z/inventory.json",
+      "inventory_sha256": "b31e4395312798929fa5520ac04ceb4dd88b8b99cf95874f31f2f7471793c061",
+      "files": 27,
+      "uncompressed_bytes": 56658018,
+      "local_gates": [
+        {
+          "graph_backup_receipt_sha256": "f0def4e38c72f07df3a93939ed90b5b9a13847fe235dcde315122a5ada1847c1",
+          "graph_scope": "Existing full-hash receipt plus current file-set/size/link and mtime-not-newer corroboration; not a new graph rehash.",
+          "local_generation_receipt_sha256": "9e8dacbef40dba16114a0c0f1a85deaffa02810e0aeb47393950b70a8c1b5d43",
+          "local_report_job_sha256": "9beb18715334c64c80bc78fdd3b17c0903fcdab0ccc8b04d6bb14c876755a87c",
+          "model": "gpt-6-astra",
+          "report_manifest_sha256": "d80d008eea9799cc6237adb710b418472f71a1936b72e3aeb377d888cc430080"
+        }
+      ],
+      "receipt": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/receipts/lce-u100-westus2/20261015T043821.498377Z/receipt.json",
+      "receipt_sha256": "6cfaa7530371824263e502cd0fb691e8f4a90da4ca47649403cdedf9e63b25ba"
+    },
+    {
+      "host": "lce-u100-centralus",
+      "archive": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/receipts/lce-u100-centralus/20261015T044105.515349Z/operational.tar.gz",
+      "archive_sha256": "db991bd9f7d6d4754c3c832e98f96707990844ef8388c785393dd9ea9313e00e",
+      "archive_bytes": 8313564,
+      "inventory": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/receipts/lce-u100-centralus/20261015T044105.515349Z/inventory.json",
+      "inventory_sha256": "c6578e2dc5710f21b68c8fc4750ca28936245541ab4faceaa48d8b987742fda5",
+      "files": 35,
+      "uncompressed_bytes": 58526901,
+      "local_gates": [
+        {
+          "graph_backup_receipt_sha256": "3c9808ee8d96141e10cf9630ba2c5d4545d0a07c88549943b91b661f41f06d8d",
+          "graph_scope": "Existing full-hash receipt plus current file-set/size/link and mtime-not-newer corroboration; not a new graph rehash.",
+          "local_generation_receipt_sha256": "36f448052ea67ea855b7e6a05683460fcd7ecf3623dfb9b9459e41ff80ee2309",
+          "local_report_job_sha256": "7e00c26d7dfa1ea0d0e5a60dc5059c4786509fd66fbb2b9cdbb9ffcd4794ef46",
+          "model": "claude-fable-5-1",
+          "report_manifest_sha256": "83bf3916796592520fdbc1b5395fcbbfb40433b7e2e776abe50f821cc6f1206e"
+        }
+      ],
+      "receipt": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/unlimited-eval-100-20261014/cloud/operational-archive-v1/receipts/lce-u100-centralus/20261015T044105.515349Z/receipt.json",
+      "receipt_sha256": "6158edb87b85d1d74f902e799b5db3f9cec9b53a04d6ef567266c83a4674295c"
+    }
+  ],
+  "host_count": 6,
+  "model_count": 8,
+  "total_archive_bytes": 49444019,
+  "total_uncompressed_bytes": 342448860,
+  "total_files": 222,
+  "verification_scope": "All six local compressed archive and inventory file hashes freshly checked against individual local and remote receipts. Individual receipts bind prior full member/gzip/source-stability checks. Graph backups remain prior full-hash receipts corroborated by file-set, size, link and mtime checks; this summary is not a new graph rehash.",
+  "max_concurrent_archives": 2,
+  "byte_copies_only": true,
+  "source_or_status_files_modified": false,
+  "processes_stopped": false,
+  "resource_cleanup": false,
+  "model_calls": 0,
+  "finalizer_touched": false
+}

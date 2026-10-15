@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "kind": "source_only_display_assertion_fix",
+  "original_source_sha256": "b239952b5aab4f9fe89008b0ea83413b6cc3f257f0be4223221dc0b53a5fc88a",
+  "fixed_source_sha256": "89074d56e858dcec141d316527b848d9043a57179ab87b80381934cbfb54a264",
+  "source_patch_sha256": "ae56c372e02ebec446d2fcdda3ae95939d4d8a76ba2772095fe02864256345f6",
+  "problem": "The builder asserted one occurrence of a disclosure phrase that may also appear in existing HTML or embedded data.",
+  "fix": "Add a unique script id and assert one exact injected script plus one id.",
+  "measurement_or_record_changes": false,
+  "private_logs_included": false,
+  "history": "Original archived source was preserved before refreshing the current explicit source snapshot."
+}

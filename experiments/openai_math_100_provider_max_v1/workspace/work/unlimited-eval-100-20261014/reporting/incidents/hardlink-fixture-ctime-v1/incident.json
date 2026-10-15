@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "kind": "report_equivalence_fixture_changed_live_inode_ctime",
+  "recorded_at_utc": "2026-10-15T03:49:32.730419+00:00",
+  "responsible_lane": "provider_limits/reporting",
+  "mechanism": "os.link and removal of temporary fixture links changed source inode ctime/link-count metadata, despite preserving every file byte. The live generation ManifestCache includes ctime in its stamp.",
+  "diagnosis": "Root inspected live manifest ctimes at03:38:19.636UTC forLuna and03:38:28.023UTC forHaiku and the controller metadata guard; reported main-thread shutdown/join of remaining activeproviderthreads.",
+  "affected_test": "test_parallel_current_evidence.py",
+  "original_test_source_sha256": "0978e2b9a352fb013dbe39ab57d46c5ee2cfa6848570efce0f4c0efffb4d91da",
+  "test_receipt_sha256": "425a8a8595146e14ec19458310fa5a0aaa6ead78c315826c0797490d39841200",
+  "test_receipt_preserved": true,
+  "equivalence_result_remains_valid": true,
+  "file_bytes_changed": false,
+  "inode_metadata_changed": true,
+  "affected_link_categories": [
+    "two live run manifests",
+    "two verification policies",
+    "20 selected generation records",
+    "20 selected verification records"
+  ],
+  "source_manifest_observations": [
+    {
+      "model": "gpt-6-luna",
+      "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/runs/om100-max-gpt-6-luna-high-20261014/manifest.json",
+      "sha256": "290ddc0d6076c395e9390be22535672d2cf0ba7cc27d0ca07fdd9dc1795521d7",
+      "ctime_ns_observed": 1792035499636516446,
+      "mtime_ns_observed": 1792031929752589064
+    },
+    {
+      "model": "claude-haiku-5-5",
+      "path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/outputs/lean-compression-eval/runs/om100-max-claude-haiku-5-5-high-20261014/manifest.json",
+      "sha256": "5a5000079c6676d75b23d866f3d5114f626fbc6c9f6e45e01217ab023069f296",
+      "ctime_ns_observed": 1792035508023025639,
+      "mtime_ns_observed": 1792031934617078569
+    }
+  ],
+  "corrective_action": "Replace fixture os.link with shutil.copyfile; no attempt to restore ctime, modify livecontroller/plan, or change originalresponses. Root coordinates safe supervisionresume afteractivecallsdrain.",
+  "controller_resume_by_this_lane": false,
+  "new_model_calls_by_this_lane": 0
+}

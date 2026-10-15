@@ -128,6 +128,11 @@ Then add `--baseline work/baseline-pilot` to `analyze`. The report adds portfoli
 
 The selected eight-model cohort has complete profiles in [`configs/models`](configs/models/README.md). All use explicit `high` effort, an 8,192-token cap including reasoning and answer tokens, and omitted temperature. The shared effort label does not imply identical compute or tokenization across providers. Keep the common cap fixed for comparisons and inspect truncation rates during the development smoke run. These profiles resolve API settings; they do not mark the dataset audits or production pilot gates complete.
 
+A [separate provider-maximum rerun](experiments/openai_math_100_provider_max_v1/README.md)
+uses fresh attempts with the same frozen prompts and a 128,000-token ceiling.
+It preserves the original profiles and results, records streaming and processing
+tier differences, and writes to its own run and report directories.
+
 `configs/pilot.json` intentionally leaves `generation.model_snapshot` and `reasoning_setting` unresolved. Set a supported pinned model, explicitly select its reasoning/sampling settings, and set `snapshot_pinned` and `settings_resolved` only when those claims are supported. Some models do not accept `temperature`; set it to `null` to omit it deliberately. The adapter never retries a bad request with changed settings. OpenAI's output limit includes reasoning tokens, and reported reasoning usage is retained.
 
 Configure `OPENAI_API_KEY` and `ANTHROPIC_API_KEY` in the shell that launches generation or a secret manager. Do not put them in project files. An export in another terminal does not update an already-running Codex process. `./run-eval doctor` reports only whether each key is present. The checker process never inherits API credentials. A Codex subscription is not treated as API access.

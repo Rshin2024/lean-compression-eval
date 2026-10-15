@@ -1,0 +1,15 @@
+--- original/build_suite.py
++++ current/build_suite.py
+@@ -100,9 +100,10 @@
+     if marker not in page and 'id="checkerMethods"' not in page:raise ValueError('Checker-method disclosure target is missing')
+     if len(re.findall(r'</html>',page,re.I))!=1 or len(re.findall(r'</html>\s*$',page,re.I))!=1:
+         raise ValueError('HTML end insertion point changed')
+-    script='<script>const methodNote=document.querySelector("#checkerMethods");if(!methodNote)throw new Error("Missing checker disclosure target");methodNote.textContent += '+json.dumps(note)+';</script>'
++    script='<script id="provider-max-hardware-note">const methodNote=document.querySelector("#checkerMethods");if(!methodNote)throw new Error("Missing checker disclosure target");methodNote.textContent += '+json.dumps(note)+';</script>'
+     page=re.sub(r'</html>(\s*)$',lambda m:script+'</html>'+m[1],page,flags=re.I)
+-    if page.count('Wall-timeout outcomes may depend on host speed.')!=1:raise ValueError('Hardware disclosure was not inserted exactly once')
++    if page.count(script)!=1 or page.count('id="provider-max-hardware-note"')!=1:
++        raise ValueError('Hardware disclosure script was not inserted exactly once')
+     return page
+ 
+ 

@@ -1,0 +1,145 @@
+{
+  "attempt_id": "a3a356a147ff38718133d2157d004305de082bd928a6ddd02f33635793425462",
+  "generation_claim_sha256": null,
+  "manifest_sha256": "a60f19aee510cf16b246ba335947dfc177ba387085f06db2d1b11f87851e6558",
+  "marker": {
+    "attempt_id": "a3a356a147ff38718133d2157d004305de082bd928a6ddd02f33635793425462",
+    "started_at": "2026-10-15T03:21:30.623817+00:00"
+  },
+  "marker_sha256": "f9b7c2f63ba1de40900541b46098aed07ce1a679af46cfbc2f1c25c1e01821ef",
+  "model": "claude-fable-5-1",
+  "original_charge_usd": null,
+  "original_outcome": "unknown",
+  "request_hash": "59f8d94d74014b540599b1b8824098e83ea11b418d0ea1b245e65214371c4913",
+  "run_directory": "om100-max-claude-fable-5-1-high-20261014",
+  "run_hash": "f2528b9a953ea0a07f99af1e85228f817fd219b622a95e42d2b338737ad2d74c",
+  "saved_capture_present": false,
+  "saved_generation_present": false,
+  "saved_stream_present": false,
+  "slot_identity": {
+    "attempt_id": "a3a356a147ff38718133d2157d004305de082bd928a6ddd02f33635793425462",
+    "condition": "standard",
+    "config_hash": "137e95aaa2f2e793f88e9973e42193247087ddbba3b0b793ac2239367f8edebf",
+    "environment_hash": "81c9f9a5e9cb062d24f8aceb298d1111a95243f392df0b2712c99461ea0b94b3",
+    "experiment": "openai_math_100_provider_max_v2_20261014",
+    "model_snapshot": "claude-fable-5-1",
+    "prompt_hash": "55d25c42657faecfd51de364e1bee5a9f9ccca35ed43e5403156c94dea070812",
+    "protocol_version": "om100_direct_output_v1",
+    "sample_index": 2,
+    "schedule_index": 822,
+    "task_hash": "584a7952543fdc794055a93510f65e38e0336393cc6721f674184334e26bb89f",
+    "task_id": "OM100-035"
+  },
+  "slot_index_zero_based": 822,
+  "stream_events": [],
+  "transport_prefix": [
+    {
+      "attempt_id": "a3a356a147ff38718133d2157d004305de082bd928a6ddd02f33635793425462",
+      "event": "request_started",
+      "recorded_at": "2026-10-15T03:15:26.361147+00:00",
+      "request_hash": "59f8d94d74014b540599b1b8824098e83ea11b418d0ea1b245e65214371c4913",
+      "transport_index": 0
+    },
+    {
+      "attempt_id": "a3a356a147ff38718133d2157d004305de082bd928a6ddd02f33635793425462",
+      "body": "{\"type\":\"error\",\"error\":{\"type\":\"rate_limit_error\",\"message\":\"This request would exceed your organization's rate limit of 800,000 output tokens per minute (org: a318fda2-c90c-484c-a950-b0d3c2286c5d, model: claude-fable-5-1). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Reduce the prompt length or the maximum tokens requested, or try again later. View your current limits at https://console.anthropic.com/settings/limits. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.\"},\"request_id\":\"req_011Cg3J7MazgPgp1sLJjaWdw\"}",
+      "event": "http_error",
+      "http_status": 429,
+      "recorded_at": "2026-10-15T03:15:26.673955+00:00",
+      "retry_after": "7",
+      "transport_index": 0
+    },
+    {
+      "attempt_id": "a3a356a147ff38718133d2157d004305de082bd928a6ddd02f33635793425462",
+      "event": "request_started",
+      "recorded_at": "2026-10-15T03:15:33.676591+00:00",
+      "request_hash": "59f8d94d74014b540599b1b8824098e83ea11b418d0ea1b245e65214371c4913",
+      "transport_index": 1
+    },
+    {
+      "attempt_id": "a3a356a147ff38718133d2157d004305de082bd928a6ddd02f33635793425462",
+      "body": "{\"type\":\"error\",\"error\":{\"type\":\"rate_limit_error\",\"message\":\"This request would exceed your organization's rate limit of 800,000 output tokens per minute (org: a318fda2-c90c-484c-a950-b0d3c2286c5d, model: claude-fable-5-1). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Reduce the prompt length or the maximum tokens requested, or try again later. View your current limits at https://console.anthropic.com/settings/limits. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.\"},\"request_id\":\"req_011Cg3J7tqwmRFVVeukWzLy1\"}",
+      "event": "http_error",
+      "http_status": 429,
+      "recorded_at": "2026-10-15T03:15:33.981640+00:00",
+      "retry_after": "13",
+      "transport_index": 1
+    },
+    {
+      "attempt_id": "a3a356a147ff38718133d2157d004305de082bd928a6ddd02f33635793425462",
+      "event": "request_started",
+      "recorded_at": "2026-10-15T03:15:46.987929+00:00",
+      "request_hash": "59f8d94d74014b540599b1b8824098e83ea11b418d0ea1b245e65214371c4913",
+      "transport_index": 2
+    },
+    {
+      "attempt_id": "a3a356a147ff38718133d2157d004305de082bd928a6ddd02f33635793425462",
+      "body": "{\"type\":\"error\",\"error\":{\"type\":\"rate_limit_error\",\"message\":\"This request would exceed your organization's rate limit of 800,000 output tokens per minute (org: a318fda2-c90c-484c-a950-b0d3c2286c5d, model: claude-fable-5-1). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Reduce the prompt length or the maximum tokens requested, or try again later. View your current limits at https://console.anthropic.com/settings/limits. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.\"},\"request_id\":\"req_011Cg3J8spT24ejTdqP7TVUV\"}",
+      "event": "http_error",
+      "http_status": 429,
+      "recorded_at": "2026-10-15T03:15:47.309952+00:00",
+      "retry_after": "20",
+      "transport_index": 2
+    },
+    {
+      "attempt_id": "a3a356a147ff38718133d2157d004305de082bd928a6ddd02f33635793425462",
+      "capture": null,
+      "event": "no_model_outcome",
+      "last_error": {
+        "body": "{\"type\":\"error\",\"error\":{\"type\":\"rate_limit_error\",\"message\":\"This request would exceed your organization's rate limit of 800,000 output tokens per minute (org: a318fda2-c90c-484c-a950-b0d3c2286c5d, model: claude-fable-5-1). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Reduce the prompt length or the maximum tokens requested, or try again later. View your current limits at https://console.anthropic.com/settings/limits. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.\"},\"request_id\":\"req_011Cg3J8spT24ejTdqP7TVUV\"}",
+        "http_status": 429,
+        "retry_after": "20"
+      },
+      "prompt_rejected": false,
+      "provider_response": null,
+      "recorded_at": "2026-10-15T03:15:47.310382+00:00"
+    },
+    {
+      "attempt_id": "a3a356a147ff38718133d2157d004305de082bd928a6ddd02f33635793425462",
+      "event": "request_started",
+      "recorded_at": "2026-10-15T03:18:06.946148+00:00",
+      "request_hash": "59f8d94d74014b540599b1b8824098e83ea11b418d0ea1b245e65214371c4913",
+      "transport_index": 0
+    },
+    {
+      "attempt_id": "a3a356a147ff38718133d2157d004305de082bd928a6ddd02f33635793425462",
+      "body": "{\"type\":\"error\",\"error\":{\"type\":\"rate_limit_error\",\"message\":\"This request would exceed your organization's rate limit of 800,000 output tokens per minute (org: a318fda2-c90c-484c-a950-b0d3c2286c5d, model: claude-fable-5-1). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Reduce the prompt length or the maximum tokens requested, or try again later. View your current limits at https://console.anthropic.com/settings/limits. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.\"},\"request_id\":\"req_011Cg3JKC93thGHD5mSoTHS6\"}",
+      "event": "http_error",
+      "http_status": 429,
+      "recorded_at": "2026-10-15T03:18:07.332937+00:00",
+      "retry_after": "61",
+      "transport_index": 0
+    },
+    {
+      "attempt_id": "a3a356a147ff38718133d2157d004305de082bd928a6ddd02f33635793425462",
+      "capture": null,
+      "event": "no_model_outcome",
+      "last_error": {
+        "body": "{\"type\":\"error\",\"error\":{\"type\":\"rate_limit_error\",\"message\":\"This request would exceed your organization's rate limit of 800,000 output tokens per minute (org: a318fda2-c90c-484c-a950-b0d3c2286c5d, model: claude-fable-5-1). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Reduce the prompt length or the maximum tokens requested, or try again later. View your current limits at https://console.anthropic.com/settings/limits. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.\"},\"request_id\":\"req_011Cg3JKC93thGHD5mSoTHS6\"}",
+        "http_status": 429,
+        "retry_after": "61"
+      },
+      "prompt_rejected": false,
+      "provider_response": null,
+      "recorded_at": "2026-10-15T03:18:07.395414+00:00"
+    },
+    {
+      "attempt_id": "a3a356a147ff38718133d2157d004305de082bd928a6ddd02f33635793425462",
+      "event": "request_started",
+      "recorded_at": "2026-10-15T03:21:30.635674+00:00",
+      "request_hash": "59f8d94d74014b540599b1b8824098e83ea11b418d0ea1b245e65214371c4913",
+      "transport_index": 0
+    },
+    {
+      "attempt_id": "a3a356a147ff38718133d2157d004305de082bd928a6ddd02f33635793425462",
+      "event": "outcome_unknown",
+      "message": "Streaming connection failed; request outcome is uncertain",
+      "recorded_at": "2026-10-15T03:21:48.636760+00:00",
+      "transport_index": 0,
+      "type": "OSError"
+    }
+  ],
+  "transport_prefix_bytes": 7052,
+  "transport_prefix_bytes_sha256": "a674c09360a5175e9f7eb84474a9c171ca7a0c9f7204974483af29ac4e867aaf",
+  "transport_prefix_hash": "c67587210f47ab61a9eb7e3291452ee1324b70f6e1ed84291bfb8c9f5b736576"
+}

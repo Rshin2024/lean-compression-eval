@@ -1,0 +1,46 @@
+{
+  "status": "pass",
+  "kind": "current_evidence_exact_parallel_record_equivalence",
+  "records": [
+    {
+      "model": "gpt-6-luna",
+      "scheduled_ordered_records": 1200,
+      "real_verified_records": 11,
+      "statuses": [
+        "disallowed_axiom",
+        "elaboration_failure",
+        "parse_failure",
+        "success",
+        "verification_resource_limit",
+        "verification_timeout"
+      ],
+      "exact_records_sha256": "faeb6eab886250e37bec17b01fafcaccb0841755dceba8bb8291b31731ff341b",
+      "serial_seconds": 5.45888049993664,
+      "parallel_seconds": 5.245906832627952,
+      "all_record_fields_identical": true
+    },
+    {
+      "model": "claude-haiku-5-5",
+      "scheduled_ordered_records": 1200,
+      "real_verified_records": 9,
+      "statuses": [
+        "disallowed_axiom",
+        "elaboration_failure",
+        "parse_failure",
+        "success",
+        "truncated_output"
+      ],
+      "exact_records_sha256": "ed1330c8cb4f34e7afb9ddade12b527f40a947770d250ae4e0dd99d82ebf7f39",
+      "serial_seconds": 3.8475999999791384,
+      "parallel_seconds": 3.8711490002460778,
+      "all_record_fields_identical": true
+    }
+  ],
+  "verifier_sha256": "55f5931a9d4a2cfa92338e4079206477abd7d792a94b758b75b61237d33a5ac0",
+  "parallel_reader_sha256": "f42383eeb7da491d2615caefa50fdfeb35015d23a4ed1d98999d5412a4abd2e6",
+  "derived_validation_function_sha256": "c37038b6a7124bf8de41ce362d3b5686e61b08f25c1773f178a26c9b4c22b2cd",
+  "model_calls": 0,
+  "lean_calls": 0,
+  "original_records_changed": false,
+  "fixtures": "Temporary hard-linked immutable evidence subsets with original full1200slotmanifests; remaining slots are identical pending placeholders."
+}

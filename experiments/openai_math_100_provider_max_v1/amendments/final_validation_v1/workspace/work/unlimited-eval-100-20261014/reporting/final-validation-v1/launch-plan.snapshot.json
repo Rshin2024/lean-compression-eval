@@ -1,0 +1,258 @@
+{
+  "amendment": {
+    "path": "runtime-amendment-v2.json",
+    "sha256": "66206c978036e2a5a26c227042437607b013242357ba6c649221aa6fc93fdde7"
+  },
+  "conditions": [
+    "standard",
+    "mathematical_compression",
+    "source_concision"
+  ],
+  "cost_extension": {
+    "path": "preparation/priority_costs.py",
+    "sha256": "ca0e6a73a60d0b8d7f9ef784204d36b1a7ac42528f95284a5cb46bce0769c36a"
+  },
+  "created_at": "2026-10-15T02:39:04.494356+00:00",
+  "data_scope": "same exploratory100 supplied questions; no formal250questionstudy",
+  "engine_hash": "2ff87da0a2eb9058c6400bcb07bb441e5e1683c684b8571384006be37da299a2",
+  "experiment": "openai_math_100_provider_max_v2_20261014",
+  "freezer": {
+    "path": "preparation/freeze_provider_max.py",
+    "sha256": "08d1394b3074fbbff56e5fda0e689d451f21001f58db7678380aff13eaf408bf"
+  },
+  "max_output_tokens": 128000,
+  "old_run_immutability_and_prompt_comparison": [
+    {
+      "all_1200_attempt_ids_fresh": true,
+      "all_1200_slot_prompts_byte_identical": true,
+      "measurement_hash_unchanged": true,
+      "model": "gpt-6.1-sol",
+      "new_run_hash": "d204bb322a4f3d3a91040fd62521adaddad9d7268196a3aaee819b3455f2b61f",
+      "old_manifest_sha256": "015468727db61ecc315f8efb9ad8c28a8384c36b1c88eb0ee6fb886c247936a3",
+      "old_run_hash": "e8eb9e58cb707a573519a2f0392f5dfebdb5f49beb8880b9c13735ce2186ea55",
+      "reference_anchors_unchanged": true,
+      "task_manifest_hash": "3b3686061a62c2d80fffb3347bcefe43b93cd09fd2863c1f6e0cbce7f129573c"
+    },
+    {
+      "all_1200_attempt_ids_fresh": true,
+      "all_1200_slot_prompts_byte_identical": true,
+      "measurement_hash_unchanged": true,
+      "model": "gpt-6-sol",
+      "new_run_hash": "0e54e7a7334d85b5d1375130f17589ba8966b6a959baa9ca751b1d491c1238c8",
+      "old_manifest_sha256": "dd094c1bc775b95f80535fa30601a9e10505695d45bc103cabb2106491d5b496",
+      "old_run_hash": "9b226ca2378c86f3ff77f419433777a94291427b1dc157e888f7231b2707cef2",
+      "reference_anchors_unchanged": true,
+      "task_manifest_hash": "3b3686061a62c2d80fffb3347bcefe43b93cd09fd2863c1f6e0cbce7f129573c"
+    },
+    {
+      "all_1200_attempt_ids_fresh": true,
+      "all_1200_slot_prompts_byte_identical": true,
+      "measurement_hash_unchanged": true,
+      "model": "gpt-6-luna",
+      "new_run_hash": "7bf8b53e26a9ccd1cd548c72c8ed778e951cdeb1da28e3f5abcec0cbae4d601a",
+      "old_manifest_sha256": "44ccdc22d18d93d6a516b8c776e2c4fad970df2fa5f8765dc670951d5d4b4c64",
+      "old_run_hash": "afc4a2977e9803170ffe7ef849a9b3a43991ff757b76e162274a16227fa93501",
+      "reference_anchors_unchanged": true,
+      "task_manifest_hash": "3b3686061a62c2d80fffb3347bcefe43b93cd09fd2863c1f6e0cbce7f129573c"
+    },
+    {
+      "all_1200_attempt_ids_fresh": true,
+      "all_1200_slot_prompts_byte_identical": true,
+      "measurement_hash_unchanged": true,
+      "model": "gpt-6-astra",
+      "new_run_hash": "e55d02c70f905d1bd65bf6394dcb838fcee363c8aa21550f351e1f61a6b3a7d8",
+      "old_manifest_sha256": "f7b38c7401abf3ada3e5954478b708173c55061db4693f8075e3eb7033f5dd4e",
+      "old_run_hash": "2c7c6f8bb439e8a7550b21677484fc8a1c4bc3e486368c6d1dc8133de8416544",
+      "reference_anchors_unchanged": true,
+      "task_manifest_hash": "3b3686061a62c2d80fffb3347bcefe43b93cd09fd2863c1f6e0cbce7f129573c"
+    },
+    {
+      "all_1200_attempt_ids_fresh": true,
+      "all_1200_slot_prompts_byte_identical": true,
+      "measurement_hash_unchanged": true,
+      "model": "claude-haiku-5-5",
+      "new_run_hash": "3ceab88921a8f3f685eb780b4b9ea53e02a82315f27b8b36436491e7dacc0aaa",
+      "old_manifest_sha256": "2f3d6872d29c679630db2b301b28716e26c2f4a64c6204fe8b6ea22243968426",
+      "old_run_hash": "5dda360811438a0513ea3462927b9a4ca089293509414ce1ee14ec13c8c3f2ac",
+      "reference_anchors_unchanged": true,
+      "task_manifest_hash": "3b3686061a62c2d80fffb3347bcefe43b93cd09fd2863c1f6e0cbce7f129573c"
+    },
+    {
+      "all_1200_attempt_ids_fresh": true,
+      "all_1200_slot_prompts_byte_identical": true,
+      "measurement_hash_unchanged": true,
+      "model": "claude-sonnet-5-5",
+      "new_run_hash": "90d2d4a9298d08bfecb4454b70bcc88cb7662ec28fae7ba2e53fd61684939981",
+      "old_manifest_sha256": "797151a507d80c99122ccfbdcefc9270996b7c8a311e07ccc3fd7e8367f94856",
+      "old_run_hash": "49a2cae0e51aad879cae3d173fd96b9bcfc529d0024bdb861a1ef427c400e6a2",
+      "reference_anchors_unchanged": true,
+      "task_manifest_hash": "3b3686061a62c2d80fffb3347bcefe43b93cd09fd2863c1f6e0cbce7f129573c"
+    },
+    {
+      "all_1200_attempt_ids_fresh": true,
+      "all_1200_slot_prompts_byte_identical": true,
+      "measurement_hash_unchanged": true,
+      "model": "claude-opus-5-5",
+      "new_run_hash": "2dfc7a8515ad4471c4500c61e21c7056c8506c51a77a59e1fa2f8b4ae426452f",
+      "old_manifest_sha256": "3d44f4f7fbadb1566a323baec8ac44e7dca0c3664ae51387c4dad53b0ee6ffa5",
+      "old_run_hash": "d56780fb43a5acf399346905516d1a79300366c3357897f750d05ef51019d6cb",
+      "reference_anchors_unchanged": true,
+      "task_manifest_hash": "3b3686061a62c2d80fffb3347bcefe43b93cd09fd2863c1f6e0cbce7f129573c"
+    },
+    {
+      "all_1200_attempt_ids_fresh": true,
+      "all_1200_slot_prompts_byte_identical": true,
+      "measurement_hash_unchanged": true,
+      "model": "claude-fable-5-1",
+      "new_run_hash": "f2528b9a953ea0a07f99af1e85228f817fd219b622a95e42d2b338737ad2d74c",
+      "old_manifest_sha256": "0fb0cc06ed83502d12807914f7e7bebaf735c19c071979b7c1f2273fbc0137f9",
+      "old_run_hash": "ad046f6e4a6399d37a75de867840b428d9960adc7b1ac3b8e5c4e46d5502ed41",
+      "reference_anchors_unchanged": true,
+      "task_manifest_hash": "3b3686061a62c2d80fffb3347bcefe43b93cd09fd2863c1f6e0cbce7f129573c"
+    }
+  ],
+  "questions": 100,
+  "ready": true,
+  "reasoning_effort": "high",
+  "runs": [
+    {
+      "directory": "om100-max-gpt-6.1-sol-high-20261014",
+      "generation_config_hash": "3a21839beb71a860c52a9f0586c193808a15992a2a864bd83c039ace7b3108d5",
+      "generation_environment_hash": "81c9f9a5e9cb062d24f8aceb298d1111a95243f392df0b2712c99461ea0b94b3",
+      "manifest_sha256": "a46a56917f3d822a56086a848784c16b8880f297e4ab902a725967bf19df3cae",
+      "model": "gpt-6.1-sol",
+      "run_hash": "d204bb322a4f3d3a91040fd62521adaddad9d7268196a3aaee819b3455f2b61f",
+      "slots_hash": "8a7ebd79b777a80e8c2ac81b96d322484773e18322c20478c3c56042b645f60f",
+      "baseline_directory": "om100-gpt-6.1-sol-high",
+      "baseline_manifest_sha256": "015468727db61ecc315f8efb9ad8c28a8384c36b1c88eb0ee6fb886c247936a3",
+      "max_output_tokens": 128000
+    },
+    {
+      "directory": "om100-max-gpt-6-sol-high-20261014",
+      "generation_config_hash": "e939d304f29f792b0867688382a95c95ac90604c0571e8d98177be152801cc91",
+      "generation_environment_hash": "81c9f9a5e9cb062d24f8aceb298d1111a95243f392df0b2712c99461ea0b94b3",
+      "manifest_sha256": "edb4336f8b23c2a69951c6b0ff40da650bae2a1dfc206077e3f900b6cf0f07f0",
+      "model": "gpt-6-sol",
+      "run_hash": "0e54e7a7334d85b5d1375130f17589ba8966b6a959baa9ca751b1d491c1238c8",
+      "slots_hash": "ef57bf3ac44bd10386722410972989b1defc1759fe658304083d88a460ad1795",
+      "baseline_directory": "om100-gpt-6-sol-high",
+      "baseline_manifest_sha256": "dd094c1bc775b95f80535fa30601a9e10505695d45bc103cabb2106491d5b496",
+      "max_output_tokens": 128000
+    },
+    {
+      "directory": "om100-max-gpt-6-luna-high-20261014",
+      "generation_config_hash": "677536278dd2b67d27d4fdbbd019b693008464e27955ab973d14206a8ec079e5",
+      "generation_environment_hash": "81c9f9a5e9cb062d24f8aceb298d1111a95243f392df0b2712c99461ea0b94b3",
+      "manifest_sha256": "290ddc0d6076c395e9390be22535672d2cf0ba7cc27d0ca07fdd9dc1795521d7",
+      "model": "gpt-6-luna",
+      "run_hash": "7bf8b53e26a9ccd1cd548c72c8ed778e951cdeb1da28e3f5abcec0cbae4d601a",
+      "slots_hash": "cb004435e33478ced6a55e99c27378967bbdb0b25a41c5aadb74a1343e884a91",
+      "baseline_directory": "om100-gpt-6-luna-high",
+      "baseline_manifest_sha256": "44ccdc22d18d93d6a516b8c776e2c4fad970df2fa5f8765dc670951d5d4b4c64",
+      "max_output_tokens": 128000
+    },
+    {
+      "directory": "om100-max-gpt-6-astra-high-20261014",
+      "generation_config_hash": "759a17999c610d7bc063e6551ee09cf59cff9f4c2f6cab0838e21fb6ff85f2b8",
+      "generation_environment_hash": "81c9f9a5e9cb062d24f8aceb298d1111a95243f392df0b2712c99461ea0b94b3",
+      "manifest_sha256": "2d2d5c5d33e61747210a8e5be3cbda81780c730d0d1d026aa352ba5a3db9a83f",
+      "model": "gpt-6-astra",
+      "run_hash": "e55d02c70f905d1bd65bf6394dcb838fcee363c8aa21550f351e1f61a6b3a7d8",
+      "slots_hash": "8ef7975af224cde781daefd44d0a586931e7efa1465385b7870f6e2cbbd57a65",
+      "baseline_directory": "om100-gpt-6-astra-high",
+      "baseline_manifest_sha256": "f7b38c7401abf3ada3e5954478b708173c55061db4693f8075e3eb7033f5dd4e",
+      "max_output_tokens": 128000
+    },
+    {
+      "directory": "om100-max-claude-haiku-5-5-high-20261014",
+      "generation_config_hash": "d5f3bdcbd6582b3f018a572142458048c1858202388c625888f91eff02a56869",
+      "generation_environment_hash": "81c9f9a5e9cb062d24f8aceb298d1111a95243f392df0b2712c99461ea0b94b3",
+      "manifest_sha256": "5a5000079c6676d75b23d866f3d5114f626fbc6c9f6e45e01217ab023069f296",
+      "model": "claude-haiku-5-5",
+      "run_hash": "3ceab88921a8f3f685eb780b4b9ea53e02a82315f27b8b36436491e7dacc0aaa",
+      "slots_hash": "65a998916348e7e18b7a76c877ae25e8a2f057bba1be8db8f20bad85fce6ce0d",
+      "baseline_directory": "om100-claude-haiku-5-5-high",
+      "baseline_manifest_sha256": "2f3d6872d29c679630db2b301b28716e26c2f4a64c6204fe8b6ea22243968426",
+      "max_output_tokens": 128000
+    },
+    {
+      "directory": "om100-max-claude-sonnet-5-5-high-20261014",
+      "generation_config_hash": "c5bf7dfb7181431432e07a9e8bea49dfead7ff7b11f5e82ca014eb01239282db",
+      "generation_environment_hash": "81c9f9a5e9cb062d24f8aceb298d1111a95243f392df0b2712c99461ea0b94b3",
+      "manifest_sha256": "b0adf95f46f22b2217d7423d7c64cb9c3f6e1d89247b9650370175db5a00fdc3",
+      "model": "claude-sonnet-5-5",
+      "run_hash": "90d2d4a9298d08bfecb4454b70bcc88cb7662ec28fae7ba2e53fd61684939981",
+      "slots_hash": "dc51e18fef250dcf2fa985d5eb71b2b8acc44c8c0c8d8f345b22c01874410cd1",
+      "baseline_directory": "om100-claude-sonnet-5-5-high",
+      "baseline_manifest_sha256": "797151a507d80c99122ccfbdcefc9270996b7c8a311e07ccc3fd7e8367f94856",
+      "max_output_tokens": 128000
+    },
+    {
+      "directory": "om100-max-claude-opus-5-5-high-20261014",
+      "generation_config_hash": "cd33a694818e43161624489bcd7a86a1e9e4d9842bfa58d5aa45ff1184ebcdcd",
+      "generation_environment_hash": "81c9f9a5e9cb062d24f8aceb298d1111a95243f392df0b2712c99461ea0b94b3",
+      "manifest_sha256": "3b6a2b7c6bdec78daf7be698dde3c23d3967bf9067d0ab63bd0e89b3eaa6c121",
+      "model": "claude-opus-5-5",
+      "run_hash": "2dfc7a8515ad4471c4500c61e21c7056c8506c51a77a59e1fa2f8b4ae426452f",
+      "slots_hash": "503c5239cae7a0915e22d02ebf4f42740cbb415d2f35ef2eb11097aa7318cb82",
+      "baseline_directory": "om100-claude-opus-5-5-high",
+      "baseline_manifest_sha256": "3d44f4f7fbadb1566a323baec8ac44e7dca0c3664ae51387c4dad53b0ee6ffa5",
+      "max_output_tokens": 128000
+    },
+    {
+      "directory": "om100-max-claude-fable-5-1-high-20261014",
+      "generation_config_hash": "137e95aaa2f2e793f88e9973e42193247087ddbba3b0b793ac2239367f8edebf",
+      "generation_environment_hash": "81c9f9a5e9cb062d24f8aceb298d1111a95243f392df0b2712c99461ea0b94b3",
+      "manifest_sha256": "a60f19aee510cf16b246ba335947dfc177ba387085f06db2d1b11f87851e6558",
+      "model": "claude-fable-5-1",
+      "run_hash": "f2528b9a953ea0a07f99af1e85228f817fd219b622a95e42d2b338737ad2d74c",
+      "slots_hash": "5a7e43b09b1d7b71927174badca31d7705c38e09915847f9bb59fc003b69bb03",
+      "baseline_directory": "om100-claude-fable-5-1-high",
+      "baseline_manifest_sha256": "0fb0cc06ed83502d12807914f7e7bebaf735c19c071979b7c1f2273fbc0137f9",
+      "max_output_tokens": 128000
+    }
+  ],
+  "samples_per_question_condition": 4,
+  "scheduled_attempts": 9600,
+  "source_hash": "958bc7676b5fef5700a71ddde93abcc76e7afd67a4622593b57f7836485504f1",
+  "transport_approval_and_cloud_preflight": "root_validation_required_before_ready_true",
+  "new_independent_run": true,
+  "controller_sha256": "d42ce83a855907abff20f479934794cc95de50f752f7c2441e667766a84a4e97",
+  "parallelism": {
+    "initial_per_model": 1,
+    "maximum_per_model": 256,
+    "maximum_total": 2048
+  },
+  "generation_adapter": {
+    "path": "orchestration/streaming_adapter.py",
+    "sha256": "fe6ac1bbf67006f3ab6e02c1a6845de382112711d8295e47bb72706b8ad90d00"
+  },
+  "cost_adapter": {
+    "path": "preparation/priority_costs.py",
+    "sha256": "ca0e6a73a60d0b8d7f9ef784204d36b1a7ac42528f95284a5cb46bce0769c36a"
+  },
+  "runtime_preflight": {
+    "docker_host": "unix:///tmp/lce-om100-unlimited-docker-20261014.sock",
+    "source_amendment_sha256": "a9b8e3254e7f61138837e06a87ee68ea21d89802a9693671c49717ccb5e367b0",
+    "rebound_amendment": {
+      "path": "runtime-amendment-v2.json",
+      "sha256": "66206c978036e2a5a26c227042437607b013242357ba6c649221aa6fc93fdde7"
+    }
+  },
+  "target_deadline_utc": "2026-10-15T03:28:00+00:00",
+  "deadline_is_target_not_request_cancellation": true,
+  "operational_source_hashes": {
+    "orchestration/run_fast_evaluation.py": "d42ce83a855907abff20f479934794cc95de50f752f7c2441e667766a84a4e97",
+    "orchestration/generate_parallel.py": "32fe9352e1d3a5bb7567140ed07963b7005817efe5db7bc0526f0930b25d4a8a",
+    "orchestration/streaming_adapter.py": "fe6ac1bbf67006f3ab6e02c1a6845de382112711d8295e47bb72706b8ad90d00",
+    "orchestration/rate_budget.py": "b28b0d6bf649d59fb905d4d7ce7b54bfc4709c42f53baa4024a40dced4270686",
+    "preparation/priority_costs.py": "ca0e6a73a60d0b8d7f9ef784204d36b1a7ac42528f95284a5cb46bce0769c36a"
+  },
+  "anthropic_workspace_id": "wrkspc_01XK1ygBmyuyrRddCFeCsTEh",
+  "workspace_selection": {
+    "source_sha256": "972263b91744595de2ac2536a1cd7e68d40b805e0a9a5c1f5048a07d153e4f86",
+    "source_path": "/Users/ryanshin/Documents/Codex/2026-10-11/bas/work/eval-session/workspaces.json",
+    "name": "Default",
+    "same_as_baseline": true
+  }
+}

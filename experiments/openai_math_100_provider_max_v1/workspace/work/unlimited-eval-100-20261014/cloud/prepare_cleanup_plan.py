@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+"""Prepare an owned-resource cleanup plan; never deallocate or delete anything."""
+import datetime,hashlib,json,pathlib
+C=pathlib.Path(__file__).resolve().parent;P=C/'cleanup-plan';RG='lce-om100-unlimited-20261014';TASK='om100-unlimited-20261014';SUB='bea88ce4-de82-43a3-8d6b-a082075a8ee4'
+g=json.loads((P/'resource-group.json').read_text());inventory=json.loads((P/'resource-inventory.json').read_text());vms=json.loads((P/'vm-power-before.json').read_text())
+expected={'lce-u100-'+r for r in ['westus2','northcentralus','eastus2','centralus','southcentralus','westus']}
+assert g['name']==RG and g['tags']['task']==TASK
+assert {v['name'] for v in vms}==expected
+assert all(x.get('tags',{}).get('task')==TASK and ('/resourcegroups/'+RG+'/') in x['id'].lower() and ('/subscriptions/'+SUB+'/') in x['id'].lower() for x in inventory)
+checks=[
+ {'gate':'All new attempts complete','required':'Exactly 9,600 fresh generation IDs and 9,600 terminal v2 IDs across eight new runs. Frozen prompts, manifests, model settings, prices, source, and runtime hashes remain unchanged.'},
+ {'gate':'Provider generation and retry child finished','required':'No active provider workers or in-flight requests. Root must confirm the retry child has finished. Keep the Astra VM (westus2) and Docker tunnel alive until no generation preflight depends on them.'},
+ {'gate':'Eight full graph backup receipts','required':'Every final-backups/MODEL-verification.json passes, with exact 1,200 generation and 1,200 v2 IDs, no missing, extra, or differing files, and full graph bytes preserved locally. Receipts must still describe unchanged files.'},
+ {'gate':'Eight reports and combined report validated','required':'All reporting/jobs/MODEL-local.json states are complete_synced_verified. All local bundle hashes, comparison counts, frozen prompt viewer, costs, source lengths, truncation and coverage disclosures are validated.'},
+ {'gate':'Complete final stream audit','required':'Run reporting/audit_streams.py --require-complete with the current bound auditor. Require pass_complete, cohort_complete true, generations_audited 9600, priced_generations 9600, and 9600 unique provider response IDs. Verify local raw streams, captures, generations, and hashes. Retain original uncertain-charge evidence and authorized recovery receipts.'},
+ {'gate':'Reproducibility and operational evidence secured','required':'Preserve all frozen new manifests, prompts, prices, amendment, verifier, core, Lean source, reference evidence, immutable runtime archive and source pins. Archive each host work/unlimited-eval-100-20261014 operational sources, status, logs, and receipts; hash-verify the local archive. No model API credentials are on cloud.'},
+ {'gate':'Fresh ownership verification','required':'Immediately before execution, re-read the group ID and task tag, the complete resource inventory and tags, and the exact six VM IDs. Stop if ownership differs. Resource IDs are case-insensitive in Azure; retain their original spelling in receipts.'}
+]
+commands=[{'vm':v['name'],'resource_id':v['id'],'must_not_run_yet':True,'argv':['az','vm','deallocate','--subscription',SUB,'--resource-group',RG,'--name',v['name'],'--only-show-errors']} for v in vms]
+steps=[
+ 'Record immutable evidence that every mandatory gate passed.',
+ 'Capture fresh inventory, tags, VM power states, task process identities, and a copy of the current cost ledger before deallocation.',
+ 'Root may stop only completed task-owned controllers and the credential carrier/retry child after confirming their identities and completion. Preserve unrelated processes.',
+ 'Root may deallocate the exact six owned VMs in parallel using the listed commands. Record request times and observed terminal times. Verify PowerState/deallocated for every VM.',
+ 'Write cleanup-plan/lifecycle/REGION-deallocated.json with exact resource_id, power_state="PowerState/deallocated", deallocated_observed_at_utc, request time, and ARM evidence. Run cloud/record_costs.py: it now closes allocation windows using these validated receipts. Preserve before/after ledger snapshots.',
+ 'After the data/report gates still pass, root may delete this exact resource group, including its task disks, IPs, networks, failed-attempt NSGs, and private bootstrap blob account.',
+ 'Poll group existence without repeatedly issuing deletion. Save the confirmed absent state and deletion UTC time. Preserve the closed compute estimate and explicitly unknown disk, IP, network, tax, and credit charges; this is not an invoice.',
+ 'Close only this run’s Docker SSH tunnel once unused, stop the completed monitoring automation, preserve every local raw record and receipt, and update completion/handoff metadata.'
+]
+plan={'schema_version':1,'prepared_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'mode':'READ_ONLY_PLAN; no deallocation or deletion executed','subscription_id':SUB,'resource_group':RG,'resource_group_id':g['id'],'required_task_tag':TASK,'ownership_validation':{'all_resource_tags_match':True,'exact_six_vm_names_match':True,'resource_count':len(inventory),'inventory_sha256':hashlib.sha256((P/'resource-inventory.json').read_bytes()).hexdigest()},'never_touch':['Old lce-om100-20261013-westus2 group (already deleted)','Any other resource group or shared resource','Unrelated local processes, SSH sessions, keys, or terminal environments'],'mandatory_gates':checks,'sequence':steps,'deallocation_commands':commands,'power_check_template':['az','vm','get-instance-view','--subscription',SUB,'--resource-group',RG,'--name','EXACT_VM_FROM_ALLOWLIST','--query','instanceView.statuses','--output','json'],'delete_command_only_after_all_gates':['az','group','delete','--subscription',SUB,'--name',RG,'--yes','--no-wait','--only-show-errors'],'deletion_confirmation_command':['az','group','exists','--subscription',SUB,'--name',RG,'--output','json'],'cost_refresh_command':['python3',str(C/'record_costs.py')],'execute_deletion_authorized_by_this_plan':False,'root_review_execution_or_explicit_delegation_required':True}
+(P/'plan.json').write_text(json.dumps(plan,indent=2)+'\n');print(json.dumps({'plan_ready':True,'resources':len(inventory),'vms':len(vms),'mutations_executed':False}))

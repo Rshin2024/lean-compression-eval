@@ -1,0 +1,14 @@
+{
+  "at_utc": "2026-10-15T04:40:29.183038+00:00",
+  "state": "root_authorized_centralus_operational_archive_after_complete_fable_gates",
+  "plan_sha256": "b734d952f4b91474d07f65d574f8b216b734ebcf5f6b2fdcf3437520231f1bb0",
+  "parent_review_sha256": "674e17408d870a0af0fc4ee9b23e4e346c5c31d1075a7879aa8530dc45320953",
+  "authorized_host": "lce-u100-centralus",
+  "evidence_sha256": {
+    "graph": "3c9808ee8d96141e10cf9630ba2c5d4545d0a07c88549943b91b661f41f06d8d",
+    "api_evidence": "36f448052ea67ea855b7e6a05683460fcd7ecf3623dfb9b9459e41ff80ee2309",
+    "report_job": "7e00c26d7dfa1ea0d0e5a60dc5059c4786509fd66fbb2b9cdbb9ffcd4794ef46"
+  },
+  "conditions": "All unchanged per-host helper gates still required; inspect before archive. No source/status edits, worker stops or resource cleanup.",
+  "cleanup_authorized": false
+}

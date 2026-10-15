@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "kind": "provider_max_viewer_only_provenance_amendment_v1",
+  "state": "prepared_pending_root_review",
+  "created_at_utc": "2026-10-15T04:17:46.407015+00:00",
+  "baseline": {
+    "git_revision": "cf98dbca2853e7c8ef02c2b0f006576fce6a7402",
+    "git_path": "reporting/serve_comparison.py",
+    "sha256": "e019683daa42829de34a16fde65614013dd428e9a0e03762ff144a633edaecd2",
+    "matches_existing_report_source_pin": true
+  },
+  "candidate": {
+    "working_tree_path": "reporting/serve_comparison.py",
+    "sha256": "4e16b94c982006924913c11bf0eedc4baa03132b8753a29689e8b577c864256e",
+    "added_source_lines": 3,
+    "removed_source_lines": 0
+  },
+  "scope": {
+    "viewer_only": true,
+    "measurement_change": false,
+    "evaluation_change": false,
+    "source_pins_superseded": false,
+    "report_assets_replaced": false,
+    "cloud_files_changed": false,
+    "controllers_changed": false,
+    "model_calls": 0,
+    "lean_calls": 0,
+    "old_8192_run_changed": false,
+    "hardlinks_created": 0
+  },
+  "route_change": {
+    "baseline_route_count": 109,
+    "candidate_route_count_with_all_optional_files": 112,
+    "added_routes": [
+      "/operational-disclosure.json",
+      "/suite-build-receipt.json",
+      "/transport-cost-disclosure.json"
+    ],
+    "removed_routes": [],
+    "unlisted_private_stream_and_review_paths_excluded": true
+  },
+  "retained_pin_files": {
+    "source-pins.json": "8d6f2bca5626365aab21cae39911d8eef7462761382caba5e75bc7493febdc9f",
+    "audit-pins.json": "62028781a9d48bd08bb73987cb136835b73f01bf008081bf36b299e9ac8b0ef5",
+    "report-assets.json": "b33336a83664d83c253fb90c2da4ad00d30e1b4ea86a13828596cf78b63802c8",
+    "parallel-report-amendment.json": "1ba6ec3548373c22a4161ef4fa8413b0f5ed5003571050d9f49426c4b9f118ec"
+  },
+  "read_only_deployed_baseline_checks": {
+    "lce-u100-eastus2": "matches e019683d baseline; linkcount1",
+    "lce-u100-westus": "matches e019683d baseline; linkcount1",
+    "lce-u100-centralus": "matches e019683d baseline; linkcount1"
+  },
+  "execution_scope": {
+    "current_report_workers": "use unchanged pinned baseline on cloud",
+    "current_local_finalizer": "suite builder and streaming audit do not execute the viewer or call its all-source report pin check",
+    "future_fresh_deploy_or_local_report": "will intentionally fail original all-source pin check until a separately reviewed deployment/source policy is selected",
+    "candidate_viewer_started_by_this_amendment": false
+  },
+  "tests": [
+    {
+      "variant": "baseline",
+      "tests": 2,
+      "exit_code": 0,
+      "log": "baseline-tests-2.log",
+      "log_sha256": "e3f009f00e6db606b77a0e7f8d50bd66d3415782a26700dfbebf2a329acf3301",
+      "uses_only_synthetic_temporary_files": true,
+      "network": "loopback ephemeral test server only"
+    },
+    {
+      "variant": "current",
+      "tests": 3,
+      "exit_code": 0,
+      "log": "current-tests.log",
+      "log_sha256": "957ff94ef3262d636931afb2a3ac24b9e387506aab56a2789bf244efe6242deb",
+      "uses_only_synthetic_temporary_files": true,
+      "network": "loopback ephemeral test server only"
+    }
+  ],
+  "files": {
+    "README.txt": {
+      "sha256": "0cf498450048eb5984d35880c33f42564e533f070b5c9cd179215b1971f9f4e3",
+      "bytes": 1953,
+      "links": 1
+    },
+    "baseline/reporting/build_comparison.py": {
+      "sha256": "3963da70abba35317834e1f2b8c628035960903d12727923217b1e8059ad87c9",
+      "bytes": 35911,
+      "links": 1
+    },
+    "baseline/reporting/serve_comparison.py": {
+      "sha256": "e019683daa42829de34a16fde65614013dd428e9a0e03762ff144a633edaecd2",
+      "bytes": 4063,
+      "links": 1
+    },
+    "baseline/reporting/source_lengths.py": {
+      "sha256": "507523744306f0cac98640e85775fe3d8cb77d61f094b68757dbd58acf6b2f92",
+      "bytes": 10605,
+      "links": 1
+    },
+    "baseline/reporting/test_report_server.py": {
+      "sha256": "d275af74430bc8b2fa60ec2185b25e151e91f23f198b0ac82f2f152a805dab3f",
+      "bytes": 3309,
+      "links": 1
+    },
+    "baseline/src/lean_compression/__init__.py": {
+      "sha256": "66be578f398fcf2985f92b831bee597f09bcd185775998623d85e716053db9a0",
+      "bytes": 106,
+      "links": 1
+    },
+    "baseline/src/lean_compression/io.py": {
+      "sha256": "1fdd9a129fe5dd6c6fefde6bcff6278a9c6a7076db7706704207730ee3b63a92",
+      "bytes": 15961,
+      "links": 1
+    },
+    "baseline/src/lean_compression/outcomes.py": {
+      "sha256": "43c2fa484b55d431189fab99578ad568556792383d9fa095fb9c69b32b2ca9c0",
+      "bytes": 2137,
+      "links": 1
+    },
+    "baseline/src/lean_compression/prompts.py": {
+      "sha256": "ca8d7ec0b80cbd1b09813773e26e45934ea2df869cf343e9dd7f32e772c0d4cf",
+      "bytes": 3147,
+      "links": 1
+    },
+    "baseline-tests-2.log": {
+      "sha256": "e3f009f00e6db606b77a0e7f8d50bd66d3415782a26700dfbebf2a329acf3301",
+      "bytes": 406,
+      "links": 1
+    },
+    "baseline-tests.log": {
+      "sha256": "d20a3ac44ebd8c722c27335bfed6fcd97c9e1bcb183a3883b206deb306ffb832",
+      "bytes": 1670,
+      "links": 1
+    },
+    "current/reporting/build_comparison.py": {
+      "sha256": "3963da70abba35317834e1f2b8c628035960903d12727923217b1e8059ad87c9",
+      "bytes": 35911,
+      "links": 1
+    },
+    "current/reporting/serve_comparison.py": {
+      "sha256": "4e16b94c982006924913c11bf0eedc4baa03132b8753a29689e8b577c864256e",
+      "bytes": 4315,
+      "links": 1
+    },
+    "current/reporting/source_lengths.py": {
+      "sha256": "507523744306f0cac98640e85775fe3d8cb77d61f094b68757dbd58acf6b2f92",
+      "bytes": 10605,
+      "links": 1
+    },
+    "current/reporting/test_report_server.py": {
+      "sha256": "edca5cf9621ab3de4b2b2021fc0f75fb8df283662e021e40165cd39ba6b6589e",
+      "bytes": 4006,
+      "links": 1
+    },
+    "current/src/lean_compression/__init__.py": {
+      "sha256": "66be578f398fcf2985f92b831bee597f09bcd185775998623d85e716053db9a0",
+      "bytes": 106,
+      "links": 1
+    },
+    "current/src/lean_compression/io.py": {
+      "sha256": "1fdd9a129fe5dd6c6fefde6bcff6278a9c6a7076db7706704207730ee3b63a92",
+      "bytes": 15961,
+      "links": 1
+    },
+    "current/src/lean_compression/outcomes.py": {
+      "sha256": "43c2fa484b55d431189fab99578ad568556792383d9fa095fb9c69b32b2ca9c0",
+      "bytes": 2137,
+      "links": 1
+    },
+    "current/src/lean_compression/prompts.py": {
+      "sha256": "ca8d7ec0b80cbd1b09813773e26e45934ea2df869cf343e9dd7f32e772c0d4cf",
+      "bytes": 3147,
+      "links": 1
+    },
+    "current-tests.log": {
+      "sha256": "957ff94ef3262d636931afb2a3ac24b9e387506aab56a2789bf244efe6242deb",
+      "bytes": 552,
+      "links": 1
+    },
+    "live-file-preservation.json": {
+      "sha256": "3eebb9e63468d09565603e599a791614bb27484ebc2e94158296af295149f052",
+      "bytes": 7416,
+      "links": 1
+    },
+    "validation.json": {
+      "sha256": "b82ade1dcc06ba2023a819d73ebc7f1177c664e7946b7c181ef960bd1d644d4e",
+      "bytes": 1408,
+      "links": 1
+    },
+    "viewer.patch": {
+      "sha256": "59e72b791b97448b0495ba09331fd5b29cc9afe44640e9bc9aded728a40e2c3c",
+      "bytes": 818,
+      "links": 1
+    }
+  },
+  "required_next_step": "Root reviews exact diff, pins, isolated tests and preservation evidence before using candidate viewer for final local delivery."
+}

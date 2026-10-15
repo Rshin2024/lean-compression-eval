@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "status": "pass_data_validation",
+  "at_utc": "2026-10-15T04:42:54.634978+00:00",
+  "script_sha256": "9ee903cef046736eab0bc39b41430f8198d15226d040ba58694f35bdb7c01b99",
+  "models": [
+    {
+      "model": "gpt-6.1-sol",
+      "attempts": 1200,
+      "valid": 758,
+      "measurable": 758,
+      "priced": 1200,
+      "recorded_response_token_estimate_usd": "153.4571960",
+      "delivered_tier_counts": {
+        "priority": 1200
+      }
+    },
+    {
+      "model": "gpt-6-sol",
+      "attempts": 1200,
+      "valid": 440,
+      "measurable": 440,
+      "priced": 1200,
+      "recorded_response_token_estimate_usd": "221.0436220",
+      "delivered_tier_counts": {
+        "priority": 1200
+      }
+    },
+    {
+      "model": "gpt-6-luna",
+      "attempts": 1200,
+      "valid": 149,
+      "measurable": 149,
+      "priced": 1200,
+      "recorded_response_token_estimate_usd": "19.44046501",
+      "delivered_tier_counts": {
+        "priority": 1200
+      }
+    },
+    {
+      "model": "gpt-6-astra",
+      "attempts": 1200,
+      "valid": 821,
+      "measurable": 821,
+      "priced": 1200,
+      "recorded_response_token_estimate_usd": "806.717988",
+      "delivered_tier_counts": {
+        "priority": 1200
+      }
+    },
+    {
+      "model": "claude-haiku-5-5",
+      "attempts": 1200,
+      "valid": 57,
+      "measurable": 57,
+      "priced": 1200,
+      "recorded_response_token_estimate_usd": "31.9324218",
+      "delivered_tier_counts": {
+        "anthropic_standard": 1200
+      }
+    },
+    {
+      "model": "claude-sonnet-5-5",
+      "attempts": 1200,
+      "valid": 65,
+      "measurable": 65,
+      "priced": 1200,
+      "recorded_response_token_estimate_usd": "209.920266",
+      "delivered_tier_counts": {
+        "anthropic_standard": 1200
+      }
+    },
+    {
+      "model": "claude-opus-5-5",
+      "attempts": 1200,
+      "valid": 678,
+      "measurable": 678,
+      "priced": 1200,
+      "recorded_response_token_estimate_usd": "470.213472",
+      "delivered_tier_counts": {
+        "anthropic_standard": 1200
+      }
+    },
+    {
+      "model": "claude-fable-5-1",
+      "attempts": 1200,
+      "valid": 863,
+      "measurable": 863,
+      "priced": 1200,
+      "recorded_response_token_estimate_usd": "2456.99288",
+      "delivered_tier_counts": {
+        "anthropic_standard": 1200
+      }
+    }
+  ],
+  "attempts": 9600,
+  "prompt_slot_bindings_checked": 9600,
+  "question_message_sets": 300,
+  "old_attempt_overlap": 0,
+  "outcome_populations": {
+    "scheduled": 9600,
+    "completed": 9477,
+    "accepted": 3831,
+    "truncated": 123,
+    "empty": 99,
+    "unclassified": 0,
+    "completionRate": 0.9871875,
+    "completedAcceptanceRate": 0.40424184868629315,
+    "scheduledSolveRate": 0.3990625,
+    "empty_truncated_overlap": 99
+  },
+  "priced_responses": 9600,
+  "recorded_response_token_estimate_usd": "4369.71831081",
+  "original_unknown_charge_incidents": 30,
+  "unknown_original_charge_usd": null,
+  "exact_rank_oracle_cases": 36,
+  "old8192_manifest_and_report_bundle_hashes_verified": true,
+  "old_raw_graphs_deep_rehashed_here": false,
+  "cloud_snapshot": {
+    "allocations_closed": false,
+    "all_rates_known": true,
+    "display_compute_complete": false,
+    "postcleanup_display_amendment_needed": false,
+    "note": "Open allocation snapshots are allowed here; final closed-ledger presentation requires a separate reviewed amendment."
+  },
+  "viewer_only_source_delta": {
+    "baseline": "e019683daa42829de34a16fde65614013dd428e9a0e03762ff144a633edaecd2",
+    "candidate": "4e16b94c982006924913c11bf0eedc4baa03132b8753a29689e8b577c864256e",
+    "amendment_sha256": "3859ec5d644a9cd426ae0846ad932ae34ee75b9dcb030c2624877f2f363db9ef",
+    "separate_root_viewer_review_passed": true,
+    "original_source_pins_superseded": false,
+    "root_review_sha256": "e0402ce2d54ea29570982758af1643a2858664deaed5b1a6a2413964fdae8b38"
+  },
+  "scope": "Independent completed-suite identities, prompt bytes, lengths, exact rankings and costs. Full SSE/raw verification byte checks are bound to the preceding completed streaming audit; cloud/local backups and browser QA remain separate gates.",
+  "model_calls": 0,
+  "lean_calls": 0,
+  "provider_network_calls": 0,
+  "input_writes": 0,
+  "hardlinks_created": 0,
+  "cleanup_authorized": false,
+  "postclosure_amendment_activated": false
+}

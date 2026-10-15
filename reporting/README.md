@@ -2,6 +2,17 @@
 
 From the repository root, run `python3 reporting/build_comparison.py` after the eight smoke reports are complete. Use `--suite PATH` for another completed eight-model suite. The selected OM100 cohort requires exactly OM100-001 through OM100-100 and four samples under every condition (9,600 total attempts). `--output PATH` writes an isolated QA copy without overwriting an existing page.
 
+For a separately frozen rerun, also pass `--run-directory-template
+'om100-max-{model}-high-20261014'` and the appropriate `--runs-root`. The template
+must name one direct child directory and contain `{model}` exactly once. This
+binds the question viewer and source-length measurements to the new manifests;
+choosing a different suite directory alone does not identify a new generation
+cohort. The default continues to resolve the original smoke/OM100 runs.
+
+The [provider-maximum rerun archive](../experiments/openai_math_100_provider_max_v1/README.md)
+records its 128,000-token ceiling, streaming transport, processing-tier pricing
+and unchanged prompts/evaluator. Its results belong in a separate suite.
+
 The generator checks complete, identical populations and reconciles scheduled attempts, validity, per-question measurement coverage and ranking values against the source analyses. Smoke denominators are 120 per model and 40 per condition; OM100 denominators are 1,200 and 400. It writes `index.html` and `comparison-data.json` inside the suite. Original reports, captured responses, evaluation records and frozen configurations are read-only inputs.
 
 ## Adjustable paper-metric ranking

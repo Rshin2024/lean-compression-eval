@@ -302,8 +302,19 @@ def cost_map(report, analysis, model, expected_count):
             'total_usd', 'generated_total_usd', 'observed_sum_usd', 'complete']}}
 
 
+def manifest_path(runs_root, model, task_count, run_directory_template=None):
+    """Resolve an explicitly named rerun without relabeling earlier manifests."""
+    template = run_directory_template or (('om100-' if task_count == 100 else 'smoke-') + '{model}-high')
+    require(template.count('{model}') == 1, 'Run directory template must contain {model} exactly once')
+    directory = template.replace('{model}', model)
+    require(directory not in {'.', '..'} and '/' not in directory and '\\' not in directory
+            and '{' not in directory and '}' not in directory,
+            'Run directory template must name one direct child directory')
+    return Path(runs_root) / directory / 'manifest.json'
+
+
 def build(suite, *, output=None, classification='observed', runs_root=None, cloud_costs=None,
-          transport_cost_disclosure=None):
+          transport_cost_disclosure=None, run_directory_template=None):
     suite = Path(suite).resolve()
     output = Path(output).resolve() if output is not None else suite
     require(classification in {'observed', 'synthetic_test_fixture'}, 'Unknown data classification')
@@ -338,7 +349,7 @@ def build(suite, *, output=None, classification='observed', runs_root=None, clou
             identity=(phase['cohort_hash'],phase['generation']['environment_hash'])
             require(cohort is None or cohort==identity, 'Models use mixed verification amendments/environments')
             cohort=identity
-        manifest = runs_root / (('om100-' if n == 100 else 'smoke-') + model + '-high') / 'manifest.json'
+        manifest = manifest_path(runs_root, model, n, run_directory_template)
         if manifest.is_file() and classification == 'observed':
             manifests.append((model, manifest, analysis.get('run_provenance', {}).get('run_hash')))
         per_condition, per_model = n * k, n * k * len(CONDS)
@@ -486,12 +497,14 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path, help='Separate QA output; source reports remain read-only')
     parser.add_argument('--classification', choices=['observed', 'synthetic_test_fixture'], default='observed')
     parser.add_argument('--runs-root', type=Path, help='Frozen run manifests used for the exact question viewer')
+    parser.add_argument('--run-directory-template', help='Explicit rerun directory name containing {model}, e.g. om100-max-{model}-high-20261014')
     parser.add_argument('--cloud-costs', type=Path, help='Separate shared cloud cost ledger, never attributed to models')
     parser.add_argument('--transport-cost-disclosure', type=Path,
                         help='Separate source-hashed unknown-request charge disclosure; never changes response estimates')
     args = parser.parse_args()
     d = build(args.suite, output=args.output, classification=args.classification,
               runs_root=args.runs_root, cloud_costs=args.cloud_costs,
-              transport_cost_disclosure=args.transport_cost_disclosure)
+              transport_cost_disclosure=args.transport_cost_disclosure,
+              run_directory_template=args.run_directory_template)
     print(json.dumps({'output': str((args.output or args.suite) / 'index.html'), 'models': len(d['models']),
                       'questions': d['taskCount'], 'attempts': len(d['attempts']), 'classification': d['classification']}))

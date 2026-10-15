@@ -1,0 +1,84 @@
+{
+  "attempt_id": "2e8c19a46b60a9cbe0bb4a4499504319a4fe2c80cfc6190b2c3f3ea99bf719d9",
+  "generation_claim_sha256": null,
+  "manifest_sha256": "a60f19aee510cf16b246ba335947dfc177ba387085f06db2d1b11f87851e6558",
+  "marker": {
+    "attempt_id": "2e8c19a46b60a9cbe0bb4a4499504319a4fe2c80cfc6190b2c3f3ea99bf719d9",
+    "started_at": "2026-10-15T03:21:30.782483+00:00"
+  },
+  "marker_sha256": "a5d8533c4e8251c21bb6d74c9b4e028cb2f09e0601710fed9da98e93923d28a0",
+  "model": "claude-fable-5-1",
+  "original_charge_usd": null,
+  "original_outcome": "unknown",
+  "request_hash": "00c2e58397531e00096196636e3c4c190f886e383f9d747df0f09d4b2c5bf779",
+  "run_directory": "om100-max-claude-fable-5-1-high-20261014",
+  "run_hash": "f2528b9a953ea0a07f99af1e85228f817fd219b622a95e42d2b338737ad2d74c",
+  "saved_capture_present": false,
+  "saved_generation_present": false,
+  "saved_stream_present": false,
+  "slot_identity": {
+    "attempt_id": "2e8c19a46b60a9cbe0bb4a4499504319a4fe2c80cfc6190b2c3f3ea99bf719d9",
+    "condition": "standard",
+    "config_hash": "137e95aaa2f2e793f88e9973e42193247087ddbba3b0b793ac2239367f8edebf",
+    "environment_hash": "81c9f9a5e9cb062d24f8aceb298d1111a95243f392df0b2712c99461ea0b94b3",
+    "experiment": "openai_math_100_provider_max_v2_20261014",
+    "model_snapshot": "claude-fable-5-1",
+    "prompt_hash": "3db48b334a199ad20ce0b90955fc1178d7fb23e7f418a2f5e755795419d74915",
+    "protocol_version": "om100_direct_output_v1",
+    "sample_index": 0,
+    "schedule_index": 839,
+    "task_hash": "41cbe6ff4e3d94166252255a847a13537a2afbc4e60c2daba3ebf757112788b7",
+    "task_id": "OM100-009"
+  },
+  "slot_index_zero_based": 839,
+  "stream_events": [],
+  "transport_prefix": [
+    {
+      "attempt_id": "2e8c19a46b60a9cbe0bb4a4499504319a4fe2c80cfc6190b2c3f3ea99bf719d9",
+      "event": "request_started",
+      "recorded_at": "2026-10-15T03:18:07.090189+00:00",
+      "request_hash": "00c2e58397531e00096196636e3c4c190f886e383f9d747df0f09d4b2c5bf779",
+      "transport_index": 0
+    },
+    {
+      "attempt_id": "2e8c19a46b60a9cbe0bb4a4499504319a4fe2c80cfc6190b2c3f3ea99bf719d9",
+      "body": "{\"type\":\"error\",\"error\":{\"type\":\"rate_limit_error\",\"message\":\"This request would exceed your organization's rate limit of 800,000 output tokens per minute (org: a318fda2-c90c-484c-a950-b0d3c2286c5d, model: claude-fable-5-1). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Reduce the prompt length or the maximum tokens requested, or try again later. View your current limits at https://console.anthropic.com/settings/limits. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.\"},\"request_id\":\"req_011Cg3JKCpz13KLvcQ3bxXa8\"}",
+      "event": "http_error",
+      "http_status": 429,
+      "recorded_at": "2026-10-15T03:18:07.567138+00:00",
+      "retry_after": "62",
+      "transport_index": 0
+    },
+    {
+      "attempt_id": "2e8c19a46b60a9cbe0bb4a4499504319a4fe2c80cfc6190b2c3f3ea99bf719d9",
+      "capture": null,
+      "event": "no_model_outcome",
+      "last_error": {
+        "body": "{\"type\":\"error\",\"error\":{\"type\":\"rate_limit_error\",\"message\":\"This request would exceed your organization's rate limit of 800,000 output tokens per minute (org: a318fda2-c90c-484c-a950-b0d3c2286c5d, model: claude-fable-5-1). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Reduce the prompt length or the maximum tokens requested, or try again later. View your current limits at https://console.anthropic.com/settings/limits. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.\"},\"request_id\":\"req_011Cg3JKCpz13KLvcQ3bxXa8\"}",
+        "http_status": 429,
+        "retry_after": "62"
+      },
+      "prompt_rejected": false,
+      "provider_response": null,
+      "recorded_at": "2026-10-15T03:18:07.761686+00:00"
+    },
+    {
+      "attempt_id": "2e8c19a46b60a9cbe0bb4a4499504319a4fe2c80cfc6190b2c3f3ea99bf719d9",
+      "event": "request_started",
+      "recorded_at": "2026-10-15T03:21:30.784956+00:00",
+      "request_hash": "00c2e58397531e00096196636e3c4c190f886e383f9d747df0f09d4b2c5bf779",
+      "transport_index": 0
+    },
+    {
+      "attempt_id": "2e8c19a46b60a9cbe0bb4a4499504319a4fe2c80cfc6190b2c3f3ea99bf719d9",
+      "event": "outcome_unknown",
+      "message": "Streaming connection failed; request outcome is uncertain",
+      "recorded_at": "2026-10-15T03:21:48.763946+00:00",
+      "transport_index": 0,
+      "type": "OSError"
+    }
+  ],
+  "transport_prefix_bytes": 2635,
+  "transport_prefix_bytes_sha256": "ba4a9fc557748d9c2fe98903e0dc37c2c1626b78055d58a9571af4d62a4653d9",
+  "transport_prefix_hash": "8e463756abdc0a0987705703183fa763a893ccbb67537f6c966d409995193da9"
+}

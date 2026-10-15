@@ -1,0 +1,25 @@
+{
+  "at_utc": "2026-10-15T04:35:12.144216+00:00",
+  "state": "root_reviewed_for_archive_creation_on_five_completed_hosts_only",
+  "plan_sha256": "b734d952f4b91474d07f65d574f8b216b734ebcf5f6b2fdcf3437520231f1bb0",
+  "helper_source_sha256": {
+    "archive_host.py": "800c9c208aabf8bc4c13e38d57c34c4c087be06d7f33d2347009e7030033b2d4",
+    "remote_archive.py": "54b9b8708f809b2527f2c46c06fd3aeec539690e2b1bc4d7f81cc9d38a6fdccf",
+    "test_operational_archive.py": "407662d5380c5b7c8f4396b101def6e7076283b15d83a1c19e4f0f94efd437d9"
+  },
+  "authorized_hosts": [
+    "lce-u100-eastus2",
+    "lce-u100-northcentralus",
+    "lce-u100-southcentralus",
+    "lce-u100-westus",
+    "lce-u100-westus2"
+  ],
+  "centralus_not_yet_authorized": true,
+  "scope": "Only task WORK operational archives into dedicated sibling output, then local hash-verified byte copies. No process stops, core/input/status changes or resource cleanup.",
+  "review": "Root read both full helpers, reviewed final mtime/link/output guards, exact host/model/file scope, and all19 synthetic tests. Every prescribed per-host gate must pass; no overrides for held locks or stale counters.",
+  "test_evidence": "19 offline tests reported passing, synthetic temporary files only; no live hardlinks.",
+  "execution_order": "Inspect then archive one completed host first; after success remaining allowed hosts at most2concurrent. Preserve all receipts/partial artifacts; no overwrite.",
+  "model_calls": 0,
+  "lean_calls": 0,
+  "cleanup_authorized": false
+}

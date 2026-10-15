@@ -6,7 +6,7 @@ import tempfile
 import threading
 import unittest
 
-from serve_comparison import MODELS, REPORT_FILES, handler_for, routes_for
+from serve_comparison import MODELS, REPORT_FILES, OPTIONAL_SUITE_FILES, handler_for, routes_for
 
 
 class ReportServerTests(unittest.TestCase):
@@ -67,6 +67,19 @@ class ReportServerTests(unittest.TestCase):
         path.symlink_to(self.root / 'index.html')
         with self.assertRaises(ValueError):
             routes_for(self.root)
+
+    def test_optional_disclosures_are_exactly_allowlisted(self):
+        for name in OPTIONAL_SUITE_FILES:
+            (self.root/name).write_text('{}')
+        (self.root/'private-stream.sse').write_text('PRIVATE')
+        (self.root/'root-review.json').write_text('PRIVATE')
+        routes=routes_for(self.root)
+        for name in OPTIONAL_SUITE_FILES:self.assertIn('/'+name,routes)
+        self.assertNotIn('/private-stream.sse',routes)
+        self.assertNotIn('/root-review.json',routes)
+        path=self.root/OPTIONAL_SUITE_FILES[0]
+        path.unlink();path.symlink_to(self.root/'root-review.json')
+        with self.assertRaises(ValueError):routes_for(self.root)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "kind": "closed_cloud_cost_display_amendment_preparation_v2",
+  "state": "prepared_not_activated",
+  "at_utc": "2026-10-15T04:53:51.638730+00:00",
+  "files": {
+    "close_cost_display.py": "d0735466f7eb09ac9754c9ef4bcf7cd37927fb2012c1a1a57878e628d8610514",
+    "test_close_cost_display.py": "7aeb3fba292b65c50a5fb42d57a0aa2ad0b68f1cd267b730c887011a8ca29301",
+    "README.md": "75e4124f644ee66377eb4d97958c73c3f12131d616b8f35a459021f1e0e47511",
+    "synthetic-tests-v2.log": "c8aa494030b35f9176248b3730e5d8239c6728cfb961328e1d6646e20dc2d1a9"
+  },
+  "synthetic_tests": 17,
+  "change_from_initial_candidate": "Validate/reuse already-fsynced staged final receipt, preserving its original timestamp after a publication interruption. Exact temporary-fixture regression passes.",
+  "previous_manifest_sha256": "ac0de56452900628ac08bf260785038c518a0f0537cdac2d71fe630b6a92337d",
+  "previous_helper_sha256": "29dcf837899147ea10cebdacc255f298a3c9f08701f78403307de0c43caf8c78",
+  "real_prepare_executed": false,
+  "real_apply_executed": false,
+  "model_calls": 0,
+  "lean_calls": 0,
+  "cloud_resource_calls": 0,
+  "source_pin_modifications": 0,
+  "hardlinks_created": 0
+}
