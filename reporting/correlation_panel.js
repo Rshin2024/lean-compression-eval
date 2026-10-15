@@ -1,7 +1,7 @@
 let corrReady=false,corrResults=null,corrExportPayload=null;
 const corrNode=id=>document.getElementById(id);
 const corrFmt=value=>finite(value)?(value>=0?'+':'')+value.toFixed(3):'Unavailable';
-function correlationOptions(){return {level:corrNode('corrLevel').value,xMode:corrNode('corrX').value};}
+function correlationOptions(){return {level:corrNode('corrLevel').value,xMode:corrNode('corrX').value,denominator:corrNode('corrDenominator').value};}
 function correlationMetricName(metric,rank){return ({T0:'T₀',I0:'I₀',J0:'J₀',W_B:rank?'Concision':'Length Wᴮ'})[metric];}
 function correlationAxisName(metric,rank){
  return rank?correlationMetricName(metric,true)+' question-rank points · higher is better':
@@ -10,16 +10,16 @@ function correlationAxisName(metric,rank){
 function corrInspection(point){
  if(!point)return 'Hover over or focus a point to inspect its values.';
  const xMode=corrNode('corrX').value;
- return `${NAME(point.model)}${point.task?' · '+point.task:''}: ${point.valid}/${point.scheduled} accepted (${(100*point.y).toFixed(1)}%); ${point.metricSamples} samples supply the compression value. ${correlationAxisName(paperMetric,xMode==='rank')}: ${num(point.x)}.`;
+ return `${NAME(point.model)}${point.task?' · '+point.task:''}: ${point.valid}/${point.denominator} accepted (${(100*point.y).toFixed(1)}%); ${point.completed??'unavailable'}/${point.scheduled} completed; ${point.metricSamples} samples supply the compression value. ${correlationAxisName(paperMetric,xMode==='rank')}: ${num(point.x)}.`;
 }
 function renderCorrelationPlot(result,settings,metric){
  const points=result.points,rank=settings.xMode==='rank';
- if(!points.length){corrNode('corrChart').innerHTML='<p class="empty">No shared comparison under the current ranking filters. Adjust the model coverage or sample requirement above.</p>';return;}
+ if(!points.length){corrNode('corrChart').innerHTML='<p class="empty">'+(result.pearson.reason==='completion_classification_unavailable'?'Completion provenance is unavailable for this snapshot. Select the scheduled-attempt denominator to inspect the original analysis.':'No shared comparison under the current ranking filters. Adjust model coverage or the sample requirement above.')+'</p>';return;}
  const width=Math.max(320,Math.min(760,corrNode('corrChart').clientWidth||760)),height=width<500?350:400,left=width<500?48:65,right=20,top=32,bottom=65,pw=width-left-right,ph=height-top-bottom;
  const xs=points.map(p=>p.x);let lo=rank?0:metric==='J0'?0:Math.floor(Math.min(...xs)),hi=rank?100:metric==='J0'?1:Math.ceil(Math.max(...xs));
  if(lo===hi){lo-=1;hi+=1;}
  const px=x=>left+(x-lo)/(hi-lo)*pw,py=y=>top+(1-y)*ph;
- let body=`<text x="${left}" y="15" font-size="12" fill="#566777">Accepted proofs / scheduled attempts</text>`;
+ let body=`<text x="${left}" y="15" font-size="12" fill="#566777">${settings.denominator==='completed'?'Accepted / completed submissions':'Successful proofs / scheduled attempts'}</text>`;
  for(let i=0;i<=4;i++){
   const y=py(i/4);body+=`<path d="M${left} ${y}H${width-right}" stroke="#dfe7ed"/><text x="${left-10}" y="${y+4}" text-anchor="end" font-size="12" fill="#566777">${i*25}%</text>`;
  }
@@ -52,7 +52,9 @@ function renderCompressionValidity(){
   results[key]=CompressionValidity.compute(DATA,ranking,opts,settings);
  }
  corrResults=results;const r=results[metric],pointCount=r.points.length;
- corrNode('corrScope').textContent=`${paperResult.cohort.length} models · ${paperResult.tasks.length} shared questions · ${LABEL[paperOptions.condition]} · ${pointCount} plotted ${settings.level==='model'?'models':'model–question groups'}. ${paperOptions.sample==='all'?S+' scheduled samples per question':'Sample '+paperOptions.sample+' only'} · minimum ${paperOptions.minSamples} usable${paperOptions.maxProofTokens===null?'':` · compression filter Wᴮ ≤ ${paperOptions.maxProofTokens}`}.`;
+ corrNode('corrScope').textContent=`${paperResult.cohort.length} models · ${paperResult.tasks.length} shared questions · ${LABEL[paperOptions.condition]} · ${pointCount} plotted ${settings.level==='model'?'models':'model–question groups'} · ${settings.denominator==='completed'?'completed-submission acceptance':'scheduled-attempt success'}. ${paperOptions.sample==='all'?S+' scheduled samples per question':'Sample '+paperOptions.sample+' only'} · minimum ${paperOptions.minSamples} usable${paperOptions.maxProofTokens===null?'':` · compression filter Wᴮ ≤ ${paperOptions.maxProofTokens}`}.`;
+ const totals=r.points.reduce((s,p)=>({accepted:s.accepted+p.valid,scheduled:s.scheduled+p.scheduled,completed:s.completed+(p.completed??0),classified:s.classified&&finite(p.completed)}),{accepted:0,scheduled:0,completed:0,classified:true});
+ corrNode('corrCompletion').textContent=totals.scheduled?`On this group: ${totals.classified?`${totals.completed}/${totals.scheduled} completed (${(100*totals.completed/totals.scheduled).toFixed(1)}%) · ${totals.accepted}/${totals.completed} accepted among completed · `:'Completion classification unavailable · '}${totals.accepted}/${totals.scheduled} successful scheduled attempts.`:'';
  renderCorrelationPlot(r,settings,metric);corrNode('corrHover').textContent=corrInspection(null);
  corrNode('corrSummary').innerHTML=`<table><thead><tr><th>Metric</th><th>Pearson r</th><th>Spearman ρ</th></tr></thead><tbody>`+
   ['T0','I0','J0','W_B'].map(key=>`<tr${key===metric?' class="activeMetric"':''}><td><button type="button" class="corrMetricLink" data-corr-metric="${key}">${esc(correlationMetricName(key,rank))}${key==='J0'?` <small>β = ${num(paperOptions.beta)}</small>`:''}</button></td><td>${support[key]?corrFmt(results[key].pearson.value):'Different support'}</td><td>${support[key]?corrFmt(results[key].spearman.value):'Different support'}</td></tr>`).join('')+'</tbody></table>';
@@ -64,18 +66,18 @@ function renderCompressionValidity(){
    (settings.level==='model'?`Only ${pointCount} models contribute; treat this as a descriptive comparison, not a general conclusion about models. `:'These groups repeat the same models and questions; the point count is not an independent sample size. Overlapping points can be inspected by keyboard or in the values table. ')+
    (rank?'Positive means better compression rank accompanies higher acceptance. ':metric==='W_B'?'Positive means longer proofs accompany higher acceptance. ':'Positive means a larger metric accompanies higher acceptance. '):
   (!pointCount?'No correlation is calculated without a shared comparison.':pointCount<3?'At least three plotted groups are required for a correlation.':'Correlation is unavailable because compression or acceptance has no variation in this selection. Selecting one sample or requiring all samples to succeed can force acceptance to 100%.');
- corrNode('corrTable').innerHTML=table(['Model','Question','Compression x','Accepted','Scheduled','Acceptance','Metric samples'],r.points.map(p=>[esc(NAME(p.model)),p.task?esc(p.task):'Shared-question aggregate',num(p.x),p.valid,p.scheduled,(100*p.y).toFixed(1)+'%',p.metricSamples]));
+ corrNode('corrTable').innerHTML=table(['Model','Question','Compression x','Accepted','Completed','Scheduled','Acceptance denominator','Acceptance','Completion','Metric samples'],r.points.map(p=>[esc(NAME(p.model)),p.task?esc(p.task):'Shared-question aggregate',num(p.x),p.valid,finite(p.completed)?p.completed:'Unavailable',p.scheduled,p.denominator,(100*p.y).toFixed(1)+'%',finite(p.completionRate)?(100*p.completionRate).toFixed(1)+'%':'Unavailable',p.metricSamples]));
  corrExportPayload={schemaVersion:1,kind:'descriptive_conditional_compression_validity_associations',sourceBuilt:DATA.built,sourceAnalyses:DATA.sources,verification:DATA.verification,rankingControls:paperOptions,correlationControls:settings,
-  definition:'Compression is measured only on valid outputs. Validity uses all scheduled selected sample slots on the same shared questions, including failures. No direct attempt-level correctness correlation is estimable.',
+  definition:'Compression is measured only on accepted outputs. Acceptance uses the explicitly selected completed-submission or scheduled-attempt denominator on shared questions. Completion counts remain separate. No direct attempt-level correctness correlation is estimable.',
   allMetricResults:results,sameSupportForOverview:support};
  corrNode('corrExport').disabled=!pointCount;
 }
-function resetCompressionValidityControls(){if(corrReady){corrNode('corrLevel').value='model';corrNode('corrX').value='rank';}}
+function resetCompressionValidityControls(){if(corrReady){corrNode('corrLevel').value='model';corrNode('corrX').value='rank';corrNode('corrDenominator').value='completed';}}
 function initializeCompressionValidity(){
  corrReady=true;
  let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(renderCompressionValidity,100);});
  corrNode('corrMetric').addEventListener('change',()=>{paperMetric=corrNode('corrMetric').value;renderPaperRanking()});
- for(const id of ['corrLevel','corrX'])corrNode(id).addEventListener('change',renderCompressionValidity);
+ for(const id of ['corrLevel','corrX','corrDenominator'])corrNode(id).addEventListener('change',renderCompressionValidity);
  corrNode('corrSummary').addEventListener('click',e=>{const b=e.target.closest('[data-corr-metric]');if(b){paperMetric=b.dataset.corrMetric;renderPaperRanking();corrNode('corrSummary').querySelector(`[data-corr-metric="${paperMetric}"]`)?.focus();}});
  for(const type of ['pointerover','focusin','click'])corrNode('corrChart').addEventListener(type,showCorrelationPoint);
  corrNode('corrExport').addEventListener('click',()=>{if(!corrExportPayload||!corrResults[paperMetric].points.length)return;const url=URL.createObjectURL(new Blob([JSON.stringify(corrExportPayload,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='compression-validity-correlations.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});

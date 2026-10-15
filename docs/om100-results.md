@@ -77,7 +77,7 @@ This presentation extension does not change the 9,600 historical outcomes, froze
 
 ## Compression and correctness
 
-The local report includes an interactive compression/Lean-acceptance scatter plot, correlations for all four metrics, and model-level or model/question-level views. The default five-model/22-shared-question T0 rank comparison has Pearson r=-0.346 and Spearman rho=-0.700 against acceptance over88scheduled attempts per model. With log2 T0 magnitudes, model-level r=-0.558; after centering within questions, the question-level r=-0.099. The comparisons are conditional on measurable successful proofs, so they do not establish that individual-proof compression predicts correctness or causes a trade-off.
+The local report includes an interactive compression/Lean-acceptance scatter plot, correlations for all four metrics, and model-level or model/question-level views. The original scheduled-attempt five-model/22-shared-question T0 rank comparison has Pearson r=-0.346 and Spearman rho=-0.700 against acceptance over88scheduled attempts per model. With log2 T0 magnitudes, model-level r=-0.558; after centering within questions, the question-level r=-0.099. The comparisons are conditional on measurable successful proofs, so they do not establish that individual-proof compression predicts correctness or causes a trade-off.
 
 Failures and truncated outputs stay in validity denominators, including when proof-length filters are active. Constant-validity and insufficient-support selections show unavailable coefficients. See [correlation definitions and limitations](../reporting/README.md#compression-and-validity-associations). No measurements or evaluation outcomes changed.
 
@@ -89,3 +89,10 @@ A separate post hoc view now measures submitted-text length for both accepted an
 Among completed submissions, accepted outputs (n=2,445) have median1,107non-whitespace characters, versus1,500for unsuccessful outputs (n=2,188). The pooled association is modest: Pearson(log2length, acceptance)=-0.184 and Spearman=-0.251. Centering within model × question × prompt groups gives Pearson=-0.139. Parse/format exclusions and inclusion of partial outputs are available as sensitivity controls. These character measurements and associations do not change any original evaluation outcome or paper-compression metric.
 
 See [measurement policy and analysis definitions](../reporting/README.md#source-length-across-accepted-and-unsuccessful-outputs).
+
+
+## Default acceptance denominator
+
+The main acceptance and compression-correlation views now exclude truncated and empty responses from acceptance denominators. The completed-output acceptance rate is 2,445/4,633=52.77%; completion is 4,633/9,600=48.26%; successful proofs per scheduled attempt remain 2,445/9,600=25.47%. All three rates are displayed. This is a post hoc conditional view; original records and all-attempt metrics remain unchanged.
+
+For the same five-model/22-shared-question T0 comparison, the completed-submission denominator changes the rank-points Pearson correlation to -0.121 and Spearman to -0.400. The earlier scheduled-denominator view remains selectable. Completion-conditioned acceptance can select easier responses; 38 completed checker timeouts remain unaccepted under the original limits. See [denominator definitions](../reporting/README.md#completed-submissions-versus-scheduled-attempts).

@@ -293,6 +293,34 @@
         "questions.html": "d19d304f2c97ab9d57934964b63d3a97b1015031c1cbc7cfa5d3ba32e65e8076",
         "questions-data.json": "70852b7a1ed7dfb79d4951d3bf5977e5fdfd22c5402bc94afcdd3019b7e22cd6"
       }
+    },
+    {
+      "at_utc": "2026-10-15T00:48:42.407948+00:00",
+      "request": "Exclude empty and truncated responses from correctness analysis",
+      "default_acceptance_denominator": "completed_nonempty_submissions",
+      "all_data_unchanged": true,
+      "global": {
+        "accepted": 2445,
+        "completed": 4633,
+        "scheduled": 9600,
+        "completed_acceptance_rate": 0.5277358083315347,
+        "completion_rate": 0.48260416666666667,
+        "scheduled_solve_rate": 0.2546875
+      },
+      "default_T0_rank_correlation": {
+        "Pearson": -0.12067030022266595,
+        "Spearman": -0.4,
+        "models": 5,
+        "shared_questions": 22
+      },
+      "scheduled_denominator_retained_as_separate_operational_view": true,
+      "library_default_kept_scheduled_for_historical_callers": true,
+      "artifact_hashes": {
+        "index.html": "683149447dc78bb1019c09ce6239406cb5e78a1261a8fa33d94611de24212ad4",
+        "comparison-data.json": "b511e8ad2512089fca8e5ef9a972a2d9ffb4de7bed5f191cb4d59ebc8a30da81",
+        "questions.html": "d19d304f2c97ab9d57934964b63d3a97b1015031c1cbc7cfa5d3ba32e65e8076",
+        "questions-data.json": "70852b7a1ed7dfb79d4951d3bf5977e5fdfd22c5402bc94afcdd3019b7e22cd6"
+      }
     }
   ]
 }

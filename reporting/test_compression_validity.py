@@ -143,6 +143,100 @@ assert.equal(r.withinQuestionPearson.reason,'requires_question_level');
 const p=P.compute(d,{sample:1});assert.throws(()=>C.compute(d,p,{sample:'all'}),/mismatch/);
 ''')
 
+    def test_completed_acceptance_completion_and_scheduled_solve_are_distinct(self):
+        self.js(r'''
+const rows=[
+ {status:'success',attemptId:'accepted',sourceLength:{responseStatus:'completed',available:true,sourceKind:'submitted_text',truncated:false}},
+ {status:'parse_failure',attemptId:'rejected',sourceLength:{responseStatus:'completed',available:true,sourceKind:'submitted_text',truncated:false}},
+ {status:'truncated_output',attemptId:'partial',sourceLength:{responseStatus:'truncated_output',available:true,sourceKind:'partial_saved_text',truncated:true}},
+ {status:'truncated_output',attemptId:'empty',sourceLength:{responseStatus:'truncated_output',available:false,sourceKind:'partial_saved_text',truncated:true}}
+];
+const s=C.summarizeOutcomes(rows);assert.equal(s.scheduled,4);assert.equal(s.completed,2);assert.equal(s.accepted,1);
+assert.equal(s.truncated,2);assert.equal(s.empty,1);assert.equal(s.unclassified,0);
+assert.equal(s.completionRate,.5);assert.equal(s.completedAcceptanceRate,.5);assert.equal(s.scheduledSolveRate,.25);
+close(s.completionRate*s.completedAcceptanceRate,s.scheduledSolveRate);
+assert.deepEqual(s.completedAttemptIds,['accepted','rejected']);
+''')
+
+    def test_completed_spearman_uses_varying_completed_denominators(self):
+        self.js(r'''
+const d=build(['a','b','c'],['q'],{a:{q:{valid:1,t0:2}},b:{q:{valid:2,t0:4}},c:{q:{valid:1,t0:8}}});
+const completed={a:2,b:4,c:1};
+for(const row of d.attempts){const done=row.sample<=completed[row.model];
+ if(!done){row.status='truncated_output';row.metricStatus='unavailable';row.metrics={};}
+ row.sourceLength={responseStatus:done?'completed':'truncated_output',available:done,sourceKind:done?'submitted_text':'partial_saved_text',truncated:!done};
+}
+const p=P.compute(d,{});
+for(const level of ['model','question']){
+ const complete=C.compute(d,p,{}, {level,xMode:'magnitude',denominator:'completed'});
+ assert.deepEqual(complete.points.map(p=>p.denominator),[2,4,1]);assert.deepEqual(complete.points.map(p=>p.y),[.5,.5,1]);
+ assert(complete.points.every(p=>p.scheduled===4));close(complete.spearman.value,Math.sqrt(3)/2);
+ const scheduled=C.compute(d,p,{}, {level,xMode:'magnitude',denominator:'scheduled'});close(scheduled.spearman.value,0);
+ assert.deepEqual(scheduled.points.map(p=>p.y),[.25,.5,.25]);
+ assert.deepEqual(complete.points.map(p=>p.x),scheduled.points.map(p=>p.x));
+}
+''')
+
+    def test_completed_denominator_keeps_long_valid_and_failed_submissions(self):
+        self.js(r'''
+const d=build(['a','b','c'],['q'],{a:{q:{valid:2,t0:2,wbs:[2,100]}},b:{q:{valid:3,t0:4}},c:{q:{valid:4,t0:8}}});
+for(const row of d.attempts)row.sourceLength={responseStatus:'completed',available:true,sourceKind:'submitted_text',truncated:false};
+const o={maxProofTokens:10},r=C.compute(d,P.compute(d,o),o,{denominator:'completed'}),a=r.points.find(p=>p.model==='a');
+assert.equal(a.metricSamples,1);assert.equal(a.valid,2);assert.equal(a.completed,4);assert.equal(a.denominator,4);assert.equal(a.y,.5);
+assert.equal(a.completedAttemptIds.length,4);assert.equal(a.excludedIncomplete,0);
+''')
+
+    def test_unknown_completion_metadata_never_falls_back_to_scheduled_or_zero(self):
+        self.js(r'''
+const d=build(['a','b','c'],['q'],{a:{q:{valid:1,t0:2}},b:{q:{valid:2,t0:4}},c:{q:{valid:3,t0:8}}}),p=P.compute(d,{});
+const s=C.summarizeOutcomes(d.attempts);assert.equal(s.completed,null);assert.equal(s.unclassified,12);
+assert.equal(s.completionRate,null);assert.equal(s.completedAcceptanceRate,null);assert.equal(s.scheduledSolveRate,.5);
+const r=C.compute(d,p,{}, {denominator:'completed'});assert.deepEqual(r.points,[]);assert.equal(r.pearson.reason,'completion_classification_unavailable');
+const legacy=C.compute(d,p,{});assert.equal(legacy.points.length,3);assert(legacy.points.every(p=>p.completed===null&&p.denominator===4));
+for(const row of d.attempts)row.sourceLength={responseStatus:'completed',available:true,sourceKind:'submitted_text',truncated:false};
+delete d.attempts[0].sourceLength.responseStatus;
+const partial=C.summarizeOutcomes(d.attempts);assert.equal(partial.knownCompleted,11);assert.equal(partial.completed,null);assert.equal(partial.unclassified,1);
+''')
+
+    def test_empty_and_zero_completed_summaries_are_unavailable_not_zero_rates(self):
+        self.js(r'''
+const empty=C.summarizeOutcomes([]);assert.equal(empty.scheduled,0);assert.equal(empty.completed,0);
+assert.equal(empty.completedAcceptanceRate,null);assert.equal(empty.completionRate,null);assert.equal(empty.scheduledSolveRate,null);
+const s=C.summarizeOutcomes([{status:'truncated_output',sourceLength:{responseStatus:'truncated_output',available:false,sourceKind:'partial_saved_text',truncated:true}},
+ {status:'parse_failure',sourceLength:{responseStatus:'completed',available:false,sourceKind:'submitted_text',truncated:false}}]);
+assert.equal(s.completed,0);assert.equal(s.completedAcceptanceRate,null);assert.equal(s.reason,'no_completed_submissions');
+assert.equal(s.scheduledSolveRate,0);assert.equal(s.empty,2);assert.equal(s.truncated,1);
+const r=C.compute({attempts:[],samplesPerQuestion:4},{cohort:[],tasks:[],rows:[]},{},{denominator:'completed'});
+assert.deepEqual(r.points,[]);assert.equal(r.pearson.value,null);
+''')
+
+    def test_accepted_proof_requires_completed_nonempty_provenance_when_known(self):
+        self.js(r'''
+for(const sourceLength of [
+ {responseStatus:'completed',available:false,sourceKind:'submitted_text',truncated:false},
+ {responseStatus:'truncated_output',available:true,sourceKind:'partial_saved_text',truncated:true}]){
+ assert.throws(()=>C.summarizeOutcomes([{status:'success',sourceLength}]),/Accepted proof/);
+}
+''')
+
+    @unittest.skipUnless(REAL.exists(),'Completed report is optional local validation data')
+    def test_real_completed_outcome_summary_and_point_denominators(self):
+        self.js(r'''
+const fs=require('node:fs'),d=JSON.parse(fs.readFileSync(process.argv[3],'utf8'));
+if(d.attempts.every(r=>r.sourceLength)){
+ const s=C.summarizeOutcomes(d.attempts);assert.equal(s.scheduled,9600);assert.equal(s.completed,4633);assert.equal(s.accepted,2445);
+ assert.equal(s.truncated,4967);assert.equal(s.empty,4416);assert.equal(s.unclassified,0);
+ close(s.completedAcceptanceRate,2445/4633);close(s.completionRate,4633/9600);close(s.scheduledSolveRate,2445/9600);
+ const o={minCoverage:25},p=P.compute(d,o),r=C.compute(d,p,o,{denominator:'completed',level:'model',xMode:'rank'});
+ assert.equal(r.points.length,5);close(r.spearman.value,-.4);
+ for(const point of r.points){const original=d.attempts.filter(a=>a.model===point.model&&a.condition==='mathematical_compression'&&p.tasks.includes(a.task));
+  const completed=original.filter(a=>a.sourceLength.responseStatus==='completed'&&a.sourceLength.available===true&&a.sourceLength.sourceKind==='submitted_text'&&a.sourceLength.truncated===false);
+  assert.equal(point.scheduled,original.length);assert.equal(point.denominator,completed.length);assert.equal(point.completed,completed.length);
+  close(point.y,completed.filter(a=>a.status==='success').length/completed.length);
+ }
+}
+''')
+
     @unittest.skipUnless(REAL.exists(),'Completed report is optional local validation data')
     def test_real_denominator_oracle_and_immutability(self):
         self.js(r'''

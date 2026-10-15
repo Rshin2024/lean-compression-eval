@@ -36,6 +36,47 @@
     }
     const index={samples,map};cache.set(data,index);return index;
   }
+  function completedClassification(row){
+    const s=row.sourceLength;
+    if(!s||typeof s!=='object'||typeof s.available!=='boolean'||typeof s.truncated!=='boolean'
+      ||typeof s.responseStatus!=='string'||typeof s.sourceKind!=='string')return null;
+    if(s.responseStatus==='completed'&&s.sourceKind==='submitted_text'&&s.truncated===false)
+      return {completed:s.available,empty:!s.available,truncated:false};
+    if(s.responseStatus==='truncated_output'&&s.sourceKind==='partial_saved_text'&&s.truncated===true)
+      return {completed:false,empty:!s.available,truncated:true};
+    return null;
+  }
+  function summarizeOutcomes(rows){
+    require(Array.isArray(rows),'Outcome rows must be an array');
+    let accepted=0,knownCompleted=0,truncated=0,knownEmpty=0,unclassified=0;
+    const completedAttemptIds=[];
+    for(const row of rows){
+      require(TERMINAL.has(row.status),'Unresolved or unknown outcomes cannot be treated as proof failures');
+      const classification=completedClassification(row);
+      if(row.status==='success'){
+        accepted++;
+        require(classification===null||classification.completed,'Accepted proof is not a completed nonempty submitted text');
+      }
+      if(row.status==='truncated_output'||row.sourceLength?.truncated===true)truncated++;
+      if(classification===null){unclassified++;continue;}
+      require(!(row.status==='truncated_output'&&classification.completed),'Truncated outcome mislabeled as a completed submission');
+      if(classification.completed){knownCompleted++;completedAttemptIds.push(typeof row.attemptId==='string'?row.attemptId:null);}
+      if(classification.empty)knownEmpty++;
+    }
+    const scheduled=rows.length,classificationAvailable=unclassified===0,completed=classificationAvailable?knownCompleted:null;
+    return {scheduled,completed,accepted,truncated,empty:classificationAvailable?knownEmpty:null,unclassified,
+      knownCompleted,knownEmpty,classificationAvailable,
+      completedRejected:completed===null?null:completed-accepted,
+      incomplete:completed===null?null:scheduled-completed,
+      completionRate:scheduled&&completed!==null?completed/scheduled:null,
+      completedAcceptanceRate:completed?accepted/completed:null,
+      scheduledSolveRate:scheduled?accepted/scheduled:null,
+      completedAttemptIds,
+      reason:!scheduled?'no_scheduled_attempts':!classificationAvailable?'completion_classification_unavailable':
+        completed===0?'no_completed_submissions':null,
+      classificationPolicy:'responseStatus=completed, available=true, sourceKind=submitted_text, truncated=false',
+      countNote:'empty and truncated are overlapping diagnostics; empty truncated text is counted in both.'};
+  }
   function average(values){return values.reduce((sum,x)=>sum+x,0)/values.length;}
   function correlation(xs,ys,method){
     const n=xs.length;
@@ -76,7 +117,8 @@
       require(TERMINAL.has(row.status),'Unresolved or unknown outcomes cannot be treated as proof failures');
       return row;
     });
-    return {valid:rows.filter(r=>r.status==='success').length,scheduled:rows.length,
+    const outcomes=summarizeOutcomes(rows);
+    return {valid:outcomes.accepted,scheduled:rows.length,outcomes,
       attemptIds:rows.map(r=>typeof r.attemptId==='string'?r.attemptId:null),rows};
   }
   function compute(data,paperResult,paperOptions={},view={}){
@@ -84,8 +126,9 @@
     if(normalized)for(const key of ['condition','metric','sample','maxProofTokens','minSamples','minCoverage','beta','questionIds','modelIds'])
       if(Object.prototype.hasOwnProperty.call(paperOptions,key))require(JSON.stringify(normalized[key])===JSON.stringify(paperOptions[key]),'Paper options/result mismatch: '+key);
     const options={condition:'mathematical_compression',metric:'T0',sample:'all',minSamples:1,...normalized,...paperOptions};
-    const level=view.level??'model',xMode=view.xMode??'rank';
+    const level=view.level??'model',xMode=view.xMode??'rank',denominatorPolicy=view.denominator??'scheduled';
     require(['model','question'].includes(level)&&['rank','magnitude'].includes(xMode),'Unknown point level or x mode');
+    require(['completed','scheduled'].includes(denominatorPolicy),'Unknown acceptance denominator policy');
     require(['T0','I0','J0','W_B'].includes(options.metric),'Unknown paper metric');
     require(options.sample==='all'||Number.isInteger(options.sample)&&options.sample>=1&&options.sample<=index.samples,'Sample must use one-based display indices');
     require(paperResult&&Array.isArray(paperResult.cohort)&&Array.isArray(paperResult.tasks)&&Array.isArray(paperResult.rows),'Malformed paper result');
@@ -93,19 +136,20 @@
     require(new Set(cohort).size===M&&new Set(tasks).size===tasks.length,'Duplicate paper comparison identity');
     const selectedSamples=options.sample==='all'?index.samples:1;
     const metadata={schemaVersion:1,kind:'descriptive_compression_validity_association',level,xMode,metric:options.metric,
-      condition:options.condition,cohort,tasks,sample:options.sample,
+      condition:options.condition,cohort,tasks,sample:options.sample,denominatorPolicy,
       xDefinition:xMode==='rank'?'100*(cohort_size-mean_or_question_rank)/(cohort_size-1)':
         options.metric==='J0'?'normalized_J0_value':'log2_raw_'+options.metric,
       xDirection:xMode==='magnitude'&&options.metric==='W_B'?'increasing_means_longer_proof_source':'increasing_x',
-      yDefinition:'success_count / all_original_scheduled_selected_sample_rows_on_the_shared_questions',
+      yDefinition:denominatorPolicy==='completed'?'accepted_completed_submissions / completed_nonempty_submitted_texts_on_shared_questions':'success_count / all_original_scheduled_selected_sample_rows_on_the_shared_questions',
       proofLengthFilterNarrowsValidityDenominator:false,
       minimumSamplesNarrowsValidityDenominator:false,
-      scope:'Fixed paper cohort and shared questions; all selected scheduled outcomes supply validity denominators.',
+      scope:'Fixed paper cohort and shared questions; denominator policy changes only y. Scheduled counts and completed counts remain separate.',
       selectionForcesValidityOne:options.sample!=='all'||options.minSamples>=selectedSamples,
       spearmanXMethod:xMode==='rank'?'exact_rank_metadata':options.metric==='J0'?'J0_descending_anchor_midrank_ties_1e-12':'exact_positive_rational_product_roots',
       withinQuestionDefinition:'Pearson of x and y after subtracting each question\'s across-model means',
       notes:['Compression is available only for valid measurable outputs; conditioning on their availability and shared-question selection can induce associations.',
-        'Proof-length and minimum-sample filters change compression eligibility and shared support, but never remove failures or long valid proofs from a retained question\'s validity denominator.',
+        'Proof-length and minimum-sample filters change compression eligibility and shared support, but never remove complete failed submissions or long valid submissions from a retained question\'s completed denominator.',
+        'Completed acceptance excludes incomplete, empty and truncated submissions. Completion rate and scheduled solve rate are separately reported; unknown completion provenance makes completed acceptance unavailable.',
         'Model/question points repeat models and questions; point count is not a count of independent observations.',
         'Correlations are descriptive associations, not causal evidence, p-values or confidence intervals.',
         'I0 magnitude increases with proof length relative to the statement. W_B magnitude increases with raw proof length; a positive correlation then means longer, not more preferred.',
@@ -115,13 +159,32 @@
     if(M<2||!tasks.length||!paperResult.rows.length)return empty('no_shared_paper_comparison');
     const modelRows=new Map(paperResult.rows.map(row=>[row.model,row]));
     require(modelRows.size===M&&paperResult.rows.length===M&&cohort.every(id=>modelRows.has(id)),'Paper rows do not match cohort');
+    const cellMap=new Map(),scopeRows=[];
+    for(const model of cohort)for(const task of tasks){
+      const cell=countCell(index,model,task,options);cellMap.set(JSON.stringify([model,task]),cell);scopeRows.push(...cell.rows);
+    }
+    const scopeOutcomes=summarizeOutcomes(scopeRows);metadata.outcomes=scopeOutcomes;
+    if(denominatorPolicy==='completed'&&!scopeOutcomes.classificationAvailable)return empty('completion_classification_unavailable');
+    if(denominatorPolicy==='completed'){
+      const zero=level==='question'?[...cellMap.values()].some(cell=>cell.outcomes.completed===0):
+        cohort.some(model=>tasks.reduce((sum,task)=>sum+cellMap.get(JSON.stringify([model,task])).outcomes.completed,0)===0);
+      if(zero)return empty('no_completed_submissions');
+    }
+    function denominatorFields(outcomes){
+      const denominator=denominatorPolicy==='completed'?outcomes.completed:outcomes.scheduled;
+      return {denominator,completed:outcomes.completed,excludedIncomplete:denominatorPolicy==='completed'?outcomes.incomplete:0,
+        completionRate:outcomes.completionRate,scheduledSolveRate:outcomes.scheduledSolveRate,
+        completedAcceptanceRate:outcomes.completedAcceptanceRate,completionClassificationAvailable:outcomes.classificationAvailable,
+        completedAttemptIds:[...outcomes.completedAttemptIds],truncated:outcomes.truncated,empty:outcomes.empty,
+        unclassified:outcomes.unclassified};
+    }
     const points=[],coordinates=new Map();
     for(const model of cohort){
       const row=modelRows.get(model),qs=new Map(row.questions.map(q=>[q.task,q]));
       require(qs.size===tasks.length&&row.questions.length===tasks.length&&tasks.every(task=>qs.has(task)),'Paper question rows do not match shared support');
-      let totalValid=0,totalScheduled=0,totalMetric=0;const allAttempts=[],allMetricAttempts=[];
+      let totalValid=0,totalScheduled=0,totalMetric=0;const allAttempts=[],allMetricAttempts=[],allRows=[];
       for(const task of tasks){
-        const q=qs.get(task),cell=countCell(index,model,task,options);
+        const q=qs.get(task),cell=cellMap.get(JSON.stringify([model,task]));
         require(Number.isInteger(q.samples)&&q.samples>0&&q.samples<=cell.valid&&q.samples>=options.minSamples,
           'Compression sample count differs from valid scheduled outcomes or its minimum');
         require(Array.isArray(q.sampleIndices)&&q.sampleIndices.length===q.samples&&new Set(q.sampleIndices).size===q.samples,
@@ -136,12 +199,13 @@
             'Compression coordinate violates its proof-length filter');
         }
         require(Number.isFinite(q.rank)&&q.rank>=1&&q.rank<=M,'Invalid question rank');
-        totalValid+=cell.valid;totalScheduled+=cell.scheduled;totalMetric+=q.samples;
+        totalValid+=cell.valid;totalScheduled+=cell.scheduled;totalMetric+=q.samples;allRows.push(...cell.rows);
         allAttempts.push(...cell.attemptIds);allMetricAttempts.push(...(q.attemptIds||[]));
         if(level==='question'){
           const x=xMode==='rank'?100*(M-q.rank)/(M-1):options.metric==='J0'?q.value:q.metricLog2;
           require(Number.isFinite(x),'Missing/nonfinite compression coordinate; no zero imputation');
-          const point={index:points.length,model,task,x,y:cell.valid/cell.scheduled,valid:cell.valid,scheduled:cell.scheduled,
+          const rates=denominatorFields(cell.outcomes);
+          const point={index:points.length,model,task,x,y:cell.valid/rates.denominator,valid:cell.valid,scheduled:cell.scheduled,...rates,
             metricSamples:q.samples,metricLog2:q.metricLog2,value:q.value,rank:q.rank,
             attemptIds:cell.attemptIds,metricAttemptIds:[...(q.attemptIds||[])]};
           coordinates.set(point,xMode==='rank'?q.rank:options.metric==='J0'?q.value:exact(q.exact?.[options.metric]));points.push(point);
@@ -152,7 +216,8 @@
         require(Number.isFinite(row.averageRank)&&row.averageRank>=1&&row.averageRank<=M,'Invalid model mean rank');
         const x=xMode==='rank'?row.rankPoints:options.metric==='J0'?row.value:row.metricLog2;
         require(Number.isFinite(x),'Missing/nonfinite compression coordinate; no zero imputation');
-        const point={index:points.length,model,task:null,x,y:totalValid/totalScheduled,valid:totalValid,scheduled:totalScheduled,
+        const rates=denominatorFields(summarizeOutcomes(allRows));
+        const point={index:points.length,model,task:null,x,y:totalValid/rates.denominator,valid:totalValid,scheduled:totalScheduled,...rates,
           metricSamples:totalMetric,metricLog2:row.metricLog2,value:row.value,rank:row.averageRank,
           attemptIds:allAttempts,metricAttemptIds:allMetricAttempts};
         if(xMode==='rank'){
@@ -172,7 +237,7 @@
     };
     const xr=midranks(points,compareX,{approximateDescending:xMode==='magnitude'&&options.metric==='J0'});
     const yr=midranks(points,(a,b)=>{
-      const left=BigInt(a.valid)*BigInt(b.scheduled),right=BigInt(b.valid)*BigInt(a.scheduled);
+      const left=BigInt(a.valid)*BigInt(b.denominator),right=BigInt(b.valid)*BigInt(a.denominator);
       return left<right?-1:left>right?1:0;
     });
     const spearman=correlation(xr,yr,'Pearson_of_midrank_transforms');
@@ -189,7 +254,7 @@
     metadata.allPointValiditiesEqual=points.every(p=>p.y===points[0].y);
     return {points,pearson,spearman,withinQuestionPearson,metadata};
   }
-  const api=Object.freeze({compute,version:'compression_validity_v1'});
+  const api=Object.freeze({compute,summarizeOutcomes,version:'compression_validity_v2_completed_denominators'});
   root.CompressionValidity=api;
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
