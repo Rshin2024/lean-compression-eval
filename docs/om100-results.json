@@ -255,6 +255,44 @@
         "questions.html": "d19d304f2c97ab9d57934964b63d3a97b1015031c1cbc7cfa5d3ba32e65e8076",
         "questions-data.json": "70852b7a1ed7dfb79d4951d3bf5977e5fdfd22c5402bc94afcdd3019b7e22cd6"
       }
+    },
+    {
+      "at_utc": "2026-10-15T00:19:14.239541+00:00",
+      "request": "Measure source length across successful and failed outputs",
+      "measurement_version": "submitted_text_lengths_v1",
+      "measurement_source_sha256": "507523744306f0cac98640e85775fe3d8cb77d61f094b68757dbd58acf6b2f92",
+      "coverage": {
+        "all": 9600,
+        "measurable_nonempty": 5184,
+        "completed": 4633,
+        "completed_accepted": 2445,
+        "completed_not_accepted": 2188,
+        "nonempty_partials": 551,
+        "empty": 4416
+      },
+      "units": [
+        "Unicode code points",
+        "non-whitespace Unicode code points",
+        "UTF-8 bytes"
+      ],
+      "default": "all models/questions/prompts; completed nonempty text; all failure types; log2 non-whitespace characters",
+      "default_medians": {
+        "accepted": 1107,
+        "not_accepted": 1500
+      },
+      "default_correlations": {
+        "Pearson": -0.18377173365991273,
+        "Spearman": -0.2514097979594876,
+        "within_model_question_prompt_Pearson": -0.13939551085687138
+      },
+      "original_evaluation_records_and_metrics_unchanged": true,
+      "raw_text_exported": false,
+      "artifact_hashes": {
+        "index.html": "8ec129ca01a6bea2f2dc081ea4488d20434910414c4f184df2ef64a0840feb40",
+        "comparison-data.json": "b511e8ad2512089fca8e5ef9a972a2d9ffb4de7bed5f191cb4d59ebc8a30da81",
+        "questions.html": "d19d304f2c97ab9d57934964b63d3a97b1015031c1cbc7cfa5d3ba32e65e8076",
+        "questions-data.json": "70852b7a1ed7dfb79d4951d3bf5977e5fdfd22c5402bc94afcdd3019b7e22cd6"
+      }
     }
   ]
 }

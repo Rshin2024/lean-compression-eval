@@ -13,6 +13,8 @@ import os
 from pathlib import Path
 import re
 
+from source_lengths import measure_report
+
 MODELS = ['gpt-6.1-sol', 'gpt-6-sol', 'gpt-6-luna', 'gpt-6-astra', 'claude-haiku-5-5',
           'claude-sonnet-5-5', 'claude-opus-5-5', 'claude-fable-5-1']
 CONDS = ['standard', 'mathematical_compression', 'source_concision']
@@ -310,6 +312,7 @@ def build(suite, *, output=None, classification='observed', runs_root=None, clou
             'classification': classification}
     population, generation_settings, manifests, cohort = None, set(), [], None
     phases_seen=[]
+    length_policies, length_sources = [], []
     runs_root = Path(runs_root) if runs_root is not None else Path(__file__).resolve().parents[1] / 'runs'
     for model in MODELS:
         report = report_directory(suite, model)
@@ -357,7 +360,15 @@ def build(suite, *, output=None, classification='observed', runs_root=None, clou
             'runHash': analysis.get('run_provenance', {}).get('run_hash'),
             'sha256': hashlib.sha256(raw).hexdigest(),
             'description': f'Completed frozen-run analysis; {per_model:,} attempts; {n} questions.'})
-        source_rows = json.loads((report / 'all_scheduled_attempts.json').read_text())
+        source_bytes = (report / 'all_scheduled_attempts.json').read_bytes()
+        source_rows = json.loads(source_bytes)
+        measured_lengths = None
+        if phase is not None and classification == 'observed' and manifest.is_file():
+            manifest_bytes = manifest.read_bytes()
+            measured_lengths = measure_report(source_rows, json.loads(manifest_bytes), model)
+            length_policies.append({'model': model, **measured_lengths['policy']})
+            length_sources.append({'model': model, 'report_sha256': hashlib.sha256(source_bytes).hexdigest(),
+                                   'manifest_sha256': hashlib.sha256(manifest_bytes).hexdigest()})
         require(len(source_rows) == per_model, 'Attempt file must cover the full schedule')
         seen, model_rows = set(), []
         base = analysis.get('sample_index_base', 0)
@@ -382,7 +393,8 @@ def build(suite, *, output=None, classification='observed', runs_root=None, clou
             model_rows.append({'model': model, 'task': key[0], 'condition': key[1], 'sample': key[2] - base + 1,
                 'attemptId': row.get('attempt_id'),
                 'status': row['validity_status'], 'metricStatus': row.get('metric_status'),
-                'metrics': {field: metric.get(field) for field in METRICS}, 'cost': cost})
+                'metrics': {field: metric.get(field) for field in METRICS}, 'cost': cost,
+                'sourceLength': measured_lengths['byAttempt'][row['attempt_id']] if measured_lengths else None})
         for c in CONDS:
             rows = [r for r in model_rows if r['condition'] == c]
             require(len(rows) == per_condition, 'Attempt condition coverage mismatch')
@@ -408,6 +420,12 @@ def build(suite, *, output=None, classification='observed', runs_root=None, clou
                             math.isclose(actual, expected, rel_tol=1e-10, abs_tol=1e-10),
                             'Question ranking metric does not reconcile')
         data['attempts'].extend(model_rows)
+    data['sourceLengthMeasurement'] = {
+        'available': len(length_policies) == len(MODELS),
+        'kind': 'posthoc_saved_submission_text_lengths',
+        'policies': length_policies, 'sources': length_sources,
+        'reason': None if len(length_policies) == len(MODELS) else 'Requires complete phase-separated reports and matching frozen manifests',
+    }
     tasks, n, k = population
     require(not any(phases_seen) or all(phases_seen), 'Cannot mix legacy and phase-separated verification reports')
     require(len(data['attempts']) == n * k * len(CONDS) * len(MODELS), 'Cohort schedule mismatch')
@@ -449,7 +467,9 @@ def build(suite, *, output=None, classification='observed', runs_root=None, clou
     for marker, name in [('__PAPER_CSS__', 'paper_panel.css'), ('__PAPER_PANEL__', 'paper_panel.html'),
                          ('__PAPER_ENGINE__', 'paper_rankings.js'), ('__PAPER_UI__', 'paper_panel.js'),
                          ('__CORR_CSS__', 'correlation_panel.css'), ('__CORR_PANEL__', 'correlation_panel.html'),
-                         ('__CORR_ENGINE__', 'compression_validity.js'), ('__CORR_UI__', 'correlation_panel.js')]:
+                         ('__CORR_ENGINE__', 'compression_validity.js'), ('__CORR_UI__', 'correlation_panel.js'),
+                         ('__LENGTH_CSS__', 'source_length_panel.css'), ('__LENGTH_PANEL__', 'source_length_panel.html'),
+                         ('__LENGTH_ENGINE__', 'source_length_analysis.js'), ('__LENGTH_UI__', 'source_length_panel.js')]:
         require(template.count(marker) == 1, 'Paper ranking template marker missing or duplicated: ' + marker)
         template = template.replace(marker, Path(__file__).with_name(name).read_text())
     require(template.count('__REVIEWED_DATA__') == 1, 'Template marker missing or duplicated')

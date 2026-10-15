@@ -1,0 +1,29 @@
+<section id="source-length" class="sourceLengthPanel">
+ <div class="paperHeading"><h2>Source length and correctness · all outcomes</h2><a href="#models">Choose models ↑</a></div>
+ <p>Length of the submitted text after the original wrapper removal, measured for accepted <b>and unsuccessful</b> submissions. Character counts are separate from the frozen Lean token count Wᴮ.</p>
+ <div class="controls sourceControls">
+  <label>Prompt <select id="lengthCondition"><option value="all">All three prompts</option></select></label>
+  <label>Measure <select id="lengthUnit"><option value="sourceNonWhitespaceCharacters">Non-whitespace characters</option><option value="sourceCharacters">All characters</option><option value="sourceUtf8Bytes">UTF-8 bytes</option></select></label>
+  <label>Truncated responses <select id="lengthTruncation"><option value="exclude">Exclude from analysis</option><option value="include">Include saved partial text</option><option value="only">Partial text only</option></select></label>
+ </div>
+ <details id="lengthFilters"><summary>Filter questions, format failures and correlation scale</summary><div class="controls sourceControls">
+  <label>Question <select id="lengthTask"><option value="all">All questions</option></select></label>
+  <label>Failure types <select id="lengthFailures"><option value="all">Include all failure types</option><option value="exclude_format">Exclude parse / format failures</option></select></label>
+  <label>Correlation x-axis <select id="lengthScale"><option value="log2">log₂ length</option><option value="linear">Raw length</option></select></label>
+  <button type="button" id="lengthReset">Reset length filters</button>
+ </div><p class="muted">This view uses the model checkboxes above and its own filters. It does not require a successful proof on every shared question.</p></details>
+ <div id="lengthCoverage" class="lengthCoverage" aria-live="polite"></div>
+ <div class="lengthLayout"><div><h3>Acceptance rate by submitted length</h3><div id="lengthChart" class="lengthChart scroll"></div><div id="lengthHover" class="corrHover" aria-live="polite"></div></div><div class="lengthAside"><h3>Accepted and unsuccessful lengths</h3><div id="lengthDistributions"></div><h3>Attempt-level association</h3><div id="lengthStats"></div></div></div>
+ <p id="lengthReading" class="lengthReading"></p>
+ <p class="note" id="lengthCaution"></p>
+ <details><summary>Compare the association within each model</summary><div id="lengthModelTable" class="scroll"></div></details>
+ <details><summary>Length buckets and exact denominators</summary><div id="lengthBinTable" class="scroll"></div></details>
+ <div class="controls"><button type="button" id="lengthExport">Export measured attempts and analysis</button></div>
+ <details><summary>Measurement policy and source evidence</summary>
+  <p>Each Unicode code point counts as one character. The default excludes characters identified as whitespace by the pinned measurement policy. Comments and any prose submitted in place of a proof remain included. The original response adapter removes only a complete outer wrapper; this analysis does not find or repair a proof inside mixed text.</p>
+  <p>Completed responses use the saved text passed to the evaluator, checked against the frozen adapter. Truncated responses use only preserved partial text under the same adapter and are excluded by default. Empty returned text has no measurable submission length and is never treated as a zero-length proof. It remains visible in coverage counts.</p>
+  <p>Correctness is the original Lean acceptance outcome. Pearson against this binary outcome is a point-biserial correlation; Spearman uses midranks of integer lengths. The adjusted coefficient centers length and correctness within each <b>model × question × prompt</b> group, excluding groups with fewer than two included attempts. It removes group mean differences only. Repeated questions, missing text and truncation can still affect these descriptive associations; no causal or held-out prediction claim is made.</p>
+  <p>Acceptance buckets use fixed doubling boundaries and include every measured attempt passing the controls. The distribution summary reports the median and middle 50% of each outcome group. The original evaluation, Wᴮ, I₀, T₀, prices and responses are unchanged.</p>
+  <div id="lengthProvenance"></div>
+ </details>
+</section>
